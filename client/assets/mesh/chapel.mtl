@@ -1,0 +1,54 @@
+# Blender MTL File: 'None'
+# Material Count: 4
+
+newmtl Base.001
+Ns 249.019608
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.400000 0.400000 0.400000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Bump -bm 0.350042 Base\\Base_normal.png
+map_Kd Base\\Base_color.png
+map_Ns Base\\Base_roughness.png
+
+newmtl Glass.001
+Ns 827.450980
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.400000 0.400000 0.400000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Bump -bm 0.350042 Glass\\Glass_normal.png
+map_Kd Glass\\Glass_color.png
+map_Ns Glass\\Glass_roughness.png
+
+newmtl Windows.001
+Ns 249.019608
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.400000 0.400000 0.400000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Bump -bm 0.350042 Windows\\Windows_normal.png
+map_Kd Windows\\Windows_color.png
+map_Ns Windows\\Windows_roughness.png
+
+newmtl Woods.001
+Ns 249.019608
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.400000 0.400000 0.400000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Bump -bm 0.350042 Woods\\Woods_normal.png
+map_Kd Woods\\Woods_color.png
+map_Ns Woods\\Woods_roughness.png

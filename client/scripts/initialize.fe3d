@@ -1,0 +1,10 @@
+6 23
+META script_type_initialize
+META script_state_entry
+
+fe3d:world_load_editor("island")
+fe3d:camera_set_position(0.0, 50.0, 0.0)
+fe3d:camera_set_yaw(90.0)
+fe3d:camera_set_pitch(-75.0)
+fe3d:graphics_set_anti_aliasing_enabled(<true>)
+fe3d:graphics_set_anisotropic_filtering_quality(16)

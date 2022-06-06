@@ -1,0 +1,2 @@
+TEXT3D @test assets\image\text3d\font_map\font.tga 1 1 1 0 1 0 0 0 0 1 1 1 1 0 0.5 0.1 2
+AABB @test text3d@@test

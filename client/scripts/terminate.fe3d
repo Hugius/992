@@ -1,0 +1,17 @@
+13 36
+META script_type_terminate
+META script_state_entry
+
+fe3d:world_add_custom_sky("day")
+fe3d:world_add_custom_terrain("island")
+fe3d:world_add_custom_water("test")
+fe3d:world_add_custom_model("skeleton_219")
+fe3d:world_add_custom_quad3d("test_220")
+fe3d:world_add_custom_text3d("test_221")
+fe3d:world_add_custom_aabb("ts_222")
+fe3d:world_add_custom_pointlight("testt_223")
+fe3d:world_add_custom_spotlight("test_224")
+fe3d:world_add_custom_captor("captor_213")
+fe3d:world_add_custom_sound3d("alarm_230")
+fe3d:world_add_custom_graphics()
+fe3d:world_save_custom("test123")
