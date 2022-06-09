@@ -1,17 +1,46 @@
+MODEL @baker assets\mesh\baker.obj 0.7 0.7 0.7 ? 0 2 1 1 1
+PART @baker ? assets\image\model\diffuse_map\baker.tga ? ? ? ? assets\image\model\normal_map\baker.tga 0 0 1 0 0 8 5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+MODEL @blacksmith assets\mesh\blacksmith.obj 0.5 0.5 0.5 ? 0 2 1 1 1
+PART @blacksmith frame assets\image\model\diffuse_map\blacksmith_bark.tga ? ? ? ? ? 0 0 1 0 0 2 2.5 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
+PART @blacksmith roof assets\image\model\diffuse_map\blacksmith_straw.tga ? ? ? ? ? 0 0 1 0 0 2 2.5 0.5 0.5 0.5 1 1 1 2 0 0 1 1 1
+MODEL @carpenter assets\mesh\carpenter.obj 0.4 0.4 0.4 ? 0 2 1 1 1
+PART @carpenter roof assets\image\model\diffuse_map\carpenter_roof.tga ? ? ? ? assets\image\model\normal_map\carpenter_roof.tga 0 0 1 0 0 2 2.5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+PART @carpenter base1 assets\image\model\diffuse_map\carpenter_base1.tga ? ? ? ? assets\image\model\normal_map\carpenter_1.tga 0 0 1 0 0 2 2.5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+PART @carpenter base4 assets\image\model\diffuse_map\carpenter_base4.tga ? ? ? ? assets\image\model\normal_map\carpenter_4.tga 0 0 1 0 0 2 2.5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+PART @carpenter base3 assets\image\model\diffuse_map\carpenter_base3.tga ? ? ? ? assets\image\model\normal_map\carpenter_3.tga 0 0 1 0 0 2 2.5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+PART @carpenter base2 assets\image\model\diffuse_map\carpenter_base2.tga ? ? ? ? assets\image\model\normal_map\carpenter_2.tga 0 0 1 0 0 2 2.5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+PART @carpenter frame assets\image\model\diffuse_map\carpenter_frame.tga ? ? ? ? assets\image\model\normal_map\carpenter_frame.tga 0 0 1 0 0 2 2.5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
 MODEL @chapel assets\mesh\chapel.obj 0.5 0.5 0.5 ? 0 2 1 1 1
-PART @chapel base assets\image\model\diffuse_map\chapel_base.tga ? ? ? ? assets\image\model\normal_map\chapel_base.tga 0 0 1 0 0 4 5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+PART @chapel base assets\image\model\diffuse_map\chapel_base.tga ? ? ? ? assets\image\model\normal_map\chapel_base.tga 0 0 1 0 0 4 5 0.5 0.5 0.75 1 1 1 1 0 0 1 1 1
 PART @chapel frame assets\image\model\diffuse_map\chapel_frame.tga ? ? ? ? assets\image\model\normal_map\chapel_frame.tga 0 0 1 0 0 4 5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
-PART @chapel windows assets\image\model\diffuse_map\chapel_windows.tga ? ? assets\image\model\reflection_map\chapel_windows.tga ? assets\image\model\normal_map\chapel_windows.tga 0 0 1 1 0 16 5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
-PART @chapel stainedglass assets\image\model\diffuse_map\chapel_stainedglass.tga ? ? ? ? assets\image\model\normal_map\chapel_stainedglass.tga 0 0 1 1 0 16 5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
-MODEL @church assets\mesh\church.obj 0.75 0.75 0.75 ? 0 2 1 1 1
-PART @church misc assets\image\model\diffuse_map\church_misc.tga ? ? ? ? ? 0 0 1 0 0 2 2.5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
-PART @church roof assets\image\model\diffuse_map\church_roof.tga ? ? ? ? ? 0 0 1 0 0 2 2.5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
-PART @church base assets\image\model\diffuse_map\church_base.tga ? ? ? ? ? 0 0 1 0 0 2 2.5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+PART @chapel windows assets\image\model\diffuse_map\chapel_windows.tga ? ? assets\image\model\reflection_map\chapel_windows.tga ? assets\image\model\normal_map\chapel_windows.tga 0 0 1 1 0 16 10 0.25 0.5 1 1 1 1 1 0 0 1 1 1
+PART @chapel stainedglass assets\image\model\diffuse_map\chapel_stainedglass.tga ? ? ? ? assets\image\model\normal_map\chapel_stainedglass.tga 0 0 1 1 0 16 10 0.75 0.5 1 1 1 1 1 0 0 1 1 1
+MODEL @church assets\mesh\church.obj 1 1 1 ? 0 2 1 1 1
+PART @church 6 assets\image\model\diffuse_map\church_6.tga ? ? ? ? ? 0 0 1 0 0 8 5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+PART @church 13 assets\image\model\diffuse_map\church_13.tga ? ? ? ? ? 0 0 1 0 0 2 2.5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+PART @church 2 assets\image\model\diffuse_map\church_2.tga ? ? ? ? ? 0 0 1 0 0 2 2.5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+PART @church 15 assets\image\model\diffuse_map\church_15.tga ? ? ? ? ? 0 0 1 1 0 16 10 0.25 0.5 1 1 1 1 1 0 0 1 1 1
+PART @church 8 assets\image\model\diffuse_map\church_8.tga ? ? ? ? ? 0 0 1 0 0 2 2.5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+PART @church 11 assets\image\model\diffuse_map\church_11.tga ? ? ? ? ? 0 0 1 0 0 8 5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+PART @church 9 assets\image\model\diffuse_map\church_9.tga ? ? ? ? ? 0 0 1 0 0 2 2.5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+PART @church 3 assets\image\model\diffuse_map\church_3.tga ? ? ? ? ? 0 0 1 0 0 2 2.5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+PART @church 5 assets\image\model\diffuse_map\church_5.tga ? ? ? ? ? 0 0 1 0 0 2 2.5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+PART @church 1 assets\image\model\diffuse_map\church_1.tga ? ? ? ? ? 0 0 1 0 0 2 2.5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+PART @church 4 assets\image\model\diffuse_map\church_4.tga ? ? ? ? ? 0 0 1 0 0 2 2.5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+PART @church 12 assets\image\model\diffuse_map\church_12.tga ? ? ? ? ? 0 0 1 0 0 2 2.5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+PART @church 14 assets\image\model\diffuse_map\church_14.tga ? ? ? ? ? 0 0 1 0 0 2 2.5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+PART @church 7 assets\image\model\diffuse_map\church_7.tga ? ? ? ? ? 0 0 1 1 0 16 10 0.25 0.5 1 1 1 1 1 0 0 1 1 1
 MODEL @fletcher assets\mesh\fletcher.obj 0.35 0.35 0.35 ? 0 2 1 1 1
-PART @fletcher walls assets\image\model\diffuse_map\fletcher_planks.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
-PART @fletcher door assets\image\model\diffuse_map\fletcher_door.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
-PART @fletcher frame assets\image\model\diffuse_map\fletcher_stone.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
-PART @fletcher roof assets\image\model\diffuse_map\fletcher_straw.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 0.752941 0.501961 1 0 0 1 1 1
+PART @fletcher roof assets\image\model\diffuse_map\fletcher_straw.tga ? ? ? ? ? 0 0 1 0 0 2 2.5 0.5 0.5 0.5 1 0.752941 0.376471 1 0 0 1 1 1
+PART @fletcher frame assets\image\model\diffuse_map\fletcher_stone.tga ? ? ? ? ? 0 0 1 0 0 2 2.5 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
+PART @fletcher walls assets\image\model\diffuse_map\fletcher_wood.tga ? ? ? ? ? 0 0 1 0 0 2 2.5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+MODEL @gatherer assets\mesh\gatherer.obj 1 1 1 ? 0 2 1 1 1
+PART @gatherer doorframe assets\image\model\diffuse_map\gatherer_doorframe.tga ? ? ? ? assets\image\model\normal_map\gatherer_doorframe.tga 0 0 1 0 0 2 2.5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+PART @gatherer walls assets\image\model\diffuse_map\gatherer_walls.tga ? ? ? ? assets\image\model\normal_map\gatherer_walls.tga 0 0 1 0 0 2 2.5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+PART @gatherer window assets\image\model\diffuse_map\gatherer_window.tga ? ? ? ? assets\image\model\normal_map\gatherer_window.tga 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+PART @gatherer floor assets\image\model\diffuse_map\gatherer_floor.tga ? ? ? ? assets\image\model\normal_map\gatherer_floor.tga 0 0 1 0 0 2 2.5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+PART @gatherer lid assets\image\model\diffuse_map\gatherer_lid.tga ? ? ? ? assets\image\model\normal_map\gatherer_lid.tga 0 0 1 0 0 2 2.5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+PART @gatherer roof assets\image\model\diffuse_map\gatherer_roof.tga ? ? ? ? assets\image\model\normal_map\gatherer_roof.tga 0 0 1 0 0 2 2.5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
 MODEL @herbalist assets\mesh\herbalist.obj 0.6 0.6 0.6 ? 0 2 1 1 1
 PART @herbalist frame assets\image\model\diffuse_map\herbalist_wood.tga ? ? ? ? assets\image\model\normal_map\herbalist_wood.tga 0 0 1 0 0 2 2.5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
 PART @herbalist ceiling assets\image\model\diffuse_map\herbalist_planks.tga ? ? ? ? assets\image\model\normal_map\herbalist_planks.tga 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
@@ -20,30 +49,26 @@ PART @herbalist frontwall assets\image\model\diffuse_map\herbalist_wood.tga ? ? 
 PART @herbalist roof assets\image\model\diffuse_map\herbalist_moss.tga ? ? ? ? assets\image\model\normal_map\herbalist_moss.tga 0 0 1 0 0 2 2.5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
 PART @herbalist rightwall assets\image\model\diffuse_map\herbalist_wood.tga ? ? ? ? assets\image\model\normal_map\herbalist_wood.tga 0 0 1 0 0 2 2.5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
 PART @herbalist backwall assets\image\model\diffuse_map\herbalist_wood.tga ? ? ? ? assets\image\model\normal_map\herbalist_wood.tga 0 0 1 0 0 2 2.5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+MODEL @hunter assets\mesh\hunter.obj 0.4 0.4 0.4 ? 0 2 1 1 1
+PART @hunter roof assets\image\model\diffuse_map\hunter.tga ? ? ? ? assets\image\model\normal_map\hunter.tga 0 0 1 0 0 2 2.5 0.5 0.5 1.5 1 1 1 1 0 0 1 1 1
+PART @hunter walls assets\image\model\diffuse_map\hunter.tga ? ? ? ? assets\image\model\normal_map\hunter.tga 0 0 1 0 0 2 2.5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
 MODEL @lavatory assets\mesh\lavatory.obj 0.5 0.5 0.5 ? 0 2 1 1 1
-PART @lavatory door assets\image\model\diffuse_map\lavatory_wood.tga ? ? ? ? ? 0 0 1 0 0 2 2.5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
-PART @lavatory roof assets\image\model\diffuse_map\lavatory_slate.tga ? ? ? ? ? 0 0 0 0 0 0 0 0.5 0.5 10 1 1 1 1 0 0 1 1 1
 PART @lavatory walls assets\image\model\diffuse_map\lavatory_wood.tga ? ? ? ? ? 0 0 1 0 0 2 2.5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
-MODEL @oven assets\mesh\oven.obj 0.7 0.7 0.7 ? 0 2 1 1 1
-PART @oven ? assets\image\model\diffuse_map\oven.tga ? ? ? ? assets\image\model\normal_map\oven.tga 0 0 1 0 0 8 2.5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+PART @lavatory roof assets\image\model\diffuse_map\lavatory_slate.tga ? ? ? ? ? 0 0 0 0 0 0 0 0.5 0.5 10 1 1 1 1 0 0 1 1 1
+MODEL @miller assets\mesh\miller.obj 0.5 0.5 0.5 ? 0 2 1 1 1
+PART @miller base assets\image\model\diffuse_map\miller.tga ? ? ? ? assets\image\model\normal_map\miller.tga 0 0 1 0 0 2 2.5 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
+PART @miller wicks assets\image\model\diffuse_map\miller.tga ? ? ? ? assets\image\model\normal_map\miller.tga 0 0 1 0 0 2 2.5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
 MODEL @smelter assets\mesh\smelter.obj 0.5 0.5 0.5 ? 0 2 1 1 1
-PART @smelter ? assets\image\model\diffuse_map\smelter.tga assets\image\model\emission_map\smelter.tga ? ? ? assets\image\model\normal_map\smelter.tga 0 0 1 0 0 8 2.5 0.1 0.5 1 1 1 1 1 0 0 1 1 1
-MODEL @smithy assets\mesh\smithy.obj 0.5 0.5 0.5 ? 0 2 1 1 1
-PART @smithy frame assets\image\model\diffuse_map\smithy_bark.tga ? ? ? ? ? 0 0 1 0 0 2 2.5 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
-PART @smithy roof assets\image\model\diffuse_map\smithy_straw.tga ? ? ? ? ? 0 0 1 0 0 2 2.5 0.5 0.5 0.25 1 1 1 2 0 0 1 1 1
-MODEL @smokery assets\mesh\smokery.obj 0.8 0.8 0.8 ? 0 2 1 1 1
-PART @smokery ? assets\image\model\diffuse_map\smokery.tga ? ? ? ? ? 0 0 1 0 0 2 2.5 0.5 0.5 0.75 1 1 1 1 0 0 1 1 1
+PART @smelter ? assets\image\model\diffuse_map\smelter.tga assets\image\model\emission_map\smelter.tga ? ? ? assets\image\model\normal_map\smelter.tga 0 0 1 0 0 8 5 0.1 0.5 1 1 1 1 1 0 0 1 1 1
+MODEL @smoker assets\mesh\smoker.obj 0.8 0.8 0.8 ? 0 2 1 1 1
+PART @smoker ? assets\image\model\diffuse_map\smoker.tga ? ? ? ? ? 0 0 1 0 0 2 2.5 0.5 0.5 0.75 1 1 1 1 0 0 1 1 1
 MODEL @storage assets\mesh\storage.obj 1 1 1 ? 0 2 1 1 1
 PART @storage ? assets\image\model\diffuse_map\storage.tga ? ? ? ? ? 0 0 1 0 0 2 2.5 0.5 0.5 0.75 1 1 1 1 0 0 1 1 1
-MODEL @weaver assets\mesh\weaver.obj 0.8 0.8 0.8 ? 0 2 1 1 1
-PART @weaver base assets\image\model\diffuse_map\weaver_wood.tga ? ? ? ? ? 0 0 1 0 0 2 2.5 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
+MODEL @weaver assets\mesh\weaver.obj 0.9 0.9 0.9 ? 0 2 1 1 1
+PART @weaver walls assets\image\model\diffuse_map\weaver_wood.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
 PART @weaver roof assets\image\model\diffuse_map\weaver_straw.tga ? ? ? ? ? 0 0 1 0 0 2 2.5 0.5 0.5 0.5 1 1 1 2 0 0 1 1 1
-PART @weaver doors assets\image\model\diffuse_map\weaver_planks.tga ? ? ? ? ? 0 0 1 0 0 2 2.5 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 MODEL @well assets\mesh\well.obj 2.25 2.25 2.25 ? 0 2 1 1 1
 PART @well misc assets\image\model\diffuse_map\well_misc.tga ? ? ? ? assets\image\model\normal_map\well_misc.tga 0 0 1 0 0 4 5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
 PART @well pulley assets\image\model\diffuse_map\well_pulley.tga ? ? ? ? assets\image\model\normal_map\well_pulley.tga 0 0 1 0 0 4 5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
 PART @well hole assets\image\model\diffuse_map\well_hole.tga ? ? ? ? assets\image\model\normal_map\well_hole.tga 0 0 1 0 0 8 5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
 PART @well frame assets\image\model\diffuse_map\well_frame.tga ? ? ? ? assets\image\model\normal_map\well_frame.tga 0 0 1 0 0 4 5 0.5 0.5 1 1 1 1 1 0 0 1 1 1
-MODEL @windmill assets\mesh\windmill.obj 0.5 0.5 0.5 ? 0 2 1 1 1
-PART @windmill wicks assets\image\model\diffuse_map\windmill.tga ? ? ? ? assets\image\model\normal_map\windmill.tga 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
-PART @windmill building assets\image\model\diffuse_map\windmill.tga ? ? assets\image\model\reflection_map\windmill.tga ? assets\image\model\normal_map\windmill.tga 0 0 0 1 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
