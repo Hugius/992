@@ -1,1 +1,1 @@
-@test assets\image\water\dudv_map\water.tga assets\image\water\normal_map\wave.tga ? 1 1 1 0.247059 0.247059 0.376471 1024 96 0 0.0005 -0.0005 0 0 1 128 0.5 2 3 0.1 0.07 0 1 0 0 0 0 0
+@test assets\image\water\dudv_map\water.tga assets\image\water\normal_map\water.tga assets\image\water\height_map\water.tga 1 1 1 0.247059 0.247059 0.376471 1024 96 0 0.0005 -0.0005 0 0 1 128 0.5 2 3 0.1 0.07 0 1 0 0 0 0 0
