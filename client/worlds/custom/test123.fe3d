@@ -1,9 +1,9 @@
 SKY day @day assets\image\sky\cube_map\day_right.tga assets\image\sky\cube_map\day_left.tga assets\image\sky\cube_map\day_top.tga assets\image\sky\cube_map\day_bottom.tga assets\image\sky\cube_map\day_back.tga assets\image\sky\cube_map\day_front.tga 0 0 0 1 1 1 1 2 0 1 1 1 1
-TERRAIN island @island assets\image\terrain\diffuse_map\grass.tga ? ? ? ? ? ? ? ? 30 64 1 1 1 1 1 1 1 0 32 1 0 1 1 1 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38 0 1
-WATER test @test assets\image\water\dudv_map\water.tga assets\image\water\normal_map\wave.tga ? 1 1 1 0.247059 0.247059 0.376471 1024 96 0 0.0005 -0.0005 0 0 1 128 0.2 2 3.24999 0 1 1 1 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38 1 0.1 0.07 0 1 0 0 0 0 0 1
-GRAPHICS_AMBIENT_LIGHTING 1 1 1 0.25
-GRAPHICS_DIRECTIONAL_LIGHTING 1024 1024 1024 1 1 1 3
-GRAPHICS_SHADOWS 250 0.5 0 125 125 0 0 0 1 0 1 0 1 16384 0.0005
+TERRAIN island @island assets\image\terrain\diffuse_map\grass.tga ? ? ? ? ? ? ? ? 30 64 2 1 1 1 1 1 1 0 32 1 0 1 1 1 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38 0 1
+WATER test @test assets\image\water\dudv_map\water.tga assets\image\water\normal_map\water.tga assets\image\water\height_map\water.tga 1 1 1 0.247059 0.247059 0.376471 1024 96 0 0.0005 -0.0005 0 0 1 128 0.5 2 3.24999 0 1 1 1 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38 3 0.1 0.07 0 1 0 0 0 0 0 1
+GRAPHICS_AMBIENT_LIGHTING 1 1 1 0.1
+GRAPHICS_DIRECTIONAL_LIGHTING 1024 1024 1024 1 1 1 1
+GRAPHICS_SHADOWS 100 0.5 50 50 50 0 0 0 1 0 1 100 1 4096 0.0001
 GRAPHICS_REFLECTIONS 0 1024
 GRAPHICS_REFRACTIONS 0 1024
-GRAPHICS_BLOOM 1 1 5 5
+GRAPHICS_BLOOM 1 1.1 2 2
