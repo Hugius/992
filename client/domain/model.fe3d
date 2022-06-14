@@ -5,8 +5,6 @@ PART @bakery base assets\image\model\diffuse_map\bakery_base.tga ? ? ? ? assets\
 PART @bakery roof assets\image\model\diffuse_map\bakery_roof.tga ? ? ? ? assets\image\model\normal_map\bakery_roof.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 PART @bakery frame assets\image\model\diffuse_map\bakery_frame.tga ? ? ? ? assets\image\model\normal_map\bakery_frame.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 PART @bakery foundation assets\image\model\diffuse_map\bakery_foundation.tga ? ? ? ? assets\image\model\normal_map\bakery_foundation.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
-MODEL @boat assets\mesh\boat.obj 0.75 1 1 ? 0 2 1 1 1
-PART @boat ? assets\image\model\diffuse_map\boat.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 1 1 1 1 1 0 0 1 1 1
 MODEL @box assets\mesh\box.obj 1 1 1 ? 0 2 1 1 1
 PART @box ? ? ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
 MODEL @chapel assets\mesh\chapel.obj 0.4 0.4 0.4 ? 0 2 1 1 1
@@ -28,6 +26,9 @@ PART @church 15 assets\image\model\diffuse_map\church_15.tga ? ? ? ? ? 0 0 1 1 0
 PART @church 12 assets\image\model\diffuse_map\church_12.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 PART @church 11 assets\image\model\diffuse_map\church_11.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 PART @church 8 assets\image\model\diffuse_map\church_8.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
+MODEL @foundry assets\mesh\foundry.obj 0.5 0.5 0.5 ? 0 2 1 1 1
+PART @foundry platform assets\image\model\diffuse_map\bakery_base.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
+PART @foundry base assets\image\model\diffuse_map\foundry_base.tga assets\image\model\emission_map\foundry_base.tga ? ? ? assets\image\model\normal_map\foundry_base.tga 0 0 1 0 0 16 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 MODEL @grave assets\mesh\grave.obj 0.75 0.75 0.75 ? 0 2 1 1 1
 PART @grave ? assets\image\model\diffuse_map\grave.tga ? ? ? ? assets\image\model\normal_map\grave.tga 0 0 1 1 0 2 10 0.25 0.5 0.3 1 1 1 1 0 0 1 1 1
 MODEL @house assets\mesh\house.obj 3 3 3 ? 0 2 1 1 1
@@ -43,12 +44,13 @@ PART @lavatory ? assets\image\model\diffuse_map\lavatory.tga ? ? ? ? assets\imag
 MODEL @mine assets\mesh\mine.obj 0.7 0.7 0.7 ? 0 2 1 1 1
 PART @mine rocks assets\image\model\diffuse_map\bakery_foundation.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
 PART @mine entrance assets\image\model\diffuse_map\bakery_base.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+MODEL @orchard assets\mesh\orchard.obj 1 1 1 ? 0 2 1 1 1
+PART @orchard ? assets\image\model\diffuse_map\bakery_base.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+MODEL @rowboat assets\mesh\rowboat.obj 0.75 1 1 ? 0 2 1 1 1
+PART @rowboat ? assets\image\model\diffuse_map\rowboat.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 1 1 1 1 1 0 0 1 1 1
 MODEL @sawmill assets\mesh\sawmill.obj 0.5 0.5 0.5 ? 0 2 1 1 1
-PART @sawmill base ? ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
-PART @sawmill wheel ? ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
-MODEL @smelter assets\mesh\smelter.obj 0.5 0.5 0.5 ? 0 2 1 1 1
-PART @smelter base assets\image\model\diffuse_map\smelter_base.tga assets\image\model\emission_map\smelter.tga ? ? ? assets\image\model\normal_map\smelter_base.tga 0 0 1 0 0 16 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
-PART @smelter platform assets\image\model\diffuse_map\bakery_base.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
+PART @sawmill base assets\image\model\diffuse_map\bakery_base.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+PART @sawmill wheel assets\image\model\diffuse_map\bakery_roof.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
 MODEL @smithy assets\mesh\smithy.obj 0.5 0.5 0.5 ? 0 2 1 1 1
 PART @smithy frame assets\image\model\diffuse_map\smithy_frame.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.3 1 1 1 1 0 0 1 1 1
 PART @smithy roof assets\image\model\diffuse_map\smithy_roof.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.3 1 1 1 2 0 0 1 1 1
@@ -70,7 +72,7 @@ MODEL @well assets\mesh\well.obj 2.25 2.25 2.25 ? 0 2 1 1 1
 PART @well pulley assets\image\model\diffuse_map\well_pulley.tga ? ? ? ? assets\image\model\normal_map\well_pulley.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 PART @well misc assets\image\model\diffuse_map\well_misc.tga ? ? ? ? assets\image\model\normal_map\well_misc.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 PART @well frame assets\image\model\diffuse_map\well_frame.tga ? ? ? ? assets\image\model\normal_map\well_frame.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
-PART @well hole assets\image\model\diffuse_map\well_hole.tga ? ? ? ? assets\image\model\normal_map\well_hole.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
+PART @well hole assets\image\model\diffuse_map\well_hole.tga ? ? ? ? assets\image\model\normal_map\well_hole.tga 0 0 1 0 0 16 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 MODEL @windmill assets\mesh\windmill.obj 1.25 1.25 1.25 ? 0 2 1 1 1
 PART @windmill base assets\image\model\diffuse_map\windmill.tga ? ? ? ? assets\image\model\normal_map\windmill.tga 0 0 1 0 0 2 10 0.5 0.5 1 1 1 1 1 0 0 1 1 1
 PART @windmill wicks assets\image\model\diffuse_map\windmill.tga ? ? ? ? assets\image\model\normal_map\windmill.tga 0 0 1 0 0 16 10 0.5 0.5 1 1 1 1 1 0 0 1 1 1
