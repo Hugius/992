@@ -26,7 +26,7 @@ PART @church 15 assets\image\model\diffuse_map\church_15.tga ? ? ? ? ? 0 0 1 1 0
 PART @church 12 assets\image\model\diffuse_map\church_12.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 PART @church 11 assets\image\model\diffuse_map\church_11.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 PART @church 8 assets\image\model\diffuse_map\church_8.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
-MODEL @farmland assets\mesh\farmland.obj 0.5 0.5 0.5 ? 0 2 1 1 1
+MODEL @farmland assets\mesh\farmland.obj 1 1 1 ? 0 2 1 1 1
 PART @farmland soil assets\image\model\diffuse_map\storage_doorhandle.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 8 0 0 1 1 1
 PART @farmland logs assets\image\model\diffuse_map\farmland_logs.tga ? ? ? ? assets\image\model\normal_map\farmland_logs.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1
 MODEL @foundry assets\mesh\foundry.obj 0.5 0.5 0.5 ? 0 2 1 1 1
@@ -73,6 +73,12 @@ PART @tavern base assets\image\model\diffuse_map\tavern_base.tga ? ? ? ? assets\
 PART @tavern frame assets\image\model\diffuse_map\tavern_frame.tga ? ? ? ? assets\image\model\normal_map\tavern_frame.tga 0 0 1 0 0 2 10 0.5 0.5 0.4 1 1 1 1 0 0 1 1 1
 MODEL @townhall assets\mesh\townhall.obj 0.4 0.4 0.4 ? 0 2 1 1 1
 PART @townhall ? assets\image\model\diffuse_map\townhall.tga ? ? ? ? assets\image\model\normal_map\townhall.tga 0 0 1 0 0 2 10 0.5 0.5 0.1 1 1 1 1 0 0 1 1 1
+MODEL @tree2 assets\mesh\tree2.obj 0.5 0.5 0.5 ? 0 2 1 1 1
+PART @tree2 trunk assets\image\model\diffuse_map\tree2_trunk.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+PART @tree2 leaves assets\image\model\diffuse_map\tree2_leaves.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 0.1
+MODEL @tree3 assets\mesh\tree3.obj 2 2 2 ? 0 2 1 1 1
+PART @tree3 leaves assets\image\model\diffuse_map\tree3_leaves.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 0.1
+PART @tree3 trunk assets\image\model\diffuse_map\tree3_trunk.tga ? ? ? ? assets\image\model\normal_map\tree3_trunk.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 MODEL @well assets\mesh\well.obj 2.25 2.25 2.25 ? 0 2 1 1 1
 PART @well pulley assets\image\model\diffuse_map\well_pulley.tga ? ? ? ? assets\image\model\normal_map\well_pulley.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 PART @well misc assets\image\model\diffuse_map\well_misc.tga ? ? ? ? assets\image\model\normal_map\well_misc.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
