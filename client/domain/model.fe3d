@@ -33,7 +33,7 @@ MODEL @foundry assets\mesh\foundry.obj 0.5 0.5 0.5 ? 0 2 1 1 1
 PART @foundry platform assets\image\model\diffuse_map\bakery_base.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 PART @foundry base assets\image\model\diffuse_map\foundry_base.tga assets\image\model\emission_map\foundry_base.tga ? ? ? assets\image\model\normal_map\foundry_base.tga 0 0 1 0 0 16 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 MODEL @grave assets\mesh\grave.obj 0.75 0.75 0.75 ? 0 2 1 1 1
-PART @grave ? assets\image\model\diffuse_map\grave.tga ? ? ? ? assets\image\model\normal_map\grave.tga 0 0 1 1 0 2 10 0.25 0.5 0.3 1 1 1 1 0 0 1 1 1
+PART @grave ? assets\image\model\diffuse_map\grave.tga ? ? ? ? assets\image\model\normal_map\grave.tga 0 0 1 0 0 2 10 0.5 0.5 0.3 1 1 1 1 0 0 1 1 1
 MODEL @house assets\mesh\house.obj 3 3 3 ? 0 2 1 1 1
 PART @house windows assets\image\model\diffuse_map\house_windows.tga ? ? ? ? ? 0 0 1 0 0 16 10 0.5 0.5 1 1 1 1 1 0 0 1 1 1
 PART @house planes assets\image\model\diffuse_map\house_planes.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
