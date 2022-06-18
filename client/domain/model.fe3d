@@ -30,7 +30,7 @@ MODEL @farmland assets\mesh\farmland.obj 1 1 1 ? 0 2 1 1 1
 PART @farmland soil assets\image\model\diffuse_map\storage_doorhandle.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 8 0 0 1 1 1
 PART @farmland logs assets\image\model\diffuse_map\farmland_logs.tga ? ? ? ? assets\image\model\normal_map\farmland_logs.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1
 MODEL @foundry assets\mesh\foundry.obj 0.5 0.5 0.5 ? 0 2 1 1 1
-PART @foundry platform assets\image\model\diffuse_map\bakery_base.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
+PART @foundry platform assets\image\model\diffuse_map\foundry_platform.tga ? ? ? ? assets\image\model\normal_map\foundry_platform.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1
 PART @foundry base assets\image\model\diffuse_map\foundry_base.tga assets\image\model\emission_map\foundry_base.tga ? ? ? assets\image\model\normal_map\foundry_base.tga 0 0 1 0 0 16 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 MODEL @grave assets\mesh\grave.obj 0.75 0.75 0.75 ? 0 2 1 1 1
 PART @grave ? assets\image\model\diffuse_map\grave.tga ? ? ? ? assets\image\model\normal_map\grave.tga 0 0 1 0 0 2 10 0.5 0.5 0.3 1 1 1 1 0 0 1 1 1
@@ -45,8 +45,8 @@ PART @house roof assets\image\model\diffuse_map\house_roof.tga ? ? ? ? ? 0 0 1 0
 MODEL @lavatory assets\mesh\lavatory.obj 0.55 0.55 0.55 ? 0 2 1 1 1
 PART @lavatory ? assets\image\model\diffuse_map\lavatory.tga ? ? ? ? assets\image\model\normal_map\lavatory.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 MODEL @mine assets\mesh\mine.obj 0.7 0.7 0.7 ? 0 2 1 1 1
-PART @mine rocks assets\image\model\diffuse_map\bakery_foundation.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
-PART @mine entrance assets\image\model\diffuse_map\bakery_base.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+PART @mine rocks assets\image\model\diffuse_map\mine_rocks.tga ? ? ? ? assets\image\model\normal_map\mine_rocks.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
+PART @mine entrance assets\image\model\diffuse_map\mine_entrance.tga ? ? ? ? assets\image\model\normal_map\mine_entrance.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 MODEL @orchard assets\mesh\orchard.obj 2 1.25 2 ? 0 2 1 1 1
 PART @orchard ? assets\image\model\diffuse_map\bakery_base.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
 MODEL @pen assets\mesh\pen.obj 1 0.5 1 ? 0 2 1 1 1
@@ -54,8 +54,8 @@ PART @pen ? assets\image\model\diffuse_map\pen.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0
 MODEL @rowboat assets\mesh\rowboat.obj 0.75 1 1 ? 0 2 1 1 1
 PART @rowboat ? assets\image\model\diffuse_map\rowboat.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 1 1 1 1 1 0 0 1 1 1
 MODEL @sawmill assets\mesh\sawmill.obj 0.5 0.5 0.5 ? 0 2 1 1 1
-PART @sawmill base assets\image\model\diffuse_map\bakery_base.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
-PART @sawmill wheel assets\image\model\diffuse_map\bakery_roof.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+PART @sawmill wheel assets\image\model\diffuse_map\sawmill_wheel.tga ? ? ? ? assets\image\model\normal_map\sawmill_wheel.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
+PART @sawmill base assets\image\model\diffuse_map\sawmill_base.tga ? ? ? ? assets\image\model\normal_map\sawmill_base.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 MODEL @smithy assets\mesh\smithy.obj 0.5 0.5 0.5 ? 0 2 1 1 1
 PART @smithy frame assets\image\model\diffuse_map\smithy_frame.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.3 1 1 1 1 0 0 1 1 1
 PART @smithy roof assets\image\model\diffuse_map\smithy_roof.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.3 1 1 1 2 0 0 1 1 1
