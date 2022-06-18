@@ -1,11 +1,12 @@
-7 25
+4 16
 META script_type_initialize
 META script_state_entry
-INT kip = 1000000002
-fe3d:print(kip)
+
+EXECUTE constants
+EXECUTE mutables
+
 fe3d:world_load_editor("island")
 fe3d:camera_set_position(0.0, 20.0, 0.0)
-fe3d:camera_set_yaw(90.0)
 fe3d:camera_set_pitch(-70.0)
 fe3d:graphics_set_anti_aliasing_enabled(<true>)
 fe3d:graphics_set_anisotropic_filtering_quality(16)
