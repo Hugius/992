@@ -46,6 +46,8 @@ PART @house chimney assets\image\model\diffuse_map\house_chimney.tga ? ? ? ? ? 0
 PART @house roof assets\image\model\diffuse_map\house_roof.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 2 0 0 1 1 1
 MODEL @lavatory assets\mesh\lavatory.obj 0.55 0.55 0.55 ? 0 2 1 1 1
 PART @lavatory ? assets\image\model\diffuse_map\lavatory.tga ? ? ? ? assets\image\model\normal_map\lavatory.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
+MODEL @lod assets\mesh\lod.obj 1 1 1 ? 0 2 0 0 0
+PART @lod ? ? ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 1 0 1 1 1
 MODEL @mine assets\mesh\mine.obj 0.7 0.7 0.7 ? 0 2 1 1 1
 PART @mine rocks assets\image\model\diffuse_map\mine_rocks.tga ? ? ? ? assets\image\model\normal_map\mine_rocks.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 PART @mine entrance assets\image\model\diffuse_map\mine_entrance.tga ? ? ? ? assets\image\model\normal_map\mine_entrance.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
@@ -75,7 +77,7 @@ PART @tavern base assets\image\model\diffuse_map\tavern_base.tga ? ? ? ? assets\
 PART @tavern frame assets\image\model\diffuse_map\tavern_frame.tga ? ? ? ? assets\image\model\normal_map\tavern_frame.tga 0 0 1 0 0 2 10 0.5 0.5 0.4 1 1 1 1 0 0 1 1 1
 MODEL @townhall assets\mesh\townhall.obj 0.4 0.4 0.4 ? 0 2 1 1 1
 PART @townhall ? assets\image\model\diffuse_map\townhall.tga ? ? ? ? assets\image\model\normal_map\townhall.tga 0 0 1 0 0 2 10 0.5 0.5 0.1 1 1 1 1 0 0 1 1 1
-MODEL @tree1 assets\mesh\tree1.obj 5 5 5 ? 0 2 1 1 1
+MODEL @tree1 assets\mesh\tree1.obj 5 5 5 @lod 60 2 1 1 1
 PART @tree1 trunk assets\image\model\diffuse_map\tree1_trunk.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.1 1 1 1 2 0 0 1 1 1
 PART @tree1 leaves assets\image\model\diffuse_map\tree1_leaves.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1.5 1 1 1 1 0 0 1 1 0.1
 AABB @tree1 model@@tree1@aabb 0 0 0 1 1.5 1
