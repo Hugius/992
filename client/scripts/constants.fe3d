@@ -1,6 +1,11 @@
-3 31
+8 35
 META script_type_initialize
 META script_state_wait
 
 GLOB CONST DEC _yawSpeed = 0.15
 GLOB CONST DEC _positionSpeed = 0.015
+GLOB CONST DEC _cameraStartX = 60.0
+GLOB CONST DEC _cameraStartY = 17.5
+GLOB CONST DEC _cameraStartZ = 5.0
+GLOB CONST DEC _cameraStartYaw = 200.0
+GLOB CONST DEC _cameraStartPitch = -70.0
