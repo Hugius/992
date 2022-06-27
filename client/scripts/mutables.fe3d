@@ -1,11 +1,27 @@
-38 20
+7 20
 META script_type_initialize
 META script_state_wait
 
 GLOB DEC _yawAcc = 0.0
 GLOB DEC _xPositionAcc = 0.0
 GLOB DEC _zPositionAcc = 0.0
-GLOB INT _totalPeople = 0
+GLOB INT _totalDays = 1
+GLOB INT _totalAlive = 50
+GLOB INT _totalSick = 3
+GLOB INT _totalDead = 10
+GLOB INT _totalBuilds = 5
+GLOB INT _totalWater = 0
+GLOB INT _totalAle = 0
+GLOB INT _totalMilk = 0
+GLOB INT _totalSmokedMeat = 0
+GLOB INT _totalSmokedFish = 0
+GLOB INT _totalBread = 0
+GLOB INT _totalVegetables = 0
+GLOB INT _totalEggs = 0
+GLOB INT _totalRawFish = 0
+GLOB INT _totalRawMeat = 0
+GLOB INT _totalHoney = 0
+GLOB INT _totalFruit = 0
 GLOB INT _totalLumber = 0
 GLOB INT _totalStone = 0
 GLOB INT _totalGrain = 0
@@ -26,15 +42,3 @@ GLOB INT _totalFeathers = 0
 GLOB INT _totalMushrooms = 0
 GLOB INT _totalGrainSeeds = 0
 GLOB INT _totalVegetableSeeds = 0
-GLOB INT _totalWater = 0
-GLOB INT _totalAle = 0
-GLOB INT _totalMilk = 0
-GLOB INT _totalSmokedMeat = 0
-GLOB INT _totalSmokedFish = 0
-GLOB INT _totalBread = 0
-GLOB INT _totalVegetables = 0
-GLOB INT _totalEggs = 0
-GLOB INT _totalRawFish = 0
-GLOB INT _totalRawMeat = 0
-GLOB INT _totalHoney = 0
-GLOB INT _totalFruit = 0

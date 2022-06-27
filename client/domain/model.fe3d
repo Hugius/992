@@ -5,8 +5,6 @@ PART @bakery base assets\image\model\diffuse_map\bakery_base.tga ? ? ? ? assets\
 PART @bakery roof assets\image\model\diffuse_map\bakery_roof.tga ? ? ? ? assets\image\model\normal_map\bakery_roof.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 PART @bakery frame assets\image\model\diffuse_map\bakery_frame.tga ? ? ? ? assets\image\model\normal_map\bakery_frame.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 PART @bakery foundation assets\image\model\diffuse_map\bakery_foundation.tga ? ? ? ? assets\image\model\normal_map\bakery_foundation.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
-MODEL @box assets\mesh\box.obj 1 1 1 ? 0 2 1 1 1
-PART @box ? ? ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
 MODEL @bridge assets\mesh\bridge.obj 5 5 5 ? 0 2 1 1 1
 PART @bridge ? assets\image\model\diffuse_map\bridge.tga ? ? ? ? assets\image\model\normal_map\bridge.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 MODEL @chapel assets\mesh\chapel.obj 0.4 0.4 0.4 ? 0 2 1 1 1

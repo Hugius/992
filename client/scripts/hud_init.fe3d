@@ -1,0 +1,18 @@
+8 61
+META script_type_initialize
+META script_state_wait
+
+fe3d:quad2d_place("vignette", "vignette", 0.0, 0.0, 2.0, 2.0)
+fe3d:quad2d_place("food", "paper1", -0.875, 0.625, 0.25, 0.75)
+fe3d:quad2d_place("info", "scroll", -0.875, 0.0, 0.2, 0.5)
+fe3d:quad2d_place("resources", "paper2", -0.875, -0.625, 0.25, 0.75)
+
+fe3d:text2d_place("food", "food", -0.875, 0.925, 0.12, 0.075)
+
+fe3d:text2d_place("days", "text", -0.875, 0.125, 0.15, 0.075)
+fe3d:text2d_place("alive", "text", -0.875, 0.0625, 0.15, 0.075)
+fe3d:text2d_place("sick", "text", -0.875, 0.0, 0.15, 0.075)
+fe3d:text2d_place("dead", "text", -0.875, -0.0625, 0.15, 0.075)
+fe3d:text2d_place("builds", "text", -0.875, -0.125, 0.15, 0.075)
+
+fe3d:text2d_place("resources", "resources", -0.875, -0.325, 0.195, 0.075)

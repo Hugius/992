@@ -1,0 +1,4 @@
+@paper1 assets\image\quad2d\diffuse_map\paper.tga 1 1 1 1 1 0 0 1
+@paper2 assets\image\quad2d\diffuse_map\paper.tga 1 1 1 1 1 0 1 1
+@scroll assets\image\quad2d\diffuse_map\scroll.tga 1 1 1 1 1 0 0 1
+@vignette assets\image\quad2d\diffuse_map\vignette.tga 1 1 1 0.25 1 0 0 1

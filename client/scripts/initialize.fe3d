@@ -1,9 +1,10 @@
-9 39
+5 16
 META script_type_initialize
 META script_state_entry
 
 EXECUTE constants
 EXECUTE mutables
+EXECUTE hud_init
 
 fe3d:world_load_editor("island")
 fe3d:camera_set_position(_cameraStartX, _cameraStartY, _cameraStartZ)

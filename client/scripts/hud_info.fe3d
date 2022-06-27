@@ -1,0 +1,48 @@
+41 0
+META script_type_update
+META script_state_wait
+
+CAST _totalDays STR
+CAST _totalAlive STR
+CAST _totalSick STR
+CAST _totalDead STR
+CAST _totalBuilds STR
+
+INT daysDigitCount = misc:string_size(_totalDays)
+INT aliveDigitCount = misc:string_size(_totalAlive)
+INT sickDigitCount = misc:string_size(_totalSick)
+INT deadDigitCount = misc:string_size(_totalDead)
+INT buildsDigitCount = misc:string_size(_totalBuilds)
+
+IF daysDigitCount IS 1:
+    STR daysText = misc:string_concat("Day 00", _totalDays)
+IF daysDigitCount IS 2:
+    STR daysText = misc:string_concat("Day 0", _totalDays)
+IF aliveDigitCount IS 1:
+    STR aliveText = misc:string_concat("Alive:  00", _totalAlive)
+IF aliveDigitCount IS 2:
+    STR aliveText = misc:string_concat("Alive:  0", _totalAlive)
+IF sickDigitCount IS 1:
+    STR sickText = misc:string_concat("Sick:   00", _totalSick)
+IF sickDigitCount IS 2:
+    STR sickText = misc:string_concat("Sick:   0", _totalSick)
+IF deadDigitCount IS 1:
+    STR deadText = misc:string_concat("Dead:   00", _totalDead)
+IF deadDigitCount IS 2:
+    STR deadText = misc:string_concat("Dead:   0", _totalDead)
+IF buildsDigitCount IS 1:
+    STR buildsText = misc:string_concat("Builds: 00", _totalBuilds)
+IF buildsDigitCount IS 2:
+    STR buildsText = misc:string_concat("Builds: 0", _totalBuilds)
+
+fe3d:text2d_set_content("days", daysText)
+fe3d:text2d_set_content("alive", aliveText)
+fe3d:text2d_set_content("sick", sickText)
+fe3d:text2d_set_content("dead", deadText)
+fe3d:text2d_set_content("builds", buildsText)
+
+CAST _totalDays INT
+CAST _totalAlive INT
+CAST _totalSick INT
+CAST _totalDead INT
+CAST _totalBuilds INT

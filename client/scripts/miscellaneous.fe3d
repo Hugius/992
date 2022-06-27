@@ -1,0 +1,5 @@
+3 38
+META script_type_update
+META script_state_wait
+
+fe3d:sky_rotate("day", 0.0, 0.01, 0.0)

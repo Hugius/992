@@ -1,1 +1,3 @@
-@test assets\image\text2d\font_map\font.tga 1 1 1 1 0 0 1
+@food assets\image\text2d\font_map\font.tga 1 1 1 1 0 0 0 -?Food?-
+@resources assets\image\text2d\font_map\font.tga 1 1 1 1 0 0 0 -?Resources?-
+@text assets\image\text2d\font_map\font.tga 1 1 1 1 0 0 0 Text123
