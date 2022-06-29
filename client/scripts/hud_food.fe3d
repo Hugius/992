@@ -1,7 +1,29 @@
-5 0
+14 5
 META script_type_update
 META script_state_wait
 
+STR waterText = misc:string_zeroed_integer(_totalWater, 3)
+STR aleText = misc:string_zeroed_integer(_totalAle, 3)
+STR milkText = misc:string_zeroed_integer(_totalMilk, 3)
+STR smokedMeatText = misc:string_zeroed_integer(_totalSmokedMeat, 3)
+STR smokedFishText = misc:string_zeroed_integer(_totalSmokedFish, 3)
+STR breadText = misc:string_zeroed_integer(_totalBread, 3)
+STR vegetablesText = misc:string_zeroed_integer(_totalVegetables, 3)
+STR eggsText = misc:string_zeroed_integer(_totalEggs, 3)
+STR rawMeatText = misc:string_zeroed_integer(_totalRawMeat, 3)
+STR rawFishText = misc:string_zeroed_integer(_totalRawFish, 3)
+STR honeyText = misc:string_zeroed_integer(_totalHoney, 3)
+STR fruitText = misc:string_zeroed_integer(_totalFruit, 3)
 
-
-
+fe3d:text2d_set_content("water", waterText)
+fe3d:text2d_set_content("ale", aleText)
+fe3d:text2d_set_content("milk", milkText)
+fe3d:text2d_set_content("smoked_meat", smokedMeatText)
+fe3d:text2d_set_content("smoked_fish", smokedFishText)
+fe3d:text2d_set_content("bread", breadText)
+fe3d:text2d_set_content("vegetables", vegetablesText)
+fe3d:text2d_set_content("eggs", eggsText)
+fe3d:text2d_set_content("raw_meat", rawMeatText)
+fe3d:text2d_set_content("raw_fish", rawFishText)
+fe3d:text2d_set_content("honey", honeyText)
+fe3d:text2d_set_content("fruit", fruitText)

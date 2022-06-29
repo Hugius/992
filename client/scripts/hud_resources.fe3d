@@ -1,7 +1,45 @@
-1 13
+38 36
 META script_type_update
 META script_state_wait
 
+STR lumberText = misc:string_zeroed_integer(_totalLumber, 3)
+STR stoneText = misc:string_zeroed_integer(_totalStone, 3)
+STR grainText = misc:string_zeroed_integer(_totalGrain, 3)
+STR flourText = misc:string_zeroed_integer(_totalFlour, 3)
+STR planksText = misc:string_zeroed_integer(_totalPlanks, 3)
+STR firewoodText = misc:string_zeroed_integer(_totalFirewood, 3)
+STR manureText = misc:string_zeroed_integer(_totalManure, 3)
+STR oreText = misc:string_zeroed_integer(_totalOre, 3)
+STR ironText = misc:string_zeroed_integer(_totalIron, 3)
+STR hidesText = misc:string_zeroed_integer(_totalHides, 3)
+STR clothesText = misc:string_zeroed_integer(_totalClothes, 3)
+STR woolText = misc:string_zeroed_integer(_totalWool, 3)
+STR leatherText = misc:string_zeroed_integer(_totalLeather, 3)
+STR clayText = misc:string_zeroed_integer(_totalClay, 3)
+STR strawText = misc:string_zeroed_integer(_totalStraw, 3)
+STR medicineText = misc:string_zeroed_integer(_totalMedicine, 3)
+STR feathersText = misc:string_zeroed_integer(_totalFeathers, 3)
+STR mushroomsText = misc:string_zeroed_integer(_totalMushrooms, 3)
+STR grainSeedsText = misc:string_zeroed_integer(_totalGrainSeeds, 3)
+STR vegetableSeedsText = misc:string_zeroed_integer(_totalVegetableSeeds, 3)
 
-
-
+fe3d:text2d_set_content("lumber", lumberText)
+fe3d:text2d_set_content("stone", stoneText)
+fe3d:text2d_set_content("grain", grainText)
+fe3d:text2d_set_content("flour", flourText)
+fe3d:text2d_set_content("planks", planksText)
+fe3d:text2d_set_content("firewood", firewoodText)
+fe3d:text2d_set_content("manure", manureText)
+fe3d:text2d_set_content("ore", oreText)
+fe3d:text2d_set_content("iron", ironText)
+fe3d:text2d_set_content("hides", hidesText)
+fe3d:text2d_set_content("clothes", clothesText)
+fe3d:text2d_set_content("wool", woolText)
+fe3d:text2d_set_content("leather", feathersText)
+fe3d:text2d_set_content("clay", clayText)
+fe3d:text2d_set_content("straw", strawText)
+fe3d:text2d_set_content("medicine", medicineText)
+fe3d:text2d_set_content("feathers", feathersText)
+fe3d:text2d_set_content("mushrooms", mushroomsText)
+fe3d:text2d_set_content("grain_seeds", grainSeedsText)
+fe3d:text2d_set_content("vegetable_seeds", vegetableSeedsText)

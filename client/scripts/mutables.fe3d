@@ -1,4 +1,4 @@
-7 20
+21 24
 META script_type_initialize
 META script_state_wait
 
@@ -6,10 +6,9 @@ GLOB DEC _yawAcc = 0.0
 GLOB DEC _xPositionAcc = 0.0
 GLOB DEC _zPositionAcc = 0.0
 GLOB INT _totalDays = 1
-GLOB INT _totalAlive = 50
-GLOB INT _totalSick = 3
-GLOB INT _totalDead = 10
-GLOB INT _totalBuilds = 5
+GLOB INT _totalAlive = 0
+GLOB INT _totalSick = 0
+GLOB INT _totalDead = 0
 GLOB INT _totalWater = 0
 GLOB INT _totalAle = 0
 GLOB INT _totalMilk = 0
