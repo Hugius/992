@@ -1,12 +1,14 @@
-5 16
+6 16
 META script_type_initialize
 META script_state_entry
 
 EXECUTE constants
 EXECUTE mutables
 EXECUTE hud_init
+EXECUTE gui_init
 
 fe3d:world_load_editor("island")
+fe3d:collision_set_camera_aabb_response_enabled(<true>, <true>, <true>)
 fe3d:camera_set_position(_cameraStartX, _cameraStartY, _cameraStartZ)
 fe3d:camera_set_yaw(_cameraStartYaw)
 fe3d:camera_set_pitch(_cameraStartPitch)

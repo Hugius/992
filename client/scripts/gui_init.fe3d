@@ -1,0 +1,5 @@
+3 61
+META script_type_initialize
+META script_state_wait
+
+fe3d:quad2d_place("build", "build", 0.95, 0.9125, 0.1, 0.175)

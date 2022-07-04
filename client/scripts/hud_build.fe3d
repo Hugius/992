@@ -1,0 +1,5 @@
+3 50
+META script_type_update
+META script_state_wait
+
+fe3d:quad2d_set_visible("build_price", _buildMode)

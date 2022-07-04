@@ -1,0 +1,16 @@
+14 36
+META script_type_update
+META script_state_wait
+
+BOL clicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
+BOL buildHovered = fe3d:quad2d_is_hovered("build")
+
+fe3d:quad2d_set_lightness("build", 0.75)
+
+IF buildHovered IS <true>:
+    fe3d:quad2d_set_lightness("build", 1.0)
+    IF clicked IS <true>:
+        IF _buildMode IS <true>:
+            EDIT _buildMode = <false>
+        ELSE:
+            EDIT _buildMode = <true>

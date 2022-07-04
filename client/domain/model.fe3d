@@ -1,16 +1,12 @@
 MODEL @apiary assets\mesh\apiary.obj 3 3 3 ? 0 2 1 1 1
 PART @apiary ? assets\image\model\diffuse_map\apiary.tga ? ? ? ? assets\image\model\normal_map\apiary.tga 0 0 1 0 0 2 10 0.5 0.5 0.2 1 1 1 1 0 0 1 1 1
 MODEL @bakery assets\mesh\bakery.obj 0.4 0.4 0.4 ? 0 2 1 1 1
-PART @bakery base assets\image\model\diffuse_map\bakery_base.tga ? ? ? ? assets\image\model\normal_map\bakery_base.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
-PART @bakery roof assets\image\model\diffuse_map\bakery_roof.tga ? ? ? ? assets\image\model\normal_map\bakery_roof.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
-PART @bakery frame assets\image\model\diffuse_map\bakery_frame.tga ? ? ? ? assets\image\model\normal_map\bakery_frame.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
+PART @bakery base assets\image\model\diffuse_map\bakery_base.tga ? ? ? ? assets\image\model\normal_map\bakery_base.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1
+PART @bakery roof assets\image\model\diffuse_map\bakery_roof.tga ? ? ? ? assets\image\model\normal_map\bakery_roof.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1
+PART @bakery frame assets\image\model\diffuse_map\bakery_frame.tga ? ? ? ? assets\image\model\normal_map\bakery_frame.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1
 PART @bakery foundation assets\image\model\diffuse_map\bakery_foundation.tga ? ? ? ? assets\image\model\normal_map\bakery_foundation.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 MODEL @bridge assets\mesh\bridge.obj 5 5 5 ? 0 2 1 1 1
 PART @bridge ? assets\image\model\diffuse_map\bridge.tga ? ? ? ? assets\image\model\normal_map\bridge.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
-MODEL @chapel assets\mesh\chapel.obj 0.4 0.4 0.4 ? 0 2 1 1 1
-PART @chapel base assets\image\model\diffuse_map\chapel_base.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.2 1 1 1 1 0 0 1 1 1
-PART @chapel misc assets\image\model\diffuse_map\chapel_misc.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.2 1 1 1 1 0 0 1 1 1
-PART @chapel roof assets\image\model\diffuse_map\chapel_roof.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.2 1 1 1 1 0 0 1 1 1
 MODEL @church assets\mesh\church.obj 0.9 0.9 0.9 ? 0 2 1 1 1
 PART @church 6 assets\image\model\diffuse_map\church_6.tga ? ? ? ? ? 0 0 1 0 0 16 10 0.5 0.5 1 1 1 1 1 0 0 1 1 1
 PART @church 13 assets\image\model\diffuse_map\church_13.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
@@ -73,12 +69,10 @@ PART @storage roofends assets\image\model\diffuse_map\storage_roofends.tga ? ? ?
 MODEL @tavern assets\mesh\tavern.obj 0.35 0.35 0.35 ? 0 2 1 1 1
 PART @tavern base assets\image\model\diffuse_map\tavern_base.tga ? ? ? ? assets\image\model\normal_map\tavern_base.tga 0 0 1 0 0 2 10 0.5 0.5 0.4 1 1 1 1 0 0 1 1 1
 PART @tavern frame assets\image\model\diffuse_map\tavern_frame.tga ? ? ? ? assets\image\model\normal_map\tavern_frame.tga 0 0 1 0 0 2 10 0.5 0.5 0.4 1 1 1 1 0 0 1 1 1
-MODEL @townhall assets\mesh\townhall.obj 0.4 0.4 0.4 ? 0 2 1 1 1
-PART @townhall ? assets\image\model\diffuse_map\townhall.tga ? ? ? ? assets\image\model\normal_map\townhall.tga 0 0 1 0 0 2 10 0.5 0.5 0.1 1 1 1 1 0 0 1 1 1
-MODEL @tree1 assets\mesh\tree1.obj 5 5 5 @lod 60 2 1 1 1
+MODEL @tree1 assets\mesh\tree1.obj 4 4 4 @lod 60 2 1 1 1
 PART @tree1 trunk assets\image\model\diffuse_map\tree1_trunk.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.1 1 1 1 2 0 0 1 1 1
 PART @tree1 leaves assets\image\model\diffuse_map\tree1_leaves.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1.5 1 1 1 1 0 0 1 1 0.1
-AABB @tree1 model@@tree1@aabb 0 0 0 1 1.5 1
+AABB @tree1 model@@tree1@aabb 0 0 0 1.7 1.7 1.7
 MODEL @tree2 assets\mesh\tree2.obj 0.75 0.5 0.75 ? 0 2 1 1 1
 PART @tree2 leaves assets\image\model\diffuse_map\tree2_leaves.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.1 1 1 1 1 0 0 1 1 0.1
 PART @tree2 trunk assets\image\model\diffuse_map\tree2_trunk.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.1 1 1 1 1 0 0 1 1 1
