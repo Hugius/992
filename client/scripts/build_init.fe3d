@@ -1,0 +1,13 @@
+9 22
+META script_type_initialize
+META script_state_wait
+
+INT maxIndex = misc:list_size("_buildingNames")
+INT index = 0
+
+LOOP
+    IF index IS maxIndex
+        BREAK
+    fe3d:model_place(_buildingNames[index], _buildingNames[index], 0.0, 0.0, 0.0)
+    fe3d:model_set_visible(_buildingNames[index], <false>)
+    ADD index 1

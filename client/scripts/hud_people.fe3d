@@ -1,0 +1,11 @@
+6 0
+META script_type_update
+META script_state_wait
+
+STR aliveText = misc:string_zeroed_integer(_totalAlive, 3)
+STR sickText = misc:string_zeroed_integer(_totalSick, 3)
+STR deadText = misc:string_zeroed_integer(_totalDead, 3)
+
+fe3d:text2d_set_content("total_alive", aliveText)
+fe3d:text2d_set_content("total_sick", sickText)
+fe3d:text2d_set_content("total_dead", deadText)

@@ -7,7 +7,7 @@ PART @bakery frame assets\image\model\diffuse_map\bakery_frame.tga ? ? ? ? asset
 PART @bakery foundation assets\image\model\diffuse_map\bakery_foundation.tga ? ? ? ? assets\image\model\normal_map\bakery_foundation.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 MODEL @bridge assets\mesh\bridge.obj 5 5 5 ? 0 2 1 1 1
 PART @bridge ? assets\image\model\diffuse_map\bridge.tga ? ? ? ? assets\image\model\normal_map\bridge.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
-MODEL @church assets\mesh\church.obj 0.9 0.9 0.9 ? 0 2 1 1 1
+MODEL @church assets\mesh\church.obj 0.9 0.9 0.9 @lod 60 2 1 1 1
 PART @church 6 assets\image\model\diffuse_map\church_6.tga ? ? ? ? ? 0 0 1 0 0 16 10 0.5 0.5 1 1 1 1 1 0 0 1 1 1
 PART @church 13 assets\image\model\diffuse_map\church_13.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 PART @church 2 assets\image\model\diffuse_map\church_2.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
@@ -49,8 +49,6 @@ MODEL @orchard assets\mesh\orchard.obj 2 1.25 2 ? 0 2 1 1 1
 PART @orchard ? assets\image\model\diffuse_map\bakery_base.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
 MODEL @pen assets\mesh\pen.obj 1 0.5 1 ? 0 2 1 1 1
 PART @pen ? assets\image\model\diffuse_map\pen.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
-MODEL @rowboat assets\mesh\rowboat.obj 0.75 1 1 ? 0 2 1 1 1
-PART @rowboat ? assets\image\model\diffuse_map\rowboat.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 1 1 1 1 1 0 0 1 1 1
 MODEL @sawmill assets\mesh\sawmill.obj 0.5 0.5 0.5 ? 0 2 1 1 1
 PART @sawmill wheel assets\image\model\diffuse_map\sawmill_wheel.tga ? ? ? ? assets\image\model\normal_map\sawmill_wheel.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 PART @sawmill base assets\image\model\diffuse_map\sawmill_base.tga ? ? ? ? assets\image\model\normal_map\sawmill_base.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
