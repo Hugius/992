@@ -1,4 +1,4 @@
-44 25
+24 24
 META script_type_initialize
 META script_state_wait
 
@@ -23,7 +23,7 @@ GLOB INT _totalRawMeat = 0
 GLOB INT _totalHoney = 0
 GLOB INT _totalFruit = 0
 GLOB INT _totalLumber = 10
-GLOB INT _totalStone = 10
+GLOB INT _totalStone = 9
 GLOB INT _totalGrain = 10
 GLOB INT _totalFlour = 10
 GLOB INT _totalPlanks = 10

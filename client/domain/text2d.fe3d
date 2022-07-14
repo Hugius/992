@@ -1,4 +1,4 @@
 @food assets\image\text2d\font_map\font.tga 1 1 1 1 0 0 0 -?Food?-
 @people assets\image\text2d\font_map\font.tga 1 1 1 1 0 0 0 -?People?-
 @resources assets\image\text2d\font_map\font.tga 1 1 1 1 0 0 0 -?Resources?-
-@text assets\image\text2d\font_map\font.tga 1 1 1 1 0 0 0 Text123
+@text assets\image\text2d\font_map\font.tga 0 0 0 1 0 0 1 Text123

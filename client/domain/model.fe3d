@@ -1,10 +1,12 @@
 MODEL @apiary assets\mesh\apiary.obj 3 3 3 ? 0 2 1 1 1
 PART @apiary ? assets\image\model\diffuse_map\apiary.tga ? ? ? ? assets\image\model\normal_map\apiary.tga 0 0 1 0 0 2 10 0.5 0.5 0.2 1 1 1 1 0 0 1 1 1
+AABB @apiary model@@apiary@aabb 0 0 0 0.56 0.41 0.56
 MODEL @bakery assets\mesh\bakery.obj 0.4 0.4 0.4 ? 0 2 1 1 1
 PART @bakery base assets\image\model\diffuse_map\bakery_base.tga ? ? ? ? assets\image\model\normal_map\bakery_base.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1
 PART @bakery roof assets\image\model\diffuse_map\bakery_roof.tga ? ? ? ? assets\image\model\normal_map\bakery_roof.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1
 PART @bakery frame assets\image\model\diffuse_map\bakery_frame.tga ? ? ? ? assets\image\model\normal_map\bakery_frame.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1
 PART @bakery foundation assets\image\model\diffuse_map\bakery_foundation.tga ? ? ? ? assets\image\model\normal_map\bakery_foundation.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
+AABB @bakery model@@bakery@aabb 0 0 0 10 10 10
 MODEL @bridge assets\mesh\bridge.obj 5 5 5 ? 0 2 1 1 1
 PART @bridge ? assets\image\model\diffuse_map\bridge.tga ? ? ? ? assets\image\model\normal_map\bridge.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 MODEL @church assets\mesh\church.obj 0.9 0.9 0.9 @lod 60 2 1 1 1
@@ -25,6 +27,7 @@ PART @church 8 assets\image\model\diffuse_map\church_8.tga ? ? ? ? ? 0 0 1 0 0 2
 MODEL @farmland assets\mesh\farmland.obj 1 1 1 ? 0 2 1 1 1
 PART @farmland soil assets\image\model\diffuse_map\storage_doorhandle.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 8 0 0 1 1 1
 PART @farmland logs assets\image\model\diffuse_map\farmland_logs.tga ? ? ? ? assets\image\model\normal_map\farmland_logs.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1
+AABB @farmland model@@farmland@aabb 0 0 0 16.4 0.4 16.4
 MODEL @foundry assets\mesh\foundry.obj 0.5 0.5 0.5 ? 0 2 1 1 1
 PART @foundry platform assets\image\model\diffuse_map\foundry_platform.tga ? ? ? ? assets\image\model\normal_map\foundry_platform.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1
 PART @foundry base assets\image\model\diffuse_map\foundry_base.tga assets\image\model\emission_map\foundry_base.tga ? ? ? assets\image\model\normal_map\foundry_base.tga 0 0 1 0 0 16 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1

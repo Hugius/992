@@ -1,4 +1,4 @@
-4 41
+16 34
 META script_type_initialize
 META script_state_wait
 
@@ -15,3 +15,4 @@ GLOB CONST DEC _cameraStartY = 17.5
 GLOB CONST DEC _cameraStartZ = 5.0
 GLOB CONST DEC _cameraStartYaw = 200.0
 GLOB CONST DEC _cameraStartPitch = -70.0
+GLOB CONST DEC _buildHeight = 2.75

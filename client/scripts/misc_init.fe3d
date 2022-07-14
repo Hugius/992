@@ -1,12 +1,8 @@
-13 31
+3 32
 META script_type_initialize
 META script_state_wait
 
 fe3d:world_load_editor("island")
-fe3d:raycast_set_terrain_intersection_enabled(<true>)
-fe3d:raycast_set_terrain_intersection_distance(25.0)
-fe3d:raycast_set_terrain_intersection_precision(0.1)
-fe3d:collision_set_camera_aabb_response_enabled(<true>, <true>, <true>)
 fe3d:camera_set_position(_cameraStartX, _cameraStartY, _cameraStartZ)
 fe3d:camera_set_yaw(_cameraStartYaw)
 fe3d:camera_set_pitch(_cameraStartPitch)

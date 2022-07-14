@@ -1,4 +1,4 @@
-15 18
+16 19
 META script_type_update
 META script_state_entry
 
@@ -12,6 +12,7 @@ EXECUTE hud_food
 EXECUTE hud_resources
 EXECUTE hud_build
 EXECUTE camera_update
-EXECUTE build_update
+EXECUTE build_gui
+EXECUTE build_place
+EXECUTE build_misc
 EXECUTE misc_update
-EXECUTE gui_update
