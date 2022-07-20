@@ -1,0 +1,10 @@
+6 14
+META script_type_update
+META script_state_wait
+
+STR buildingName = misc:string_capitalize(_selectedBuilding)
+INT width = misc:string_size(buildingName)
+CAST width DEC
+MUL width 0.02
+fe3d:text2d_set_content("selected_building", buildingName)
+fe3d:text2d_set_size("selected_building", width, 0.1)
