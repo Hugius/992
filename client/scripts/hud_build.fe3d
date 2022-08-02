@@ -1,14 +1,14 @@
-21 24
+19 14
 META script_type_update
 META script_state_wait
 
-fe3d:quad2d_set_visible("price_build", _buildMode)
+fe3d:quad2d_set_visible("building_price", _buildMode)
 fe3d:quad2d_set_visible("price_planks", _buildMode)
 fe3d:quad2d_set_visible("price_stone", _buildMode)
 fe3d:quad2d_set_visible("price_clay", _buildMode)
 fe3d:quad2d_set_visible("price_straw", _buildMode)
 fe3d:quad2d_set_visible("price_iron", _buildMode)
-fe3d:text2d_set_visible("price_build", _buildMode)
+fe3d:text2d_set_visible("building_price", _buildMode)
 fe3d:text2d_set_visible("price_planks", _buildMode)
 fe3d:text2d_set_visible("price_stone", _buildMode)
 fe3d:text2d_set_visible("price_clay", _buildMode)
@@ -19,8 +19,8 @@ STR buildingName = misc:string_capitalize(_buildingNames[_buildingIndex])
 INT width = misc:string_size(buildingName)
 CAST width DEC
 MUL width 0.03
-fe3d:text2d_set_content("price_build", buildingName)
-fe3d:text2d_set_size("price_build", width, 0.15)
+fe3d:text2d_set_content("building_price", buildingName)
+fe3d:text2d_set_size("building_price", width, 0.15)
 
 STR planksText = misc:string_zeroed_integer(_buildingPricesPlanks[_buildingIndex], 4)
 STR stoneText = misc:string_zeroed_integer(_buildingPricesStone[_buildingIndex], 4)

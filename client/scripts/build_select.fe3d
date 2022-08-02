@@ -1,0 +1,38 @@
+36 26
+META script_type_update
+META script_state_wait
+
+fe3d:raycast_calculate_aabbs_intersection()
+
+BOL hovered = <false>
+STR placedId = fe3d:raycast_get_closest_model("")
+
+IF placedId NOT "" AND _buildMode IS <false>
+    STR editorId = fe3d:model_get_editor_id(placedId)
+    BOL contains = misc:list_contains("_buildingNames", editorId)
+    IF contains IS <true>
+        EDIT hovered = <true>
+
+IF hovered IS <true>
+    fe3d:quad2d_set_visible("building_name", <true>)
+    fe3d:text2d_set_visible("building_name", <true>)
+    STR hoveredBuilding = misc:string_capitalize(editorId)
+    INT hoveredWidth = misc:string_size(hoveredBuilding)
+    CAST hoveredWidth DEC
+    MUL hoveredWidth 0.02
+    fe3d:text2d_set_content("building_name", hoveredBuilding)
+    fe3d:text2d_set_size("building_name", hoveredWidth, 0.1)
+    EDIT _selectedBuilding = editorId
+ELSE
+    fe3d:quad2d_set_visible("building_name", <false>)
+    fe3d:text2d_set_visible("building_name", <false>)
+    EDIT _selectedBuilding = ""
+
+BOL buildingActive = (_selectedBuilding NOT "")
+
+fe3d:quad2d_set_visible("building_menu", buildingActive)
+fe3d:text2d_set_visible("building_menu", buildingActive)
+
+fe3d:cursor_set_type(_cursorType)
+
+EDIT _cursorType = "ARROW"

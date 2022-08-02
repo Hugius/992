@@ -1,9 +1,11 @@
-1 20
+6 55
 META script_type_update
 META script_state_wait
 
 IF _buildMode IS <false>
     EXIT
+
+fe3d:raycast_calculate_terrain_intersection(100.0, 0.1)
 
 STR buildingName = _buildingNames[_buildingIndex]
 INT planksPrice = _buildingPricesPlanks[_buildingIndex]

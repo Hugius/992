@@ -1,4 +1,4 @@
-35 43
+33 35
 META script_type_update
 META script_state_wait
 
@@ -33,5 +33,3 @@ fe3d:camera_follow_right_xz(_xPositionAcc)
 fe3d:camera_follow_front_xz(_zPositionAcc)
 
 fe3d:raycast_calculate_cursor_ray()
-fe3d:raycast_calculate_terrain_intersection(100.0, 0.1)
-fe3d:raycast_calculate_aabbs_intersection()

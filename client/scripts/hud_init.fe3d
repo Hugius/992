@@ -1,4 +1,4 @@
-13 36
+23 64
 META script_type_initialize
 META script_state_wait
 
@@ -6,13 +6,9 @@ fe3d:quad2d_place("vignette", "vignette", 0.0, 0.0, 2.0, 2.0)
 fe3d:quad2d_place("total_people", "scroll1", -0.9, 0.75, 0.2, 0.5)
 fe3d:quad2d_place("total_food", "paper", -0.875, 0.15, 0.25, 0.75)
 fe3d:quad2d_place("total_resources", "book", -0.75, -0.6, 0.5, 0.75)
-fe3d:quad2d_place("price_build", "scroll2", 0.0, -0.7, 1.0, 0.6)
-fe3d:quad2d_place("selected_building", "paper", 0.0, 0.925, 0.3, 0.1)
 fe3d:text2d_place("total_people", "people", -0.9, 0.8875, 0.15, 0.075)
 fe3d:text2d_place("total_food", "food", -0.875, 0.475, 0.12, 0.075)
 fe3d:text2d_place("total_resources", "resources", -0.875, -0.275, 0.195, 0.075)
-fe3d:text2d_place("price_build", "text", 0.0, -0.55, 0.0, 0.0)
-fe3d:text2d_place("selected_building", "text", 0.0, 0.925, 0.0, 0.0)
 
 fe3d:quad2d_place("total_alive", "heart", -0.925, 0.8125, 0.05, 0.075)
 fe3d:quad2d_place("total_sick", "heart", -0.925, 0.7125, 0.05, 0.075)
@@ -89,14 +85,3 @@ fe3d:text2d_place("total_iron", "text", -0.8, -0.55, 0.04, 0.05)
 fe3d:text2d_place("total_hides", "text", -0.8, -0.65, 0.04, 0.05)
 fe3d:text2d_place("total_clothes", "text", -0.8, -0.75, 0.04, 0.05)
 fe3d:text2d_place("total_wool", "text", -0.8, -0.85, 0.04, 0.05)
-
-fe3d:quad2d_place("price_planks", "planks", -0.3, -0.7, 0.1, 0.175)
-fe3d:quad2d_place("price_stone", "stone", -0.15, -0.7, 0.1, 0.175)
-fe3d:quad2d_place("price_clay", "clay", 0.0, -0.7, 0.1, 0.175)
-fe3d:quad2d_place("price_straw", "straw", 0.15, -0.7, 0.1, 0.175)
-fe3d:quad2d_place("price_iron", "iron", 0.3, -0.7, 0.1, 0.175)
-fe3d:text2d_place("price_planks", "text", -0.3, -0.85, 0.08, 0.15)
-fe3d:text2d_place("price_stone", "text", -0.15, -0.85, 0.08, 0.15)
-fe3d:text2d_place("price_clay", "text", 0.0, -0.85, 0.08, 0.15)
-fe3d:text2d_place("price_straw", "text", 0.15, -0.85, 0.08, 0.15)
-fe3d:text2d_place("price_iron", "text", 0.3, -0.85, 0.08, 0.15)
