@@ -1,13 +1,28 @@
-17 22
+23 52
 META script_type_update
 META script_state_wait
+
+BOL clicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
+BOL buildHovered = fe3d:quad2d_is_hovered("build")
+
+fe3d:quad2d_set_lightness("build", 0.75)
+
+IF buildHovered IS <true>
+    fe3d:quad2d_set_lightness("build", 1.0)
+    IF clicked IS <true>
+        IF _buildMode IS <true>
+            fe3d:model_set_visible(_buildingTypes[_buildingIndex], <false>)
+            EDIT _buildMode = <false>
+        ELSE
+            fe3d:model_set_visible(_buildingTypes[_buildingIndex], <true>)
+            EDIT _buildMode = <true>
 
 IF _buildMode IS <false>
     EXIT
 
-fe3d:model_set_visible(_buildingNames[_buildingIndex], <false>)
+fe3d:model_set_visible(_buildingTypes[_buildingIndex], <false>)
 
-INT buildingCount = misc:list_size("_buildingNames")
+INT buildingCount = misc:list_size("_buildingTypes")
 BOL wheelUp = fe3d:input_is_mouse_scrolled("WHEEL_FORWARD")
 BOL wheelDown = fe3d:input_is_mouse_scrolled("WHEEL_BACKWARD")
 
@@ -21,4 +36,4 @@ IF wheelDown IS <true>
         EDIT _buildingIndex = buildingCount
     SUB _buildingIndex 1
 
-fe3d:model_set_visible(_buildingNames[_buildingIndex], <true>)
+fe3d:model_set_visible(_buildingTypes[_buildingIndex], <true>)

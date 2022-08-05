@@ -1,0 +1,21 @@
+5 0
+META script_type_update
+META script_state_wait
+
+BOL selected = (_selectedBuildingType IS "baker")
+BOL clicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
+
+fe3d:quad2d_set_visible("bakery_flour", selected)
+fe3d:quad2d_set_visible("bakery_firewood", selected)
+fe3d:quad2d_set_visible("bakery_arrow", selected)
+fe3d:quad2d_set_visible("bakery_bread", selected)
+fe3d:text2d_set_visible("bakery_flour", selected)
+fe3d:text2d_set_visible("bakery_firewood", selected)
+fe3d:text2d_set_visible("bakery_bread", selected)
+
+IF selected IS <true> AND _totalFlour MORE 0 AND _totalFirewood MORE 0
+    EDIT _cursorType = "HAND"
+    IF clicked IS <true>
+        SUB _totalFlour 1
+        SUB _totalFirewood 1
+        ADD _totalBread 10

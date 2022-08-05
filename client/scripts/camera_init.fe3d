@@ -1,0 +1,14 @@
+0 0
+META script_type_initialize
+META script_state_wait
+
+GLOB CNST DEC _yawSpeed = 0.15
+GLOB CNST DEC _positionSpeed = 0.015
+GLOB CNST DEC _cameraStartX = 60.0
+GLOB CNST DEC _cameraStartY = 17.5
+GLOB CNST DEC _cameraStartZ = 5.0
+GLOB CNST DEC _cameraStartYaw = 200.0
+GLOB CNST DEC _cameraStartPitch = -70.0
+GLOB DEC _yawAcc = 0.0
+GLOB DEC _xPositionAcc = 0.0
+GLOB DEC _zPositionAcc = 0.0

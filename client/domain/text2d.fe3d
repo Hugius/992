@@ -1,8 +1,8 @@
 @food assets\image\text2d\font_map\font.tga 1 1 1 1 0 0 0 -?Food?-
-@one assets\image\text2d\font_map\font.tga 1 1 1 1 0 0 0 1
+@one assets\image\text2d\font_map\font.tga 0 0 0 1 0 0 1 1
 @people assets\image\text2d\font_map\font.tga 1 1 1 1 0 0 0 -?People?-
 @resources assets\image\text2d\font_map\font.tga 1 1 1 1 0 0 0 -?Resources?-
-@ten assets\image\text2d\font_map\font.tga 1 1 1 1 0 0 0 10
+@ten assets\image\text2d\font_map\font.tga 0 0 0 1 0 0 1 10
 @text assets\image\text2d\font_map\font.tga 0 0 0 1 0 0 1 Text123
-@three assets\image\text2d\font_map\font.tga 1 1 1 1 0 0 0 3
-@two assets\image\text2d\font_map\font.tga 1 1 1 1 0 0 0 2
+@three assets\image\text2d\font_map\font.tga 0 0 0 1 0 0 1 3
+@two assets\image\text2d\font_map\font.tga 0 0 0 1 0 0 1 2

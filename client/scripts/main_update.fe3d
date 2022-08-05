@@ -1,4 +1,4 @@
-18 14
+16 13
 META script_type_update
 META script_state_entry
 
@@ -11,11 +11,10 @@ EXECUTE hud_people
 EXECUTE hud_food
 EXECUTE hud_resources
 EXECUTE hud_build
-EXECUTE camera_update
-EXECUTE build_gui
 EXECUTE build_place
 EXECUTE build_select
 EXECUTE build_misc
-EXECUTE apiary
-EXECUTE bakery
+EXECUTE apiarist_up
+EXECUTE baker_up
+EXECUTE camera_update
 EXECUTE misc_update

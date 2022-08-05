@@ -1,4 +1,4 @@
-19 14
+22 0
 META script_type_update
 META script_state_wait
 
@@ -15,11 +15,11 @@ fe3d:text2d_set_visible("price_clay", _buildMode)
 fe3d:text2d_set_visible("price_straw", _buildMode)
 fe3d:text2d_set_visible("price_iron", _buildMode)
 
-STR buildingName = misc:string_capitalize(_buildingNames[_buildingIndex])
-INT width = misc:string_size(buildingName)
+STR buildingType = misc:string_capitalize(_buildingTypes[_buildingIndex])
+INT width = misc:string_size(buildingType)
 CAST width DEC
 MUL width 0.03
-fe3d:text2d_set_content("building_price", buildingName)
+fe3d:text2d_set_content("building_price", buildingType)
 fe3d:text2d_set_size("building_price", width, 0.15)
 
 STR planksText = misc:string_zeroed_integer(_buildingPricesPlanks[_buildingIndex], 4)

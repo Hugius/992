@@ -1,6 +1,43 @@
-3 32
+0 0
 META script_type_initialize
 META script_state_wait
+
+GLOB INT _totalDays = 1
+GLOB INT _totalAlive = 10
+GLOB INT _totalSick = 0
+GLOB INT _totalDead = 0
+GLOB INT _totalWater = 0
+GLOB INT _totalAle = 0
+GLOB INT _totalMilk = 0
+GLOB INT _totalSmokedMeat = 0
+GLOB INT _totalSmokedFish = 0
+GLOB INT _totalBread = 0
+GLOB INT _totalVegetables = 0
+GLOB INT _totalEggs = 0
+GLOB INT _totalRawFish = 0
+GLOB INT _totalRawMeat = 0
+GLOB INT _totalHoney = 0
+GLOB INT _totalFruit = 0
+GLOB INT _totalLumber = 10
+GLOB INT _totalStone = 9
+GLOB INT _totalGrain = 10
+GLOB INT _totalFlour = 10
+GLOB INT _totalPlanks = 10
+GLOB INT _totalFirewood = 10
+GLOB INT _totalManure = 10
+GLOB INT _totalOre = 10
+GLOB INT _totalIron = 10
+GLOB INT _totalHides = 10
+GLOB INT _totalClothes = 10
+GLOB INT _totalWool = 10
+GLOB INT _totalLeather = 10
+GLOB INT _totalClay = 10
+GLOB INT _totalStraw = 10
+GLOB INT _totalMedicine = 10
+GLOB INT _totalFeathers = 10
+GLOB INT _totalMushrooms = 10
+GLOB INT _totalGrainSeeds = 10
+GLOB INT _totalVegetableSeeds = 10
 
 fe3d:world_load_editor("island")
 fe3d:camera_set_position(_cameraStartX, _cameraStartY, _cameraStartZ)

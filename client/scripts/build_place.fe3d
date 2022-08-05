@@ -1,4 +1,4 @@
-6 55
+96 53
 META script_type_update
 META script_state_wait
 
@@ -7,7 +7,8 @@ IF _buildMode IS <false>
 
 fe3d:raycast_calculate_terrain_intersection(100.0, 0.1)
 
-STR buildingName = _buildingNames[_buildingIndex]
+STR buildingModel = _buildingModels[_buildingIndex]
+STR buildingType = _buildingTypes[_buildingIndex]
 INT planksPrice = _buildingPricesPlanks[_buildingIndex]
 INT stonePrice = _buildingPricesStone[_buildingIndex]
 INT clayPrice = _buildingPricesClay[_buildingIndex]
@@ -36,9 +37,9 @@ DEC x = fe3d:raycast_get_point_on_terrain_x()
 DEC y = fe3d:raycast_get_point_on_terrain_y()
 DEC z = fe3d:raycast_get_point_on_terrain_z()
 
-fe3d:model_set_base_position(buildingName, x, y, z)
+fe3d:model_set_base_position(buildingType, x, y, z)
 
-LST aabbIds = fe3d:model_get_aabb_ids(buildingName)
+LST aabbIds = fe3d:model_get_aabb_ids(buildingType)
 INT aabbCount = misc:list_size("aabbIds")
 INT aabbIndex = 0
 DEC aabbPosX = 0.0
@@ -53,10 +54,10 @@ DEC aabbTL = 0.0
 LOOP
     IF aabbIndex IS aabbCount
         BREAK
-    EDIT aabbPosX = fe3d:model_get_aabb_position_x(buildingName, aabbIds[aabbIndex])
-    EDIT aabbPosZ = fe3d:model_get_aabb_position_z(buildingName, aabbIds[aabbIndex])
-    EDIT aabbSizeX = fe3d:model_get_aabb_size_x(buildingName, aabbIds[aabbIndex])
-    EDIT aabbSizeZ = fe3d:model_get_aabb_size_z(buildingName, aabbIds[aabbIndex])
+    EDIT aabbPosX = fe3d:model_get_aabb_position_x(buildingType, aabbIds[aabbIndex])
+    EDIT aabbPosZ = fe3d:model_get_aabb_position_z(buildingType, aabbIds[aabbIndex])
+    EDIT aabbSizeX = fe3d:model_get_aabb_size_x(buildingType, aabbIds[aabbIndex])
+    EDIT aabbSizeZ = fe3d:model_get_aabb_size_z(buildingType, aabbIds[aabbIndex])
     DIV aabbSizeX 2.0
     DIV aabbSizeZ 2.0
     SUB aabbPosX aabbSizeX
@@ -75,33 +76,37 @@ LOOP
         EDIT color = {0.5,0.0,0.0}
     ADD aabbIndex 1
 
-fe3d:collision_calculate_model_aabbs(buildingName)
-LST collisions = fe3d:collision_check_model_models(buildingName, "")
+fe3d:collision_calculate_model_aabbs(buildingType)
+LST collisions = fe3d:collision_check_model_models(buildingType, "")
 INT collisionCount = misc:list_size("collisions")
 IF collisionCount MORE 0
     EDIT color = {0.5,0.0,0.0}
 
-LST partIds = fe3d:model_get_part_ids(buildingName)
+LST partIds = fe3d:model_get_part_ids(buildingType)
 INT partCount = misc:list_size("partIds")
 INT partIndex = 0
 
 LOOP
     IF partIndex IS partCount
         BREAK
-    fe3d:model_set_color(buildingName, partIds[partIndex], color[0], color[1], color[2])
+    fe3d:model_set_color(buildingType, partIds[partIndex], color[0], color[1], color[2])
     ADD partIndex 1
 
 CAST _buildingCounter STR
 BOL clicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
-STR newBuildingId = misc:string_concat(buildingName, _buildingCounter)
+STR newBuildingId = misc:string_concat(buildingType, "_")
+EDIT newBuildingId = misc:string_concat(newBuildingId, _buildingCounter)
 CAST _buildingCounter INT
 
 IF clicked IS <true> AND color[1] NOT 0.0
     ADD _buildingCounter 1
-    fe3d:model_place(newBuildingId, buildingName, 0.0, 0.0, 0.0)
+    fe3d:model_place(newBuildingId, buildingModel, 0.0, 0.0, 0.0)
     fe3d:model_set_base_position(newBuildingId, x, y, z)
     SUB _totalPlanks planksPrice
     SUB _totalStone stonePrice
     SUB _totalClay clayPrice
     SUB _totalStraw strawPrice
     SUB _totalIron ironPrice
+    IF buildingType IS "apiarist"
+        PUSH _apiaryIds newBuildingId
+        PUSH _apiaryTimes 0

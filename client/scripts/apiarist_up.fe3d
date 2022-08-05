@@ -1,0 +1,26 @@
+3 50
+META script_type_update
+META script_state_wait
+
+BOL selected = (_selectedBuildingType IS "apiarist")
+BOL clicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
+
+fe3d:quad2d_set_visible("apiary_time", selected)
+fe3d:quad2d_set_visible("apiary_arrow", selected)
+fe3d:quad2d_set_visible("apiary_honey", selected)
+fe3d:text2d_set_visible("apiary_time", selected)
+fe3d:text2d_set_visible("apiary_honey", selected)
+
+STR apiaryId = ""
+INT index = 0
+INT maxIndex = misc:list_size("_apiaryIds")
+
+LOOP
+    IF index IS maxIndex
+        BREAK
+    IF _apiaryTimes[index] IS _apiaryTime
+        EDIT _apiaryTimes[index] = 0
+        ADD _totalHoney 1
+    ELSE
+        ADD _apiaryTimes[index] 1
+    ADD index 1
