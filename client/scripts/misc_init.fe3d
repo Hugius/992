@@ -1,11 +1,8 @@
-0 0
+3 24
 META script_type_initialize
 META script_state_wait
 
-GLOB INT _totalDays = 1
-GLOB INT _totalAlive = 10
-GLOB INT _totalSick = 0
-GLOB INT _totalDead = 0
+GLOB INT _passedDays = 1
 GLOB INT _totalWater = 0
 GLOB INT _totalAle = 0
 GLOB INT _totalMilk = 0

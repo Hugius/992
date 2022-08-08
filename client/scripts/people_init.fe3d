@@ -1,0 +1,9 @@
+7 27
+META script_type_initialize
+META script_state_wait
+
+GLOB LST _availableNames = {}
+GLOB LST _peopleNames = {"Uhtred"}
+GLOB LST _peopleSickStatuses = {<false>}
+GLOB LST _peopleAliveStatuses = {<true>}
+GLOB LST _peopleJobs = {""}

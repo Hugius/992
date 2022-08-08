@@ -93,6 +93,7 @@ PART @workshop1 lid assets\image\model\diffuse_map\workshop1_lid.tga ? ? ? ? ass
 PART @workshop1 roof assets\image\model\diffuse_map\workshop1_roof.tga ? ? ? ? assets\image\model\normal_map\workshop1_roof.tga 0 0 1 0 0 2 10 0.5 0.5 0.4 1 1 1 1 0 0 1 1 1
 MODEL @workshop2 assets\mesh\workshop2.obj 0.5 0.5 0.5 ? 0 2 1 1 1
 PART @workshop2 ? assets\image\model\diffuse_map\workshop2.tga ? ? ? ? assets\image\model\normal_map\workshop2.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1
+AABB @workshop2 model@@workshop2@aabb 0 0 0 6.5 4.5 11.5
 MODEL @workshop3 assets\mesh\workshop3.obj 0.4 0.4 0.4 ? 0 2 1 1 1
 PART @workshop3 wall1 assets\image\model\diffuse_map\workshop3_wall1.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall1.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 PART @workshop3 wall4 assets\image\model\diffuse_map\workshop3_wall4.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall4.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1

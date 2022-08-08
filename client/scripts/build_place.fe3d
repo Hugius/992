@@ -1,4 +1,4 @@
-96 53
+114 20
 META script_type_update
 META script_state_wait
 
@@ -108,5 +108,9 @@ IF clicked IS <true> AND color[1] NOT 0.0
     SUB _totalStraw strawPrice
     SUB _totalIron ironPrice
     IF buildingType IS "apiarist"
-        PUSH _apiaryIds newBuildingId
-        PUSH _apiaryTimes 0
+        PUSH _apiaristIds newBuildingId
+        PUSH _apiaristTimes 0
+    ELIF buildingType IS "baker"
+        PUSH _bakerIds newBuildingId
+    ELIF buildingType IS "barber"
+        PUSH _barberIds newBuildingId

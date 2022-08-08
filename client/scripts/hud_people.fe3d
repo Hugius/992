@@ -1,7 +1,7 @@
-6 0
+2 4
 META script_type_update
 META script_state_wait
-
+EXIT
 STR aliveText = misc:string_zeroed_integer(_totalAlive, 3)
 STR sickText = misc:string_zeroed_integer(_totalSick, 3)
 STR deadText = misc:string_zeroed_integer(_totalDead, 3)

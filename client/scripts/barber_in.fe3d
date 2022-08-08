@@ -1,0 +1,7 @@
+3 16
+META script_type_initialize
+META script_state_wait
+
+GLOB LST _barberIds = {}
+
+fe3d:text2d_place("barber", "text", "Decreases the chance of sickness by 20%", 0.0, -0.7, 0.6, 0.1)

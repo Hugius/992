@@ -1,13 +1,14 @@
-6 0
+1 22
 META script_type_initialize
 META script_state_wait
 
-GLOB CNST INT _apiaryTime = 500
-GLOB LST _apiaryIds = {}
-GLOB LST _apiaryTimes = {}
+GLOB CNST INT _apiaristTime = 500
+GLOB LST _apiaristIds = {}
+GLOB LST _apiaristPeople = {}
+GLOB LST _apiaristTimes = {}
 
-fe3d:quad2d_place("apiary_time", "time", -0.25, -0.7, 0.125, 0.25)
-fe3d:quad2d_place("apiary_arrow", "arrow", 0.0, -0.7, 0.2, 0.4)
-fe3d:quad2d_place("apiary_honey", "honey", 0.25, -0.7, 0.1, 0.2)
-fe3d:text2d_place("apiary_time", "one", -0.25, -0.875, 0.025, 0.1)
-fe3d:text2d_place("apiary_honey", "one", 0.25, -0.875, 0.025, 0.1)
+fe3d:quad2d_place("apiarist_time", "time", -0.25, -0.7, 0.125, 0.25)
+fe3d:quad2d_place("apiarist_arrow", "arrow", 0.0, -0.7, 0.2, 0.4)
+fe3d:quad2d_place("apiarist_honey", "honey", 0.25, -0.7, 0.1, 0.2)
+fe3d:text2d_place("apiarist_time", "text", "1", -0.25, -0.875, 0.025, 0.1)
+fe3d:text2d_place("apiarist_honey", "text", "1", 0.25, -0.875, 0.025, 0.1)

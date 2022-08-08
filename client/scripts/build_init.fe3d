@@ -1,15 +1,16 @@
-3 375
+25 46
 META script_type_initialize
 META script_state_wait
 
 GLOB CNST LST _buildingModels = {"apiary","bakery","workshop2","pen","workshop2","workshop2","workshop3","workshop1","farmland","workshop1","workshop1","workshop2","workshop1","grave","workshop1","workshop1","house","workshop1","sawmill","workshop3","windmill","mine","orchard","church","workshop3","lavatory","foundry","smithy","smokehouse","storage","workshop2","tavern","well","workshop2"}
 GLOB CNST LST _buildingTypes = {"apiarist","baker","barber","breeder","brewer","butcher","carpenter","ditcher","farmer","feller","fisher","fletcher","gatherer","grave","herbalist","hewer","house","hunter","lumberer","mason","miller","miner","orchardist","priest","roofer","scavenger","smelter","smith","smoker","storage","tanner","tavern","waterer","weaver"}
-GLOB CNST LST _buildingPricesPlanks = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
-GLOB CNST LST _buildingPricesStone = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
-GLOB CNST LST _buildingPricesClay = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
-GLOB CNST LST _buildingPricesStraw = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
-GLOB CNST LST _buildingPricesIron = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+GLOB CNST LST _buildingPricesPlanks = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+GLOB CNST LST _buildingPricesStone = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+GLOB CNST LST _buildingPricesClay = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+GLOB CNST LST _buildingPricesStraw = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+GLOB CNST LST _buildingPricesIron = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
 GLOB CNST DEC _buildHeight = 2.75
+
 GLOB STR _selectedBuildingId = ""
 GLOB STR _selectedBuildingType = ""
 GLOB STR _cursorType = "ARROW"
@@ -22,20 +23,20 @@ fe3d:quad2d_place("build", "build", 0.95, 0.9125, 0.1, 0.175)
 fe3d:quad2d_place("building_price", "scroll2", 0.0, -0.7, 1.0, 0.6)
 fe3d:quad2d_place("building_type", "paper", 0.0, 0.925, 0.3, 0.1)
 fe3d:quad2d_place("building_menu", "scroll2", 0.0, -0.7, 1.0, 0.6)
-fe3d:text2d_place("building_price", "text", 0.0, -0.55, 0.0, 0.0)
-fe3d:text2d_place("building_type", "text", 0.0, 0.925, 0.0, 0.0)
-fe3d:text2d_place("building_menu", "text", 0.0, -0.55, 0.0, 0.0)
+fe3d:text2d_place("building_price", "text", "", 0.0, -0.55, 0.0, 0.0)
+fe3d:text2d_place("building_type", "text", "", 0.0, 0.925, 0.0, 0.0)
+fe3d:text2d_place("building_menu", "text", "", 0.0, -0.55, 0.0, 0.0)
 
 fe3d:quad2d_place("price_planks", "planks", -0.3, -0.7, 0.1, 0.175)
 fe3d:quad2d_place("price_stone", "stone", -0.15, -0.7, 0.1, 0.175)
 fe3d:quad2d_place("price_clay", "clay", 0.0, -0.7, 0.1, 0.175)
 fe3d:quad2d_place("price_straw", "straw", 0.15, -0.7, 0.1, 0.175)
 fe3d:quad2d_place("price_iron", "iron", 0.3, -0.7, 0.1, 0.175)
-fe3d:text2d_place("price_planks", "text", -0.3, -0.85, 0.08, 0.15)
-fe3d:text2d_place("price_stone", "text", -0.15, -0.85, 0.08, 0.15)
-fe3d:text2d_place("price_clay", "text", 0.0, -0.85, 0.08, 0.15)
-fe3d:text2d_place("price_straw", "text", 0.15, -0.85, 0.08, 0.15)
-fe3d:text2d_place("price_iron", "text", 0.3, -0.85, 0.08, 0.15)
+fe3d:text2d_place("price_planks", "text", "", -0.3, -0.85, 0.08, 0.15)
+fe3d:text2d_place("price_stone", "text", "", -0.15, -0.85, 0.08, 0.15)
+fe3d:text2d_place("price_clay", "text", "", 0.0, -0.85, 0.08, 0.15)
+fe3d:text2d_place("price_straw", "text", "", 0.15, -0.85, 0.08, 0.15)
+fe3d:text2d_place("price_iron", "text", "", 0.3, -0.85, 0.08, 0.15)
 
 INT maxIndex = misc:list_size("_buildingTypes")
 INT index = 0

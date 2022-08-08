@@ -1,0 +1,7 @@
+5 43
+META script_type_update
+META script_state_wait
+
+BOL selected = (_selectedBuildingType IS "barber")
+
+fe3d:text2d_set_visible("barber", selected)
