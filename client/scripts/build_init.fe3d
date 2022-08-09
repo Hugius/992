@@ -1,16 +1,17 @@
-25 46
+12 17
 META script_type_initialize
 META script_state_wait
 
 GLOB CNST LST _buildingModels = {"apiary","bakery","workshop2","pen","workshop2","workshop2","workshop3","workshop1","farmland","workshop1","workshop1","workshop2","workshop1","grave","workshop1","workshop1","house","workshop1","sawmill","workshop3","windmill","mine","orchard","church","workshop3","lavatory","foundry","smithy","smokehouse","storage","workshop2","tavern","well","workshop2"}
 GLOB CNST LST _buildingTypes = {"apiarist","baker","barber","breeder","brewer","butcher","carpenter","ditcher","farmer","feller","fisher","fletcher","gatherer","grave","herbalist","hewer","house","hunter","lumberer","mason","miller","miner","orchardist","priest","roofer","scavenger","smelter","smith","smoker","storage","tanner","tavern","waterer","weaver"}
-GLOB CNST LST _buildingPricesPlanks = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
-GLOB CNST LST _buildingPricesStone = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
-GLOB CNST LST _buildingPricesClay = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
-GLOB CNST LST _buildingPricesStraw = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
-GLOB CNST LST _buildingPricesIron = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+GLOB CNST LST _buildPricesPlanks = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+GLOB CNST LST _buildPricesStone = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+GLOB CNST LST _buildPricesClay = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+GLOB CNST LST _buildPricesStraw = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+GLOB CNST LST _buildPricesIron = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
 GLOB CNST DEC _buildHeight = 2.75
 
+GLOB LST _placedBuildingIds = {}
 GLOB STR _selectedBuildingId = ""
 GLOB STR _selectedBuildingType = ""
 GLOB STR _cursorType = "ARROW"

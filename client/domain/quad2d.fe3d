@@ -1,4 +1,5 @@
 @ale assets\image\quad2d\diffuse_map\ale.tga 1 1 1 1 1 0 0 1
+@anvil assets\image\quad2d\diffuse_map\anvil.tga 1 1 1 1 1 0 0 1
 @arrow assets\image\quad2d\diffuse_map\arrow.tga 1 1 1 1 1 0 0 0
 @book assets\image\quad2d\diffuse_map\book.tga 1 1 1 1 1 0 0 0.85
 @bread assets\image\quad2d\diffuse_map\bread.tga 1 1 1 1 1 0 0 1
@@ -29,6 +30,7 @@
 @raw_meat assets\image\quad2d\diffuse_map\raw_meat.tga 1 1 1 1 1 0 0 1
 @scroll1 assets\image\quad2d\diffuse_map\scroll1.tga 1 1 1 1 1 0 0 1
 @scroll2 assets\image\quad2d\diffuse_map\scroll2.tga 1 1 1 1 1 0 0 1
+@skull assets\image\quad2d\diffuse_map\skull.tga 1 1 1 1 1 0 0 1
 @smoked_fish assets\image\quad2d\diffuse_map\smoked_fish.tga 1 1 1 1 1 0 0 1
 @smoked_meat assets\image\quad2d\diffuse_map\smoked_meat.tga 1 1 1 1 1 0 0 1
 @stone assets\image\quad2d\diffuse_map\stone.tga 1 1 1 1 1 0 0 1

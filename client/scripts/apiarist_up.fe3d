@@ -1,14 +1,28 @@
-1 17
+34 50
 META script_type_update
 META script_state_wait
 
-BOL selected = (_selectedBuildingType IS "apiarist")
+INT workerIndex = 0
 
-fe3d:quad2d_set_visible("apiarist_time", selected)
-fe3d:quad2d_set_visible("apiarist_arrow", selected)
-fe3d:quad2d_set_visible("apiarist_honey", selected)
-fe3d:text2d_set_visible("apiarist_time", selected)
-fe3d:text2d_set_visible("apiarist_honey", selected)
+fe3d:quad2d_set_visible("apiarist_worker", <false>)
+fe3d:quad2d_set_visible("apiarist_arrow", <false>)
+fe3d:quad2d_set_visible("apiarist_time", <false>)
+fe3d:quad2d_set_visible("apiarist_honey", <false>)
+fe3d:text2d_set_visible("apiarist_worker", <false>)
+fe3d:text2d_set_visible("apiarist_time", <false>)
+fe3d:text2d_set_visible("apiarist_honey", <false>)
+
+IF _selectedBuildingType IS "apiarist"
+    EDIT workerIndex = misc:list_index("_workerBuildingIds", _selectedBuildingId)
+    IF workerIndex IS -1
+        fe3d:quad2d_set_visible("apiarist_worker", <true>)
+        fe3d:text2d_set_visible("apiarist_worker", <true>)
+    ELSE
+        fe3d:quad2d_set_visible("apiarist_arrow", <true>)
+        fe3d:quad2d_set_visible("apiarist_time", <true>)
+        fe3d:quad2d_set_visible("apiarist_honey", <true>)
+        fe3d:text2d_set_visible("apiarist_time", <true>)
+        fe3d:text2d_set_visible("apiarist_honey", <true>)
 
 INT index = 0
 INT maxIndex = misc:list_size("_apiaristIds")
@@ -16,9 +30,12 @@ INT maxIndex = misc:list_size("_apiaristIds")
 LOOP
     IF index IS maxIndex
         BREAK
-    IF _apiaristTimes[index] IS _apiaristTime
-        EDIT _apiaristTimes[index] = 0
+    EDIT workerIndex = misc:list_index("_workerBuildingIds", _apiaristIds[index])
+    IF workerIndex IS -1
+        BREAK
+    IF _apiaristTimers[index] IS _apiaristInterval
+        EDIT _apiaristTimers[index] = 0
         ADD _totalHoney 1
     ELSE
-        ADD _apiaristTimes[index] 1
+        ADD _apiaristTimers[index] 1
     ADD index 1

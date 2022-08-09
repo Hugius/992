@@ -1,4 +1,4 @@
-114 20
+112 64
 META script_type_update
 META script_state_wait
 
@@ -9,11 +9,11 @@ fe3d:raycast_calculate_terrain_intersection(100.0, 0.1)
 
 STR buildingModel = _buildingModels[_buildingIndex]
 STR buildingType = _buildingTypes[_buildingIndex]
-INT planksPrice = _buildingPricesPlanks[_buildingIndex]
-INT stonePrice = _buildingPricesStone[_buildingIndex]
-INT clayPrice = _buildingPricesClay[_buildingIndex]
-INT strawPrice = _buildingPricesStraw[_buildingIndex]
-INT ironPrice = _buildingPricesIron[_buildingIndex]
+INT planksPrice = _buildPricesPlanks[_buildingIndex]
+INT stonePrice = _buildPricesStone[_buildingIndex]
+INT clayPrice = _buildPricesClay[_buildingIndex]
+INT strawPrice = _buildPricesStraw[_buildingIndex]
+INT ironPrice = _buildPricesIron[_buildingIndex]
 
 LST color = {0.0,0.5,0.0}
 IF _totalPlanks LESS planksPrice
@@ -99,7 +99,6 @@ EDIT newBuildingId = misc:string_concat(newBuildingId, _buildingCounter)
 CAST _buildingCounter INT
 
 IF clicked IS <true> AND color[1] NOT 0.0
-    ADD _buildingCounter 1
     fe3d:model_place(newBuildingId, buildingModel, 0.0, 0.0, 0.0)
     fe3d:model_set_base_position(newBuildingId, x, y, z)
     SUB _totalPlanks planksPrice
@@ -107,10 +106,14 @@ IF clicked IS <true> AND color[1] NOT 0.0
     SUB _totalClay clayPrice
     SUB _totalStraw strawPrice
     SUB _totalIron ironPrice
+    ADD _buildingCounter 1
+    PUSH _placedBuildingIds newBuildingId
+    IF buildingType NOT "grave" AND buildingType NOT "house" AND buildingType NOT "storage" AND buildingType NOT "tavern"
+        INT workerIndex = misc:list_index("_workerBuildingIds", "")
+        IF workerIndex NOT -1
+            EDIT _workerBuildingIds[workerIndex] = newBuildingId
     IF buildingType IS "apiarist"
         PUSH _apiaristIds newBuildingId
-        PUSH _apiaristTimes 0
+        PUSH _apiaristTimers 0
     ELIF buildingType IS "baker"
         PUSH _bakerIds newBuildingId
-    ELIF buildingType IS "barber"
-        PUSH _barberIds newBuildingId

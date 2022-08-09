@@ -22,11 +22,11 @@ MUL width 0.03
 fe3d:text2d_set_content("building_price", buildingType)
 fe3d:text2d_set_size("building_price", width, 0.15)
 
-STR planksText = misc:string_zeroed_integer(_buildingPricesPlanks[_buildingIndex], 4)
-STR stoneText = misc:string_zeroed_integer(_buildingPricesStone[_buildingIndex], 4)
-STR clayText = misc:string_zeroed_integer(_buildingPricesClay[_buildingIndex], 4)
-STR strawText = misc:string_zeroed_integer(_buildingPricesStraw[_buildingIndex], 4)
-STR ironText = misc:string_zeroed_integer(_buildingPricesIron[_buildingIndex], 4)
+STR planksText = misc:string_zeroed_integer(_buildPricesPlanks[_buildingIndex], 4)
+STR stoneText = misc:string_zeroed_integer(_buildPricesStone[_buildingIndex], 4)
+STR clayText = misc:string_zeroed_integer(_buildPricesClay[_buildingIndex], 4)
+STR strawText = misc:string_zeroed_integer(_buildPricesStraw[_buildingIndex], 4)
+STR ironText = misc:string_zeroed_integer(_buildPricesIron[_buildingIndex], 4)
 
 fe3d:text2d_set_content("price_planks", planksText)
 fe3d:text2d_set_content("price_stone", stoneText)
