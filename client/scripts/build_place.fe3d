@@ -1,9 +1,12 @@
-112 64
+109 66
 META script_type_update
 META script_state_wait
 
 IF _buildMode IS <false>
     EXIT
+
+BOL lmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
+BOL rmbClicked = fe3d:input_is_mouse_pressed("BUTTON_RIGHT")
 
 fe3d:raycast_calculate_terrain_intersection(100.0, 0.1)
 
@@ -36,8 +39,13 @@ fe3d:text2d_set_color("price_iron", color[0], color[1], color[2])
 DEC x = fe3d:raycast_get_point_on_terrain_x()
 DEC y = fe3d:raycast_get_point_on_terrain_y()
 DEC z = fe3d:raycast_get_point_on_terrain_z()
+DEC rotation = fe3d:model_get_base_rotation_y(buildingType)
+
+IF rmbClicked IS <true>
+    ADD rotation 90.0
 
 fe3d:model_set_base_position(buildingType, x, y, z)
+fe3d:model_set_base_rotation(buildingType, 0.0, rotation, 0.0)
 
 LST aabbIds = fe3d:model_get_aabb_ids(buildingType)
 INT aabbCount = misc:list_size("aabbIds")
@@ -93,14 +101,14 @@ LOOP
     ADD partIndex 1
 
 CAST _buildingCounter STR
-BOL clicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
 STR newBuildingId = misc:string_concat(buildingType, "_")
 EDIT newBuildingId = misc:string_concat(newBuildingId, _buildingCounter)
 CAST _buildingCounter INT
 
-IF clicked IS <true> AND color[1] NOT 0.0
+IF lmbClicked IS <true> AND color[1] NOT 0.0
     fe3d:model_place(newBuildingId, buildingModel, 0.0, 0.0, 0.0)
     fe3d:model_set_base_position(newBuildingId, x, y, z)
+    fe3d:model_set_base_rotation(newBuildingId, 0.0, rotation, 0.0)
     SUB _totalPlanks planksPrice
     SUB _totalStone stonePrice
     SUB _totalClay clayPrice

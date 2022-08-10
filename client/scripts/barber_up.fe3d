@@ -1,7 +1,17 @@
-5 43
+10 82
 META script_type_update
 META script_state_wait
 
-BOL selected = (_selectedBuildingType IS "barber")
+BOL hasWorker = <false>
 
-fe3d:text2d_set_visible("barber", selected)
+fe3d:quad2d_set_visible("barber_worker", <false>)
+fe3d:text2d_set_visible("barber_worker", <false>)
+fe3d:text2d_set_visible("barber_sickness", <false>)
+
+IF _selectedBuildingType IS "barber"
+    EDIT hasWorker = misc:list_contains("_workerBuildingIds", _selectedBuildingId)
+    IF hasWorker IS <true>
+        fe3d:text2d_set_visible("barber_sickness", <true>)
+    ELSE
+        fe3d:quad2d_set_visible("barber_worker", <true>)
+        fe3d:text2d_set_visible("barber_worker", <true>)

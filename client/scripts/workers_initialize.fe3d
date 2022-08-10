@@ -1,0 +1,10 @@
+8 30
+META script_type_initialize
+META script_state_wait
+
+GLOB LST _availableWorkerNames = {"Uhtred", "Alfred", "Edward"}
+GLOB LST _workerNames = {}
+GLOB LST _workerHealths = {}
+GLOB LST _workerBuildingIds = {}
+GLOB INT _workersToCreate = 2
+GLOB INT _totalDeadWorkers = 0

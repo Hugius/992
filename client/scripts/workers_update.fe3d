@@ -1,5 +1,23 @@
-3 0
+11 30
 META script_type_update
 META script_state_wait
 
+INT index = 0
+INT maxIndex = 0
 
+IF _workersToCreate MORE 0
+    SUB _workersToCreate 1
+    STR newWorkerName = _availableWorkerNames[0]
+    PULL _availableWorkerNames 0
+    PUSH _workerNames newWorkerName
+    PUSH _workerHealths <true>
+    EDIT index = 0
+    EDIT maxIndex = misc:list_size("_placedBuildingIds")
+    LOOP
+        IF index IS maxIndex
+            PUSH _workerBuildingIds ""
+            BREAK
+        EDIT hasWorker = misc:list_contains("_workerBuildingIds", _placedBuildingIds[index])
+        IF hasWorker IS <false>
+            PUSH _workerBuildingIds _placedBuildingIds[index]
+            BREAK

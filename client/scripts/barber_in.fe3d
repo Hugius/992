@@ -1,7 +1,11 @@
-3 16
+9 77
 META script_type_initialize
 META script_state_wait
 
 GLOB LST _barberIds = {}
+CNST STR workerText = "No worker available"
+CNST STR sicknessText = "Decreases the chance of sickness by 20%"
 
-fe3d:text2d_place("barber", "text", "Decreases the chance of sickness by 20%", 0.0, -0.7, 0.6, 0.1)
+fe3d:quad2d_place("barber_worker", "skull", 0.0, -0.6, 0.1, 0.2)
+fe3d:text2d_place("barber_worker", "text", workerText, 0.0, -0.8, 0.475, 0.1)
+fe3d:text2d_place("barber_sickness", "text", sicknessText, 0.0, -0.7, 0.73125, 0.1)

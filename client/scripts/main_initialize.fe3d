@@ -1,12 +1,12 @@
-4 15
+7 23
 META script_type_initialize
 META script_state_entry
 
-EXECUTE hud_init
-EXECUTE workers_init
-EXECUTE camera_init
-EXECUTE build_init
+EXECUTE hud_initialize
+EXECUTE workers_initialize
+EXECUTE camera_initialize
+EXECUTE build_initialize
+EXECUTE misc_initialize
 EXECUTE apiarist_in
 EXECUTE barber_in
 EXECUTE baker_in
-EXECUTE misc_init
