@@ -1,6 +1,7 @@
 @ale assets\image\quad2d\diffuse_map\ale.tga 1 1 1 1 1 0 0 1
 @anvil assets\image\quad2d\diffuse_map\anvil.tga 1 1 1 1 1 0 0 1
 @arrow assets\image\quad2d\diffuse_map\arrow.tga 1 1 1 1 1 0 0 0
+@black ? 0 0 0 1 1 0 0 1
 @book assets\image\quad2d\diffuse_map\book.tga 1 1 1 1 1 0 0 0.85
 @bread assets\image\quad2d\diffuse_map\bread.tga 1 1 1 1 1 0 0 1
 @build assets\image\quad2d\diffuse_map\build.tga 1 1 1 1 1 0 0 1

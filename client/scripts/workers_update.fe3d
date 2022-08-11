@@ -12,12 +12,12 @@ IF _workersToCreate MORE 0
     PUSH _workerNames newWorkerName
     PUSH _workerHealths <true>
     EDIT index = 0
-    EDIT maxIndex = misc:list_size("_placedBuildingIds")
+    EDIT maxIndex = misc:list_size("_buildingIds")
     LOOP
         IF index IS maxIndex
             PUSH _workerBuildingIds ""
             BREAK
-        EDIT hasWorker = misc:list_contains("_workerBuildingIds", _placedBuildingIds[index])
+        EDIT hasWorker = misc:list_contains("_workerBuildingIds", _buildingIds[index])
         IF hasWorker IS <false>
-            PUSH _workerBuildingIds _placedBuildingIds[index]
+            PUSH _workerBuildingIds _buildingIds[index]
             BREAK

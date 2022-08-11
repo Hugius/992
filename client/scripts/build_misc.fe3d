@@ -1,13 +1,13 @@
-37 62
+20 0
 META script_type_update
 META script_state_wait
 
 BOL clicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
-BOL buildHovered = fe3d:quad2d_is_hovered("build")
+BOL buttonHovered = fe3d:quad2d_is_hovered("build")
 
 fe3d:quad2d_set_lightness("build", 0.75)
 
-IF buildHovered IS <true>
+IF buttonHovered IS <true>
     fe3d:quad2d_set_lightness("build", 1.0)
     IF clicked IS <true>
         IF _buildMode IS <true>
@@ -17,8 +17,40 @@ IF buildHovered IS <true>
             fe3d:model_set_visible(_buildingTypes[_buildingIndex], <true>)
             EDIT _buildMode = <true>
 
+fe3d:quad2d_set_visible("building_price", _buildMode)
+fe3d:quad2d_set_visible("price_planks", _buildMode)
+fe3d:quad2d_set_visible("price_stone", _buildMode)
+fe3d:quad2d_set_visible("price_clay", _buildMode)
+fe3d:quad2d_set_visible("price_straw", _buildMode)
+fe3d:quad2d_set_visible("price_iron", _buildMode)
+fe3d:text2d_set_visible("building_price", _buildMode)
+fe3d:text2d_set_visible("price_planks", _buildMode)
+fe3d:text2d_set_visible("price_stone", _buildMode)
+fe3d:text2d_set_visible("price_clay", _buildMode)
+fe3d:text2d_set_visible("price_straw", _buildMode)
+fe3d:text2d_set_visible("price_iron", _buildMode)
+
 IF _buildMode IS <false>
     EXIT
+
+STR buildingType = misc:string_capitalize(_buildingTypes[_buildingIndex])
+INT width = misc:string_size(buildingType)
+CAST width DEC
+MUL width 0.03
+fe3d:text2d_set_content("building_price", buildingType)
+fe3d:text2d_set_size("building_price", width, 0.15)
+
+STR pricePlanksText = misc:string_zeroed_integer(_buildPricesPlanks[_buildingIndex], 4)
+STR priceStoneText = misc:string_zeroed_integer(_buildPricesStone[_buildingIndex], 4)
+STR priceClayText = misc:string_zeroed_integer(_buildPricesClay[_buildingIndex], 4)
+STR priceStrawText = misc:string_zeroed_integer(_buildPricesStraw[_buildingIndex], 4)
+STR priceIronText = misc:string_zeroed_integer(_buildPricesIron[_buildingIndex], 4)
+
+fe3d:text2d_set_content("price_planks", pricePlanksText)
+fe3d:text2d_set_content("price_stone", priceStoneText)
+fe3d:text2d_set_content("price_clay", priceClayText)
+fe3d:text2d_set_content("price_straw", priceStrawText)
+fe3d:text2d_set_content("price_iron", priceIronText)
 
 fe3d:model_set_visible(_buildingTypes[_buildingIndex], <false>)
 

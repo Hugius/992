@@ -1,4 +1,4 @@
-8 0
+4 0
 META script_type_update
 META script_state_entry
 
@@ -17,3 +17,4 @@ EXECUTE misc_update
 EXECUTE apiarist_up
 EXECUTE baker_up
 EXECUTE barber_up
+EXECUTE storage_up

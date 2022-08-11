@@ -1,4 +1,4 @@
-7 23
+11 18
 META script_type_initialize
 META script_state_entry
 
@@ -10,3 +10,4 @@ EXECUTE misc_initialize
 EXECUTE apiarist_in
 EXECUTE barber_in
 EXECUTE baker_in
+EXECUTE storage_in

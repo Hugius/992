@@ -1,5 +1,12 @@
-1 22
+6 16
 META script_type_update
 META script_state_wait
 
 fe3d:sky_rotate("day", 0.0, 0.01, 0.0)
+
+DEC opacity = fe3d:quad2d_get_opacity("black")
+SUB opacity 0.005
+fe3d:quad2d_set_opacity("black", opacity)
+
+/// 4.8 real minutes for 24 game hours
+ADD _passedSeconds 3
