@@ -1,9 +1,10 @@
-3 19
+3 43
 META script_type_initialize
 META script_state_wait
 
-GLOB LST _bakerIds = {}
 CNST STR workerText = "No worker available"
+
+GLOB LST _bakerIds = {}
 
 fe3d:quad2d_place("baker_worker", "skull", 0.0, -0.6, 0.1, 0.2)
 fe3d:quad2d_place("baker_flour", "flour", -0.325, -0.7, 0.1, 0.2)

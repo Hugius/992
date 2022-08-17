@@ -1,4 +1,4 @@
-27 0
+18 19
 META script_type_initialize
 META script_state_wait
 
@@ -17,6 +17,7 @@ GLOB STR _selectedBuildingType = ""
 GLOB INT _buildingIndex = 0
 GLOB INT _buildingCounter = 0
 GLOB BOL _buildMode = <false>
+GLOB BOL _previousBuildMode = <false>
 
 fe3d:quad2d_place("build", "build", 0.95, 0.8125, 0.1, 0.175)
 

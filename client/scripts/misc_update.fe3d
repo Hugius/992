@@ -1,4 +1,4 @@
-6 16
+7 41
 META script_type_update
 META script_state_wait
 
@@ -9,4 +9,4 @@ SUB opacity 0.005
 fe3d:quad2d_set_opacity("black", opacity)
 
 /// 4.8 real minutes for 24 game hours
-ADD _passedSeconds 3
+ADD _totalSeconds 3

@@ -1,0 +1,9 @@
+5 25
+META script_type_initialize
+META script_state_wait
+
+CNST STR text = "Stores limited food and resources"
+
+GLOB LST _storageIds = {}
+
+fe3d:text2d_place("storage_text", "text", text, 0.0, -0.7, 0.825, 0.1)

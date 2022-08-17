@@ -1,4 +1,4 @@
-11 54
+54 51
 META script_type_update
 META script_state_wait
 
@@ -7,12 +7,12 @@ BOL mustUpdate = fe3d:time_is_passed(10)
 IF mustUpdate IS <false>
     EXIT
 
-INT passedDays = _passedSeconds
-DIV passedDays 86400
-ADD passedDays 1
-STR passedDaysText = misc:string_zeroed_integer(passedDays, 3)
-EDIT passedDaysText = misc:string_concat("Day ", passedDaysText)
-fe3d:text2d_set_content("passed_days", passedDaysText)
+INT totalDays = _totalSeconds
+DIV totalDays 86400
+ADD totalDays 1
+STR totalDaysText = misc:string_zeroed_integer(totalDays, 3)
+EDIT totalDaysText = misc:string_concat("Day ", totalDaysText)
+fe3d:text2d_set_content("total_days", totalDaysText)
 
 INT totalAlive = misc:list_size("_workerNames")
 INT totalSick = misc:list_count("_workerHealths", <false>)
@@ -48,6 +48,42 @@ fe3d:text2d_set_content("total_raw_meat", totalRawMeatText)
 fe3d:text2d_set_content("total_raw_fish", totalRawFishText)
 fe3d:text2d_set_content("total_honey", totalHoneyText)
 fe3d:text2d_set_content("total_fruit", totalFruitText)
+fe3d:text2d_set_color("total_water", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_ale", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_milk", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_smoked_meat", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_smoked_fish", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_bread", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_vegetables", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_eggs", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_raw_meat", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_raw_fish", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_honey", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_fruit", 0.0, 0.0, 0.0)
+IF _totalWater IS _maxWater
+    fe3d:text2d_set_color("total_water", 0.5, 0.0, 0.0)
+IF _totalAle IS _maxAle
+    fe3d:text2d_set_color("total_ale", 0.5, 0.0, 0.0)
+IF _totalMilk IS _maxMilk
+    fe3d:text2d_set_color("total_milk", 0.5, 0.0, 0.0)
+IF _totalSmokedMeat IS _maxSmokedMeat
+    fe3d:text2d_set_color("total_smoked_meat", 0.5, 0.0, 0.0)
+IF _totalSmokedFish IS _maxSmokedFish
+    fe3d:text2d_set_color("total_smoked_fish", 0.5, 0.0, 0.0)
+IF _totalBread IS _maxBread
+    fe3d:text2d_set_color("total_bread", 0.5, 0.0, 0.0)
+IF _totalVegetables IS _maxVegetables
+    fe3d:text2d_set_color("total_vegetables", 0.5, 0.0, 0.0)
+IF _totalEggs IS _maxEggs
+    fe3d:text2d_set_color("total_eggs", 0.5, 0.0, 0.0)
+IF _totalRawFish IS _maxRawFish
+    fe3d:text2d_set_color("total_raw_fish", 0.5, 0.0, 0.0)
+IF _totalRawMeat IS _maxRawMeat
+    fe3d:text2d_set_color("total_raw_meat", 0.5, 0.0, 0.0)
+IF _totalHoney IS _maxHoney
+    fe3d:text2d_set_color("total_honey", 0.5, 0.0, 0.0)
+IF _totalFruit IS _maxFruit
+    fe3d:text2d_set_color("total_fruit", 0.5, 0.0, 0.0)
 
 STR totalLumberText = misc:string_zeroed_integer(_totalLumber, 4)
 STR totalStoneText = misc:string_zeroed_integer(_totalStone, 4)
@@ -89,3 +125,63 @@ fe3d:text2d_set_content("total_feathers", totalFeathersText)
 fe3d:text2d_set_content("total_mushrooms", totalMushroomsText)
 fe3d:text2d_set_content("total_grain_seeds", totalGrainSeedsText)
 fe3d:text2d_set_content("total_vegetable_seeds", totalVegetableSeedsText)
+fe3d:text2d_set_color("total_lumber", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_stone", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_grain", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_flour", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_planks", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_firewood", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_manure", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_ore", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_iron", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_hides", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_clothes", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_wool", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_leather", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_clay", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_straw", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_medicine", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_feathers", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_mushrooms", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_grain_seeds", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_vegetable_seeds", 0.0, 0.0, 0.0)
+IF _totalLumber IS _maxLumber
+    fe3d:text2d_set_color("total_lumber", 0.5, 0.0, 0.0)
+IF _totalStone IS _maxStone
+    fe3d:text2d_set_color("total_stone", 0.5, 0.0, 0.0)
+IF _totalGrain IS _maxGrain
+    fe3d:text2d_set_color("total_grain", 0.5, 0.0, 0.0)
+IF _totalFlour IS _maxFlour
+    fe3d:text2d_set_color("total_flour", 0.5, 0.0, 0.0)
+IF _totalPlanks IS _maxPlanks
+    fe3d:text2d_set_color("total_planks", 0.5, 0.0, 0.0)
+IF _totalFirewood IS _maxFirewood
+    fe3d:text2d_set_color("total_firewood", 0.5, 0.0, 0.0)
+IF _totalManure IS _maxManure
+    fe3d:text2d_set_color("total_manure", 0.5, 0.0, 0.0)
+IF _totalOre IS _maxOre
+    fe3d:text2d_set_color("total_ore", 0.5, 0.0, 0.0)
+IF _totalIron IS _maxIron
+    fe3d:text2d_set_color("total_iron", 0.5, 0.0, 0.0)
+IF _totalHides IS _maxHides
+    fe3d:text2d_set_color("total_hides", 0.5, 0.0, 0.0)
+IF _totalClothes IS _maxClothes
+    fe3d:text2d_set_color("total_clothes", 0.5, 0.0, 0.0)
+IF _totalWool IS _maxWool
+    fe3d:text2d_set_color("total_wool", 0.5, 0.0, 0.0)
+IF _totalLeather IS _maxLeather
+    fe3d:text2d_set_color("total_leather", 0.5, 0.0, 0.0)
+IF _totalClay IS _maxClay
+    fe3d:text2d_set_color("total_clay", 0.5, 0.0, 0.0)
+IF _totalStraw IS _maxStraw
+    fe3d:text2d_set_color("total_straw", 0.5, 0.0, 0.0)
+IF _totalMedicine IS _maxMedicine
+    fe3d:text2d_set_color("total_medicine", 0.5, 0.0, 0.0)
+IF _totalFeathers IS _maxFeathers
+    fe3d:text2d_set_color("total_feathers", 0.5, 0.0, 0.0)
+IF _totalMushrooms IS _maxMushrooms
+    fe3d:text2d_set_color("total_mushrooms", 0.5, 0.0, 0.0)
+IF _totalGrainSeeds IS _maxGrainSeeds
+    fe3d:text2d_set_color("total_grain_seeds", 0.5, 0.0, 0.0)
+IF _totalVegetableSeeds IS _maxVegetableSeeds
+    fe3d:text2d_set_color("total_vegetable_seeds", 0.5, 0.0, 0.0)

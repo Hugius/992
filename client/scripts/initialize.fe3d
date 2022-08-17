@@ -1,0 +1,18 @@
+14 16
+META script_type_initialize
+META script_state_entry
+
+/// General stuff
+EXECUTE build_init
+EXECUTE workers_init
+
+/// Building stuff
+EXECUTE in_apiarist
+EXECUTE in_barber
+EXECUTE in_baker
+EXECUTE in_storage
+
+/// Miscellaneous stuff
+EXECUTE hud_init
+EXECUTE camera_init
+EXECUTE misc_init
