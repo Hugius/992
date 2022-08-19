@@ -1,4 +1,4 @@
-17 41
+30 30
 META script_type_update
 META script_state_wait
 
@@ -6,11 +6,13 @@ BOL hasWorker = <false>
 BOL clicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
 
 fe3d:quad2d_set_visible("baker_worker", <false>)
+fe3d:quad2d_set_visible("baker_storage", <false>)
 fe3d:quad2d_set_visible("baker_flour", <false>)
 fe3d:quad2d_set_visible("baker_firewood", <false>)
 fe3d:quad2d_set_visible("baker_arrow", <false>)
 fe3d:quad2d_set_visible("baker_bread", <false>)
 fe3d:text2d_set_visible("baker_worker", <false>)
+fe3d:text2d_set_visible("baker_storage", <false>)
 fe3d:text2d_set_visible("baker_flour", <false>)
 fe3d:text2d_set_visible("baker_firewood", <false>)
 fe3d:text2d_set_visible("baker_bread", <false>)
@@ -18,19 +20,23 @@ fe3d:text2d_set_visible("baker_bread", <false>)
 IF _selectedBuildingType IS "baker"
     EDIT hasWorker = misc:list_contains("_workerBuildingIds", _selectedBuildingId)
     IF hasWorker IS <true>
-        fe3d:quad2d_set_visible("baker_flour", <true>)
-        fe3d:quad2d_set_visible("baker_firewood", <true>)
-        fe3d:quad2d_set_visible("baker_arrow", <true>)
-        fe3d:quad2d_set_visible("baker_bread", <true>)
-        fe3d:text2d_set_visible("baker_flour", <true>)
-        fe3d:text2d_set_visible("baker_firewood", <true>)
-        fe3d:text2d_set_visible("baker_bread", <true>)
-        IF _totalFlour MORE 0 AND _totalFirewood MORE 0
-            EDIT _cursorType = "HAND"
-            IF clicked IS <true>
-                SUB _totalFlour 1
-                SUB _totalFirewood 1
-                ADD _totalBread 10
+        IF _totalBread LESS _maxBread
+            fe3d:quad2d_set_visible("baker_flour", <true>)
+            fe3d:quad2d_set_visible("baker_firewood", <true>)
+            fe3d:quad2d_set_visible("baker_arrow", <true>)
+            fe3d:quad2d_set_visible("baker_bread", <true>)
+            fe3d:text2d_set_visible("baker_flour", <true>)
+            fe3d:text2d_set_visible("baker_firewood", <true>)
+            fe3d:text2d_set_visible("baker_bread", <true>)
+            IF _totalFlour MORE 0 AND _totalFirewood MORE 0
+                EDIT _cursorType = "HAND"
+                IF clicked IS <true>
+                    SUB _totalFlour 1
+                    SUB _totalFirewood 1
+                    ADD _totalBread 1
+        ELSE
+            fe3d:quad2d_set_visible("baker_storage", <true>)
+            fe3d:text2d_set_visible("baker_storage", <true>)
     ELSE
         fe3d:quad2d_set_visible("baker_worker", <true>)
         fe3d:text2d_set_visible("baker_worker", <true>)

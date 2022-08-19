@@ -1,4 +1,4 @@
-6 24
+12 68
 META script_type_initialize
 META script_state_wait
 
@@ -8,5 +8,7 @@ CNST STR sicknessText = "Decreases the chance of sickness by 20%"
 GLOB LST _barberIds = {}
 
 fe3d:quad2d_place("barber_worker", "skull", 0.0, -0.6, 0.1, 0.2)
+fe3d:quad2d_place("barber_sickness", "heart", 0.0, -0.6, 0.1, 0.2)
+fe3d:quad2d_set_color("barber_sickness", 0.0, 0.5, 0.0)
 fe3d:text2d_place("barber_worker", "text", workerText, 0.0, -0.8, 0.475, 0.1)
-fe3d:text2d_place("barber_sickness", "text", sicknessText, 0.0, -0.7, 0.73125, 0.1)
+fe3d:text2d_place("barber_sickness", "text", sicknessText, 0.0, -0.8, 0.73125, 0.1)

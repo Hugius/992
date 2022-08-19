@@ -1,4 +1,4 @@
-6 36
+11 4
 META script_type_update
 META script_state_wait
 
@@ -7,10 +7,11 @@ BOL buttonHovered = fe3d:quad2d_is_hovered("build")
 
 EDIT _previousBuildMode = _buildMode
 
-fe3d:quad2d_set_lightness("build", 0.75)
+fe3d:quad2d_set_lightness("build", 1.0)
 
 IF buttonHovered IS <true>
-    fe3d:quad2d_set_lightness("build", 1.0)
+    EDIT _cursorType = "HAND"
+    fe3d:quad2d_set_lightness("build", 1.25)
     IF clicked IS <true>
         IF _buildMode IS <true>
             fe3d:model_set_visible(_buildingTypes[_buildingIndex], <false>)

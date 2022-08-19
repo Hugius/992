@@ -7,8 +7,6 @@ PART @bakery base assets\image\model\diffuse_map\bakery_base.tga ? ? ? ? assets\
 PART @bakery frame assets\image\model\diffuse_map\bakery_frame.tga ? ? ? ? assets\image\model\normal_map\bakery_frame.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1
 PART @bakery roof assets\image\model\diffuse_map\bakery_roof.tga ? ? ? ? assets\image\model\normal_map\bakery_roof.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1
 AABB @bakery model@@bakery@aabb 0 0 0 11.5 12 13.25
-MODEL @bridge assets\mesh\bridge.obj 5 5 5 ? 0 2 1 1 1
-PART @bridge ? assets\image\model\diffuse_map\bridge.tga ? ? ? ? assets\image\model\normal_map\bridge.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 MODEL @church assets\mesh\church.obj 0.9 0.9 0.9 @lod 60 2 1 1 1
 PART @church 6 assets\image\model\diffuse_map\church_6.tga ? ? ? ? ? 0 0 1 0 0 16 10 0.5 0.5 1 1 1 1 1 0 0 1 1 1
 PART @church 13 assets\image\model\diffuse_map\church_13.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
@@ -66,6 +64,7 @@ PART @storage doorhandle assets\image\model\diffuse_map\storage_doorhandle.tga ?
 PART @storage door assets\image\model\diffuse_map\storage_door.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 PART @storage misc assets\image\model\diffuse_map\storage_misc.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 PART @storage roofends assets\image\model\diffuse_map\storage_roofends.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.75 1 1 1 1 0 0 1 1 1
+AABB @storage model@@storage@aabb 0 0 0 9.5 5.25 6
 MODEL @tavern assets\mesh\tavern.obj 0.35 0.35 0.35 ? 0 2 1 1 1
 PART @tavern base assets\image\model\diffuse_map\tavern_base.tga ? ? ? ? assets\image\model\normal_map\tavern_base.tga 0 0 1 0 0 2 10 0.5 0.5 0.4 1 1 1 1 0 0 1 1 1
 PART @tavern frame assets\image\model\diffuse_map\tavern_frame.tga ? ? ? ? assets\image\model\normal_map\tavern_frame.tga 0 0 1 0 0 2 10 0.5 0.5 0.4 1 1 1 1 0 0 1 1 1

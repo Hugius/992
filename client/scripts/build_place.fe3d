@@ -1,4 +1,4 @@
-3 27
+67 41
 META script_type_update
 META script_state_wait
 
@@ -67,7 +67,6 @@ IF collisionCount MORE 0
 
 EDIT index = 0
 EDIT maxIndex = misc:list_size("aabbIds")
-
 LOOP
     IF index IS maxIndex
         BREAK
@@ -95,7 +94,6 @@ LOOP
 
 EDIT index = 0
 EDIT maxIndex = misc:list_size("partIds")
-
 LOOP
     IF index IS maxIndex
         BREAK

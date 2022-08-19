@@ -1,10 +1,11 @@
-8 30
+9 29
 META script_type_initialize
 META script_state_wait
 
-GLOB LST _availableWorkerNames = {"Uhtred", "Alfred", "Edward"}
+GLOB LST _availableWorkerNames = {"Uhtred", "Alfred", "Edward", "a","b","c","d","e","f","g"}
 GLOB LST _workerNames = {}
 GLOB LST _workerHealths = {}
 GLOB LST _workerBuildingIds = {}
-GLOB INT _workersToCreate = 2
+GLOB INT _workersToCreate = 10
 GLOB INT _totalDeadWorkers = 0
+GLOB INT _sicknessChance = 30

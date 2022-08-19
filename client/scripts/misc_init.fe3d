@@ -1,73 +1,9 @@
-5 24
+0 0
 META script_type_initialize
 META script_state_wait
 
 GLOB STR _cursorType = "ARROW"
 GLOB INT _totalSeconds = 0
-GLOB INT _totalWater = 0
-GLOB INT _totalAle = 0
-GLOB INT _totalMilk = 0
-GLOB INT _totalSmokedMeat = 0
-GLOB INT _totalSmokedFish = 0
-GLOB INT _totalBread = 0
-GLOB INT _totalVegetables = 0
-GLOB INT _totalEggs = 0
-GLOB INT _totalRawFish = 0
-GLOB INT _totalRawMeat = 0
-GLOB INT _totalHoney = 0
-GLOB INT _totalFruit = 0
-GLOB INT _totalLumber = 0
-GLOB INT _totalStone = 0
-GLOB INT _totalGrain = 0
-GLOB INT _totalFlour = 0
-GLOB INT _totalPlanks = 0
-GLOB INT _totalFirewood = 0
-GLOB INT _totalManure = 0
-GLOB INT _totalOre = 0
-GLOB INT _totalIron = 0
-GLOB INT _totalHides = 0
-GLOB INT _totalClothes = 0
-GLOB INT _totalWool = 0
-GLOB INT _totalLeather = 0
-GLOB INT _totalClay = 0
-GLOB INT _totalStraw = 0
-GLOB INT _totalMedicine = 0
-GLOB INT _totalFeathers = 0
-GLOB INT _totalMushrooms = 0
-GLOB INT _totalGrainSeeds = 0
-GLOB INT _totalVegetableSeeds = 0
-GLOB INT _maxWater = 0
-GLOB INT _maxAle = 0
-GLOB INT _maxMilk = 0
-GLOB INT _maxSmokedMeat = 0
-GLOB INT _maxSmokedFish = 0
-GLOB INT _maxBread = 0
-GLOB INT _maxVegetables = 0
-GLOB INT _maxEggs = 0
-GLOB INT _maxRawFish = 0
-GLOB INT _maxRawMeat = 0
-GLOB INT _maxHoney = 0
-GLOB INT _maxFruit = 0
-GLOB INT _maxLumber = 0
-GLOB INT _maxStone = 0
-GLOB INT _maxGrain = 0
-GLOB INT _maxFlour = 0
-GLOB INT _maxPlanks = 0
-GLOB INT _maxFirewood = 0
-GLOB INT _maxManure = 0
-GLOB INT _maxOre = 0
-GLOB INT _maxIron = 0
-GLOB INT _maxHides = 0
-GLOB INT _maxClothes = 0
-GLOB INT _maxWool = 0
-GLOB INT _maxLeather = 0
-GLOB INT _maxClay = 0
-GLOB INT _maxStraw = 0
-GLOB INT _maxMedicine = 0
-GLOB INT _maxFeathers = 0
-GLOB INT _maxMushrooms = 0
-GLOB INT _maxGrainSeeds = 0
-GLOB INT _maxVegetableSeeds = 0
 
 fe3d:world_load_editor("island")
 fe3d:camera_set_position(_cameraStartX, _cameraStartY, _cameraStartZ)

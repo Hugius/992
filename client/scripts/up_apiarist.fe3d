@@ -1,4 +1,4 @@
-0 19
+35 29
 META script_type_update
 META script_state_wait
 
@@ -33,7 +33,8 @@ LOOP
         BREAK
     IF _apiaristTimers[index] IS _apiaristInterval
         EDIT _apiaristTimers[index] = 0
-        ADD _totalHoney 1
+        IF _totalHoney NOT _maxHoney
+            ADD _totalHoney 1
     ELSE
         ADD _apiaristTimers[index] 1
     ADD index 1

@@ -1,9 +1,73 @@
-5 25
+38 23
 META script_type_initialize
 META script_state_wait
 
-CNST STR text = "Stores limited food and resources"
+CNST STR infoText = "Stores food and resources"
 
 GLOB LST _storageIds = {}
+GLOB INT _totalWater = 5
+GLOB INT _totalAle = 5
+GLOB INT _totalMilk = 5
+GLOB INT _totalSmokedMeat = 5
+GLOB INT _totalSmokedFish = 5
+GLOB INT _totalBread = 5
+GLOB INT _totalVegetables = 5
+GLOB INT _totalEggs = 5
+GLOB INT _totalRawFish = 5
+GLOB INT _totalRawMeat = 5
+GLOB INT _totalHoney = 5
+GLOB INT _totalFruit = 5
+GLOB INT _totalLumber = 5
+GLOB INT _totalStone = 5
+GLOB INT _totalGrain = 5
+GLOB INT _totalFlour = 5
+GLOB INT _totalPlanks = 5
+GLOB INT _totalFirewood = 5
+GLOB INT _totalManure = 5
+GLOB INT _totalOre = 5
+GLOB INT _totalIron = 5
+GLOB INT _totalHides = 5
+GLOB INT _totalClothes = 5
+GLOB INT _totalWool = 5
+GLOB INT _totalLeather = 5
+GLOB INT _totalClay = 5
+GLOB INT _totalStraw = 5
+GLOB INT _totalMedicine = 5
+GLOB INT _totalFeathers = 5
+GLOB INT _totalMushrooms = 5
+GLOB INT _totalGrainSeeds = 5
+GLOB INT _totalVegetableSeeds = 5
+GLOB INT _maxWater = 10
+GLOB INT _maxAle = 10
+GLOB INT _maxMilk = 10
+GLOB INT _maxSmokedMeat = 10
+GLOB INT _maxSmokedFish = 10
+GLOB INT _maxBread = 10
+GLOB INT _maxVegetables = 10
+GLOB INT _maxEggs = 10
+GLOB INT _maxRawFish = 10
+GLOB INT _maxRawMeat = 10
+GLOB INT _maxHoney = 10
+GLOB INT _maxFruit = 10
+GLOB INT _maxLumber = 10
+GLOB INT _maxStone = 10
+GLOB INT _maxGrain = 10
+GLOB INT _maxFlour = 10
+GLOB INT _maxPlanks = 10
+GLOB INT _maxFirewood = 10
+GLOB INT _maxManure = 10
+GLOB INT _maxOre = 10
+GLOB INT _maxIron = 10
+GLOB INT _maxHides = 10
+GLOB INT _maxClothes = 10
+GLOB INT _maxWool = 10
+GLOB INT _maxLeather = 10
+GLOB INT _maxClay = 10
+GLOB INT _maxStraw = 10
+GLOB INT _maxMedicine = 10
+GLOB INT _maxFeathers = 10
+GLOB INT _maxMushrooms = 10
+GLOB INT _maxGrainSeeds = 10
+GLOB INT _maxVegetableSeeds = 10
 
-fe3d:text2d_place("storage_text", "text", text, 0.0, -0.7, 0.825, 0.1)
+fe3d:text2d_place("storage_info", "text", infoText, 0.0, -0.7, 0.625, 0.1)

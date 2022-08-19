@@ -1,17 +1,20 @@
-3 43
+14 67
 META script_type_initialize
 META script_state_wait
 
 CNST STR workerText = "No worker available"
+CNST STR storageText = "Bread storage is full"
 
 GLOB LST _bakerIds = {}
 
 fe3d:quad2d_place("baker_worker", "skull", 0.0, -0.6, 0.1, 0.2)
+fe3d:quad2d_place("baker_storage", "bread", 0.0, -0.6, 0.1, 0.2)
 fe3d:quad2d_place("baker_flour", "flour", -0.325, -0.7, 0.1, 0.2)
 fe3d:quad2d_place("baker_firewood", "firewood", -0.175, -0.7, 0.1, 0.2)
 fe3d:quad2d_place("baker_arrow", "arrow", 0.0, -0.7, 0.2, 0.4)
 fe3d:quad2d_place("baker_bread", "bread", 0.25, -0.7, 0.1, 0.2)
 fe3d:text2d_place("baker_worker", "text", workerText, 0.0, -0.8, 0.475, 0.1)
+fe3d:text2d_place("baker_storage", "text", storageText, 0.0, -0.8, 0.525, 0.1)
 fe3d:text2d_place("baker_flour", "text", "1", -0.325, -0.875, 0.025, 0.1)
 fe3d:text2d_place("baker_firewood", "text", "1", -0.175, -0.875, 0.025, 0.1)
-fe3d:text2d_place("baker_bread", "text", "10", 0.25, -0.875, 0.05, 0.1)
+fe3d:text2d_place("baker_bread", "text", "1", 0.25, -0.875, 0.025, 0.1)

@@ -1,11 +1,12 @@
-1 20
+5 0
 META script_type_initialize
 META script_state_wait
 
+CNST STR workerText = "No worker available"
 GLOB CNST INT _apiaristInterval = 500
+
 GLOB LST _apiaristIds = {}
 GLOB LST _apiaristTimers = {}
-CNST STR workerText = "No worker available"
 
 fe3d:quad2d_place("apiarist_worker", "skull", 0.0, -0.6, 0.1, 0.2)
 fe3d:quad2d_place("apiarist_time", "time", -0.25, -0.6, 0.1, 0.2)
