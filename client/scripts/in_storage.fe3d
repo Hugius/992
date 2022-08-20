@@ -1,10 +1,10 @@
-38 23
+5 35
 META script_type_initialize
 META script_state_wait
 
 CNST STR infoText = "Stores food and resources"
 
-GLOB LST _storageIds = {}
+GLOB LST _storageIds = {"storage_0"}
 GLOB INT _totalWater = 5
 GLOB INT _totalAle = 5
 GLOB INT _totalMilk = 5
@@ -70,4 +70,5 @@ GLOB INT _maxMushrooms = 10
 GLOB INT _maxGrainSeeds = 10
 GLOB INT _maxVegetableSeeds = 10
 
-fe3d:text2d_place("storage_info", "text", infoText, 0.0, -0.7, 0.625, 0.1)
+fe3d:quad2d_place("storage_info", "info", 0.0, -0.6, 0.1, 0.2)
+fe3d:text2d_place("storage_info", "text", infoText, 0.0, -0.8, 0.5, 0.1)

@@ -1,8 +1,10 @@
-3 37
+3 5
 META script_type_update
 META script_state_wait
 
+fe3d:quad2d_set_visible("storage_info", <false>)
 fe3d:text2d_set_visible("storage_info", <false>)
 
 IF _selectedBuildingType IS "storage"
+    fe3d:quad2d_set_visible("storage_info", <true>)
     fe3d:text2d_set_visible("storage_info", <true>)

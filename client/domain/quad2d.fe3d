@@ -17,6 +17,7 @@
 @heart assets\image\quad2d\diffuse_map\heart.tga 1 1 1 1 1 0 0 1
 @hides assets\image\quad2d\diffuse_map\hides.tga 1 1 1 1 1 0 0 1
 @honey assets\image\quad2d\diffuse_map\honey.tga 1 1 1 1 1 0 0 1
+@info assets\image\quad2d\diffuse_map\info.tga 1 1 1 1 1 0 0 0.5
 @iron assets\image\quad2d\diffuse_map\iron.tga 1 1 1 1 1 0 0 1
 @leather assets\image\quad2d\diffuse_map\leather.tga 1 1 1 1 1 0 0 1
 @lumber assets\image\quad2d\diffuse_map\lumber.tga 1 1 1 1 1 0 0 1
@@ -40,5 +41,5 @@
 @vegetable_seeds assets\image\quad2d\diffuse_map\vegetable_seeds.tga 1 1 1 1 1 0 0 1
 @vegetables assets\image\quad2d\diffuse_map\vegetables.tga 1 1 1 1 1 0 0 1
 @vignette assets\image\quad2d\diffuse_map\vignette.tga 1 1 1 0.25 1 0 0 1
-@water assets\image\quad2d\diffuse_map\water.tga 1 1 1 1 1 0 0 1
+@water assets\image\quad2d\diffuse_map\water.tga 1 1 1 1 1 0 0 0.75
 @wool assets\image\quad2d\diffuse_map\wool.tga 1 1 1 1 1 0 0 1

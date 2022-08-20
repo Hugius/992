@@ -55,6 +55,7 @@ PART @sawmill base assets\image\model\diffuse_map\sawmill_base.tga ? ? ? ? asset
 MODEL @smithy assets\mesh\smithy.obj 0.5 0.5 0.5 ? 0 2 1 1 1
 PART @smithy frame assets\image\model\diffuse_map\smithy_frame.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.3 1 1 1 1 0 0 1 1 1
 PART @smithy roof assets\image\model\diffuse_map\smithy_roof.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.3 1 1 1 2 0 0 1 1 1
+AABB @smithy model@@smithy@aabb 0 0 0 5.6 4.6 6.5
 MODEL @smokehouse assets\mesh\smokehouse.obj 0.8 0.8 0.8 ? 0 2 1 1 1
 PART @smokehouse ? assets\image\model\diffuse_map\smokehouse.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.4 1 1 1 1 0 0 1 1 1
 MODEL @storage assets\mesh\storage.obj 0.8 0.8 0.8 ? 0 2 1 1 1
@@ -90,6 +91,7 @@ PART @workshop1 floor assets\image\model\diffuse_map\workshop1_floor.tga ? ? ? ?
 PART @workshop1 window assets\image\model\diffuse_map\workshop1_window.tga ? ? ? ? assets\image\model\normal_map\workshop1_window.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 PART @workshop1 lid assets\image\model\diffuse_map\workshop1_lid.tga ? ? ? ? assets\image\model\normal_map\workshop1_lid.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 PART @workshop1 roof assets\image\model\diffuse_map\workshop1_roof.tga ? ? ? ? assets\image\model\normal_map\workshop1_roof.tga 0 0 1 0 0 2 10 0.5 0.5 0.4 1 1 1 1 0 0 1 1 1
+AABB @workshop1 model@@workshop1@aabb 0 0 0 4 2.55 3
 MODEL @workshop2 assets\mesh\workshop2.obj 0.5 0.5 0.5 ? 0 2 1 1 1
 PART @workshop2 ? assets\image\model\diffuse_map\workshop2.tga ? ? ? ? assets\image\model\normal_map\workshop2.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1
 AABB @workshop2 model@@workshop2@aabb 0 0 0 6.5 4.5 11.5
@@ -102,3 +104,5 @@ PART @workshop3 wall5 assets\image\model\diffuse_map\workshop3_wall5.tga ? ? ? ?
 PART @workshop3 roof assets\image\model\diffuse_map\workshop3_roof.tga ? ? ? ? assets\image\model\normal_map\workshop3_roof.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 PART @workshop3 frame assets\image\model\diffuse_map\workshop3_frame.tga ? ? ? ? assets\image\model\normal_map\workshop3_frame.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 PART @workshop3 wall3 assets\image\model\diffuse_map\workshop3_wall3.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall3.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
+AABB @workshop3 model@@workshop3@aabb1 1.6 0 0 7 7.6 12.15
+AABB @workshop3 model@@workshop3@aabb2 0.05 0 -3.2 10.1 7.6 5.5

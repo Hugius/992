@@ -1,4 +1,4 @@
-78 19
+17 27
 META script_type_update
 META script_state_wait
 
@@ -9,13 +9,14 @@ INT secondsLeft = _totalSeconds
 MOD secondsLeft 86400
 BOL newDay = (_totalSeconds NOT 0 AND secondsLeft IS 0)
 
-/// Creating new workers
+/// Worker creation
 IF _workersToCreate MORE 0
     SUB _workersToCreate 1
     STR newWorkerName = _availableWorkerNames[0]
     PULL _availableWorkerNames 0
     PUSH _workerNames newWorkerName
     PUSH _workerHealths <true>
+    BOL hasWorker = <false>
     EDIT index = 0
     EDIT maxIndex = misc:list_size("_buildingIds")
     LOOP
@@ -111,7 +112,7 @@ IF newDay IS <true>
             SUB maxIndex 1
         ADD index 1
 
-/// Spreading sickness
+/// Sickness spreading
 IF newDay IS <true>
     INT randomNumber = 0
     INT sicknessChance = 0

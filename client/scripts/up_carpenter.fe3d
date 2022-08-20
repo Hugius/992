@@ -1,0 +1,19 @@
+14 47
+META script_type_update
+META script_state_wait
+
+BOL hasWorker = <false>
+
+fe3d:quad2d_set_visible("carpenter_worker", <false>)
+fe3d:quad2d_set_visible("carpenter_info", <false>)
+fe3d:text2d_set_visible("carpenter_worker", <false>)
+fe3d:text2d_set_visible("carpenter_info", <false>)
+
+IF _selectedBuildingType IS "carpenter"
+    EDIT hasWorker = misc:list_contains("_workerBuildingIds", _selectedBuildingId)
+    IF hasWorker IS <true>
+        fe3d:quad2d_set_visible("carpenter_info", <true>)
+        fe3d:text2d_set_visible("carpenter_info", <true>)
+    ELSE
+        fe3d:quad2d_set_visible("carpenter_worker", <true>)
+        fe3d:text2d_set_visible("carpenter_worker", <true>)

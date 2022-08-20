@@ -1,15 +1,17 @@
-8 35
+12 17
 META script_type_initialize
 META script_state_wait
 
+/// Constants
 GLOB CNST DEC _yawSpeed = 0.15
 GLOB CNST DEC _positionSpeed = 0.015
-GLOB CNST DEC _cameraStartX = -25.0
-GLOB CNST DEC _cameraStartY = 17.5
-GLOB CNST DEC _cameraStartZ = 50.0
-GLOB CNST DEC _cameraStartYaw = 270.0
-GLOB CNST DEC _cameraStartPitch = -70.0
 
+/// Non-constants
 GLOB DEC _yawAcc = 0.0
 GLOB DEC _xPositionAcc = 0.0
 GLOB DEC _zPositionAcc = 0.0
+
+/// Initial state
+fe3d:camera_set_position(-25.0, 17.5, 50.0)
+fe3d:camera_set_yaw(270.0)
+fe3d:camera_set_pitch(-70.0)

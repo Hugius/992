@@ -1,0 +1,13 @@
+6 39
+META script_type_initialize
+META script_state_wait
+
+CNST STR workerText = "No worker available"
+CNST STR infoText = "Constructs buildings using planks"
+
+GLOB LST _carpenterIds = {"carpenter_1"}
+
+fe3d:quad2d_place("carpenter_worker", "skull", 0.0, -0.6, 0.1, 0.2)
+fe3d:quad2d_place("carpenter_info", "info", 0.0, -0.6, 0.1, 0.2)
+fe3d:text2d_place("carpenter_worker", "text", workerText, 0.0, -0.8, 0.38, 0.1)
+fe3d:text2d_place("carpenter_info", "text", infoText, 0.0, -0.8, 0.66, 0.1)

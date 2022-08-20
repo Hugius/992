@@ -1,4 +1,4 @@
-67 41
+10 52
 META script_type_update
 META script_state_wait
 
@@ -130,6 +130,12 @@ IF lmbClicked IS <true> AND color[1] NOT 0.0
         PUSH _bakerIds buildingId
     ELIF buildingType IS "barber"
         PUSH _barberIds buildingId
+    ELIF buildingType IS "carpenter"
+        PUSH _carpenterIds buildingId
+    ELIF buildingType IS "mason"
+        PUSH _masonIds buildingId
+    ELIF buildingType IS "roofer"
+        PUSH _rooferIds buildingId
     ELIF buildingType IS "storage"
         PUSH _storageIds buildingId
         ADD _maxWater 10

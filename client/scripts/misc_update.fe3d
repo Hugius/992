@@ -1,4 +1,4 @@
-11 21
+7 0
 META script_type_update
 META script_state_wait
 
@@ -10,4 +10,4 @@ fe3d:quad2d_set_opacity("black", opacity)
 
 /// 4.8 real minutes for 24 game hours
 /// Formula: (24h * 60s * 60s) / (3 * 100) = 288 seconds = 4.8 minutes
-ADD _totalSeconds 150
+ADD _totalSeconds 3
