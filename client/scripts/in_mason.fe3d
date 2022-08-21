@@ -7,7 +7,7 @@ CNST STR infoText = "Constructs buildings using stone/clay"
 
 GLOB LST _masonIds = {"mason_2"}
 
-fe3d:quad2d_place("mason_worker", "skull", 0.0, -0.6, 0.1, 0.2)
-fe3d:quad2d_place("mason_info", "info", 0.0, -0.6, 0.1, 0.2)
+fe3d:quad2d_place("mason_worker", "skull_icon", 0.0, -0.6, 0.1, 0.2)
+fe3d:quad2d_place("mason_info", "info_icon", 0.0, -0.6, 0.1, 0.2)
 fe3d:text2d_place("mason_worker", "text", workerText, 0.0, -0.8, 0.38, 0.1)
 fe3d:text2d_place("mason_info", "text", infoText, 0.0, -0.8, 0.74, 0.1)

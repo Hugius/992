@@ -1,4 +1,4 @@
-10 59
+23 38
 META script_type_initialize
 META script_state_wait
 
@@ -22,7 +22,7 @@ GLOB BOL _buildMode = <false>
 GLOB BOL _previousBuildMode = <false>
 
 /// GUI
-fe3d:quad2d_place("build", "build", 0.95, 0.8125, 0.1, 0.175)
+fe3d:quad2d_place("build", "build_icon", 0.95, 0.8125, 0.1, 0.175)
 fe3d:quad2d_place("building_price", "scroll2", 0.0, -0.7, 1.0, 0.6)
 fe3d:quad2d_place("building_type", "paper", 0.0, 0.925, 0.3, 0.1)
 fe3d:quad2d_place("building_menu", "scroll2", 0.0, -0.7, 1.0, 0.6)

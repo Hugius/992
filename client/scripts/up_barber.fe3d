@@ -1,19 +1,27 @@
-13 17
+4 11
 META script_type_update
 META script_state_wait
 
 BOL hasWorker = <false>
+BOL hasTool = <false>
 
 fe3d:quad2d_set_visible("barber_worker", <false>)
+fe3d:quad2d_set_visible("barber_tool", <false>)
 fe3d:quad2d_set_visible("barber_info", <false>)
 fe3d:text2d_set_visible("barber_worker", <false>)
+fe3d:text2d_set_visible("barber_tool", <false>)
 fe3d:text2d_set_visible("barber_info", <false>)
 
 IF _selectedBuildingType IS "barber"
     EDIT hasWorker = misc:list_contains("_workerBuildingIds", _selectedBuildingId)
+    EDIT hasTool = misc:list_contains("_toolBuildingIds", _selectedBuildingId)
     IF hasWorker IS <true>
-        fe3d:quad2d_set_visible("barber_info", <true>)
-        fe3d:text2d_set_visible("barber_info", <true>)
+        IF hasTool IS <true>
+            fe3d:quad2d_set_visible("barber_info", <true>)
+            fe3d:text2d_set_visible("barber_info", <true>)
+        ELSE
+            fe3d:quad2d_set_visible("barber_tool", <true>)
+            fe3d:text2d_set_visible("barber_tool", <true>)
     ELSE
         fe3d:quad2d_set_visible("barber_worker", <true>)
         fe3d:text2d_set_visible("barber_worker", <true>)

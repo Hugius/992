@@ -1,4 +1,4 @@
-5 35
+0 0
 META script_type_initialize
 META script_state_wait
 
@@ -37,6 +37,9 @@ GLOB INT _totalFeathers = 5
 GLOB INT _totalMushrooms = 5
 GLOB INT _totalGrainSeeds = 5
 GLOB INT _totalVegetableSeeds = 5
+GLOB INT _totalTools = 1
+GLOB INT _totalBows = 1
+GLOB INT _totalArrows = 100
 GLOB INT _maxWater = 10
 GLOB INT _maxAle = 10
 GLOB INT _maxMilk = 10
@@ -69,6 +72,9 @@ GLOB INT _maxFeathers = 10
 GLOB INT _maxMushrooms = 10
 GLOB INT _maxGrainSeeds = 10
 GLOB INT _maxVegetableSeeds = 10
+GLOB INT _maxTools = 5
+GLOB INT _maxBows = 5
+GLOB INT _maxArrows = 50
 
-fe3d:quad2d_place("storage_info", "info", 0.0, -0.6, 0.1, 0.2)
+fe3d:quad2d_place("storage_info", "info_icon", 0.0, -0.6, 0.1, 0.2)
 fe3d:text2d_place("storage_info", "text", infoText, 0.0, -0.8, 0.5, 0.1)

@@ -1,4 +1,4 @@
-10 52
+124 33
 META script_type_update
 META script_state_wait
 
@@ -130,6 +130,8 @@ IF lmbClicked IS <true> AND color[1] NOT 0.0
         PUSH _bakerIds buildingId
     ELIF buildingType IS "barber"
         PUSH _barberIds buildingId
+    ELIF buildingType IS "blacksmith"
+        PUSH _blacksmithIds buildingId
     ELIF buildingType IS "carpenter"
         PUSH _carpenterIds buildingId
     ELIF buildingType IS "mason"
@@ -170,3 +172,6 @@ IF lmbClicked IS <true> AND color[1] NOT 0.0
         ADD _maxMushrooms 10
         ADD _maxGrainSeeds 10
         ADD _maxVegetableSeeds 10
+        ADD _maxTools 5
+        ADD _maxBows 5
+        ADD _maxArrows 50

@@ -1,4 +1,4 @@
-24 18
+18 21
 META script_type_update
 META script_state_entry
 
@@ -17,6 +17,7 @@ EXECUTE workers_update
 EXECUTE up_apiarist
 EXECUTE up_baker
 EXECUTE up_barber
+EXECUTE up_blacksmith
 EXECUTE up_carpenter
 EXECUTE up_mason
 EXECUTE up_roofer
