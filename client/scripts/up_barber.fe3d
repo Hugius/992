@@ -1,7 +1,8 @@
-4 11
+28 61
 META script_type_update
 META script_state_wait
 
+BOL clicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
 BOL hasWorker = <false>
 BOL hasTool = <false>
 
@@ -22,6 +23,11 @@ IF _selectedBuildingType IS "barber"
         ELSE
             fe3d:quad2d_set_visible("barber_tool", <true>)
             fe3d:text2d_set_visible("barber_tool", <true>)
+            IF _totalTools MORE 0
+                EDIT _cursorType = "HAND"
+                IF lmbPressed IS <true>
+                    SUB _totalTools 1
+                    PUSH _toolBuildingIds _selectedBuildingId
     ELSE
         fe3d:quad2d_set_visible("barber_worker", <true>)
         fe3d:text2d_set_visible("barber_worker", <true>)
