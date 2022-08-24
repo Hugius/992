@@ -1,4 +1,4 @@
-7 65
+14 34
 META script_type_initialize
 META script_state_wait
 
@@ -6,7 +6,7 @@ CNST STR workerText = "No worker available"
 CNST STR storageText = "No space in storage"
 
 GLOB LST _blacksmithIds = {}
-GLOB LST _toolBuildingIds = {"carpenter_1", "mason_2", "roofer_3"}
+GLOB LST _toolBuildingIds = {}
 
 fe3d:quad2d_place("blacksmith_worker", "skull_icon", 0.0, -0.6, 0.1, 0.2)
 fe3d:quad2d_place("blacksmith_storage", "tool", 0.0, -0.6, 0.1, 0.2)

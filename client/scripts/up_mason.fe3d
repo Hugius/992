@@ -1,19 +1,33 @@
-14 43
+11 35
 META script_type_update
 META script_state_wait
 
+BOL clicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
 BOL hasWorker = <false>
+BOL hasTool = <false>
 
 fe3d:quad2d_set_visible("mason_worker", <false>)
+fe3d:quad2d_set_visible("mason_tool", <false>)
 fe3d:quad2d_set_visible("mason_info", <false>)
 fe3d:text2d_set_visible("mason_worker", <false>)
+fe3d:text2d_set_visible("mason_tool", <false>)
 fe3d:text2d_set_visible("mason_info", <false>)
 
 IF _selectedBuildingType IS "mason"
     EDIT hasWorker = misc:list_contains("_workerBuildingIds", _selectedBuildingId)
+    EDIT hasTool = misc:list_contains("_toolBuildingIds", _selectedBuildingId)
     IF hasWorker IS <true>
-        fe3d:quad2d_set_visible("mason_info", <true>)
-        fe3d:text2d_set_visible("mason_info", <true>)
+        IF hasTool IS <true>
+            fe3d:quad2d_set_visible("mason_info", <true>)
+            fe3d:text2d_set_visible("mason_info", <true>)
+        ELSE
+            fe3d:quad2d_set_visible("mason_tool", <true>)
+            fe3d:text2d_set_visible("mason_tool", <true>)
+            IF _totalTools MORE 0
+                EDIT _cursorType = "HAND"
+                IF clicked IS <true>
+                    SUB _totalTools 1
+                    PUSH _toolBuildingIds _selectedBuildingId
     ELSE
         fe3d:quad2d_set_visible("mason_worker", <true>)
         fe3d:text2d_set_visible("mason_worker", <true>)

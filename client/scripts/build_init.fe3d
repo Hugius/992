@@ -1,4 +1,4 @@
-23 38
+31 29
 META script_type_initialize
 META script_state_wait
 
@@ -9,7 +9,6 @@ GLOB CNST LST _buildPricesPlanks = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
 GLOB CNST LST _buildPricesStone = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
 GLOB CNST LST _buildPricesClay = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
 GLOB CNST LST _buildPricesStraw = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
-GLOB CNST LST _buildPricesIron = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
 GLOB CNST DEC _buildHeight = 2.75
 
 /// Non-constants
@@ -30,15 +29,13 @@ fe3d:text2d_place("building_price", "text", "", 0.0, -0.55, 0.0, 0.0)
 fe3d:text2d_place("building_type", "text", "", 0.0, 0.925, 0.0, 0.0)
 fe3d:text2d_place("building_menu", "text", "", 0.0, -0.55, 0.0, 0.0)
 fe3d:quad2d_place("price_planks", "planks", -0.3, -0.7, 0.1, 0.175)
-fe3d:quad2d_place("price_stone", "stone", -0.15, -0.7, 0.1, 0.175)
-fe3d:quad2d_place("price_clay", "clay", 0.0, -0.7, 0.1, 0.175)
-fe3d:quad2d_place("price_straw", "straw", 0.15, -0.7, 0.1, 0.175)
-fe3d:quad2d_place("price_iron", "iron", 0.3, -0.7, 0.1, 0.175)
+fe3d:quad2d_place("price_stone", "stone", -0.1, -0.7, 0.1, 0.175)
+fe3d:quad2d_place("price_clay", "clay", 0.1, -0.7, 0.1, 0.175)
+fe3d:quad2d_place("price_straw", "straw", 0.3, -0.7, 0.1, 0.175)
 fe3d:text2d_place("price_planks", "text", "", -0.3, -0.85, 0.08, 0.15)
-fe3d:text2d_place("price_stone", "text", "", -0.15, -0.85, 0.08, 0.15)
-fe3d:text2d_place("price_clay", "text", "", 0.0, -0.85, 0.08, 0.15)
-fe3d:text2d_place("price_straw", "text", "", 0.15, -0.85, 0.08, 0.15)
-fe3d:text2d_place("price_iron", "text", "", 0.3, -0.85, 0.08, 0.15)
+fe3d:text2d_place("price_stone", "text", "", -0.1, -0.85, 0.08, 0.15)
+fe3d:text2d_place("price_clay", "text", "", 0.1, -0.85, 0.08, 0.15)
+fe3d:text2d_place("price_straw", "text", "", 0.3, -0.85, 0.08, 0.15)
 
 /// Preview buildings
 INT maxIndex = misc:list_size("_buildingTypes")

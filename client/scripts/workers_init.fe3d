@@ -1,11 +1,18 @@
-6 25
+11 30
 META script_type_initialize
 META script_state_wait
 
+/// Constants
+GLOB CNST INT _workerEventsTimespan = 14400
+
+/// Non-constants
 GLOB LST _availableWorkerNames = {"Uhtred", "Alfred", "Edward", "a","b","c","d","e","f","g"}
 GLOB LST _workerNames = {}
 GLOB LST _workerHealths = {}
 GLOB LST _workerBuildingIds = {}
-GLOB INT _workersToCreate = 5
+GLOB INT _workersToCreate = 10
+GLOB INT _workerEventIndex = 0
+GLOB INT _workerEventTimer = 0
+GLOB INT _workerEventTimespan = 144
 GLOB INT _totalDeadWorkers = 0
 GLOB INT _sicknessChance = 15

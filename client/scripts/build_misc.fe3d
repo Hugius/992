@@ -1,4 +1,4 @@
-11 4
+63 22
 META script_type_update
 META script_state_wait
 
@@ -25,13 +25,11 @@ fe3d:quad2d_set_visible("price_planks", _buildMode)
 fe3d:quad2d_set_visible("price_stone", _buildMode)
 fe3d:quad2d_set_visible("price_clay", _buildMode)
 fe3d:quad2d_set_visible("price_straw", _buildMode)
-fe3d:quad2d_set_visible("price_iron", _buildMode)
 fe3d:text2d_set_visible("building_price", _buildMode)
 fe3d:text2d_set_visible("price_planks", _buildMode)
 fe3d:text2d_set_visible("price_stone", _buildMode)
 fe3d:text2d_set_visible("price_clay", _buildMode)
 fe3d:text2d_set_visible("price_straw", _buildMode)
-fe3d:text2d_set_visible("price_iron", _buildMode)
 
 IF _buildMode IS <false>
     EXIT
@@ -47,13 +45,11 @@ STR pricePlanksText = misc:string_zeroed_integer(_buildPricesPlanks[_buildingInd
 STR priceStoneText = misc:string_zeroed_integer(_buildPricesStone[_buildingIndex], 4)
 STR priceClayText = misc:string_zeroed_integer(_buildPricesClay[_buildingIndex], 4)
 STR priceStrawText = misc:string_zeroed_integer(_buildPricesStraw[_buildingIndex], 4)
-STR priceIronText = misc:string_zeroed_integer(_buildPricesIron[_buildingIndex], 4)
 
 fe3d:text2d_set_content("price_planks", pricePlanksText)
 fe3d:text2d_set_content("price_stone", priceStoneText)
 fe3d:text2d_set_content("price_clay", priceClayText)
 fe3d:text2d_set_content("price_straw", priceStrawText)
-fe3d:text2d_set_content("price_iron", priceIronText)
 
 fe3d:model_set_visible(_buildingTypes[_buildingIndex], <false>)
 

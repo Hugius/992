@@ -1,9 +1,9 @@
-5 0
+4 26
 META script_type_initialize
 META script_state_wait
 
 GLOB STR _cursorType = "ARROW"
-GLOB INT _totalSeconds = 0
+GLOB INT _totalUpdates = 0
 
 fe3d:world_load_editor("island")
 fe3d:graphics_set_anti_aliasing_enabled(<true>)

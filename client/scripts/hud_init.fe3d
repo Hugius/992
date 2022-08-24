@@ -1,11 +1,11 @@
-70 53
+6 52
 META script_type_initialize
 META script_state_wait
 
 fe3d:quad2d_place("vignette", "vignette", 0.0, 0.0, 2.0, 2.0)
 
-fe3d:quad2d_place("total_days", "scroll2", 0.9, 0.95, 0.2, 0.1)
-fe3d:text2d_place("total_days", "text", "", 0.9, 0.95, 0.125, 0.075)
+fe3d:quad2d_place("total_seconds", "scroll2", 0.875, 0.95, 0.25, 0.1)
+fe3d:text2d_place("total_seconds", "text", "", 0.875, 0.95, 0.15, 0.075)
 
 fe3d:quad2d_place("total_workers", "scroll1", -0.9, 0.75, 0.2, 0.5)
 fe3d:quad2d_place("total_alive", "heart_icon", -0.925, 0.8125, 0.05, 0.075)

@@ -1,4 +1,4 @@
-28 61
+0 0
 META script_type_update
 META script_state_wait
 
@@ -25,7 +25,7 @@ IF _selectedBuildingType IS "barber"
             fe3d:text2d_set_visible("barber_tool", <true>)
             IF _totalTools MORE 0
                 EDIT _cursorType = "HAND"
-                IF lmbPressed IS <true>
+                IF clicked IS <true>
                     SUB _totalTools 1
                     PUSH _toolBuildingIds _selectedBuildingId
     ELSE

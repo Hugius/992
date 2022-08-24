@@ -1,4 +1,4 @@
-124 33
+101 0
 META script_type_update
 META script_state_wait
 
@@ -13,7 +13,6 @@ INT planksPrice = _buildPricesPlanks[_buildingIndex]
 INT stonePrice = _buildPricesStone[_buildingIndex]
 INT clayPrice = _buildPricesClay[_buildingIndex]
 INT strawPrice = _buildPricesStraw[_buildingIndex]
-INT ironPrice = _buildPricesIron[_buildingIndex]
 
 LST aabbIds = fe3d:model_get_aabb_ids(buildingType)
 LST partIds = fe3d:model_get_part_ids(buildingType)
@@ -50,14 +49,11 @@ IF _totalClay LESS clayPrice
     EDIT color = {0.5,0.0,0.0}
 IF _totalStraw LESS strawPrice
     EDIT color = {0.5,0.0,0.0}
-IF _totalIron LESS ironPrice
-    EDIT color = {0.5,0.0,0.0}
 
 fe3d:text2d_set_color("price_planks", color[0], color[1], color[2])
 fe3d:text2d_set_color("price_stone", color[0], color[1], color[2])
 fe3d:text2d_set_color("price_clay", color[0], color[1], color[2])
 fe3d:text2d_set_color("price_straw", color[0], color[1], color[2])
-fe3d:text2d_set_color("price_iron", color[0], color[1], color[2])
 
 fe3d:collision_calculate_model_aabbs(buildingType)
 LST collisions = fe3d:collision_check_model_models(buildingType, "")
@@ -113,7 +109,6 @@ IF lmbClicked IS <true> AND color[1] NOT 0.0
     SUB _totalStone stonePrice
     SUB _totalClay clayPrice
     SUB _totalStraw strawPrice
-    SUB _totalIron ironPrice
     ADD _buildingCounter 1
     PUSH _buildingIds buildingId
     IF buildingType NOT "grave"

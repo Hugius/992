@@ -1,0 +1,72 @@
+0 0
+META script_type_update
+META script_state_wait
+
+BOL mustUpdate = fe3d:time_is_passed(10)
+
+IF mustUpdate IS <false>
+    EXIT
+
+STR totalWaterText = misc:string_zeroed_integer(_totalWater, 4)
+STR totalAleText = misc:string_zeroed_integer(_totalAle, 4)
+STR totalMilkText = misc:string_zeroed_integer(_totalMilk, 4)
+STR totalSmokedMeatText = misc:string_zeroed_integer(_totalSmokedMeat, 4)
+STR totalSmokedFishText = misc:string_zeroed_integer(_totalSmokedFish, 4)
+STR totalBreadText = misc:string_zeroed_integer(_totalBread, 4)
+STR totalVegetablesText = misc:string_zeroed_integer(_totalVegetables, 4)
+STR totalEggsText = misc:string_zeroed_integer(_totalEggs, 4)
+STR totalRawMeatText = misc:string_zeroed_integer(_totalRawMeat, 4)
+STR totalRawFishText = misc:string_zeroed_integer(_totalRawFish, 4)
+STR totalHoneyText = misc:string_zeroed_integer(_totalHoney, 4)
+STR totalFruitText = misc:string_zeroed_integer(_totalFruit, 4)
+
+fe3d:text2d_set_content("total_water", totalWaterText)
+fe3d:text2d_set_content("total_ale", totalAleText)
+fe3d:text2d_set_content("total_milk", totalMilkText)
+fe3d:text2d_set_content("total_smoked_meat", totalSmokedMeatText)
+fe3d:text2d_set_content("total_smoked_fish", totalSmokedFishText)
+fe3d:text2d_set_content("total_bread", totalBreadText)
+fe3d:text2d_set_content("total_vegetables", totalVegetablesText)
+fe3d:text2d_set_content("total_eggs", totalEggsText)
+fe3d:text2d_set_content("total_raw_meat", totalRawMeatText)
+fe3d:text2d_set_content("total_raw_fish", totalRawFishText)
+fe3d:text2d_set_content("total_honey", totalHoneyText)
+fe3d:text2d_set_content("total_fruit", totalFruitText)
+
+fe3d:text2d_set_color("total_water", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_ale", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_milk", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_smoked_meat", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_smoked_fish", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_bread", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_vegetables", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_eggs", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_raw_meat", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_raw_fish", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_honey", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_fruit", 0.0, 0.0, 0.0)
+
+IF _totalWater IS _maxWater
+    fe3d:text2d_set_color("total_water", 0.5, 0.0, 0.0)
+IF _totalAle IS _maxAle
+    fe3d:text2d_set_color("total_ale", 0.5, 0.0, 0.0)
+IF _totalMilk IS _maxMilk
+    fe3d:text2d_set_color("total_milk", 0.5, 0.0, 0.0)
+IF _totalSmokedMeat IS _maxSmokedMeat
+    fe3d:text2d_set_color("total_smoked_meat", 0.5, 0.0, 0.0)
+IF _totalSmokedFish IS _maxSmokedFish
+    fe3d:text2d_set_color("total_smoked_fish", 0.5, 0.0, 0.0)
+IF _totalBread IS _maxBread
+    fe3d:text2d_set_color("total_bread", 0.5, 0.0, 0.0)
+IF _totalVegetables IS _maxVegetables
+    fe3d:text2d_set_color("total_vegetables", 0.5, 0.0, 0.0)
+IF _totalEggs IS _maxEggs
+    fe3d:text2d_set_color("total_eggs", 0.5, 0.0, 0.0)
+IF _totalRawFish IS _maxRawFish
+    fe3d:text2d_set_color("total_raw_fish", 0.5, 0.0, 0.0)
+IF _totalRawMeat IS _maxRawMeat
+    fe3d:text2d_set_color("total_raw_meat", 0.5, 0.0, 0.0)
+IF _totalHoney IS _maxHoney
+    fe3d:text2d_set_color("total_honey", 0.5, 0.0, 0.0)
+IF _totalFruit IS _maxFruit
+    fe3d:text2d_set_color("total_fruit", 0.5, 0.0, 0.0)

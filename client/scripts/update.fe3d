@@ -1,4 +1,4 @@
-18 21
+12 21
 META script_type_update
 META script_state_entry
 
@@ -11,7 +11,8 @@ EXECUTE camera_update
 EXECUTE build_misc
 EXECUTE build_place
 EXECUTE build_select
-EXECUTE workers_update
+EXECUTE workers_event
+EXECUTE workers_misc
 
 /// Building stuff
 EXECUTE up_apiarist
@@ -24,5 +25,7 @@ EXECUTE up_roofer
 EXECUTE up_storage
 
 /// Miscellaneous stuff
-EXECUTE hud_update
+EXECUTE hud_food
+EXECUTE hud_resources
+EXECUTE hud_misc
 EXECUTE misc_update
