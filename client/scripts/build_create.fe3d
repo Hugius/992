@@ -1,0 +1,101 @@
+7 13
+META script_type_update
+META script_state_wait
+
+/// Miscellaneous
+IF _placedBuildingId IS ""
+    EXIT
+
+/// Prepare values
+INT index = 0
+INT maxIndex = 0
+
+/// Assign worker to job
+IF _placedBuildingType NOT "grave"
+    IF _placedBuildingType NOT "house"
+        IF _placedBuildingType NOT "storage"
+            IF _placedBuildingType NOT "tavern"
+                EDIT index = misc:list_index("_workerJobBuildingIds", "")
+                IF index NOT -1
+                    EDIT _workerJobBuildingIds[index] = _placedBuildingId
+
+/// Determine building type
+IF _placedBuildingType IS "apiarist"
+    PUSH _apiaristIds _placedBuildingId
+    PUSH _apiaristTimers 0
+ELIF _placedBuildingType IS "baker"
+    PUSH _bakerIds _placedBuildingId
+ELIF _placedBuildingType IS "barber"
+    PUSH _barberIds _placedBuildingId
+ELIF _placedBuildingType IS "blacksmith"
+    PUSH _blacksmithIds _placedBuildingId
+ELIF _placedBuildingType IS "carpenter"
+    PUSH _carpenterIds _placedBuildingId
+ELIF _placedBuildingType IS "house"
+    PUSH _houseIds _placedBuildingId
+    INT maleIndex = -1
+    INT femaleIndex = -1
+    EDIT index = 0
+    EDIT maxIndex = misc:list_size("_workerHouseBuildingIds")
+    LOOP
+        IF index IS maxIndex
+            BREAK
+        IF _workerHouseBuildingIds[index] IS ""
+            IF maleIndex IS -1 AND _workerGenders[index] IS "MALE"
+                EDIT maleIndex = index
+            IF femaleIndex IS -1 AND _workerGenders[index] IS "FEMALE"
+                EDIT femaleIndex = index
+        ADD index 1
+    IF maleIndex NOT -1
+        EDIT _workerHouseBuildingIds[maleIndex] = _placedBuildingId
+    IF femaleIndex NOT -1
+        EDIT _workerHouseBuildingIds[femaleIndex] = _placedBuildingId
+    IF maleIndex NOT -1 AND femaleIndex NOT -1
+        STR message = misc:string_concat(_workerNames[maleIndex], " married ")
+        EDIT message = misc:string_concat(message, _workerNames[femaleIndex])
+        fe3d:print(message)
+ELIF _placedBuildingType IS "mason"
+    PUSH _masonIds _placedBuildingId
+ELIF _placedBuildingType IS "roofer"
+    PUSH _rooferIds _placedBuildingId
+ELIF _placedBuildingType IS "storage"
+    PUSH _storageIds _placedBuildingId
+    ADD _maxWater 10
+    ADD _maxAle 10
+    ADD _maxMilk 10
+    ADD _maxSmokedMeat 10
+    ADD _maxSmokedFish 10
+    ADD _maxBread 10
+    ADD _maxVegetables 10
+    ADD _maxEggs 10
+    ADD _maxRawFish 10
+    ADD _maxRawMeat 10
+    ADD _maxHoney 10
+    ADD _maxFruit 10
+    ADD _maxLumber 10
+    ADD _maxStone 10
+    ADD _maxGrain 10
+    ADD _maxFlour 10
+    ADD _maxPlanks 10
+    ADD _maxFirewood 10
+    ADD _maxManure 10
+    ADD _maxOre 10
+    ADD _maxIron 10
+    ADD _maxHides 10
+    ADD _maxClothes 10
+    ADD _maxWool 10
+    ADD _maxLeather 10
+    ADD _maxClay 10
+    ADD _maxStraw 10
+    ADD _maxMedicine 10
+    ADD _maxFeathers 10
+    ADD _maxMushrooms 10
+    ADD _maxGrainSeeds 10
+    ADD _maxVegetableSeeds 10
+    ADD _maxTools 5
+    ADD _maxBows 5
+    ADD _maxArrows 50
+
+/// Miscellaneous
+EDIT _placedBuildingId = ""
+EDIT _placedBuildingType = ""

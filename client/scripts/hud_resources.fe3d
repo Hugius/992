@@ -1,11 +1,13 @@
-3 40
+83 14
 META script_type_update
 META script_state_wait
 
+/// Miscellaneous
 BOL mustUpdate = fe3d:time_is_passed(10)
 IF mustUpdate IS <false>
     EXIT
 
+/// Prepare values
 STR totalLumberText = misc:string_zeroed_integer(_totalLumber, 4)
 STR totalStoneText = misc:string_zeroed_integer(_totalStone, 4)
 STR totalGrainText = misc:string_zeroed_integer(_totalGrain, 4)
@@ -30,6 +32,7 @@ STR totalToolsText = misc:string_zeroed_integer(_totalTools, 4)
 STR totalBowsText = misc:string_zeroed_integer(_totalBows, 4)
 STR totalArrowsText = misc:string_zeroed_integer(_totalArrows, 4)
 
+/// Set content
 fe3d:text2d_set_content("total_lumber", totalLumberText)
 fe3d:text2d_set_content("total_stone", totalStoneText)
 fe3d:text2d_set_content("total_grain", totalGrainText)
@@ -54,6 +57,7 @@ fe3d:text2d_set_content("total_tools", totalToolsText)
 fe3d:text2d_set_content("total_bows", totalBowsText)
 fe3d:text2d_set_content("total_arrows", totalArrowsText)
 
+/// Set default color
 fe3d:text2d_set_color("total_lumber", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_stone", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_grain", 0.0, 0.0, 0.0)
@@ -78,6 +82,7 @@ fe3d:text2d_set_color("total_tools", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_bows", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_arrows", 0.0, 0.0, 0.0)
 
+/// Set custom color
 IF _totalLumber IS _maxLumber
     fe3d:text2d_set_color("total_lumber", 0.5, 0.0, 0.0)
 IF _totalStone IS _maxStone

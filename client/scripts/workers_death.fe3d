@@ -1,0 +1,99 @@
+81 8
+META script_type_update
+META script_state_wait
+
+/// Update event timer
+IF _workerDeathTimer IS _workerDeathTimespan
+    EDIT _workerDeathTimer = 0
+ELSE
+    ADD _workerDeathTimer 1
+    EXIT
+
+/// Prepare values
+STR workerName = _workerNames[_workerDeathIndex]
+STR eventMessage = ""
+INT totalWorkers = misc:list_size("_workerNames")
+BOL workerIsDead = <false>
+
+/// Update dying from suicide
+IF workerIsDead IS <false>
+    PASS
+
+/// Update dying from sickness
+IF workerIsDead IS <false>
+    IF _workerHealths[_workerDeathIndex] IS <true>
+        INT randomNumber = math:random_integer(1, 100)
+        INT sicknessChance = 100
+        SUB sicknessChance _sicknessChance
+        IF randomNumber MORE sicknessChance
+            EDIT _workerHealths[_workerDeathIndex] = <false>
+            EDIT eventMessage = misc:string_concat(workerName, " caught the sickness")
+            fe3d:print(eventMessage)
+    ELSE
+        IF _totalMedicine MORE 0
+            SUB _totalMedicine 1
+            EDIT _workerHealths[_workerDeathIndex] = <true>
+        ELSE
+            EDIT workerIsDead = <true>
+            EDIT eventMessage = misc:string_concat(workerName, " died of sickness")
+            fe3d:print(eventMessage)
+
+/// Update dying from dehydration
+IF workerIsDead IS <false>
+    IF _totalWater MORE 0
+        SUB _totalWater 1
+    ELIF _totalAle MORE 0
+        SUB _totalAle 1
+    ELIF _totalMilk MORE 0
+        SUB _totalMilk 1
+    ELSE
+        EDIT workerIsDead = <true>
+        EDIT eventMessage = misc:string_concat(workerName, " died of dehydration")
+        fe3d:print(eventMessage)
+
+/// Update dying from starvation
+IF workerIsDead IS <false>
+    IF _totalSmokedMeat MORE 0
+        SUB _totalSmokedMeat 1
+    ELIF _totalSmokedFish MORE 0
+        SUB _totalSmokedFish 1
+    ELIF _totalBread MORE 0
+        SUB _totalBread 1
+    ELIF _totalVegetables MORE 0
+        SUB _totalVegetables 1
+    ELIF _totalEggs MORE 0
+        SUB _totalEggs 1
+    ELIF _totalRawMeat MORE 0
+        SUB _totalRawMeat 1
+    ELIF _totalRawFish MORE 0
+        SUB _totalRawFish 1
+    ELIF _totalHoney MORE 0
+        SUB _totalHoney 1
+    ELIF _totalFruit MORE 0
+        SUB _totalFruit 1
+    ELSE
+        EDIT workerIsDead = <true>
+        EDIT eventMessage = misc:string_concat(workerName, " died of starvation")
+        fe3d:print(eventMessage)
+
+/// Handle dead worker
+IF workerIsDead IS <true>
+    IF _workerNames[_workerDeathIndex] IS "MALE"
+        PUSH _maleWorkerNames _workerNames[_workerDeathIndex]
+    ELSE
+        PUSH _femaleWorkerNames _workerNames[_workerDeathIndex]
+    PULL _workerNames _workerDeathIndex
+    PULL _workerGenders _workerDeathIndex
+    PULL _workerHealths _workerDeathIndex
+    PULL _workerJobBuildingIds _workerDeathIndex
+    PULL _workerHouseBuildingIds _workerDeathIndex
+    ADD _totalDeadWorkers 1
+    SUB totalWorkers 1
+ELSE
+    ADD _workerDeathIndex 1
+
+/// Update event index
+IF _workerDeathIndex IS totalWorkers
+    EDIT _workerDeathIndex = 0
+    EDIT _workerDeathTimespan = _workersDeathTimespan
+    DIV _workerDeathTimespan totalWorkers

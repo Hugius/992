@@ -38,6 +38,8 @@ PART @house frame assets\image\model\diffuse_map\house_frame.tga ? ? ? ? ? 0 0 1
 PART @house door assets\image\model\diffuse_map\house_door.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
 PART @house chimney assets\image\model\diffuse_map\house_chimney.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.2 1 1 1 1 0 0 1 1 1
 PART @house roof assets\image\model\diffuse_map\house_roof.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 2 0 0 1 1 1
+AABB @house model@@house@aabb1 -0.05 0 -0.25 1.7 1.2 1.04
+AABB @house model@@house@aabb2 0.32 0 0.02 0.97 1.2 1.6
 MODEL @lavatory assets\mesh\lavatory.obj 0.55 0.55 0.55 ? 0 2 1 1 1
 PART @lavatory ? assets\image\model\diffuse_map\lavatory.tga ? ? ? ? assets\image\model\normal_map\lavatory.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 MODEL @lod assets\mesh\lod.obj 1 1 1 ? 0 2 0 0 0

@@ -1,11 +1,16 @@
-9 19
+4 46
 META script_type_update
 META script_state_wait
 
+/// Prepare values
+DEC opacity = fe3d:quad2d_get_opacity("black")
+
+/// Update sky
 fe3d:sky_rotate("day", 0.0, 0.01, 0.0)
 
-DEC opacity = fe3d:quad2d_get_opacity("black")
+/// Update intro fading
 SUB opacity 0.005
 fe3d:quad2d_set_opacity("black", opacity)
 
+/// Miscellaneous
 ADD _totalUpdates 1

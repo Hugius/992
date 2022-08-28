@@ -1,16 +1,19 @@
-4 27
+3 13
 META script_type_initialize
 META script_state_wait
 
+/// Constants
 CNST STR workerText = "No worker available"
 CNST STR toolText = "No tool equipped"
 CNST STR infoText = "Decreases the chance of sickness by 5%"
 
+/// Non-constants
 GLOB LST _barberIds = {}
 
+/// GUI
 fe3d:quad2d_place("barber_worker", "skull_icon", 0.0, -0.6, 0.1, 0.2)
 fe3d:quad2d_place("barber_tool", "tool", 0.0, -0.6, 0.1, 0.2)
 fe3d:quad2d_place("barber_info", "info_icon", 0.0, -0.6, 0.1, 0.2)
 fe3d:text2d_place("barber_worker", "text", workerText, 0.0, -0.8, 0.38, 0.1)
 fe3d:text2d_place("barber_tool", "text", toolText, 0.0, -0.8, 0.32, 0.1)
-fe3d:text2d_place("barber_info", "text", infoText, 0.0, -0.8, 0.73125, 0.1)
+fe3d:text2d_place("barber_info", "text", infoText, 0.0, -0.8, 0.76, 0.1)

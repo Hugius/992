@@ -1,9 +1,11 @@
-9 29
+78 0
 META script_type_initialize
 META script_state_wait
 
+/// Constants
 CNST STR infoText = "Stores food and resources"
 
+/// Non-constants
 GLOB LST _storageIds = {"storage_0"}
 GLOB INT _totalWater = 5
 GLOB INT _totalAle = 0
@@ -17,26 +19,26 @@ GLOB INT _totalRawFish = 0
 GLOB INT _totalRawMeat = 0
 GLOB INT _totalHoney = 0
 GLOB INT _totalFruit = 0
-GLOB INT _totalLumber = 0
-GLOB INT _totalStone = 0
-GLOB INT _totalGrain = 0
-GLOB INT _totalFlour = 0
-GLOB INT _totalPlanks = 0
-GLOB INT _totalFirewood = 0
-GLOB INT _totalManure = 0
-GLOB INT _totalOre = 0
-GLOB INT _totalIron = 0
-GLOB INT _totalHides = 0
-GLOB INT _totalClothes = 0
-GLOB INT _totalWool = 0
-GLOB INT _totalLeather = 0
-GLOB INT _totalClay = 0
-GLOB INT _totalStraw = 0
-GLOB INT _totalMedicine = 0
-GLOB INT _totalFeathers = 0
-GLOB INT _totalMushrooms = 0
-GLOB INT _totalGrainSeeds = 0
-GLOB INT _totalVegetableSeeds = 0
+GLOB INT _totalLumber = 5
+GLOB INT _totalStone = 5
+GLOB INT _totalGrain = 5
+GLOB INT _totalFlour = 5
+GLOB INT _totalPlanks = 5
+GLOB INT _totalFirewood = 5
+GLOB INT _totalManure = 5
+GLOB INT _totalOre = 5
+GLOB INT _totalIron = 5
+GLOB INT _totalHides = 5
+GLOB INT _totalClothes = 5
+GLOB INT _totalWool = 5
+GLOB INT _totalLeather = 5
+GLOB INT _totalClay = 5
+GLOB INT _totalStraw = 5
+GLOB INT _totalMedicine = 5
+GLOB INT _totalFeathers = 5
+GLOB INT _totalMushrooms = 5
+GLOB INT _totalGrainSeeds = 5
+GLOB INT _totalVegetableSeeds = 5
 GLOB INT _totalTools = 3
 GLOB INT _totalBows = 0
 GLOB INT _totalArrows = 0
@@ -76,5 +78,6 @@ GLOB INT _maxTools = 5
 GLOB INT _maxBows = 5
 GLOB INT _maxArrows = 50
 
+/// GUI
 fe3d:quad2d_place("storage_info", "info_icon", 0.0, -0.6, 0.1, 0.2)
 fe3d:text2d_place("storage_info", "text", infoText, 0.0, -0.8, 0.5, 0.1)

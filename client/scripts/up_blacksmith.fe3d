@@ -1,9 +1,11 @@
-3 23
+6 12
 META script_type_update
 META script_state_wait
 
+/// Prepare values
 BOL hasWorker = <false>
 
+/// Hide GUI
 fe3d:quad2d_set_visible("blacksmith_worker", <false>)
 fe3d:quad2d_set_visible("blacksmith_storage", <false>)
 fe3d:quad2d_set_visible("blacksmith_planks", <false>)
@@ -16,8 +18,9 @@ fe3d:text2d_set_visible("blacksmith_planks", <false>)
 fe3d:text2d_set_visible("blacksmith_iron", <false>)
 fe3d:text2d_set_visible("blacksmith_tool", <false>)
 
+/// Show GUI
 IF _selectedBuildingType IS "blacksmith"
-    EDIT hasWorker = misc:list_contains("_workerBuildingIds", _selectedBuildingId)
+    EDIT hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
     IF hasWorker IS <true>
         IF _totalTools LESS _maxTools
             fe3d:quad2d_set_visible("blacksmith_planks", <true>)

@@ -1,12 +1,15 @@
-3 0
+17 0
 META script_type_update
 META script_state_wait
 
+/// Update raycasting
 fe3d:raycast_calculate_aabbs_intersection()
-
-BOL hovered = <false>
 STR buildingId = fe3d:raycast_get_closest_model("")
 
+/// Prepare values
+BOL hovered = <false>
+
+/// Extract building type
 IF buildingId NOT "" AND _buildMode IS <false>
     LST splitPlacedId = misc:string_split(buildingId, "_")
     STR buildingType = splitPlacedId[0]
@@ -14,6 +17,7 @@ IF buildingId NOT "" AND _buildMode IS <false>
     IF contains IS <true>
         EDIT hovered = <true>
 
+/// Update building type GUI
 IF hovered IS <true>
     fe3d:quad2d_set_visible("building_type", <true>)
     fe3d:text2d_set_visible("building_type", <true>)
@@ -31,10 +35,11 @@ ELSE
     EDIT _selectedBuildingId = ""
     EDIT _selectedBuildingType = ""
 
+/// Update building menu GUI
 BOL selected = (_selectedBuildingType NOT "")
 fe3d:quad2d_set_visible("building_menu", selected)
 fe3d:text2d_set_visible("building_menu", selected)
 
+/// Update cursor type
 fe3d:cursor_set_type(_cursorType)
-
 EDIT _cursorType = "ARROW"

@@ -1,12 +1,13 @@
-0 0
+50 14
 META script_type_update
 META script_state_wait
 
+/// Miscellaneous
 BOL mustUpdate = fe3d:time_is_passed(10)
-
 IF mustUpdate IS <false>
     EXIT
 
+/// Prepare values
 STR totalWaterText = misc:string_zeroed_integer(_totalWater, 4)
 STR totalAleText = misc:string_zeroed_integer(_totalAle, 4)
 STR totalMilkText = misc:string_zeroed_integer(_totalMilk, 4)
@@ -20,6 +21,7 @@ STR totalRawFishText = misc:string_zeroed_integer(_totalRawFish, 4)
 STR totalHoneyText = misc:string_zeroed_integer(_totalHoney, 4)
 STR totalFruitText = misc:string_zeroed_integer(_totalFruit, 4)
 
+/// Update content
 fe3d:text2d_set_content("total_water", totalWaterText)
 fe3d:text2d_set_content("total_ale", totalAleText)
 fe3d:text2d_set_content("total_milk", totalMilkText)
@@ -33,6 +35,7 @@ fe3d:text2d_set_content("total_raw_fish", totalRawFishText)
 fe3d:text2d_set_content("total_honey", totalHoneyText)
 fe3d:text2d_set_content("total_fruit", totalFruitText)
 
+/// Set default color
 fe3d:text2d_set_color("total_water", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_ale", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_milk", 0.0, 0.0, 0.0)
@@ -46,6 +49,7 @@ fe3d:text2d_set_color("total_raw_fish", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_honey", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_fruit", 0.0, 0.0, 0.0)
 
+/// Set custom color
 IF _totalWater IS _maxWater
     fe3d:text2d_set_color("total_water", 0.5, 0.0, 0.0)
 IF _totalAle IS _maxAle

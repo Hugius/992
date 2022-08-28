@@ -1,7 +1,8 @@
-12 21
+16 0
 META script_type_update
 META script_state_entry
 
+/// Game exit
 BOL escape = fe3d:input_is_keyboard_pressed("KEY_ESCAPE")
 IF escape IS <true>
     fe3d:application_stop()
@@ -10,9 +11,10 @@ IF escape IS <true>
 EXECUTE camera_update
 EXECUTE build_misc
 EXECUTE build_place
+EXECUTE build_create
 EXECUTE build_select
-EXECUTE workers_event
-EXECUTE workers_misc
+EXECUTE workers_life
+EXECUTE workers_death
 
 /// Building stuff
 EXECUTE up_apiarist
@@ -20,6 +22,7 @@ EXECUTE up_baker
 EXECUTE up_barber
 EXECUTE up_blacksmith
 EXECUTE up_carpenter
+EXECUTE up_house
 EXECUTE up_mason
 EXECUTE up_roofer
 EXECUTE up_storage

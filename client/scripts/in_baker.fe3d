@@ -1,12 +1,15 @@
-16 66
+3 13
 META script_type_initialize
 META script_state_wait
 
+/// Constants
 CNST STR workerText = "No worker available"
 CNST STR storageText = "No space in storage"
 
+/// Non-constants
 GLOB LST _bakerIds = {}
 
+/// GUI
 fe3d:quad2d_place("baker_worker", "skull_icon", 0.0, -0.6, 0.1, 0.2)
 fe3d:quad2d_place("baker_storage", "bread", 0.0, -0.6, 0.1, 0.2)
 fe3d:quad2d_place("baker_flour", "flour", -0.325, -0.7, 0.1, 0.2)

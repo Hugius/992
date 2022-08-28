@@ -1,0 +1,91 @@
+8 0
+META script_type_update
+META script_state_wait
+
+/// Miscellaneous
+IF _workersToCreate IS 0
+    EXIT
+ELSE
+    SUB _workersToCreate 1
+
+/// Prepare values
+INT index = 0
+INT maxIndex = 0
+INT workerCount = 0
+INT workerIndex = 0
+BOL hasWorker = <false>
+
+/// Determine name and gender
+IF _nextWorkerGender IS 1
+    INT nameCount = misc:list_size("_maleWorkerNames")
+    INT nameIndex = math:random_integer(1, nameCount)
+    SUB nameIndex 1
+    STR name = _maleWorkerNames[nameIndex]
+    STR gender = "MALE"
+    PULL _maleWorkerNames nameIndex
+ELSE
+    INT nameCount = misc:list_size("_femaleWorkerNames")
+    INT nameIndex = math:random_integer(1, nameCount)
+    SUB nameIndex 1
+    STR name = _femaleWorkerNames[nameIndex]
+    STR gender = "FEMALE"
+    PULL _femaleWorkerNames nameIndex
+
+/// Create new worker
+PUSH _workerNames name
+PUSH _workerGenders gender
+PUSH _workerHealths <true>
+NEG _nextWorkerGender
+
+/// Assign to job building
+EDIT index = 0
+EDIT maxIndex = misc:list_size("_placedBuildingIds")
+LOOP
+    IF index IS maxIndex
+        PUSH _workerJobBuildingIds ""
+        BREAK
+    IF _placedBuildingTypes[index] IS "grave"
+        ADD index 1
+        CONTINUE
+    IF _placedBuildingTypes[index] IS "house"
+        ADD index 1
+        CONTINUE
+    IF _placedBuildingTypes[index] IS "storage"
+        ADD index 1
+        CONTINUE
+    IF _placedBuildingTypes[index] IS "tavern"
+        ADD index 1
+        CONTINUE
+    EDIT hasWorker = misc:list_contains("_workerJobBuildingIds", _placedBuildingIds[index])
+    IF hasWorker IS <false>
+        PUSH _workerJobBuildingIds _placedBuildingIds[index]
+        BREAK
+    ADD index 1
+
+/// Assign to house building
+EDIT index = 0
+EDIT maxIndex = misc:list_size("_placedBuildingIds")
+LOOP
+    IF index IS maxIndex
+        PUSH _workerHouseBuildingIds ""
+        BREAK
+    IF _placedBuildingTypes[index] NOT "house"
+        ADD index 1
+        CONTINUE
+    EDIT workerCount = misc:list_count("_workerHouseBuildingIds", _placedBuildingIds[index])
+    IF workerCount IS 0
+        PUSH _workerHouseBuildingIds _placedBuildingIds[index]
+        BREAK
+    ELIF workerCount IS 1
+        EDIT workerIndex = misc:list_index("_workerHouseBuildingIds", _placedBuildingIds[index])
+        IF _workerGenders[workerIndex] IS "MALE" AND gender IS "FEMALE"
+            STR message = misc:string_concat(_workerNames[workerIndex], " married ")
+            EDIT message = misc:string_concat(message, name)
+            fe3d:print(message)
+            BREAK
+        ELIF _workerGenders[workerIndex] IS "FEMALE" AND gender IS "MALE"
+            STR message = misc:string_concat(name, " married ")
+            EDIT message = misc:string_concat(message, _workerNames[workerIndex])
+            fe3d:print(message)
+            BREAK
+    ADD index 1

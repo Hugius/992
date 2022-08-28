@@ -1,13 +1,16 @@
-13 45
+11 7
 META script_type_initialize
 META script_state_wait
 
+/// Constants
 CNST STR workerText = "No worker available"
 CNST STR toolText = "No tool equipped"
 CNST STR infoText = "Constructs buildings using straw"
 
+/// Non-constants
 GLOB LST _rooferIds = {"roofer_3"}
 
+/// GUI
 fe3d:quad2d_place("roofer_worker", "skull_icon", 0.0, -0.6, 0.1, 0.2)
 fe3d:quad2d_place("roofer_tool", "tool", 0.0, -0.6, 0.1, 0.2)
 fe3d:quad2d_place("roofer_info", "info_icon", 0.0, -0.6, 0.1, 0.2)
