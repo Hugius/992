@@ -1,0 +1,20 @@
+14 30
+META script_type_initialize
+META script_state_wait
+
+/// Constants
+CNST STR workerText = "No worker available"
+CNST STR infoText1 = "Prevents people from committing suicide"
+CNST STR infoText2 = "Prevents people from getting the sickness"
+CNST STR infoText3 = "Halves the crop harvest age"
+
+/// Non-constants
+GLOB LST _priestIds = {}
+
+/// GUI
+fe3d:quad2d_place("priest_worker", "skull_icon", 0.0, -0.6, 0.1, 0.2)
+fe3d:quad2d_place("priest_info", "info_icon", 0.0, -0.6, 0.1, 0.2)
+fe3d:text2d_place("priest_worker", "text", workerText, 0.0, -0.8, 0.38, 0.1)
+fe3d:text2d_place("priest_info1", "text", infoText1, 0.0, -0.7, 0.8, 0.1)
+fe3d:text2d_place("priest_info2", "text", infoText2, 0.0, -0.8, 0.84, 0.1)
+fe3d:text2d_place("priest_info3", "text", infoText3, 0.0, -0.9, 0.54, 0.1)

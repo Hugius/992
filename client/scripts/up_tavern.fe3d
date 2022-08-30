@@ -1,0 +1,12 @@
+2 0
+META script_type_update
+META script_state_wait
+
+/// Hide GUI
+fe3d:quad2d_set_visible("tavern_info", <false>)
+fe3d:text2d_set_visible("tavern_info", <false>)
+
+/// Show GUI
+IF _selectedBuildingType IS "tavern"
+    fe3d:quad2d_set_visible("tavern_info", <true>)
+    fe3d:text2d_set_visible("tavern_info", <true>)
