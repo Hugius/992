@@ -22,6 +22,7 @@ PART @church 15 assets\image\model\diffuse_map\church_15.tga ? ? ? ? ? 0 0 1 1 0
 PART @church 12 assets\image\model\diffuse_map\church_12.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 PART @church 11 assets\image\model\diffuse_map\church_11.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 PART @church 8 assets\image\model\diffuse_map\church_8.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
+AABB @church model@@church@aabb1 0 0 0 10 10 10
 MODEL @farmland assets\mesh\farmland.obj 1 1 1 ? 0 2 1 1 1
 PART @farmland soil assets\image\model\diffuse_map\storage_doorhandle.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 8 0 0 1 1 1
 PART @farmland logs assets\image\model\diffuse_map\farmland_logs.tga ? ? ? ? assets\image\model\normal_map\farmland_logs.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1

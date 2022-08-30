@@ -1,4 +1,4 @@
-16 0
+28 17
 META script_type_update
 META script_state_entry
 
@@ -24,8 +24,10 @@ EXECUTE up_blacksmith
 EXECUTE up_carpenter
 EXECUTE up_house
 EXECUTE up_mason
+EXECUTE up_priest
 EXECUTE up_roofer
 EXECUTE up_storage
+EXECUTE up_tavern
 
 /// Miscellaneous stuff
 EXECUTE hud_food

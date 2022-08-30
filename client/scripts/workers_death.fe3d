@@ -1,4 +1,4 @@
-81 8
+21 14
 META script_type_update
 META script_state_wait
 
@@ -13,19 +13,30 @@ ELSE
 STR workerName = _workerNames[_workerDeathIndex]
 STR eventMessage = ""
 INT totalWorkers = misc:list_size("_workerNames")
+INT randomPercentage = math:random_integer(1, 100)
 BOL workerIsDead = <false>
 
 /// Update dying from suicide
 IF workerIsDead IS <false>
-    PASS
+    INT priestCount = misc:list_size("_priestIds")
+    INT tavernCount = misc:list_size("_tavernIds")
+    INT workerCount = misc:list_size("_workerNames")
+    BOL churchActive = (priestCount MORE 0)
+    BOL tavernActive = (tavernCount MORE 0 AND _totalAle MORE workerCount)
+    IF churchActive IS <false> AND tavernActive IS <false>
+        INT suicideChance = 100
+        SUB suicideChance _suicideChance
+        IF randomPercentage MORE suicideChance
+            EDIT workerIsDead = <true>
+            EDIT eventMessage = misc:string_concat(workerName, " died of suicide")
+            fe3d:print(eventMessage)
 
 /// Update dying from sickness
 IF workerIsDead IS <false>
     IF _workerHealths[_workerDeathIndex] IS <true>
-        INT randomNumber = math:random_integer(1, 100)
         INT sicknessChance = 100
         SUB sicknessChance _sicknessChance
-        IF randomNumber MORE sicknessChance
+        IF randomPercentage MORE sicknessChance
             EDIT _workerHealths[_workerDeathIndex] = <false>
             EDIT eventMessage = misc:string_concat(workerName, " caught the sickness")
             fe3d:print(eventMessage)

@@ -1,4 +1,4 @@
-11 28
+21 27
 META script_type_initialize
 META script_state_wait
 
@@ -19,3 +19,5 @@ GLOB INT _workerDeathTimer = 0
 GLOB INT _workerDeathTimespan = 1440
 GLOB INT _totalDeadWorkers = 0
 GLOB INT _nextWorkerGender = 1
+GLOB INT _sicknessChance = 15
+GLOB INT _suicideChance = 5

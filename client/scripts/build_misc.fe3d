@@ -1,4 +1,4 @@
-17 51
+30 51
 META script_type_update
 META script_state_wait
 
@@ -6,20 +6,30 @@ META script_state_wait
 EDIT _lastBuildMode = _buildMode
 
 /// Prepare values
-STR buildingType = misc:string_capitalize(_buildingTypes[_buildingIndex])
+STR buildingTypeText = misc:string_capitalize(_buildingTypes[_buildingIndex])
 STR planksPriceText = misc:string_zeroed_integer(_buildingPricesPlanks[_buildingIndex], 4)
 STR stonePriceText = misc:string_zeroed_integer(_buildingPricesStone[_buildingIndex], 4)
 STR clayPriceText = misc:string_zeroed_integer(_buildingPricesClay[_buildingIndex], 4)
 STR strawPriceText = misc:string_zeroed_integer(_buildingPricesStraw[_buildingIndex], 4)
-INT buildingTypeWidth = misc:string_size(buildingType)
+INT buildingTypeTextWidth = misc:string_size(buildingTypeText)
 INT buildingCount = misc:list_size("_buildingTypes")
 BOL clicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
 BOL scrollDown = fe3d:input_is_mouse_scrolled("WHEEL_BACKWARD")
 BOL scrolledUp = fe3d:input_is_mouse_scrolled("WHEEL_FORWARD")
 BOL buttonHovered = fe3d:quad2d_is_hovered("build")
+BOL carpenterHasTool = misc:list_contains("_toolBuildingIds", "carpenter_1")
+BOL masonHasTool = misc:list_contains("_toolBuildingIds", "mason_2")
+BOL rooferHasTool = misc:list_contains("_toolBuildingIds", "roofer_3")
+BOL defaultBuildingsHaveTools = (carpenterHasTool IS <true> AND masonHasTool IS <true> AND rooferHasTool IS <true>)
 
-/// Update build button
-IF buttonHovered IS <true>
+/// Update build button opacity
+IF defaultBuildingsHaveTools IS <true>
+    fe3d:quad2d_set_opacity("build", 1.0)
+ELSE
+    fe3d:quad2d_set_opacity("build", 0.5)
+
+/// Update build button hover and click
+IF buttonHovered IS <true> AND defaultBuildingsHaveTools IS <true>
     EDIT _cursorType = "HAND"
     fe3d:quad2d_set_lightness("build", 1.25)
     IF clicked IS <true>
@@ -49,10 +59,10 @@ IF _buildMode IS <false>
     EXIT
 
 /// Update GUI content
-CAST buildingTypeWidth DEC
-MUL buildingTypeWidth 0.03
-fe3d:text2d_set_content("building_price_type", buildingType)
-fe3d:text2d_set_size("building_price_type", buildingTypeWidth, 0.15)
+CAST buildingTypeTextWidth DEC
+MUL buildingTypeTextWidth 0.03
+fe3d:text2d_set_content("building_price_type", buildingTypeText)
+fe3d:text2d_set_size("building_price_type", buildingTypeTextWidth, 0.15)
 
 /// Update GUI content
 fe3d:text2d_set_content("building_price_planks", planksPriceText)
