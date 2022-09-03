@@ -1,4 +1,4 @@
-21 14
+26 36
 META script_type_update
 META script_state_wait
 
@@ -20,10 +20,7 @@ BOL workerIsDead = <false>
 IF workerIsDead IS <false>
     INT priestCount = misc:list_size("_priestIds")
     INT tavernCount = misc:list_size("_tavernIds")
-    INT workerCount = misc:list_size("_workerNames")
-    BOL churchActive = (priestCount MORE 0)
-    BOL tavernActive = (tavernCount MORE 0 AND _totalAle MORE workerCount)
-    IF churchActive IS <false> AND tavernActive IS <false>
+    IF priestCount MORE 0 AND tavernCount MORE 0
         INT suicideChance = 100
         SUB suicideChance _suicideChance
         IF randomPercentage MORE suicideChance

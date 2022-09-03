@@ -1,10 +1,10 @@
-11 7
+4 37
 META script_type_initialize
 META script_state_wait
 
 /// Constants
-CNST STR workerText = "No worker available"
 GLOB CNST INT _apiaristInterval = 500
+CNST STR workerText = "No worker available"
 
 /// Non-constants
 GLOB LST _apiaristIds = {}

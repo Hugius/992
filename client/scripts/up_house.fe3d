@@ -1,6 +1,11 @@
-7 12
+20 13
 META script_type_update
 META script_state_wait
+
+/// Prepare values
+INT count = 0
+INT index = 0
+INT maxIndex = misc:list_size("_houseIds")
 
 /// Hide GUI
 fe3d:quad2d_set_visible("house_info", <false>)
@@ -10,3 +15,25 @@ fe3d:text2d_set_visible("house_info", <false>)
 IF _selectedBuildingType IS "house"
     fe3d:quad2d_set_visible("house_info", <true>)
     fe3d:text2d_set_visible("house_info", <true>)
+
+/// Update all houses
+LOOP
+    IF index IS maxIndex
+        BREAK
+    EDIT count = misc:list_count("_workerHouseBuildingIds", _houseIds[index])
+    IF count IS 2
+        IF _houseBirths[index] LESS _maxBirthsPerHouse
+            IF _houseTimers[index] IS _houseInterval
+                EDIT _houseTimers[index] = 0
+                ADD _houseBirths[index] 1
+                ADD _workersToCreate 1
+            ELSE
+                ADD _houseTimers[index] 1
+    ELIF count IS 1
+        EDIT _houseTimers[index] = 0
+    ELIF count IS 0
+        EDIT _houseTimers[index] = 0
+        EDIT _houseBirths[index] = 0
+    ELSE
+        CRASH
+    ADD index 1

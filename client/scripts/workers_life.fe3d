@@ -1,4 +1,4 @@
-8 0
+38 24
 META script_type_update
 META script_state_wait
 
@@ -36,6 +36,8 @@ PUSH _workerNames name
 PUSH _workerGenders gender
 PUSH _workerHealths <true>
 NEG _nextWorkerGender
+STR eventMessage = misc:string_concat(name, " was born")
+fe3d:print(eventMessage)
 
 /// Assign to job building
 EDIT index = 0

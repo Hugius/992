@@ -1,4 +1,4 @@
-7 13
+98 0
 META script_type_update
 META script_state_wait
 
@@ -33,6 +33,8 @@ ELIF _placedBuildingType IS "carpenter"
     PUSH _carpenterIds _placedBuildingId
 ELIF _placedBuildingType IS "house"
     PUSH _houseIds _placedBuildingId
+    PUSH _houseTimers 0
+    PUSH _houseBirths 0
     INT maleIndex = -1
     INT femaleIndex = -1
     EDIT index = 0

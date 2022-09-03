@@ -1,4 +1,4 @@
-3 18
+33 13
 META script_type_update
 META script_state_wait
 
@@ -29,7 +29,7 @@ IF _selectedBuildingType IS "apiarist"
         fe3d:quad2d_set_visible("apiarist_worker", <true>)
         fe3d:text2d_set_visible("apiarist_worker", <true>)
 
-/// Update all buildings
+/// Update all apiaries
 LOOP
     IF index IS maxIndex
         BREAK
