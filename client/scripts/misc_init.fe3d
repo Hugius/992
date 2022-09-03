@@ -1,8 +1,9 @@
-5 26
+4 28
 META script_type_initialize
 META script_state_wait
 
 /// Non-constants
+GLOB LST _eventMessages = {}
 GLOB STR _cursorType = "ARROW"
 GLOB INT _totalUpdates = 0
 

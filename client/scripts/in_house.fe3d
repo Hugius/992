@@ -1,16 +1,17 @@
-5 20
+5 34
 META script_type_initialize
 META script_state_wait
 
 /// Constants
 GLOB CNST INT _maxBirthsPerHouse = 3
-GLOB CNST INT _houseInterval = 1440
+GLOB CNST INT _houseInterval = 144
 CNST STR infoText = "Houses 2 married workers"
 
 /// Non-constants
 GLOB LST _houseIds = {}
 GLOB LST _houseTimers = {}
 GLOB LST _houseBirths = {}
+GLOB LST _houseIdsThatGaveBirth = {}
 
 /// GUI
 fe3d:quad2d_place("house_info", "info_icon", 0.0, -0.6, 0.1, 0.2)

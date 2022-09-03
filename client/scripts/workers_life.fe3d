@@ -1,4 +1,4 @@
-38 24
+94 12
 META script_type_update
 META script_state_wait
 
@@ -9,6 +9,7 @@ ELSE
     SUB _workersToCreate 1
 
 /// Prepare values
+STR eventMessage = ""
 INT index = 0
 INT maxIndex = 0
 INT workerCount = 0
@@ -36,8 +37,8 @@ PUSH _workerNames name
 PUSH _workerGenders gender
 PUSH _workerHealths <true>
 NEG _nextWorkerGender
-STR eventMessage = misc:string_concat(name, " was born")
-fe3d:print(eventMessage)
+EDIT eventMessage = misc:string_concat(name, " was born")
+PUSH _eventMessages eventMessage
 
 /// Assign to job building
 EDIT index = 0
@@ -79,15 +80,20 @@ LOOP
         PUSH _workerHouseBuildingIds _placedBuildingIds[index]
         BREAK
     ELIF workerCount IS 1
+        PUSH _workerHouseBuildingIds _placedBuildingIds[index]
         EDIT workerIndex = misc:list_index("_workerHouseBuildingIds", _placedBuildingIds[index])
         IF _workerGenders[workerIndex] IS "MALE" AND gender IS "FEMALE"
-            STR message = misc:string_concat(_workerNames[workerIndex], " married ")
-            EDIT message = misc:string_concat(message, name)
-            fe3d:print(message)
+            EDIT eventMessage = misc:string_concat(_workerNames[workerIndex], " married ")
+            EDIT eventMessage = misc:string_concat(eventMessage, name)
+            PUSH _eventMessages eventMessage
             BREAK
         ELIF _workerGenders[workerIndex] IS "FEMALE" AND gender IS "MALE"
-            STR message = misc:string_concat(name, " married ")
-            EDIT message = misc:string_concat(message, _workerNames[workerIndex])
-            fe3d:print(message)
+            EDIT eventMessage = misc:string_concat(name, " married ")
+            EDIT eventMessage = misc:string_concat(eventMessage, _workerNames[workerIndex])
+            PUSH _eventMessages eventMessage
             BREAK
+    ELIF workerCount IS 2
+        PASS
+    ELSE
+        CRASH
     ADD index 1

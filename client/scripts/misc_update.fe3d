@@ -1,9 +1,11 @@
-4 46
+6 25
 META script_type_update
 META script_state_wait
 
 /// Prepare values
 DEC opacity = fe3d:quad2d_get_opacity("black")
+
+/// Update event messages
 
 /// Update sky
 fe3d:sky_rotate("day", 0.0, 0.01, 0.0)

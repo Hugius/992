@@ -1,8 +1,9 @@
-20 13
+22 36
 META script_type_update
 META script_state_wait
 
 /// Prepare values
+STR eventMessage = ""
 INT count = 0
 INT index = 0
 INT maxIndex = misc:list_size("_houseIds")
@@ -27,6 +28,7 @@ LOOP
                 EDIT _houseTimers[index] = 0
                 ADD _houseBirths[index] 1
                 ADD _workersToCreate 1
+                PUSH _houseIdsThatGaveBirth _houseIds[index]
             ELSE
                 ADD _houseTimers[index] 1
     ELIF count IS 1

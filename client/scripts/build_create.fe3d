@@ -1,4 +1,4 @@
-98 0
+55 53
 META script_type_update
 META script_state_wait
 
@@ -53,9 +53,9 @@ ELIF _placedBuildingType IS "house"
     IF femaleIndex NOT -1
         EDIT _workerHouseBuildingIds[femaleIndex] = _placedBuildingId
     IF maleIndex NOT -1 AND femaleIndex NOT -1
-        STR message = misc:string_concat(_workerNames[maleIndex], " married ")
-        EDIT message = misc:string_concat(message, _workerNames[femaleIndex])
-        fe3d:print(message)
+        STR eventMessage = misc:string_concat(_workerNames[maleIndex], " married ")
+        EDIT eventMessage = misc:string_concat(eventMessage, _workerNames[femaleIndex])
+        PUSH _eventMessages eventMessage
 ELIF _placedBuildingType IS "mason"
     PUSH _masonIds _placedBuildingId
 ELIF _placedBuildingType IS "roofer"

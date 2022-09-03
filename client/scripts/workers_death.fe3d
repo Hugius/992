@@ -1,4 +1,4 @@
-26 36
+116 20
 META script_type_update
 META script_state_wait
 
@@ -11,10 +11,24 @@ ELSE
 
 /// Prepare values
 STR workerName = _workerNames[_workerDeathIndex]
+STR workerGender = _workerGenders[_workerDeathIndex]
+STR workerHouseId = _workerHouseBuildingIds[_workerDeathIndex]
 STR eventMessage = ""
 INT totalWorkers = misc:list_size("_workerNames")
 INT randomPercentage = math:random_integer(1, 100)
 BOL workerIsDead = <false>
+
+/// Update dying from childbirth
+IF workerIsDead IS <false>
+    INT houseIndex = misc:list_index("_houseIdsThatGaveBirth", workerHouseId)
+    IF houseIndex NOT -1
+        PULL _houseIdsThatGaveBirth houseIndex
+        INT birthDeathChance = 100
+        SUB birthDeathChance _birthDeathChance
+        IF randomPercentage MORE birthDeathChance
+            EDIT workerIsDead = <true>
+            EDIT eventMessage = misc:string_concat(workerName, " died of childbirth")
+            PUSH _eventMessages eventMessage
 
 /// Update dying from suicide
 IF workerIsDead IS <false>
@@ -22,21 +36,21 @@ IF workerIsDead IS <false>
     INT tavernCount = misc:list_size("_tavernIds")
     IF priestCount MORE 0 AND tavernCount MORE 0
         INT suicideChance = 100
-        SUB suicideChance _suicideChance
+        SUB suicideChance _suicideDeathChance
         IF randomPercentage MORE suicideChance
             EDIT workerIsDead = <true>
             EDIT eventMessage = misc:string_concat(workerName, " died of suicide")
-            fe3d:print(eventMessage)
+            PUSH _eventMessages eventMessage
 
 /// Update dying from sickness
 IF workerIsDead IS <false>
     IF _workerHealths[_workerDeathIndex] IS <true>
         INT sicknessChance = 100
-        SUB sicknessChance _sicknessChance
+        SUB sicknessChance _sicknessCatchChance
         IF randomPercentage MORE sicknessChance
             EDIT _workerHealths[_workerDeathIndex] = <false>
             EDIT eventMessage = misc:string_concat(workerName, " caught the sickness")
-            fe3d:print(eventMessage)
+            PUSH _eventMessages eventMessage
     ELSE
         IF _totalMedicine MORE 0
             SUB _totalMedicine 1
@@ -44,7 +58,7 @@ IF workerIsDead IS <false>
         ELSE
             EDIT workerIsDead = <true>
             EDIT eventMessage = misc:string_concat(workerName, " died of sickness")
-            fe3d:print(eventMessage)
+            PUSH _eventMessages eventMessage
 
 /// Update dying from dehydration
 IF workerIsDead IS <false>
@@ -57,7 +71,7 @@ IF workerIsDead IS <false>
     ELSE
         EDIT workerIsDead = <true>
         EDIT eventMessage = misc:string_concat(workerName, " died of dehydration")
-        fe3d:print(eventMessage)
+        PUSH _eventMessages eventMessage
 
 /// Update dying from starvation
 IF workerIsDead IS <false>
@@ -82,7 +96,7 @@ IF workerIsDead IS <false>
     ELSE
         EDIT workerIsDead = <true>
         EDIT eventMessage = misc:string_concat(workerName, " died of starvation")
-        fe3d:print(eventMessage)
+        PUSH _eventMessages eventMessage
 
 /// Handle dead worker
 IF workerIsDead IS <true>
@@ -99,6 +113,10 @@ IF workerIsDead IS <true>
     SUB totalWorkers 1
 ELSE
     ADD _workerDeathIndex 1
+
+/// Handle dead population
+IF totalWorkers IS 0
+    EXIT
 
 /// Update event index
 IF _workerDeathIndex IS totalWorkers
