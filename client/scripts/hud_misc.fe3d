@@ -1,13 +1,13 @@
-20 10
+8 10
 META script_type_update
 META script_state_wait
 
-/// Miscellaneous
+/// Validate update
 BOL mustUpdate = fe3d:time_is_passed(10)
 IF mustUpdate IS <false>
     EXIT
 
-/// Prepare values
+/// Create content
 INT totalSeconds = _totalUpdates
 DIV totalSeconds 144
 INT totalAlive = misc:list_size("_workerNames")

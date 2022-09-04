@@ -1,10 +1,8 @@
-33 13
+0 0
 META script_type_update
 META script_state_wait
 
-/// Prepare values
-INT index = 0
-INT maxIndex = misc:list_size("_apiaristIds")
+/// Define reusable values
 BOL hasWorker = <false>
 
 /// Hide GUI
@@ -29,7 +27,9 @@ IF _selectedBuildingType IS "apiarist"
         fe3d:quad2d_set_visible("apiarist_worker", <true>)
         fe3d:text2d_set_visible("apiarist_worker", <true>)
 
-/// Update all apiaries
+/// Update apiaries
+INT index = 0
+INT maxIndex = misc:list_size("_apiaristIds")
 LOOP
     IF index IS maxIndex
         BREAK

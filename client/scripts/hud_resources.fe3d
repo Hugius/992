@@ -1,13 +1,13 @@
-83 14
+8 10
 META script_type_update
 META script_state_wait
 
-/// Miscellaneous
+/// Validate update
 BOL mustUpdate = fe3d:time_is_passed(10)
 IF mustUpdate IS <false>
     EXIT
 
-/// Prepare values
+/// Create content
 STR totalLumberText = misc:string_zeroed_integer(_totalLumber, 4)
 STR totalStoneText = misc:string_zeroed_integer(_totalStone, 4)
 STR totalGrainText = misc:string_zeroed_integer(_totalGrain, 4)

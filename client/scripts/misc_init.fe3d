@@ -1,4 +1,4 @@
-10 41
+0 0
 META script_type_initialize
 META script_state_wait
 
@@ -12,7 +12,7 @@ GLOB INT _totalUpdates = 0
 fe3d:quad2d_place("event_message", "paper", 0.0, 0.0, 0.0, 0.0)
 fe3d:text2d_place("event_message", "text", "", 0.0, 0.0, 0.0, 0.0)
 
-/// Miscellaneous
+/// TODO: manage in menu
 fe3d:world_load_editor("island")
 fe3d:graphics_set_anti_aliasing_enabled(<true>)
 fe3d:graphics_set_anisotropic_filtering_quality(16)

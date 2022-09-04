@@ -1,12 +1,12 @@
-57 39
+38 18
 META script_type_update
 META script_state_wait
 
-/// Miscellaneous
+/// Validate placed building
 IF _placedBuildingId IS ""
     EXIT
 
-/// Prepare values
+/// Define reusable values
 INT index = 0
 INT maxIndex = 0
 
@@ -99,6 +99,6 @@ ELIF _placedBuildingType IS "storage"
     ADD _maxBows 5
     ADD _maxArrows 50
 
-/// Miscellaneous
+/// Reset variables
 EDIT _placedBuildingId = ""
 EDIT _placedBuildingType = ""

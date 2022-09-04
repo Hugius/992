@@ -1,10 +1,6 @@
-9 45
+0 0
 META script_type_update
 META script_state_wait
-
-/// Prepare values
-BOL clicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
-BOL hasWorker = <false>
 
 /// Hide GUI
 fe3d:quad2d_set_visible("priest_worker", <false>)
@@ -16,7 +12,7 @@ fe3d:text2d_set_visible("priest_info3", <false>)
 
 /// Show GUI
 IF _selectedBuildingType IS "priest"
-    EDIT hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
+    BOL hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
     IF hasWorker IS <true>
         fe3d:quad2d_set_visible("priest_info", <true>)
         fe3d:text2d_set_visible("priest_info1", <true>)

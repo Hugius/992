@@ -1,26 +1,23 @@
-30 43
+0 0
 META script_type_update
 META script_state_wait
 
-/// Update event timer
+/// Update death timer
 IF _workerDeathTimer IS _workerDeathTimespan
     EDIT _workerDeathTimer = 0
 ELSE
     ADD _workerDeathTimer 1
     EXIT
 
-/// Prepare values
-STR workerName = _workerNames[_workerDeathIndex]
-STR workerGender = _workerGenders[_workerDeathIndex]
-STR workerHouseId = _workerHouseBuildingIds[_workerDeathIndex]
+/// Define reusable values
 STR eventMessage = ""
-INT totalWorkers = misc:list_size("_workerNames")
+STR workerName = _workerNames[_workerDeathIndex]
 INT randomPercentage = math:random_integer(1, 100)
 BOL workerIsDead = <false>
 
 /// Update dying from childbirth
 IF workerIsDead IS <false>
-    INT houseIndex = misc:list_index("_houseIdsThatGaveBirth", workerHouseId)
+    INT houseIndex = misc:list_index("_houseIdsThatGaveBirth", _workerHouseBuildingIds[_workerDeathIndex])
     IF houseIndex NOT -1
         PULL _houseIdsThatGaveBirth houseIndex
         INT birthDeathChance = 100
@@ -116,11 +113,11 @@ IF workerIsDead IS <true>
     PULL _workerJobBuildingIds _workerDeathIndex
     PULL _workerHouseBuildingIds _workerDeathIndex
     ADD _totalDeadWorkers 1
-    SUB totalWorkers 1
 ELSE
     ADD _workerDeathIndex 1
 
 /// Handle dead population
+INT totalWorkers = misc:list_size("_workerNames")
 IF totalWorkers IS 0
     fe3d:application_stop()
 

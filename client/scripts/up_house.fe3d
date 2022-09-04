@@ -1,12 +1,6 @@
-22 36
+0 0
 META script_type_update
 META script_state_wait
-
-/// Prepare values
-STR eventMessage = ""
-INT count = 0
-INT index = 0
-INT maxIndex = misc:list_size("_houseIds")
 
 /// Hide GUI
 fe3d:quad2d_set_visible("house_info", <false>)
@@ -17,7 +11,10 @@ IF _selectedBuildingType IS "house"
     fe3d:quad2d_set_visible("house_info", <true>)
     fe3d:text2d_set_visible("house_info", <true>)
 
-/// Update all houses
+/// Update houses
+INT count = 0
+INT index = 0
+INT maxIndex = misc:list_size("_houseIds")
 LOOP
     IF index IS maxIndex
         BREAK

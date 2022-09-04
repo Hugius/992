@@ -1,21 +1,18 @@
-5 42
+0 0
 META script_type_update
 META script_state_wait
 
-/// Miscellaneous
+/// Update creation count
 IF _workersToCreate IS 0
     EDIT _creatingDefaultWorkers = <false>
     EXIT
 ELSE
     SUB _workersToCreate 1
 
-/// Prepare values
+/// Define reusable values
 STR eventMessage = ""
 INT index = 0
 INT maxIndex = 0
-INT workerCount = 0
-INT workerIndex = 0
-BOL hasWorker = <false>
 
 /// Determine name and gender
 IF _nextWorkerGender IS 1
@@ -48,6 +45,7 @@ IF _creatingDefaultWorkers IS <false>
     EDIT _eventMessageOpacity = 1.0
 
 /// Assign to job building
+BOL hasWorker = <false>
 EDIT index = 0
 EDIT maxIndex = misc:list_size("_placedBuildingIds")
 LOOP
@@ -73,6 +71,8 @@ LOOP
     ADD index 1
 
 /// Assign to house building
+INT workerCount = 0
+INT workerIndex = 0
 EDIT index = 0
 EDIT maxIndex = misc:list_size("_placedBuildingIds")
 LOOP

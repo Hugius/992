@@ -1,10 +1,6 @@
-20 12
+0 0
 META script_type_update
 META script_state_wait
-
-/// Prepare values
-BOL clicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
-BOL hasWorker = <false>
 
 /// Hide GUI
 fe3d:quad2d_set_visible("baker_worker", <false>)
@@ -21,7 +17,7 @@ fe3d:text2d_set_visible("baker_bread", <false>)
 
 /// Show GUI
 IF _selectedBuildingType IS "baker"
-    EDIT hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
+    BOL hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
     IF hasWorker IS <true>
         IF _totalBread LESS _maxBread
             fe3d:quad2d_set_visible("baker_flour", <true>)
@@ -33,7 +29,8 @@ IF _selectedBuildingType IS "baker"
             fe3d:text2d_set_visible("baker_bread", <true>)
             IF _totalFlour MORE 0 AND _totalFirewood MORE 0
                 EDIT _cursorType = "HAND"
-                IF clicked IS <true>
+                BOL lmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
+                IF lmbClicked IS <true>
                     SUB _totalFlour 1
                     SUB _totalFirewood 1
                     ADD _totalBread 1

@@ -1,9 +1,6 @@
-11 33
+0 0
 META script_type_update
 META script_state_wait
-
-/// Prepare values
-DEC opacity = fe3d:quad2d_get_opacity("black")
 
 /// Update event messages
 IF _eventMessageOpacity MORE 0.0
@@ -31,8 +28,9 @@ IF _eventMessageOpacity MORE 0.0
 fe3d:sky_rotate("day", 0.0, 0.01, 0.0)
 
 /// Update intro fading
-SUB opacity 0.005
-fe3d:quad2d_set_opacity("black", opacity)
+DEC blackOpacity = fe3d:quad2d_get_opacity("black")
+SUB blackOpacity 0.005
+fe3d:quad2d_set_opacity("black", blackOpacity)
 
-/// Miscellaneous
+/// Increase updates
 ADD _totalUpdates 1

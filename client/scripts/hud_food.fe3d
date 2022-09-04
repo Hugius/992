@@ -1,13 +1,13 @@
-50 14
+8 10
 META script_type_update
 META script_state_wait
 
-/// Miscellaneous
+/// Validate update
 BOL mustUpdate = fe3d:time_is_passed(10)
 IF mustUpdate IS <false>
     EXIT
 
-/// Prepare values
+/// Create content
 STR totalWaterText = misc:string_zeroed_integer(_totalWater, 4)
 STR totalAleText = misc:string_zeroed_integer(_totalAle, 4)
 STR totalMilkText = misc:string_zeroed_integer(_totalMilk, 4)
