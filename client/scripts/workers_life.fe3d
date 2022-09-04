@@ -1,4 +1,4 @@
-0 0
+30 21
 META script_type_update
 META script_state_wait
 
@@ -21,22 +21,20 @@ IF _nextWorkerGender IS 1
     SUB workerNameIndex 1
     STR workerName = _maleWorkerNames[workerNameIndex]
     STR workerGender = "MALE"
-    PULL _maleWorkerNames workerNameIndex
 ELSE
     INT workerNameCount = misc:list_size("_femaleWorkerNames")
     INT workerNameIndex = math:random_integer(1, workerNameCount)
     SUB workerNameIndex 1
     STR workerName = _femaleWorkerNames[workerNameIndex]
     STR workerGender = "FEMALE"
-    PULL _femaleWorkerNames workerNameIndex
+
+/// Switch gender
+NEG _nextWorkerGender
 
 /// Create new worker
 PUSH _workerNames workerName
 PUSH _workerGenders workerGender
 PUSH _workerHealths <true>
-
-/// Switch gender
-NEG _nextWorkerGender
 
 /// Log event
 IF _creatingDefaultWorkers IS <false>

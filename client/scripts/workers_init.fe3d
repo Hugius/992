@@ -1,13 +1,13 @@
-8 118
+21 32
 META script_type_initialize
 META script_state_wait
 
 /// Constants
+GLOB CNST LST _maleWorkerNames = {"Aelfraed", "Aelfweard", "Aethelred", "Aethelstan", "Aethelweald", "Beocca", "Beorhtric", "Burgred", "Ceolmund", "Cuthberht", "Dunstan", "Eadweard", "Eadwine", "Ealdhelm", "Earconwald", "Eardwulf", "Ecgberht", "Godric", "Godwine", "Leofric", "Osferth", "Oswald", "Uhtric", "Wiglaf", "Wihtgar"}
+GLOB CNST LST _femaleWorkerNames = {"Aebbe", "Aelfflaed", "Aelfgifu", "Aelfthryth", "Aelfwynn", "Aethelflaed", "Aethelswith", "Cynethryth", "Eadburh", "Eadgifu", "Eadgyth", "Eahlswith", "Eanflaed", "Ecgwynn", "Eoforhild", "Godgifu", "Hild", "Leofflaed", "Maerwynn", "Mildburh", "Mildthryth", "Tibba", "Wulfflaed", "Wulfgifu", "Wynnflaed"}
 GLOB CNST INT _workersDeathTimespan = 14400
 
 /// Non-constants
-GLOB LST _maleWorkerNames = {"Aelfraed", "Aelfweard", "Aethelred", "Aethelstan", "Aethelweald", "Beocca", "Beorhtric", "Burgred", "Ceolmund", "Cuthberht", "Dunstan", "Eadweard", "Eadwine", "Ealdhelm", "Earconwald", "Eardwulf", "Ecgberht", "Godric", "Godwine", "Leofric", "Osferth", "Oswald", "Uhtric", "Wiglaf", "Wihtgar"}
-GLOB LST _femaleWorkerNames = {"Aebbe", "Aelfflaed", "Aelfgifu", "Aelfthryth", "Aelfwynn", "Aethelflaed", "Aethelswith", "Cynethryth", "Eadburh", "Eadgifu", "Eadgyth", "Eahlswith", "Eanflaed", "Ecgwynn", "Eoforhild", "Godgifu", "Hild", "Leofflaed", "Maerwynn", "Mildburh", "Mildthryth", "Tibba", "Wulfflaed", "Wulfgifu", "Wynnflaed"}
 GLOB LST _workerNames = {}
 GLOB LST _workerGenders = {}
 GLOB LST _workerHealths = {}

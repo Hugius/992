@@ -1,4 +1,4 @@
-0 0
+103 25
 META script_type_update
 META script_state_wait
 
@@ -103,10 +103,6 @@ IF workerIsDead IS <false>
 
 /// Handle dead worker
 IF workerIsDead IS <true>
-    IF _workerNames[_workerDeathIndex] IS "MALE"
-        PUSH _maleWorkerNames _workerNames[_workerDeathIndex]
-    ELSE
-        PUSH _femaleWorkerNames _workerNames[_workerDeathIndex]
     PULL _workerNames _workerDeathIndex
     PULL _workerGenders _workerDeathIndex
     PULL _workerHealths _workerDeathIndex
