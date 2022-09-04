@@ -1,4 +1,4 @@
-55 53
+57 39
 META script_type_update
 META script_state_wait
 
@@ -55,7 +55,8 @@ ELIF _placedBuildingType IS "house"
     IF maleIndex NOT -1 AND femaleIndex NOT -1
         STR eventMessage = misc:string_concat(_workerNames[maleIndex], " married ")
         EDIT eventMessage = misc:string_concat(eventMessage, _workerNames[femaleIndex])
-        PUSH _eventMessages eventMessage
+        EDIT _eventMessageContent = eventMessage
+        EDIT _eventMessageOpacity = 1.0
 ELIF _placedBuildingType IS "mason"
     PUSH _masonIds _placedBuildingId
 ELIF _placedBuildingType IS "roofer"

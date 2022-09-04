@@ -1,4 +1,4 @@
-30 51
+6 18
 META script_type_update
 META script_state_wait
 
@@ -6,12 +6,6 @@ META script_state_wait
 EDIT _lastBuildMode = _buildMode
 
 /// Prepare values
-STR buildingTypeText = misc:string_capitalize(_buildingTypes[_buildingIndex])
-STR planksPriceText = misc:string_zeroed_integer(_buildingPricesPlanks[_buildingIndex], 4)
-STR stonePriceText = misc:string_zeroed_integer(_buildingPricesStone[_buildingIndex], 4)
-STR clayPriceText = misc:string_zeroed_integer(_buildingPricesClay[_buildingIndex], 4)
-STR strawPriceText = misc:string_zeroed_integer(_buildingPricesStraw[_buildingIndex], 4)
-INT buildingTypeTextWidth = misc:string_size(buildingTypeText)
 INT buildingCount = misc:list_size("_buildingTypes")
 BOL clicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
 BOL scrollDown = fe3d:input_is_mouse_scrolled("WHEEL_BACKWARD")
@@ -59,12 +53,18 @@ IF _buildMode IS <false>
     EXIT
 
 /// Update GUI content
-CAST buildingTypeTextWidth DEC
-MUL buildingTypeTextWidth 0.03
-fe3d:text2d_set_content("building_price_type", buildingTypeText)
-fe3d:text2d_set_size("building_price_type", buildingTypeTextWidth, 0.15)
+STR textContent = misc:string_capitalize(_buildingTypes[_buildingIndex])
+INT textWidth = misc:string_size(textContent)
+CAST textWidth DEC
+MUL textWidth 0.03
+fe3d:text2d_set_content("building_price_type", textContent)
+fe3d:text2d_set_size("building_price_type", textWidth, 0.15)
 
 /// Update GUI content
+STR planksPriceText = misc:string_zeroed_integer(_buildingPricesPlanks[_buildingIndex], 4)
+STR stonePriceText = misc:string_zeroed_integer(_buildingPricesStone[_buildingIndex], 4)
+STR clayPriceText = misc:string_zeroed_integer(_buildingPricesClay[_buildingIndex], 4)
+STR strawPriceText = misc:string_zeroed_integer(_buildingPricesStraw[_buildingIndex], 4)
 fe3d:text2d_set_content("building_price_planks", planksPriceText)
 fe3d:text2d_set_content("building_price_stone", stonePriceText)
 fe3d:text2d_set_content("building_price_clay", clayPriceText)

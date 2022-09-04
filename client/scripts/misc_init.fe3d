@@ -1,11 +1,16 @@
-4 28
+10 41
 META script_type_initialize
 META script_state_wait
 
 /// Non-constants
-GLOB LST _eventMessages = {}
+GLOB STR _eventMessageContent = ""
 GLOB STR _cursorType = "ARROW"
+GLOB DEC _eventMessageOpacity = 1.0
 GLOB INT _totalUpdates = 0
+
+/// GUI
+fe3d:quad2d_place("event_message", "paper", 0.0, 0.0, 0.0, 0.0)
+fe3d:text2d_place("event_message", "text", "", 0.0, 0.0, 0.0, 0.0)
 
 /// Miscellaneous
 fe3d:world_load_editor("island")

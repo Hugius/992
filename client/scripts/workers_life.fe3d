@@ -1,9 +1,10 @@
-94 12
+5 42
 META script_type_update
 META script_state_wait
 
 /// Miscellaneous
 IF _workersToCreate IS 0
+    EDIT _creatingDefaultWorkers = <false>
     EXIT
 ELSE
     SUB _workersToCreate 1
@@ -18,27 +19,33 @@ BOL hasWorker = <false>
 
 /// Determine name and gender
 IF _nextWorkerGender IS 1
-    INT nameCount = misc:list_size("_maleWorkerNames")
-    INT nameIndex = math:random_integer(1, nameCount)
-    SUB nameIndex 1
-    STR name = _maleWorkerNames[nameIndex]
-    STR gender = "MALE"
-    PULL _maleWorkerNames nameIndex
+    INT workerNameCount = misc:list_size("_maleWorkerNames")
+    INT workerNameIndex = math:random_integer(1, workerNameCount)
+    SUB workerNameIndex 1
+    STR workerName = _maleWorkerNames[workerNameIndex]
+    STR workerGender = "MALE"
+    PULL _maleWorkerNames workerNameIndex
 ELSE
-    INT nameCount = misc:list_size("_femaleWorkerNames")
-    INT nameIndex = math:random_integer(1, nameCount)
-    SUB nameIndex 1
-    STR name = _femaleWorkerNames[nameIndex]
-    STR gender = "FEMALE"
-    PULL _femaleWorkerNames nameIndex
+    INT workerNameCount = misc:list_size("_femaleWorkerNames")
+    INT workerNameIndex = math:random_integer(1, workerNameCount)
+    SUB workerNameIndex 1
+    STR workerName = _femaleWorkerNames[workerNameIndex]
+    STR workerGender = "FEMALE"
+    PULL _femaleWorkerNames workerNameIndex
 
 /// Create new worker
-PUSH _workerNames name
-PUSH _workerGenders gender
+PUSH _workerNames workerName
+PUSH _workerGenders workerGender
 PUSH _workerHealths <true>
+
+/// Switch gender
 NEG _nextWorkerGender
-EDIT eventMessage = misc:string_concat(name, " was born")
-PUSH _eventMessages eventMessage
+
+/// Log event
+IF _creatingDefaultWorkers IS <false>
+    EDIT eventMessage = misc:string_concat(workerName, " was born")
+    EDIT _eventMessageContent = eventMessage
+    EDIT _eventMessageOpacity = 1.0
 
 /// Assign to job building
 EDIT index = 0
@@ -82,15 +89,17 @@ LOOP
     ELIF workerCount IS 1
         PUSH _workerHouseBuildingIds _placedBuildingIds[index]
         EDIT workerIndex = misc:list_index("_workerHouseBuildingIds", _placedBuildingIds[index])
-        IF _workerGenders[workerIndex] IS "MALE" AND gender IS "FEMALE"
+        IF _workerGenders[workerIndex] IS "MALE" AND workerGender IS "FEMALE"
             EDIT eventMessage = misc:string_concat(_workerNames[workerIndex], " married ")
-            EDIT eventMessage = misc:string_concat(eventMessage, name)
-            PUSH _eventMessages eventMessage
+            EDIT eventMessage = misc:string_concat(eventMessage, workerName)
+            EDIT _eventMessageContent = eventMessage
+            EDIT _eventMessageOpacity = 1.0
             BREAK
-        ELIF _workerGenders[workerIndex] IS "FEMALE" AND gender IS "MALE"
-            EDIT eventMessage = misc:string_concat(name, " married ")
+        IF _workerGenders[workerIndex] IS "FEMALE" AND workerGender IS "MALE"
+            EDIT eventMessage = misc:string_concat(workerName, " married ")
             EDIT eventMessage = misc:string_concat(eventMessage, _workerNames[workerIndex])
-            PUSH _eventMessages eventMessage
+            EDIT _eventMessageContent = eventMessage
+            EDIT _eventMessageOpacity = 1.0
             BREAK
     ELIF workerCount IS 2
         PASS

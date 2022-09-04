@@ -1,4 +1,4 @@
-9 0
+49 56
 META script_type_initialize
 META script_state_wait
 
@@ -6,8 +6,8 @@ META script_state_wait
 fe3d:quad2d_place("vignette", "vignette", 0.0, 0.0, 2.0, 2.0)
 
 /// Seconds
-fe3d:quad2d_place("total_seconds", "scroll2", 0.875, 0.95, 0.25, 0.1)
-fe3d:text2d_place("total_seconds", "text", "", 0.875, 0.95, 0.15, 0.075)
+fe3d:quad2d_place("total_seconds", "scroll2", 0.775, -0.95, 0.25, 0.1)
+fe3d:text2d_place("total_seconds", "text", "", 0.775, -0.95, 0.15, 0.075)
 
 /// Workers
 fe3d:quad2d_place("total_workers", "scroll1", -0.9, 0.75, 0.2, 0.5)
@@ -24,31 +24,31 @@ fe3d:text2d_place("total_dead", "text", "", -0.875, 0.6125, 0.03, 0.05)
 
 /// Food
 fe3d:quad2d_place("total_food", "paper", -0.875, 0.15, 0.25, 0.75)
-fe3d:quad2d_place("total_water", "water", -0.95, 0.4, 0.05, 0.075)
-fe3d:quad2d_place("total_ale", "ale", -0.95, 0.3, 0.05, 0.075)
-fe3d:quad2d_place("total_milk", "milk", -0.95, 0.2, 0.05, 0.075)
-fe3d:quad2d_place("total_smoked_meat", "smoked_meat", -0.95, 0.1, 0.05, 0.075)
-fe3d:quad2d_place("total_smoked_fish", "smoked_fish", -0.95, 0.0, 0.05, 0.075)
-fe3d:quad2d_place("total_bread", "bread", -0.95, -0.1, 0.05, 0.075)
-fe3d:quad2d_place("total_vegetables", "vegetables", -0.85, 0.4, 0.05, 0.075)
-fe3d:quad2d_place("total_eggs", "eggs", -0.85, 0.3, 0.05, 0.075)
-fe3d:quad2d_place("total_raw_meat", "raw_meat", -0.85, 0.2, 0.05, 0.075)
-fe3d:quad2d_place("total_raw_fish", "raw_fish", -0.85, 0.1, 0.05, 0.075)
-fe3d:quad2d_place("total_honey", "honey", -0.85, 0.0, 0.05, 0.075)
-fe3d:quad2d_place("total_fruit", "fruit", -0.85, -0.1, 0.05, 0.075)
-fe3d:text2d_place("total_food", "text", "- Food -", -0.875, 0.475, 0.12, 0.075)
-fe3d:text2d_place("total_water", "text", "", -0.9, 0.4, 0.04, 0.05)
-fe3d:text2d_place("total_ale", "text", "", -0.9, 0.3, 0.04, 0.05)
-fe3d:text2d_place("total_milk", "text", "", -0.9, 0.2, 0.04, 0.05)
-fe3d:text2d_place("total_smoked_meat", "text", "", -0.9, 0.1, 0.04, 0.05)
-fe3d:text2d_place("total_smoked_fish", "text", "", -0.9, 0.0, 0.04, 0.05)
-fe3d:text2d_place("total_bread", "text", "", -0.9, -0.1, 0.04, 0.05)
-fe3d:text2d_place("total_vegetables", "text", "", -0.8, 0.4, 0.04, 0.05)
-fe3d:text2d_place("total_eggs", "text", "", -0.8, 0.3, 0.04, 0.05)
-fe3d:text2d_place("total_raw_meat", "text", "", -0.8, 0.2, 0.04, 0.05)
-fe3d:text2d_place("total_raw_fish", "text", "", -0.8, 0.1, 0.04, 0.05)
-fe3d:text2d_place("total_honey", "text", "", -0.8, 0.0, 0.04, 0.05)
-fe3d:text2d_place("total_fruit", "text", "", -0.8, -0.1, 0.04, 0.05)
+fe3d:quad2d_place("total_water", "water", -0.95, 0.375, 0.05, 0.075)
+fe3d:quad2d_place("total_ale", "ale", -0.95, 0.275, 0.05, 0.075)
+fe3d:quad2d_place("total_milk", "milk", -0.95, 0.175, 0.05, 0.075)
+fe3d:quad2d_place("total_smoked_meat", "smoked_meat", -0.95, 0.075, 0.05, 0.075)
+fe3d:quad2d_place("total_smoked_fish", "smoked_fish", -0.95, -0.025, 0.05, 0.075)
+fe3d:quad2d_place("total_bread", "bread", -0.95, -0.125, 0.05, 0.075)
+fe3d:quad2d_place("total_vegetables", "vegetables", -0.85, 0.375, 0.05, 0.075)
+fe3d:quad2d_place("total_eggs", "eggs", -0.85, 0.275, 0.05, 0.075)
+fe3d:quad2d_place("total_raw_meat", "raw_meat", -0.85, 0.175, 0.05, 0.075)
+fe3d:quad2d_place("total_raw_fish", "raw_fish", -0.85, 0.075, 0.05, 0.075)
+fe3d:quad2d_place("total_honey", "honey", -0.85, -0.025, 0.05, 0.075)
+fe3d:quad2d_place("total_fruit", "fruit", -0.85, -0.125, 0.05, 0.075)
+fe3d:text2d_place("total_food", "text", "- Food -", -0.875, 0.45, 0.12, 0.075)
+fe3d:text2d_place("total_water", "text", "", -0.9, 0.375, 0.04, 0.05)
+fe3d:text2d_place("total_ale", "text", "", -0.9, 0.275, 0.04, 0.05)
+fe3d:text2d_place("total_milk", "text", "", -0.9, 0.175, 0.04, 0.05)
+fe3d:text2d_place("total_smoked_meat", "text", "", -0.9, 0.075, 0.04, 0.05)
+fe3d:text2d_place("total_smoked_fish", "text", "", -0.9, -0.025, 0.04, 0.05)
+fe3d:text2d_place("total_bread", "text", "", -0.9, -0.125, 0.04, 0.05)
+fe3d:text2d_place("total_vegetables", "text", "", -0.8, 0.375, 0.04, 0.05)
+fe3d:text2d_place("total_eggs", "text", "", -0.8, 0.275, 0.04, 0.05)
+fe3d:text2d_place("total_raw_meat", "text", "", -0.8, 0.175, 0.04, 0.05)
+fe3d:text2d_place("total_raw_fish", "text", "", -0.8, 0.075, 0.04, 0.05)
+fe3d:text2d_place("total_honey", "text", "", -0.8, -0.025, 0.04, 0.05)
+fe3d:text2d_place("total_fruit", "text", "", -0.8, -0.125, 0.04, 0.05)
 
 /// Resources
 fe3d:quad2d_place("total_resources", "book", -0.75, -0.6, 0.5, 0.75)

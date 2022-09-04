@@ -1,4 +1,4 @@
-116 20
+30 43
 META script_type_update
 META script_state_wait
 
@@ -28,7 +28,8 @@ IF workerIsDead IS <false>
         IF randomPercentage MORE birthDeathChance
             EDIT workerIsDead = <true>
             EDIT eventMessage = misc:string_concat(workerName, " died of childbirth")
-            PUSH _eventMessages eventMessage
+            EDIT _eventMessageContent = eventMessage
+            EDIT _eventMessageOpacity = 1.0
 
 /// Update dying from suicide
 IF workerIsDead IS <false>
@@ -40,7 +41,8 @@ IF workerIsDead IS <false>
         IF randomPercentage MORE suicideChance
             EDIT workerIsDead = <true>
             EDIT eventMessage = misc:string_concat(workerName, " died of suicide")
-            PUSH _eventMessages eventMessage
+            EDIT _eventMessageContent = eventMessage
+            EDIT _eventMessageOpacity = 1.0
 
 /// Update dying from sickness
 IF workerIsDead IS <false>
@@ -50,7 +52,8 @@ IF workerIsDead IS <false>
         IF randomPercentage MORE sicknessChance
             EDIT _workerHealths[_workerDeathIndex] = <false>
             EDIT eventMessage = misc:string_concat(workerName, " caught the sickness")
-            PUSH _eventMessages eventMessage
+            EDIT _eventMessageContent = eventMessage
+            EDIT _eventMessageOpacity = 1.0
     ELSE
         IF _totalMedicine MORE 0
             SUB _totalMedicine 1
@@ -58,7 +61,8 @@ IF workerIsDead IS <false>
         ELSE
             EDIT workerIsDead = <true>
             EDIT eventMessage = misc:string_concat(workerName, " died of sickness")
-            PUSH _eventMessages eventMessage
+            EDIT _eventMessageContent = eventMessage
+            EDIT _eventMessageOpacity = 1.0
 
 /// Update dying from dehydration
 IF workerIsDead IS <false>
@@ -71,7 +75,8 @@ IF workerIsDead IS <false>
     ELSE
         EDIT workerIsDead = <true>
         EDIT eventMessage = misc:string_concat(workerName, " died of dehydration")
-        PUSH _eventMessages eventMessage
+        EDIT _eventMessageContent = eventMessage
+        EDIT _eventMessageOpacity = 1.0
 
 /// Update dying from starvation
 IF workerIsDead IS <false>
@@ -96,7 +101,8 @@ IF workerIsDead IS <false>
     ELSE
         EDIT workerIsDead = <true>
         EDIT eventMessage = misc:string_concat(workerName, " died of starvation")
-        PUSH _eventMessages eventMessage
+        EDIT _eventMessageContent = eventMessage
+        EDIT _eventMessageOpacity = 1.0
 
 /// Handle dead worker
 IF workerIsDead IS <true>
@@ -116,7 +122,7 @@ ELSE
 
 /// Handle dead population
 IF totalWorkers IS 0
-    EXIT
+    fe3d:application_stop()
 
 /// Update event index
 IF _workerDeathIndex IS totalWorkers

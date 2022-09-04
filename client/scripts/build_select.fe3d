@@ -1,4 +1,4 @@
-17 0
+31 56
 META script_type_update
 META script_state_wait
 
@@ -17,16 +17,20 @@ IF buildingId NOT "" AND _buildMode IS <false>
     IF contains IS <true>
         EDIT hovered = <true>
 
-/// Update building type GUI
+/// Update GUI
 IF hovered IS <true>
     fe3d:quad2d_set_visible("building_type", <true>)
     fe3d:text2d_set_visible("building_type", <true>)
-    STR type = misc:string_capitalize(buildingType)
-    INT width = misc:string_size(type)
-    CAST width DEC
-    MUL width 0.02
-    fe3d:text2d_set_content("building_type", type)
-    fe3d:text2d_set_size("building_type", width, 0.1)
+    STR textContent = misc:string_capitalize(buildingType)
+    fe3d:text2d_set_content("building_type", textContent)
+    INT quadWidth = misc:string_size(textContent)
+    INT textWidth = quadWidth
+    CAST quadWidth DEC
+    CAST textWidth DEC
+    MUL quadWidth 0.03
+    MUL textWidth 0.02
+    fe3d:quad2d_set_size("building_type", quadWidth, 0.125)
+    fe3d:text2d_set_size("building_type", textWidth, 0.1)
     EDIT _selectedBuildingId = buildingId
     EDIT _selectedBuildingType = buildingType
 ELSE
@@ -35,7 +39,7 @@ ELSE
     EDIT _selectedBuildingId = ""
     EDIT _selectedBuildingType = ""
 
-/// Update building menu GUI
+/// Update GUI
 BOL selected = (_selectedBuildingType NOT "")
 fe3d:quad2d_set_visible("building_menu", selected)
 fe3d:text2d_set_visible("building_menu", selected)
