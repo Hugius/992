@@ -7,7 +7,7 @@ PART @bakery base assets\image\model\diffuse_map\bakery_base.tga ? ? ? ? assets\
 PART @bakery frame assets\image\model\diffuse_map\bakery_frame.tga ? ? ? ? assets\image\model\normal_map\bakery_frame.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1
 PART @bakery roof assets\image\model\diffuse_map\bakery_roof.tga ? ? ? ? assets\image\model\normal_map\bakery_roof.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1
 AABB @bakery model@@bakery@aabb 0 0 0 11.5 12 13.25
-MODEL @church assets\mesh\church.obj 0.9 0.9 0.9 @lod 60 2 1 1 1
+MODEL @church assets\mesh\church.obj 0.95 0.95 0.95 @lod 60 2 1 1 1
 PART @church 6 assets\image\model\diffuse_map\church_6.tga ? ? ? ? ? 0 0 1 0 0 16 10 0.5 0.5 1 1 1 1 1 0 0 1 1 1
 PART @church 13 assets\image\model\diffuse_map\church_13.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 PART @church 2 assets\image\model\diffuse_map\church_2.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
@@ -72,13 +72,17 @@ AABB @storage model@@storage@aabb 0 0 0 9.5 5.25 6
 MODEL @tavern assets\mesh\tavern.obj 0.35 0.35 0.35 ? 0 2 1 1 1
 PART @tavern base assets\image\model\diffuse_map\tavern_base.tga ? ? ? ? assets\image\model\normal_map\tavern_base.tga 0 0 1 0 0 2 10 0.5 0.5 0.4 1 1 1 1 0 0 1 1 1
 PART @tavern frame assets\image\model\diffuse_map\tavern_frame.tga ? ? ? ? assets\image\model\normal_map\tavern_frame.tga 0 0 1 0 0 2 10 0.5 0.5 0.4 1 1 1 1 0 0 1 1 1
-MODEL @tree1 assets\mesh\tree1.obj 4 4 4 @lod 60 2 1 1 1
-PART @tree1 trunk assets\image\model\diffuse_map\tree1_trunk.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.1 1 1 1 2 0 0 1 1 1
-PART @tree1 leaves assets\image\model\diffuse_map\tree1_leaves.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1.5 1 1 1 1 0 0 1 1 0.1
-AABB @tree1 model@@tree1@aabb 0 0 0 1.7 1.7 1.7
-MODEL @tree2 assets\mesh\tree2.obj 0.75 0.5 0.75 ? 0 2 1 1 1
-PART @tree2 leaves assets\image\model\diffuse_map\tree2_leaves.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.1 1 1 1 1 0 0 1 1 0.1
-PART @tree2 trunk assets\image\model\diffuse_map\tree2_trunk.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.1 1 1 1 1 0 0 1 1 1
+MODEL @tree1 assets\mesh\tree1.obj 0.7 0.7 0.7 @lod 60 2 1 1 1
+PART @tree1 ? assets\image\model\diffuse_map\tree1.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 0.75 1 1 1 1 0 0 1 1 0.1
+AABB @tree1 model@@tree1@aabb 0.5 0 0.25 6.5 13 6.25
+MODEL @tree2 assets\mesh\tree2.obj 1.75 1.75 1.75 @lod 60 2 1 1 1
+PART @tree2 leaves assets\image\model\diffuse_map\tree2_leaves.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1.25 1 1 1 1 0 0 1 1 0.1
+PART @tree2 trunk assets\image\model\diffuse_map\tree2_trunk.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+AABB @tree2 model@@tree2@aabb 0 0 0 1.75 4.5 1.75
+MODEL @tree3 assets\mesh\tree3.obj 4 4 4 @lod 60 2 1 1 1
+PART @tree3 trunk assets\image\model\diffuse_map\tree3_trunk.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.1 1 1 1 2 0 0 1 1 1
+PART @tree3 leaves assets\image\model\diffuse_map\tree3_leaves.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1.5 1 1 1 1 0 0 1 1 0.1
+AABB @tree3 model@@tree3@aabb -0.05 0 -0.08 1.65 1.7 1.55
 MODEL @well assets\mesh\well.obj 2.25 2.25 2.25 ? 0 2 1 1 1
 PART @well pulley assets\image\model\diffuse_map\well_pulley.tga ? ? ? ? assets\image\model\normal_map\well_pulley.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 PART @well misc assets\image\model\diffuse_map\well_misc.tga ? ? ? ? assets\image\model\normal_map\well_misc.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1

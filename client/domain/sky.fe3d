@@ -1,2 +1,1 @@
-@day assets\image\sky\cube_map\day_right.tga assets\image\sky\cube_map\day_left.tga assets\image\sky\cube_map\day_top.tga assets\image\sky\cube_map\day_bottom.tga assets\image\sky\cube_map\day_back.tga assets\image\sky\cube_map\day_front.tga 0 0 0 1 1 1 1 2
-@night ? ? ? ? ? ? 0 0 0 1 0.25098 0.25098 0.25098 2
+@sky assets\image\sky\cube_map\right.tga assets\image\sky\cube_map\left.tga assets\image\sky\cube_map\top.tga assets\image\sky\cube_map\bottom.tga assets\image\sky\cube_map\back.tga assets\image\sky\cube_map\front.tga 0 0 0 1 1 1 1 2
