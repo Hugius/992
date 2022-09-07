@@ -1,10 +1,10 @@
-0 0
+24 23
 META script_type_initialize
 META script_state_entry
 
 /// General stuff
 EXECUTE camera_init
-EXECUTE build_init
+EXECUTE building_init
 EXECUTE workers_init
 
 /// Building stuff
@@ -23,3 +23,4 @@ EXECUTE in_tavern
 /// Miscellaneous stuff
 EXECUTE hud_init
 EXECUTE misc_init
+EXECUTE generation_init

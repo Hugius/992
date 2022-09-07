@@ -1,4 +1,4 @@
-0 0
+41 0
 META script_type_update
 META script_state_wait
 
@@ -38,3 +38,6 @@ fe3d:camera_follow_front_xz(_zPositionAcc)
 
 /// Update raycasting
 fe3d:raycast_calculate_cursor_ray()
+
+/// Update collision
+fe3d:collision_calculate_camera_aabbs(<true>, <false>, <true>)

@@ -1,0 +1,69 @@
+49 17
+META script_type_initialize
+META script_state_wait
+
+/// Constants
+CNST DEC minX = -128.0
+CNST DEC minY = 3.0
+CNST DEC minZ = -128.0
+CNST DEC maxX = 128.0
+CNST DEC maxZ = 128.0
+CNST DEC minZoneX = 10.0
+CNST DEC minZoneZ = -15.0
+CNST DEC maxZoneX = 35.0
+CNST DEC maxZoneZ = 10.0
+CNST DEC minDistance = 5.0
+CNST INT maxModels = 270
+
+/// Non-constants
+LST modelIds = {"tree1","stone1","tree1","tree2","stone2","tree2","tree3","stone3","tree3"}
+LST xPositions = {}
+LST yPositions = {}
+LST zPositions = {}
+STR modelId = ""
+INT modelIndex = 0
+INT positionIndex = 0
+INT totalModels = 0
+DEC x = 0.0
+DEC y = 0.0
+DEC z = 0.0
+DEC distance = 0.0
+BOL mustSkip = <false>
+
+/// Generation
+LOOP
+    IF totalModels IS maxModels
+        BREAK
+    EDIT x = math:random_decimal(minX, maxX)
+    EDIT z = math:random_decimal(minZ, maxZ)
+    EDIT y = fe3d:terrain_get_pixel_height("terrain", x, z)
+    IF y LESS minY
+        CONTINUE
+    IF x MORE minZoneX AND x LESS maxZoneX AND z MORE minZoneZ AND z LESS maxZoneZ
+        CONTINUE
+    EDIT positionIndex = 0
+    LOOP
+        IF positionIndex IS totalModels
+            BREAK
+        EDIT distance = math:vector_distance(x, y, z, xPositions[positionIndex], yPositions[positionIndex], zPositions[positionIndex])
+        IF distance LESS minDistance
+            EDIT mustSkip = <true>
+            BREAK
+        ADD positionIndex 1
+    IF mustSkip IS <true>
+        EDIT mustSkip = <false>
+        CONTINUE
+    CAST totalModels STR
+    EDIT modelId = misc:string_concat(modelIds[modelIndex], "_")
+    EDIT modelId = misc:string_concat(modelId, totalModels)
+    CAST totalModels INT
+    fe3d:model_place(modelId, modelIds[modelIndex], x, minY, z)
+    ADD totalModels 1
+    PUSH xPositions x
+    PUSH yPositions y
+    PUSH zPositions z
+    IF modelIndex IS 8
+        EDIT modelIndex = 0
+    ELSE
+        ADD modelIndex 1
+    PASS

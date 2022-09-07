@@ -9,10 +9,10 @@ IF escape IS <true>
 
 /// Update general stuff
 EXECUTE camera_update
-EXECUTE build_misc
-EXECUTE build_place
-EXECUTE build_create
-EXECUTE build_select
+EXECUTE building_misc
+EXECUTE building_place
+EXECUTE building_create
+EXECUTE building_select
 EXECUTE workers_life
 EXECUTE workers_death
 
