@@ -12,8 +12,8 @@ CNST STR infoText3 = "Halves the crop harvest age"
 GLOB LST _priestIds = {}
 
 /// GUI
-fe3d:quad2d_place("priest_worker", "skull_icon", 0.0, -0.6, 0.1, 0.2)
-fe3d:quad2d_place("priest_info", "info_icon", 0.0, -0.6, 0.1, 0.2)
+fe3d:quad2d_place("priest_worker", "worker_icon", 0.0, -0.6, 0.1, 0.175)
+fe3d:quad2d_place("priest_info", "info_icon", 0.0, -0.6, 0.1, 0.175)
 fe3d:text2d_place("priest_worker", "text", workerText, 0.0, -0.8, 0.38, 0.1)
 fe3d:text2d_place("priest_info1", "text", infoText1, 0.0, -0.7, 0.8, 0.1)
 fe3d:text2d_place("priest_info2", "text", infoText2, 0.0, -0.8, 0.84, 0.1)

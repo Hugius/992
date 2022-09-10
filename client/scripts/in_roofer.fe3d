@@ -11,9 +11,9 @@ CNST STR infoText = "Constructs buildings using straw"
 GLOB LST _rooferIds = {"roofer_3"}
 
 /// GUI
-fe3d:quad2d_place("roofer_worker", "skull_icon", 0.0, -0.6, 0.1, 0.2)
-fe3d:quad2d_place("roofer_tool", "tool", 0.0, -0.6, 0.1, 0.2)
-fe3d:quad2d_place("roofer_info", "info_icon", 0.0, -0.6, 0.1, 0.2)
+fe3d:quad2d_place("roofer_worker", "worker_icon", 0.0, -0.6, 0.1, 0.175)
+fe3d:quad2d_place("roofer_tool", "tool", 0.0, -0.6, 0.1, 0.175)
+fe3d:quad2d_place("roofer_info", "info_icon", 0.0, -0.6, 0.1, 0.175)
 fe3d:text2d_place("roofer_worker", "text", workerText, 0.0, -0.8, 0.38, 0.1)
 fe3d:text2d_place("roofer_tool", "text", toolText, 0.0, -0.8, 0.38, 0.1)
 fe3d:text2d_place("roofer_info", "text", infoText, 0.0, -0.8, 0.64, 0.1)

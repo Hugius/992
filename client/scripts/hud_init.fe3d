@@ -1,4 +1,4 @@
-76 78
+27 66
 META script_type_initialize
 META script_state_wait
 
@@ -11,9 +11,9 @@ fe3d:text2d_place("total_seconds", "text", "", 0.775, -0.95, 0.15, 0.075)
 
 /// Workers
 fe3d:quad2d_place("total_workers", "scroll1", -0.9, 0.75, 0.2, 0.5)
-fe3d:quad2d_place("total_alive", "heart_icon", -0.925, 0.8125, 0.05, 0.075)
-fe3d:quad2d_place("total_sick", "heart_icon", -0.925, 0.7125, 0.05, 0.075)
-fe3d:quad2d_place("total_dead", "heart_icon", -0.925, 0.6125, 0.05, 0.075)
+fe3d:quad2d_place("total_alive", "status_icon", -0.925, 0.8125, 0.05, 0.075)
+fe3d:quad2d_place("total_sick", "status_icon", -0.925, 0.7125, 0.05, 0.075)
+fe3d:quad2d_place("total_dead", "status_icon", -0.925, 0.6125, 0.05, 0.075)
 fe3d:quad2d_set_color("total_alive", 0.5, 0.0, 0.0)
 fe3d:quad2d_set_color("total_sick", 0.0, 0.4, 0.0)
 fe3d:quad2d_set_color("total_dead", 0.25, 0.25, 0.25)

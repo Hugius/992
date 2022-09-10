@@ -1,0 +1,42 @@
+19 26
+META script_type_update
+META script_state_wait
+
+/// Hide GUI
+fe3d:quad2d_set_visible("herbalist_worker", <false>)
+fe3d:quad2d_set_visible("herbalist_storage", <false>)
+fe3d:quad2d_set_visible("herbalist_water", <false>)
+fe3d:quad2d_set_visible("herbalist_mushrooms", <false>)
+fe3d:quad2d_set_visible("herbalist_convert", <false>)
+fe3d:quad2d_set_visible("herbalist_medicine", <false>)
+fe3d:text2d_set_visible("herbalist_worker", <false>)
+fe3d:text2d_set_visible("herbalist_storage", <false>)
+fe3d:text2d_set_visible("herbalist_water", <false>)
+fe3d:text2d_set_visible("herbalist_mushrooms", <false>)
+fe3d:text2d_set_visible("herbalist_medicine", <false>)
+
+/// Show GUI
+IF _selectedBuildingType IS "herbalist"
+    BOL hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
+    IF hasWorker IS <true>
+        IF _totalMedicine LESS _maxMedicine
+            fe3d:quad2d_set_visible("herbalist_water", <true>)
+            fe3d:quad2d_set_visible("herbalist_mushrooms", <true>)
+            fe3d:quad2d_set_visible("herbalist_convert", <true>)
+            fe3d:quad2d_set_visible("herbalist_medicine", <true>)
+            fe3d:text2d_set_visible("herbalist_water", <true>)
+            fe3d:text2d_set_visible("herbalist_mushrooms", <true>)
+            fe3d:text2d_set_visible("herbalist_medicine", <true>)
+            IF _totalWater MORE 0 AND _totalMushrooms MORE 0
+                EDIT _cursorType = "HAND"
+                BOL lmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
+                IF lmbClicked IS <true>
+                    SUB _totalWater 1
+                    SUB _totalMushrooms 1
+                    ADD _totalBread 1
+        ELSE
+            fe3d:quad2d_set_visible("herbalist_storage", <true>)
+            fe3d:text2d_set_visible("herbalist_storage", <true>)
+    ELSE
+        fe3d:quad2d_set_visible("herbalist_worker", <true>)
+        fe3d:text2d_set_visible("herbalist_worker", <true>)

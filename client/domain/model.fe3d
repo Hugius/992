@@ -100,6 +100,7 @@ PART @well hole assets\image\model\diffuse_map\well_hole.tga ? ? ? ? assets\imag
 MODEL @windmill assets\mesh\windmill.obj 1.25 1.25 1.25 ? 0 2 1 1 1
 PART @windmill base assets\image\model\diffuse_map\windmill.tga ? ? ? ? assets\image\model\normal_map\windmill.tga 0 0 1 0 0 2 10 0.5 0.5 1 1 1 1 1 0 0 1 1 1
 PART @windmill wicks assets\image\model\diffuse_map\windmill.tga ? ? ? ? assets\image\model\normal_map\windmill.tga 0 0 1 0 0 16 10 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+AABB @windmill model@@windmill@aabb 0 0 0 5 5 5
 MODEL @workshop1 assets\mesh\workshop1.obj 1 1 1 ? 0 2 1 1 1
 PART @workshop1 doorframe assets\image\model\diffuse_map\workshop1_doorframe.tga ? ? ? ? assets\image\model\normal_map\workshop1_doorframe.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 PART @workshop1 walls assets\image\model\diffuse_map\workshop1_walls.tga ? ? ? ? assets\image\model\normal_map\workshop1_walls.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1

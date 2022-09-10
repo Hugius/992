@@ -1,0 +1,47 @@
+39 39
+META script_type_update
+META script_state_wait
+
+/// Hide GUI
+fe3d:quad2d_set_visible("fletcher_worker", <false>)
+fe3d:quad2d_set_visible("fletcher_storage", <false>)
+fe3d:quad2d_set_visible("fletcher_feathers", <false>)
+fe3d:quad2d_set_visible("fletcher_planks", <false>)
+fe3d:quad2d_set_visible("fletcher_iron", <false>)
+fe3d:quad2d_set_visible("fletcher_convert", <false>)
+fe3d:quad2d_set_visible("fletcher_arrow", <false>)
+fe3d:text2d_set_visible("fletcher_worker", <false>)
+fe3d:text2d_set_visible("fletcher_storage", <false>)
+fe3d:text2d_set_visible("fletcher_feathers", <false>)
+fe3d:text2d_set_visible("fletcher_planks", <false>)
+fe3d:text2d_set_visible("fletcher_iron", <false>)
+fe3d:text2d_set_visible("fletcher_arrow", <false>)
+
+/// Show GUI
+IF _selectedBuildingType IS "fletcher"
+    BOL hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
+    IF hasWorker IS <true>
+        IF _totalArrows LESS _maxArrows
+            fe3d:quad2d_set_visible("fletcher_feathers", <true>)
+            fe3d:quad2d_set_visible("fletcher_planks", <true>)
+            fe3d:quad2d_set_visible("fletcher_iron", <true>)
+            fe3d:quad2d_set_visible("fletcher_convert", <true>)
+            fe3d:quad2d_set_visible("fletcher_arrow", <true>)
+            fe3d:text2d_set_visible("fletcher_feathers", <true>)
+            fe3d:text2d_set_visible("fletcher_planks", <true>)
+            fe3d:text2d_set_visible("fletcher_iron", <true>)
+            fe3d:text2d_set_visible("fletcher_arrow", <true>)
+            IF _totalFeathers MORE 0 AND _totalPlanks MORE 0 AND _totalIron MORE 0
+                EDIT _cursorType = "HAND"
+                BOL lmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
+                IF lmbClicked IS <true>
+                    SUB _totalFeathers 1
+                    SUB _totalPlanks 1
+                    SUB _totalIron 1
+                    ADD _totalArrows 10
+        ELSE
+            fe3d:quad2d_set_visible("fletcher_storage", <true>)
+            fe3d:text2d_set_visible("fletcher_storage", <true>)
+    ELSE
+        fe3d:quad2d_set_visible("fletcher_worker", <true>)
+        fe3d:text2d_set_visible("fletcher_worker", <true>)

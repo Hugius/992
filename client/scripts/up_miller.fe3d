@@ -1,0 +1,37 @@
+21 49
+META script_type_update
+META script_state_wait
+
+/// Hide GUI
+fe3d:quad2d_set_visible("miller_worker", <false>)
+fe3d:quad2d_set_visible("miller_storage", <false>)
+fe3d:quad2d_set_visible("miller_grain", <false>)
+fe3d:quad2d_set_visible("miller_convert", <false>)
+fe3d:quad2d_set_visible("miller_flour", <false>)
+fe3d:text2d_set_visible("miller_worker", <false>)
+fe3d:text2d_set_visible("miller_storage", <false>)
+fe3d:text2d_set_visible("miller_grain", <false>)
+fe3d:text2d_set_visible("miller_flour", <false>)
+
+/// Show GUI
+IF _selectedBuildingType IS "miller"
+    BOL hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
+    IF hasWorker IS <true>
+        IF _totalGrain LESS _maxGrain
+            fe3d:quad2d_set_visible("miller_grain", <true>)
+            fe3d:quad2d_set_visible("miller_convert", <true>)
+            fe3d:quad2d_set_visible("miller_flour", <true>)
+            fe3d:text2d_set_visible("miller_grain", <true>)
+            fe3d:text2d_set_visible("miller_flour", <true>)
+            IF _totalGrain MORE 0
+                EDIT _cursorType = "HAND"
+                BOL lmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
+                IF lmbClicked IS <true>
+                    SUB _totalGrain 1
+                    ADD _totalFlour 1
+        ELSE
+            fe3d:quad2d_set_visible("miller_storage", <true>)
+            fe3d:text2d_set_visible("miller_storage", <true>)
+    ELSE
+        fe3d:quad2d_set_visible("miller_worker", <true>)
+        fe3d:text2d_set_visible("miller_worker", <true>)

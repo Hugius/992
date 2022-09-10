@@ -1,4 +1,4 @@
-10 36
+52 56
 META script_type_initialize
 META script_state_wait
 
@@ -24,7 +24,7 @@ GLOB BOL _buildMode = <false>
 GLOB BOL _lastBuildMode = <false>
 
 /// GUI
-fe3d:quad2d_place("build", "build_icon", 0.95, -0.9125, 0.1, 0.175)
+fe3d:quad2d_place("build_icon", "build_icon", 0.95, -0.9125, 0.1, 0.175)
 fe3d:quad2d_place("building_price_type", "scroll2", 0.0, -0.7, 1.0, 0.6)
 fe3d:quad2d_place("building_price_planks", "planks", -0.3, -0.7, 0.1, 0.175)
 fe3d:quad2d_place("building_price_stone", "stone", -0.1, -0.7, 0.1, 0.175)
@@ -51,7 +51,7 @@ LOOP
     ADD index 1
 
 /// Default buildings
-fe3d:model_place("storage_0", "storage", 21.0, 3.0, -0.5)
+fe3d:model_place("storage_0", "storage", 21.0, 3.0, -1.5)
 fe3d:model_place("carpenter_1", "workshop3", 29.0, 3.0, -4.0)
 fe3d:model_place("mason_2", "workshop3", 15.0, 3.0, -6.0)
 fe3d:model_place("roofer_3", "workshop3", 19.0, 3.0, 5.0)

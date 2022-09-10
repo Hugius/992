@@ -1,4 +1,4 @@
-38 18
+19 52
 META script_type_update
 META script_state_wait
 
@@ -10,7 +10,7 @@ IF _placedBuildingId IS ""
 INT index = 0
 INT maxIndex = 0
 
-/// Assign worker to job
+/// Assign worker to job building
 IF _placedBuildingType NOT "grave"
     IF _placedBuildingType NOT "house"
         IF _placedBuildingType NOT "storage"
@@ -18,6 +18,10 @@ IF _placedBuildingType NOT "grave"
                 EDIT index = misc:list_index("_workerJobBuildingIds", "")
                 IF index NOT -1
                     EDIT _workerJobBuildingIds[index] = _placedBuildingId
+                    STR eventMessage = misc:string_concat(_workerNames[index], " became ")
+                    EDIT eventMessage = misc:string_concat(eventMessage, _placedBuildingType)
+                    EDIT _eventMessageContent = eventMessage
+                    EDIT _eventMessageOpacity = 1.0
 
 /// Determine building type
 IF _placedBuildingType IS "apiarist"

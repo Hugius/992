@@ -1,4 +1,4 @@
-30 21
+74 11
 META script_type_update
 META script_state_wait
 
@@ -36,13 +36,13 @@ PUSH _workerNames workerName
 PUSH _workerGenders workerGender
 PUSH _workerHealths <true>
 
-/// Log event
+/// Log birth event
 IF _creatingDefaultWorkers IS <false>
     EDIT eventMessage = misc:string_concat(workerName, " was born")
     EDIT _eventMessageContent = eventMessage
     EDIT _eventMessageOpacity = 1.0
 
-/// Assign to job building
+/// Assign worker to job building
 BOL hasWorker = <false>
 EDIT index = 0
 EDIT maxIndex = misc:list_size("_placedBuildingIds")
@@ -65,10 +65,15 @@ LOOP
     EDIT hasWorker = misc:list_contains("_workerJobBuildingIds", _placedBuildingIds[index])
     IF hasWorker IS <false>
         PUSH _workerJobBuildingIds _placedBuildingIds[index]
+        IF _creatingDefaultWorkers IS <false>
+            STR eventMessage = misc:string_concat(_workerNames[index], " became ")
+            EDIT eventMessage = misc:string_concat(eventMessage, _placedBuildingTypes[index])
+            EDIT _eventMessageContent = eventMessage
+            EDIT _eventMessageOpacity = 1.0
         BREAK
     ADD index 1
 
-/// Assign to house building
+/// Assign worker to house building
 INT workerCount = 0
 INT workerIndex = 0
 EDIT index = 0

@@ -1,4 +1,4 @@
-0 0
+25 31
 META script_type_update
 META script_state_wait
 
@@ -13,15 +13,15 @@ BOL defaultBuildingsHaveTools = (carpenterHasTool IS <true> AND masonHasTool IS 
 
 /// Update build button opacity
 IF defaultBuildingsHaveTools IS <true>
-    fe3d:quad2d_set_opacity("build", 1.0)
+    fe3d:quad2d_set_opacity("build_icon", 1.0)
 ELSE
-    fe3d:quad2d_set_opacity("build", 0.5)
+    fe3d:quad2d_set_opacity("build_icon", 0.5)
 
 /// Update build button hover and click
-BOL buttonHovered = fe3d:quad2d_is_hovered("build")
+BOL buttonHovered = fe3d:quad2d_is_hovered("build_icon")
 IF buttonHovered IS <true> AND defaultBuildingsHaveTools IS <true>
     EDIT _cursorType = "HAND"
-    fe3d:quad2d_set_lightness("build", 1.25)
+    fe3d:quad2d_set_lightness("build_icon", 1.25)
     BOL lmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
     IF lmbClicked IS <true>
         IF _buildMode IS <true>
@@ -31,7 +31,7 @@ IF buttonHovered IS <true> AND defaultBuildingsHaveTools IS <true>
             fe3d:model_set_visible(_buildingTypes[_buildingIndex], <true>)
             EDIT _buildMode = <true>
 ELSE
-    fe3d:quad2d_set_lightness("build", 1.0)
+    fe3d:quad2d_set_lightness("build_icon", 1.0)
 
 /// Update GUI
 fe3d:quad2d_set_visible("building_price_type", _buildMode)

@@ -1,0 +1,25 @@
+17 61
+META script_type_initialize
+META script_state_wait
+
+/// Constants
+CNST STR workerText = "No worker available"
+CNST STR storageText = "No space in storage"
+
+/// Non-constants
+GLOB LST _brewerIds = {}
+
+/// GUI
+fe3d:quad2d_place("brewer_worker", "worker_icon", 0.0, -0.6, 0.1, 0.175)
+fe3d:quad2d_place("brewer_storage", "ale", 0.0, -0.6, 0.1, 0.175)
+fe3d:quad2d_place("brewer_water", "water", -0.325, -0.7, 0.1, 0.175)
+fe3d:quad2d_place("brewer_grain", "grain", -0.2, -0.7, 0.1, 0.175)
+fe3d:quad2d_place("brewer_firewood", "firewood", -0.075, -0.7, 0.1, 0.175)
+fe3d:quad2d_place("brewer_convert", "convert_icon", 0.1, -0.7, 0.2, 0.4)
+fe3d:quad2d_place("brewer_ale", "ale", 0.3, -0.7, 0.1, 0.175)
+fe3d:text2d_place("brewer_worker", "text", workerText, 0.0, -0.8, 0.38, 0.1)
+fe3d:text2d_place("brewer_storage", "text", storageText, 0.0, -0.8, 0.38, 0.1)
+fe3d:text2d_place("brewer_water", "text", "1", -0.325, -0.875, 0.02, 0.1)
+fe3d:text2d_place("brewer_grain", "text", "1", -0.2, -0.875, 0.02, 0.1)
+fe3d:text2d_place("brewer_firewood", "text", "1", -0.075, -0.875, 0.02, 0.1)
+fe3d:text2d_place("brewer_ale", "text", "10", 0.3, -0.875, 0.04, 0.1)

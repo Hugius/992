@@ -1,0 +1,49 @@
+41 36
+META script_type_update
+META script_state_wait
+
+/// Hide GUI
+fe3d:quad2d_set_visible("brewer_worker", <false>)
+fe3d:quad2d_set_visible("brewer_storage", <false>)
+fe3d:quad2d_set_visible("brewer_water", <false>)
+fe3d:quad2d_set_visible("brewer_grain", <false>)
+fe3d:quad2d_set_visible("brewer_firewood", <false>)
+fe3d:quad2d_set_visible("brewer_convert", <false>)
+fe3d:quad2d_set_visible("brewer_ale", <false>)
+fe3d:text2d_set_visible("brewer_worker", <false>)
+fe3d:text2d_set_visible("brewer_storage", <false>)
+fe3d:text2d_set_visible("brewer_water", <false>)
+fe3d:text2d_set_visible("brewer_grain", <false>)
+fe3d:text2d_set_visible("brewer_firewood", <false>)
+fe3d:text2d_set_visible("brewer_ale", <false>)
+
+/// Show GUI
+IF _selectedBuildingType IS "brewer"
+    BOL hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
+    IF hasWorker IS <true>
+        INT totalAle = _totalAle
+        ADD totalAle 10
+        IF totalAle LESS _maxAle
+            fe3d:quad2d_set_visible("brewer_water", <true>)
+            fe3d:quad2d_set_visible("brewer_grain", <true>)
+            fe3d:quad2d_set_visible("brewer_firewood", <true>)
+            fe3d:quad2d_set_visible("brewer_convert", <true>)
+            fe3d:quad2d_set_visible("brewer_ale", <true>)
+            fe3d:text2d_set_visible("brewer_water", <true>)
+            fe3d:text2d_set_visible("brewer_grain", <true>)
+            fe3d:text2d_set_visible("brewer_firewood", <true>)
+            fe3d:text2d_set_visible("brewer_ale", <true>)
+            IF _totalWater MORE 0 AND _totalGrain MORE 0 AND _totalFirewood MORE 0
+                EDIT _cursorType = "HAND"
+                BOL lmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
+                IF lmbClicked IS <true>
+                    SUB _totalWater 1
+                    SUB _totalGrain 1
+                    SUB _totalFirewood 1
+                    ADD _totalAle 10
+        ELSE
+            fe3d:quad2d_set_visible("brewer_storage", <true>)
+            fe3d:text2d_set_visible("brewer_storage", <true>)
+    ELSE
+        fe3d:quad2d_set_visible("brewer_worker", <true>)
+        fe3d:text2d_set_visible("brewer_worker", <true>)
