@@ -81,6 +81,7 @@ AABB @storage model@@storage@aabb 0 0 0 9.5 5.25 6
 MODEL @tavern assets\mesh\tavern.obj 0.35 0.35 0.35 ? 0 2 1 1 1
 PART @tavern base assets\image\model\diffuse_map\tavern_base.tga ? ? ? ? assets\image\model\normal_map\tavern_base.tga 0 0 1 0 0 2 10 0.5 0.5 0.4 1 1 1 1 0 0 1 1 1
 PART @tavern frame assets\image\model\diffuse_map\tavern_frame.tga ? ? ? ? assets\image\model\normal_map\tavern_frame.tga 0 0 1 0 0 2 10 0.5 0.5 0.4 1 1 1 1 0 0 1 1 1
+AABB @tavern model@@tavern@aabb 0 0 0 10 10 10
 MODEL @tree1 assets\mesh\tree1.obj 0.7 0.7 0.7 @lod 60 2 1 1 1
 PART @tree1 ? assets\image\model\diffuse_map\tree1.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 0.75 1 1 1 1 0 0 1 1 0.1
 AABB @tree1 model@@tree1@aabb 0.5 0 0.25 6.5 13 6.25

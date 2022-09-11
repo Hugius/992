@@ -1,4 +1,4 @@
-43 24
+81 67
 META script_type_initialize
 META script_state_wait
 
@@ -80,4 +80,4 @@ GLOB INT _maxArrows = 50
 
 /// GUI
 fe3d:quad2d_place("storage_info", "info_icon", 0.0, -0.6, 0.1, 0.175)
-fe3d:text2d_place("storage_info", "text", infoText, 0.0, -0.8, 0.5, 0.1)
+fe3d:text2d_place("storage_info", "text", infoText, 0.0, -0.8, 0.375, 0.1)

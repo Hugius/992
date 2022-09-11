@@ -1,4 +1,4 @@
-21 37
+19 54
 META script_type_initialize
 META script_state_wait
 
@@ -12,12 +12,12 @@ GLOB LST _herbalistIds = {}
 /// GUI
 fe3d:quad2d_place("herbalist_worker", "worker_icon", 0.0, -0.6, 0.1, 0.175)
 fe3d:quad2d_place("herbalist_storage", "medicine", 0.0, -0.6, 0.1, 0.175)
-fe3d:quad2d_place("herbalist_water", "water", -0.325, -0.7, 0.1, 0.175)
-fe3d:quad2d_place("herbalist_mushrooms", "mushrooms", -0.175, -0.7, 0.1, 0.175)
+fe3d:quad2d_place("herbalist_water", "water", -0.3, -0.7, 0.1, 0.175)
+fe3d:quad2d_place("herbalist_mushrooms", "mushrooms", -0.2, -0.7, 0.1, 0.175)
 fe3d:quad2d_place("herbalist_convert", "convert_icon", 0.0, -0.7, 0.2, 0.4)
 fe3d:quad2d_place("herbalist_medicine", "medicine", 0.25, -0.7, 0.1, 0.175)
-fe3d:text2d_place("herbalist_worker", "text", workerText, 0.0, -0.8, 0.38, 0.1)
-fe3d:text2d_place("herbalist_storage", "text", storageText, 0.0, -0.8, 0.38, 0.1)
-fe3d:text2d_place("herbalist_water", "text", "1", -0.325, -0.875, 0.02, 0.1)
-fe3d:text2d_place("herbalist_mushrooms", "text", "1", -0.175, -0.875, 0.02, 0.1)
+fe3d:text2d_place("herbalist_worker", "text", workerText, 0.0, -0.8, 0.285, 0.1)
+fe3d:text2d_place("herbalist_storage", "text", storageText, 0.0, -0.8, 0.285, 0.1)
+fe3d:text2d_place("herbalist_water", "text", "1", -0.3, -0.875, 0.02, 0.1)
+fe3d:text2d_place("herbalist_mushrooms", "text", "1", -0.2, -0.875, 0.02, 0.1)
 fe3d:text2d_place("herbalist_medicine", "text", "1", 0.25, -0.875, 0.02, 0.1)

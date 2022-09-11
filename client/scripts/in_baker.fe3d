@@ -1,4 +1,4 @@
-14 70
+18 72
 META script_type_initialize
 META script_state_wait
 
@@ -12,12 +12,12 @@ GLOB LST _bakerIds = {}
 /// GUI
 fe3d:quad2d_place("baker_worker", "worker_icon", 0.0, -0.6, 0.1, 0.175)
 fe3d:quad2d_place("baker_storage", "bread", 0.0, -0.6, 0.1, 0.175)
-fe3d:quad2d_place("baker_flour", "flour", -0.325, -0.6, 0.1, 0.175)
-fe3d:quad2d_place("baker_firewood", "firewood", -0.175, -0.6, 0.1, 0.175)
+fe3d:quad2d_place("baker_flour", "flour", -0.3, -0.7, 0.1, 0.175)
+fe3d:quad2d_place("baker_firewood", "firewood", -0.2, -0.7, 0.1, 0.175)
 fe3d:quad2d_place("baker_convert", "convert_icon", 0.0, -0.7, 0.2, 0.4)
-fe3d:quad2d_place("baker_bread", "bread", 0.25, -0.6, 0.1, 0.175)
-fe3d:text2d_place("baker_worker", "text", workerText, 0.0, -0.8, 0.38, 0.1)
-fe3d:text2d_place("baker_storage", "text", storageText, 0.0, -0.8, 0.38, 0.1)
-fe3d:text2d_place("baker_flour", "text", "1", -0.325, -0.8, 0.02, 0.1)
-fe3d:text2d_place("baker_firewood", "text", "1", -0.175, -0.8, 0.02, 0.1)
-fe3d:text2d_place("baker_bread", "text", "1", 0.25, -0.8, 0.02, 0.1)
+fe3d:quad2d_place("baker_bread", "bread", 0.25, -0.7, 0.1, 0.175)
+fe3d:text2d_place("baker_worker", "text", workerText, 0.0, -0.8, 0.285, 0.1)
+fe3d:text2d_place("baker_storage", "text", storageText, 0.0, -0.8, 0.285, 0.1)
+fe3d:text2d_place("baker_flour", "text", "1", -0.3, -0.875, 0.02, 0.1)
+fe3d:text2d_place("baker_firewood", "text", "1", -0.2, -0.875, 0.02, 0.1)
+fe3d:text2d_place("baker_bread", "text", "10", 0.25, -0.875, 0.04, 0.1)

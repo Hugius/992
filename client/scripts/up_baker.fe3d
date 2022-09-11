@@ -1,4 +1,4 @@
-0 0
+32 28
 META script_type_update
 META script_state_wait
 
@@ -19,7 +19,9 @@ fe3d:text2d_set_visible("baker_bread", <false>)
 IF _selectedBuildingType IS "baker"
     BOL hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
     IF hasWorker IS <true>
-        IF _totalBread LESS _maxBread
+        INT totalBread = _totalBread
+        ADD totalBread 10
+        IF totalBread LESS _maxBread
             fe3d:quad2d_set_visible("baker_flour", <true>)
             fe3d:quad2d_set_visible("baker_firewood", <true>)
             fe3d:quad2d_set_visible("baker_convert", <true>)
@@ -33,7 +35,7 @@ IF _selectedBuildingType IS "baker"
                 IF lmbClicked IS <true>
                     SUB _totalFlour 1
                     SUB _totalFirewood 1
-                    ADD _totalBread 1
+                    ADD _totalBread 10
         ELSE
             fe3d:quad2d_set_visible("baker_storage", <true>)
             fe3d:text2d_set_visible("baker_storage", <true>)

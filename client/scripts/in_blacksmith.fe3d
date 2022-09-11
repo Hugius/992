@@ -1,4 +1,4 @@
-0 0
+16 59
 META script_type_initialize
 META script_state_wait
 
@@ -13,12 +13,12 @@ GLOB LST _toolBuildingIds = {}
 /// GUI
 fe3d:quad2d_place("blacksmith_worker", "worker_icon", 0.0, -0.6, 0.1, 0.175)
 fe3d:quad2d_place("blacksmith_storage", "tool", 0.0, -0.6, 0.1, 0.175)
-fe3d:quad2d_place("blacksmith_planks", "planks", -0.325, -0.7, 0.1, 0.175)
-fe3d:quad2d_place("blacksmith_iron", "iron", -0.175, -0.7, 0.1, 0.175)
+fe3d:quad2d_place("blacksmith_planks", "planks", -0.3, -0.7, 0.1, 0.175)
+fe3d:quad2d_place("blacksmith_iron", "iron", -0.2, -0.7, 0.1, 0.175)
 fe3d:quad2d_place("blacksmith_convert", "convert_icon", 0.0, -0.7, 0.2, 0.4)
 fe3d:quad2d_place("blacksmith_tool", "tool", 0.25, -0.7, 0.1, 0.175)
-fe3d:text2d_place("blacksmith_worker", "text", workerText, 0.0, -0.8, 0.38, 0.1)
-fe3d:text2d_place("blacksmith_storage", "text", storageText, 0.0, -0.8, 0.38, 0.1)
-fe3d:text2d_place("blacksmith_planks", "text", "1", -0.325, -0.875, 0.02, 0.1)
-fe3d:text2d_place("blacksmith_iron", "text", "1", -0.175, -0.875, 0.02, 0.1)
+fe3d:text2d_place("blacksmith_worker", "text", workerText, 0.0, -0.8, 0.285, 0.1)
+fe3d:text2d_place("blacksmith_storage", "text", storageText, 0.0, -0.8, 0.285, 0.1)
+fe3d:text2d_place("blacksmith_planks", "text", "1", -0.3, -0.875, 0.02, 0.1)
+fe3d:text2d_place("blacksmith_iron", "text", "1", -0.2, -0.875, 0.02, 0.1)
 fe3d:text2d_place("blacksmith_tool", "text", "1", 0.25, -0.875, 0.02, 0.1)

@@ -1,4 +1,4 @@
-39 39
+24 11
 META script_type_update
 META script_state_wait
 
@@ -21,7 +21,9 @@ fe3d:text2d_set_visible("fletcher_arrow", <false>)
 IF _selectedBuildingType IS "fletcher"
     BOL hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
     IF hasWorker IS <true>
-        IF _totalArrows LESS _maxArrows
+        INT totalArrows = _totalArrows
+        ADD totalArrows 10
+        IF totalArrows LESS _maxArrows
             fe3d:quad2d_set_visible("fletcher_feathers", <true>)
             fe3d:quad2d_set_visible("fletcher_planks", <true>)
             fe3d:quad2d_set_visible("fletcher_iron", <true>)

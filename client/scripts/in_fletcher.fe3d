@@ -1,4 +1,4 @@
-21 54
+20 56
 META script_type_initialize
 META script_state_wait
 
@@ -12,14 +12,14 @@ GLOB LST _fletcherIds = {}
 /// GUI
 fe3d:quad2d_place("fletcher_worker", "worker_icon", 0.0, -0.6, 0.1, 0.175)
 fe3d:quad2d_place("fletcher_storage", "arrow", 0.0, -0.6, 0.1, 0.175)
-fe3d:quad2d_place("fletcher_feathers", "feathers", -0.325, -0.7, 0.1, 0.175)
+fe3d:quad2d_place("fletcher_feathers", "feathers", -0.3, -0.7, 0.1, 0.175)
 fe3d:quad2d_place("fletcher_planks", "planks", -0.2, -0.7, 0.1, 0.175)
-fe3d:quad2d_place("fletcher_iron", "iron", -0.075, -0.7, 0.1, 0.175)
-fe3d:quad2d_place("fletcher_convert", "convert_icon", 0.1, -0.7, 0.2, 0.4)
-fe3d:quad2d_place("fletcher_arrow", "arrow", 0.3, -0.7, 0.1, 0.175)
-fe3d:text2d_place("fletcher_worker", "text", workerText, 0.0, -0.8, 0.38, 0.1)
-fe3d:text2d_place("fletcher_storage", "text", storageText, 0.0, -0.8, 0.38, 0.1)
-fe3d:text2d_place("fletcher_feathers", "text", "1", -0.325, -0.875, 0.02, 0.1)
+fe3d:quad2d_place("fletcher_iron", "iron", -0.1, -0.7, 0.1, 0.175)
+fe3d:quad2d_place("fletcher_convert", "convert_icon", 0.075, -0.7, 0.2, 0.4)
+fe3d:quad2d_place("fletcher_arrow", "arrow", 0.25, -0.7, 0.1, 0.175)
+fe3d:text2d_place("fletcher_worker", "text", workerText, 0.0, -0.8, 0.285, 0.1)
+fe3d:text2d_place("fletcher_storage", "text", storageText, 0.0, -0.8, 0.285, 0.1)
+fe3d:text2d_place("fletcher_feathers", "text", "1", -0.3, -0.875, 0.02, 0.1)
 fe3d:text2d_place("fletcher_planks", "text", "1", -0.2, -0.875, 0.02, 0.1)
-fe3d:text2d_place("fletcher_iron", "text", "1", -0.075, -0.875, 0.02, 0.1)
-fe3d:text2d_place("fletcher_arrow", "text", "10", 0.3, -0.875, 0.04, 0.1)
+fe3d:text2d_place("fletcher_iron", "text", "1", -0.1, -0.875, 0.02, 0.1)
+fe3d:text2d_place("fletcher_arrow", "text", "10", 0.25, -0.875, 0.04, 0.1)

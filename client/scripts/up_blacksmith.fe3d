@@ -1,4 +1,4 @@
-0 0
+30 75
 META script_type_update
 META script_state_wait
 
@@ -29,6 +29,7 @@ IF _selectedBuildingType IS "blacksmith"
             fe3d:text2d_set_visible("blacksmith_tool", <true>)
             IF _totalPlanks MORE 0 AND _totalIron MORE 0
                 EDIT _cursorType = "HAND"
+                BOL lmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
                 IF lmbClicked IS <true>
                     SUB _totalPlanks 1
                     SUB _totalIron 1
