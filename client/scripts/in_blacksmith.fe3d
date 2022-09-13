@@ -1,4 +1,4 @@
-16 59
+13 50
 META script_type_initialize
 META script_state_wait
 
@@ -12,7 +12,7 @@ GLOB LST _toolBuildingIds = {}
 
 /// GUI
 fe3d:quad2d_place("blacksmith_worker", "worker_icon", 0.0, -0.6, 0.1, 0.175)
-fe3d:quad2d_place("blacksmith_storage", "tool", 0.0, -0.6, 0.1, 0.175)
+fe3d:quad2d_place("blacksmith_storage", "storage_icon", 0.0, -0.6, 0.1, 0.175)
 fe3d:quad2d_place("blacksmith_planks", "planks", -0.3, -0.7, 0.1, 0.175)
 fe3d:quad2d_place("blacksmith_iron", "iron", -0.2, -0.7, 0.1, 0.175)
 fe3d:quad2d_place("blacksmith_convert", "convert_icon", 0.0, -0.7, 0.2, 0.4)

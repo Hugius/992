@@ -1,4 +1,4 @@
-19 54
+12 49
 META script_type_initialize
 META script_state_wait
 
@@ -11,7 +11,7 @@ GLOB LST _herbalistIds = {}
 
 /// GUI
 fe3d:quad2d_place("herbalist_worker", "worker_icon", 0.0, -0.6, 0.1, 0.175)
-fe3d:quad2d_place("herbalist_storage", "medicine", 0.0, -0.6, 0.1, 0.175)
+fe3d:quad2d_place("herbalist_storage", "storage_icon", 0.0, -0.6, 0.1, 0.175)
 fe3d:quad2d_place("herbalist_water", "water", -0.3, -0.7, 0.1, 0.175)
 fe3d:quad2d_place("herbalist_mushrooms", "mushrooms", -0.2, -0.7, 0.1, 0.175)
 fe3d:quad2d_place("herbalist_convert", "convert_icon", 0.0, -0.7, 0.2, 0.4)

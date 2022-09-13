@@ -1,0 +1,46 @@
+36 36
+META script_type_update
+META script_state_wait
+
+/// Hide GUI
+fe3d:quad2d_set_visible("lumberer_worker", <false>)
+fe3d:quad2d_set_visible("lumberer_storage", <false>)
+fe3d:quad2d_set_visible("lumberer_lumber", <false>)
+fe3d:quad2d_set_visible("lumberer_convert", <false>)
+fe3d:quad2d_set_visible("lumberer_planks", <false>)
+fe3d:quad2d_set_visible("lumberer_firewood", <false>)
+fe3d:text2d_set_visible("lumberer_worker", <false>)
+fe3d:text2d_set_visible("lumberer_storage", <false>)
+fe3d:text2d_set_visible("lumberer_lumber", <false>)
+fe3d:text2d_set_visible("lumberer_planks", <false>)
+fe3d:text2d_set_visible("lumberer_firewood", <false>)
+
+/// Show GUI
+IF _selectedBuildingType IS "lumberer"
+    BOL hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
+    IF hasWorker IS <true>
+        INT totalPlanks = _totalPlanks
+        INT totalFirewood = _totalFirewood
+        ADD totalPlanks 10
+        ADD totalFirewood 5
+        IF totalPlanks LESS _maxPlanks AND totalFirewood LESS _maxFirewood
+            fe3d:quad2d_set_visible("lumberer_lumber", <true>)
+            fe3d:quad2d_set_visible("lumberer_convert", <true>)
+            fe3d:quad2d_set_visible("lumberer_planks", <true>)
+            fe3d:quad2d_set_visible("lumberer_firewood", <true>)
+            fe3d:text2d_set_visible("lumberer_lumber", <true>)
+            fe3d:text2d_set_visible("lumberer_planks", <true>)
+            fe3d:text2d_set_visible("lumberer_firewood", <true>)
+            IF _totalLumber MORE 0
+                EDIT _cursorType = "HAND"
+                BOL lmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
+                IF lmbClicked IS <true>
+                    SUB _totalLumber 1
+                    ADD _totalPlanks 10
+                    ADD _totalFirewood 5
+        ELSE
+            fe3d:quad2d_set_visible("lumberer_storage", <true>)
+            fe3d:text2d_set_visible("lumberer_storage", <true>)
+    ELSE
+        fe3d:quad2d_set_visible("lumberer_worker", <true>)
+        fe3d:text2d_set_visible("lumberer_worker", <true>)

@@ -13,11 +13,11 @@
 @firewood assets\image\quad2d\diffuse_map\firewood.tga 1 1 1 1 1 0 0 1
 @flour assets\image\quad2d\diffuse_map\flour.tga 1 1 1 1 1 0 0 1
 @fruit assets\image\quad2d\diffuse_map\fruit.tga 1 1 1 1 1 0 0 1
-@grain assets\image\quad2d\diffuse_map\grain.tga 1 1 1 1 1 0 0 1
+@grain assets\image\quad2d\diffuse_map\grain.tga 1 1 1 1 1 0 0 0.75
 @grain_seeds assets\image\quad2d\diffuse_map\grain_seeds.tga 1 1 1 1 1 0 0 1
 @hides assets\image\quad2d\diffuse_map\hides.tga 1 1 1 1 1 0 0 1
 @honey assets\image\quad2d\diffuse_map\honey.tga 1 1 1 1 1 0 0 1
-@info_icon assets\image\quad2d\diffuse_map\info_icon.tga 1 1 1 1 1 0 0 0.5
+@info_icon assets\image\quad2d\diffuse_map\info_icon.tga 1 1 1 1 1 0 0 0.75
 @iron assets\image\quad2d\diffuse_map\iron.tga 1 1 1 1 1 0 0 1
 @leather assets\image\quad2d\diffuse_map\leather.tga 1 1 1 1 1 0 0 1
 @lumber assets\image\quad2d\diffuse_map\lumber.tga 1 1 1 1 1 0 0 1.25
@@ -36,6 +36,7 @@
 @smoked_meat assets\image\quad2d\diffuse_map\smoked_meat.tga 1 1 1 1 1 0 0 1
 @status_icon assets\image\quad2d\diffuse_map\status_icon.tga 1 1 1 1 1 0 0 1
 @stone assets\image\quad2d\diffuse_map\stone.tga 1 1 1 1 1 0 0 1
+@storage_icon assets\image\quad2d\diffuse_map\storage_icon.tga 1 1 1 1 1 0 0 1
 @straw assets\image\quad2d\diffuse_map\straw.tga 1 1 1 1 1 0 0 1
 @time_icon assets\image\quad2d\diffuse_map\time_icon.tga 1 1 1 1 1 0 0 1
 @tool assets\image\quad2d\diffuse_map\tool.tga 1 1 1 1 1 0 0 1

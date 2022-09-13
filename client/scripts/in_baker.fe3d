@@ -1,4 +1,4 @@
-18 72
+12 45
 META script_type_initialize
 META script_state_wait
 
@@ -11,7 +11,7 @@ GLOB LST _bakerIds = {}
 
 /// GUI
 fe3d:quad2d_place("baker_worker", "worker_icon", 0.0, -0.6, 0.1, 0.175)
-fe3d:quad2d_place("baker_storage", "bread", 0.0, -0.6, 0.1, 0.175)
+fe3d:quad2d_place("baker_storage", "storage_icon", 0.0, -0.6, 0.1, 0.175)
 fe3d:quad2d_place("baker_flour", "flour", -0.3, -0.7, 0.1, 0.175)
 fe3d:quad2d_place("baker_firewood", "firewood", -0.2, -0.7, 0.1, 0.175)
 fe3d:quad2d_place("baker_convert", "convert_icon", 0.0, -0.7, 0.2, 0.4)

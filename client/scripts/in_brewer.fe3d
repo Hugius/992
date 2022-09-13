@@ -1,4 +1,4 @@
-16 56
+12 46
 META script_type_initialize
 META script_state_wait
 
@@ -11,7 +11,7 @@ GLOB LST _brewerIds = {}
 
 /// GUI
 fe3d:quad2d_place("brewer_worker", "worker_icon", 0.0, -0.6, 0.1, 0.175)
-fe3d:quad2d_place("brewer_storage", "ale", 0.0, -0.6, 0.1, 0.175)
+fe3d:quad2d_place("brewer_storage", "storage_icon", 0.0, -0.6, 0.1, 0.175)
 fe3d:quad2d_place("brewer_water", "water", -0.3, -0.7, 0.1, 0.175)
 fe3d:quad2d_place("brewer_grain", "grain", -0.2, -0.7, 0.1, 0.175)
 fe3d:quad2d_place("brewer_firewood", "firewood", -0.1, -0.7, 0.1, 0.175)

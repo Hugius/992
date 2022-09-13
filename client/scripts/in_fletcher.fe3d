@@ -1,4 +1,4 @@
-20 56
+12 48
 META script_type_initialize
 META script_state_wait
 
@@ -11,7 +11,7 @@ GLOB LST _fletcherIds = {}
 
 /// GUI
 fe3d:quad2d_place("fletcher_worker", "worker_icon", 0.0, -0.6, 0.1, 0.175)
-fe3d:quad2d_place("fletcher_storage", "arrow", 0.0, -0.6, 0.1, 0.175)
+fe3d:quad2d_place("fletcher_storage", "storage_icon", 0.0, -0.6, 0.1, 0.175)
 fe3d:quad2d_place("fletcher_feathers", "feathers", -0.3, -0.7, 0.1, 0.175)
 fe3d:quad2d_place("fletcher_planks", "planks", -0.2, -0.7, 0.1, 0.175)
 fe3d:quad2d_place("fletcher_iron", "iron", -0.1, -0.7, 0.1, 0.175)

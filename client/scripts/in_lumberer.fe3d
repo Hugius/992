@@ -1,0 +1,23 @@
+12 48
+META script_type_initialize
+META script_state_wait
+
+/// Constants
+CNST STR workerText = "No worker available"
+CNST STR storageText = "No space in storage"
+
+/// Non-constants
+GLOB LST _lumbererIds = {}
+
+/// GUI
+fe3d:quad2d_place("lumberer_worker", "worker_icon", 0.0, -0.6, 0.1, 0.175)
+fe3d:quad2d_place("lumberer_storage", "storage_icon", 0.0, -0.6, 0.1, 0.175)
+fe3d:quad2d_place("lumberer_lumber", "lumber", -0.25, -0.7, 0.1, 0.175)
+fe3d:quad2d_place("lumberer_convert", "convert_icon", 0.0, -0.7, 0.2, 0.4)
+fe3d:quad2d_place("lumberer_planks", "planks", 0.2, -0.7, 0.1, 0.175)
+fe3d:quad2d_place("lumberer_firewood", "firewood", 0.3, -0.7, 0.1, 0.175)
+fe3d:text2d_place("lumberer_worker", "text", workerText, 0.0, -0.8, 0.285, 0.1)
+fe3d:text2d_place("lumberer_storage", "text", storageText, 0.0, -0.8, 0.285, 0.1)
+fe3d:text2d_place("lumberer_lumber", "text", "1", -0.25, -0.875, 0.02, 0.1)
+fe3d:text2d_place("lumberer_planks", "text", "10", 0.2, -0.875, 0.04, 0.1)
+fe3d:text2d_place("lumberer_firewood", "text", "5", 0.3, -0.875, 0.02, 0.1)

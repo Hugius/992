@@ -1,0 +1,44 @@
+32 28
+META script_type_update
+META script_state_wait
+
+/// Hide GUI
+fe3d:quad2d_set_visible("smoker_worker", <false>)
+fe3d:quad2d_set_visible("smoker_storage", <false>)
+fe3d:quad2d_set_visible("smoker_flour", <false>)
+fe3d:quad2d_set_visible("smoker_firewood", <false>)
+fe3d:quad2d_set_visible("smoker_convert", <false>)
+fe3d:quad2d_set_visible("smoker_bread", <false>)
+fe3d:text2d_set_visible("smoker_worker", <false>)
+fe3d:text2d_set_visible("smoker_storage", <false>)
+fe3d:text2d_set_visible("smoker_flour", <false>)
+fe3d:text2d_set_visible("smoker_firewood", <false>)
+fe3d:text2d_set_visible("smoker_bread", <false>)
+
+/// Show GUI
+IF _selectedBuildingType IS "smoker"
+    BOL hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
+    IF hasWorker IS <true>
+        INT totalBread = _totalBread
+        ADD totalBread 10
+        IF totalBread LESS _maxBread
+            fe3d:quad2d_set_visible("smoker_flour", <true>)
+            fe3d:quad2d_set_visible("smoker_firewood", <true>)
+            fe3d:quad2d_set_visible("smoker_convert", <true>)
+            fe3d:quad2d_set_visible("smoker_bread", <true>)
+            fe3d:text2d_set_visible("smoker_flour", <true>)
+            fe3d:text2d_set_visible("smoker_firewood", <true>)
+            fe3d:text2d_set_visible("smoker_bread", <true>)
+            IF _totalFlour MORE 0 AND _totalFirewood MORE 0
+                EDIT _cursorType = "HAND"
+                BOL lmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
+                IF lmbClicked IS <true>
+                    SUB _totalFlour 1
+                    SUB _totalFirewood 1
+                    ADD _totalBread 10
+        ELSE
+            fe3d:quad2d_set_visible("smoker_storage", <true>)
+            fe3d:text2d_set_visible("smoker_storage", <true>)
+    ELSE
+        fe3d:quad2d_set_visible("smoker_worker", <true>)
+        fe3d:text2d_set_visible("smoker_worker", <true>)

@@ -1,4 +1,4 @@
-14 24
+17 75
 META script_type_initialize
 META script_state_wait
 
@@ -13,7 +13,7 @@ CNST DEC minZoneZ = -15.0
 CNST DEC maxZoneX = 35.0
 CNST DEC maxZoneZ = 10.0
 CNST DEC minDistance = 5.0
-CNST INT maxModels = 180
+CNST INT maxModels = 90
 
 /// Non-constants
 LST modelIds = {"tree1","stone1","tree1","tree2","stone2","tree2","tree3","stone3","tree3"}
