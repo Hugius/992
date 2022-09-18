@@ -1,31 +1,32 @@
-29 39
+19 28
 META script_type_update
 META script_state_wait
 
 /// Hide GUI
-fe3d:quad2d_set_visible("tanner_worker", <false>)
-fe3d:quad2d_set_visible("tanner_storage", <false>)
-fe3d:quad2d_set_visible("tanner_hides", <false>)
-fe3d:quad2d_set_visible("tanner_convert", <false>)
-fe3d:quad2d_set_visible("tanner_leather", <false>)
-fe3d:text2d_set_visible("tanner_worker", <false>)
-fe3d:text2d_set_visible("tanner_storage", <false>)
-fe3d:text2d_set_visible("tanner_hides", <false>)
-fe3d:text2d_set_visible("tanner_leather", <false>)
+IF _lastSelectedBuildingType IS "tanner" OR _totalUpdates IS 0
+    fe3d:quad2d_set_visible("tanner_worker", <false>)
+    fe3d:quad2d_set_visible("tanner_storage", <false>)
+    fe3d:quad2d_set_visible("tanner_hides", <false>)
+    fe3d:quad2d_set_visible("tanner_convert", <false>)
+    fe3d:quad2d_set_visible("tanner_leather", <false>)
+    fe3d:text2d_set_visible("tanner_worker", <false>)
+    fe3d:text2d_set_visible("tanner_storage", <false>)
+    fe3d:text2d_set_visible("tanner_hides", <false>)
+    fe3d:text2d_set_visible("tanner_leather", <false>)
 
 /// Show GUI
 IF _selectedBuildingType IS "tanner"
-    BOL hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
+    DEF BOL hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
     IF hasWorker IS <true>
-        IF _totalLeather LESS _maxLeather
+        IF _totalLeather NOT _maxLeather
             fe3d:quad2d_set_visible("tanner_hides", <true>)
             fe3d:quad2d_set_visible("tanner_convert", <true>)
             fe3d:quad2d_set_visible("tanner_leather", <true>)
             fe3d:text2d_set_visible("tanner_hides", <true>)
             fe3d:text2d_set_visible("tanner_leather", <true>)
             IF _totalHides MORE 0
-                EDIT _cursorType = "HAND"
-                BOL lmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
+                ALT _cursorType = "HAND"
+                DEF BOL lmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
                 IF lmbClicked IS <true>
                     SUB _totalHides 1
                     ADD _totalLeather 1

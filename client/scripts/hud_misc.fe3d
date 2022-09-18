@@ -1,23 +1,23 @@
-8 10
+4 4
 META script_type_update
 META script_state_wait
 
 /// Validate update
-BOL mustUpdate = fe3d:time_is_passed(10)
+DEF BOL mustUpdate = fe3d:time_is_passed(10)
 IF mustUpdate IS <false>
     EXIT
 
 /// Create content
-INT totalSeconds = _totalUpdates
+DEF INT totalSeconds = _totalUpdates
 DIV totalSeconds 144
-INT totalAlive = misc:list_size("_workerNames")
-INT totalSick = misc:list_count("_workerHealths", <false>)
-INT totalDead = _totalDeadWorkers
-STR totalSecondsText = misc:string_zeroed_integer(totalSeconds, 4)
-EDIT totalSecondsText = misc:string_concat("Time - ", totalSecondsText)
-STR totalAliveText = misc:string_zeroed_integer(totalAlive, 3)
-STR totalSickText = misc:string_zeroed_integer(totalSick, 3)
-STR totalDeadText = misc:string_zeroed_integer(totalDead, 3)
+DEF INT totalAlive = misc:list_size("_workerNames")
+DEF INT totalSick = misc:list_count("_workerHealths", <false>)
+DEF INT totalDead = _totalDeadWorkers
+DEF STR totalSecondsText = misc:string_zeroed_integer(totalSeconds, 4)
+ALT totalSecondsText = misc:string_concat("Time - ", totalSecondsText)
+DEF STR totalAliveText = misc:string_zeroed_integer(totalAlive, 3)
+DEF STR totalSickText = misc:string_zeroed_integer(totalSick, 3)
+DEF STR totalDeadText = misc:string_zeroed_integer(totalDead, 3)
 
 /// Update content
 fe3d:text2d_set_content("total_seconds", totalSecondsText)

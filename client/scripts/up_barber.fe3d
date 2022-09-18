@@ -2,18 +2,22 @@
 META script_type_update
 META script_state_wait
 
+/// Define reusable values
+DEF BOL hasWorker = <false>
+
 /// Hide GUI
-fe3d:quad2d_set_visible("barber_worker", <false>)
-fe3d:quad2d_set_visible("barber_tool", <false>)
-fe3d:quad2d_set_visible("barber_info", <false>)
-fe3d:text2d_set_visible("barber_worker", <false>)
-fe3d:text2d_set_visible("barber_tool", <false>)
-fe3d:text2d_set_visible("barber_info", <false>)
+IF _lastSelectedBuildingType IS "barber" OR _totalUpdates IS 0
+    fe3d:quad2d_set_visible("barber_worker", <false>)
+    fe3d:quad2d_set_visible("barber_tool", <false>)
+    fe3d:quad2d_set_visible("barber_info", <false>)
+    fe3d:text2d_set_visible("barber_worker", <false>)
+    fe3d:text2d_set_visible("barber_tool", <false>)
+    fe3d:text2d_set_visible("barber_info", <false>)
 
 /// Show GUI
 IF _selectedBuildingType IS "barber"
-    BOL hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
-    BOL hasTool = misc:list_contains("_toolBuildingIds", _selectedBuildingId)
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
+    DEF BOL hasTool = misc:list_contains("_toolBuildingIds", _selectedBuildingId)
     IF hasWorker IS <true>
         IF hasTool IS <true>
             fe3d:quad2d_set_visible("barber_info", <true>)
@@ -22,11 +26,23 @@ IF _selectedBuildingType IS "barber"
             fe3d:quad2d_set_visible("barber_tool", <true>)
             fe3d:text2d_set_visible("barber_tool", <true>)
             IF _totalTools MORE 0
-                EDIT _cursorType = "HAND"
-                BOL lmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
+                ALT _cursorType = "HAND"
+                DEF BOL lmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
                 IF lmbClicked IS <true>
                     SUB _totalTools 1
                     PUSH _toolBuildingIds _selectedBuildingId
     ELSE
         fe3d:quad2d_set_visible("barber_worker", <true>)
         fe3d:text2d_set_visible("barber_worker", <true>)
+
+/// Update barbers
+DEF INT index = 0
+DEF INT maxIndex = misc:list_size("_barberIds")
+LOOP
+    IF index IS maxIndex
+        BREAK
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _barberIds[index])
+    IF hasWorker IS <true>
+        SUB _sicknessCatchChance 5
+        BREAK
+    ADD index 1

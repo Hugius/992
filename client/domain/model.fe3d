@@ -26,8 +26,8 @@ AABB @church model@@church@aabb1 0 0 1.6 4.25 5.7 9.5
 AABB @church model@@church@aabb2 0 0 5.4 2.3 13.25 2.3
 AABB @church model@@church@aabb3 2.75 0 -1.55 1.9 3.4 2
 AABB @church model@@church@aabb4 0 0 -4.7 3.25 4.2 3.25
-MODEL @farmland assets\mesh\farmland.obj 1 1 1 ? 0 2 1 1 1
-PART @farmland soil assets\image\model\diffuse_map\storage_doorhandle.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 8 0 0 1 1 1
+MODEL @farmland assets\mesh\farmland.obj 0.5 0.5 0.5 ? 0 2 1 1 1
+PART @farmland soil assets\image\model\diffuse_map\storage_doorhandle.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 4 0 0 1 1 1
 PART @farmland logs assets\image\model\diffuse_map\farmland_logs.tga ? ? ? ? assets\image\model\normal_map\farmland_logs.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1
 AABB @farmland model@@farmland@aabb 0 0 0 16.4 0.4 16.4
 MODEL @foundry assets\mesh\foundry.obj 0.5 0.5 0.5 ? 0 2 1 1 1
@@ -63,7 +63,7 @@ AABB @orchard model@@orchard@aabb1 2.03 0 0 0.2 0.6 4.15
 AABB @orchard model@@orchard@aabb2 0 0 1.97 4.15 0.6 0.2
 AABB @orchard model@@orchard@aabb3 -1.97 0 0 0.2 0.6 4.15
 AABB @orchard model@@orchard@aabb4 0 0 -2.03 4.15 0.6 0.2
-MODEL @pen assets\mesh\pen.obj 1 0.5 1 ? 0 2 1 1 1
+MODEL @pen assets\mesh\pen.obj 0.5 0.5 0.5 ? 0 2 1 1 1
 PART @pen ? assets\image\model\diffuse_map\pen.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
 AABB @pen model@@pen@aabb1 8 0 0 0.25 1.5 16.25
 AABB @pen model@@pen@aabb2 -8 0 0 0.25 1.5 16.25

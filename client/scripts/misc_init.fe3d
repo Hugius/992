@@ -2,11 +2,11 @@
 META script_type_initialize
 META script_state_wait
 
-/// Non-constants
-GLOB STR _eventMessageContent = ""
-GLOB STR _cursorType = "ARROW"
-GLOB DEC _eventMessageOpacity = 1.0
-GLOB INT _totalUpdates = 0
+/// Non-finals
+DEF GLB STR _eventMessageContent = ""
+DEF GLB STR _cursorType = "ARROW"
+DEF GLB DEC _eventMessageOpacity = 1.0
+DEF GLB INT _totalUpdates = 0
 
 /// GUI
 fe3d:quad2d_place("event_message", "paper", 0.0, 0.0, 0.0, 0.0)

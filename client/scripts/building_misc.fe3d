@@ -1,37 +1,37 @@
-25 31
+80 26
 META script_type_update
 META script_state_wait
 
 /// Save last build mode
-EDIT _lastBuildMode = _buildMode
+ALT _lastBuildMode = _buildMode
 
 /// Calculate tool logic
-BOL carpenterHasTool = misc:list_contains("_toolBuildingIds", "carpenter_1")
-BOL masonHasTool = misc:list_contains("_toolBuildingIds", "mason_2")
-BOL rooferHasTool = misc:list_contains("_toolBuildingIds", "roofer_3")
-BOL defaultBuildingsHaveTools = (carpenterHasTool IS <true> AND masonHasTool IS <true> AND rooferHasTool IS <true>)
+DEF BOL carpenterHasTool = misc:list_contains("_toolBuildingIds", "carpenter_1")
+DEF BOL masonHasTool = misc:list_contains("_toolBuildingIds", "mason_2")
+DEF BOL rooferHasTool = misc:list_contains("_toolBuildingIds", "roofer_3")
+DEF BOL defaultBuildingsHaveTools = (carpenterHasTool IS <true> AND masonHasTool IS <true> AND rooferHasTool IS <true>)
 
 /// Update build button opacity
 IF defaultBuildingsHaveTools IS <true>
-    fe3d:quad2d_set_opacity("build_icon", 1.0)
+    fe3d:quad2d_set_opacity("build", 1.0)
 ELSE
-    fe3d:quad2d_set_opacity("build_icon", 0.5)
+    fe3d:quad2d_set_opacity("build", 0.5)
 
 /// Update build button hover and click
-BOL buttonHovered = fe3d:quad2d_is_hovered("build_icon")
+DEF BOL buttonHovered = fe3d:quad2d_is_hovered("build")
 IF buttonHovered IS <true> AND defaultBuildingsHaveTools IS <true>
-    EDIT _cursorType = "HAND"
-    fe3d:quad2d_set_lightness("build_icon", 1.25)
-    BOL lmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
+    ALT _cursorType = "HAND"
+    fe3d:quad2d_set_lightness("build", 1.25)
+    DEF BOL lmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
     IF lmbClicked IS <true>
         IF _buildMode IS <true>
             fe3d:model_set_visible(_buildingTypes[_buildingIndex], <false>)
-            EDIT _buildMode = <false>
+            ALT _buildMode = <false>
         ELSE
             fe3d:model_set_visible(_buildingTypes[_buildingIndex], <true>)
-            EDIT _buildMode = <true>
+            ALT _buildMode = <true>
 ELSE
-    fe3d:quad2d_set_lightness("build_icon", 1.0)
+    fe3d:quad2d_set_lightness("build", 1.0)
 
 /// Update GUI
 fe3d:quad2d_set_visible("building_price_type", _buildMode)
@@ -50,18 +50,18 @@ IF _buildMode IS <false>
     EXIT
 
 /// Update GUI
-STR textContent = misc:string_capitalize(_buildingTypes[_buildingIndex])
-INT textWidth = misc:string_size(textContent)
+DEF STR textContent = misc:string_capitalize(_buildingTypes[_buildingIndex])
+DEF INT textWidth = misc:string_size(textContent)
 CAST textWidth DEC
 MUL textWidth 0.03
 fe3d:text2d_set_content("building_price_type", textContent)
 fe3d:text2d_set_size("building_price_type", textWidth, 0.15)
 
 /// Update GUI
-STR planksPriceText = misc:string_zeroed_integer(_buildingPricesPlanks[_buildingIndex], 4)
-STR stonePriceText = misc:string_zeroed_integer(_buildingPricesStone[_buildingIndex], 4)
-STR clayPriceText = misc:string_zeroed_integer(_buildingPricesClay[_buildingIndex], 4)
-STR strawPriceText = misc:string_zeroed_integer(_buildingPricesStraw[_buildingIndex], 4)
+DEF STR planksPriceText = misc:string_zeroed_integer(_buildingPricesPlanks[_buildingIndex], 4)
+DEF STR stonePriceText = misc:string_zeroed_integer(_buildingPricesStone[_buildingIndex], 4)
+DEF STR clayPriceText = misc:string_zeroed_integer(_buildingPricesClay[_buildingIndex], 4)
+DEF STR strawPriceText = misc:string_zeroed_integer(_buildingPricesStraw[_buildingIndex], 4)
 fe3d:text2d_set_content("building_price_planks", planksPriceText)
 fe3d:text2d_set_content("building_price_stone", stonePriceText)
 fe3d:text2d_set_content("building_price_clay", clayPriceText)
@@ -71,16 +71,16 @@ fe3d:text2d_set_content("building_price_straw", strawPriceText)
 fe3d:model_set_visible(_buildingTypes[_buildingIndex], <false>)
 
 /// Update scroll wheel
-INT buildingCount = misc:list_size("_buildingTypes")
-BOL scrolledUp = fe3d:input_is_mouse_scrolled("WHEEL_FORWARD")
-BOL scrollDown = fe3d:input_is_mouse_scrolled("WHEEL_BACKWARD")
+DEF INT buildingCount = misc:list_size("_buildingTypes")
+DEF BOL scrolledUp = fe3d:input_is_mouse_scrolled("WHEEL_FORWARD")
+DEF BOL scrollDown = fe3d:input_is_mouse_scrolled("WHEEL_BACKWARD")
 IF scrolledUp IS <true>
     ADD _buildingIndex 1
     IF _buildingIndex IS buildingCount
-        EDIT _buildingIndex = 0
+        ALT _buildingIndex = 0
 IF scrollDown IS <true>
     IF _buildingIndex IS 0
-        EDIT _buildingIndex = buildingCount
+        ALT _buildingIndex = buildingCount
     SUB _buildingIndex 1
 
 /// Show current building

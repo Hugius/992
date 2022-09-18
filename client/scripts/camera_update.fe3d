@@ -1,14 +1,14 @@
-41 0
+26 4
 META script_type_update
 META script_state_wait
 
 /// Retrieve inputs
-BOL q = fe3d:input_is_keyboard_held("KEY_Q")
-BOL e = fe3d:input_is_keyboard_held("KEY_E")
-BOL w = fe3d:input_is_keyboard_held("KEY_W")
-BOL a = fe3d:input_is_keyboard_held("KEY_A")
-BOL s = fe3d:input_is_keyboard_held("KEY_S")
-BOL d = fe3d:input_is_keyboard_held("KEY_D")
+DEF BOL q = fe3d:input_is_keyboard_held("KEY_Q")
+DEF BOL e = fe3d:input_is_keyboard_held("KEY_E")
+DEF BOL w = fe3d:input_is_keyboard_held("KEY_W")
+DEF BOL a = fe3d:input_is_keyboard_held("KEY_A")
+DEF BOL s = fe3d:input_is_keyboard_held("KEY_S")
+DEF BOL d = fe3d:input_is_keyboard_held("KEY_D")
 
 /// Update speeds
 IF q IS <true>
@@ -25,7 +25,7 @@ IF a IS <true>
     SUB _xPositionAcc _positionSpeed
 
 /// Update yaw
-DEC yaw = fe3d:camera_get_yaw()
+DEF DEC yaw = fe3d:camera_get_yaw()
 ADD yaw _yawAcc
 MUL _yawAcc 0.9
 fe3d:camera_set_yaw(yaw)

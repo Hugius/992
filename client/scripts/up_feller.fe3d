@@ -1,0 +1,46 @@
+41 28
+META script_type_update
+META script_state_wait
+
+/// Define reusable values
+DEF BOL hasWorker = <false>
+
+/// Hide GUI
+IF _lastSelectedBuildingType IS "feller" OR _totalUpdates IS 0
+    fe3d:quad2d_set_visible("feller_worker", <false>)
+    fe3d:quad2d_set_visible("feller_convert", <false>)
+    fe3d:quad2d_set_visible("feller_time", <false>)
+    fe3d:quad2d_set_visible("feller_lumber", <false>)
+    fe3d:text2d_set_visible("feller_worker", <false>)
+    fe3d:text2d_set_visible("feller_time", <false>)
+    fe3d:text2d_set_visible("feller_lumber", <false>)
+
+/// Show GUI
+IF _selectedBuildingType IS "feller"
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
+    IF hasWorker IS <true>
+        fe3d:quad2d_set_visible("feller_convert", <true>)
+        fe3d:quad2d_set_visible("feller_time", <true>)
+        fe3d:quad2d_set_visible("feller_lumber", <true>)
+        fe3d:text2d_set_visible("feller_time", <true>)
+        fe3d:text2d_set_visible("feller_lumber", <true>)
+    ELSE
+        fe3d:quad2d_set_visible("feller_worker", <true>)
+        fe3d:text2d_set_visible("feller_worker", <true>)
+
+/// Update fellers
+DEF INT index = 0
+DEF INT maxIndex = misc:list_size("_fellerIds")
+LOOP
+    IF index IS maxIndex
+        BREAK
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _fellerIds[index])
+    IF hasWorker IS <false>
+        BREAK
+    IF _fellerTimers[index] IS _fellerInterval
+        ALT _fellerTimers[index] = 0
+        IF _totalLumber NOT _maxLumber
+            ADD _totalLumber 1
+    ELSE
+        ADD _fellerTimers[index] 1
+    ADD index 1

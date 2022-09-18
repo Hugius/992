@@ -1,83 +1,83 @@
-81 67
+12 33
 META script_type_initialize
 META script_state_wait
 
-/// Constants
-CNST STR infoText = "Stores food and resources"
+/// Finals
+DEF FIN STR infoText = "Stores food and resources"
 
-/// Non-constants
-GLOB LST _storageIds = {"storage_0"}
-GLOB INT _totalWater = 5
-GLOB INT _totalAle = 0
-GLOB INT _totalMilk = 0
-GLOB INT _totalSmokedMeat = 5
-GLOB INT _totalSmokedFish = 0
-GLOB INT _totalBread = 0
-GLOB INT _totalVegetables = 0
-GLOB INT _totalEggs = 0
-GLOB INT _totalRawFish = 0
-GLOB INT _totalRawMeat = 0
-GLOB INT _totalHoney = 0
-GLOB INT _totalFruit = 0
-GLOB INT _totalLumber = 15
-GLOB INT _totalStone = 15
-GLOB INT _totalGrain = 15
-GLOB INT _totalFlour = 15
-GLOB INT _totalPlanks = 15
-GLOB INT _totalFirewood = 15
-GLOB INT _totalManure = 15
-GLOB INT _totalOre = 15
-GLOB INT _totalIron = 15
-GLOB INT _totalHides = 15
-GLOB INT _totalClothes = 15
-GLOB INT _totalWool = 15
-GLOB INT _totalLeather = 15
-GLOB INT _totalClay = 15
-GLOB INT _totalStraw = 15
-GLOB INT _totalMedicine = 15
-GLOB INT _totalFeathers = 15
-GLOB INT _totalMushrooms = 15
-GLOB INT _totalGrainSeeds = 15
-GLOB INT _totalVegetableSeeds = 15
-GLOB INT _totalTools = 5
-GLOB INT _totalBows = 0
-GLOB INT _totalArrows = 0
-GLOB INT _maxWater = 100
-GLOB INT _maxAle = 100
-GLOB INT _maxMilk = 100
-GLOB INT _maxSmokedMeat = 100
-GLOB INT _maxSmokedFish = 100
-GLOB INT _maxBread = 100
-GLOB INT _maxVegetables = 100
-GLOB INT _maxEggs = 100
-GLOB INT _maxRawFish = 100
-GLOB INT _maxRawMeat = 100
-GLOB INT _maxHoney = 100
-GLOB INT _maxFruit = 100
-GLOB INT _maxLumber = 100
-GLOB INT _maxStone = 100
-GLOB INT _maxGrain = 100
-GLOB INT _maxFlour = 100
-GLOB INT _maxPlanks = 100
-GLOB INT _maxFirewood = 100
-GLOB INT _maxManure = 100
-GLOB INT _maxOre = 100
-GLOB INT _maxIron = 100
-GLOB INT _maxHides = 100
-GLOB INT _maxClothes = 100
-GLOB INT _maxWool = 100
-GLOB INT _maxLeather = 100
-GLOB INT _maxClay = 100
-GLOB INT _maxStraw = 100
-GLOB INT _maxMedicine = 100
-GLOB INT _maxFeathers = 100
-GLOB INT _maxMushrooms = 100
-GLOB INT _maxGrainSeeds = 100
-GLOB INT _maxVegetableSeeds = 100
-GLOB INT _maxTools = 10
-GLOB INT _maxBows = 5
-GLOB INT _maxArrows = 50
+/// Non-finals
+DEF GLB LST _storageIds = {"storage_0"}
+DEF GLB INT _totalWater = 10
+DEF GLB INT _totalAle = 10
+DEF GLB INT _totalMilk = 10
+DEF GLB INT _totalSmokedMeat = 10
+DEF GLB INT _totalSmokedFish = 10
+DEF GLB INT _totalBread = 10
+DEF GLB INT _totalVegetables = 10
+DEF GLB INT _totalEggs = 10
+DEF GLB INT _totalRawFish = 10
+DEF GLB INT _totalRawMeat = 10
+DEF GLB INT _totalHoney = 10
+DEF GLB INT _totalFruit = 10
+DEF GLB INT _totalLumber = 15
+DEF GLB INT _totalStone = 15
+DEF GLB INT _totalGrain = 15
+DEF GLB INT _totalFlour = 15
+DEF GLB INT _totalPlanks = 15
+DEF GLB INT _totalFirewood = 15
+DEF GLB INT _totalManure = 15
+DEF GLB INT _totalOre = 15
+DEF GLB INT _totalIron = 15
+DEF GLB INT _totalHides = 15
+DEF GLB INT _totalClothes = 15
+DEF GLB INT _totalWool = 15
+DEF GLB INT _totalLeather = 15
+DEF GLB INT _totalClay = 15
+DEF GLB INT _totalStraw = 15
+DEF GLB INT _totalMedicine = 15
+DEF GLB INT _totalFeathers = 15
+DEF GLB INT _totalMushrooms = 15
+DEF GLB INT _totalGrainSeeds = 15
+DEF GLB INT _totalVegetableSeeds = 15
+DEF GLB INT _totalTools = 5
+DEF GLB INT _totalBows = 0
+DEF GLB INT _totalArrows = 0
+DEF GLB INT _maxWater = 100
+DEF GLB INT _maxAle = 100
+DEF GLB INT _maxMilk = 100
+DEF GLB INT _maxSmokedMeat = 100
+DEF GLB INT _maxSmokedFish = 100
+DEF GLB INT _maxBread = 100
+DEF GLB INT _maxVegetables = 100
+DEF GLB INT _maxEggs = 100
+DEF GLB INT _maxRawFish = 100
+DEF GLB INT _maxRawMeat = 100
+DEF GLB INT _maxHoney = 100
+DEF GLB INT _maxFruit = 100
+DEF GLB INT _maxLumber = 100
+DEF GLB INT _maxStone = 100
+DEF GLB INT _maxGrain = 100
+DEF GLB INT _maxFlour = 100
+DEF GLB INT _maxPlanks = 100
+DEF GLB INT _maxFirewood = 100
+DEF GLB INT _maxManure = 100
+DEF GLB INT _maxOre = 100
+DEF GLB INT _maxIron = 100
+DEF GLB INT _maxHides = 100
+DEF GLB INT _maxClothes = 100
+DEF GLB INT _maxWool = 100
+DEF GLB INT _maxLeather = 100
+DEF GLB INT _maxClay = 100
+DEF GLB INT _maxStraw = 100
+DEF GLB INT _maxMedicine = 100
+DEF GLB INT _maxFeathers = 100
+DEF GLB INT _maxMushrooms = 100
+DEF GLB INT _maxGrainSeeds = 100
+DEF GLB INT _maxVegetableSeeds = 100
+DEF GLB INT _maxTools = 10
+DEF GLB INT _maxBows = 5
+DEF GLB INT _maxArrows = 50
 
 /// GUI
-fe3d:quad2d_place("storage_info", "info_icon", 0.0, -0.6, 0.1, 0.175)
+fe3d:quad2d_place("storage_info", "info", 0.0, -0.6, 0.1, 0.175)
 fe3d:text2d_place("storage_info", "text", infoText, 0.0, -0.8, 0.375, 0.1)

@@ -1,4 +1,4 @@
-55 0
+68 4
 META script_type_update
 META script_state_wait
 
@@ -7,40 +7,40 @@ IF _buildMode IS <false> OR _lastBuildMode IS <false>
     EXIT
 
 /// Define reusable values
-STR buildingType = _buildingTypes[_buildingIndex]
-INT index = 0
-INT maxIndex = 0
+DEF STR buildingType = _buildingTypes[_buildingIndex]
+DEF INT index = 0
+DEF INT maxIndex = 0
 
 /// Update raycasting
 fe3d:raycast_calculate_terrain_intersection(100.0, 0.1)
 
 /// Update building rotation
-DEC rotation = fe3d:model_get_base_rotation_y(buildingType)
-BOL rmbClicked = fe3d:input_is_mouse_pressed("BUTTON_RIGHT")
+DEF DEC rotation = fe3d:model_get_base_rotation_y(buildingType)
+DEF BOL rmbClicked = fe3d:input_is_mouse_pressed("BUTTON_RIGHT")
 IF rmbClicked IS <true>
     ADD rotation 90.0
 
 /// Update building transformation
-DEC x = fe3d:raycast_get_point_on_terrain_x()
-DEC y = fe3d:raycast_get_point_on_terrain_y()
-DEC z = fe3d:raycast_get_point_on_terrain_z()
+DEF DEC x = fe3d:raycast_get_point_on_terrain_x()
+DEF DEC y = fe3d:raycast_get_point_on_terrain_y()
+DEF DEC z = fe3d:raycast_get_point_on_terrain_z()
 fe3d:model_set_base_position(buildingType, x, y, z)
 fe3d:model_set_base_rotation(buildingType, 0.0, rotation, 0.0)
 
 /// Update price color
-LST color = {0.0, 0.4, 0.0}
-INT planksPrice = _buildingPricesPlanks[_buildingIndex]
-INT stonePrice = _buildingPricesStone[_buildingIndex]
-INT clayPrice = _buildingPricesClay[_buildingIndex]
-INT strawPrice = _buildingPricesStraw[_buildingIndex]
+DEF LST color = {0.0, 0.4, 0.0}
+DEF INT planksPrice = _buildingPricesPlanks[_buildingIndex]
+DEF INT stonePrice = _buildingPricesStone[_buildingIndex]
+DEF INT clayPrice = _buildingPricesClay[_buildingIndex]
+DEF INT strawPrice = _buildingPricesStraw[_buildingIndex]
 IF _totalPlanks LESS planksPrice
-    EDIT color = {0.5, 0.0, 0.0}
+    ALT color = {0.5, 0.0, 0.0}
 IF _totalStone LESS stonePrice
-    EDIT color = {0.5, 0.0, 0.0}
+    ALT color = {0.5, 0.0, 0.0}
 IF _totalClay LESS clayPrice
-    EDIT color = {0.5, 0.0, 0.0}
+    ALT color = {0.5, 0.0, 0.0}
 IF _totalStraw LESS strawPrice
-    EDIT color = {0.5, 0.0, 0.0}
+    ALT color = {0.5, 0.0, 0.0}
 
 /// Update price GUI
 fe3d:text2d_set_color("building_price_planks", color[0], color[1], color[2])
@@ -50,52 +50,52 @@ fe3d:text2d_set_color("building_price_straw", color[0], color[1], color[2])
 
 /// Update AABBs collision color
 fe3d:collision_calculate_model_aabbs(buildingType)
-LST collisions = fe3d:collision_check_model_models(buildingType, "")
-INT collisionCount = misc:list_size("collisions")
+DEF LST collisions = fe3d:collision_check_model_models(buildingType, "")
+DEF INT collisionCount = misc:list_size("collisions")
 IF collisionCount MORE 0
-    EDIT color = {0.5, 0.0, 0.0}
+    ALT color = {0.5, 0.0, 0.0}
 
 /// Update AABBs position color
-LST aabbIds = fe3d:model_get_aabb_ids(buildingType)
-DEC aabbPosX = 0.0
-DEC aabbPosZ = 0.0
-DEC aabbSizeX = 0.0
-DEC aabbSizeZ = 0.0
-DEC aabbBL = 0.0
-DEC aabbBR = 0.0
-DEC aabbTR = 0.0
-DEC aabbTL = 0.0
-EDIT index = 0
-EDIT maxIndex = misc:list_size("aabbIds")
+DEF LST aabbIds = fe3d:model_get_aabb_ids(buildingType)
+DEF DEC aabbPosX = 0.0
+DEF DEC aabbPosZ = 0.0
+DEF DEC aabbSizeX = 0.0
+DEF DEC aabbSizeZ = 0.0
+DEF DEC aabbBL = 0.0
+DEF DEC aabbBR = 0.0
+DEF DEC aabbTR = 0.0
+DEF DEC aabbTL = 0.0
+ALT index = 0
+ALT maxIndex = misc:list_size("aabbIds")
 LOOP
     IF index IS maxIndex
         BREAK
-    EDIT aabbPosX = fe3d:model_get_aabb_position_x(buildingType, aabbIds[index])
-    EDIT aabbPosZ = fe3d:model_get_aabb_position_z(buildingType, aabbIds[index])
-    EDIT aabbSizeX = fe3d:model_get_aabb_size_x(buildingType, aabbIds[index])
-    EDIT aabbSizeZ = fe3d:model_get_aabb_size_z(buildingType, aabbIds[index])
+    ALT aabbPosX = fe3d:model_get_aabb_position_x(buildingType, aabbIds[index])
+    ALT aabbPosZ = fe3d:model_get_aabb_position_z(buildingType, aabbIds[index])
+    ALT aabbSizeX = fe3d:model_get_aabb_size_x(buildingType, aabbIds[index])
+    ALT aabbSizeZ = fe3d:model_get_aabb_size_z(buildingType, aabbIds[index])
     DIV aabbSizeX 2.0
     DIV aabbSizeZ 2.0
     SUB aabbPosX aabbSizeX
     SUB aabbPosZ aabbSizeZ
-    EDIT aabbBL = fe3d:terrain_get_pixel_height("terrain", aabbPosX, aabbPosZ)
+    ALT aabbBL = fe3d:terrain_get_pixel_height("terrain", aabbPosX, aabbPosZ)
     ADD aabbPosX aabbSizeX
     ADD aabbPosX aabbSizeX
-    EDIT aabbBR = fe3d:terrain_get_pixel_height("terrain", aabbPosX, aabbPosZ)
+    ALT aabbBR = fe3d:terrain_get_pixel_height("terrain", aabbPosX, aabbPosZ)
     ADD aabbPosZ aabbSizeZ
     ADD aabbPosZ aabbSizeZ
-    EDIT aabbTR = fe3d:terrain_get_pixel_height("terrain", aabbPosX, aabbPosZ)
+    ALT aabbTR = fe3d:terrain_get_pixel_height("terrain", aabbPosX, aabbPosZ)
     SUB aabbPosX aabbSizeX
     SUB aabbPosX aabbSizeX
-    EDIT aabbTL = fe3d:terrain_get_pixel_height("terrain", aabbPosX, aabbPosZ)
+    ALT aabbTL = fe3d:terrain_get_pixel_height("terrain", aabbPosX, aabbPosZ)
     IF aabbBL LESS _buildingHeight OR aabbBR LESS _buildingHeight OR aabbTR LESS _buildingHeight OR aabbTL LESS _buildingHeight
-        EDIT color = {0.5, 0.0, 0.0}
+        ALT color = {0.5, 0.0, 0.0}
     ADD index 1
 
 /// Update building color
-LST partIds = fe3d:model_get_part_ids(buildingType)
-EDIT index = 0
-EDIT maxIndex = misc:list_size("partIds")
+DEF LST partIds = fe3d:model_get_part_ids(buildingType)
+ALT index = 0
+ALT maxIndex = misc:list_size("partIds")
 LOOP
     IF index IS maxIndex
         BREAK
@@ -104,12 +104,12 @@ LOOP
 
 /// Compose new building ID
 CAST _buildingCounter STR
-STR buildingId = misc:string_concat(buildingType, "_")
-EDIT buildingId = misc:string_concat(buildingId, _buildingCounter)
+DEF STR buildingId = misc:string_concat(buildingType, "_")
+ALT buildingId = misc:string_concat(buildingId, _buildingCounter)
 CAST _buildingCounter INT
 
 /// Place new building
-BOL lmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
+DEF BOL lmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
 IF lmbClicked IS <true> AND color[1] NOT 0.0
     fe3d:model_place(buildingId, _buildingModels[_buildingIndex], 0.0, 0.0, 0.0)
     fe3d:model_set_base_position(buildingId, x, y, z)
@@ -121,5 +121,5 @@ IF lmbClicked IS <true> AND color[1] NOT 0.0
     ADD _buildingCounter 1
     PUSH _placedBuildingIds buildingId
     PUSH _placedBuildingTypes buildingType
-    EDIT _placedBuildingId = buildingId
-    EDIT _placedBuildingType = buildingType
+    ALT _placedBuildingId = buildingId
+    ALT _placedBuildingType = buildingType

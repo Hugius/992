@@ -1,4 +1,4 @@
-19 52
+48 16
 META script_type_update
 META script_state_wait
 
@@ -7,21 +7,21 @@ IF _placedBuildingId IS ""
     EXIT
 
 /// Define reusable values
-INT index = 0
-INT maxIndex = 0
+DEF INT index = 0
+DEF INT maxIndex = 0
 
 /// Assign worker to job building
 IF _placedBuildingType NOT "grave"
     IF _placedBuildingType NOT "house"
         IF _placedBuildingType NOT "storage"
             IF _placedBuildingType NOT "tavern"
-                EDIT index = misc:list_index("_workerJobBuildingIds", "")
+                ALT index = misc:list_index("_workerJobBuildingIds", "")
                 IF index NOT -1
-                    EDIT _workerJobBuildingIds[index] = _placedBuildingId
-                    STR eventMessage = misc:string_concat(_workerNames[index], " became ")
-                    EDIT eventMessage = misc:string_concat(eventMessage, _placedBuildingType)
-                    EDIT _eventMessageContent = eventMessage
-                    EDIT _eventMessageOpacity = 1.0
+                    ALT _workerJobBuildingIds[index] = _placedBuildingId
+                    DEF STR eventMessage = misc:string_concat(_workerNames[index], " became ")
+                    ALT eventMessage = misc:string_concat(eventMessage, _placedBuildingType)
+                    ALT _eventMessageContent = eventMessage
+                    ALT _eventMessageOpacity = 1.0
 
 /// Determine building type
 IF _placedBuildingType IS "apiarist"
@@ -33,38 +33,65 @@ ELIF _placedBuildingType IS "barber"
     PUSH _barberIds _placedBuildingId
 ELIF _placedBuildingType IS "blacksmith"
     PUSH _blacksmithIds _placedBuildingId
+ELIF _placedBuildingType IS "bowyer"
+    PUSH _bowyerIds _placedBuildingId
+ELIF _placedBuildingType IS "brewer"
+    PUSH _brewerIds _placedBuildingId
 ELIF _placedBuildingType IS "carpenter"
     PUSH _carpenterIds _placedBuildingId
+ELIF _placedBuildingType IS "ditcher"
+    PUSH _ditcherIds _placedBuildingId
+    PUSH _ditcherTimers 0
+ELIF _placedBuildingType IS "feller"
+    PUSH _fellerIds _placedBuildingId
+    PUSH _fellerTimers 0
+ELIF _placedBuildingType IS "fisher"
+    PUSH _fisherIds _placedBuildingId
+    PUSH _fisherTimers 0
+ELIF _placedBuildingType IS "fletcher"
+    PUSH _fletcherIds _placedBuildingId
+ELIF _placedBuildingType IS "herbalist"
+    PUSH _herbalistIds _placedBuildingId
 ELIF _placedBuildingType IS "house"
     PUSH _houseIds _placedBuildingId
     PUSH _houseTimers 0
     PUSH _houseBirths 0
-    INT maleIndex = -1
-    INT femaleIndex = -1
-    EDIT index = 0
-    EDIT maxIndex = misc:list_size("_workerHouseBuildingIds")
+    DEF INT maleIndex = -1
+    DEF INT femaleIndex = -1
+    ALT index = 0
+    ALT maxIndex = misc:list_size("_workerHouseBuildingIds")
     LOOP
         IF index IS maxIndex
             BREAK
         IF _workerHouseBuildingIds[index] IS ""
             IF maleIndex IS -1 AND _workerGenders[index] IS "MALE"
-                EDIT maleIndex = index
+                ALT maleIndex = index
             IF femaleIndex IS -1 AND _workerGenders[index] IS "FEMALE"
-                EDIT femaleIndex = index
+                ALT femaleIndex = index
         ADD index 1
     IF maleIndex NOT -1
-        EDIT _workerHouseBuildingIds[maleIndex] = _placedBuildingId
+        ALT _workerHouseBuildingIds[maleIndex] = _placedBuildingId
     IF femaleIndex NOT -1
-        EDIT _workerHouseBuildingIds[femaleIndex] = _placedBuildingId
+        ALT _workerHouseBuildingIds[femaleIndex] = _placedBuildingId
     IF maleIndex NOT -1 AND femaleIndex NOT -1
-        STR eventMessage = misc:string_concat(_workerNames[maleIndex], " married ")
-        EDIT eventMessage = misc:string_concat(eventMessage, _workerNames[femaleIndex])
-        EDIT _eventMessageContent = eventMessage
-        EDIT _eventMessageOpacity = 1.0
+        DEF STR eventMessage = misc:string_concat(_workerNames[maleIndex], " married ")
+        ALT eventMessage = misc:string_concat(eventMessage, _workerNames[femaleIndex])
+        ALT _eventMessageContent = eventMessage
+        ALT _eventMessageOpacity = 1.0
+ELIF _placedBuildingType IS "lumberer"
+    PUSH _lumbererIds _placedBuildingId
 ELIF _placedBuildingType IS "mason"
     PUSH _masonIds _placedBuildingId
+ELIF _placedBuildingType IS "miller"
+    PUSH _millerIds _placedBuildingId
+ELIF _placedBuildingType IS "priest"
+    PUSH _priestIds _placedBuildingId
 ELIF _placedBuildingType IS "roofer"
     PUSH _rooferIds _placedBuildingId
+ELIF _placedBuildingType IS "smelter"
+    PUSH _smelterIds _placedBuildingId
+ELIF _placedBuildingType IS "smoker"
+    PUSH _smokerIds _placedBuildingId
 ELIF _placedBuildingType IS "storage"
     PUSH _storageIds _placedBuildingId
     ADD _maxWater 10
@@ -102,7 +129,11 @@ ELIF _placedBuildingType IS "storage"
     ADD _maxTools 5
     ADD _maxBows 5
     ADD _maxArrows 50
+ELIF _placedBuildingType IS "tanner"
+    PUSH _tannerIds _placedBuildingId
+ELIF _placedBuildingType IS "tavern"
+    PUSH _tavernIds _placedBuildingId
 
 /// Reset variables
-EDIT _placedBuildingId = ""
-EDIT _placedBuildingType = ""
+ALT _placedBuildingId = ""
+ALT _placedBuildingType = ""

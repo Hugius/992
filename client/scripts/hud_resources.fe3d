@@ -1,36 +1,36 @@
-8 10
+122 45
 META script_type_update
 META script_state_wait
 
 /// Validate update
-BOL mustUpdate = fe3d:time_is_passed(10)
+DEF BOL mustUpdate = fe3d:time_is_passed(10)
 IF mustUpdate IS <false>
     EXIT
 
 /// Create content
-STR totalLumberText = misc:string_zeroed_integer(_totalLumber, 4)
-STR totalStoneText = misc:string_zeroed_integer(_totalStone, 4)
-STR totalGrainText = misc:string_zeroed_integer(_totalGrain, 4)
-STR totalFlourText = misc:string_zeroed_integer(_totalFlour, 4)
-STR totalPlanksText = misc:string_zeroed_integer(_totalPlanks, 4)
-STR totalFirewoodText = misc:string_zeroed_integer(_totalFirewood, 4)
-STR totalManureText = misc:string_zeroed_integer(_totalManure, 4)
-STR totalOreText = misc:string_zeroed_integer(_totalOre, 4)
-STR totalIronText = misc:string_zeroed_integer(_totalIron, 4)
-STR totalHidesText = misc:string_zeroed_integer(_totalHides, 4)
-STR totalClothesText = misc:string_zeroed_integer(_totalClothes, 4)
-STR totalWoolText = misc:string_zeroed_integer(_totalWool, 4)
-STR totalLeatherText = misc:string_zeroed_integer(_totalLeather, 4)
-STR totalClayText = misc:string_zeroed_integer(_totalClay, 4)
-STR totalStrawText = misc:string_zeroed_integer(_totalStraw, 4)
-STR totalMedicineText = misc:string_zeroed_integer(_totalMedicine, 4)
-STR totalFeathersText = misc:string_zeroed_integer(_totalFeathers, 4)
-STR totalMushroomsText = misc:string_zeroed_integer(_totalMushrooms, 4)
-STR totalGrainSeedsText = misc:string_zeroed_integer(_totalGrainSeeds, 4)
-STR totalVegetableSeedsText = misc:string_zeroed_integer(_totalVegetableSeeds, 4)
-STR totalToolsText = misc:string_zeroed_integer(_totalTools, 4)
-STR totalBowsText = misc:string_zeroed_integer(_totalBows, 4)
-STR totalArrowsText = misc:string_zeroed_integer(_totalArrows, 4)
+DEF STR totalLumberText = misc:string_zeroed_integer(_totalLumber, 4)
+DEF STR totalStoneText = misc:string_zeroed_integer(_totalStone, 4)
+DEF STR totalGrainText = misc:string_zeroed_integer(_totalGrain, 4)
+DEF STR totalFlourText = misc:string_zeroed_integer(_totalFlour, 4)
+DEF STR totalPlanksText = misc:string_zeroed_integer(_totalPlanks, 4)
+DEF STR totalFirewoodText = misc:string_zeroed_integer(_totalFirewood, 4)
+DEF STR totalManureText = misc:string_zeroed_integer(_totalManure, 4)
+DEF STR totalOreText = misc:string_zeroed_integer(_totalOre, 4)
+DEF STR totalIronText = misc:string_zeroed_integer(_totalIron, 4)
+DEF STR totalHidesText = misc:string_zeroed_integer(_totalHides, 4)
+DEF STR totalClothesText = misc:string_zeroed_integer(_totalClothes, 4)
+DEF STR totalWoolText = misc:string_zeroed_integer(_totalWool, 4)
+DEF STR totalLeatherText = misc:string_zeroed_integer(_totalLeather, 4)
+DEF STR totalClayText = misc:string_zeroed_integer(_totalClay, 4)
+DEF STR totalStrawText = misc:string_zeroed_integer(_totalStraw, 4)
+DEF STR totalMedicineText = misc:string_zeroed_integer(_totalMedicine, 4)
+DEF STR totalFeathersText = misc:string_zeroed_integer(_totalFeathers, 4)
+DEF STR totalMushroomsText = misc:string_zeroed_integer(_totalMushrooms, 4)
+DEF STR totalGrainSeedsText = misc:string_zeroed_integer(_totalGrainSeeds, 4)
+DEF STR totalVegetableSeedsText = misc:string_zeroed_integer(_totalVegetableSeeds, 4)
+DEF STR totalToolsText = misc:string_zeroed_integer(_totalTools, 4)
+DEF STR totalBowsText = misc:string_zeroed_integer(_totalBows, 4)
+DEF STR totalArrowsText = misc:string_zeroed_integer(_totalArrows, 4)
 
 /// Set content
 fe3d:text2d_set_content("total_lumber", totalLumberText)
@@ -51,8 +51,8 @@ fe3d:text2d_set_content("total_straw", totalStrawText)
 fe3d:text2d_set_content("total_medicine", totalMedicineText)
 fe3d:text2d_set_content("total_feathers", totalFeathersText)
 fe3d:text2d_set_content("total_mushrooms", totalMushroomsText)
-fe3d:text2d_set_content("total_grain_seeds", totalGrainSeedsText)
-fe3d:text2d_set_content("total_vegetable_seeds", totalVegetableSeedsText)
+fe3d:text2d_set_content("total_grainseeds", totalGrainSeedsText)
+fe3d:text2d_set_content("total_vegetableseeds", totalVegetableSeedsText)
 fe3d:text2d_set_content("total_tools", totalToolsText)
 fe3d:text2d_set_content("total_bows", totalBowsText)
 fe3d:text2d_set_content("total_arrows", totalArrowsText)
@@ -76,8 +76,8 @@ fe3d:text2d_set_color("total_straw", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_medicine", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_feathers", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_mushrooms", 0.0, 0.0, 0.0)
-fe3d:text2d_set_color("total_grain_seeds", 0.0, 0.0, 0.0)
-fe3d:text2d_set_color("total_vegetable_seeds", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_grainseeds", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_vegetableseeds", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_tools", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_bows", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_arrows", 0.0, 0.0, 0.0)
@@ -120,9 +120,9 @@ IF _totalFeathers IS _maxFeathers
 IF _totalMushrooms IS _maxMushrooms
     fe3d:text2d_set_color("total_mushrooms", 0.5, 0.0, 0.0)
 IF _totalGrainSeeds IS _maxGrainSeeds
-    fe3d:text2d_set_color("total_grain_seeds", 0.5, 0.0, 0.0)
+    fe3d:text2d_set_color("total_grainseeds", 0.5, 0.0, 0.0)
 IF _totalVegetableSeeds IS _maxVegetableSeeds
-    fe3d:text2d_set_color("total_vegetable_seeds", 0.5, 0.0, 0.0)
+    fe3d:text2d_set_color("total_vegetableseeds", 0.5, 0.0, 0.0)
 IF _totalTools IS _maxTools
     fe3d:text2d_set_color("total_tools", 0.5, 0.0, 0.0)
 IF _totalBows IS _maxBows

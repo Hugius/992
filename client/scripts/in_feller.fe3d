@@ -1,0 +1,20 @@
+18 32
+META script_type_initialize
+META script_state_wait
+
+/// Finals
+DEF GLB FIN INT _fellerInterval = 500
+DEF FIN STR workerText = "No worker available"
+
+/// Non-finals
+DEF GLB LST _fellerIds = {}
+DEF GLB LST _fellerTimers = {}
+
+/// GUI
+fe3d:quad2d_place("feller_worker", "worker", 0.0, -0.6, 0.1, 0.175)
+fe3d:quad2d_place("feller_time", "time", -0.25, -0.7, 0.1, 0.175)
+fe3d:quad2d_place("feller_convert", "convert", 0.0, -0.7, 0.2, 0.4)
+fe3d:quad2d_place("feller_lumber", "lumber", 0.25, -0.7, 0.1, 0.175)
+fe3d:text2d_place("feller_worker", "text", workerText, 0.0, -0.8, 0.285, 0.1)
+fe3d:text2d_place("feller_time", "text", "1", -0.25, -0.875, 0.02, 0.1)
+fe3d:text2d_place("feller_lumber", "text", "1", 0.25, -0.875, 0.02, 0.1)

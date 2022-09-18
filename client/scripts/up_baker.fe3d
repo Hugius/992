@@ -1,27 +1,28 @@
-32 28
+22 25
 META script_type_update
 META script_state_wait
 
 /// Hide GUI
-fe3d:quad2d_set_visible("baker_worker", <false>)
-fe3d:quad2d_set_visible("baker_storage", <false>)
-fe3d:quad2d_set_visible("baker_flour", <false>)
-fe3d:quad2d_set_visible("baker_firewood", <false>)
-fe3d:quad2d_set_visible("baker_convert", <false>)
-fe3d:quad2d_set_visible("baker_bread", <false>)
-fe3d:text2d_set_visible("baker_worker", <false>)
-fe3d:text2d_set_visible("baker_storage", <false>)
-fe3d:text2d_set_visible("baker_flour", <false>)
-fe3d:text2d_set_visible("baker_firewood", <false>)
-fe3d:text2d_set_visible("baker_bread", <false>)
+IF _lastSelectedBuildingType IS "baker" OR _totalUpdates IS 0
+    fe3d:quad2d_set_visible("baker_worker", <false>)
+    fe3d:quad2d_set_visible("baker_storage", <false>)
+    fe3d:quad2d_set_visible("baker_flour", <false>)
+    fe3d:quad2d_set_visible("baker_firewood", <false>)
+    fe3d:quad2d_set_visible("baker_convert", <false>)
+    fe3d:quad2d_set_visible("baker_bread", <false>)
+    fe3d:text2d_set_visible("baker_worker", <false>)
+    fe3d:text2d_set_visible("baker_storage", <false>)
+    fe3d:text2d_set_visible("baker_flour", <false>)
+    fe3d:text2d_set_visible("baker_firewood", <false>)
+    fe3d:text2d_set_visible("baker_bread", <false>)
 
 /// Show GUI
 IF _selectedBuildingType IS "baker"
-    BOL hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
+    DEF BOL hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
     IF hasWorker IS <true>
-        INT totalBread = _totalBread
+        DEF INT totalBread = _totalBread
         ADD totalBread 10
-        IF totalBread LESS _maxBread
+        IF totalBread NOT _maxBread
             fe3d:quad2d_set_visible("baker_flour", <true>)
             fe3d:quad2d_set_visible("baker_firewood", <true>)
             fe3d:quad2d_set_visible("baker_convert", <true>)
@@ -30,8 +31,8 @@ IF _selectedBuildingType IS "baker"
             fe3d:text2d_set_visible("baker_firewood", <true>)
             fe3d:text2d_set_visible("baker_bread", <true>)
             IF _totalFlour MORE 0 AND _totalFirewood MORE 0
-                EDIT _cursorType = "HAND"
-                BOL lmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
+                ALT _cursorType = "HAND"
+                DEF BOL lmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
                 IF lmbClicked IS <true>
                     SUB _totalFlour 1
                     SUB _totalFirewood 1

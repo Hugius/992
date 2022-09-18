@@ -1,13 +1,13 @@
-11 65
+4 4
 META script_type_initialize
 META script_state_wait
 
-/// Constants
-CNST STR infoText = "Prevents workers from committing suicide"
+/// Finals
+DEF FIN STR infoText = "Prevents workers from committing suicide"
 
-/// Non-constants
-GLOB LST _tavernIds = {}
+/// Non-finals
+DEF GLB LST _tavernIds = {}
 
 /// GUI
-fe3d:quad2d_place("tavern_info", "info_icon", 0.0, -0.6, 0.1, 0.175)
+fe3d:quad2d_place("tavern_info", "info", 0.0, -0.6, 0.1, 0.175)
 fe3d:text2d_place("tavern_info", "text", infoText, 0.0, -0.8, 0.6, 0.1)

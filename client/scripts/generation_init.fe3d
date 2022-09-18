@@ -1,61 +1,61 @@
-17 75
+14 27
 META script_type_initialize
 META script_state_wait
 
-/// Constants
-CNST DEC minX = -128.0
-CNST DEC minY = 3.0
-CNST DEC minZ = -128.0
-CNST DEC maxX = 128.0
-CNST DEC maxZ = 128.0
-CNST DEC minZoneX = 10.0
-CNST DEC minZoneZ = -15.0
-CNST DEC maxZoneX = 35.0
-CNST DEC maxZoneZ = 10.0
-CNST DEC minDistance = 5.0
-CNST INT maxModels = 90
+/// Finals
+DEF FIN DEC minX = -128.0
+DEF FIN DEC minY = 3.0
+DEF FIN DEC minZ = -128.0
+DEF FIN DEC maxX = 128.0
+DEF FIN DEC maxZ = 128.0
+DEF FIN DEC minZoneX = 10.0
+DEF FIN DEC minZoneZ = -15.0
+DEF FIN DEC maxZoneX = 35.0
+DEF FIN DEC maxZoneZ = 10.0
+DEF FIN DEC minDistance = 5.0
+DEF FIN INT maxModels = 180
 
-/// Non-constants
-LST modelIds = {"tree1","stone1","tree1","tree2","stone2","tree2","tree3","stone3","tree3"}
-LST xPositions = {}
-LST yPositions = {}
-LST zPositions = {}
-STR modelId = ""
-INT modelIndex = 0
-INT positionIndex = 0
-INT totalModels = 0
-DEC x = 0.0
-DEC y = 0.0
-DEC z = 0.0
-DEC distance = 0.0
-BOL mustSkip = <false>
+/// Non-finals
+DEF LST modelIds = {"tree1","stone1","tree1","tree2","stone2","tree2","tree3","stone3","tree3"}
+DEF LST xPositions = {}
+DEF LST yPositions = {}
+DEF LST zPositions = {}
+DEF STR modelId = ""
+DEF INT modelIndex = 0
+DEF INT positionIndex = 0
+DEF INT totalModels = 0
+DEF DEC x = 0.0
+DEF DEC y = 0.0
+DEF DEC z = 0.0
+DEF DEC distance = 0.0
+DEF BOL mustSkip = <false>
 
 /// Generation
 LOOP
     IF totalModels IS maxModels
         BREAK
-    EDIT x = math:random_decimal(minX, maxX)
-    EDIT z = math:random_decimal(minZ, maxZ)
-    EDIT y = fe3d:terrain_get_pixel_height("terrain", x, z)
+    ALT x = math:random_decimal(minX, maxX)
+    ALT z = math:random_decimal(minZ, maxZ)
+    ALT y = fe3d:terrain_get_pixel_height("terrain", x, z)
     IF y LESS minY
         CONTINUE
     IF x MORE minZoneX AND x LESS maxZoneX AND z MORE minZoneZ AND z LESS maxZoneZ
         CONTINUE
-    EDIT positionIndex = 0
+    ALT positionIndex = 0
     LOOP
         IF positionIndex IS totalModels
             BREAK
-        EDIT distance = math:vector_distance(x, y, z, xPositions[positionIndex], yPositions[positionIndex], zPositions[positionIndex])
+        ALT distance = math:vector_distance(x, y, z, xPositions[positionIndex], yPositions[positionIndex], zPositions[positionIndex])
         IF distance LESS minDistance
-            EDIT mustSkip = <true>
+            ALT mustSkip = <true>
             BREAK
         ADD positionIndex 1
     IF mustSkip IS <true>
-        EDIT mustSkip = <false>
+        ALT mustSkip = <false>
         CONTINUE
     CAST totalModels STR
-    EDIT modelId = misc:string_concat(modelIds[modelIndex], "_")
-    EDIT modelId = misc:string_concat(modelId, totalModels)
+    ALT modelId = misc:string_concat(modelIds[modelIndex], "_")
+    ALT modelId = misc:string_concat(modelId, totalModels)
     CAST totalModels INT
     fe3d:model_place(modelId, modelIds[modelIndex], x, y, z)
     ADD totalModels 1
@@ -63,6 +63,6 @@ LOOP
     PUSH yPositions y
     PUSH zPositions z
     IF modelIndex IS 8
-        EDIT modelIndex = 0
+        ALT modelIndex = 0
     ELSE
         ADD modelIndex 1

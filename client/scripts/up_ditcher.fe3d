@@ -1,0 +1,46 @@
+37 13
+META script_type_update
+META script_state_wait
+
+/// Define reusable values
+DEF BOL hasWorker = <false>
+
+/// Hide GUI
+IF _lastSelectedBuildingType IS "ditcher" OR _totalUpdates IS 0
+    fe3d:quad2d_set_visible("ditcher_worker", <false>)
+    fe3d:quad2d_set_visible("ditcher_convert", <false>)
+    fe3d:quad2d_set_visible("ditcher_time", <false>)
+    fe3d:quad2d_set_visible("ditcher_clay", <false>)
+    fe3d:text2d_set_visible("ditcher_worker", <false>)
+    fe3d:text2d_set_visible("ditcher_time", <false>)
+    fe3d:text2d_set_visible("ditcher_clay", <false>)
+
+/// Show GUI
+IF _selectedBuildingType IS "ditcher"
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
+    IF hasWorker IS <true>
+        fe3d:quad2d_set_visible("ditcher_convert", <true>)
+        fe3d:quad2d_set_visible("ditcher_time", <true>)
+        fe3d:quad2d_set_visible("ditcher_clay", <true>)
+        fe3d:text2d_set_visible("ditcher_time", <true>)
+        fe3d:text2d_set_visible("ditcher_clay", <true>)
+    ELSE
+        fe3d:quad2d_set_visible("ditcher_worker", <true>)
+        fe3d:text2d_set_visible("ditcher_worker", <true>)
+
+/// Update ditchers
+DEF INT index = 0
+DEF INT maxIndex = misc:list_size("_ditcherIds")
+LOOP
+    IF index IS maxIndex
+        BREAK
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _ditcherIds[index])
+    IF hasWorker IS <false>
+        BREAK
+    IF _ditcherTimers[index] IS _ditcherInterval
+        ALT _ditcherTimers[index] = 0
+        IF _totalClay NOT _maxClay
+            ADD _totalClay 1
+    ELSE
+        ADD _ditcherTimers[index] 1
+    ADD index 1

@@ -1,65 +1,65 @@
-103 25
+114 4
 META script_type_update
 META script_state_wait
 
 /// Update death timer
 IF _workerDeathTimer IS _workerDeathTimespan
-    EDIT _workerDeathTimer = 0
+    ALT _workerDeathTimer = 0
 ELSE
     ADD _workerDeathTimer 1
     EXIT
 
 /// Define reusable values
-STR eventMessage = ""
-STR workerName = _workerNames[_workerDeathIndex]
-INT randomPercentage = math:random_integer(1, 100)
-BOL workerIsDead = <false>
+DEF STR eventMessage = ""
+DEF STR workerName = _workerNames[_workerDeathIndex]
+DEF INT randomPercentage = math:random_integer(1, 100)
+DEF BOL workerIsDead = <false>
 
 /// Update dying from childbirth
 IF workerIsDead IS <false>
-    INT houseIndex = misc:list_index("_houseIdsThatGaveBirth", _workerHouseBuildingIds[_workerDeathIndex])
+    DEF INT houseIndex = misc:list_index("_houseIdsThatGaveBirth", _workerHouseBuildingIds[_workerDeathIndex])
     IF houseIndex NOT -1
         PULL _houseIdsThatGaveBirth houseIndex
-        INT birthDeathChance = 100
+        DEF INT birthDeathChance = 100
         SUB birthDeathChance _birthDeathChance
         IF randomPercentage MORE birthDeathChance
-            EDIT workerIsDead = <true>
-            EDIT eventMessage = misc:string_concat(workerName, " died of childbirth")
-            EDIT _eventMessageContent = eventMessage
-            EDIT _eventMessageOpacity = 1.0
+            ALT workerIsDead = <true>
+            ALT eventMessage = misc:string_concat(workerName, " died of childbirth")
+            ALT _eventMessageContent = eventMessage
+            ALT _eventMessageOpacity = 1.0
 
 /// Update dying from suicide
 IF workerIsDead IS <false>
-    INT priestCount = misc:list_size("_priestIds")
-    INT tavernCount = misc:list_size("_tavernIds")
+    DEF INT priestCount = misc:list_size("_priestIds")
+    DEF INT tavernCount = misc:list_size("_tavernIds")
     IF priestCount MORE 0 AND tavernCount MORE 0
-        INT suicideChance = 100
+        DEF INT suicideChance = 100
         SUB suicideChance _suicideDeathChance
         IF randomPercentage MORE suicideChance
-            EDIT workerIsDead = <true>
-            EDIT eventMessage = misc:string_concat(workerName, " died of suicide")
-            EDIT _eventMessageContent = eventMessage
-            EDIT _eventMessageOpacity = 1.0
+            ALT workerIsDead = <true>
+            ALT eventMessage = misc:string_concat(workerName, " died of suicide")
+            ALT _eventMessageContent = eventMessage
+            ALT _eventMessageOpacity = 1.0
 
 /// Update dying from sickness
 IF workerIsDead IS <false>
     IF _workerHealths[_workerDeathIndex] IS <true>
-        INT sicknessChance = 100
+        DEF INT sicknessChance = 100
         SUB sicknessChance _sicknessCatchChance
         IF randomPercentage MORE sicknessChance
-            EDIT _workerHealths[_workerDeathIndex] = <false>
-            EDIT eventMessage = misc:string_concat(workerName, " caught the sickness")
-            EDIT _eventMessageContent = eventMessage
-            EDIT _eventMessageOpacity = 1.0
+            ALT _workerHealths[_workerDeathIndex] = <false>
+            ALT eventMessage = misc:string_concat(workerName, " caught the sickness")
+            ALT _eventMessageContent = eventMessage
+            ALT _eventMessageOpacity = 1.0
     ELSE
         IF _totalMedicine MORE 0
             SUB _totalMedicine 1
-            EDIT _workerHealths[_workerDeathIndex] = <true>
+            ALT _workerHealths[_workerDeathIndex] = <true>
         ELSE
-            EDIT workerIsDead = <true>
-            EDIT eventMessage = misc:string_concat(workerName, " died of sickness")
-            EDIT _eventMessageContent = eventMessage
-            EDIT _eventMessageOpacity = 1.0
+            ALT workerIsDead = <true>
+            ALT eventMessage = misc:string_concat(workerName, " died of sickness")
+            ALT _eventMessageContent = eventMessage
+            ALT _eventMessageOpacity = 1.0
 
 /// Update dying from dehydration
 IF workerIsDead IS <false>
@@ -70,10 +70,10 @@ IF workerIsDead IS <false>
     ELIF _totalMilk MORE 0
         SUB _totalMilk 1
     ELSE
-        EDIT workerIsDead = <true>
-        EDIT eventMessage = misc:string_concat(workerName, " died of dehydration")
-        EDIT _eventMessageContent = eventMessage
-        EDIT _eventMessageOpacity = 1.0
+        ALT workerIsDead = <true>
+        ALT eventMessage = misc:string_concat(workerName, " died of dehydration")
+        ALT _eventMessageContent = eventMessage
+        ALT _eventMessageOpacity = 1.0
 
 /// Update dying from starvation
 IF workerIsDead IS <false>
@@ -96,10 +96,10 @@ IF workerIsDead IS <false>
     ELIF _totalFruit MORE 0
         SUB _totalFruit 1
     ELSE
-        EDIT workerIsDead = <true>
-        EDIT eventMessage = misc:string_concat(workerName, " died of starvation")
-        EDIT _eventMessageContent = eventMessage
-        EDIT _eventMessageOpacity = 1.0
+        ALT workerIsDead = <true>
+        ALT eventMessage = misc:string_concat(workerName, " died of starvation")
+        ALT _eventMessageContent = eventMessage
+        ALT _eventMessageOpacity = 1.0
 
 /// Handle dead worker
 IF workerIsDead IS <true>
@@ -113,12 +113,15 @@ ELSE
     ADD _workerDeathIndex 1
 
 /// Handle dead population
-INT totalWorkers = misc:list_size("_workerNames")
+DEF INT totalWorkers = misc:list_size("_workerNames")
 IF totalWorkers IS 0
     fe3d:application_stop()
 
 /// Update event index
 IF _workerDeathIndex IS totalWorkers
-    EDIT _workerDeathIndex = 0
-    EDIT _workerDeathTimespan = _workersDeathTimespan
+    ALT _workerDeathIndex = 0
+    ALT _workerDeathTimespan = _workersDeathTimespan
     DIV _workerDeathTimespan totalWorkers
+
+/// Set default sickness chance
+ALT _sicknessCatchChance = 15

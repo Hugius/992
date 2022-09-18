@@ -1,25 +1,26 @@
-34 34
+21 25
 META script_type_update
 META script_state_wait
 
 /// Hide GUI
-fe3d:quad2d_set_visible("bowyer_worker", <false>)
-fe3d:quad2d_set_visible("bowyer_storage", <false>)
-fe3d:quad2d_set_visible("bowyer_planks", <false>)
-fe3d:quad2d_set_visible("bowyer_wool", <false>)
-fe3d:quad2d_set_visible("bowyer_convert", <false>)
-fe3d:quad2d_set_visible("bowyer_bow", <false>)
-fe3d:text2d_set_visible("bowyer_worker", <false>)
-fe3d:text2d_set_visible("bowyer_storage", <false>)
-fe3d:text2d_set_visible("bowyer_planks", <false>)
-fe3d:text2d_set_visible("bowyer_wool", <false>)
-fe3d:text2d_set_visible("bowyer_bow", <false>)
+IF _lastSelectedBuildingType IS "bowyer" OR _totalUpdates IS 0
+    fe3d:quad2d_set_visible("bowyer_worker", <false>)
+    fe3d:quad2d_set_visible("bowyer_storage", <false>)
+    fe3d:quad2d_set_visible("bowyer_planks", <false>)
+    fe3d:quad2d_set_visible("bowyer_wool", <false>)
+    fe3d:quad2d_set_visible("bowyer_convert", <false>)
+    fe3d:quad2d_set_visible("bowyer_bow", <false>)
+    fe3d:text2d_set_visible("bowyer_worker", <false>)
+    fe3d:text2d_set_visible("bowyer_storage", <false>)
+    fe3d:text2d_set_visible("bowyer_planks", <false>)
+    fe3d:text2d_set_visible("bowyer_wool", <false>)
+    fe3d:text2d_set_visible("bowyer_bow", <false>)
 
 /// Show GUI
 IF _selectedBuildingType IS "bowyer"
-    BOL hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
+    DEF BOL hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
     IF hasWorker IS <true>
-        IF _totalBows LESS _maxBows
+        IF _totalBows NOT _maxBows
             fe3d:quad2d_set_visible("bowyer_planks", <true>)
             fe3d:quad2d_set_visible("bowyer_wool", <true>)
             fe3d:quad2d_set_visible("bowyer_convert", <true>)
@@ -28,8 +29,8 @@ IF _selectedBuildingType IS "bowyer"
             fe3d:text2d_set_visible("bowyer_wool", <true>)
             fe3d:text2d_set_visible("bowyer_bow", <true>)
             IF _totalPlanks MORE 0 AND _totalWool MORE 0
-                EDIT _cursorType = "HAND"
-                BOL lmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
+                ALT _cursorType = "HAND"
+                DEF BOL lmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
                 IF lmbClicked IS <true>
                     SUB _totalPlanks 1
                     SUB _totalWool 1

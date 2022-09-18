@@ -3,20 +3,21 @@ META script_type_update
 META script_state_wait
 
 /// Define reusable values
-BOL hasWorker = <false>
+DEF BOL hasWorker = <false>
 
 /// Hide GUI
-fe3d:quad2d_set_visible("apiarist_worker", <false>)
-fe3d:quad2d_set_visible("apiarist_convert", <false>)
-fe3d:quad2d_set_visible("apiarist_time", <false>)
-fe3d:quad2d_set_visible("apiarist_honey", <false>)
-fe3d:text2d_set_visible("apiarist_worker", <false>)
-fe3d:text2d_set_visible("apiarist_time", <false>)
-fe3d:text2d_set_visible("apiarist_honey", <false>)
+IF _lastSelectedBuildingType IS "apiarist" OR _totalUpdates IS 0
+    fe3d:quad2d_set_visible("apiarist_worker", <false>)
+    fe3d:quad2d_set_visible("apiarist_convert", <false>)
+    fe3d:quad2d_set_visible("apiarist_time", <false>)
+    fe3d:quad2d_set_visible("apiarist_honey", <false>)
+    fe3d:text2d_set_visible("apiarist_worker", <false>)
+    fe3d:text2d_set_visible("apiarist_time", <false>)
+    fe3d:text2d_set_visible("apiarist_honey", <false>)
 
 /// Show GUI
 IF _selectedBuildingType IS "apiarist"
-    EDIT hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
     IF hasWorker IS <true>
         fe3d:quad2d_set_visible("apiarist_convert", <true>)
         fe3d:quad2d_set_visible("apiarist_time", <true>)
@@ -27,17 +28,17 @@ IF _selectedBuildingType IS "apiarist"
         fe3d:quad2d_set_visible("apiarist_worker", <true>)
         fe3d:text2d_set_visible("apiarist_worker", <true>)
 
-/// Update apiaries
-INT index = 0
-INT maxIndex = misc:list_size("_apiaristIds")
+/// Update apiarists
+DEF INT index = 0
+DEF INT maxIndex = misc:list_size("_apiaristIds")
 LOOP
     IF index IS maxIndex
         BREAK
-    EDIT hasWorker = misc:list_contains("_workerJobBuildingIds", _apiaristIds[index])
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _apiaristIds[index])
     IF hasWorker IS <false>
         BREAK
     IF _apiaristTimers[index] IS _apiaristInterval
-        EDIT _apiaristTimers[index] = 0
+        ALT _apiaristTimers[index] = 0
         IF _totalHoney NOT _maxHoney
             ADD _totalHoney 1
     ELSE

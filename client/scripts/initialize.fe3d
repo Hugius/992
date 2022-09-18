@@ -1,4 +1,4 @@
-26 17
+18 17
 META script_type_initialize
 META script_state_entry
 
@@ -15,6 +15,9 @@ EXECUTE in_blacksmith
 EXECUTE in_bowyer
 EXECUTE in_brewer
 EXECUTE in_carpenter
+EXECUTE in_ditcher
+EXECUTE in_feller
+EXECUTE in_fisher
 EXECUTE in_fletcher
 EXECUTE in_herbalist
 EXECUTE in_house
@@ -24,6 +27,7 @@ EXECUTE in_miller
 EXECUTE in_priest
 EXECUTE in_roofer
 EXECUTE in_smelter
+EXECUTE in_smoker
 EXECUTE in_storage
 EXECUTE in_tanner
 EXECUTE in_tavern

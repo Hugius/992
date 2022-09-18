@@ -1,18 +1,18 @@
-16 63
+6 4
 META script_type_initialize
 META script_state_wait
 
-/// Constants
-GLOB CNST INT _maxBirthsPerHouse = 3
-GLOB CNST INT _houseInterval = 1440
-CNST STR infoText = "Houses 2 married workers"
+/// Finals
+DEF GLB FIN INT _maxBirthsPerHouse = 3
+DEF GLB FIN INT _houseInterval = 1440
+DEF FIN STR infoText = "Houses 2 married workers"
 
-/// Non-constants
-GLOB LST _houseIds = {}
-GLOB LST _houseTimers = {}
-GLOB LST _houseBirths = {}
-GLOB LST _houseIdsThatGaveBirth = {}
+/// Non-finals
+DEF GLB LST _houseIds = {}
+DEF GLB LST _houseTimers = {}
+DEF GLB LST _houseBirths = {}
+DEF GLB LST _houseIdsThatGaveBirth = {}
 
 /// GUI
-fe3d:quad2d_place("house_info", "info_icon", 0.0, -0.6, 0.1, 0.175)
+fe3d:quad2d_place("house_info", "info", 0.0, -0.6, 0.1, 0.175)
 fe3d:text2d_place("house_info", "text", infoText, 0.0, -0.8, 0.36, 0.1)
