@@ -1,4 +1,4 @@
-41 63
+39 39
 META script_type_update
 META script_state_wait
 
@@ -28,7 +28,7 @@ IF _selectedBuildingType IS "smoker"
             ALT _smokerSelectionMode = 0
     DEF BOL hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
     IF hasWorker IS <true>
-        IF _smokerSelectionMode IS 0 AND _totalSmokedMeat NOT _maxSmokedMeat
+        IF _smokerSelectionMode IS 0 AND _totalSmokedMeat LESS _maxSmokedMeat
             fe3d:quad2d_set_visible("smoker_rawmeat", <true>)
             fe3d:quad2d_set_visible("smoker_convert", <true>)
             fe3d:quad2d_set_visible("smoker_smokedmeat", <true>)
@@ -40,7 +40,7 @@ IF _selectedBuildingType IS "smoker"
                 IF lmbClicked IS <true>
                     SUB _totalRawMeat 1
                     ADD _totalSmokedMeat 1
-        ELIF _smokerSelectionMode IS 1 AND _totalSmokedMeat NOT _maxSmokedMeat
+        ELIF _smokerSelectionMode IS 1 AND _totalSmokedMeat LESS _maxSmokedMeat
             fe3d:quad2d_set_visible("smoker_rawfish", <true>)
             fe3d:quad2d_set_visible("smoker_convert", <true>)
             fe3d:quad2d_set_visible("smoker_smokedfish", <true>)

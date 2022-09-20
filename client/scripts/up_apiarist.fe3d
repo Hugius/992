@@ -1,4 +1,4 @@
-0 0
+20 56
 META script_type_update
 META script_state_wait
 
@@ -8,8 +8,8 @@ DEF BOL hasWorker = <false>
 /// Hide GUI
 IF _lastSelectedBuildingType IS "apiarist" OR _totalUpdates IS 0
     fe3d:quad2d_set_visible("apiarist_worker", <false>)
-    fe3d:quad2d_set_visible("apiarist_convert", <false>)
     fe3d:quad2d_set_visible("apiarist_time", <false>)
+    fe3d:quad2d_set_visible("apiarist_convert", <false>)
     fe3d:quad2d_set_visible("apiarist_honey", <false>)
     fe3d:text2d_set_visible("apiarist_worker", <false>)
     fe3d:text2d_set_visible("apiarist_time", <false>)
@@ -19,8 +19,8 @@ IF _lastSelectedBuildingType IS "apiarist" OR _totalUpdates IS 0
 IF _selectedBuildingType IS "apiarist"
     ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
     IF hasWorker IS <true>
-        fe3d:quad2d_set_visible("apiarist_convert", <true>)
         fe3d:quad2d_set_visible("apiarist_time", <true>)
+        fe3d:quad2d_set_visible("apiarist_convert", <true>)
         fe3d:quad2d_set_visible("apiarist_honey", <true>)
         fe3d:text2d_set_visible("apiarist_time", <true>)
         fe3d:text2d_set_visible("apiarist_honey", <true>)
@@ -35,12 +35,11 @@ LOOP
     IF index IS maxIndex
         BREAK
     ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _apiaristIds[index])
-    IF hasWorker IS <false>
-        BREAK
-    IF _apiaristTimers[index] IS _apiaristInterval
-        ALT _apiaristTimers[index] = 0
-        IF _totalHoney NOT _maxHoney
-            ADD _totalHoney 1
-    ELSE
-        ADD _apiaristTimers[index] 1
+    IF hasWorker IS <true>
+        IF _apiaristTimers[index] IS _apiaristInterval
+            ALT _apiaristTimers[index] = 0
+            IF _totalHoney LESS _maxHoney
+                ADD _totalHoney 1
+        ELSE
+            ADD _apiaristTimers[index] 1
     ADD index 1

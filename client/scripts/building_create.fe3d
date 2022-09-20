@@ -1,4 +1,4 @@
-48 16
+59 26
 META script_type_update
 META script_state_wait
 
@@ -35,13 +35,19 @@ ELIF _placedBuildingType IS "blacksmith"
     PUSH _blacksmithIds _placedBuildingId
 ELIF _placedBuildingType IS "bowyer"
     PUSH _bowyerIds _placedBuildingId
+ELIF _placedBuildingType IS "breeder"
+    PASS
 ELIF _placedBuildingType IS "brewer"
     PUSH _brewerIds _placedBuildingId
+ELIF _placedBuildingType IS "butcher"
+    PASS
 ELIF _placedBuildingType IS "carpenter"
     PUSH _carpenterIds _placedBuildingId
 ELIF _placedBuildingType IS "ditcher"
     PUSH _ditcherIds _placedBuildingId
     PUSH _ditcherTimers 0
+ELIF _placedBuildingType IS "farmer"
+    PASS
 ELIF _placedBuildingType IS "feller"
     PUSH _fellerIds _placedBuildingId
     PUSH _fellerTimers 0
@@ -50,8 +56,15 @@ ELIF _placedBuildingType IS "fisher"
     PUSH _fisherTimers 0
 ELIF _placedBuildingType IS "fletcher"
     PUSH _fletcherIds _placedBuildingId
+ELIF _placedBuildingType IS "gatherer"
+    PUSH _gathererIds _placedBuildingId
+    PUSH _gathererTimers 0
+ELIF _placedBuildingType IS "grave"
+    PASS
 ELIF _placedBuildingType IS "herbalist"
     PUSH _herbalistIds _placedBuildingId
+ELIF _placedBuildingType IS "hewer"
+    PASS
 ELIF _placedBuildingType IS "house"
     PUSH _houseIds _placedBuildingId
     PUSH _houseTimers 0
@@ -78,16 +91,25 @@ ELIF _placedBuildingType IS "house"
         ALT eventMessage = misc:string_concat(eventMessage, _workerNames[femaleIndex])
         ALT _eventMessageContent = eventMessage
         ALT _eventMessageOpacity = 1.0
+ELIF _placedBuildingType IS "hunter"
+    PASS
 ELIF _placedBuildingType IS "lumberer"
     PUSH _lumbererIds _placedBuildingId
 ELIF _placedBuildingType IS "mason"
     PUSH _masonIds _placedBuildingId
 ELIF _placedBuildingType IS "miller"
     PUSH _millerIds _placedBuildingId
+ELIF _placedBuildingType IS "miner"
+    PUSH _minerIds _placedBuildingId
+    PUSH _minerTimers 0
+ELIF _placedBuildingType IS "orchardist"
+    PASS
 ELIF _placedBuildingType IS "priest"
     PUSH _priestIds _placedBuildingId
 ELIF _placedBuildingType IS "roofer"
     PUSH _rooferIds _placedBuildingId
+ELIF _placedBuildingType IS "scavenger"
+    PASS
 ELIF _placedBuildingType IS "smelter"
     PUSH _smelterIds _placedBuildingId
 ELIF _placedBuildingType IS "smoker"
@@ -133,6 +155,10 @@ ELIF _placedBuildingType IS "tanner"
     PUSH _tannerIds _placedBuildingId
 ELIF _placedBuildingType IS "tavern"
     PUSH _tavernIds _placedBuildingId
+ELIF _placedBuildingType IS "waterer"
+    PASS
+ELIF _placedBuildingType IS "weaver"
+    PASS
 
 /// Reset variables
 ALT _placedBuildingId = ""

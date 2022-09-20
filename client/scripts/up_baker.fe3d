@@ -1,4 +1,4 @@
-22 25
+25 61
 META script_type_update
 META script_state_wait
 
@@ -21,8 +21,8 @@ IF _selectedBuildingType IS "baker"
     DEF BOL hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
     IF hasWorker IS <true>
         DEF INT totalBread = _totalBread
-        ADD totalBread 10
-        IF totalBread NOT _maxBread
+        ADD totalBread 9
+        IF totalBread LESS _maxBread
             fe3d:quad2d_set_visible("baker_flour", <true>)
             fe3d:quad2d_set_visible("baker_firewood", <true>)
             fe3d:quad2d_set_visible("baker_convert", <true>)

@@ -18,7 +18,7 @@ IF _lastSelectedBuildingType IS "miller" OR _totalUpdates IS 0
 IF _selectedBuildingType IS "miller"
     DEF BOL hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
     IF hasWorker IS <true>
-        IF _totalGrain NOT _maxGrain
+        IF _totalGrain LESS _maxGrain
             fe3d:quad2d_set_visible("miller_grain", <true>)
             fe3d:quad2d_set_visible("miller_convert", <true>)
             fe3d:quad2d_set_visible("miller_flour", <true>)

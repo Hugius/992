@@ -1,0 +1,57 @@
+32 59
+META script_type_update
+META script_state_wait
+
+/// Define reusable values
+DEF BOL hasWorker = <false>
+
+/// Hide GUI
+IF _lastSelectedBuildingType IS "gatherer" OR _totalUpdates IS 0
+    fe3d:quad2d_set_visible("gatherer_worker", <false>)
+    fe3d:quad2d_set_visible("gatherer_time", <false>)
+    fe3d:quad2d_set_visible("gatherer_convert", <false>)
+    fe3d:quad2d_set_visible("gatherer_vegetableseeds", <false>)
+    fe3d:quad2d_set_visible("gatherer_grainseeds", <false>)
+    fe3d:quad2d_set_visible("gatherer_mushrooms", <false>)
+    fe3d:text2d_set_visible("gatherer_worker", <false>)
+    fe3d:text2d_set_visible("gatherer_time", <false>)
+    fe3d:text2d_set_visible("gatherer_vegetableseeds", <false>)
+    fe3d:text2d_set_visible("gatherer_grainseeds", <false>)
+    fe3d:text2d_set_visible("gatherer_mushrooms", <false>)
+
+/// Show GUI
+IF _selectedBuildingType IS "gatherer"
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
+    IF hasWorker IS <true>
+        fe3d:quad2d_set_visible("gatherer_time", <true>)
+        fe3d:quad2d_set_visible("gatherer_convert", <true>)
+        fe3d:quad2d_set_visible("gatherer_vegetableseeds", <true>)
+        fe3d:quad2d_set_visible("gatherer_grainseeds", <true>)
+        fe3d:quad2d_set_visible("gatherer_mushrooms", <true>)
+        fe3d:text2d_set_visible("gatherer_time", <true>)
+        fe3d:text2d_set_visible("gatherer_vegetableseeds", <true>)
+        fe3d:text2d_set_visible("gatherer_grainseeds", <true>)
+        fe3d:text2d_set_visible("gatherer_mushrooms", <true>)
+    ELSE
+        fe3d:quad2d_set_visible("gatherer_worker", <true>)
+        fe3d:text2d_set_visible("gatherer_worker", <true>)
+
+/// Update gatherers
+DEF INT index = 0
+DEF INT maxIndex = misc:list_size("_gathererIds")
+LOOP
+    IF index IS maxIndex
+        BREAK
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _gathererIds[index])
+    IF hasWorker IS <true>
+        IF _gathererTimers[index] IS _gathererInterval
+            ALT _gathererTimers[index] = 0
+            IF _totalVegetableSeeds LESS _maxVegetableSeeds
+                ADD _totalVegetableSeeds 1
+            IF _totalGrainSeeds LESS _maxGrainSeeds
+                ADD _totalGrainSeeds 1
+            IF _totalMushrooms LESS _maxMushrooms
+                ADD _totalMushrooms 1
+        ELSE
+            ADD _gathererTimers[index] 1
+    ADD index 1

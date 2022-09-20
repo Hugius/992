@@ -1,4 +1,4 @@
-22 34
+19 13
 META script_type_update
 META script_state_wait
 
@@ -21,7 +21,7 @@ LOOP
         BREAK
     ALT count = misc:list_count("_workerHouseBuildingIds", _houseIds[index])
     IF count IS 2
-        IF _houseBirths[index] NOT _maxBirthsPerHouse
+        IF _houseBirths[index] LESS _maxBirthsPerHouse
             IF _houseTimers[index] IS _houseInterval
                 ALT _houseTimers[index] = 0
                 ADD _houseBirths[index] 1

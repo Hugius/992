@@ -1,9 +1,10 @@
-0 0
+24 12
 META script_type_update
 META script_state_wait
 
 /// Define reusable values
 DEF BOL hasWorker = <false>
+DEF BOL hasTool = <false>
 
 /// Hide GUI
 IF _lastSelectedBuildingType IS "barber" OR _totalUpdates IS 0
@@ -17,7 +18,7 @@ IF _lastSelectedBuildingType IS "barber" OR _totalUpdates IS 0
 /// Show GUI
 IF _selectedBuildingType IS "barber"
     ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
-    DEF BOL hasTool = misc:list_contains("_toolBuildingIds", _selectedBuildingId)
+    ALT hasTool = misc:list_contains("_toolBuildingIds", _selectedBuildingId)
     IF hasWorker IS <true>
         IF hasTool IS <true>
             fe3d:quad2d_set_visible("barber_info", <true>)
@@ -42,7 +43,8 @@ LOOP
     IF index IS maxIndex
         BREAK
     ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _barberIds[index])
-    IF hasWorker IS <true>
+    ALT hasTool = misc:list_contains("_toolBuildingIds", _barberIds[index])
+    IF hasWorker IS <true> AND hasTool IS <true>
         SUB _sicknessCatchChance 5
         BREAK
     ADD index 1

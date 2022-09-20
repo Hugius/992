@@ -1,4 +1,4 @@
-25 23
+36 40
 META script_type_update
 META script_state_wait
 
@@ -23,8 +23,8 @@ IF _selectedBuildingType IS "brewer"
     DEF BOL hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
     IF hasWorker IS <true>
         DEF INT totalAle = _totalAle
-        ADD totalAle 10
-        IF totalAle NOT _maxAle
+        ADD totalAle 9
+        IF totalAle LESS _maxAle
             fe3d:quad2d_set_visible("brewer_water", <true>)
             fe3d:quad2d_set_visible("brewer_grain", <true>)
             fe3d:quad2d_set_visible("brewer_firewood", <true>)

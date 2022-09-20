@@ -1,9 +1,10 @@
-22 56
+17 74
 META script_type_initialize
 META script_state_wait
 
 /// Finals
 DEF FIN STR workerText = "No worker available"
+DEF FIN STR toolText = "No tool equipped"
 DEF FIN STR storageText = "No space in storage"
 
 /// Non-finals
@@ -11,13 +12,15 @@ DEF GLB LST _fletcherIds = {}
 
 /// GUI
 fe3d:quad2d_place("fletcher_worker", "worker", 0.0, -0.6, 0.1, 0.175)
+fe3d:quad2d_place("fletcher_tool", "tools", 0.0, -0.6, 0.1, 0.175)
 fe3d:quad2d_place("fletcher_storage", "storage", 0.0, -0.6, 0.1, 0.175)
 fe3d:quad2d_place("fletcher_iron", "iron", -0.3, -0.7, 0.1, 0.175)
 fe3d:quad2d_place("fletcher_planks", "planks", -0.2, -0.7, 0.1, 0.175)
 fe3d:quad2d_place("fletcher_feathers", "feathers", -0.1, -0.7, 0.1, 0.175)
 fe3d:quad2d_place("fletcher_convert", "convert", 0.075, -0.7, 0.2, 0.4)
-fe3d:quad2d_place("fletcher_arrow", "arrow", 0.25, -0.7, 0.1, 0.175)
+fe3d:quad2d_place("fletcher_arrow", "arrows", 0.25, -0.7, 0.1, 0.175)
 fe3d:text2d_place("fletcher_worker", "text", workerText, 0.0, -0.8, 0.285, 0.1)
+fe3d:text2d_place("fletcher_tool", "text", toolText, 0.0, -0.8, 0.285, 0.1)
 fe3d:text2d_place("fletcher_storage", "text", storageText, 0.0, -0.8, 0.285, 0.1)
 fe3d:text2d_place("fletcher_iron", "text", "1", -0.3, -0.875, 0.02, 0.1)
 fe3d:text2d_place("fletcher_planks", "text", "1", -0.2, -0.875, 0.02, 0.1)

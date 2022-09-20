@@ -1,4 +1,4 @@
-21 26
+30 40
 META script_type_update
 META script_state_wait
 
@@ -20,7 +20,7 @@ IF _lastSelectedBuildingType IS "blacksmith" OR _totalUpdates IS 0
 IF _selectedBuildingType IS "blacksmith"
     DEF BOL hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
     IF hasWorker IS <true>
-        IF _totalTools NOT _maxTools
+        IF _totalTools LESS _maxTools
             fe3d:quad2d_set_visible("blacksmith_planks", <true>)
             fe3d:quad2d_set_visible("blacksmith_iron", <true>)
             fe3d:quad2d_set_visible("blacksmith_convert", <true>)

@@ -1,4 +1,4 @@
-27 17
+29 19
 META script_type_update
 META script_state_entry
 
@@ -28,11 +28,13 @@ EXECUTE up_ditcher
 EXECUTE up_feller
 EXECUTE up_fisher
 EXECUTE up_fletcher
+EXECUTE up_gatherer
 EXECUTE up_herbalist
 EXECUTE up_house
 EXECUTE up_lumberer
 EXECUTE up_mason
 EXECUTE up_miller
+EXECUTE up_miner
 EXECUTE up_priest
 EXECUTE up_roofer
 EXECUTE up_smelter

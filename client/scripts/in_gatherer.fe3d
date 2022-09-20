@@ -1,0 +1,24 @@
+18 79
+META script_type_initialize
+META script_state_wait
+
+/// Finals
+DEF GLB FIN INT _gathererInterval = 500
+DEF FIN STR workerText = "No worker available"
+
+/// Non-finals
+DEF GLB LST _gathererIds = {}
+DEF GLB LST _gathererTimers = {}
+
+/// GUI
+fe3d:quad2d_place("gatherer_worker", "worker", 0.0, -0.6, 0.1, 0.175)
+fe3d:quad2d_place("gatherer_time", "time", -0.25, -0.7, 0.1, 0.175)
+fe3d:quad2d_place("gatherer_convert", "convert", -0.075, -0.7, 0.2, 0.4)
+fe3d:quad2d_place("gatherer_vegetableseeds", "vegetableseeds", 0.1, -0.7, 0.1, 0.175)
+fe3d:quad2d_place("gatherer_grainseeds", "grainseeds", 0.2, -0.7, 0.1, 0.175)
+fe3d:quad2d_place("gatherer_mushrooms", "mushrooms", 0.3, -0.7, 0.1, 0.175)
+fe3d:text2d_place("gatherer_worker", "text", workerText, 0.0, -0.8, 0.285, 0.1)
+fe3d:text2d_place("gatherer_time", "text", "1", -0.25, -0.875, 0.02, 0.1)
+fe3d:text2d_place("gatherer_vegetableseeds", "text", "1", 0.1, -0.875, 0.02, 0.1)
+fe3d:text2d_place("gatherer_grainseeds", "text", "1", 0.2, -0.875, 0.02, 0.1)
+fe3d:text2d_place("gatherer_mushrooms", "text", "1", 0.3, -0.875, 0.02, 0.1)

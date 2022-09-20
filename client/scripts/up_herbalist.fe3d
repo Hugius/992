@@ -1,4 +1,4 @@
-21 29
+16 0
 META script_type_update
 META script_state_wait
 
@@ -20,7 +20,7 @@ IF _lastSelectedBuildingType IS "herbalist" OR _totalUpdates IS 0
 IF _selectedBuildingType IS "herbalist"
     DEF BOL hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
     IF hasWorker IS <true>
-        IF _totalMedicine NOT _maxMedicine
+        IF _totalMedicine LESS _maxMedicine
             fe3d:quad2d_set_visible("herbalist_water", <true>)
             fe3d:quad2d_set_visible("herbalist_mushrooms", <true>)
             fe3d:quad2d_set_visible("herbalist_convert", <true>)
