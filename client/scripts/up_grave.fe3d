@@ -1,0 +1,18 @@
+13 23
+META script_type_update
+META script_state_wait
+
+/// Hide GUI
+IF _lastSelectedBuildingType IS "grave" OR _totalUpdates IS 0
+    fe3d:quad2d_set_visible("grave_info", <false>)
+    fe3d:text2d_set_visible("grave_info", <false>)
+
+/// Show GUI
+IF _selectedBuildingType IS "grave"
+    fe3d:quad2d_set_visible("grave_info", <true>)
+    fe3d:text2d_set_visible("grave_info", <true>)
+
+/// Update graves logic
+DEF INT totalGraves = misc:list_size("_graveIds")
+IF totalGraves LESS _totalDeadWorkers
+    ADD _sicknessCatchChance 50

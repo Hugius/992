@@ -1,0 +1,13 @@
+11 65
+META script_type_initialize
+META script_state_wait
+
+/// Finals
+DEF FIN STR infoText = "Prevents sickness caused by the dead"
+
+/// Non-finals
+DEF GLB LST _graveIds = {}
+
+/// GUI
+fe3d:quad2d_place("grave_info", "info", 0.0, -0.6, 0.1, 0.175)
+fe3d:text2d_place("grave_info", "text", infoText, 0.0, -0.8, 0.72, 0.1)

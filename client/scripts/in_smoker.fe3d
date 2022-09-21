@@ -1,4 +1,4 @@
-16 67
+22 54
 META script_type_initialize
 META script_state_wait
 
@@ -20,7 +20,7 @@ fe3d:quad2d_place("smoker_smokedmeat", "smokedmeat", 0.25, -0.7, 0.1, 0.175)
 fe3d:quad2d_place("smoker_smokedfish", "smokedfish", 0.25, -0.7, 0.1, 0.175)
 fe3d:text2d_place("smoker_worker", "text", workerText, 0.0, -0.8, 0.285, 0.1)
 fe3d:text2d_place("smoker_storage", "text", storageText, 0.0, -0.8, 0.285, 0.1)
-fe3d:text2d_place("smoker_rawmeat", "text", "1", -0.3, -0.875, 0.02, 0.1)
-fe3d:text2d_place("smoker_rawfish", "text", "1", -0.2, -0.875, 0.02, 0.1)
+fe3d:text2d_place("smoker_rawmeat", "text", "1", -0.25, -0.875, 0.02, 0.1)
+fe3d:text2d_place("smoker_rawfish", "text", "1", -0.25, -0.875, 0.02, 0.1)
 fe3d:text2d_place("smoker_smokedmeat", "text", "1", 0.25, -0.875, 0.02, 0.1)
 fe3d:text2d_place("smoker_smokedfish", "text", "1", 0.25, -0.875, 0.02, 0.1)

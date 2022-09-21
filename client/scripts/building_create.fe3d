@@ -1,4 +1,4 @@
-59 26
+61 15
 META script_type_update
 META script_state_wait
 
@@ -60,11 +60,12 @@ ELIF _placedBuildingType IS "gatherer"
     PUSH _gathererIds _placedBuildingId
     PUSH _gathererTimers 0
 ELIF _placedBuildingType IS "grave"
-    PASS
+    PUSH _graveIds _placedBuildingId
 ELIF _placedBuildingType IS "herbalist"
     PUSH _herbalistIds _placedBuildingId
 ELIF _placedBuildingType IS "hewer"
-    PASS
+    PUSH _hewerIds _placedBuildingId
+    PUSH _hewerTimers 0
 ELIF _placedBuildingType IS "house"
     PUSH _houseIds _placedBuildingId
     PUSH _houseTimers 0
@@ -156,9 +157,10 @@ ELIF _placedBuildingType IS "tanner"
 ELIF _placedBuildingType IS "tavern"
     PUSH _tavernIds _placedBuildingId
 ELIF _placedBuildingType IS "waterer"
-    PASS
+    PUSH _watererIds _placedBuildingId
+    PUSH _watererTimers 0
 ELIF _placedBuildingType IS "weaver"
-    PASS
+    PUSH _weaverIds _placedBuildingId
 
 /// Reset variables
 ALT _placedBuildingId = ""

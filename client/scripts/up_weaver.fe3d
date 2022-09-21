@@ -1,0 +1,58 @@
+28 48
+META script_type_update
+META script_state_wait
+
+/// Hide GUI
+IF _lastSelectedBuildingType IS "weaver" OR _totalUpdates IS 0
+    fe3d:quad2d_set_visible("weaver_worker", <false>)
+    fe3d:quad2d_set_visible("weaver_storage", <false>)
+    fe3d:quad2d_set_visible("weaver_wool", <false>)
+    fe3d:quad2d_set_visible("weaver_leather", <false>)
+    fe3d:quad2d_set_visible("weaver_convert", <false>)
+    fe3d:quad2d_set_visible("weaver_clothes", <false>)
+    fe3d:text2d_set_visible("weaver_worker", <false>)
+    fe3d:text2d_set_visible("weaver_storage", <false>)
+    fe3d:text2d_set_visible("weaver_wool", <false>)
+    fe3d:text2d_set_visible("weaver_leather", <false>)
+    fe3d:text2d_set_visible("weaver_clothes", <false>)
+
+/// Show GUI
+IF _selectedBuildingType IS "weaver"
+    DEF BOL rmbClicked = fe3d:input_is_mouse_pressed("BUTTON_RIGHT")
+    IF rmbClicked IS <true>
+        IF _weaverSelectionMode IS 0
+            ALT _weaverSelectionMode = 1
+        ELSE
+            ALT _weaverSelectionMode = 0
+    DEF BOL hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
+    IF hasWorker IS <true>
+        IF _weaverSelectionMode IS 0 AND _totalSmokedMeat LESS _maxSmokedMeat
+            fe3d:quad2d_set_visible("weaver_wool", <true>)
+            fe3d:quad2d_set_visible("weaver_convert", <true>)
+            fe3d:quad2d_set_visible("weaver_clothes", <true>)
+            fe3d:text2d_set_visible("weaver_wool", <true>)
+            fe3d:text2d_set_visible("weaver_clothes", <true>)
+            IF _totalRawMeat MORE 0
+                ALT _cursorType = "HAND"
+                DEF BOL lmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
+                IF lmbClicked IS <true>
+                    SUB _totalWool 1
+                    ADD _totalClothes 1
+        ELIF _weaverSelectionMode IS 1 AND _totalSmokedMeat LESS _maxSmokedMeat
+            fe3d:quad2d_set_visible("weaver_leather", <true>)
+            fe3d:quad2d_set_visible("weaver_convert", <true>)
+            fe3d:quad2d_set_visible("weaver_clothes", <true>)
+            fe3d:text2d_set_visible("weaver_leather", <true>)
+            fe3d:text2d_set_visible("weaver_clothes", <true>)
+            IF _totalRawFish MORE 0
+                ALT _cursorType = "HAND"
+                DEF BOL lmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
+                IF lmbClicked IS <true>
+                    SUB _totalLeather 1
+                    ADD _totalClothes 1
+        ELSE
+            fe3d:quad2d_set_visible("weaver_storage", <true>)
+            fe3d:text2d_set_visible("weaver_storage", <true>)
+    ELSE
+        fe3d:quad2d_set_visible("weaver_worker", <true>)
+        fe3d:text2d_set_visible("weaver_worker", <true>)

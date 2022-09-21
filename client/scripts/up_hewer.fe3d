@@ -1,0 +1,60 @@
+55 31
+META script_type_update
+META script_state_wait
+
+/// Define reusable values
+DEF BOL hasWorker = <false>
+DEF BOL hasTool = <false>
+
+/// Hide GUI
+IF _lastSelectedBuildingType IS "hewer" OR _totalUpdates IS 0
+    fe3d:quad2d_set_visible("hewer_worker", <false>)
+    fe3d:quad2d_set_visible("hewer_tool", <false>)
+    fe3d:quad2d_set_visible("hewer_time", <false>)
+    fe3d:quad2d_set_visible("hewer_convert", <false>)
+    fe3d:quad2d_set_visible("hewer_stone", <false>)
+    fe3d:text2d_set_visible("hewer_worker", <false>)
+    fe3d:text2d_set_visible("hewer_tool", <false>)
+    fe3d:text2d_set_visible("hewer_time", <false>)
+    fe3d:text2d_set_visible("hewer_stone", <false>)
+
+/// Show GUI
+IF _selectedBuildingType IS "hewer"
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
+    ALT hasTool = misc:list_contains("_toolBuildingIds", _selectedBuildingId)
+    IF hasWorker IS <true>
+        IF hasTool IS <true>
+            fe3d:quad2d_set_visible("hewer_time", <true>)
+            fe3d:quad2d_set_visible("hewer_convert", <true>)
+            fe3d:quad2d_set_visible("hewer_stone", <true>)
+            fe3d:text2d_set_visible("hewer_time", <true>)
+            fe3d:text2d_set_visible("hewer_stone", <true>)
+        ELSE
+            fe3d:quad2d_set_visible("hewer_tool", <true>)
+            fe3d:text2d_set_visible("hewer_tool", <true>)
+            IF _totalTools MORE 0
+                ALT _cursorType = "HAND"
+                DEF BOL lmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
+                IF lmbClicked IS <true>
+                    SUB _totalTools 1
+                    PUSH _toolBuildingIds _selectedBuildingId
+    ELSE
+        fe3d:quad2d_set_visible("hewer_worker", <true>)
+        fe3d:text2d_set_visible("hewer_worker", <true>)
+
+/// Update hewers
+DEF INT index = 0
+DEF INT maxIndex = misc:list_size("_hewerIds")
+LOOP
+    IF index IS maxIndex
+        BREAK
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _hewerIds[index])
+    ALT hasTool = misc:list_contains("_toolBuildingIds", _hewerIds[index])
+    IF hasWorker IS <true> AND hasTool IS <true>
+        IF _hewerTimers[index] IS _hewerInterval
+            ALT _hewerTimers[index] = 0
+            IF _totalStone LESS _maxStone
+                ADD _totalStone 1
+        ELSE
+            ADD _hewerTimers[index] 1
+    ADD index 1

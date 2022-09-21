@@ -1,4 +1,4 @@
-20 19
+21 16
 META script_type_initialize
 META script_state_entry
 
@@ -20,7 +20,9 @@ EXECUTE in_feller
 EXECUTE in_fisher
 EXECUTE in_fletcher
 EXECUTE in_gatherer
+EXECUTE in_grave
 EXECUTE in_herbalist
+EXECUTE in_hewer
 EXECUTE in_house
 EXECUTE in_lumberer
 EXECUTE in_mason
@@ -33,6 +35,8 @@ EXECUTE in_smoker
 EXECUTE in_storage
 EXECUTE in_tanner
 EXECUTE in_tavern
+EXECUTE in_waterer
+EXECUTE in_weaver
 
 /// Miscellaneous stuff
 EXECUTE hud_init

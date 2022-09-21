@@ -1,0 +1,24 @@
+21 54
+META script_type_initialize
+META script_state_wait
+
+/// Finals
+DEF FIN STR workerText = "No worker available"
+DEF FIN STR storageText = "No space in storage"
+
+/// Non-finals
+DEF GLB LST _weaverIds = {}
+DEF GLB INT _weaverSelectionMode = 0
+
+/// GUI
+fe3d:quad2d_place("weaver_worker", "worker", 0.0, -0.6, 0.1, 0.175)
+fe3d:quad2d_place("weaver_storage", "storage", 0.0, -0.6, 0.1, 0.175)
+fe3d:quad2d_place("weaver_wool", "wool", -0.25, -0.7, 0.1, 0.175)
+fe3d:quad2d_place("weaver_leather", "leather", -0.25, -0.7, 0.1, 0.175)
+fe3d:quad2d_place("weaver_convert", "convert", 0.0, -0.7, 0.2, 0.4)
+fe3d:quad2d_place("weaver_clothes", "clothes", 0.25, -0.7, 0.1, 0.175)
+fe3d:text2d_place("weaver_worker", "text", workerText, 0.0, -0.8, 0.285, 0.1)
+fe3d:text2d_place("weaver_storage", "text", storageText, 0.0, -0.8, 0.285, 0.1)
+fe3d:text2d_place("weaver_wool", "text", "1", -0.25, -0.875, 0.02, 0.1)
+fe3d:text2d_place("weaver_leather", "text", "1", -0.25, -0.875, 0.02, 0.1)
+fe3d:text2d_place("weaver_clothes", "text", "1", 0.25, -0.875, 0.02, 0.1)
