@@ -1,14 +1,15 @@
-0 0
+5 37
 META script_type_initialize
 META script_state_wait
 
 /// Finals
 DEF FIN STR workerText = "No worker available"
-DEF FIN STR toolText = "No tool equipped"
+DEF FIN STR toolText = "Equip 1 tool?"
 DEF FIN STR storageText = "No space in storage"
 
 /// Non-finals
 DEF GLB LST _bowyerIds = {}
+DEF GLB LST _bowBuildingIds = {}
 
 /// GUI
 fe3d:quad2d_place("bowyer_worker", "worker", 0.0, -0.6, 0.1, 0.175)
@@ -17,10 +18,10 @@ fe3d:quad2d_place("bowyer_storage", "storage", 0.0, -0.6, 0.1, 0.175)
 fe3d:quad2d_place("bowyer_planks", "planks", -0.3, -0.7, 0.1, 0.175)
 fe3d:quad2d_place("bowyer_wool", "wool", -0.2, -0.7, 0.1, 0.175)
 fe3d:quad2d_place("bowyer_convert", "convert", 0.0, -0.7, 0.2, 0.4)
-fe3d:quad2d_place("bowyer_bow", "bows", 0.25, -0.7, 0.1, 0.175)
+fe3d:quad2d_place("bowyer_bows", "bows", 0.25, -0.7, 0.1, 0.175)
 fe3d:text2d_place("bowyer_worker", "text", workerText, 0.0, -0.8, 0.285, 0.1)
-fe3d:text2d_place("bowyer_tool", "text", toolText, 0.0, -0.8, 0.285, 0.1)
+fe3d:text2d_place("bowyer_tool", "text", toolText, 0.0, -0.8, 0.195, 0.1)
 fe3d:text2d_place("bowyer_storage", "text", storageText, 0.0, -0.8, 0.285, 0.1)
 fe3d:text2d_place("bowyer_planks", "text", "1", -0.3, -0.875, 0.02, 0.1)
 fe3d:text2d_place("bowyer_wool", "text", "1", -0.2, -0.875, 0.02, 0.1)
-fe3d:text2d_place("bowyer_bow", "text", "1", 0.25, -0.875, 0.02, 0.1)
+fe3d:text2d_place("bowyer_bows", "text", "1", 0.25, -0.875, 0.02, 0.1)

@@ -1,4 +1,4 @@
-61 15
+95 16
 META script_type_update
 META script_state_wait
 
@@ -93,7 +93,8 @@ ELIF _placedBuildingType IS "house"
         ALT _eventMessageContent = eventMessage
         ALT _eventMessageOpacity = 1.0
 ELIF _placedBuildingType IS "hunter"
-    PASS
+    PUSH _hunterIds _placedBuildingId
+    PUSH _hunterTimers 0
 ELIF _placedBuildingType IS "lumberer"
     PUSH _lumbererIds _placedBuildingId
 ELIF _placedBuildingType IS "mason"

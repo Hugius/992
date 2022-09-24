@@ -1,0 +1,26 @@
+21 64
+META script_type_initialize
+META script_state_wait
+
+/// Finals
+DEF GLB FIN INT _hunterInterval = 500
+DEF FIN STR workerText = "No worker available"
+DEF FIN STR bowText = "Equip 1 bow?"
+DEF FIN STR arrowsText = "Equip 5 arrows?"
+
+/// Non-finals
+DEF GLB LST _hunterIds = {}
+DEF GLB LST _hunterTimers = {}
+
+/// GUI
+fe3d:quad2d_place("hunter_worker", "worker", 0.0, -0.6, 0.1, 0.175)
+fe3d:quad2d_place("hunter_bow", "bows", 0.0, -0.6, 0.1, 0.175)
+fe3d:quad2d_place("hunter_arrows", "arrows", 0.0, -0.6, 0.1, 0.175)
+fe3d:quad2d_place("hunter_time", "time", -0.25, -0.7, 0.1, 0.175)
+fe3d:quad2d_place("hunter_convert", "convert", 0.0, -0.7, 0.2, 0.4)
+fe3d:quad2d_place("hunter_rawmeat", "rawmeat", 0.25, -0.7, 0.1, 0.175)
+fe3d:text2d_place("hunter_worker", "text", workerText, 0.0, -0.8, 0.285, 0.1)
+fe3d:text2d_place("hunter_bow", "text", bowText, 0.0, -0.8, 0.18, 0.1)
+fe3d:text2d_place("hunter_arrows", "text", arrowsText, 0.0, -0.8, 0.225, 0.1)
+fe3d:text2d_place("hunter_time", "text", "1", -0.25, -0.875, 0.02, 0.1)
+fe3d:text2d_place("hunter_rawmeat", "text", "1", 0.25, -0.875, 0.02, 0.1)

@@ -4,7 +4,7 @@ META script_state_wait
 
 /// Finals
 DEF FIN STR workerText = "No worker available"
-DEF FIN STR toolText = "No tool equipped"
+DEF FIN STR toolText = "Equip 1 tool?"
 DEF FIN STR infoText = "Constructs buildings using stone/clay"
 
 /// Non-finals
@@ -15,5 +15,5 @@ fe3d:quad2d_place("mason_worker", "worker", 0.0, -0.6, 0.1, 0.175)
 fe3d:quad2d_place("mason_tool", "tools", 0.0, -0.6, 0.1, 0.175)
 fe3d:quad2d_place("mason_info", "info", 0.0, -0.6, 0.1, 0.175)
 fe3d:text2d_place("mason_worker", "text", workerText, 0.0, -0.8, 0.285, 0.1)
-fe3d:text2d_place("mason_tool", "text", toolText, 0.0, -0.8, 0.285, 0.1)
+fe3d:text2d_place("mason_tool", "text", toolText, 0.0, -0.8, 0.195, 0.1)
 fe3d:text2d_place("mason_info", "text", infoText, 0.0, -0.8, 0.555, 0.1)

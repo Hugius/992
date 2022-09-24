@@ -1,10 +1,10 @@
-6 4
+10 0
 META script_type_initialize
 META script_state_wait
 
 /// Finals
 DEF FIN STR workerText = "No worker available"
-DEF FIN STR toolText = "No tool equipped"
+DEF FIN STR toolText = "Equip 1 tool?"
 DEF FIN STR infoText = "Decreases the chance of sickness by 5%"
 
 /// Non-finals

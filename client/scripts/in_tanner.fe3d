@@ -1,10 +1,10 @@
-0 0
+7 0
 META script_type_initialize
 META script_state_wait
 
 /// Finals
 DEF FIN STR workerText = "No worker available"
-DEF FIN STR toolText = "No tool equipped"
+DEF FIN STR toolText = "Equip 1 tool?"
 DEF FIN STR storageText = "No space in storage"
 
 /// Non-finals
@@ -18,7 +18,7 @@ fe3d:quad2d_place("tanner_hides", "hides", -0.25, -0.7, 0.1, 0.175)
 fe3d:quad2d_place("tanner_convert", "convert", 0.0, -0.7, 0.2, 0.4)
 fe3d:quad2d_place("tanner_leather", "leather", 0.25, -0.7, 0.1, 0.175)
 fe3d:text2d_place("tanner_worker", "text", workerText, 0.0, -0.8, 0.285, 0.1)
-fe3d:text2d_place("tanner_tool", "text", toolText, 0.0, -0.8, 0.285, 0.1)
+fe3d:text2d_place("tanner_tool", "text", toolText, 0.0, -0.8, 0.195, 0.1)
 fe3d:text2d_place("tanner_storage", "text", storageText, 0.0, -0.8, 0.285, 0.1)
 fe3d:text2d_place("tanner_hides", "text", "1", -0.25, -0.875, 0.02, 0.1)
 fe3d:text2d_place("tanner_leather", "text", "1", 0.25, -0.875, 0.02, 0.1)
