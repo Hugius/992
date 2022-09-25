@@ -1,4 +1,4 @@
-17 0
+104 50
 META script_type_update
 META script_state_wait
 
@@ -101,10 +101,19 @@ IF workerIsDead IS <false>
         ALT _eventMessageContent = eventMessage
         ALT _eventMessageOpacity = 1.0
 
+/// Update dying from hypothermia
+IF workerIsDead IS <false>
+    IF _workerClothes[_workerDeathIndex] IS <false>
+        ALT workerIsDead = <true>
+        ALT eventMessage = misc:string_concat(workerName, " died of hypothermia")
+        ALT _eventMessageContent = eventMessage
+        ALT _eventMessageOpacity = 1.0
+
 /// Handle dead worker
 IF workerIsDead IS <true>
     PULL _workerNames _workerDeathIndex
     PULL _workerGenders _workerDeathIndex
+    PULL _workerClothes _workerDeathIndex
     PULL _workerHealths _workerDeathIndex
     PULL _workerJobBuildingIds _workerDeathIndex
     PULL _workerHouseBuildingIds _workerDeathIndex

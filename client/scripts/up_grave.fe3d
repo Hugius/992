@@ -1,4 +1,4 @@
-13 23
+18 21
 META script_type_update
 META script_state_wait
 
@@ -15,4 +15,7 @@ IF _selectedBuildingType IS "grave"
 /// Update graves logic
 DEF INT totalGraves = misc:list_size("_graveIds")
 IF totalGraves LESS _totalDeadWorkers
-    ADD _sicknessCatchChance 50
+    DEF INT difference = _totalDeadWorkers
+    SUB difference totalGraves
+    MUL difference 10
+    ADD _sicknessCatchChance difference

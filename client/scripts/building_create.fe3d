@@ -1,4 +1,4 @@
-95 16
+24 0
 META script_type_update
 META script_state_wait
 
@@ -7,6 +7,7 @@ IF _placedBuildingId IS ""
     EXIT
 
 /// Define reusable values
+DEF STR eventMessage = ""
 DEF INT index = 0
 DEF INT maxIndex = 0
 
@@ -18,7 +19,7 @@ IF _placedBuildingType NOT "grave"
                 ALT index = misc:list_index("_workerJobBuildingIds", "")
                 IF index NOT -1
                     ALT _workerJobBuildingIds[index] = _placedBuildingId
-                    DEF STR eventMessage = misc:string_concat(_workerNames[index], " became ")
+                    ALT eventMessage = misc:string_concat(_workerNames[index], " became ")
                     ALT eventMessage = misc:string_concat(eventMessage, _placedBuildingType)
                     ALT _eventMessageContent = eventMessage
                     ALT _eventMessageOpacity = 1.0
@@ -88,7 +89,7 @@ ELIF _placedBuildingType IS "house"
     IF femaleIndex NOT -1
         ALT _workerHouseBuildingIds[femaleIndex] = _placedBuildingId
     IF maleIndex NOT -1 AND femaleIndex NOT -1
-        DEF STR eventMessage = misc:string_concat(_workerNames[maleIndex], " married ")
+        ALT eventMessage = misc:string_concat(_workerNames[maleIndex], " married ")
         ALT eventMessage = misc:string_concat(eventMessage, _workerNames[femaleIndex])
         ALT _eventMessageContent = eventMessage
         ALT _eventMessageOpacity = 1.0

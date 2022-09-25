@@ -1,4 +1,4 @@
-7 0
+18 39
 META script_type_initialize
 META script_state_wait
 
@@ -10,6 +10,7 @@ DEF GLB FIN INT _workersDeathTimespan = 14400
 /// Non-finals
 DEF GLB LST _workerNames = {}
 DEF GLB LST _workerGenders = {}
+DEF GLB LST _workerClothes = {}
 DEF GLB LST _workerHealths = {}
 DEF GLB LST _workerJobBuildingIds = {}
 DEF GLB LST _workerHouseBuildingIds = {}

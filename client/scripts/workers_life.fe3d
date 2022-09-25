@@ -1,4 +1,4 @@
-76 4
+77 15
 META script_type_update
 META script_state_wait
 
@@ -42,6 +42,16 @@ IF _creatingDefaultWorkers IS <false>
     ALT _eventMessageContent = eventMessage
     ALT _eventMessageOpacity = 1.0
 
+/// Give clothes to worker
+IF _creatingDefaultWorkers IS <true>
+    PUSH _workerClothes <true>
+ELSE
+    IF _totalClothes MORE 0
+        SUB _totalClothes 1
+        PUSH _workerClothes <true>
+    ELSE
+        PUSH _workerClothes <false>
+
 /// Assign worker to job building
 DEF BOL hasWorker = <false>
 ALT index = 0
@@ -66,7 +76,7 @@ LOOP
     IF hasWorker IS <false>
         PUSH _workerJobBuildingIds _placedBuildingIds[index]
         IF _creatingDefaultWorkers IS <false>
-            DEF STR eventMessage = misc:string_concat(_workerNames[index], " became ")
+            ALT eventMessage = misc:string_concat(_workerNames[index], " became ")
             ALT eventMessage = misc:string_concat(eventMessage, _placedBuildingTypes[index])
             ALT _eventMessageContent = eventMessage
             ALT _eventMessageOpacity = 1.0
