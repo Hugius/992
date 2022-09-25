@@ -1,4 +1,4 @@
-114 4
+17 0
 META script_type_update
 META script_state_wait
 
@@ -10,13 +10,15 @@ ELSE
     EXIT
 
 /// Define reusable values
+DEF FIN STR workerName = _workerNames[_workerDeathIndex]
+DEF FIN INT randomPercentage = math:random_integer(1, 100)
+DEF FIN INT priestCount = misc:list_size("_priestIds")
+DEF FIN INT tavernCount = misc:list_size("_tavernIds")
 DEF STR eventMessage = ""
-DEF STR workerName = _workerNames[_workerDeathIndex]
-DEF INT randomPercentage = math:random_integer(1, 100)
 DEF BOL workerIsDead = <false>
 
 /// Update dying from childbirth
-IF workerIsDead IS <false>
+IF workerIsDead IS <false> AND priestCount IS 0
     DEF INT houseIndex = misc:list_index("_houseIdsThatGaveBirth", _workerHouseBuildingIds[_workerDeathIndex])
     IF houseIndex NOT -1
         PULL _houseIdsThatGaveBirth houseIndex
@@ -29,28 +31,26 @@ IF workerIsDead IS <false>
             ALT _eventMessageOpacity = 1.0
 
 /// Update dying from suicide
-IF workerIsDead IS <false>
-    DEF INT priestCount = misc:list_size("_priestIds")
-    DEF INT tavernCount = misc:list_size("_tavernIds")
-    IF priestCount MORE 0 AND tavernCount MORE 0
-        DEF INT suicideChance = 100
-        SUB suicideChance _suicideDeathChance
-        IF randomPercentage MORE suicideChance
-            ALT workerIsDead = <true>
-            ALT eventMessage = misc:string_concat(workerName, " died of suicide")
-            ALT _eventMessageContent = eventMessage
-            ALT _eventMessageOpacity = 1.0
+IF workerIsDead IS <false> AND priestCount IS 0 AND tavernCount IS 0
+    DEF INT suicideChance = 100
+    SUB suicideChance _suicideDeathChance
+    IF randomPercentage MORE suicideChance
+        ALT workerIsDead = <true>
+        ALT eventMessage = misc:string_concat(workerName, " died of suicide")
+        ALT _eventMessageContent = eventMessage
+        ALT _eventMessageOpacity = 1.0
 
 /// Update dying from sickness
 IF workerIsDead IS <false>
     IF _workerHealths[_workerDeathIndex] IS <true>
-        DEF INT sicknessChance = 100
-        SUB sicknessChance _sicknessCatchChance
-        IF randomPercentage MORE sicknessChance
-            ALT _workerHealths[_workerDeathIndex] = <false>
-            ALT eventMessage = misc:string_concat(workerName, " caught the sickness")
-            ALT _eventMessageContent = eventMessage
-            ALT _eventMessageOpacity = 1.0
+        IF priestCount IS 0
+            DEF INT sicknessChance = 100
+            SUB sicknessChance _sicknessCatchChance
+            IF randomPercentage MORE sicknessChance
+                ALT _workerHealths[_workerDeathIndex] = <false>
+                ALT eventMessage = misc:string_concat(workerName, " caught the sickness")
+                ALT _eventMessageContent = eventMessage
+                ALT _eventMessageOpacity = 1.0
     ELSE
         IF _totalMedicine MORE 0
             SUB _totalMedicine 1

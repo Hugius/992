@@ -1,4 +1,4 @@
-42 29
+75 25
 META script_type_initialize
 META script_state_wait
 
@@ -74,9 +74,9 @@ DEF GLB INT _maxFeathers = 100
 DEF GLB INT _maxMushrooms = 100
 DEF GLB INT _maxGrainSeeds = 100
 DEF GLB INT _maxVegetableSeeds = 100
-DEF GLB INT _maxTools = 10
+DEF GLB INT _maxTools = 5
 DEF GLB INT _maxBows = 5
-DEF GLB INT _maxArrows = 50
+DEF GLB INT _maxArrows = 25
 
 /// GUI
 fe3d:quad2d_place("storage_info", "info", 0.0, -0.6, 0.1, 0.175)

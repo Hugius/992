@@ -1,12 +1,12 @@
-7 4
+8 0
 META script_type_initialize
 META script_state_wait
 
 /// Finals
 DEF FIN STR workerText = "No worker available"
-DEF FIN STR infoText1 = "Prevents people from committing suicide"
-DEF FIN STR infoText2 = "Prevents people from getting the sickness"
-DEF FIN STR infoText3 = "Halves the crop harvest age"
+DEF FIN STR infoText1 = "Prevents workers from catching the sickness"
+DEF FIN STR infoText2 = "Prevents workers from committing suicide"
+DEF FIN STR infoText3 = "Prevents workers from dying of childbirth"
 
 /// Non-finals
 DEF GLB LST _priestIds = {}
@@ -15,6 +15,6 @@ DEF GLB LST _priestIds = {}
 fe3d:quad2d_place("priest_worker", "worker", 0.0, -0.6, 0.1, 0.175)
 fe3d:quad2d_place("priest_info", "info", 0.0, -0.6, 0.1, 0.175)
 fe3d:text2d_place("priest_worker", "text", workerText, 0.0, -0.8, 0.285, 0.1)
-fe3d:text2d_place("priest_info1", "text", infoText1, 0.0, -0.725, 0.6, 0.1)
-fe3d:text2d_place("priest_info2", "text", infoText2, 0.0, -0.8, 0.63, 0.1)
-fe3d:text2d_place("priest_info3", "text", infoText3, 0.0, -0.875, 0.405, 0.1)
+fe3d:text2d_place("priest_info1", "text", infoText1, 0.0, -0.725, 0.645, 0.1)
+fe3d:text2d_place("priest_info2", "text", infoText2, 0.0, -0.8, 0.6, 0.1)
+fe3d:text2d_place("priest_info3", "text", infoText3, 0.0, -0.875, 0.615, 0.1)
