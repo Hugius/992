@@ -1,4 +1,4 @@
-104 50
+64 4
 META script_type_update
 META script_state_wait
 
@@ -63,9 +63,7 @@ IF workerIsDead IS <false>
 
 /// Update dying from dehydration
 IF workerIsDead IS <false>
-    IF _totalWater MORE 0
-        SUB _totalWater 1
-    ELIF _totalAle MORE 0
+    IF _totalAle MORE 0
         SUB _totalAle 1
     ELIF _totalMilk MORE 0
         SUB _totalMilk 1

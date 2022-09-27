@@ -1,4 +1,4 @@
-38 11
+18 16
 META script_type_update
 META script_state_wait
 
@@ -8,22 +8,16 @@ DEF BOL hasWorker = <false>
 /// Hide GUI
 IF _lastSelectedBuildingType IS "waterer" OR _totalUpdates IS 0
     fe3d:quad2d_set_visible("waterer_worker", <false>)
-    fe3d:quad2d_set_visible("waterer_time", <false>)
-    fe3d:quad2d_set_visible("waterer_convert", <false>)
-    fe3d:quad2d_set_visible("waterer_water", <false>)
+    fe3d:quad2d_set_visible("waterer_info", <false>)
     fe3d:text2d_set_visible("waterer_worker", <false>)
-    fe3d:text2d_set_visible("waterer_time", <false>)
-    fe3d:text2d_set_visible("waterer_water", <false>)
+    fe3d:text2d_set_visible("waterer_info", <false>)
 
 /// Show GUI
 IF _selectedBuildingType IS "waterer"
     ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
     IF hasWorker IS <true>
-        fe3d:quad2d_set_visible("waterer_time", <true>)
-        fe3d:quad2d_set_visible("waterer_convert", <true>)
-        fe3d:quad2d_set_visible("waterer_water", <true>)
-        fe3d:text2d_set_visible("waterer_time", <true>)
-        fe3d:text2d_set_visible("waterer_water", <true>)
+        fe3d:quad2d_set_visible("waterer_info", <true>)
+        fe3d:text2d_set_visible("waterer_info", <true>)
     ELSE
         fe3d:quad2d_set_visible("waterer_worker", <true>)
         fe3d:text2d_set_visible("waterer_worker", <true>)
@@ -38,12 +32,6 @@ LOOP
     ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _watererIds[index])
     IF hasWorker IS <true>
         ALT mustDecreaseSicknessChance = <true>
-        IF _watererTimers[index] IS _watererInterval
-            ALT _watererTimers[index] = 0
-            IF _totalWater LESS _maxWater
-                ADD _totalWater 1
-        ELSE
-            ADD _watererTimers[index] 1
     ADD index 1
 
 IF mustDecreaseSicknessChance IS <true>

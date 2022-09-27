@@ -1,4 +1,4 @@
-24 0
+160 38
 META script_type_update
 META script_state_wait
 
@@ -160,7 +160,6 @@ ELIF _placedBuildingType IS "tavern"
     PUSH _tavernIds _placedBuildingId
 ELIF _placedBuildingType IS "waterer"
     PUSH _watererIds _placedBuildingId
-    PUSH _watererTimers 0
 ELIF _placedBuildingType IS "weaver"
     PUSH _weaverIds _placedBuildingId
 

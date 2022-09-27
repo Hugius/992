@@ -1,4 +1,4 @@
-122 45
+93 58
 META script_type_update
 META script_state_wait
 
@@ -39,7 +39,6 @@ fe3d:text2d_set_content("total_grain", totalGrainText)
 fe3d:text2d_set_content("total_flour", totalFlourText)
 fe3d:text2d_set_content("total_planks", totalPlanksText)
 fe3d:text2d_set_content("total_firewood", totalFirewoodText)
-fe3d:text2d_set_content("total_manure", totalManureText)
 fe3d:text2d_set_content("total_ore", totalOreText)
 fe3d:text2d_set_content("total_iron", totalIronText)
 fe3d:text2d_set_content("total_hides", totalHidesText)
@@ -64,7 +63,6 @@ fe3d:text2d_set_color("total_grain", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_flour", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_planks", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_firewood", 0.0, 0.0, 0.0)
-fe3d:text2d_set_color("total_manure", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_ore", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_iron", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_hides", 0.0, 0.0, 0.0)
@@ -95,8 +93,6 @@ IF _totalPlanks IS _maxPlanks
     fe3d:text2d_set_color("total_planks", 0.5, 0.0, 0.0)
 IF _totalFirewood IS _maxFirewood
     fe3d:text2d_set_color("total_firewood", 0.5, 0.0, 0.0)
-IF _totalManure IS _maxManure
-    fe3d:text2d_set_color("total_manure", 0.5, 0.0, 0.0)
 IF _totalOre IS _maxOre
     fe3d:text2d_set_color("total_ore", 0.5, 0.0, 0.0)
 IF _totalIron IS _maxIron

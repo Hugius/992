@@ -1,4 +1,4 @@
-16 18
+16 21
 META script_type_initialize
 META script_state_entry
 
@@ -35,7 +35,7 @@ EXECUTE in_miner
 ///EXECUTE in_orchardist
 EXECUTE in_priest
 EXECUTE in_roofer
-///EXECUTE in_scavenger
+EXECUTE in_scavenger
 EXECUTE in_smelter
 EXECUTE in_smoker
 EXECUTE in_storage
