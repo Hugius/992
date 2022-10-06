@@ -1,4 +1,4 @@
-57 11
+44 20
 META script_type_update
 META script_state_wait
 
@@ -43,6 +43,9 @@ IF _selectedBuildingType IS "feller"
         fe3d:text2d_set_visible("feller_worker", <true>)
 
 /// Update fellers
+DEF LST treeIds = {}
+DEF INT treeCount = 0
+DEF INT treeIndex = 0
 DEF INT index = 0
 DEF INT maxIndex = misc:list_size("_fellerIds")
 LOOP
@@ -54,6 +57,11 @@ LOOP
         IF _fellerTimers[index] IS _fellerInterval
             ALT _fellerTimers[index] = 0
             IF _totalLumber LESS _maxLumber
+                ALT treeIds = fe3d:model_find_ids("tree")
+                ALT treeCount = misc:list_size("treeIds")
+                ALT treeIndex = math:random_integer(1, treeCount)
+                SUB treeIndex 1
+                fe3d:model_delete(treeIds[treeIndex])
                 ADD _totalLumber 1
         ELSE
             ADD _fellerTimers[index] 1

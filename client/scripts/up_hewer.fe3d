@@ -1,4 +1,4 @@
-55 31
+0 0
 META script_type_update
 META script_state_wait
 
@@ -43,6 +43,9 @@ IF _selectedBuildingType IS "hewer"
         fe3d:text2d_set_visible("hewer_worker", <true>)
 
 /// Update hewers
+DEF LST stoneIds = {}
+DEF INT stoneCount = 0
+DEF INT stoneIndex = 0
 DEF INT index = 0
 DEF INT maxIndex = misc:list_size("_hewerIds")
 LOOP
@@ -54,6 +57,11 @@ LOOP
         IF _hewerTimers[index] IS _hewerInterval
             ALT _hewerTimers[index] = 0
             IF _totalStone LESS _maxStone
+                ALT stoneIds = fe3d:model_find_ids("stone")
+                ALT stoneCount = misc:list_size("stoneIds")
+                ALT stoneIndex = math:random_integer(1, stoneCount)
+                SUB stoneIndex 1
+                fe3d:model_delete(stoneIds[stoneIndex])
                 ADD _totalStone 1
         ELSE
             ADD _hewerTimers[index] 1

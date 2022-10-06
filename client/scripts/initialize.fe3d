@@ -1,6 +1,9 @@
-16 21
+2 0
 META script_type_initialize
 META script_state_entry
+
+DEF LST kip = {}
+ALT kip = {1,2,3}
 
 /// General stuff
 EXECUTE camera_init

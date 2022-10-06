@@ -81,15 +81,6 @@ AABB @smithy model@@smithy@aabb -0.07 0 0 5.55 4.6 6.25
 MODEL @smokehouse assets\mesh\smokehouse.obj 0.8 0.8 0.8 ? 0 2 1 1 1
 PART @smokehouse ? assets\image\model\diffuse_map\smokehouse.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.4 1 1 1 1 0 0 1 1 1
 AABB @smokehouse model@@smokehouse@aabb 0 0 0 4.25 3.4 4.25
-MODEL @stone1 assets\mesh\stone1.obj 1.5 1.75 1.5 @lod 60 2 1 1 1
-PART @stone1 ? assets\image\model\diffuse_map\stone1.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
-AABB @stone1 model@@stone1@aabb -0.1 0 0.05 2.6 1.4 2.6
-MODEL @stone2 assets\mesh\stone2.obj 0.4 0.4 0.4 @lod 60 2 1 1 1
-PART @stone2 ? assets\image\model\diffuse_map\stone2.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
-AABB @stone2 model@@stone2@aabb -0.3 0 0.05 6.25 5.2 7
-MODEL @stone3 assets\mesh\stone3.obj 1.75 1.5 1.75 @lod 60 2 1 1 1
-PART @stone3 ? assets\image\model\diffuse_map\stone3.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
-AABB @stone3 model@@stone3@aabb -0.02 0 -0.08 1.25 0.95 1.4
 MODEL @storage assets\mesh\storage.obj 0.8 0.8 0.8 ? 0 2 1 1 1
 PART @storage walls assets\image\model\diffuse_map\storage_walls.tga ? ? ? ? assets\image\model\normal_map\storage_walls.tga 0 0 1 0 0 2 10 0.5 0.5 1 1 1 1 4 0 0 1 1 1
 PART @storage roof assets\image\model\diffuse_map\storage_roof.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.75 1 1 1 1 0 0 1 1 1
@@ -109,7 +100,7 @@ MODEL @tree2 assets\mesh\tree2.obj 1.75 1.75 1.75 @lod 60 2 1 1 1
 PART @tree2 leaves assets\image\model\diffuse_map\tree2_leaves.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1.25 1 1 1 1 0 0 1 1 0.1
 PART @tree2 trunk assets\image\model\diffuse_map\tree2_trunk.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
 AABB @tree2 model@@tree2@aabb 0 0 0 1.75 4.5 1.75
-MODEL @tree3 assets\mesh\tree3.obj 4 4 4 @lod 60 2 1 1 1
+MODEL @tree3 assets\mesh\tree3.obj 3 4 3 @lod 60 2 1 1 1
 PART @tree3 trunk assets\image\model\diffuse_map\tree3_trunk.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.1 1 1 1 2 0 0 1 1 1
 PART @tree3 leaves assets\image\model\diffuse_map\tree3_leaves.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1.5 1 1 1 1 0 0 1 1 0.1
 AABB @tree3 model@@tree3@aabb -0.05 0 -0.08 1.65 1.7 1.55
@@ -146,3 +137,12 @@ PART @workshop3 frame assets\image\model\diffuse_map\workshop3_frame.tga ? ? ? ?
 PART @workshop3 wall3 assets\image\model\diffuse_map\workshop3_wall3.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall3.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 AABB @workshop3 model@@workshop3@aabb1 1.6 0 0 7 7.6 12.15
 AABB @workshop3 model@@workshop3@aabb2 0.05 0 -3.2 10.1 7.6 5.5
+MODEL @stone1 assets\mesh\stone1.obj 1.5 1.75 1.5 @lod 60 2 1 1 1
+PART @stone1 ? assets\image\model\diffuse_map\stone1.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
+AABB @stone1 model@@stone1@aabb -0.1 0 0.05 2.6 1.4 2.6
+MODEL @stone2 assets\mesh\stone2.obj 0.4 0.4 0.4 @lod 60 2 1 1 1
+PART @stone2 ? assets\image\model\diffuse_map\stone2.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
+AABB @stone2 model@@stone2@aabb -0.3 0 0.05 6.25 5.2 7
+MODEL @stone3 assets\mesh\stone3.obj 1.75 1.5 1.75 @lod 60 2 1 1 1
+PART @stone3 ? assets\image\model\diffuse_map\stone3.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
+AABB @stone3 model@@stone3@aabb -0.02 0 -0.08 1.25 0.95 1.4

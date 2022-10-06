@@ -1,4 +1,4 @@
-160 38
+119 38
 META script_type_update
 META script_state_wait
 
@@ -119,7 +119,6 @@ ELIF _placedBuildingType IS "smoker"
     PUSH _smokerIds _placedBuildingId
 ELIF _placedBuildingType IS "storage"
     PUSH _storageIds _placedBuildingId
-    ADD _maxWater 10
     ADD _maxAle 10
     ADD _maxMilk 10
     ADD _maxSmokedMeat 10
