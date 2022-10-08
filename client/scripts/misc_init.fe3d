@@ -1,11 +1,11 @@
-8 0
+6 38
 META script_type_initialize
 META script_state_wait
 
 /// Non-finals
-DEF GLB STR _eventMessageContent = ""
+DEF GLB LST _eventMessageContents = {}
 DEF GLB STR _cursorType = "ARROW"
-DEF GLB DEC _eventMessageOpacity = 1.0
+DEF GLB DEC _eventMessageOpacity = 0.0
 DEF GLB INT _totalUpdates = 0
 
 /// GUI

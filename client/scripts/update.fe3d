@@ -1,4 +1,4 @@
-45 0
+14 21
 META script_type_update
 META script_state_entry
 
@@ -13,6 +13,7 @@ EXECUTE building_misc
 EXECUTE building_place
 EXECUTE building_create
 EXECUTE building_select
+EXECUTE workers_birth
 EXECUTE workers_life
 EXECUTE workers_death
 

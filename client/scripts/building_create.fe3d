@@ -1,4 +1,4 @@
-119 38
+90 47
 META script_type_update
 META script_state_wait
 
@@ -21,8 +21,7 @@ IF _placedBuildingType NOT "grave"
                     ALT _workerJobBuildingIds[index] = _placedBuildingId
                     ALT eventMessage = misc:string_concat(_workerNames[index], " became ")
                     ALT eventMessage = misc:string_concat(eventMessage, _placedBuildingType)
-                    ALT _eventMessageContent = eventMessage
-                    ALT _eventMessageOpacity = 1.0
+                    PUSH _eventMessageContents eventMessage
 
 /// Determine building type
 IF _placedBuildingType IS "apiarist"
@@ -70,7 +69,6 @@ ELIF _placedBuildingType IS "hewer"
 ELIF _placedBuildingType IS "house"
     PUSH _houseIds _placedBuildingId
     PUSH _houseTimers 0
-    PUSH _houseBirths 0
     DEF INT maleIndex = -1
     DEF INT femaleIndex = -1
     ALT index = 0
@@ -91,8 +89,7 @@ ELIF _placedBuildingType IS "house"
     IF maleIndex NOT -1 AND femaleIndex NOT -1
         ALT eventMessage = misc:string_concat(_workerNames[maleIndex], " married ")
         ALT eventMessage = misc:string_concat(eventMessage, _workerNames[femaleIndex])
-        ALT _eventMessageContent = eventMessage
-        ALT _eventMessageOpacity = 1.0
+        PUSH _eventMessageContents eventMessage
 ELIF _placedBuildingType IS "hunter"
     PUSH _hunterIds _placedBuildingId
     PUSH _hunterTimers 0

@@ -1,25 +1,55 @@
-79 51
+41 0
 META script_type_update
 META script_state_wait
-EXIT
-/// Validate worker
-IF _workerToDestroy IS -1
+
+/// Update creation count
+IF _workersToCreate IS 0
+    ALT _creatingDefaultWorkers = <false>
     EXIT
+ELSE
+    SUB _workersToCreate 1
 
 /// Define reusable values
 DEF STR eventMessage = ""
 DEF INT index = 0
 DEF INT maxIndex = 0
 
-/// Destroy worker
-PULL _workerNames _workerToDestroy
-PULL _workerGenders _workerToDestroy
-PULL _workerClothes _workerToDestroy
-PULL _workerHealths _workerToDestroy
-PULL _workerJobBuildingIds _workerToDestroy
-PULL _workerHouseBuildingIds _workerToDestroy
-ADD _totalDeadWorkers
-ALT _workerToDestroy = -1
+/// Determine name and gender
+IF _nextWorkerGender IS 1
+    DEF INT workerNameCount = misc:list_size("_maleWorkerNames")
+    DEF INT workerNameIndex = math:random_integer(1, workerNameCount)
+    SUB workerNameIndex 1
+    DEF STR workerName = _maleWorkerNames[workerNameIndex]
+    DEF STR workerGender = "MALE"
+ELSE
+    DEF INT workerNameCount = misc:list_size("_femaleWorkerNames")
+    DEF INT workerNameIndex = math:random_integer(1, workerNameCount)
+    SUB workerNameIndex 1
+    DEF STR workerName = _femaleWorkerNames[workerNameIndex]
+    DEF STR workerGender = "FEMALE"
+
+/// Switch gender
+NEG _nextWorkerGender
+
+/// Create worker
+PUSH _workerNames workerName
+PUSH _workerGenders workerGender
+PUSH _workerHealths <true>
+
+/// Log birth event
+IF _creatingDefaultWorkers IS <false>
+    ALT eventMessage = misc:string_concat(workerName, " was born")
+    PUSH _eventMessageContents eventMessage
+
+/// Give clothes to worker
+IF _creatingDefaultWorkers IS <true>
+    PUSH _workerClothes <true>
+ELSE
+    IF _totalClothes MORE 0
+        SUB _totalClothes 1
+        PUSH _workerClothes <true>
+    ELSE
+        PUSH _workerClothes <false>
 
 /// Assign worker to job building
 DEF BOL hasWorker = <false>
@@ -79,6 +109,7 @@ LOOP
             ALT eventMessage = misc:string_concat(workerName, " married ")
             ALT eventMessage = misc:string_concat(eventMessage, _workerNames[workerIndex])
             PUSH _eventMessageContents eventMessage
+            ALT _eventMessageOpacity = 1.0
             BREAK
     ELIF workerCount IS 2
         PASS

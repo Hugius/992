@@ -1,12 +1,17 @@
-15 12
+25 38
 META script_type_update
 META script_state_wait
 
 /// Update event messages
-IF _eventMessageOpacity MORE 0.0
-    IF _eventMessageOpacity IS 1.0
-        fe3d:text2d_set_content("event_message", _eventMessageContent)
-        DEF INT quadWidth = misc:string_size(_eventMessageContent)
+fe3d:quad2d_set_opacity("event_message", _eventMessageOpacity)
+fe3d:text2d_set_opacity("event_message", _eventMessageOpacity)
+DEF INT messageCount = misc:list_size("_eventMessageContents")
+IF messageCount IS 0
+    ALT _eventMessageOpacity = 0.0
+ELSE
+    IF _eventMessageOpacity IS 0.0
+        fe3d:text2d_set_content("event_message", _eventMessageContents[0])
+        DEF INT quadWidth = misc:string_size(_eventMessageContents[0])
         DEF INT textWidth = quadWidth
         CAST quadWidth DEC
         CAST textWidth DEC
@@ -19,10 +24,12 @@ IF _eventMessageOpacity MORE 0.0
         SUB xPosition quadWidth
         fe3d:quad2d_set_position("event_message", xPosition, 0.95)
         fe3d:text2d_set_position("event_message", xPosition, 0.95)
+        ALT _eventMessageOpacity = 1.0
+    ELIF _eventMessageOpacity LESS 0.005
+        PULL _eventMessageContents 0
+        ALT _eventMessageOpacity = 0.0
     ELSE
-        fe3d:quad2d_set_opacity("event_message", _eventMessageOpacity)
-        fe3d:text2d_set_opacity("event_message", _eventMessageOpacity)
-    SUB _eventMessageOpacity 0.0025
+        SUB _eventMessageOpacity 0.0025
 
 /// Update sky
 fe3d:sky_rotate("sky", 0.0, 0.01, 0.0)

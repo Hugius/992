@@ -1,16 +1,14 @@
-6 4
+9 29
 META script_type_initialize
 META script_state_wait
 
 /// Finals
-DEF GLB FIN INT _maxBirthsPerHouse = 3
 DEF GLB FIN INT _houseInterval = 1440
 DEF FIN STR infoText = "Houses 2 married workers"
 
 /// Non-finals
 DEF GLB LST _houseIds = {}
 DEF GLB LST _houseTimers = {}
-DEF GLB LST _houseBirths = {}
 DEF GLB LST _houseIdsThatGaveBirth = {}
 
 /// GUI
