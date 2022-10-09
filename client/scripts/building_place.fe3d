@@ -1,8 +1,8 @@
-9 20
+3 12
 META script_type_update
 META script_state_wait
 
-/// Validate build mode
+/// Validate
 IF _buildMode IS <false> OR _lastBuildMode IS <false>
     EXIT
 
@@ -65,8 +65,8 @@ DEF DEC aabbBL = 0.0
 DEF DEC aabbBR = 0.0
 DEF DEC aabbTR = 0.0
 DEF DEC aabbTL = 0.0
-ALT index = 0
 ALT maxIndex = misc:list_size("aabbIds")
+ALT index = 0
 LOOP
     IF index IS maxIndex
         BREAK
@@ -94,8 +94,8 @@ LOOP
 
 /// Update building color
 DEF LST partIds = fe3d:model_get_part_ids(buildingType)
-ALT index = 0
 ALT maxIndex = misc:list_size("partIds")
+ALT index = 0
 LOOP
     IF index IS maxIndex
         BREAK

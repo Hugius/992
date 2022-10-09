@@ -28,7 +28,7 @@ DEF DEC x = 0.0
 DEF DEC y = 0.0
 DEF DEC z = 0.0
 DEF DEC distance = 0.0
-DEF BOL mustSkip = <false>
+DEF BOL skip = <false>
 
 /// Generation
 LOOP
@@ -47,11 +47,11 @@ LOOP
             BREAK
         ALT distance = math:vector_distance(x, y, z, xPositions[positionIndex], yPositions[positionIndex], zPositions[positionIndex])
         IF distance LESS minDistance
-            ALT mustSkip = <true>
+            ALT skip = <true>
             BREAK
         ADD positionIndex 1
-    IF mustSkip IS <true>
-        ALT mustSkip = <false>
+    IF skip IS <true>
+        ALT skip = <false>
         CONTINUE
     CAST totalModels STR
     ALT modelId = misc:string_concat(modelIds[modelIndex], "_")

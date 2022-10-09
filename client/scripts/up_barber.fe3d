@@ -1,4 +1,4 @@
-39 17
+41 4
 META script_type_update
 META script_state_wait
 
@@ -39,16 +39,16 @@ IF _selectedBuildingType IS "barber"
 /// Update barbers
 DEF INT maxIndex = misc:list_size("_barberIds")
 DEF INT index = 0
-DEF BOL mustDecreaseSicknessChance = <false>
+DEF BOL decreaseSicknessChance = <false>
 LOOP
     IF index IS maxIndex
         BREAK
     ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _barberIds[index])
     ALT hasTool = misc:list_contains("_toolBuildingIds", _barberIds[index])
     IF hasWorker IS <true> AND hasTool IS <true>
-        ALT mustDecreaseSicknessChance = <true>
+        ALT decreaseSicknessChance = <true>
         BREAK
     ADD index 1
 
-IF mustDecreaseSicknessChance IS <true>
+IF decreaseSicknessChance IS <true>
     SUB _sicknessCatchChance 5

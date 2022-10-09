@@ -1,10 +1,10 @@
-4 4
+3 12
 META script_type_update
 META script_state_wait
 
-/// Validate update
-DEF BOL mustUpdate = fe3d:time_is_passed(10)
-IF mustUpdate IS <false>
+/// Validate
+DEF BOL update = fe3d:time_is_passed(10)
+IF update IS <false>
     EXIT
 
 /// Create content

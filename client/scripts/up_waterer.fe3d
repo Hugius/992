@@ -25,14 +25,14 @@ IF _selectedBuildingType IS "waterer"
 /// Update waterers
 DEF INT maxIndex = misc:list_size("_watererIds")
 DEF INT index = 0
-DEF BOL mustDecreaseSicknessChance = <false>
+DEF BOL decreaseSicknessChance = <false>
 LOOP
     IF index IS maxIndex
         BREAK
     ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _watererIds[index])
     IF hasWorker IS <true>
-        ALT mustDecreaseSicknessChance = <true>
+        ALT decreaseSicknessChance = <true>
     ADD index 1
 
-IF mustDecreaseSicknessChance IS <true>
+IF decreaseSicknessChance IS <true>
     SUB _sicknessCatchChance 5

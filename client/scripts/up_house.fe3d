@@ -1,4 +1,4 @@
-16 17
+29 35
 META script_type_update
 META script_state_wait
 
@@ -27,7 +27,7 @@ LOOP
             PUSH _houseIdsThatGaveBirth _houseIds[index]
         ELSE
             ADD _houseTimers[index] 1
-
+    ELIF count IS 1 OR count IS 0
         ALT _houseTimers[index] = 0
     ELSE
         CRASH

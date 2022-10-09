@@ -39,16 +39,16 @@ IF _selectedBuildingType IS "scavenger"
 /// Update scavengers
 DEF INT maxIndex = misc:list_size("_scavengerIds")
 DEF INT index = 0
-DEF BOL mustDecreaseSicknessChance = <false>
+DEF BOL decreaseSicknessChance = <false>
 LOOP
     IF index IS maxIndex
         BREAK
     ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _scavengerIds[index])
     ALT hasTool = misc:list_contains("_toolBuildingIds", _scavengerIds[index])
     IF hasWorker IS <true> AND hasTool IS <true>
-        ALT mustDecreaseSicknessChance = <true>
+        ALT decreaseSicknessChance = <true>
         BREAK
     ADD index 1
 
-IF mustDecreaseSicknessChance IS <true>
+IF decreaseSicknessChance IS <true>
     SUB _sicknessCatchChance 5

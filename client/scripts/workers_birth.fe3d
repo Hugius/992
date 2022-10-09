@@ -1,4 +1,4 @@
-13 17
+36 0
 META script_type_update
 META script_state_wait
 
@@ -9,110 +9,45 @@ IF _workersToCreate IS 0
 ELSE
     SUB _workersToCreate 1
 
-/// Define reusable values
-DEF STR eventMessage = ""
-DEF INT maxIndex = 0
-DEF INT index = 0
-
 /// Determine name and gender
 IF _nextWorkerGender IS 1
-    DEF INT workerNameCount = misc:list_size("_maleWorkerNames")
-    DEF INT workerNameIndex = math:random_integer(1, workerNameCount)
-    SUB workerNameIndex 1
-    DEF STR workerName = _maleWorkerNames[workerNameIndex]
-    DEF STR workerGender = "MALE"
+    DEF INT nameCount = misc:list_size("_maleWorkerNames")
+    DEF INT nameIndex = math:random_integer(1, nameCount)
+    SUB nameIndex 1
+    DEF STR name = _maleWorkerNames[nameIndex]
+    DEF STR gender = "MALE"
 ELSE
-    DEF INT workerNameCount = misc:list_size("_femaleWorkerNames")
-    DEF INT workerNameIndex = math:random_integer(1, workerNameCount)
-    SUB workerNameIndex 1
-    DEF STR workerName = _femaleWorkerNames[workerNameIndex]
-    DEF STR workerGender = "FEMALE"
+    DEF INT nameCount = misc:list_size("_femaleWorkerNames")
+    DEF INT nameIndex = math:random_integer(1, nameCount)
+    SUB nameIndex 1
+    DEF STR name = _femaleWorkerNames[nameIndex]
+    DEF STR gender = "FEMALE"
 
 /// Switch gender
 NEG _nextWorkerGender
 
-/// Create worker
-PUSH _workerNames workerName
-PUSH _workerGenders workerGender
-PUSH _workerHealths <true>
-
-/// Log birth event
-IF _creatingDefaultWorkers IS <false>
-    ALT eventMessage = misc:string_concat(workerName, " was born")
-    PUSH _eventMessageContents eventMessage
-
-/// Give clothes to worker
+/// Determine clothes
 IF _creatingDefaultWorkers IS <true>
-    PUSH _workerClothes <true>
+    DEF BOL clothes = <true>
 ELSE
     IF _totalClothes MORE 0
         SUB _totalClothes 1
-        PUSH _workerClothes <true>
+        DEF BOL clothes = <true>
     ELSE
-        PUSH _workerClothes <false>
+        DEF BOL clothes = <false>
 
-/// Assign worker to job building
-DEF BOL hasWorker = <false>
-ALT index = 0
-ALT maxIndex = misc:list_size("_placedBuildingIds")
-LOOP
-    IF index IS maxIndex
-        PUSH _workerJobBuildingIds ""
-        BREAK
-    IF _placedBuildingTypes[index] IS "grave"
-        ADD index 1
-        CONTINUE
-    IF _placedBuildingTypes[index] IS "house"
-        ADD index 1
-        CONTINUE
-    IF _placedBuildingTypes[index] IS "storage"
-        ADD index 1
-        CONTINUE
-    IF _placedBuildingTypes[index] IS "tavern"
-        ADD index 1
-        CONTINUE
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _placedBuildingIds[index])
-    IF hasWorker IS <false>
-        PUSH _workerJobBuildingIds _placedBuildingIds[index]
-        IF _creatingDefaultWorkers IS <false>
-            ALT eventMessage = misc:string_concat(_workerNames[index], " became ")
-            ALT eventMessage = misc:string_concat(eventMessage, _placedBuildingTypes[index])
-            PUSH _eventMessageContents eventMessage
-        BREAK
-    ADD index 1
+/// Create worker
+PUSH _workerNames name
+PUSH _workerGenders gender
+PUSH _workerHealths <true>
+PUSH _workerClothes clothes
+PUSH _workerJobBuildingIds ""
+PUSH _workerHouseBuildingIds ""
 
-/// Assign worker to house building
-DEF INT workerCount = 0
-DEF INT workerIndex = 0
-ALT index = 0
-ALT maxIndex = misc:list_size("_placedBuildingIds")
-LOOP
-    IF index IS maxIndex
-        PUSH _workerHouseBuildingIds ""
-        BREAK
-    IF _placedBuildingTypes[index] NOT "house"
-        ADD index 1
-        CONTINUE
-    ALT workerCount = misc:list_count("_workerHouseBuildingIds", _placedBuildingIds[index])
-    IF workerCount IS 0
-        PUSH _workerHouseBuildingIds _placedBuildingIds[index]
-        BREAK
-    ELIF workerCount IS 1
-        PUSH _workerHouseBuildingIds _placedBuildingIds[index]
-        ALT workerIndex = misc:list_index("_workerHouseBuildingIds", _placedBuildingIds[index])
-        IF _workerGenders[workerIndex] IS "MALE" AND workerGender IS "FEMALE"
-            ALT eventMessage = misc:string_concat(_workerNames[workerIndex], " married ")
-            ALT eventMessage = misc:string_concat(eventMessage, workerName)
-            PUSH _eventMessageContents eventMessage
-            BREAK
-        IF _workerGenders[workerIndex] IS "FEMALE" AND workerGender IS "MALE"
-            ALT eventMessage = misc:string_concat(workerName, " married ")
-            ALT eventMessage = misc:string_concat(eventMessage, _workerNames[workerIndex])
-            PUSH _eventMessageContents eventMessage
-            ALT _eventMessageOpacity = 1.0
-            BREAK
-    ELIF workerCount IS 2
-        PASS
-    ELSE
-        CRASH
-    ADD index 1
+/// Update workers
+ALT _updateWorkers = <true>
+
+/// Log birth event
+IF _creatingDefaultWorkers IS <false>
+    DEF STR eventMessage = misc:string_concat(name, " was born")
+    PUSH _eventMessageContents eventMessage

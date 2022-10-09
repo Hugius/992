@@ -1,4 +1,4 @@
-14 21
+16 22
 META script_type_update
 META script_state_entry
 
@@ -15,6 +15,7 @@ EXECUTE building_create
 EXECUTE building_select
 EXECUTE workers_birth
 EXECUTE workers_death
+EXECUTE workers_update
 
 /// Update building stuff
 EXECUTE up_apiarist
