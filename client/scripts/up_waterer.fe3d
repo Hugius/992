@@ -1,4 +1,4 @@
-18 16
+25 17
 META script_type_update
 META script_state_wait
 
@@ -23,8 +23,8 @@ IF _selectedBuildingType IS "waterer"
         fe3d:text2d_set_visible("waterer_worker", <true>)
 
 /// Update waterers
-DEF INT index = 0
 DEF INT maxIndex = misc:list_size("_watererIds")
+DEF INT index = 0
 DEF BOL mustDecreaseSicknessChance = <false>
 LOOP
     IF index IS maxIndex

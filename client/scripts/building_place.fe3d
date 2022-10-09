@@ -1,4 +1,4 @@
-68 4
+9 20
 META script_type_update
 META script_state_wait
 
@@ -8,8 +8,8 @@ IF _buildMode IS <false> OR _lastBuildMode IS <false>
 
 /// Define reusable values
 DEF STR buildingType = _buildingTypes[_buildingIndex]
-DEF INT index = 0
 DEF INT maxIndex = 0
+DEF INT index = 0
 
 /// Update raycasting
 fe3d:raycast_calculate_terrain_intersection(100.0, 0.1)

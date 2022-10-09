@@ -1,4 +1,4 @@
-43 13
+39 17
 META script_type_update
 META script_state_wait
 
@@ -37,8 +37,8 @@ IF _selectedBuildingType IS "barber"
         fe3d:text2d_set_visible("barber_worker", <true>)
 
 /// Update barbers
-DEF INT index = 0
 DEF INT maxIndex = misc:list_size("_barberIds")
+DEF INT index = 0
 DEF BOL mustDecreaseSicknessChance = <false>
 LOOP
     IF index IS maxIndex

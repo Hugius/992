@@ -1,4 +1,4 @@
-28 33
+16 17
 META script_type_update
 META script_state_wait
 
@@ -13,9 +13,9 @@ IF _selectedBuildingType IS "house"
     fe3d:text2d_set_visible("house_info", <true>)
 
 /// Update houses
-DEF INT count = 0
-DEF INT index = 0
 DEF INT maxIndex = misc:list_size("_houseIds")
+DEF INT index = 0
+DEF INT count = 0
 LOOP
     IF index IS maxIndex
         BREAK
@@ -27,7 +27,7 @@ LOOP
             PUSH _houseIdsThatGaveBirth _houseIds[index]
         ELSE
             ADD _houseTimers[index] 1
-    ELIF count IS 1 OR count IS 0
+
         ALT _houseTimers[index] = 0
     ELSE
         CRASH

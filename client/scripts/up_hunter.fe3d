@@ -1,4 +1,4 @@
-47 66
+63 17
 META script_type_update
 META script_state_wait
 
@@ -61,8 +61,8 @@ IF _selectedBuildingType IS "hunter"
         fe3d:text2d_set_visible("hunter_worker", <true>)
 
 /// Update hunters
-DEF INT index = 0
 DEF INT maxIndex = misc:list_size("_hunterIds")
+DEF INT index = 0
 DEF INT arrowIndex = 0
 LOOP
     IF index IS maxIndex

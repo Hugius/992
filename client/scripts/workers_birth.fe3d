@@ -1,4 +1,4 @@
-41 0
+13 17
 META script_type_update
 META script_state_wait
 
@@ -11,8 +11,8 @@ ELSE
 
 /// Define reusable values
 DEF STR eventMessage = ""
-DEF INT index = 0
 DEF INT maxIndex = 0
+DEF INT index = 0
 
 /// Determine name and gender
 IF _nextWorkerGender IS 1

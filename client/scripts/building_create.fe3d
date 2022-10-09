@@ -1,4 +1,4 @@
-90 47
+9 20
 META script_type_update
 META script_state_wait
 
@@ -8,8 +8,8 @@ IF _placedBuildingId IS ""
 
 /// Define reusable values
 DEF STR eventMessage = ""
-DEF INT index = 0
 DEF INT maxIndex = 0
+DEF INT index = 0
 
 /// Assign worker to job building
 IF _placedBuildingType NOT "grave"

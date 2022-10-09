@@ -1,4 +1,4 @@
-41 29
+9 25
 META script_type_initialize
 META script_state_wait
 
@@ -7,8 +7,8 @@ DEF FIN STR infoText = "Stores food and resources"
 
 /// Non-finals
 DEF GLB LST _storageIds = {"storage_0"}
-DEF GLB INT _totalAle = 10
-DEF GLB INT _totalMilk = 10
+DEF GLB INT _totalAle = 0
+DEF GLB INT _totalMilk = 0
 DEF GLB INT _totalSmokedMeat = 10
 DEF GLB INT _totalSmokedFish = 10
 DEF GLB INT _totalBread = 10

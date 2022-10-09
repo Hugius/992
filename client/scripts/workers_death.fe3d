@@ -1,87 +1,133 @@
-79 51
+106 27
 META script_type_update
 META script_state_wait
-EXIT
-/// Validate worker
-IF _workerToDestroy IS -1
+
+/// Update death timer
+IF _workerDeathTimer IS _workerDeathTimespan
+    ALT _workerDeathTimer = 0
+ELSE
+    ADD _workerDeathTimer 1
     EXIT
 
 /// Define reusable values
+DEF FIN STR workerName = _workerNames[_workerDeathIndex]
+DEF FIN INT randomPercentage = math:random_integer(1, 100)
+DEF FIN INT priestCount = misc:list_size("_priestIds")
+DEF FIN INT tavernCount = misc:list_size("_tavernIds")
 DEF STR eventMessage = ""
-DEF INT index = 0
-DEF INT maxIndex = 0
+DEF BOL workerIsDead = <false>
 
-/// Destroy worker
-PULL _workerNames _workerToDestroy
-PULL _workerGenders _workerToDestroy
-PULL _workerClothes _workerToDestroy
-PULL _workerHealths _workerToDestroy
-PULL _workerJobBuildingIds _workerToDestroy
-PULL _workerHouseBuildingIds _workerToDestroy
-ADD _totalDeadWorkers
-ALT _workerToDestroy = -1
+/// Update dying from childbirth
+IF workerIsDead IS <false> AND priestCount IS 0
+    DEF INT houseIndex = misc:list_index("_houseIdsThatGaveBirth", _workerHouseBuildingIds[_workerDeathIndex])
+    IF houseIndex NOT -1
+        PULL _houseIdsThatGaveBirth houseIndex
+        DEF INT birthDeathChance = 100
+        SUB birthDeathChance _birthDeathChance
+        IF randomPercentage MORE birthDeathChance
+            ALT workerIsDead = <true>
+            ALT eventMessage = misc:string_concat(workerName, " died of childbirth")
+            PUSH _eventMessageContents eventMessage
 
-/// Assign worker to job building
-DEF BOL hasWorker = <false>
-ALT index = 0
-ALT maxIndex = misc:list_size("_placedBuildingIds")
-LOOP
-    IF index IS maxIndex
-        PUSH _workerJobBuildingIds ""
-        BREAK
-    IF _placedBuildingTypes[index] IS "grave"
-        ADD index 1
-        CONTINUE
-    IF _placedBuildingTypes[index] IS "house"
-        ADD index 1
-        CONTINUE
-    IF _placedBuildingTypes[index] IS "storage"
-        ADD index 1
-        CONTINUE
-    IF _placedBuildingTypes[index] IS "tavern"
-        ADD index 1
-        CONTINUE
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _placedBuildingIds[index])
-    IF hasWorker IS <false>
-        PUSH _workerJobBuildingIds _placedBuildingIds[index]
-        IF _creatingDefaultWorkers IS <false>
-            ALT eventMessage = misc:string_concat(_workerNames[index], " became ")
-            ALT eventMessage = misc:string_concat(eventMessage, _placedBuildingTypes[index])
-            PUSH _eventMessageContents eventMessage
-        BREAK
-    ADD index 1
+/// Update dying from suicide
+IF workerIsDead IS <false> AND priestCount IS 0 AND tavernCount IS 0
+    DEF INT suicideChance = 100
+    SUB suicideChance _suicideDeathChance
+    IF randomPercentage MORE suicideChance
+        ALT workerIsDead = <true>
+        ALT eventMessage = misc:string_concat(workerName, " died of suicide")
+        PUSH _eventMessageContents eventMessage
 
-/// Assign worker to house building
-DEF INT workerCount = 0
-DEF INT workerIndex = 0
-ALT index = 0
-ALT maxIndex = misc:list_size("_placedBuildingIds")
-LOOP
-    IF index IS maxIndex
-        PUSH _workerHouseBuildingIds ""
-        BREAK
-    IF _placedBuildingTypes[index] NOT "house"
-        ADD index 1
-        CONTINUE
-    ALT workerCount = misc:list_count("_workerHouseBuildingIds", _placedBuildingIds[index])
-    IF workerCount IS 0
-        PUSH _workerHouseBuildingIds _placedBuildingIds[index]
-        BREAK
-    ELIF workerCount IS 1
-        PUSH _workerHouseBuildingIds _placedBuildingIds[index]
-        ALT workerIndex = misc:list_index("_workerHouseBuildingIds", _placedBuildingIds[index])
-        IF _workerGenders[workerIndex] IS "MALE" AND workerGender IS "FEMALE"
-            ALT eventMessage = misc:string_concat(_workerNames[workerIndex], " married ")
-            ALT eventMessage = misc:string_concat(eventMessage, workerName)
-            PUSH _eventMessageContents eventMessage
-            BREAK
-        IF _workerGenders[workerIndex] IS "FEMALE" AND workerGender IS "MALE"
-            ALT eventMessage = misc:string_concat(workerName, " married ")
-            ALT eventMessage = misc:string_concat(eventMessage, _workerNames[workerIndex])
-            PUSH _eventMessageContents eventMessage
-            BREAK
-    ELIF workerCount IS 2
-        PASS
+/// Update dying from sickness
+IF workerIsDead IS <false>
+    IF _workerHealths[_workerDeathIndex] IS <true>
+        IF priestCount IS 0
+            DEF INT sicknessChance = 100
+            SUB sicknessChance _sicknessCatchChance
+            IF randomPercentage MORE sicknessChance
+                ALT _workerHealths[_workerDeathIndex] = <false>
+                ALT eventMessage = misc:string_concat(workerName, " caught the sickness")
+                PUSH _eventMessageContents eventMessage
     ELSE
-        CRASH
-    ADD index 1
+        IF _totalMedicine MORE 0
+            SUB _totalMedicine 1
+            ALT _workerHealths[_workerDeathIndex] = <true>
+        ELSE
+            ALT workerIsDead = <true>
+            ALT eventMessage = misc:string_concat(workerName, " died of sickness")
+            PUSH _eventMessageContents eventMessage
+
+/// Update dying from dehydration
+IF workerIsDead IS <false>
+    IF _totalAle MORE 0
+        SUB _totalAle 1
+    ELIF _totalMilk MORE 0
+        SUB _totalMilk 1
+    ELSE
+        ALT workerIsDead = <true>
+        ALT eventMessage = misc:string_concat(workerName, " died of dehydration")
+        PUSH _eventMessageContents eventMessage
+
+/// Update dying from starvation
+IF workerIsDead IS <false>
+    IF _totalSmokedMeat MORE 0
+        SUB _totalSmokedMeat 1
+    ELIF _totalSmokedFish MORE 0
+        SUB _totalSmokedFish 1
+    ELIF _totalBread MORE 0
+        SUB _totalBread 1
+    ELIF _totalVegetables MORE 0
+        SUB _totalVegetables 1
+    ELIF _totalEggs MORE 0
+        SUB _totalEggs 1
+    ELIF _totalRawMeat MORE 0
+        SUB _totalRawMeat 1
+    ELIF _totalRawFish MORE 0
+        SUB _totalRawFish 1
+    ELIF _totalHoney MORE 0
+        SUB _totalHoney 1
+    ELIF _totalFruit MORE 0
+        SUB _totalFruit 1
+    ELSE
+        ALT workerIsDead = <true>
+        ALT eventMessage = misc:string_concat(workerName, " died of starvation")
+        PUSH _eventMessageContents eventMessage
+
+/// Update dying from hypothermia
+IF workerIsDead IS <false>
+    IF _workerClothes[_workerDeathIndex] IS <false>
+        ALT workerIsDead = <true>
+        ALT eventMessage = misc:string_concat(workerName, " died of hypothermia")
+        PUSH _eventMessageContents eventMessage
+
+/// Handle dead worker
+IF workerIsDead IS <true>
+    DEF INT deathIndex = _workerDeathIndex
+    IF _workerJobBuildingIds[deathIndex] NOT ""
+        DEF INT freeIndex = misc:list_index("_workerJobBuildingIds", "")
+        IF freeIndex NOT -1
+            ALT _workerJobBuildingIds[freeIndex] = _workerJobBuildingIds[deathIndex]
+            fe3d:print(_workerJobBuildingIds[deathIndex])
+    PULL _workerNames deathIndex
+    PULL _workerGenders deathIndex
+    PULL _workerClothes deathIndex
+    PULL _workerHealths deathIndex
+    PULL _workerJobBuildingIds deathIndex
+    PULL _workerHouseBuildingIds deathIndex
+    ADD _totalDeadWorkers 1
+ELSE
+    ADD _workerDeathIndex 1
+
+/// Handle dead population
+DEF INT totalWorkers = misc:list_size("_workerNames")
+IF totalWorkers IS 0
+    fe3d:application_stop()
+
+/// Update event index
+IF _workerDeathIndex IS totalWorkers
+    ALT _workerDeathIndex = 0
+    ALT _workerDeathTimespan = _workersDeathTimespan
+    DIV _workerDeathTimespan totalWorkers
+
+/// Set default sickness chance
+ALT _sicknessCatchChance = 15

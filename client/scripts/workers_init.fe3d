@@ -1,4 +1,4 @@
-17 33
+18 39
 META script_type_initialize
 META script_state_wait
 
@@ -15,7 +15,6 @@ DEF GLB LST _workerHealths = {}
 DEF GLB LST _workerJobBuildingIds = {}
 DEF GLB LST _workerHouseBuildingIds = {}
 DEF GLB INT _workersToCreate = 10
-DEF GLB INT _workerToDestroy = -1
 DEF GLB INT _workerDeathIndex = 0
 DEF GLB INT _workerDeathTimer = 0
 DEF GLB INT _workerDeathTimespan = 1440

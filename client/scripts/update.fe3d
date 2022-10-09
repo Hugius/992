@@ -14,7 +14,6 @@ EXECUTE building_place
 EXECUTE building_create
 EXECUTE building_select
 EXECUTE workers_birth
-EXECUTE workers_life
 EXECUTE workers_death
 
 /// Update building stuff

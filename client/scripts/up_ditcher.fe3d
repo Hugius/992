@@ -1,4 +1,4 @@
-51 48
+45 17
 META script_type_update
 META script_state_wait
 
@@ -43,8 +43,8 @@ IF _selectedBuildingType IS "ditcher"
         fe3d:text2d_set_visible("ditcher_worker", <true>)
 
 /// Update ditchers
-DEF INT index = 0
 DEF INT maxIndex = misc:list_size("_ditcherIds")
+DEF INT index = 0
 LOOP
     IF index IS maxIndex
         BREAK

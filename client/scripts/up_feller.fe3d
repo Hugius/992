@@ -1,4 +1,4 @@
-44 20
+45 21
 META script_type_update
 META script_state_wait
 
@@ -46,8 +46,8 @@ IF _selectedBuildingType IS "feller"
 DEF LST treeIds = {}
 DEF INT treeCount = 0
 DEF INT treeIndex = 0
-DEF INT index = 0
 DEF INT maxIndex = misc:list_size("_fellerIds")
+DEF INT index = 0
 LOOP
     IF index IS maxIndex
         BREAK
