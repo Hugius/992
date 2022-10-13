@@ -32,8 +32,8 @@ IF _selectedBuildingType IS "baker"
             fe3d:text2d_set_visible("baker_bread", <true>)
             IF _totalFlour MORE 0 AND _totalFirewood MORE 0
                 ALT _cursorType = "HAND"
-                DEF BOL lmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
-                IF lmbClicked IS <true>
+                DEF BOL isLmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
+                IF isLmbClicked IS <true>
                     SUB _totalFlour 1
                     SUB _totalFirewood 1
                     ADD _totalBread 10

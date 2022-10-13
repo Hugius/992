@@ -22,8 +22,8 @@ DEF BOL buttonHovered = fe3d:quad2d_is_hovered("build")
 IF buttonHovered IS <true> AND defaultBuildingsHaveTools IS <true>
     ALT _cursorType = "HAND"
     fe3d:quad2d_set_lightness("build", 1.25)
-    DEF BOL lmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
-    IF lmbClicked IS <true>
+    DEF BOL isLmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
+    IF isLmbClicked IS <true>
         IF _buildMode IS <true>
             fe3d:model_set_visible(_buildingTypes[_buildingIndex], <false>)
             ALT _buildMode = <false>

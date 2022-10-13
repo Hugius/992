@@ -1,10 +1,9 @@
-36 0
+46 0
 META script_type_update
 META script_state_wait
 
-/// Update creation count
+/// Validate
 IF _workersToCreate IS 0
-    ALT _creatingDefaultWorkers = <false>
     EXIT
 ELSE
     SUB _workersToCreate 1
@@ -27,27 +26,23 @@ ELSE
 NEG _nextWorkerGender
 
 /// Determine clothes
-IF _creatingDefaultWorkers IS <true>
-    DEF BOL clothes = <true>
+IF _totalClothes MORE 0
+    SUB _totalClothes 1
+    DEF BOL hasClothes = <true>
 ELSE
-    IF _totalClothes MORE 0
-        SUB _totalClothes 1
-        DEF BOL clothes = <true>
-    ELSE
-        DEF BOL clothes = <false>
+    DEF BOL hasClothes = <false>
 
 /// Create worker
 PUSH _workerNames name
 PUSH _workerGenders gender
 PUSH _workerHealths <true>
-PUSH _workerClothes clothes
+PUSH _workerClothes hasClothes
 PUSH _workerJobBuildingIds ""
 PUSH _workerHouseBuildingIds ""
 
 /// Update workers
-ALT _updateWorkers = <true>
+ALT _mustUpdateWorkers = <true>
 
 /// Log birth event
-IF _creatingDefaultWorkers IS <false>
-    DEF STR eventMessage = misc:string_concat(name, " was born")
-    PUSH _eventMessageContents eventMessage
+DEF STR eventMessage = misc:string_concat(name, " was born")
+PUSH _eventMessageContents eventMessage

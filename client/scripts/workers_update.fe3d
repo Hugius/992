@@ -1,12 +1,12 @@
-17 0
+4 31
 META script_type_update
 META script_state_wait
 
 /// Validate
-IF _updateWorkers IS <true>
-    ALT _updateWorkers = <false>
-ELSE
+IF _mustUpdateWorkers IS <false>
     EXIT
+ELSE
+    ALT _mustUpdateWorkers = <false>
 
 /// Define reusable values
 DEF STR eventMessage = ""

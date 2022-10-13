@@ -1,4 +1,4 @@
-123 27
+68 31
 META script_type_update
 META script_state_wait
 
@@ -65,7 +65,25 @@ ELIF _placedBuildingType IS "miner"
     PUSH _minerIds _placedBuildingId
     PUSH _minerTimers 0
 ELIF _placedBuildingType IS "orchardist"
-    PASS
+    PUSH _orchardistIds _placedBuildingId
+    PUSH _orchardistTimers 0
+    PUSH _orchardistGrowths 0.0
+    DEF STR treeId1 = misc:string_concat(_placedBuildingId, "_1")
+    DEF STR treeId2 = misc:string_concat(_placedBuildingId, "_2")
+    DEF STR treeId3 = misc:string_concat(_placedBuildingId, "_3")
+    DEF STR treeId4 = misc:string_concat(_placedBuildingId, "_4")
+    DEF DEC x = fe3d:model_get_base_position_x(_placedBuildingId)
+    DEF DEC y = fe3d:model_get_base_position_y(_placedBuildingId)
+    DEF DEC z = fe3d:model_get_base_position_z(_placedBuildingId)
+    SUB x 2.0
+    SUB z 2.0
+    fe3d:model_place(treeId1, "tree4", x, y, z)
+    ADD x 4.0
+    fe3d:model_place(treeId2, "tree4", x, y, z)
+    ADD z 4.0
+    fe3d:model_place(treeId3, "tree4", x, y, z)
+    SUB x 4.0
+    fe3d:model_place(treeId4, "tree4", x, y, z)
 ELIF _placedBuildingType IS "priest"
     PUSH _priestIds _placedBuildingId
 ELIF _placedBuildingType IS "roofer"
@@ -122,6 +140,6 @@ ELIF _placedBuildingType IS "weaver"
     PUSH _weaverIds _placedBuildingId
 
 /// Miscellaneous
-ALT _updateWorkers = <true>
+ALT _mustUpdateWorkers = <true>
 ALT _placedBuildingId = ""
 ALT _placedBuildingType = ""

@@ -1,4 +1,4 @@
-3 12
+104 25
 META script_type_update
 META script_state_wait
 
@@ -16,8 +16,8 @@ fe3d:raycast_calculate_terrain_intersection(100.0, 0.1)
 
 /// Update building rotation
 DEF DEC rotation = fe3d:model_get_base_rotation_y(buildingType)
-DEF BOL rmbClicked = fe3d:input_is_mouse_pressed("BUTTON_RIGHT")
-IF rmbClicked IS <true>
+DEF BOL isRmbClicked = fe3d:input_is_mouse_pressed("BUTTON_RIGHT")
+IF isRmbClicked IS <true>
     ADD rotation 90.0
 
 /// Update building transformation
@@ -109,8 +109,8 @@ ALT buildingId = misc:string_concat(buildingId, _buildingCounter)
 CAST _buildingCounter INT
 
 /// Place new building
-DEF BOL lmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
-IF lmbClicked IS <true> AND color[1] NOT 0.0
+DEF BOL isLmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
+IF isLmbClicked IS <true> AND color[1] NOT 0.0
     fe3d:model_place(buildingId, _buildingModels[_buildingIndex], 0.0, 0.0, 0.0)
     fe3d:model_set_base_position(buildingId, x, y, z)
     fe3d:model_set_base_rotation(buildingId, 0.0, rotation, 0.0)

@@ -24,8 +24,8 @@ IF _selectedBuildingType IS "mason"
             fe3d:text2d_set_visible("mason_tool", <true>)
             IF _totalTools MORE 0
                 ALT _cursorType = "HAND"
-                DEF BOL lmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
-                IF lmbClicked IS <true>
+                DEF BOL isLmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
+                IF isLmbClicked IS <true>
                     SUB _totalTools 1
                     PUSH _toolBuildingIds _selectedBuildingId
     ELSE

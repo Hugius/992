@@ -1,4 +1,4 @@
-20 33
+23 37
 META script_type_initialize
 META script_state_wait
 
@@ -14,7 +14,7 @@ DEF GLB LST _workerHealths = {}
 DEF GLB LST _workerClothes = {}
 DEF GLB LST _workerJobBuildingIds = {}
 DEF GLB LST _workerHouseBuildingIds = {}
-DEF GLB INT _workersToCreate = 10
+DEF GLB INT _workersToCreate = 5
 DEF GLB INT _workerDeathIndex = 0
 DEF GLB INT _workerDeathTimer = 0
 DEF GLB INT _workerDeathTimespan = 1440
@@ -23,5 +23,4 @@ DEF GLB INT _nextWorkerGender = 1
 DEF GLB INT _birthDeathChance = 5
 DEF GLB INT _suicideDeathChance = 5
 DEF GLB INT _sicknessCatchChance = 15
-DEF GLB BOL _creatingDefaultWorkers = <true>
-DEF GLB BOL _updateWorkers = <false>
+DEF GLB BOL _mustUpdateWorkers = <false>
