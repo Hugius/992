@@ -1,4 +1,4 @@
-68 31
+125 20
 META script_type_update
 META script_state_wait
 
@@ -30,7 +30,7 @@ ELIF _placedBuildingType IS "ditcher"
     PUSH _ditcherIds _placedBuildingId
     PUSH _ditcherTimers 0
 ELIF _placedBuildingType IS "farmer"
-    PASS
+    PUSH _farmerIds _placedBuildingId
 ELIF _placedBuildingType IS "feller"
     PUSH _fellerIds _placedBuildingId
     PUSH _fellerTimers 0
@@ -89,7 +89,7 @@ ELIF _placedBuildingType IS "priest"
 ELIF _placedBuildingType IS "roofer"
     PUSH _rooferIds _placedBuildingId
 ELIF _placedBuildingType IS "scavenger"
-    PASS
+    PUSH _scavengerIds _placedBuildingId
 ELIF _placedBuildingType IS "smelter"
     PUSH _smelterIds _placedBuildingId
 ELIF _placedBuildingType IS "smoker"
@@ -101,7 +101,6 @@ ELIF _placedBuildingType IS "storage"
     ADD _maxSmokedMeat 10
     ADD _maxSmokedFish 10
     ADD _maxBread 10
-    ADD _maxVegetables 10
     ADD _maxEggs 10
     ADD _maxRawFish 10
     ADD _maxRawMeat 10
@@ -125,8 +124,7 @@ ELIF _placedBuildingType IS "storage"
     ADD _maxMedicine 10
     ADD _maxFeathers 10
     ADD _maxMushrooms 10
-    ADD _maxGrainSeeds 10
-    ADD _maxVegetableSeeds 10
+    ADD _maxSeeds 10
     ADD _maxTools 5
     ADD _maxBows 5
     ADD _maxArrows 50
@@ -138,6 +136,8 @@ ELIF _placedBuildingType IS "waterer"
     PUSH _watererIds _placedBuildingId
 ELIF _placedBuildingType IS "weaver"
     PUSH _weaverIds _placedBuildingId
+ELSE
+    CRASH
 
 /// Miscellaneous
 ALT _mustUpdateWorkers = <true>

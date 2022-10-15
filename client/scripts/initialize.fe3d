@@ -1,4 +1,4 @@
-33 0
+19 0
 META script_type_initialize
 META script_state_entry
 
@@ -18,7 +18,7 @@ EXECUTE in_brewer
 ///EXECUTE in_butcher
 EXECUTE in_carpenter
 EXECUTE in_ditcher
-///EXECUTE in_farmer
+EXECUTE in_farmer
 EXECUTE in_feller
 EXECUTE in_fisher
 EXECUTE in_fletcher

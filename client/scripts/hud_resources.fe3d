@@ -1,4 +1,4 @@
-3 12
+114 55
 META script_type_update
 META script_state_wait
 
@@ -26,8 +26,7 @@ DEF STR totalStrawText = misc:string_zeroed_integer(_totalStraw, 4)
 DEF STR totalMedicineText = misc:string_zeroed_integer(_totalMedicine, 4)
 DEF STR totalFeathersText = misc:string_zeroed_integer(_totalFeathers, 4)
 DEF STR totalMushroomsText = misc:string_zeroed_integer(_totalMushrooms, 4)
-DEF STR totalGrainSeedsText = misc:string_zeroed_integer(_totalGrainSeeds, 4)
-DEF STR totalVegetableSeedsText = misc:string_zeroed_integer(_totalVegetableSeeds, 4)
+DEF STR totalSeedsText = misc:string_zeroed_integer(_totalSeeds, 4)
 DEF STR totalToolsText = misc:string_zeroed_integer(_totalTools, 4)
 DEF STR totalBowsText = misc:string_zeroed_integer(_totalBows, 4)
 DEF STR totalArrowsText = misc:string_zeroed_integer(_totalArrows, 4)
@@ -50,8 +49,7 @@ fe3d:text2d_set_content("total_straw", totalStrawText)
 fe3d:text2d_set_content("total_medicine", totalMedicineText)
 fe3d:text2d_set_content("total_feathers", totalFeathersText)
 fe3d:text2d_set_content("total_mushrooms", totalMushroomsText)
-fe3d:text2d_set_content("total_grainseeds", totalGrainSeedsText)
-fe3d:text2d_set_content("total_vegetableseeds", totalVegetableSeedsText)
+fe3d:text2d_set_content("total_seeds", totalSeedsText)
 fe3d:text2d_set_content("total_tools", totalToolsText)
 fe3d:text2d_set_content("total_bows", totalBowsText)
 fe3d:text2d_set_content("total_arrows", totalArrowsText)
@@ -74,8 +72,7 @@ fe3d:text2d_set_color("total_straw", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_medicine", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_feathers", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_mushrooms", 0.0, 0.0, 0.0)
-fe3d:text2d_set_color("total_grainseeds", 0.0, 0.0, 0.0)
-fe3d:text2d_set_color("total_vegetableseeds", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_seeds", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_tools", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_bows", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_arrows", 0.0, 0.0, 0.0)
@@ -115,10 +112,8 @@ IF _totalFeathers IS _maxFeathers
     fe3d:text2d_set_color("total_feathers", 0.5, 0.0, 0.0)
 IF _totalMushrooms IS _maxMushrooms
     fe3d:text2d_set_color("total_mushrooms", 0.5, 0.0, 0.0)
-IF _totalGrainSeeds IS _maxGrainSeeds
-    fe3d:text2d_set_color("total_grainseeds", 0.5, 0.0, 0.0)
-IF _totalVegetableSeeds IS _maxVegetableSeeds
-    fe3d:text2d_set_color("total_vegetableseeds", 0.5, 0.0, 0.0)
+IF _totalSeeds IS _maxSeeds
+    fe3d:text2d_set_color("total_seeds", 0.5, 0.0, 0.0)
 IF _totalTools IS _maxTools
     fe3d:text2d_set_color("total_tools", 0.5, 0.0, 0.0)
 IF _totalBows IS _maxBows

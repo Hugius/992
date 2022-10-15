@@ -1,0 +1,59 @@
+0 0
+META script_type_update
+META script_state_wait
+
+/// Define reusable values
+DEF BOL hasWorker = <false>
+
+/// Hide GUI
+IF _lastSelectedBuildingType IS "farmer" OR _totalUpdates IS 0
+    fe3d:quad2d_set_visible("farmer_worker", <false>)
+    fe3d:quad2d_set_visible("farmer_time", <false>)
+    fe3d:quad2d_set_visible("farmer_convert", <false>)
+    fe3d:quad2d_set_visible("farmer_fruit", <false>)
+    fe3d:text2d_set_visible("farmer_worker", <false>)
+    fe3d:text2d_set_visible("farmer_time", <false>)
+    fe3d:text2d_set_visible("farmer_fruit", <false>)
+
+/// Show GUI
+IF _selectedBuildingType IS "farmer"
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
+    IF hasWorker IS <true>
+        fe3d:quad2d_set_visible("farmer_time", <true>)
+        fe3d:quad2d_set_visible("farmer_convert", <true>)
+        fe3d:quad2d_set_visible("farmer_fruit", <true>)
+        fe3d:text2d_set_visible("farmer_time", <true>)
+        fe3d:text2d_set_visible("farmer_fruit", <true>)
+    ELSE
+        fe3d:quad2d_set_visible("farmer_worker", <true>)
+        fe3d:text2d_set_visible("farmer_worker", <true>)
+
+/// Update farmers
+DEF STR treeId = ""
+DEF DEC growth = 0.0
+DEF INT maxIndex = misc:list_size("_farmerIds")
+DEF INT index = 0
+LOOP
+    IF index IS maxIndex
+        BREAK
+    IF _farmerGrowths[index] LESS 0.25
+        ADD _farmerGrowths[index] 0.0001
+        ALT growth = _farmerGrowths[index]
+        ALT treeId = misc:string_concat(_farmerIds[index], "_1")
+        fe3d:model_set_base_size(treeId, growth, growth, growth)
+        ALT treeId = misc:string_concat(_farmerIds[index], "_2")
+        fe3d:model_set_base_size(treeId, growth, growth, growth)
+        ALT treeId = misc:string_concat(_farmerIds[index], "_3")
+        fe3d:model_set_base_size(treeId, growth, growth, growth)
+        ALT treeId = misc:string_concat(_farmerIds[index], "_4")
+        fe3d:model_set_base_size(treeId, growth, growth, growth)
+    ELSE
+        ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _farmerIds[index])
+        IF hasWorker IS <true>
+            IF _farmerTimers[index] IS _farmerInterval
+                ALT _farmerTimers[index] = 0
+                IF _totalFruit LESS _maxFruit
+                    ADD _totalFruit 1
+            ELSE
+                ADD _farmerTimers[index] 1
+    ADD index 1

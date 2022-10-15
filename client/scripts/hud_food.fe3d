@@ -1,4 +1,4 @@
-3 12
+13 67
 META script_type_update
 META script_state_wait
 
@@ -13,7 +13,6 @@ DEF STR totalMilkText = misc:string_zeroed_integer(_totalMilk, 4)
 DEF STR totalSmokedMeatText = misc:string_zeroed_integer(_totalSmokedMeat, 4)
 DEF STR totalSmokedFishText = misc:string_zeroed_integer(_totalSmokedFish, 4)
 DEF STR totalBreadText = misc:string_zeroed_integer(_totalBread, 4)
-DEF STR totalVegetablesText = misc:string_zeroed_integer(_totalVegetables, 4)
 DEF STR totalEggsText = misc:string_zeroed_integer(_totalEggs, 4)
 DEF STR totalRawMeatText = misc:string_zeroed_integer(_totalRawMeat, 4)
 DEF STR totalRawFishText = misc:string_zeroed_integer(_totalRawFish, 4)
@@ -26,7 +25,6 @@ fe3d:text2d_set_content("total_milk", totalMilkText)
 fe3d:text2d_set_content("total_smokedmeat", totalSmokedMeatText)
 fe3d:text2d_set_content("total_smokedfish", totalSmokedFishText)
 fe3d:text2d_set_content("total_bread", totalBreadText)
-fe3d:text2d_set_content("total_vegetables", totalVegetablesText)
 fe3d:text2d_set_content("total_eggs", totalEggsText)
 fe3d:text2d_set_content("total_rawmeat", totalRawMeatText)
 fe3d:text2d_set_content("total_rawfish", totalRawFishText)
@@ -39,7 +37,6 @@ fe3d:text2d_set_color("total_milk", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_smokedmeat", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_smokedfish", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_bread", 0.0, 0.0, 0.0)
-fe3d:text2d_set_color("total_vegetables", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_eggs", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_rawmeat", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_rawfish", 0.0, 0.0, 0.0)
@@ -57,8 +54,6 @@ IF _totalSmokedFish IS _maxSmokedFish
     fe3d:text2d_set_color("total_smokedfish", 0.5, 0.0, 0.0)
 IF _totalBread IS _maxBread
     fe3d:text2d_set_color("total_bread", 0.5, 0.0, 0.0)
-IF _totalVegetables IS _maxVegetables
-    fe3d:text2d_set_color("total_vegetables", 0.5, 0.0, 0.0)
 IF _totalEggs IS _maxEggs
     fe3d:text2d_set_color("total_eggs", 0.5, 0.0, 0.0)
 IF _totalRawFish IS _maxRawFish

@@ -1,4 +1,4 @@
-9 25
+44 27
 META script_type_initialize
 META script_state_wait
 
@@ -12,7 +12,6 @@ DEF GLB INT _totalMilk = 0
 DEF GLB INT _totalSmokedMeat = 10
 DEF GLB INT _totalSmokedFish = 10
 DEF GLB INT _totalBread = 10
-DEF GLB INT _totalVegetables = 10
 DEF GLB INT _totalEggs = 10
 DEF GLB INT _totalRawFish = 10
 DEF GLB INT _totalRawMeat = 10
@@ -36,8 +35,7 @@ DEF GLB INT _totalStraw = 15
 DEF GLB INT _totalMedicine = 15
 DEF GLB INT _totalFeathers = 15
 DEF GLB INT _totalMushrooms = 15
-DEF GLB INT _totalGrainSeeds = 15
-DEF GLB INT _totalVegetableSeeds = 15
+DEF GLB INT _totalSeeds = 15
 DEF GLB INT _totalTools = 5
 DEF GLB INT _totalBows = 5
 DEF GLB INT _totalArrows = 25
@@ -46,7 +44,6 @@ DEF GLB INT _maxMilk = 100
 DEF GLB INT _maxSmokedMeat = 100
 DEF GLB INT _maxSmokedFish = 100
 DEF GLB INT _maxBread = 100
-DEF GLB INT _maxVegetables = 100
 DEF GLB INT _maxEggs = 100
 DEF GLB INT _maxRawFish = 100
 DEF GLB INT _maxRawMeat = 100
@@ -70,8 +67,7 @@ DEF GLB INT _maxStraw = 100
 DEF GLB INT _maxMedicine = 100
 DEF GLB INT _maxFeathers = 100
 DEF GLB INT _maxMushrooms = 100
-DEF GLB INT _maxGrainSeeds = 100
-DEF GLB INT _maxVegetableSeeds = 100
+DEF GLB INT _maxSeeds = 100
 DEF GLB INT _maxTools = 5
 DEF GLB INT _maxBows = 5
 DEF GLB INT _maxArrows = 25

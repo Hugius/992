@@ -1,4 +1,4 @@
-19 20
+64 25
 META script_type_update
 META script_state_wait
 
@@ -64,8 +64,6 @@ IF isWorkerDead IS <false>
         SUB _totalSmokedFish 1
     ELIF _totalBread MORE 0
         SUB _totalBread 1
-    ELIF _totalVegetables MORE 0
-        SUB _totalVegetables 1
     ELIF _totalEggs MORE 0
         SUB _totalEggs 1
     ELIF _totalRawMeat MORE 0

@@ -14,7 +14,7 @@
 @flour assets\image\quad2d\diffuse_map\flour.tga 1 1 1 1 1 0 0 1
 @fruit assets\image\quad2d\diffuse_map\fruit.tga 1 1 1 1 1 0 0 1
 @grain assets\image\quad2d\diffuse_map\grain.tga 1 1 1 1 1 0 0 1
-@grainseeds assets\image\quad2d\diffuse_map\grainseeds.tga 1 1 1 1 1 0 0 1
+@seeds assets\image\quad2d\diffuse_map\seeds.tga 1 1 1 1 1 0 0 1
 @hides assets\image\quad2d\diffuse_map\hides.tga 1 1 1 1 1 0 0 1
 @honey assets\image\quad2d\diffuse_map\honey.tga 1 1 1 1 1 0 0 1
 @info assets\image\quad2d\diffuse_map\info.tga 1 1 1 1 1 0 0 0.75
@@ -39,8 +39,6 @@
 @straw assets\image\quad2d\diffuse_map\straw.tga 1 1 1 1 1 0 0 1
 @time assets\image\quad2d\diffuse_map\time.tga 1 1 1 1 1 0 0 1
 @tools assets\image\quad2d\diffuse_map\tools.tga 1 1 1 1 1 0 0 1
-@vegetables assets\image\quad2d\diffuse_map\vegetables.tga 1 1 1 1 1 0 0 1
-@vegetableseeds assets\image\quad2d\diffuse_map\vegetableseeds.tga 1 1 1 1 1 0 0 1
 @vignette assets\image\quad2d\diffuse_map\vignette.tga 1 1 1 0.25 1 0 0 1
 @wool assets\image\quad2d\diffuse_map\wool.tga 1 1 1 1 1 0 0 1
 @worker assets\image\quad2d\diffuse_map\worker.tga 1 1 1 1 1 0 0 1

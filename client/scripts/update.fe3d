@@ -1,4 +1,4 @@
-45 17
+23 17
 META script_type_update
 META script_state_entry
 
@@ -28,7 +28,7 @@ EXECUTE up_brewer
 ///EXECUTE up_butcher
 EXECUTE up_carpenter
 EXECUTE up_ditcher
-///EXECUTE up_farmer
+EXECUTE up_farmer
 EXECUTE up_feller
 EXECUTE up_fisher
 EXECUTE up_fletcher
