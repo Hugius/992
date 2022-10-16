@@ -1,4 +1,4 @@
-114 55
+95 55
 META script_type_update
 META script_state_wait
 
@@ -9,70 +9,69 @@ IF update IS <false>
 
 /// Create content
 DEF STR totalLumberText = misc:string_zeroed_integer(_totalLumber, 4)
-DEF STR totalStoneText = misc:string_zeroed_integer(_totalStone, 4)
-DEF STR totalGrainText = misc:string_zeroed_integer(_totalGrain, 4)
-DEF STR totalFlourText = misc:string_zeroed_integer(_totalFlour, 4)
 DEF STR totalPlanksText = misc:string_zeroed_integer(_totalPlanks, 4)
 DEF STR totalFirewoodText = misc:string_zeroed_integer(_totalFirewood, 4)
-DEF STR totalManureText = misc:string_zeroed_integer(_totalManure, 4)
-DEF STR totalOreText = misc:string_zeroed_integer(_totalOre, 4)
-DEF STR totalIronText = misc:string_zeroed_integer(_totalIron, 4)
-DEF STR totalHidesText = misc:string_zeroed_integer(_totalHides, 4)
-DEF STR totalClothesText = misc:string_zeroed_integer(_totalClothes, 4)
-DEF STR totalWoolText = misc:string_zeroed_integer(_totalWool, 4)
-DEF STR totalLeatherText = misc:string_zeroed_integer(_totalLeather, 4)
+DEF STR totalStoneText = misc:string_zeroed_integer(_totalStone, 4)
 DEF STR totalClayText = misc:string_zeroed_integer(_totalClay, 4)
 DEF STR totalStrawText = misc:string_zeroed_integer(_totalStraw, 4)
-DEF STR totalMedicineText = misc:string_zeroed_integer(_totalMedicine, 4)
-DEF STR totalFeathersText = misc:string_zeroed_integer(_totalFeathers, 4)
-DEF STR totalMushroomsText = misc:string_zeroed_integer(_totalMushrooms, 4)
+DEF STR totalOreText = misc:string_zeroed_integer(_totalOre, 4)
+DEF STR totalIronText = misc:string_zeroed_integer(_totalIron, 4)
 DEF STR totalSeedsText = misc:string_zeroed_integer(_totalSeeds, 4)
+DEF STR totalGrainText = misc:string_zeroed_integer(_totalGrain, 4)
+DEF STR totalFlourText = misc:string_zeroed_integer(_totalFlour, 4)
+DEF STR totalFeathersText = misc:string_zeroed_integer(_totalFeathers, 4)
+DEF STR totalHidesText = misc:string_zeroed_integer(_totalHides, 4)
+DEF STR totalLeatherText = misc:string_zeroed_integer(_totalLeather, 4)
+DEF STR totalWoolText = misc:string_zeroed_integer(_totalWool, 4)
+DEF STR totalClothesText = misc:string_zeroed_integer(_totalClothes, 4)
+DEF STR totalMushroomsText = misc:string_zeroed_integer(_totalMushrooms, 4)
+DEF STR totalMedicineText = misc:string_zeroed_integer(_totalMedicine, 4)
 DEF STR totalToolsText = misc:string_zeroed_integer(_totalTools, 4)
 DEF STR totalBowsText = misc:string_zeroed_integer(_totalBows, 4)
 DEF STR totalArrowsText = misc:string_zeroed_integer(_totalArrows, 4)
 
 /// Set content
 fe3d:text2d_set_content("total_lumber", totalLumberText)
-fe3d:text2d_set_content("total_stone", totalStoneText)
-fe3d:text2d_set_content("total_grain", totalGrainText)
-fe3d:text2d_set_content("total_flour", totalFlourText)
 fe3d:text2d_set_content("total_planks", totalPlanksText)
 fe3d:text2d_set_content("total_firewood", totalFirewoodText)
-fe3d:text2d_set_content("total_ore", totalOreText)
-fe3d:text2d_set_content("total_iron", totalIronText)
-fe3d:text2d_set_content("total_hides", totalHidesText)
-fe3d:text2d_set_content("total_clothes", totalClothesText)
-fe3d:text2d_set_content("total_wool", totalWoolText)
-fe3d:text2d_set_content("total_leather", totalFeathersText)
+fe3d:text2d_set_content("total_stone", totalStoneText)
 fe3d:text2d_set_content("total_clay", totalClayText)
 fe3d:text2d_set_content("total_straw", totalStrawText)
-fe3d:text2d_set_content("total_medicine", totalMedicineText)
-fe3d:text2d_set_content("total_feathers", totalFeathersText)
-fe3d:text2d_set_content("total_mushrooms", totalMushroomsText)
+fe3d:text2d_set_content("total_ore", totalOreText)
+fe3d:text2d_set_content("total_iron", totalIronText)
 fe3d:text2d_set_content("total_seeds", totalSeedsText)
+fe3d:text2d_set_content("total_grain", totalGrainText)
+fe3d:text2d_set_content("total_flour", totalFlourText)
+fe3d:text2d_set_content("total_feathers", totalFeathersText)
+fe3d:text2d_set_content("total_hides", totalHidesText)
+fe3d:text2d_set_content("total_leather", totalFeathersText)
+fe3d:text2d_set_content("total_wool", totalWoolText)
+fe3d:text2d_set_content("total_clothes", totalClothesText)
+fe3d:text2d_set_content("total_mushrooms", totalMushroomsText)
+fe3d:text2d_set_content("total_medicine", totalMedicineText)
 fe3d:text2d_set_content("total_tools", totalToolsText)
 fe3d:text2d_set_content("total_bows", totalBowsText)
 fe3d:text2d_set_content("total_arrows", totalArrowsText)
 
 /// Set default color
 fe3d:text2d_set_color("total_lumber", 0.0, 0.0, 0.0)
-fe3d:text2d_set_color("total_stone", 0.0, 0.0, 0.0)
-fe3d:text2d_set_color("total_grain", 0.0, 0.0, 0.0)
-fe3d:text2d_set_color("total_flour", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_planks", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_firewood", 0.0, 0.0, 0.0)
-fe3d:text2d_set_color("total_ore", 0.0, 0.0, 0.0)
-fe3d:text2d_set_color("total_iron", 0.0, 0.0, 0.0)
-fe3d:text2d_set_color("total_hides", 0.0, 0.0, 0.0)
-fe3d:text2d_set_color("total_clothes", 0.0, 0.0, 0.0)
-fe3d:text2d_set_color("total_wool", 0.0, 0.0, 0.0)
-fe3d:text2d_set_color("total_leather", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_stone", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_clay", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_straw", 0.0, 0.0, 0.0)
-fe3d:text2d_set_color("total_medicine", 0.0, 0.0, 0.0)
-fe3d:text2d_set_color("total_feathers", 0.0, 0.0, 0.0)
-fe3d:text2d_set_color("total_mushrooms", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_ore", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_iron", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_seeds", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_grain", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_flour", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_feathers", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_hides", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_leather", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_wool", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_clothes", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_mushrooms", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_medicine", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_tools", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_bows", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_arrows", 0.0, 0.0, 0.0)
@@ -80,40 +79,40 @@ fe3d:text2d_set_color("total_arrows", 0.0, 0.0, 0.0)
 /// Set custom color
 IF _totalLumber IS _maxLumber
     fe3d:text2d_set_color("total_lumber", 0.5, 0.0, 0.0)
-IF _totalStone IS _maxStone
-    fe3d:text2d_set_color("total_stone", 0.5, 0.0, 0.0)
-IF _totalGrain IS _maxGrain
-    fe3d:text2d_set_color("total_grain", 0.5, 0.0, 0.0)
-IF _totalFlour IS _maxFlour
-    fe3d:text2d_set_color("total_flour", 0.5, 0.0, 0.0)
 IF _totalPlanks IS _maxPlanks
     fe3d:text2d_set_color("total_planks", 0.5, 0.0, 0.0)
 IF _totalFirewood IS _maxFirewood
     fe3d:text2d_set_color("total_firewood", 0.5, 0.0, 0.0)
-IF _totalOre IS _maxOre
-    fe3d:text2d_set_color("total_ore", 0.5, 0.0, 0.0)
-IF _totalIron IS _maxIron
-    fe3d:text2d_set_color("total_iron", 0.5, 0.0, 0.0)
-IF _totalHides IS _maxHides
-    fe3d:text2d_set_color("total_hides", 0.5, 0.0, 0.0)
-IF _totalClothes IS _maxClothes
-    fe3d:text2d_set_color("total_clothes", 0.5, 0.0, 0.0)
-IF _totalWool IS _maxWool
-    fe3d:text2d_set_color("total_wool", 0.5, 0.0, 0.0)
-IF _totalLeather IS _maxLeather
-    fe3d:text2d_set_color("total_leather", 0.5, 0.0, 0.0)
+IF _totalStone IS _maxStone
+    fe3d:text2d_set_color("total_stone", 0.5, 0.0, 0.0)
 IF _totalClay IS _maxClay
     fe3d:text2d_set_color("total_clay", 0.5, 0.0, 0.0)
 IF _totalStraw IS _maxStraw
     fe3d:text2d_set_color("total_straw", 0.5, 0.0, 0.0)
-IF _totalMedicine IS _maxMedicine
-    fe3d:text2d_set_color("total_medicine", 0.5, 0.0, 0.0)
-IF _totalFeathers IS _maxFeathers
-    fe3d:text2d_set_color("total_feathers", 0.5, 0.0, 0.0)
-IF _totalMushrooms IS _maxMushrooms
-    fe3d:text2d_set_color("total_mushrooms", 0.5, 0.0, 0.0)
+IF _totalOre IS _maxOre
+    fe3d:text2d_set_color("total_ore", 0.5, 0.0, 0.0)
+IF _totalIron IS _maxIron
+    fe3d:text2d_set_color("total_iron", 0.5, 0.0, 0.0)
 IF _totalSeeds IS _maxSeeds
     fe3d:text2d_set_color("total_seeds", 0.5, 0.0, 0.0)
+IF _totalGrain IS _maxGrain
+    fe3d:text2d_set_color("total_grain", 0.5, 0.0, 0.0)
+IF _totalFlour IS _maxFlour
+    fe3d:text2d_set_color("total_flour", 0.5, 0.0, 0.0)
+IF _totalFeathers IS _maxFeathers
+    fe3d:text2d_set_color("total_feathers", 0.5, 0.0, 0.0)
+IF _totalHides IS _maxHides
+    fe3d:text2d_set_color("total_hides", 0.5, 0.0, 0.0)
+IF _totalLeather IS _maxLeather
+    fe3d:text2d_set_color("total_leather", 0.5, 0.0, 0.0)
+IF _totalWool IS _maxWool
+    fe3d:text2d_set_color("total_wool", 0.5, 0.0, 0.0)
+IF _totalClothes IS _maxClothes
+    fe3d:text2d_set_color("total_clothes", 0.5, 0.0, 0.0)
+IF _totalMushrooms IS _maxMushrooms
+    fe3d:text2d_set_color("total_mushrooms", 0.5, 0.0, 0.0)
+IF _totalMedicine IS _maxMedicine
+    fe3d:text2d_set_color("total_medicine", 0.5, 0.0, 0.0)
 IF _totalTools IS _maxTools
     fe3d:text2d_set_color("total_tools", 0.5, 0.0, 0.0)
 IF _totalBows IS _maxBows

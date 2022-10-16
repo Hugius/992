@@ -1,4 +1,4 @@
-44 27
+54 30
 META script_type_initialize
 META script_state_wait
 
@@ -23,7 +23,6 @@ DEF GLB INT _totalGrain = 15
 DEF GLB INT _totalFlour = 15
 DEF GLB INT _totalPlanks = 15
 DEF GLB INT _totalFirewood = 15
-DEF GLB INT _totalManure = 15
 DEF GLB INT _totalOre = 15
 DEF GLB INT _totalIron = 15
 DEF GLB INT _totalHides = 15
@@ -55,7 +54,6 @@ DEF GLB INT _maxGrain = 100
 DEF GLB INT _maxFlour = 100
 DEF GLB INT _maxPlanks = 100
 DEF GLB INT _maxFirewood = 100
-DEF GLB INT _maxManure = 100
 DEF GLB INT _maxOre = 100
 DEF GLB INT _maxIron = 100
 DEF GLB INT _maxHides = 100

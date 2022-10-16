@@ -1,4 +1,4 @@
-125 20
+112 23
 META script_type_update
 META script_state_wait
 
@@ -112,7 +112,6 @@ ELIF _placedBuildingType IS "storage"
     ADD _maxFlour 10
     ADD _maxPlanks 10
     ADD _maxFirewood 10
-    ADD _maxManure 10
     ADD _maxOre 10
     ADD _maxIron 10
     ADD _maxHides 10
