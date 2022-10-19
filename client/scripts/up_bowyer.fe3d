@@ -1,47 +1,38 @@
-46 33
+24 7
 META script_type_update
 META script_state_wait
+
+/// Define reusable values
+DEF BOL hasWorker = <false>
+DEF BOL hasTool = <false>
 
 /// Hide GUI
 IF _lastSelectedBuildingType IS "bowyer" OR _totalUpdates IS 0
     fe3d:quad2d_set_visible("bowyer_worker", <false>)
     fe3d:quad2d_set_visible("bowyer_tool", <false>)
-    fe3d:quad2d_set_visible("bowyer_storage", <false>)
     fe3d:quad2d_set_visible("bowyer_planks", <false>)
     fe3d:quad2d_set_visible("bowyer_wool", <false>)
     fe3d:quad2d_set_visible("bowyer_convert", <false>)
     fe3d:quad2d_set_visible("bowyer_bows", <false>)
     fe3d:text2d_set_visible("bowyer_worker", <false>)
     fe3d:text2d_set_visible("bowyer_tool", <false>)
-    fe3d:text2d_set_visible("bowyer_storage", <false>)
     fe3d:text2d_set_visible("bowyer_planks", <false>)
     fe3d:text2d_set_visible("bowyer_wool", <false>)
     fe3d:text2d_set_visible("bowyer_bows", <false>)
 
 /// Show GUI
 IF _selectedBuildingType IS "bowyer"
-    DEF BOL hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
-    DEF BOL hasTool = misc:list_contains("_toolBuildingIds", _selectedBuildingId)
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
+    ALT hasTool = misc:list_contains("_toolBuildingIds", _selectedBuildingId)
     IF hasWorker IS <true>
         IF hasTool IS <true>
-            IF _totalBows LESS _maxBows
-                fe3d:quad2d_set_visible("bowyer_planks", <true>)
-                fe3d:quad2d_set_visible("bowyer_wool", <true>)
-                fe3d:quad2d_set_visible("bowyer_convert", <true>)
-                fe3d:quad2d_set_visible("bowyer_bows", <true>)
-                fe3d:text2d_set_visible("bowyer_planks", <true>)
-                fe3d:text2d_set_visible("bowyer_wool", <true>)
-                fe3d:text2d_set_visible("bowyer_bows", <true>)
-                IF _totalPlanks MORE 0 AND _totalWool MORE 0
-                    ALT _cursorType = "HAND"
-                    DEF BOL isLmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
-                    IF isLmbClicked IS <true>
-                        SUB _totalPlanks 1
-                        SUB _totalWool 1
-                        ADD _totalBows 1
-            ELSE
-                fe3d:quad2d_set_visible("bowyer_storage", <true>)
-                fe3d:text2d_set_visible("bowyer_storage", <true>)
+            fe3d:quad2d_set_visible("bowyer_planks", <true>)
+            fe3d:quad2d_set_visible("bowyer_wool", <true>)
+            fe3d:quad2d_set_visible("bowyer_convert", <true>)
+            fe3d:quad2d_set_visible("bowyer_bows", <true>)
+            fe3d:text2d_set_visible("bowyer_planks", <true>)
+            fe3d:text2d_set_visible("bowyer_wool", <true>)
+            fe3d:text2d_set_visible("bowyer_bows", <true>)
         ELSE
             fe3d:quad2d_set_visible("bowyer_tool", <true>)
             fe3d:text2d_set_visible("bowyer_tool", <true>)
@@ -54,3 +45,25 @@ IF _selectedBuildingType IS "bowyer"
     ELSE
         fe3d:quad2d_set_visible("bowyer_worker", <true>)
         fe3d:text2d_set_visible("bowyer_worker", <true>)
+
+/// Update bowyers
+DEF INT maxIndex = misc:list_size("_bowyerIds")
+DEF INT index = 0
+LOOP
+    IF index IS maxIndex
+        BREAK
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _bowyerIds[index])
+    ALT hasTool = misc:list_contains("_toolBuildingIds", _bowyerIds[index])
+    IF hasWorker IS <true> AND hasTool IS <true>
+        IF _bowyerTimers[index] IS _bowyerInterval
+            ALT _bowyerTimers[index] = 0
+            IF _totalPlanks MORE 0 AND _totalWool MORE 0
+                ADD _totalBows 1
+                IF _totalBows MORE _maxBows
+                    SUB _totalBows 1
+                ELSE
+                    SUB _totalPlanks 1
+                    SUB _totalWool 1
+        ELSE
+            ADD _bowyerTimers[index] 1
+    ADD index 1

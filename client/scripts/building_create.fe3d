@@ -1,4 +1,4 @@
-112 23
+13 15
 META script_type_update
 META script_state_wait
 
@@ -12,16 +12,20 @@ IF _placedBuildingType IS "apiarist"
     PUSH _apiaristTimers 0
 ELIF _placedBuildingType IS "baker"
     PUSH _bakerIds _placedBuildingId
+    PUSH _bakerTimers 0
 ELIF _placedBuildingType IS "barber"
     PUSH _barberIds _placedBuildingId
 ELIF _placedBuildingType IS "blacksmith"
     PUSH _blacksmithIds _placedBuildingId
+    PUSH _blacksmithTimers 0
 ELIF _placedBuildingType IS "bowyer"
     PUSH _bowyerIds _placedBuildingId
+    PUSH _bowyerTimers 0
 ELIF _placedBuildingType IS "breeder"
     PASS
 ELIF _placedBuildingType IS "brewer"
     PUSH _brewerIds _placedBuildingId
+    PUSH _brewerTimers 0
 ELIF _placedBuildingType IS "butcher"
     PASS
 ELIF _placedBuildingType IS "carpenter"
@@ -39,6 +43,7 @@ ELIF _placedBuildingType IS "fisher"
     PUSH _fisherTimers 0
 ELIF _placedBuildingType IS "fletcher"
     PUSH _fletcherIds _placedBuildingId
+    PUSH _fletcherTimers 0
 ELIF _placedBuildingType IS "gatherer"
     PUSH _gathererIds _placedBuildingId
     PUSH _gathererTimers 0
@@ -46,6 +51,7 @@ ELIF _placedBuildingType IS "grave"
     PUSH _graveIds _placedBuildingId
 ELIF _placedBuildingType IS "herbalist"
     PUSH _herbalistIds _placedBuildingId
+    PUSH _herbalistTimers 0
 ELIF _placedBuildingType IS "hewer"
     PUSH _hewerIds _placedBuildingId
     PUSH _hewerTimers 0
@@ -57,10 +63,12 @@ ELIF _placedBuildingType IS "hunter"
     PUSH _hunterTimers 0
 ELIF _placedBuildingType IS "lumberer"
     PUSH _lumbererIds _placedBuildingId
+    PUSH _lumbererTimers 0
 ELIF _placedBuildingType IS "mason"
     PUSH _masonIds _placedBuildingId
 ELIF _placedBuildingType IS "miller"
     PUSH _millerIds _placedBuildingId
+    PUSH _millerTimers 0
 ELIF _placedBuildingType IS "miner"
     PUSH _minerIds _placedBuildingId
     PUSH _minerTimers 0
@@ -92,8 +100,10 @@ ELIF _placedBuildingType IS "scavenger"
     PUSH _scavengerIds _placedBuildingId
 ELIF _placedBuildingType IS "smelter"
     PUSH _smelterIds _placedBuildingId
+    PUSH _smelterTimers 0
 ELIF _placedBuildingType IS "smoker"
     PUSH _smokerIds _placedBuildingId
+    PUSH _smokerTimers 0
 ELIF _placedBuildingType IS "storage"
     PUSH _storageIds _placedBuildingId
     ADD _maxAle 10
@@ -129,12 +139,14 @@ ELIF _placedBuildingType IS "storage"
     ADD _maxArrows 50
 ELIF _placedBuildingType IS "tanner"
     PUSH _tannerIds _placedBuildingId
+    PUSH _tannerTimers 0
 ELIF _placedBuildingType IS "tavern"
     PUSH _tavernIds _placedBuildingId
 ELIF _placedBuildingType IS "waterer"
     PUSH _watererIds _placedBuildingId
 ELIF _placedBuildingType IS "weaver"
     PUSH _weaverIds _placedBuildingId
+    PUSH _weaverTimers 0
 ELSE
     CRASH
 

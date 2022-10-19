@@ -1,38 +1,49 @@
-28 39
+18 7
 META script_type_update
 META script_state_wait
+
+/// Define reusable values
+DEF BOL hasWorker = <false>
 
 /// Hide GUI
 IF _lastSelectedBuildingType IS "herbalist" OR _totalUpdates IS 0
     fe3d:quad2d_set_visible("herbalist_worker", <false>)
-    fe3d:quad2d_set_visible("herbalist_storage", <false>)
     fe3d:quad2d_set_visible("herbalist_mushrooms", <false>)
     fe3d:quad2d_set_visible("herbalist_convert", <false>)
     fe3d:quad2d_set_visible("herbalist_medicine", <false>)
     fe3d:text2d_set_visible("herbalist_worker", <false>)
-    fe3d:text2d_set_visible("herbalist_storage", <false>)
     fe3d:text2d_set_visible("herbalist_mushrooms", <false>)
     fe3d:text2d_set_visible("herbalist_medicine", <false>)
 
 /// Show GUI
 IF _selectedBuildingType IS "herbalist"
-    DEF BOL hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
     IF hasWorker IS <true>
-        IF _totalMedicine LESS _maxMedicine
-            fe3d:quad2d_set_visible("herbalist_mushrooms", <true>)
-            fe3d:quad2d_set_visible("herbalist_convert", <true>)
-            fe3d:quad2d_set_visible("herbalist_medicine", <true>)
-            fe3d:text2d_set_visible("herbalist_mushrooms", <true>)
-            fe3d:text2d_set_visible("herbalist_medicine", <true>)
-            IF _totalMushrooms MORE 0
-                ALT _cursorType = "HAND"
-                DEF BOL isLmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
-                IF isLmbClicked IS <true>
-                    SUB _totalMushrooms 1
-                    ADD _totalBread 1
-        ELSE
-            fe3d:quad2d_set_visible("herbalist_storage", <true>)
-            fe3d:text2d_set_visible("herbalist_storage", <true>)
+        fe3d:quad2d_set_visible("herbalist_mushrooms", <true>)
+        fe3d:quad2d_set_visible("herbalist_convert", <true>)
+        fe3d:quad2d_set_visible("herbalist_medicine", <true>)
+        fe3d:text2d_set_visible("herbalist_mushrooms", <true>)
+        fe3d:text2d_set_visible("herbalist_medicine", <true>)
     ELSE
         fe3d:quad2d_set_visible("herbalist_worker", <true>)
         fe3d:text2d_set_visible("herbalist_worker", <true>)
+
+/// Update herbalists
+DEF INT maxIndex = misc:list_size("_herbalistIds")
+DEF INT index = 0
+LOOP
+    IF index IS maxIndex
+        BREAK
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _herbalistIds[index])
+    IF hasWorker IS <true>
+        IF _herbalistTimers[index] IS _herbalistInterval
+            ALT _herbalistTimers[index] = 0
+            IF _totalMushrooms MORE 0
+                ADD _totalMedicine 1
+                IF _totalMedicine MORE _maxMedicine
+                    SUB _totalMedicine 1
+                ELSE
+                    SUB _totalMushrooms 1
+        ELSE
+            ADD _herbalistTimers[index] 1
+    ADD index 1
