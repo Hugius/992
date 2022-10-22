@@ -1,4 +1,4 @@
-63 17
+77 13
 META script_type_update
 META script_state_wait
 
@@ -72,11 +72,11 @@ LOOP
     ALT hasArrow = misc:list_contains("_arrowBuildingIds", _hunterIds[index])
     IF hasWorker IS <true> AND hasBow IS <true> AND hasArrow IS <true>
         IF _hunterTimers[index] IS _hunterInterval
-            ALT _hunterTimers[index] = 0
             ALT arrowIndex = misc:list_index("_arrowBuildingIds", _hunterIds[index])
             PULL _arrowBuildingIds arrowIndex
             IF _totalRawMeat LESS _maxRawMeat
                 ADD _totalRawMeat 1
+                ALT _hunterTimers[index] = 0
         ELSE
             ADD _hunterTimers[index] 1
     ADD index 1

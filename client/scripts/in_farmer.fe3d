@@ -1,4 +1,4 @@
-0 0
+9 27
 META script_type_initialize
 META script_state_wait
 
@@ -9,7 +9,6 @@ DEF FIN STR toolText = "Equip 1 tool?"
 
 /// Non-finals
 DEF GLB LST _farmerIds = {}
-DEF GLB LST _farmerTimers = {}
 DEF GLB LST _farmerGrowths = {}
 
 /// GUI

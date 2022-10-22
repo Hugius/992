@@ -1,4 +1,4 @@
-41 26
+50 23
 META script_type_update
 META script_state_wait
 
@@ -42,7 +42,6 @@ LOOP
     ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _weaverIds[index])
     IF hasWorker IS <true>
         IF _weaverTimers[index] IS _weaverInterval
-            ALT _weaverTimers[index] = 0
             IF _totalWool MORE 0 OR _totalLeather MORE 0
                 ADD _totalClothes 1
                 IF _totalClothes MORE _maxClothes
@@ -50,8 +49,10 @@ LOOP
                 ELSE
                     IF _totalWool MORE 0
                         SUB _totalWool 1
+                        ALT _weaverTimers[index] = 0
                     ELIF _totalLeather MORE 0
                         SUB _totalLeather 1
+                        ALT _weaverTimers[index] = 0
         ELSE
             ADD _weaverTimers[index] 1
     ADD index 1

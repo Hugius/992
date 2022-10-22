@@ -1,4 +1,4 @@
-45 17
+55 13
 META script_type_update
 META script_state_wait
 
@@ -52,9 +52,9 @@ LOOP
     ALT hasTool = misc:list_contains("_toolBuildingIds", _minerIds[index])
     IF hasWorker IS <true> AND hasTool IS <true>
         IF _minerTimers[index] IS _minerInterval
-            ALT _minerTimers[index] = 0
             IF _totalOre LESS _maxOre
                 ADD _totalOre 1
+                ALT _minerTimers[index] = 0
         ELSE
             ADD _minerTimers[index] 1
     ADD index 1

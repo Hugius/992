@@ -1,4 +1,4 @@
-68 38
+57 34
 META script_type_update
 META script_state_wait
 
@@ -56,18 +56,19 @@ LOOP
     ALT hasTool = misc:list_contains("_toolBuildingIds", _lumbererIds[index])
     IF hasWorker IS <true> AND hasTool IS <true>
         IF _lumbererTimers[index] IS _lumbererInterval
-            ALT _lumbererTimers[index] = 0
             IF _totalLumber MORE 0
                 ADD _totalPlanks 10
-                ADD _totalFirewood 5
                 IF _totalPlanks MORE _maxPlanks
                     SUB _totalPlanks 10
                 ELSE
                     SUB _totalLumber 1
+                    ALT _lumbererTimers[index] = 0
+                ADD _totalFirewood 5
                 IF _totalFirewood MORE _maxFirewood
                     SUB _totalFirewood 5
                 ELSE
                     SUB _totalLumber 1
+                    ALT _lumbererTimers[index] = 0
         ELSE
             ADD _lumbererTimers[index] 1
     ADD index 1

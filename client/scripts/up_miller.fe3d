@@ -1,4 +1,4 @@
-36 26
+44 17
 META script_type_update
 META script_state_wait
 
@@ -37,13 +37,13 @@ LOOP
     ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _millerIds[index])
     IF hasWorker IS <true>
         IF _millerTimers[index] IS _millerInterval
-            ALT _millerTimers[index] = 0
             IF _totalGrain MORE 0
                 ADD _totalFlour 1
                 IF _totalFlour MORE _maxFlour
                     SUB _totalFlour 1
                 ELSE
                     SUB _totalGrain 1
+                    ALT _millerTimers[index] = 0
         ELSE
             ADD _millerTimers[index] 1
     ADD index 1

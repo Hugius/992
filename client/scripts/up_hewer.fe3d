@@ -1,4 +1,4 @@
-48 17
+63 15
 META script_type_update
 META script_state_wait
 
@@ -55,7 +55,6 @@ LOOP
     ALT hasTool = misc:list_contains("_toolBuildingIds", _hewerIds[index])
     IF hasWorker IS <true> AND hasTool IS <true>
         IF _hewerTimers[index] IS _hewerInterval
-            ALT _hewerTimers[index] = 0
             IF _totalStone LESS _maxStone
                 ALT stoneIds = fe3d:model_find_ids("stone")
                 ALT stoneCount = misc:list_size("stoneIds")
@@ -63,6 +62,7 @@ LOOP
                 SUB stoneIndex 1
                 fe3d:model_delete(stoneIds[stoneIndex])
                 ADD _totalStone 1
+                ALT _hewerTimers[index] = 0
         ELSE
             ADD _hewerTimers[index] 1
     ADD index 1

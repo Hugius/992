@@ -1,4 +1,4 @@
-36 0
+52 48
 META script_type_update
 META script_state_wait
 
@@ -45,19 +45,20 @@ LOOP
     ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _smokerIds[index])
     IF hasWorker IS <true>
         IF _smokerTimers[index] IS _smokerInterval
-            ALT _smokerTimers[index] = 0
             IF _totalRawMeat MORE 0
                 ADD _totalSmokedMeat 1
                 IF _totalSmokedMeat MORE 0
                     SUB _totalSmokedMeat 1
                 ELSE
                     SUB _totalRawMeat 1
+                    ALT _smokerTimers[index] = 0
             ELIF _totalRawFish MORE 0
                 ADD _totalSmokedFish 1
                 IF _totalSmokedFish MORE 0
                     SUB _totalSmokedFish 1
                 ELSE
                     SUB _totalRawFish 1
+                    ALT _smokerTimers[index] = 0
         ELSE
             ADD _smokerTimers[index] 1
     ADD index 1

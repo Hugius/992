@@ -1,4 +1,4 @@
-169 36
+41 64
 META script_type_update
 META script_state_wait
 
@@ -34,8 +34,7 @@ ELIF _placedBuildingType IS "ditcher"
     PUSH _ditcherIds _placedBuildingId
     PUSH _ditcherTimers 0
 ELIF _placedBuildingType IS "farmer"
-    PUSH _farmerIds _placedBuildingId
-    PUSH _farmerTimers 0
+    PUSH _farmerIds _placedBuildingIdc
     PUSH _farmerGrowths 0.0
     DEF STR grainId1 = misc:string_concat(_placedBuildingId, "_1")
     DEF STR grainId2 = misc:string_concat(_placedBuildingId, "_2")

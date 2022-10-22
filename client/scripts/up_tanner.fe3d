@@ -1,4 +1,4 @@
-22 7
+59 18
 META script_type_update
 META script_state_wait
 
@@ -52,13 +52,13 @@ LOOP
     ALT hasTool = misc:list_contains("_toolBuildingIds", _tannerIds[index])
     IF hasWorker IS <true> AND hasTool IS <true>
         IF _tannerTimers[index] IS _tannerInterval
-            ALT _tannerTimers[index] = 0
             IF _totalHides MORE 0
                 ADD _totalLeather 1
                 IF _totalLeather MORE _maxLeather
                     SUB _totalLeather 1
                 ELSE
                     SUB _totalHides 1
+                    ALT _tannerTimers[index] = 0
         ELSE
             ADD _tannerTimers[index] 1
     ADD index 1

@@ -1,4 +1,4 @@
-20 7
+49 19
 META script_type_update
 META script_state_wait
 
@@ -41,7 +41,6 @@ LOOP
     ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _blacksmithIds[index])
     IF hasWorker IS <true>
         IF _blacksmithTimers[index] IS _blacksmithInterval
-            ALT _blacksmithTimers[index] = 0
             IF _totalPlanks MORE 0 AND _totalIron MORE 0
                 ADD _totalTools 1
                 IF _totalTools MORE _maxTools
@@ -49,6 +48,7 @@ LOOP
                 ELSE
                     SUB _totalPlanks 1
                     SUB _totalIron 1
+                    ALT _blacksmithTimers[index] = 0
         ELSE
             ADD _blacksmithTimers[index] 1
     ADD index 1
