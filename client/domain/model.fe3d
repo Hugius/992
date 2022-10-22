@@ -112,9 +112,9 @@ MODEL @tree3 assets\mesh\tree3.obj 3 4 3 @lod 60 2 1 1 1
 PART @tree3 trunk assets\image\model\diffuse_map\tree3_trunk.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.1 1 1 1 2 0 0 1 1 1
 PART @tree3 leaves assets\image\model\diffuse_map\tree3_leaves.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1.5 1 1 1 1 0 0 1 1 0.1
 AABB @tree3 model@@tree3@aabb -0.05 0 -0.08 1.65 1.7 1.55
-MODEL @tree4 assets\mesh\tree4.obj 0.25 0.25 0.25 ? 0 2 1 1 1
-PART @tree4 trunk assets\image\model\diffuse_map\tree4_trunk.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
-PART @tree4 leaves assets\image\model\diffuse_map\tree4_leaves.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 0.1
+MODEL @tree assets\mesh\tree.obj 0.25 0.25 0.25 ? 0 2 1 1 1
+PART @tree trunk assets\image\model\diffuse_map\tree_trunk.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+PART @tree leaves assets\image\model\diffuse_map\tree_leaves.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 0.1
 MODEL @well assets\mesh\well.obj 2.25 2.25 2.25 ? 0 2 1 1 1
 PART @well pulley assets\image\model\diffuse_map\well_pulley.tga ? ? ? ? assets\image\model\normal_map\well_pulley.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 PART @well misc assets\image\model\diffuse_map\well_misc.tga ? ? ? ? assets\image\model\normal_map\well_misc.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1

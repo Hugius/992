@@ -1,27 +1,38 @@
-10 53
+43 19
 META script_type_update
 META script_state_wait
 
 /// Save last build mode
 ALT _lastBuildMode = _buildMode
 
-/// Calculate tool logic
+/// Check default buildings
 DEF BOL carpenterHasTool = misc:list_contains("_toolBuildingIds", "carpenter_1")
+DEF BOL carpenterHasWorker = misc:list_contains("_workerJobBuildingIds", "carpenter_1")
 DEF BOL masonHasTool = misc:list_contains("_toolBuildingIds", "mason_2")
+DEF BOL masonHasWorker = misc:list_contains("_workerJobBuildingIds", "mason_2")
 DEF BOL rooferHasTool = misc:list_contains("_toolBuildingIds", "roofer_3")
-DEF BOL defaultBuildingsHaveTools = (carpenterHasTool IS <true> AND masonHasTool IS <true> AND rooferHasTool IS <true>)
+DEF BOL rooferHasWorker = misc:list_contains("_workerJobBuildingIds", "roofer_3")
 
-/// Update build button opacity
-IF defaultBuildingsHaveTools IS <true>
+/// Check build button hoverability
+DEF BOL isButtonHoverable = <false>
+IF carpenterHasTool IS <true> AND carpenterHasWorker IS <true>
+    IF masonHasTool IS <true> AND masonHasWorker IS <true>
+        IF rooferHasTool IS <true> AND rooferHasWorker IS <true>
+            ALT isButtonHoverable = <true>
+
+/// Update build button hoverability
+IF isButtonHoverable IS <true>
     fe3d:quad2d_set_opacity("build", 1.0)
 ELSE
     fe3d:quad2d_set_opacity("build", 0.5)
+    fe3d:model_set_visible(_buildingTypes[_buildingIndex], <false>)
+    ALT _buildMode = <false>
 
 /// Update build button hover and click
 DEF BOL buttonHovered = fe3d:quad2d_is_hovered("build")
-IF buttonHovered IS <true> AND defaultBuildingsHaveTools IS <true>
-    ALT _cursorType = "HAND"
+IF buttonHovered IS <true> AND isButtonHoverable IS <true>
     fe3d:quad2d_set_lightness("build", 1.25)
+    ALT _cursorType = "HAND"
     DEF BOL isLmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
     IF isLmbClicked IS <true>
         IF _buildMode IS <true>

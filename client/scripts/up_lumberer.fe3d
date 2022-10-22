@@ -1,4 +1,4 @@
-61 53
+68 38
 META script_type_update
 META script_state_wait
 
@@ -60,8 +60,11 @@ LOOP
             IF _totalLumber MORE 0
                 ADD _totalPlanks 10
                 ADD _totalFirewood 5
-                IF _totalPlanks MORE _maxPlanks AND _totalFirewood MORE _maxFirewood
+                IF _totalPlanks MORE _maxPlanks
                     SUB _totalPlanks 10
+                ELSE
+                    SUB _totalLumber 1
+                IF _totalFirewood MORE _maxFirewood
                     SUB _totalFirewood 5
                 ELSE
                     SUB _totalLumber 1
