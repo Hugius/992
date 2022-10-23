@@ -1,4 +1,4 @@
-23 17
+24 0
 META script_type_update
 META script_state_entry
 
@@ -23,7 +23,7 @@ EXECUTE up_baker
 EXECUTE up_barber
 EXECUTE up_blacksmith
 EXECUTE up_bowyer
-///EXECUTE up_breeder 
+EXECUTE up_breeder 
 EXECUTE up_brewer
 ///EXECUTE up_butcher
 EXECUTE up_carpenter
