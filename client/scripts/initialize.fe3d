@@ -1,4 +1,4 @@
-14 0
+42 0
 META script_type_initialize
 META script_state_entry
 
@@ -13,10 +13,10 @@ EXECUTE in_baker
 EXECUTE in_barber
 EXECUTE in_blacksmith
 EXECUTE in_bowyer
-EXECUTE in_breeder
 EXECUTE in_brewer
 ///EXECUTE in_butcher
 EXECUTE in_carpenter
+EXECUTE in_cattleman
 EXECUTE in_ditcher
 EXECUTE in_farmer
 EXECUTE in_feller
@@ -33,12 +33,15 @@ EXECUTE in_mason
 EXECUTE in_miller
 EXECUTE in_miner
 EXECUTE in_orchardist
+EXECUTE in_poultryman
 EXECUTE in_priest
 EXECUTE in_roofer
 EXECUTE in_scavenger
+EXECUTE in_shepherd
 EXECUTE in_smelter
 EXECUTE in_smoker
 EXECUTE in_storage
+EXECUTE in_swineherd
 EXECUTE in_tanner
 EXECUTE in_tavern
 EXECUTE in_waterer

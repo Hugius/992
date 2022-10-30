@@ -1,0 +1,74 @@
+0 0
+META script_type_update
+META script_state_wait
+
+/// Define reusable values
+DEF BOL hasWorker = <false>
+DEF BOL hasTool = <false>
+
+/// Hide GUI
+IF _lastSelectedBuildingType IS "shepherd" OR _totalUpdates IS 0
+    fe3d:quad2d_set_visible("shepherd_worker", <false>)
+    fe3d:quad2d_set_visible("shepherd_tool", <false>)
+    fe3d:quad2d_set_visible("shepherd_time", <false>)
+    fe3d:quad2d_set_visible("shepherd_convert", <false>)
+    fe3d:quad2d_set_visible("shepherd_wool", <false>)
+    fe3d:text2d_set_visible("shepherd_worker", <false>)
+    fe3d:text2d_set_visible("shepherd_tool", <false>)
+    fe3d:text2d_set_visible("shepherd_time", <false>)
+    fe3d:text2d_set_visible("shepherd_wool", <false>)
+
+/// Show GUI
+IF _selectedBuildingType IS "shepherd"
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
+    ALT hasTool = misc:list_contains("_toolBuildingIds", _selectedBuildingId)
+    IF hasWorker IS <true>
+        IF hasTool IS <true>
+            fe3d:quad2d_set_visible("shepherd_time", <true>)
+            fe3d:quad2d_set_visible("shepherd_convert", <true>)
+            fe3d:quad2d_set_visible("shepherd_wool", <true>)
+            fe3d:text2d_set_visible("shepherd_time", <true>)
+            fe3d:text2d_set_visible("shepherd_wool", <true>)
+        ELSE
+            fe3d:quad2d_set_visible("shepherd_tool", <true>)
+            fe3d:text2d_set_visible("shepherd_tool", <true>)
+            IF _totalTools MORE 0
+                ALT _cursorType = "HAND"
+                DEF BOL isLmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
+                IF isLmbClicked IS <true>
+                    SUB _totalTools 1
+                    PUSH _toolBuildingIds _selectedBuildingId
+    ELSE
+        fe3d:quad2d_set_visible("shepherd_worker", <true>)
+        fe3d:text2d_set_visible("shepherd_worker", <true>)
+
+/// Update shepherds
+DEF STR sheepId = ""
+DEF DEC growth = 0.0
+DEF INT maxIndex = misc:list_size("_shepherdIds")
+DEF INT index = 0
+LOOP
+    IF index IS maxIndex
+        BREAK
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _shepherdIds[index])
+    ALT hasTool = misc:list_contains("_toolBuildingIds", _shepherdIds[index])
+    IF hasWorker IS <true> AND hasTool IS <true>
+        IF _shepherdGrowths[index] IS 0.0
+            ADD _shepherdGrowths[index] 0.0001
+        ELIF _shepherdGrowths[index] MORE 0.45
+            IF _shepherdTimers[index] IS _shepherdInterval
+                IF _totalWool LESS _maxWool
+                    ADD _totalWool 1
+                    ALT _shepherdTimers[index] = 0
+            ELSE
+                ADD _shepherdTimers[index] 1
+    IF _shepherdGrowths[index] MORE 0.0 AND _shepherdGrowths[index] LESS 0.45
+        ADD _shepherdGrowths[index] 0.0001
+    ALT growth = _shepherdGrowths[index]
+    ALT sheepId = misc:string_concat(_shepherdIds[index], "_1")
+    fe3d:model_set_base_size(sheepId, growth, growth, growth)
+    ALT sheepId = misc:string_concat(_shepherdIds[index], "_2")
+    fe3d:model_set_base_size(sheepId, growth, growth, growth)
+    ALT sheepId = misc:string_concat(_shepherdIds[index], "_3")
+    fe3d:model_set_base_size(sheepId, growth, growth, growth)
+    ADD index 1

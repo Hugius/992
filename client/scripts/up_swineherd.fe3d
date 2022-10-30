@@ -1,0 +1,46 @@
+35 36
+META script_type_update
+META script_state_wait
+
+/// Define reusable values
+DEF BOL hasWorker = <false>
+
+/// Hide GUI
+IF _lastSelectedBuildingType IS "swineherd" OR _totalUpdates IS 0
+    fe3d:quad2d_set_visible("swineherd_worker", <false>)
+    fe3d:quad2d_set_visible("swineherd_info", <false>)
+    fe3d:text2d_set_visible("swineherd_worker", <false>)
+    fe3d:text2d_set_visible("swineherd_info", <false>)
+
+/// Show GUI
+IF _selectedBuildingType IS "swineherd"
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
+    IF hasWorker IS <true>
+        fe3d:quad2d_set_visible("swineherd_info", <true>)
+        fe3d:text2d_set_visible("swineherd_info", <true>)
+    ELSE
+        fe3d:quad2d_set_visible("swineherd_worker", <true>)
+        fe3d:text2d_set_visible("swineherd_worker", <true>)
+
+/// Update swineherds
+DEF STR pigId = ""
+DEF DEC growth = 0.0
+DEF INT maxIndex = misc:list_size("_swineherdIds")
+DEF INT index = 0
+LOOP
+    IF index IS maxIndex
+        BREAK
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _swineherdIds[index])
+    IF hasWorker IS <true>
+        IF _swineherdGrowths[index] IS 0.0
+            ADD _swineherdGrowths[index] 0.0001
+    IF _swineherdGrowths[index] MORE 0.0 AND _swineherdGrowths[index] LESS 0.4
+        ADD _swineherdGrowths[index] 0.0001
+    ALT growth = _swineherdGrowths[index]
+    ALT pigId = misc:string_concat(_swineherdIds[index], "_1")
+    fe3d:model_set_base_size(pigId, growth, growth, growth)
+    ALT pigId = misc:string_concat(_swineherdIds[index], "_2")
+    fe3d:model_set_base_size(pigId, growth, growth, growth)
+    ALT pigId = misc:string_concat(_swineherdIds[index], "_3")
+    fe3d:model_set_base_size(pigId, growth, growth, growth)
+    ADD index 1

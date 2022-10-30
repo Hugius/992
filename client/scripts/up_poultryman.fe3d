@@ -1,0 +1,70 @@
+55 37
+META script_type_update
+META script_state_wait
+
+/// Define reusable values
+DEF BOL hasWorker = <false>
+
+/// Hide GUI
+IF _lastSelectedBuildingType IS "poultryman" OR _totalUpdates IS 0
+    fe3d:quad2d_set_visible("poultryman_worker", <false>)
+    fe3d:quad2d_set_visible("poultryman_time", <false>)
+    fe3d:quad2d_set_visible("poultryman_convert", <false>)
+    fe3d:quad2d_set_visible("poultryman_eggs", <false>)
+    fe3d:quad2d_set_visible("poultryman_feathers", <false>)
+    fe3d:text2d_set_visible("poultryman_worker", <false>)
+    fe3d:text2d_set_visible("poultryman_time", <false>)
+    fe3d:text2d_set_visible("poultryman_eggs", <false>)
+    fe3d:text2d_set_visible("poultryman_feathers", <false>)
+
+/// Show GUI
+IF _selectedBuildingType IS "poultryman"
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
+    IF hasWorker IS <true>
+        fe3d:quad2d_set_visible("poultryman_time", <true>)
+        fe3d:quad2d_set_visible("poultryman_convert", <true>)
+        fe3d:quad2d_set_visible("poultryman_eggs", <true>)
+        fe3d:quad2d_set_visible("poultryman_feathers", <true>)
+        fe3d:text2d_set_visible("poultryman_time", <true>)
+        fe3d:text2d_set_visible("poultryman_eggs", <true>)
+        fe3d:text2d_set_visible("poultryman_feathers", <true>)
+    ELSE
+        fe3d:quad2d_set_visible("poultryman_worker", <true>)
+        fe3d:text2d_set_visible("poultryman_worker", <true>)
+
+/// Update poultrymen
+DEF STR chickenId = ""
+DEF DEC growth = 0.0
+DEF INT maxIndex = misc:list_size("_poultrymanIds")
+DEF INT index = 0
+LOOP
+    IF index IS maxIndex
+        BREAK
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _poultrymanIds[index])
+    IF hasWorker IS <true>
+        IF _poultrymanGrowths[index] IS 0.0
+            ADD _poultrymanGrowths[index] 0.0001
+        ELIF _poultrymanGrowths[index] MORE 0.25
+            IF _poultrymanTimers[index] IS _poultrymanInterval
+                IF _totalEggs LESS _maxEggs
+                    ADD _totalEggs 1
+                    ALT _poultrymanTimers[index] = 0
+                IF _totalFeathers LESS _maxFeathers
+                    ADD _totalFeathers 1
+                    ALT _poultrymanTimers[index] = 0
+            ELSE
+                ADD _poultrymanTimers[index] 1
+    IF _poultrymanGrowths[index] MORE 0.0 AND _poultrymanGrowths[index] LESS 0.25
+        ADD _poultrymanGrowths[index] 0.0001
+    ALT growth = _poultrymanGrowths[index]
+    ALT chickenId = misc:string_concat(_poultrymanIds[index], "_1")
+    fe3d:model_set_base_size(chickenId, growth, growth, growth)
+    ALT chickenId = misc:string_concat(_poultrymanIds[index], "_2")
+    fe3d:model_set_base_size(chickenId, growth, growth, growth)
+    ALT chickenId = misc:string_concat(_poultrymanIds[index], "_3")
+    fe3d:model_set_base_size(chickenId, growth, growth, growth)
+    ALT chickenId = misc:string_concat(_poultrymanIds[index], "_4")
+    fe3d:model_set_base_size(chickenId, growth, growth, growth)
+    ALT chickenId = misc:string_concat(_poultrymanIds[index], "_5")
+    fe3d:model_set_base_size(chickenId, growth, growth, growth)
+    ADD index 1

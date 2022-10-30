@@ -1,4 +1,4 @@
-35 37
+244 30
 META script_type_update
 META script_state_wait
 
@@ -21,8 +21,6 @@ ELIF _placedBuildingType IS "blacksmith"
 ELIF _placedBuildingType IS "bowyer"
     PUSH _bowyerIds _placedBuildingId
     PUSH _bowyerTimers 0
-ELIF _placedBuildingType IS "breeder"
-    PASS
 ELIF _placedBuildingType IS "brewer"
     PUSH _brewerIds _placedBuildingId
     PUSH _brewerTimers 0
@@ -30,6 +28,15 @@ ELIF _placedBuildingType IS "butcher"
     PASS
 ELIF _placedBuildingType IS "carpenter"
     PUSH _carpenterIds _placedBuildingId
+ELIF _placedBuildingType IS "cattleman"
+    PUSH _cattlemanIds _placedBuildingId
+    PUSH _cattlemanGrowths 0.0
+    PUSH _cattlemanTimers 0
+    DEF STR cowId1 = misc:string_concat(_placedBuildingId, "_1")
+    DEF DEC x = fe3d:model_get_base_position_x(_placedBuildingId)
+    DEF DEC y = fe3d:model_get_base_position_y(_placedBuildingId)
+    DEF DEC z = fe3d:model_get_base_position_z(_placedBuildingId)
+    fe3d:model_place(cowId1, "cow", x, y, z)
 ELIF _placedBuildingType IS "ditcher"
     PUSH _ditcherIds _placedBuildingId
     PUSH _ditcherTimers 0
@@ -58,55 +65,39 @@ ELIF _placedBuildingType IS "farmer"
     SUB x 3.0
     SUB z 3.0
     fe3d:model_place(grainId1, "grain", x, y, z)
-    fe3d:model_set_base_size(grainId1, 0.0, 0.0, 0.0)
     ADD x 2.0
     fe3d:model_place(grainId2, "grain", x, y, z)
-    fe3d:model_set_base_size(grainId2, 0.0, 0.0, 0.0)
     ADD x 2.0
     fe3d:model_place(grainId3, "grain", x, y, z)
-    fe3d:model_set_base_size(grainId3, 0.0, 0.0, 0.0)
     ADD x 2.0
     fe3d:model_place(grainId4, "grain", x, y, z)
-    fe3d:model_set_base_size(grainId4, 0.0, 0.0, 0.0)
     SUB x 6.0
     ADD z 2.0
     fe3d:model_place(grainId5, "grain", x, y, z)
-    fe3d:model_set_base_size(grainId5, 0.0, 0.0, 0.0)
     ADD x 2.0
     fe3d:model_place(grainId6, "grain", x, y, z)
-    fe3d:model_set_base_size(grainId6, 0.0, 0.0, 0.0)
     ADD x 2.0
     fe3d:model_place(grainId7, "grain", x, y, z)
-    fe3d:model_set_base_size(grainId7, 0.0, 0.0, 0.0)
     ADD x 2.0
     fe3d:model_place(grainId8, "grain", x, y, z)
-    fe3d:model_set_base_size(grainId8, 0.0, 0.0, 0.0)
     SUB x 6.0
     ADD z 2.0
     fe3d:model_place(grainId9, "grain", x, y, z)
-    fe3d:model_set_base_size(grainId9, 0.0, 0.0, 0.0)
     ADD x 2.0
     fe3d:model_place(grainId10, "grain", x, y, z)
-    fe3d:model_set_base_size(grainId10, 0.0, 0.0, 0.0)
     ADD x 2.0
     fe3d:model_place(grainId11, "grain", x, y, z)
-    fe3d:model_set_base_size(grainId11, 0.0, 0.0, 0.0)
     ADD x 2.0
     fe3d:model_place(grainId12, "grain", x, y, z)
-    fe3d:model_set_base_size(grainId12, 0.0, 0.0, 0.0)
     SUB x 6.0
     ADD z 2.0
     fe3d:model_place(grainId13, "grain", x, y, z)
-    fe3d:model_set_base_size(grainId13, 0.0, 0.0, 0.0)
     ADD x 2.0
     fe3d:model_place(grainId14, "grain", x, y, z)
-    fe3d:model_set_base_size(grainId14, 0.0, 0.0, 0.0)
     ADD x 2.0
     fe3d:model_place(grainId15, "grain", x, y, z)
-    fe3d:model_set_base_size(grainId15, 0.0, 0.0, 0.0)
     ADD x 2.0
     fe3d:model_place(grainId16, "grain", x, y, z)
-    fe3d:model_set_base_size(grainId16, 0.0, 0.0, 0.0)
 ELIF _placedBuildingType IS "feller"
     PUSH _fellerIds _placedBuildingId
     PUSH _fellerTimers 0
@@ -146,8 +137,8 @@ ELIF _placedBuildingType IS "miner"
     PUSH _minerTimers 0
 ELIF _placedBuildingType IS "orchardist"
     PUSH _orchardistIds _placedBuildingId
-    PUSH _orchardistTimers 0
     PUSH _orchardistGrowths 0.0
+    PUSH _orchardistTimers 0
     DEF STR treeId1 = misc:string_concat(_placedBuildingId, "_1")
     DEF STR treeId2 = misc:string_concat(_placedBuildingId, "_2")
     DEF STR treeId3 = misc:string_concat(_placedBuildingId, "_3")
@@ -158,22 +149,59 @@ ELIF _placedBuildingType IS "orchardist"
     SUB x 2.0
     SUB z 2.0
     fe3d:model_place(treeId1, "tree", x, y, z)
-    fe3d:model_set_base_size(treeId1, 0.0, 0.0, 0.0)
     ADD x 4.0
     fe3d:model_place(treeId2, "tree", x, y, z)
-    fe3d:model_set_base_size(treeId2, 0.0, 0.0, 0.0)
     ADD z 4.0
     fe3d:model_place(treeId3, "tree", x, y, z)
-    fe3d:model_set_base_size(treeId3, 0.0, 0.0, 0.0)
     SUB x 4.0
     fe3d:model_place(treeId4, "tree", x, y, z)
-    fe3d:model_set_base_size(treeId4, 0.0, 0.0, 0.0)
+ELIF _placedBuildingType IS "poultryman"
+    PUSH _poultrymanIds _placedBuildingId
+    PUSH _poultrymanGrowths 0.0
+    PUSH _poultrymanTimers 0
+    DEF STR chickenId1 = misc:string_concat(_placedBuildingId, "_1")
+    DEF STR chickenId2 = misc:string_concat(_placedBuildingId, "_2")
+    DEF STR chickenId3 = misc:string_concat(_placedBuildingId, "_3")
+    DEF STR chickenId4 = misc:string_concat(_placedBuildingId, "_4")
+    DEF STR chickenId5 = misc:string_concat(_placedBuildingId, "_5")
+    DEF DEC x = fe3d:model_get_base_position_x(_placedBuildingId)
+    DEF DEC y = fe3d:model_get_base_position_y(_placedBuildingId)
+    DEF DEC z = fe3d:model_get_base_position_z(_placedBuildingId)
+    fe3d:model_place(chickenId1, "chicken", x, y, z)
+    SUB x 1.0
+    SUB z 1.0
+    fe3d:model_place(chickenId2, "chicken", x, y, z)
+    ADD x 2.0
+    fe3d:model_place(chickenId3, "chicken", x, y, z)
+    ADD z 2.0
+    fe3d:model_place(chickenId4, "chicken", x, y, z)
+    SUB x 2.0
+    fe3d:model_place(chickenId5, "chicken", x, y, z)
+    SUB z 2.0
 ELIF _placedBuildingType IS "priest"
     PUSH _priestIds _placedBuildingId
 ELIF _placedBuildingType IS "roofer"
     PUSH _rooferIds _placedBuildingId
 ELIF _placedBuildingType IS "scavenger"
     PUSH _scavengerIds _placedBuildingId
+ELIF _placedBuildingType IS "shepherd"
+    PUSH _shepherdIds _placedBuildingId
+    PUSH _shepherdGrowths 0.0
+    PUSH _shepherdTimers 0
+    DEF STR sheepId1 = misc:string_concat(_placedBuildingId, "_1")
+    DEF STR sheepId2 = misc:string_concat(_placedBuildingId, "_2")
+    DEF STR sheepId3 = misc:string_concat(_placedBuildingId, "_3")
+    DEF DEC x = fe3d:model_get_base_position_x(_placedBuildingId)
+    DEF DEC y = fe3d:model_get_base_position_y(_placedBuildingId)
+    DEF DEC z = fe3d:model_get_base_position_z(_placedBuildingId)
+    SUB x 1.0
+    SUB z 1.0
+    fe3d:model_place(sheepId1, "sheep", x, y, z)
+    ADD x 2.0
+    fe3d:model_place(sheepId2, "sheep", x, y, z)
+    SUB x 1.0
+    ADD z 2.0
+    fe3d:model_place(sheepId3, "sheep", x, y, z)
 ELIF _placedBuildingType IS "smelter"
     PUSH _smelterIds _placedBuildingId
     PUSH _smelterTimers 0
@@ -213,6 +241,23 @@ ELIF _placedBuildingType IS "storage"
     ADD _maxTools 5
     ADD _maxBows 5
     ADD _maxArrows 50
+ELIF _placedBuildingType IS "swineherd"
+    PUSH _swineherdIds _placedBuildingId
+    PUSH _swineherdGrowths 0.0
+    DEF STR pigId1 = misc:string_concat(_placedBuildingId, "_1")
+    DEF STR pigId2 = misc:string_concat(_placedBuildingId, "_2")
+    DEF STR pigId3 = misc:string_concat(_placedBuildingId, "_3")
+    DEF DEC x = fe3d:model_get_base_position_x(_placedBuildingId)
+    DEF DEC y = fe3d:model_get_base_position_y(_placedBuildingId)
+    DEF DEC z = fe3d:model_get_base_position_z(_placedBuildingId)
+    SUB x 1.0
+    SUB z 1.0
+    fe3d:model_place(pigId1, "pig", x, y, z)
+    ADD x 2.0
+    fe3d:model_place(pigId2, "pig", x, y, z)
+    SUB x 1.0
+    ADD z 2.0
+    fe3d:model_place(pigId3, "pig", x, y, z)
 ELIF _placedBuildingType IS "tanner"
     PUSH _tannerIds _placedBuildingId
     PUSH _tannerTimers 0

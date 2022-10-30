@@ -1,4 +1,4 @@
-10 30
+10 34
 META script_type_initialize
 META script_state_wait
 
@@ -8,8 +8,8 @@ DEF FIN STR workerText = "No worker available"
 
 /// Non-finals
 DEF GLB LST _orchardistIds = {}
-DEF GLB LST _orchardistTimers = {}
 DEF GLB LST _orchardistGrowths = {}
+DEF GLB LST _orchardistTimers = {}
 
 /// GUI
 fe3d:quad2d_place("orchardist_worker", "worker", 0.0, -0.6, 0.1, 0.175)

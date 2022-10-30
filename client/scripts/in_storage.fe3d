@@ -1,4 +1,4 @@
-35 28
+16 28
 META script_type_initialize
 META script_state_wait
 
@@ -7,34 +7,34 @@ DEF FIN STR infoText = "Stores food and resources"
 
 /// Non-finals
 DEF GLB LST _storageIds = {"storage_0"}
-DEF GLB INT _totalAle = 15
-DEF GLB INT _totalMilk = 15
-DEF GLB INT _totalSmokedMeat = 15
-DEF GLB INT _totalSmokedFish = 15
-DEF GLB INT _totalBread = 15
-DEF GLB INT _totalEggs = 15
-DEF GLB INT _totalRawFish = 15
-DEF GLB INT _totalRawMeat = 10
-DEF GLB INT _totalHoney = 15
-DEF GLB INT _totalFruit = 15
-DEF GLB INT _totalLumber = 15
-DEF GLB INT _totalStone = 15
-DEF GLB INT _totalGrain = 15
-DEF GLB INT _totalFlour = 15
-DEF GLB INT _totalPlanks = 15
-DEF GLB INT _totalFirewood = 15
-DEF GLB INT _totalOre = 15
-DEF GLB INT _totalIron = 15
-DEF GLB INT _totalHides = 15
-DEF GLB INT _totalClothes = 15
-DEF GLB INT _totalWool = 15
-DEF GLB INT _totalLeather = 15
-DEF GLB INT _totalClay = 15
-DEF GLB INT _totalStraw = 15
-DEF GLB INT _totalMedicine = 15
-DEF GLB INT _totalFeathers = 15
-DEF GLB INT _totalMushrooms = 15
-DEF GLB INT _totalSeeds = 15
+DEF GLB INT _totalAle = 50
+DEF GLB INT _totalMilk = 50
+DEF GLB INT _totalSmokedMeat = 50
+DEF GLB INT _totalSmokedFish = 50
+DEF GLB INT _totalBread = 50
+DEF GLB INT _totalEggs = 50
+DEF GLB INT _totalRawFish = 50
+DEF GLB INT _totalRawMeat = 00
+DEF GLB INT _totalHoney = 50
+DEF GLB INT _totalFruit = 50
+DEF GLB INT _totalLumber = 50
+DEF GLB INT _totalStone = 50
+DEF GLB INT _totalGrain = 50
+DEF GLB INT _totalFlour = 50
+DEF GLB INT _totalPlanks = 50
+DEF GLB INT _totalFirewood = 50
+DEF GLB INT _totalOre = 50
+DEF GLB INT _totalIron = 50
+DEF GLB INT _totalHides = 50
+DEF GLB INT _totalClothes = 50
+DEF GLB INT _totalWool = 50
+DEF GLB INT _totalLeather = 50
+DEF GLB INT _totalClay = 50
+DEF GLB INT _totalStraw = 50
+DEF GLB INT _totalMedicine = 50
+DEF GLB INT _totalFeathers = 50
+DEF GLB INT _totalMushrooms = 50
+DEF GLB INT _totalSeeds = 50
 DEF GLB INT _totalTools = 5
 DEF GLB INT _totalBows = 5
 DEF GLB INT _totalArrows = 25

@@ -66,12 +66,9 @@ AABB @mine model@@mine@aabb -0.07 0 -0.5 4.9 2.85 3.15
 MODEL @orchard assets\mesh\orchard.obj 2 1.25 2 ? 0 2 1 1 1
 PART @orchard ? assets\image\model\diffuse_map\bakery_base.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
 AABB @orchard model@@orchard@aabb 0.03 0 -0.03 4.2 0.6 4.2
-MODEL @pen assets\mesh\pen.obj 0.5 0.5 0.5 ? 0 2 1 1 1
+MODEL @pen assets\mesh\pen.obj 0.25 0.5 0.25 ? 0 2 1 1 1
 PART @pen ? assets\image\model\diffuse_map\pen.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
-AABB @pen model@@pen@aabb1 8 0 0 0.25 1.5 16.25
-AABB @pen model@@pen@aabb2 -8 0 0 0.25 1.5 16.25
-AABB @pen model@@pen@aabb3 0 0 8 16.25 1.5 0.25
-AABB @pen model@@pen@aabb4 0 0 -8 16.25 1.5 0.25
+AABB @pen model@@pen@aabb 0 0 0 16.25 1.5 16.25
 MODEL @pig assets\mesh\pig.obj 0.4 0.4 0.4 ? 0 2 1 1 1
 PART @pig ? assets\image\model\diffuse_map\pig.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1
 MODEL @sawmill assets\mesh\sawmill.obj 0.5 0.5 0.5 ? 0 2 1 1 1

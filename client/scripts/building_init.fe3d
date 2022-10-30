@@ -1,14 +1,14 @@
-45 17
+4 128
 META script_type_initialize
 META script_state_wait
 
 /// Finals
-DEF GLB FIN LST _buildingModels = {"apiary","bakery","workshop2","smithy","workshop2","pen","workshop2","workshop2","workshop3","workshop1","farmland","workshop1","workshop1","workshop2","workshop1","grave","workshop1","workshop1","house","workshop1","sawmill","workshop3","windmill","mine","orchard","church","workshop3","lavatory","foundry","smokehouse","storage","workshop2","tavern","well","workshop2"}
-DEF GLB FIN LST _buildingTypes = {"apiarist","baker","barber","blacksmith","bowyer","breeder","brewer","butcher","carpenter","ditcher","farmer","feller","fisher","fletcher","gatherer","grave","herbalist","hewer","house","hunter","lumberer","mason","miller","miner","orchardist","priest","roofer","scavenger","smelter","smoker","storage","tanner","tavern","waterer","weaver"}
-DEF GLB FIN LST _buildingPricesPlanks = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
-DEF GLB FIN LST _buildingPricesStone = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
-DEF GLB FIN LST _buildingPricesClay = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
-DEF GLB FIN LST _buildingPricesStraw = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+DEF GLB FIN LST _buildingModels = {"apiary","bakery","workshop2","smithy","workshop2","workshop2","workshop2","workshop3","pen","workshop1","farmland","workshop1","workshop1","workshop2","workshop1","grave","workshop1","workshop1","house","workshop1","sawmill","workshop3","windmill","mine","orchard","pen","church","workshop3","lavatory","pen","foundry","smokehouse","storage","pen","workshop2","tavern","well","workshop2"}
+DEF GLB FIN LST _buildingTypes = {"apiarist","baker","barber","blacksmith","bowyer","brewer","butcher","carpenter","cattleman","ditcher","farmer","feller","fisher","fletcher","gatherer","grave","herbalist","hewer","house","hunter","lumberer","mason","miller","miner","orchardist","poultryman","priest","roofer","scavenger","shepherd","smelter","smoker","storage","swineherd","tanner","tavern","waterer","weaver"}
+DEF GLB FIN LST _buildingPricesPlanks = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+DEF GLB FIN LST _buildingPricesStone = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+DEF GLB FIN LST _buildingPricesClay = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+DEF GLB FIN LST _buildingPricesStraw = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
 DEF GLB FIN DEC _buildingHeight = 2.75
 
 /// Non-finals

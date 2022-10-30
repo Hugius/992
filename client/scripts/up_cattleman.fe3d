@@ -1,0 +1,55 @@
+47 45
+META script_type_update
+META script_state_wait
+
+/// Define reusable values
+DEF BOL hasWorker = <false>
+
+/// Hide GUI
+IF _lastSelectedBuildingType IS "cattleman" OR _totalUpdates IS 0
+    fe3d:quad2d_set_visible("cattleman_worker", <false>)
+    fe3d:quad2d_set_visible("cattleman_time", <false>)
+    fe3d:quad2d_set_visible("cattleman_convert", <false>)
+    fe3d:quad2d_set_visible("cattleman_milk", <false>)
+    fe3d:text2d_set_visible("cattleman_worker", <false>)
+    fe3d:text2d_set_visible("cattleman_time", <false>)
+    fe3d:text2d_set_visible("cattleman_milk", <false>)
+
+/// Show GUI
+IF _selectedBuildingType IS "cattleman"
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
+    IF hasWorker IS <true>
+        fe3d:quad2d_set_visible("cattleman_time", <true>)
+        fe3d:quad2d_set_visible("cattleman_convert", <true>)
+        fe3d:quad2d_set_visible("cattleman_milk", <true>)
+        fe3d:text2d_set_visible("cattleman_time", <true>)
+        fe3d:text2d_set_visible("cattleman_milk", <true>)
+    ELSE
+        fe3d:quad2d_set_visible("cattleman_worker", <true>)
+        fe3d:text2d_set_visible("cattleman_worker", <true>)
+
+/// Update cattlemen
+DEF STR cowId = ""
+DEF DEC growth = 0.0
+DEF INT maxIndex = misc:list_size("_cattlemanIds")
+DEF INT index = 0
+LOOP
+    IF index IS maxIndex
+        BREAK
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _cattlemanIds[index])
+    IF hasWorker IS <true>
+        IF _cattlemanGrowths[index] IS 0.0
+            ADD _cattlemanGrowths[index] 0.0001
+        ELIF _cattlemanGrowths[index] MORE 0.25
+            IF _cattlemanTimers[index] IS _cattlemanInterval
+                IF _totalMilk LESS _maxMilk
+                    ADD _totalMilk 1
+                    ALT _cattlemanTimers[index] = 0
+            ELSE
+                ADD _cattlemanTimers[index] 1
+    IF _cattlemanGrowths[index] MORE 0.0 AND _cattlemanGrowths[index] LESS 0.25
+        ADD _cattlemanGrowths[index] 0.0001
+    ALT growth = _cattlemanGrowths[index]
+    ALT cowId = misc:string_concat(_cattlemanIds[index], "_1")
+    fe3d:model_set_base_size(cowId, growth, growth, growth)
+    ADD index 1

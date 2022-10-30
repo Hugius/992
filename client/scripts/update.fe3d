@@ -1,4 +1,4 @@
-24 0
+52 0
 META script_type_update
 META script_state_entry
 
@@ -23,10 +23,10 @@ EXECUTE up_baker
 EXECUTE up_barber
 EXECUTE up_blacksmith
 EXECUTE up_bowyer
-EXECUTE up_breeder 
 EXECUTE up_brewer
 ///EXECUTE up_butcher
 EXECUTE up_carpenter
+EXECUTE up_cattleman
 EXECUTE up_ditcher
 EXECUTE up_farmer
 EXECUTE up_feller
@@ -43,12 +43,15 @@ EXECUTE up_mason
 EXECUTE up_miller
 EXECUTE up_miner
 EXECUTE up_orchardist
+EXECUTE up_poultryman
 EXECUTE up_priest
 EXECUTE up_roofer
 EXECUTE up_scavenger
+EXECUTE up_shepherd
 EXECUTE up_smelter
 EXECUTE up_smoker
 EXECUTE up_storage
+EXECUTE up_swineherd
 EXECUTE up_tanner
 EXECUTE up_tavern
 EXECUTE up_waterer
