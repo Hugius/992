@@ -1,9 +1,10 @@
-9 27
+5 37
 META script_type_initialize
 META script_state_wait
 
 /// Finals
 DEF GLB FIN INT _farmerInterval = 500
+DEF GLB FIN DEC _farmerSpeed = 0.00075
 DEF FIN STR workerText = "No worker available"
 DEF FIN STR toolText = "Equip 1 tool?"
 

@@ -1,4 +1,4 @@
-58 60
+49 54
 META script_type_update
 META script_state_wait
 
@@ -39,7 +39,7 @@ LOOP
     ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _orchardistIds[index])
     IF hasWorker IS <true>
         IF _orchardistGrowths[index] IS 0.0
-            ADD _orchardistGrowths[index] 0.0001
+            ADD _orchardistGrowths[index] _orchardistSpeed
         ELIF _orchardistGrowths[index] MORE 0.25
             IF _orchardistTimers[index] IS _orchardistInterval
                 IF _totalFruit LESS _maxFruit
@@ -48,7 +48,7 @@ LOOP
             ELSE
                 ADD _orchardistTimers[index] 1
     IF _orchardistGrowths[index] MORE 0.0 AND _orchardistGrowths[index] LESS 0.25
-        ADD _orchardistGrowths[index] 0.0001
+        ADD _orchardistGrowths[index] _orchardistSpeed
     ALT growth = _orchardistGrowths[index]
     ALT treeId = misc:string_concat(_orchardistIds[index], "_1")
     fe3d:model_set_base_size(treeId, growth, growth, growth)

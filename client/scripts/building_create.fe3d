@@ -1,4 +1,4 @@
-244 30
+27 25
 META script_type_update
 META script_state_wait
 
@@ -25,7 +25,8 @@ ELIF _placedBuildingType IS "brewer"
     PUSH _brewerIds _placedBuildingId
     PUSH _brewerTimers 0
 ELIF _placedBuildingType IS "butcher"
-    PASS
+    PUSH _butcherIds _placedBuildingId
+    PUSH _butcherTimers 0
 ELIF _placedBuildingType IS "carpenter"
     PUSH _carpenterIds _placedBuildingId
 ELIF _placedBuildingType IS "cattleman"

@@ -1,4 +1,4 @@
-0 0
+57 54
 META script_type_update
 META script_state_wait
 
@@ -56,7 +56,7 @@ LOOP
         IF _farmerGrowths[index] IS 0.0
             IF _totalSeeds MORE 15
                 SUB _totalSeeds 16
-                ADD _farmerGrowths[index] 0.1
+                ADD _farmerGrowths[index] _farmerSpeed
         ELIF _farmerGrowths[index] MORE 0.75
             ALT _farmerGrowths[index] = 0.0
             ADD _totalGrain 16
@@ -69,7 +69,7 @@ LOOP
             IF _totalSeeds MORE _maxSeeds
                 SUB _totalSeeds 16
     IF _farmerGrowths[index] MORE 0.0 AND _farmerGrowths[index] LESS 0.75
-        ADD _farmerGrowths[index] 0.00025
+        ADD _farmerGrowths[index] _farmerSpeed
     ALT growth = _farmerGrowths[index]
     ALT grainId = misc:string_concat(_farmerIds[index], "_1")
     fe3d:model_set_base_size(grainId, growth, growth, growth)

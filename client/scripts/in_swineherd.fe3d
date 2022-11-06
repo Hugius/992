@@ -1,9 +1,10 @@
-7 0
+5 40
 META script_type_initialize
 META script_state_wait
 
 /// Finals
 DEF GLB FIN INT _swineherdInterval = 500
+DEF GLB FIN DEC _swineherdSpeed = 0.0004
 DEF FIN STR workerText = "No worker available"
 DEF FIN STR infoText = "Pigs do not produce anything"
 

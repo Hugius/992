@@ -1,4 +1,4 @@
-47 45
+49 52
 META script_type_update
 META script_state_wait
 
@@ -39,7 +39,7 @@ LOOP
     ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _cattlemanIds[index])
     IF hasWorker IS <true>
         IF _cattlemanGrowths[index] IS 0.0
-            ADD _cattlemanGrowths[index] 0.0001
+            ADD _cattlemanGrowths[index] _cattlemanSpeed
         ELIF _cattlemanGrowths[index] MORE 0.25
             IF _cattlemanTimers[index] IS _cattlemanInterval
                 IF _totalMilk LESS _maxMilk
@@ -48,7 +48,7 @@ LOOP
             ELSE
                 ADD _cattlemanTimers[index] 1
     IF _cattlemanGrowths[index] MORE 0.0 AND _cattlemanGrowths[index] LESS 0.25
-        ADD _cattlemanGrowths[index] 0.0001
+        ADD _cattlemanGrowths[index] _cattlemanSpeed
     ALT growth = _cattlemanGrowths[index]
     ALT cowId = misc:string_concat(_cattlemanIds[index], "_1")
     fe3d:model_set_base_size(cowId, growth, growth, growth)
