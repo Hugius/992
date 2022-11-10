@@ -1,4 +1,4 @@
-14 56
+10 24
 META script_type_initialize
 META script_state_wait
 
@@ -9,6 +9,7 @@ DEF FIN STR workerText = "No worker available"
 /// Non-finals
 DEF GLB LST _smokerIds = {}
 DEF GLB LST _smokerTimers = {}
+DEF GLB LST _smokerTurns = {}
 
 /// GUI
 fe3d:quad2d_place("smoker_worker", "worker", 0.0, -0.6, 0.1, 0.175)

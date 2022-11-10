@@ -1,4 +1,4 @@
-64 18
+63 30
 META script_type_update
 META script_state_wait
 
@@ -55,15 +55,15 @@ LOOP
     ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _smelterIds[index])
     ALT hasTool = misc:list_contains("_toolBuildingIds", _smelterIds[index])
     IF hasWorker IS <true> AND hasTool IS <true>
-        IF _smelterTimers[index] IS _smelterInterval
+        IF _smelterTimers[index] IS 0
             IF _totalOre MORE 0 AND _totalFirewood MORE 0
+                SUB _totalOre 1
+                SUB _totalFirewood 1
+                ADD _smelterTimers[index] 1
+        ELIF _smelterTimers[index] IS _smelterInterval
+            ALT _smelterTimers[index] = 0
+            IF _totalIron LESS _maxIron
                 ADD _totalIron 1
-                IF _totalIron MORE _maxIron
-                    SUB _totalIron 1
-                ELSE
-                    SUB _totalOre 1
-                    SUB _totalFirewood 1
-                    ALT _smelterTimers[index] = 0
         ELSE
             ADD _smelterTimers[index] 1
     ADD index 1

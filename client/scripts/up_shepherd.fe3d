@@ -1,4 +1,4 @@
-64 50
+58 46
 META script_type_update
 META script_state_wait
 
@@ -57,9 +57,9 @@ LOOP
             ADD _shepherdGrowths[index] _shepherdSpeed
         ELIF _shepherdGrowths[index] MORE 0.45
             IF _shepherdTimers[index] IS _shepherdInterval
+                ALT _shepherdTimers[index] = 0
                 IF _totalWool LESS _maxWool
                     ADD _totalWool 1
-                    ALT _shepherdTimers[index] = 0
             ELSE
                 ADD _shepherdTimers[index] 1
     IF _shepherdGrowths[index] MORE 0.0 AND _shepherdGrowths[index] LESS 0.45

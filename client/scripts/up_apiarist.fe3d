@@ -1,4 +1,4 @@
-39 33
+38 42
 META script_type_update
 META script_state_wait
 
@@ -37,9 +37,9 @@ LOOP
     ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _apiaristIds[index])
     IF hasWorker IS <true>
         IF _apiaristTimers[index] IS _apiaristInterval
+            ALT _apiaristTimers[index] = 0
             IF _totalHoney LESS _maxHoney
                 ADD _totalHoney 1
-                ALT _apiaristTimers[index] = 0
         ELSE
             ADD _apiaristTimers[index] 1
     ADD index 1

@@ -1,4 +1,4 @@
-64 19
+60 14
 META script_type_update
 META script_state_wait
 
@@ -55,15 +55,15 @@ LOOP
     ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _bowyerIds[index])
     ALT hasTool = misc:list_contains("_toolBuildingIds", _bowyerIds[index])
     IF hasWorker IS <true> AND hasTool IS <true>
-        IF _bowyerTimers[index] IS _bowyerInterval
+        IF _bowyerTimers[index] IS 0
             IF _totalPlanks MORE 0 AND _totalWool MORE 0
+                SUB _totalPlanks 1
+                SUB _totalWool 1
+                ADD _bowyerTimers[index] 1
+        ELIF _bowyerTimers[index] IS _bowyerInterval
+            ALT _bowyerTimers[index] = 0
+            IF _totalBows MORE _maxBows
                 ADD _totalBows 1
-                IF _totalBows MORE _maxBows
-                    SUB _totalBows 1
-                ELSE
-                    SUB _totalPlanks 1
-                    SUB _totalWool 1
-                    ALT _bowyerTimers[index] = 0
         ELSE
             ADD _bowyerTimers[index] 1
     ADD index 1

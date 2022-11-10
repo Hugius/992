@@ -1,4 +1,4 @@
-56 54
+51 40
 META script_type_update
 META script_state_wait
 
@@ -46,12 +46,11 @@ LOOP
             ADD _poultrymanGrowths[index] _poultrymanSpeed
         ELIF _poultrymanGrowths[index] MORE 0.25
             IF _poultrymanTimers[index] IS _poultrymanInterval
+                ALT _poultrymanTimers[index] = 0
                 IF _totalEggs LESS _maxEggs
                     ADD _totalEggs 1
-                    ALT _poultrymanTimers[index] = 0
                 IF _totalFeathers LESS _maxFeathers
                     ADD _totalFeathers 1
-                    ALT _poultrymanTimers[index] = 0
             ELSE
                 ADD _poultrymanTimers[index] 1
     IF _poultrymanGrowths[index] MORE 0.0 AND _poultrymanGrowths[index] LESS 0.25

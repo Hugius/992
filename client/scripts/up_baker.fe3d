@@ -1,4 +1,4 @@
-48 40
+50 19
 META script_type_update
 META script_state_wait
 
@@ -40,15 +40,16 @@ LOOP
         BREAK
     ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _bakerIds[index])
     IF hasWorker IS <true>
-        IF _bakerTimers[index] IS _bakerInterval
+        IF _bakerTimers[index] IS 0
             IF _totalFlour MORE 0 AND _totalFirewood MORE 0
-                ADD _totalBread 10
-                IF _totalBread MORE _maxBread
-                    SUB _totalBread 10
-                ELSE
-                    SUB _totalFlour 1
-                    SUB _totalFirewood 1
-                    ALT _bakerTimers[index] = 0
+                SUB _totalFlour 1
+                SUB _totalFirewood 1
+                ADD _bakerTimers[index] 1
+        ELIF _bakerTimers[index] IS _bakerInterval
+            ALT _bakerTimers[index] = 0
+            ADD _totalBread 10
+            IF _totalBread MORE _maxBread
+                ALT _totalBread = _maxBread
         ELSE
             ADD _bakerTimers[index] 1
     ADD index 1

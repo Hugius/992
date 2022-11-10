@@ -1,4 +1,4 @@
-95 55
+78 28
 META script_type_update
 META script_state_wait
 
@@ -44,7 +44,7 @@ fe3d:text2d_set_content("total_grain", totalGrainText)
 fe3d:text2d_set_content("total_flour", totalFlourText)
 fe3d:text2d_set_content("total_feathers", totalFeathersText)
 fe3d:text2d_set_content("total_hides", totalHidesText)
-fe3d:text2d_set_content("total_leather", totalFeathersText)
+fe3d:text2d_set_content("total_leather", totalLeatherText)
 fe3d:text2d_set_content("total_wool", totalWoolText)
 fe3d:text2d_set_content("total_clothes", totalClothesText)
 fe3d:text2d_set_content("total_mushrooms", totalMushroomsText)

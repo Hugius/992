@@ -1,4 +1,4 @@
-50 23
+5 0
 META script_type_update
 META script_state_wait
 
@@ -36,23 +36,24 @@ IF _selectedBuildingType IS "weaver"
 /// Update weavers
 DEF INT maxIndex = misc:list_size("_weaverIds")
 DEF INT index = 0
+DEF INT randomNumber = 0
 LOOP
     IF index IS maxIndex
         BREAK
     ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _weaverIds[index])
     IF hasWorker IS <true>
-        IF _weaverTimers[index] IS _weaverInterval
-            IF _totalWool MORE 0 OR _totalLeather MORE 0
+        IF _weaverTimers[index] IS 0
+            ALT randomNumber = math:random_integer(1, 2)
+            IF randomNumber IS 1 AND _totalWool MORE 0
+                SUB _totalWool 1
+                ADD _weaverTimers[index] 1
+            ELIF randomNumber IS 2 AND _totalLeather MORE 0
+                SUB _totalLeather 1
+                ADD _weaverTimers[index] 1
+        ELIF _weaverTimers[index] IS _weaverInterval
+            ALT _weaverTimers[index] = 0
+            IF _totalClothes LESS _maxClothes
                 ADD _totalClothes 1
-                IF _totalClothes MORE _maxClothes
-                    SUB _totalClothes 1
-                ELSE
-                    IF _totalWool MORE 0
-                        SUB _totalWool 1
-                        ALT _weaverTimers[index] = 0
-                    ELIF _totalLeather MORE 0
-                        SUB _totalLeather 1
-                        ALT _weaverTimers[index] = 0
         ELSE
             ADD _weaverTimers[index] 1
     ADD index 1

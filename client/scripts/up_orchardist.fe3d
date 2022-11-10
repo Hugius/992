@@ -1,4 +1,4 @@
-49 54
+44 45
 META script_type_update
 META script_state_wait
 
@@ -42,9 +42,9 @@ LOOP
             ADD _orchardistGrowths[index] _orchardistSpeed
         ELIF _orchardistGrowths[index] MORE 0.25
             IF _orchardistTimers[index] IS _orchardistInterval
+                ALT _orchardistTimers[index] = 0
                 IF _totalFruit LESS _maxFruit
                     ADD _totalFruit 1
-                    ALT _orchardistTimers[index] = 0
             ELSE
                 ADD _orchardistTimers[index] 1
     IF _orchardistGrowths[index] MORE 0.0 AND _orchardistGrowths[index] LESS 0.25

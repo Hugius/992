@@ -1,4 +1,4 @@
-133 37
+73 25
 META script_type_update
 META script_state_wait
 
@@ -71,72 +71,72 @@ LOOP
     ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _butcherIds[index])
     ALT hasTool = misc:list_contains("_toolBuildingIds", _butcherIds[index])
     IF hasWorker IS <true> AND hasTool IS <true>
-        IF _butcherTimers[index] NOT _butcherInterval
-            ADD _butcherTimers[index] 1
-            ADD index 1
-            CONTINUE
-        ALT randomNumber = math:random_integer(1, 4)
-        IF randomNumber IS 1
-            ALT jobCount = misc:list_size("_cattlemanIds")
-            IF jobCount MORE 0
-                ALT jobIndex = math:random_integer(1, jobCount)
-                SUB jobIndex 1
-                IF _cattlemanGrowths[jobIndex] MORE 0.25
-                    ALT _butcherTimers[index] = 0
-                    ALT _cattlemanGrowths[jobIndex] = 0.0
-                    ALT animalId = misc:string_concat(_cattlemanIds[jobIndex], "_1")
-                    fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
-        ELIF randomNumber IS 2
-            ALT jobCount = misc:list_size("_swineherdIds")
-            IF jobCount MORE 0
-                ALT jobIndex = math:random_integer(1, jobCount)
-                SUB jobIndex 1
-                IF _swineherdGrowths[jobIndex] MORE 0.4
-                    ALT _butcherTimers[index] = 0
-                    ALT _swineherdGrowths[jobIndex] = 0.0
-                    ALT animalId = misc:string_concat(_swineherdIds[jobIndex], "_1")
-                    fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
-                    ALT animalId = misc:string_concat(_swineherdIds[jobIndex], "_2")
-                    fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
-                    ALT animalId = misc:string_concat(_swineherdIds[jobIndex], "_3")
-                    fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
-        ELIF randomNumber IS 3
-            ALT jobCount = misc:list_size("_shepherdIds")
-            IF jobCount MORE 0
-                ALT jobIndex = math:random_integer(1, jobCount)
-                SUB jobIndex 1
-                IF _shepherdGrowths[jobIndex] MORE 0.45
-                    ALT _butcherTimers[index] = 0
-                    ALT _shepherdGrowths[jobIndex] = 0.0
-                    ALT animalId = misc:string_concat(_shepherdIds[jobIndex], "_1")
-                    fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
-                    ALT animalId = misc:string_concat(_shepherdIds[jobIndex], "_2")
-                    fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
-                    ALT animalId = misc:string_concat(_shepherdIds[jobIndex], "_3")
-                    fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
-        ELIF randomNumber IS 4
-            ALT jobCount = misc:list_size("_poultrymanIds")
-            IF jobCount MORE 0
-                ALT jobIndex = math:random_integer(1, jobCount)
-                SUB jobIndex 1
-                IF _poultrymanGrowths[jobIndex] MORE 0.25
-                    ALT _butcherTimers[index] = 0
-                    ALT _poultrymanGrowths[jobIndex] = 0.0
-                    ALT animalId = misc:string_concat(_poultrymanIds[jobIndex], "_1")
-                    fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
-                    ALT animalId = misc:string_concat(_poultrymanIds[jobIndex], "_2")
-                    fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
-                    ALT animalId = misc:string_concat(_poultrymanIds[jobIndex], "_3")
-                    fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
-                    ALT animalId = misc:string_concat(_poultrymanIds[jobIndex], "_4")
-                    fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
-                    ALT animalId = misc:string_concat(_poultrymanIds[jobIndex], "_5")
-                    fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
         IF _butcherTimers[index] IS 0
+            ALT randomNumber = math:random_integer(1, 4)
+            IF randomNumber IS 1
+                ALT jobCount = misc:list_size("_cattlemanIds")
+                IF jobCount MORE 0
+                    ALT jobIndex = math:random_integer(1, jobCount)
+                    SUB jobIndex 1
+                    IF _cattlemanGrowths[jobIndex] MORE 0.25
+                        ADD _butcherTimers[index] 1
+                        ALT _cattlemanGrowths[jobIndex] = 0.0
+                        ALT animalId = misc:string_concat(_cattlemanIds[jobIndex], "_1")
+                        fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
+            ELIF randomNumber IS 2
+                ALT jobCount = misc:list_size("_swineherdIds")
+                IF jobCount MORE 0
+                    ALT jobIndex = math:random_integer(1, jobCount)
+                    SUB jobIndex 1
+                    IF _swineherdGrowths[jobIndex] MORE 0.4
+                        ADD _butcherTimers[index] 1
+                        ALT _swineherdGrowths[jobIndex] = 0.0
+                        ALT animalId = misc:string_concat(_swineherdIds[jobIndex], "_1")
+                        fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
+                        ALT animalId = misc:string_concat(_swineherdIds[jobIndex], "_2")
+                        fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
+                        ALT animalId = misc:string_concat(_swineherdIds[jobIndex], "_3")
+                        fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
+            ELIF randomNumber IS 3
+                ALT jobCount = misc:list_size("_shepherdIds")
+                IF jobCount MORE 0
+                    ALT jobIndex = math:random_integer(1, jobCount)
+                    SUB jobIndex 1
+                    IF _shepherdGrowths[jobIndex] MORE 0.45
+                        ADD _butcherTimers[index] 1
+                        ALT _shepherdGrowths[jobIndex] = 0.0
+                        ALT animalId = misc:string_concat(_shepherdIds[jobIndex], "_1")
+                        fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
+                        ALT animalId = misc:string_concat(_shepherdIds[jobIndex], "_2")
+                        fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
+                        ALT animalId = misc:string_concat(_shepherdIds[jobIndex], "_3")
+                        fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
+            ELIF randomNumber IS 4
+                ALT jobCount = misc:list_size("_poultrymanIds")
+                IF jobCount MORE 0
+                    ALT jobIndex = math:random_integer(1, jobCount)
+                    SUB jobIndex 1
+                    IF _poultrymanGrowths[jobIndex] MORE 0.25
+                        ADD _butcherTimers[index] 1
+                        ALT _poultrymanGrowths[jobIndex] = 0.0
+                        ALT animalId = misc:string_concat(_poultrymanIds[jobIndex], "_1")
+                        fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
+                        ALT animalId = misc:string_concat(_poultrymanIds[jobIndex], "_2")
+                        fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
+                        ALT animalId = misc:string_concat(_poultrymanIds[jobIndex], "_3")
+                        fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
+                        ALT animalId = misc:string_concat(_poultrymanIds[jobIndex], "_4")
+                        fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
+                        ALT animalId = misc:string_concat(_poultrymanIds[jobIndex], "_5")
+                        fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
+        ELIF _butcherTimers[index] IS _butcherInterval
+            ALT _butcherTimers[index] = 0
             ADD _totalRawMeat 15
             ADD _totalHides 5
             IF _totalRawMeat MORE _maxRawMeat
-                SUB _totalRawMeat 15
+                ALT _totalRawMeat = _maxRawMeat
             IF _totalHides MORE _maxHides
-                SUB _totalHides 5
+                ALT _totalHides = _maxHides
+        ELSE
+            ADD _butcherTimers[index] 1
     ADD index 1

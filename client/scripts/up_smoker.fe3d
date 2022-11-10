@@ -1,4 +1,4 @@
-52 48
+54 42
 META script_type_update
 META script_state_wait
 
@@ -39,26 +39,28 @@ IF _selectedBuildingType IS "smoker"
 /// Update smokers
 DEF INT maxIndex = misc:list_size("_smokerIds")
 DEF INT index = 0
+DEF INT randomNumber = 0
 LOOP
     IF index IS maxIndex
         BREAK
     ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _smokerIds[index])
     IF hasWorker IS <true>
-        IF _smokerTimers[index] IS _smokerInterval
-            IF _totalRawMeat MORE 0
+        IF _smokerTimers[index] IS 0
+            ALT randomNumber = math:random_integer(1, 2)
+            IF randomNumber IS 1 AND _totalRawMeat MORE 0
+                SUB _totalRawMeat 1
+                ADD _smokerTimers[index] 1
+                ALT _smokerTurns[index] = 1
+            ELIF randomNumber IS 2 AND _totalRawFish MORE 0
+                SUB _totalRawFish 1
+                ADD _smokerTimers[index] 1
+                ALT _smokerTurns[index] = 2
+        ELIF _smokerTimers[index] IS _smokerInterval
+            ALT _smokerTimers[index] = 0
+            IF _smokerTurns[index] IS 1 AND _totalSmokedMeat LESS _maxSmokedMeat
                 ADD _totalSmokedMeat 1
-                IF _totalSmokedMeat MORE 0
-                    SUB _totalSmokedMeat 1
-                ELSE
-                    SUB _totalRawMeat 1
-                    ALT _smokerTimers[index] = 0
-            ELIF _totalRawFish MORE 0
+            ELIF _smokerTurns[index] IS 2 AND _totalSmokedFish LESS _maxSmokedFish
                 ADD _totalSmokedFish 1
-                IF _totalSmokedFish MORE 0
-                    SUB _totalSmokedFish 1
-                ELSE
-                    SUB _totalRawFish 1
-                    ALT _smokerTimers[index] = 0
         ELSE
             ADD _smokerTimers[index] 1
     ADD index 1

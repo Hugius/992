@@ -1,4 +1,4 @@
-69 18
+68 31
 META script_type_update
 META script_state_wait
 
@@ -59,16 +59,17 @@ LOOP
     ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _fletcherIds[index])
     ALT hasTool = misc:list_contains("_toolBuildingIds", _fletcherIds[index])
     IF hasWorker IS <true> AND hasTool IS <true>
-        IF _fletcherTimers[index] IS _fletcherInterval
+        IF _fletcherTimers[index] IS 0
             IF _totalIron MORE 0 AND _totalPlanks MORE 0 AND _totalFeathers MORE 0
-                ADD _totalArrows 10
-                IF _totalArrows MORE _maxArrows
-                    SUB _totalArrows 10
-                ELSE
-                    SUB _totalIron 1
-                    SUB _totalPlanks 1
-                    SUB _totalFeathers 1
-                    ALT _fletcherTimers[index] = 0
+                SUB _totalIron 1
+                SUB _totalPlanks 1
+                SUB _totalFeathers 1
+                ADD _fletcherTimers[index] 1
+        ELIF _fletcherTimers[index] IS _fletcherInterval
+            ALT _fletcherTimers[index] = 0
+            ADD _totalArrows 10
+            IF _totalArrows MORE _maxArrows
+                ALT _totalArrows = _maxArrows
         ELSE
             ADD _fletcherTimers[index] 1
     ADD index 1

@@ -1,4 +1,4 @@
-27 25
+270 24
 META script_type_update
 META script_state_wait
 
@@ -209,6 +209,7 @@ ELIF _placedBuildingType IS "smelter"
 ELIF _placedBuildingType IS "smoker"
     PUSH _smokerIds _placedBuildingId
     PUSH _smokerTimers 0
+    PUSH _smokerTurns 0
 ELIF _placedBuildingType IS "storage"
     PUSH _storageIds _placedBuildingId
     ADD _maxAle 10

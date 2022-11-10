@@ -1,4 +1,4 @@
-40 14
+38 12
 META script_type_update
 META script_state_wait
 
@@ -37,9 +37,9 @@ LOOP
     ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _fisherIds[index])
     IF hasWorker IS <true>
         IF _fisherTimers[index] IS _fisherInterval
+            ALT _fisherTimers[index] = 0
             IF _totalRawFish LESS _maxRawFish
                 ADD _totalRawFish 1
-                ALT _fisherTimers[index] = 0
         ELSE
             ADD _fisherTimers[index] 1
     ADD index 1

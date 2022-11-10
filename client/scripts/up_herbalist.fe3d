@@ -1,4 +1,4 @@
-44 18
+40 15
 META script_type_update
 META script_state_wait
 
@@ -36,14 +36,14 @@ LOOP
         BREAK
     ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _herbalistIds[index])
     IF hasWorker IS <true>
-        IF _herbalistTimers[index] IS _herbalistInterval
+        IF _herbalistTimers[index] IS 0
             IF _totalMushrooms MORE 0
+                SUB _totalMushrooms 1
+                ADD _herbalistTimers[index] 1
+        ELIF _herbalistTimers[index] IS _herbalistInterval
+            ALT _herbalistTimers[index] = 0
+            IF _totalMedicine LESS _maxMedicine
                 ADD _totalMedicine 1
-                IF _totalMedicine MORE _maxMedicine
-                    SUB _totalMedicine 1
-                ELSE
-                    SUB _totalMushrooms 1
-                    ALT _herbalistTimers[index] = 0
         ELSE
             ADD _herbalistTimers[index] 1
     ADD index 1
