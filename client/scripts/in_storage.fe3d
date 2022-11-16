@@ -1,4 +1,4 @@
-16 28
+38 28
 META script_type_initialize
 META script_state_wait
 
@@ -7,37 +7,37 @@ DEF FIN STR infoText = "Stores food and resources"
 
 /// Non-finals
 DEF GLB LST _storageIds = {"storage_0"}
-DEF GLB INT _totalAle = 50
-DEF GLB INT _totalMilk = 50
-DEF GLB INT _totalSmokedMeat = 50
-DEF GLB INT _totalSmokedFish = 50
-DEF GLB INT _totalBread = 50
-DEF GLB INT _totalEggs = 50
-DEF GLB INT _totalRawFish = 50
-DEF GLB INT _totalRawMeat = 00
-DEF GLB INT _totalHoney = 50
-DEF GLB INT _totalFruit = 50
-DEF GLB INT _totalLumber = 50
-DEF GLB INT _totalStone = 50
-DEF GLB INT _totalGrain = 50
-DEF GLB INT _totalFlour = 50
-DEF GLB INT _totalPlanks = 50
-DEF GLB INT _totalFirewood = 50
-DEF GLB INT _totalOre = 50
-DEF GLB INT _totalIron = 50
-DEF GLB INT _totalHides = 50
-DEF GLB INT _totalClothes = 50
-DEF GLB INT _totalWool = 50
-DEF GLB INT _totalLeather = 50
-DEF GLB INT _totalClay = 50
-DEF GLB INT _totalStraw = 50
-DEF GLB INT _totalMedicine = 50
-DEF GLB INT _totalFeathers = 50
-DEF GLB INT _totalMushrooms = 50
-DEF GLB INT _totalSeeds = 50
-DEF GLB INT _totalTools = 5
-DEF GLB INT _totalBows = 5
-DEF GLB INT _totalArrows = 25
+DEF GLB INT _totalAle = 0
+DEF GLB INT _totalMilk = 0
+DEF GLB INT _totalSmokedMeat = 0
+DEF GLB INT _totalSmokedFish = 0
+DEF GLB INT _totalBread = 0
+DEF GLB INT _totalEggs = 0
+DEF GLB INT _totalRawFish = 0
+DEF GLB INT _totalRawMeat = 0
+DEF GLB INT _totalHoney = 0
+DEF GLB INT _totalFruit = 0
+DEF GLB INT _totalLumber = 0
+DEF GLB INT _totalStone = 0
+DEF GLB INT _totalGrain = 0
+DEF GLB INT _totalFlour = 0
+DEF GLB INT _totalPlanks = 0
+DEF GLB INT _totalFirewood = 0
+DEF GLB INT _totalOre = 0
+DEF GLB INT _totalIron = 0
+DEF GLB INT _totalHides = 0
+DEF GLB INT _totalClothes = 0
+DEF GLB INT _totalWool = 0
+DEF GLB INT _totalLeather = 0
+DEF GLB INT _totalClay = 0
+DEF GLB INT _totalStraw = 0
+DEF GLB INT _totalMedicine = 0
+DEF GLB INT _totalFeathers = 0
+DEF GLB INT _totalMushrooms = 0
+DEF GLB INT _totalSeeds = 0
+DEF GLB INT _totalTools = 3
+DEF GLB INT _totalBows = 0
+DEF GLB INT _totalArrows = 0
 DEF GLB INT _maxAle = 100
 DEF GLB INT _maxMilk = 100
 DEF GLB INT _maxSmokedMeat = 100
