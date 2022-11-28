@@ -1,12 +1,12 @@
-36 52
+5 0
 META script_type_update
-META script_state_wait
+META script_state_waiting
 
 /// Define reusable values
 DEF BOL hasWorker = <false>
 
 /// Hide GUI
-IF _lastSelectedBuildingType IS "swineherd" OR _totalUpdates IS 0
+IF _lastSelectedBuildingType IS "swineherd" OR _firstUpdate IS <true>
     fe3d:quad2d_set_visible("swineherd_worker", <false>)
     fe3d:quad2d_set_visible("swineherd_info", <false>)
     fe3d:text2d_set_visible("swineherd_worker", <false>)

@@ -1,6 +1,6 @@
-270 24
+123 29
 META script_type_update
-META script_state_wait
+META script_state_waiting
 
 /// Validate
 IF _placedBuildingId IS ""
@@ -122,6 +122,7 @@ ELIF _placedBuildingType IS "hewer"
 ELIF _placedBuildingType IS "house"
     PUSH _houseIds _placedBuildingId
     PUSH _houseTimers 0
+    PUSH _houseBirths <false>
 ELIF _placedBuildingType IS "hunter"
     PUSH _hunterIds _placedBuildingId
     PUSH _hunterTimers 0

@@ -1,6 +1,6 @@
 13 67
 META script_type_update
-META script_state_wait
+META script_state_waiting
 
 /// Validate
 DEF BOL update = fe3d:time_is_passed(10)

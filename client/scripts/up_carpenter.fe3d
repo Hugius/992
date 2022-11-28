@@ -1,9 +1,9 @@
 11 0
 META script_type_update
-META script_state_wait
+META script_state_waiting
 
 /// Hide GUI
-IF _lastSelectedBuildingType IS "carpenter" OR _totalUpdates IS 0
+IF _lastSelectedBuildingType IS "carpenter" OR _firstUpdate IS <true>
     fe3d:quad2d_set_visible("carpenter_worker", <false>)
     fe3d:quad2d_set_visible("carpenter_tool", <false>)
     fe3d:quad2d_set_visible("carpenter_info", <false>)

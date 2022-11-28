@@ -1,6 +1,6 @@
-19 0
+45 50
 META script_type_update
-META script_state_wait
+META script_state_waiting
 
 /// Save last selection
 ALT _lastSelectedBuildingId = _selectedBuildingId
@@ -45,7 +45,3 @@ ELSE
 DEF BOL selected = (_selectedBuildingType NOT "")
 fe3d:quad2d_set_visible("building_menu", selected)
 fe3d:text2d_set_visible("building_menu", selected)
-
-/// Update cursor
-fe3d:cursor_set_type(_cursorType)
-ALT _cursorType = "ARROW"

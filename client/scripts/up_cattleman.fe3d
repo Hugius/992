@@ -1,12 +1,12 @@
 43 16
 META script_type_update
-META script_state_wait
+META script_state_waiting
 
 /// Define reusable values
 DEF BOL hasWorker = <false>
 
 /// Hide GUI
-IF _lastSelectedBuildingType IS "cattleman" OR _totalUpdates IS 0
+IF _lastSelectedBuildingType IS "cattleman" OR _firstUpdate IS <true>
     fe3d:quad2d_set_visible("cattleman_worker", <false>)
     fe3d:quad2d_set_visible("cattleman_time", <false>)
     fe3d:quad2d_set_visible("cattleman_convert", <false>)

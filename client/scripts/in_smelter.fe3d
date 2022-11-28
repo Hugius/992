@@ -1,9 +1,9 @@
 4 24
 META script_type_initialize
-META script_state_wait
+META script_state_waiting
 
 /// Finals
-DEF GLB FIN INT _smelterInterval = 500
+DEF GLB FIN INT _smelterInterval = 1440
 DEF FIN STR workerText = "No worker available"
 DEF FIN STR toolText = "Equip 1 tool?"
 

@@ -1,9 +1,9 @@
-29 35
+25 34
 META script_type_update
-META script_state_wait
+META script_state_waiting
 
 /// Hide GUI
-IF _lastSelectedBuildingType IS "house" OR _totalUpdates IS 0
+IF _lastSelectedBuildingType IS "house" OR _firstUpdate IS <true>
     fe3d:quad2d_set_visible("house_info", <false>)
     fe3d:text2d_set_visible("house_info", <false>)
 
@@ -23,8 +23,8 @@ LOOP
     IF count IS 2
         IF _houseTimers[index] IS _houseInterval
             ALT _houseTimers[index] = 0
+            ALT _houseBirths[index] = <true>
             ADD _workersToCreate 1
-            PUSH _houseIdsThatGaveBirth _houseIds[index]
         ELSE
             ADD _houseTimers[index] 1
     ELIF count IS 1 OR count IS 0

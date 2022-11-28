@@ -1,9 +1,9 @@
 5 24
 META script_type_initialize
-META script_state_wait
+META script_state_waiting
 
 /// Finals
-DEF GLB FIN INT _poultrymanInterval = 500
+DEF GLB FIN INT _poultrymanInterval = 1440
 DEF GLB FIN DEC _poultrymanSpeed = 0.00025
 DEF FIN STR workerText = "No worker available"
 

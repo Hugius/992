@@ -1,12 +1,12 @@
 44 19
 META script_type_update
-META script_state_wait
+META script_state_waiting
 
 /// Define reusable values
 DEF BOL hasWorker = <false>
 
 /// Hide GUI
-IF _lastSelectedBuildingType IS "miller" OR _totalUpdates IS 0
+IF _lastSelectedBuildingType IS "miller" OR _firstUpdate IS <true>
     fe3d:quad2d_set_visible("miller_worker", <false>)
     fe3d:quad2d_set_visible("miller_grain", <false>)
     fe3d:quad2d_set_visible("miller_convert", <false>)

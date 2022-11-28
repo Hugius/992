@@ -1,13 +1,10 @@
-2 0
+20 15
 META script_type_initialize
 META script_state_entry
 
-/// General stuff
-EXECUTE camera_init
-EXECUTE building_init
-EXECUTE workers_init
-
-/// Building stuff
+EXECUTE camera_initialize
+EXECUTE workers_initialize
+EXECUTE building_initialize
 EXECUTE in_apiarist
 EXECUTE in_baker
 EXECUTE in_barber
@@ -46,8 +43,15 @@ EXECUTE in_tanner
 EXECUTE in_tavern
 EXECUTE in_waterer
 EXECUTE in_weaver
+EXECUTE hud_initialize
+EXECUTE misc_initialize
 
-/// Miscellaneous stuff
-EXECUTE hud_init
-EXECUTE misc_init
-EXECUTE generation_init
+DEF BOL exists = fe3d:world_is_custom_existing("world")
+
+IF exists IS <true>
+    fe3d:world_load_custom("world")
+    EXECUTE game_load_storage
+    EXECUTE game_load_jobs
+    EXECUTE game_load_misc
+ELSE
+    EXECUTE game_create

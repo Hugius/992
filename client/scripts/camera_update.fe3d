@@ -1,6 +1,6 @@
-26 4
+0 23
 META script_type_update
-META script_state_wait
+META script_state_waiting
 
 /// Retrieve inputs
 DEF BOL q = fe3d:input_is_keyboard_held("KEY_Q")
@@ -12,29 +12,29 @@ DEF BOL d = fe3d:input_is_keyboard_held("KEY_D")
 
 /// Update speeds
 IF q IS <true>
-    SUB _yawAcc _yawSpeed
+    SUB _yawAcceleration _yawSpeed
 IF e IS <true>
-    ADD _yawAcc _yawSpeed
+    ADD _yawAcceleration _yawSpeed
 IF w IS <true>
-    ADD _zPositionAcc _positionSpeed
+    ADD _zPositionAcceleration _positionSpeed
 IF s IS <true>
-    SUB _zPositionAcc _positionSpeed
+    SUB _zPositionAcceleration _positionSpeed
 IF d IS <true>
-    ADD _xPositionAcc _positionSpeed
+    ADD _xPositionAcceleration _positionSpeed
 IF a IS <true>
-    SUB _xPositionAcc _positionSpeed
+    SUB _xPositionAcceleration _positionSpeed
 
 /// Update yaw
 DEF DEC yaw = fe3d:camera_get_yaw()
-ADD yaw _yawAcc
-MUL _yawAcc 0.9
+ADD yaw _yawAcceleration
+MUL _yawAcceleration 0.9
 fe3d:camera_set_yaw(yaw)
 
 /// Update movement
-MUL _xPositionAcc 0.95
-MUL _zPositionAcc 0.95
-fe3d:camera_follow_right_xz(_xPositionAcc)
-fe3d:camera_follow_front_xz(_zPositionAcc)
+MUL _xPositionAcceleration 0.95
+MUL _zPositionAcceleration 0.95
+fe3d:camera_follow_right_xz(_xPositionAcceleration)
+fe3d:camera_follow_front_xz(_zPositionAcceleration)
 
 /// Update raycasting
 fe3d:raycast_calculate_cursor_ray()

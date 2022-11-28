@@ -1,6 +1,6 @@
 8 0
 META script_type_initialize
-META script_state_wait
+META script_state_waiting
 
 /// Finals
 DEF FIN STR workerText = "No worker available"

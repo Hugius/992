@@ -1,6 +1,6 @@
-26 39
+48 4
 META script_type_update
-META script_state_wait
+META script_state_waiting
 
 /// Update event messages
 fe3d:quad2d_set_opacity("event_message", _eventMessageOpacity)
@@ -39,5 +39,12 @@ DEF DEC blackOpacity = fe3d:quad2d_get_opacity("black")
 SUB blackOpacity 0.005
 fe3d:quad2d_set_opacity("black", blackOpacity)
 
+/// Update cursor
+fe3d:cursor_set_type(_cursorType)
+ALT _cursorType = "ARROW"
+
 /// Increase updates
 ADD _totalUpdates 1
+
+/// First update
+ALT _firstUpdate = <false>

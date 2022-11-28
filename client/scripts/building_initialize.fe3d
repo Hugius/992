@@ -1,19 +1,19 @@
-9 37
+0 27
 META script_type_initialize
-META script_state_wait
+META script_state_waiting
 
 /// Finals
-DEF GLB FIN LST _buildingModels = {"apiary","bakery","workshop2","smithy","workshop2","workshop2","workshop2","workshop3","pen","workshop1","farmland","workshop1","workshop1","workshop2","workshop1","grave","workshop1","workshop1","house","workshop1","sawmill","workshop3","windmill","mine","orchard","pen","church","workshop3","lavatory","pen","foundry","smokery","storage","pen","workshop2","tavern","well","workshop2"}
+DEF GLB FIN LST _buildingModels = {"apiary","bakery","workshop2","smithy","workshop3","workshop2","workshop2","workshop3","pen","workshop1","farmland","workshop1","workshop1","workshop3","workshop1","grave","workshop2","workshop1","house","workshop1","sawmill","workshop3","windmill","mine","orchard","pen","church","workshop3","lavatory","pen","foundry","smokery","storage","pen","workshop2","tavern","well","workshop2"}
 DEF GLB FIN LST _buildingTypes = {"apiarist","baker","barber","blacksmith","bowyer","brewer","butcher","carpenter","cattleman","ditcher","farmer","feller","fisher","fletcher","gatherer","grave","herbalist","hewer","house","hunter","lumberer","mason","miller","miner","orchardist","poultryman","priest","roofer","scavenger","shepherd","smelter","smoker","storage","swineherd","tanner","tavern","waterer","weaver"}
-DEF GLB FIN LST _buildingPricesPlanks = {0,9,1,2,1,1,1,1,2,3,4,3,3,1,3,0,3,3,1,3,6,1,15,1,4,2,12,1,1,2,0,1,1,2,1,12,1,1}
-DEF GLB FIN LST _buildingPricesStone = {0,3,0,0,0,0,0,6,0,0,0,0,0,0,0,1,0,0,5,0,0,6,4,3,0,0,12,6,0,0,2,0,10,0,0,0,1,0}
-DEF GLB FIN LST _buildingPricesClay = {0,0,6,0,6,6,6,9,0,0,0,0,0,6,0,0,0,0,1,0,0,9,0,0,0,0,12,9,0,0,0,2,0,0,6,0,0,6}
-DEF GLB FIN LST _buildingPricesStraw = {2,0,4,2,4,4,4,0,0,2,0,2,2,4,2,0,2,2,4,2,3,0,0,0,0,0,0,0,0,0,0,2,8,0,4,0,0,4}
+DEF GLB FIN LST _buildingPricesPlanks = {0,9,1,2,1,1,1,1,2,3,4,3,3,1,3,0,1,3,1,3,6,1,15,1,4,2,12,1,1,2,0,1,1,2,1,12,1,1}
+DEF GLB FIN LST _buildingPricesStone = {0,3,0,0,6,0,0,6,0,0,0,0,0,6,0,1,0,0,5,0,0,6,4,3,0,0,12,6,0,0,2,0,10,0,0,0,1,0}
+DEF GLB FIN LST _buildingPricesClay = {0,0,6,0,9,6,6,9,0,0,0,0,0,9,0,0,6,0,1,0,0,9,0,0,0,0,12,9,0,0,0,2,0,0,6,0,0,6}
+DEF GLB FIN LST _buildingPricesStraw = {2,0,4,2,0,4,4,0,0,2,0,2,2,0,2,0,4,2,4,2,3,0,0,0,0,0,0,0,0,0,0,2,8,0,4,0,0,4}
 DEF GLB FIN DEC _buildingHeight = 2.75
 
 /// Non-finals
-DEF GLB LST _placedBuildingIds = {"storage_0", "carpenter_1", "mason_2", "roofer_3"}
-DEF GLB LST _placedBuildingTypes = {"storage", "carpenter", "mason", "roofer"}
+DEF GLB LST _placedBuildingIds = {}
+DEF GLB LST _placedBuildingTypes = {}
 DEF GLB STR _placedBuildingId = ""
 DEF GLB STR _placedBuildingType = ""
 DEF GLB STR _selectedBuildingId = ""
@@ -21,7 +21,7 @@ DEF GLB STR _selectedBuildingType = ""
 DEF GLB STR _lastSelectedBuildingId = ""
 DEF GLB STR _lastSelectedBuildingType = ""
 DEF GLB INT _buildingIndex = 0
-DEF GLB INT _buildingCounter = 4
+DEF GLB INT _buildingCounter = 0
 DEF GLB BOL _buildMode = <false>
 DEF GLB BOL _lastBuildMode = <false>
 
@@ -41,22 +41,3 @@ fe3d:text2d_place("building_price_clay", "text", "", 0.1, -0.85, 0.08, 0.15)
 fe3d:text2d_place("building_price_straw", "text", "", 0.3, -0.85, 0.08, 0.15)
 fe3d:text2d_place("building_type", "text", "", 0.0, 0.925, 0.0, 0.0)
 fe3d:text2d_place("building_menu", "text", "", 0.0, -0.55, 0.0, 0.0)
-
-/// Preview buildings
-DEF INT maxIndex = misc:list_size("_buildingTypes")
-DEF INT index = 0
-LOOP
-    IF index IS maxIndex
-        BREAK
-    fe3d:model_place(_buildingTypes[index], _buildingModels[index], 0.0, 0.0, 0.0)
-    fe3d:model_set_visible(_buildingTypes[index], <false>)
-    ADD index 1
-
-/// Default buildings
-fe3d:model_place("storage_0", "storage", 21.0, 3.0, -1.5)
-fe3d:model_place("carpenter_1", "workshop3", 29.0, 3.0, -4.0)
-fe3d:model_place("mason_2", "workshop3", 15.0, 3.0, -6.0)
-fe3d:model_place("roofer_3", "workshop3", 19.0, 3.0, 5.0)
-fe3d:model_set_base_rotation("carpenter_1", 0.0, 0.0, 0.0)
-fe3d:model_set_base_rotation("mason_2", 0.0, 90.0, 0.0)
-fe3d:model_set_base_rotation("roofer_3", 0.0, 270.0, 0.0)

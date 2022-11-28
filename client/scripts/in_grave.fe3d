@@ -1,6 +1,6 @@
-11 65
+0 27
 META script_type_initialize
-META script_state_wait
+META script_state_waiting
 
 /// Finals
 DEF FIN STR infoText = "Prevents sickness caused by the dead"

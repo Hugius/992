@@ -1,13 +1,13 @@
 56 39
 META script_type_update
-META script_state_wait
+META script_state_waiting
 
 /// Define reusable values
 DEF BOL hasWorker = <false>
 DEF BOL hasTool = <false>
 
 /// Hide GUI
-IF _lastSelectedBuildingType IS "hewer" OR _totalUpdates IS 0
+IF _lastSelectedBuildingType IS "hewer" OR _firstUpdate IS <true>
     fe3d:quad2d_set_visible("hewer_worker", <false>)
     fe3d:quad2d_set_visible("hewer_tool", <false>)
     fe3d:quad2d_set_visible("hewer_time", <false>)

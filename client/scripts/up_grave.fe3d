@@ -1,9 +1,9 @@
 12 0
 META script_type_update
-META script_state_wait
+META script_state_waiting
 
 /// Hide GUI
-IF _lastSelectedBuildingType IS "grave" OR _totalUpdates IS 0
+IF _lastSelectedBuildingType IS "grave" OR _firstUpdate IS <true>
     fe3d:quad2d_set_visible("grave_info", <false>)
     fe3d:text2d_set_visible("grave_info", <false>)
 

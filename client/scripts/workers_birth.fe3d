@@ -1,6 +1,6 @@
 46 0
 META script_type_update
-META script_state_wait
+META script_state_waiting
 
 /// Validate
 IF _workersToCreate IS 0

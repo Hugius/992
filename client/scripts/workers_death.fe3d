@@ -1,6 +1,6 @@
-64 25
+118 27
 META script_type_update
-META script_state_wait
+META script_state_waiting
 
 /// Update death timer
 IF _workerDeathTimer IS _workerDeathTimespan
@@ -35,9 +35,11 @@ IF isWorkerDead IS <false> AND priestCount IS 0 AND tavernCount IS 0
 
 /// Update dying from childbirth
 IF isWorkerDead IS <false> AND priestCount IS 0
-    DEF INT houseIndex = misc:list_index("_houseIdsThatGaveBirth", _workerHouseBuildingIds[_workerDeathIndex])
-    IF houseIndex NOT -1
-        PULL _houseIdsThatGaveBirth houseIndex
+    DEF STR houseId = _workerHouseBuildingIds[_workerDeathIndex]
+    DEF INT houseIndex = misc:list_index(_houseIds, houseId)
+    DEF BOL houseBirth = _houseBirths[houseIndex]
+    IF houseBirth IS <true>
+        ALT _houseBirths[houseIndex] = <false>
         DEF INT birthDeathChance = 100
         SUB birthDeathChance _birthDeathChance
         IF randomPercentage MORE birthDeathChance
@@ -114,6 +116,8 @@ ELSE
 /// Handle dead population
 DEF INT totalWorkers = misc:list_size("_workerNames")
 IF totalWorkers IS 0
+    fe3d:world_delete_custom("world")
+    fe3d:file_delete("stats")
     fe3d:application_stop()
 
 /// Update event index

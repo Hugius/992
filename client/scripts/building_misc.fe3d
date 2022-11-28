@@ -1,6 +1,6 @@
-15 35
+20 0
 META script_type_update
-META script_state_wait
+META script_state_waiting
 
 /// Save last build mode
 ALT _lastBuildMode = _buildMode

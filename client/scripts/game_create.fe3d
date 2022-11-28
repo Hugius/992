@@ -1,6 +1,6 @@
-14 26
+98 28
 META script_type_initialize
-META script_state_wait
+META script_state_waiting
 
 /// Finals
 DEF FIN DEC minX = -128.0
@@ -30,7 +30,10 @@ DEF DEC z = 0.0
 DEF DEC distance = 0.0
 DEF BOL mustSkip = <false>
 
-/// Generation
+/// World loading
+fe3d:world_load_editor("world")
+
+/// World filling
 LOOP
     IF totalModels IS maxModels
         BREAK
@@ -66,3 +69,32 @@ LOOP
         ALT modelIndex = 0
     ELSE
         ADD modelIndex 1
+
+/// Preview buildings
+DEF INT maxIndex = misc:list_size("_buildingTypes")
+DEF INT index = 0
+LOOP
+    IF index IS maxIndex
+        BREAK
+    fe3d:model_place(_buildingTypes[index], _buildingModels[index], 0.0, 0.0, 0.0)
+    fe3d:model_set_visible(_buildingTypes[index], <false>)
+    ADD index 1
+
+/// Default buildings
+fe3d:model_place("storage_0", "storage", 21.0, 3.0, -1.5)
+fe3d:model_place("carpenter_1", "workshop3", 29.0, 3.0, -4.0)
+fe3d:model_place("mason_2", "workshop3", 15.0, 3.0, -6.0)
+fe3d:model_place("roofer_3", "workshop3", 19.0, 3.0, 5.0)
+fe3d:model_set_base_rotation("carpenter_1", 0.0, 0.0, 0.0)
+fe3d:model_set_base_rotation("mason_2", 0.0, 90.0, 0.0)
+fe3d:model_set_base_rotation("roofer_3", 0.0, 270.0, 0.0)
+
+/// Default building values
+ALT _placedBuildingIds = {"storage_0", "carpenter_1", "mason_2", "roofer_3"}
+ALT _placedBuildingTypes = {"storage", "carpenter", "mason", "roofer"}
+ALT _buildingCounter = 4
+
+/// Default camera state
+fe3d:camera_set_position(30.0, 17.5, 5.0)
+fe3d:camera_set_yaw(220.0)
+fe3d:camera_set_pitch(-70.0)
