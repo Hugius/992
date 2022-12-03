@@ -12,8 +12,8 @@ DEF GLB FIN LST _buildingPricesStraw = {2,0,4,2,0,4,4,0,0,2,0,2,2,0,2,0,4,2,4,2,
 DEF GLB FIN DEC _buildingHeight = 2.75
 
 /// Non-finals
-DEF GLB LST _placedBuildingIds = {}
-DEF GLB LST _placedBuildingTypes = {}
+DEF GLB LST _placedBuildingIds = {"storage_0", "carpenter_1", "mason_2", "roofer_3"}
+DEF GLB LST _placedBuildingTypes = {"storage", "carpenter", "mason", "roofer"}
 DEF GLB STR _placedBuildingId = ""
 DEF GLB STR _placedBuildingType = ""
 DEF GLB STR _selectedBuildingId = ""
@@ -21,7 +21,7 @@ DEF GLB STR _selectedBuildingType = ""
 DEF GLB STR _lastSelectedBuildingId = ""
 DEF GLB STR _lastSelectedBuildingType = ""
 DEF GLB INT _buildingIndex = 0
-DEF GLB INT _buildingCounter = 0
+DEF GLB INT _buildingCounter = 4
 DEF GLB BOL _buildMode = <false>
 DEF GLB BOL _lastBuildMode = <false>
 

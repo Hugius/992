@@ -1,4 +1,4 @@
-40 0
+8 34
 META script_type_update
 META script_state_waiting
 
@@ -25,7 +25,7 @@ ELSE
         fe3d:quad2d_set_position("event_message", xPosition, 0.95)
         fe3d:text2d_set_position("event_message", xPosition, 0.95)
         ALT _eventMessageOpacity = 1.0
-    ELIF _eventMessageOpacity LESS 0.005
+    ELIF _eventMessageOpacity LESS 0.01
         PULL _eventMessageContents 0
         ALT _eventMessageOpacity = 0.0
     ELSE

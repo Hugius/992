@@ -2,5 +2,4 @@
 META script_type_terminate
 META script_state_entry
 
-EXECUTE game_save_world
-EXECUTE game_save_stats
+EXECUTE game_save

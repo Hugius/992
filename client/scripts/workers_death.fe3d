@@ -1,4 +1,4 @@
-118 27
+6 4
 META script_type_update
 META script_state_waiting
 
@@ -116,8 +116,8 @@ ELSE
 /// Handle dead population
 DEF INT totalWorkers = misc:list_size("_workerNames")
 IF totalWorkers IS 0
-    fe3d:world_delete_custom("world")
-    fe3d:file_delete("stats")
+    fe3d:world_delete_custom("save")
+    fe3d:file_delete("save")
     fe3d:application_stop()
 
 /// Update event index

@@ -1,4 +1,4 @@
-78 28
+0 0
 META script_type_update
 META script_state_waiting
 
@@ -7,7 +7,19 @@ DEF BOL update = fe3d:time_is_passed(10)
 IF update IS <false>
     EXIT
 
-/// Create content
+/// Create food content
+DEF STR totalAleText = misc:string_zeroed_integer(_totalAle, 4)
+DEF STR totalMilkText = misc:string_zeroed_integer(_totalMilk, 4)
+DEF STR totalSmokedMeatText = misc:string_zeroed_integer(_totalSmokedMeat, 4)
+DEF STR totalSmokedFishText = misc:string_zeroed_integer(_totalSmokedFish, 4)
+DEF STR totalBreadText = misc:string_zeroed_integer(_totalBread, 4)
+DEF STR totalEggsText = misc:string_zeroed_integer(_totalEggs, 4)
+DEF STR totalRawMeatText = misc:string_zeroed_integer(_totalRawMeat, 4)
+DEF STR totalRawFishText = misc:string_zeroed_integer(_totalRawFish, 4)
+DEF STR totalHoneyText = misc:string_zeroed_integer(_totalHoney, 4)
+DEF STR totalFruitText = misc:string_zeroed_integer(_totalFruit, 4)
+
+/// Create resources content
 DEF STR totalLumberText = misc:string_zeroed_integer(_totalLumber, 4)
 DEF STR totalPlanksText = misc:string_zeroed_integer(_totalPlanks, 4)
 DEF STR totalFirewoodText = misc:string_zeroed_integer(_totalFirewood, 4)
@@ -30,7 +42,31 @@ DEF STR totalToolsText = misc:string_zeroed_integer(_totalTools, 4)
 DEF STR totalBowsText = misc:string_zeroed_integer(_totalBows, 4)
 DEF STR totalArrowsText = misc:string_zeroed_integer(_totalArrows, 4)
 
-/// Set content
+/// Create miscellaneous content
+DEF INT totalSeconds = _totalUpdates
+DIV totalSeconds 75
+DEF INT totalAlive = misc:list_size("_workerNames")
+DEF INT totalSick = misc:list_count("_workerHealths", <false>)
+DEF INT totalDead = _totalDeadWorkers
+DEF STR totalSecondsText = misc:string_zeroed_integer(totalSeconds, 4)
+ALT totalSecondsText = misc:string_concat("Time - ", totalSecondsText)
+DEF STR totalAliveText = misc:string_zeroed_integer(totalAlive, 3)
+DEF STR totalSickText = misc:string_zeroed_integer(totalSick, 3)
+DEF STR totalDeadText = misc:string_zeroed_integer(totalDead, 3)
+
+/// Update food content
+fe3d:text2d_set_content("total_ale", totalAleText)
+fe3d:text2d_set_content("total_milk", totalMilkText)
+fe3d:text2d_set_content("total_smokedmeat", totalSmokedMeatText)
+fe3d:text2d_set_content("total_smokedfish", totalSmokedFishText)
+fe3d:text2d_set_content("total_bread", totalBreadText)
+fe3d:text2d_set_content("total_eggs", totalEggsText)
+fe3d:text2d_set_content("total_rawmeat", totalRawMeatText)
+fe3d:text2d_set_content("total_rawfish", totalRawFishText)
+fe3d:text2d_set_content("total_honey", totalHoneyText)
+fe3d:text2d_set_content("total_fruit", totalFruitText)
+
+/// Update resources content
 fe3d:text2d_set_content("total_lumber", totalLumberText)
 fe3d:text2d_set_content("total_planks", totalPlanksText)
 fe3d:text2d_set_content("total_firewood", totalFirewoodText)
@@ -53,7 +89,25 @@ fe3d:text2d_set_content("total_tools", totalToolsText)
 fe3d:text2d_set_content("total_bows", totalBowsText)
 fe3d:text2d_set_content("total_arrows", totalArrowsText)
 
-/// Set default color
+/// Update miscellaneous content
+fe3d:text2d_set_content("total_seconds", totalSecondsText)
+fe3d:text2d_set_content("total_alive", totalAliveText)
+fe3d:text2d_set_content("total_sick", totalSickText)
+fe3d:text2d_set_content("total_dead", totalDeadText)
+
+/// Set food default color
+fe3d:text2d_set_color("total_ale", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_milk", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_smokedmeat", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_smokedfish", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_bread", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_eggs", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_rawmeat", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_rawfish", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_honey", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_fruit", 0.0, 0.0, 0.0)
+
+/// Set resources default color
 fe3d:text2d_set_color("total_lumber", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_planks", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_firewood", 0.0, 0.0, 0.0)
@@ -76,7 +130,29 @@ fe3d:text2d_set_color("total_tools", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_bows", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_arrows", 0.0, 0.0, 0.0)
 
-/// Set custom color
+/// Set food custom color
+IF _totalAle IS _maxAle
+    fe3d:text2d_set_color("total_ale", 0.5, 0.0, 0.0)
+IF _totalMilk IS _maxMilk
+    fe3d:text2d_set_color("total_milk", 0.5, 0.0, 0.0)
+IF _totalSmokedMeat IS _maxSmokedMeat
+    fe3d:text2d_set_color("total_smokedmeat", 0.5, 0.0, 0.0)
+IF _totalSmokedFish IS _maxSmokedFish
+    fe3d:text2d_set_color("total_smokedfish", 0.5, 0.0, 0.0)
+IF _totalBread IS _maxBread
+    fe3d:text2d_set_color("total_bread", 0.5, 0.0, 0.0)
+IF _totalEggs IS _maxEggs
+    fe3d:text2d_set_color("total_eggs", 0.5, 0.0, 0.0)
+IF _totalRawFish IS _maxRawFish
+    fe3d:text2d_set_color("total_rawfish", 0.5, 0.0, 0.0)
+IF _totalRawMeat IS _maxRawMeat
+    fe3d:text2d_set_color("total_rawmeat", 0.5, 0.0, 0.0)
+IF _totalHoney IS _maxHoney
+    fe3d:text2d_set_color("total_honey", 0.5, 0.0, 0.0)
+IF _totalFruit IS _maxFruit
+    fe3d:text2d_set_color("total_fruit", 0.5, 0.0, 0.0)
+
+/// Set resources custom color
 IF _totalLumber IS _maxLumber
     fe3d:text2d_set_color("total_lumber", 0.5, 0.0, 0.0)
 IF _totalPlanks IS _maxPlanks

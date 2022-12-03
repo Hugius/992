@@ -1,4 +1,4 @@
-50 38
+50 27
 META script_type_initialize
 META script_state_entry
 
@@ -46,11 +46,10 @@ EXECUTE in_weaver
 EXECUTE hud_initialize
 EXECUTE misc_initialize
 
-DEF BOL world = fe3d:world_is_custom_existing("world")
-DEF BOL stats = fe3d:file_is_existing("stats")
+DEF BOL world = fe3d:world_is_custom_existing("save")
+DEF BOL file = fe3d:file_is_existing("save")
 
-IF world IS <true> AND stats IS <true>
-    EXECUTE game_load_world
-    EXECUTE game_load_stats
+IF world IS <true> AND file IS <true>
+    EXECUTE game_load
 ELSE
     EXECUTE game_create

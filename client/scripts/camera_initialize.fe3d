@@ -1,4 +1,4 @@
-10 34
+12 17
 META script_type_initialize
 META script_state_waiting
 
@@ -10,3 +10,8 @@ DEF GLB FIN DEC _positionSpeed = 0.05
 DEF GLB DEC _xPositionAcceleration = 0.0
 DEF GLB DEC _zPositionAcceleration = 0.0
 DEF GLB DEC _yawAcceleration = 0.0
+
+/// Miscellaneous
+fe3d:camera_set_position(30.0, 17.5, 5.0)
+fe3d:camera_set_yaw(220.0)
+fe3d:camera_set_pitch(-70.0)
