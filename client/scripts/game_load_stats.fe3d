@@ -1,0 +1,32 @@
+25 21
+META script_type_initialize
+META script_state_waiting
+
+/// Read save file
+DEF LST lines = fe3d:file_read("stats")
+
+/// Load camera
+DEF STR x = lines[0]
+DEF STR y = lines[1]
+DEF STR z = lines[2]
+DEF STR yaw = lines[3]
+DEF STR pitch = lines[4]
+DEF STR xPositionAcceleration = lines[5]
+DEF STR zPositionAcceleration = lines[6]
+DEF STR yawAcceleration = lines[7]
+CAST x DEC
+CAST y DEC
+CAST z DEC
+CAST yaw DEC
+CAST pitch DEC
+CAST xPositionAcceleration DEC
+CAST zPositionAcceleration DEC
+CAST yawAcceleration DEC
+fe3d:camera_set_position(x, y, z)
+fe3d:camera_set_yaw(yaw)
+fe3d:camera_set_pitch(pitch)
+ALT _xPositionAcceleration = xPositionAcceleration
+ALT _zPositionAcceleration = zPositionAcceleration
+ALT _yawAcceleration = yawAcceleration
+
+

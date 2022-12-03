@@ -1,12 +1,12 @@
-0 27
+10 34
 META script_type_initialize
 META script_state_waiting
 
 /// Finals
-DEF GLB FIN DEC _yawSpeed = 0.3
-DEF GLB FIN DEC _positionSpeed = 0.03
+DEF GLB FIN DEC _yawSpeed = 0.5
+DEF GLB FIN DEC _positionSpeed = 0.05
 
 /// Non-finals
-DEF GLB DEC _yawAcceleration = 0.0
 DEF GLB DEC _xPositionAcceleration = 0.0
 DEF GLB DEC _zPositionAcceleration = 0.0
+DEF GLB DEC _yawAcceleration = 0.0

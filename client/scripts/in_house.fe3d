@@ -3,7 +3,7 @@ META script_type_initialize
 META script_state_waiting
 
 /// Finals
-DEF GLB FIN INT _houseInterval = 1440
+DEF GLB FIN INT _houseInterval = 750
 DEF FIN STR infoText = "Houses 2 married workers"
 
 /// Non-finals

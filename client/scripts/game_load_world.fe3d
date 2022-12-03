@@ -1,5 +1,5 @@
-3 0
+0 27
 META script_type_initialize
 META script_state_waiting
 
-
+fe3d:world_load_custom("world")

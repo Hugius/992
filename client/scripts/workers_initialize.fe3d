@@ -5,7 +5,7 @@ META script_state_waiting
 /// Finals
 DEF GLB FIN LST _maleWorkerNames = {"Aelfraed", "Aelfweard", "Aethelred", "Aethelstan", "Aethelweald", "Beocca", "Beorhtric", "Burgred", "Ceolmund", "Cuthberht", "Dunstan", "Eadweard", "Eadwine", "Ealdhelm", "Earconwald", "Eardwulf", "Ecgberht", "Godric", "Godwine", "Leofric", "Osferth", "Oswald", "Uhtric", "Wiglaf", "Wihtgar"}
 DEF GLB FIN LST _femaleWorkerNames = {"Aebbe", "Aelfflaed", "Aelfgifu", "Aelfthryth", "Aelfwynn", "Aethelflaed", "Aethelswith", "Cynethryth", "Eadburh", "Eadgifu", "Eadgyth", "Eahlswith", "Eanflaed", "Ecgwynn", "Eoforhild", "Godgifu", "Hild", "Leofflaed", "Maerwynn", "Mildburh", "Mildthryth", "Tibba", "Wulfflaed", "Wulfgifu", "Wynnflaed"}
-DEF GLB FIN INT _workersDeathTimespan = 14400
+DEF GLB FIN INT _workersDeathTimespan = 7500
 
 /// Non-finals
 DEF GLB LST _workerNames = {}
@@ -17,7 +17,7 @@ DEF GLB LST _workerHouseBuildingIds = {}
 DEF GLB INT _workersToCreate = 10
 DEF GLB INT _workerDeathIndex = 0
 DEF GLB INT _workerDeathTimer = 0
-DEF GLB INT _workerDeathTimespan = 1440
+DEF GLB INT _workerDeathTimespan = 750
 DEF GLB INT _totalDeadWorkers = 0
 DEF GLB INT _nextWorkerGender = 1
 DEF GLB INT _birthDeathChance = 5
