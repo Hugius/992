@@ -1,4 +1,4 @@
-7 12
+54 24
 META script_type_update
 META script_state_waiting
 
@@ -12,12 +12,14 @@ IF _lastSelectedBuildingType IS "smelter" OR _firstUpdate IS <true>
     fe3d:quad2d_set_visible("smelter_tool", <false>)
     fe3d:quad2d_set_visible("smelter_ore", <false>)
     fe3d:quad2d_set_visible("smelter_firewood", <false>)
+    fe3d:quad2d_set_visible("smelter_coal", <false>)
     fe3d:quad2d_set_visible("smelter_convert", <false>)
     fe3d:quad2d_set_visible("smelter_iron", <false>)
     fe3d:text2d_set_visible("smelter_worker", <false>)
     fe3d:text2d_set_visible("smelter_tool", <false>)
     fe3d:text2d_set_visible("smelter_ore", <false>)
     fe3d:text2d_set_visible("smelter_firewood", <false>)
+    fe3d:text2d_set_visible("smelter_coal", <false>)
     fe3d:text2d_set_visible("smelter_iron", <false>)
 
 /// Show GUI
@@ -28,10 +30,12 @@ IF _selectedBuildingType IS "smelter"
         IF hasTool IS <true>
             fe3d:quad2d_set_visible("smelter_ore", <true>)
             fe3d:quad2d_set_visible("smelter_firewood", <true>)
+            fe3d:quad2d_set_visible("smelter_coal", <true>)
             fe3d:quad2d_set_visible("smelter_convert", <true>)
             fe3d:quad2d_set_visible("smelter_iron", <true>)
             fe3d:text2d_set_visible("smelter_ore", <true>)
             fe3d:text2d_set_visible("smelter_firewood", <true>)
+            fe3d:text2d_set_visible("smelter_coal", <true>)
             fe3d:text2d_set_visible("smelter_iron", <true>)
         ELSE
             fe3d:quad2d_set_visible("smelter_tool", <true>)
@@ -49,6 +53,7 @@ IF _selectedBuildingType IS "smelter"
 /// Update smelters
 DEF INT maxIndex = misc:list_size("_smelterIds")
 DEF INT index = 0
+DEF INT randomNumber = 0
 LOOP
     IF index IS maxIndex
         BREAK
@@ -56,10 +61,16 @@ LOOP
     ALT hasTool = misc:list_contains("_toolBuildingIds", _smelterIds[index])
     IF hasWorker IS <true> AND hasTool IS <true>
         IF _smelterTimers[index] IS 0
-            IF _totalOre MORE 0 AND _totalFirewood MORE 0
-                SUB _totalOre 1
-                SUB _totalFirewood 1
-                ADD _smelterTimers[index] 1
+            IF _totalOre MORE 0
+                ALT randomNumber = math:random_integer(1, 2)
+                IF randomNumber IS 1 AND _totalFirewood MORE 0
+                    SUB _totalOre 1
+                    SUB _totalFirewood 1
+                    ADD _smelterTimers[index] 1
+                ELIF randomNumber IS 2 AND _totalCoal MORE 0
+                    SUB _totalOre 1
+                    SUB _totalCoal 1
+                    ADD _smelterTimers[index] 1
         ELIF _smelterTimers[index] IS _smelterInterval
             ALT _smelterTimers[index] = 0
             IF _totalIron LESS _maxIron

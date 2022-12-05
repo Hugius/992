@@ -8,6 +8,7 @@
 @chicken assets\image\quad2d\diffuse_map\chicken.tga 1 1 1 1 1 0 0 1
 @clay assets\image\quad2d\diffuse_map\clay.tga 1 1 1 1 1 0 0 1
 @clothes assets\image\quad2d\diffuse_map\clothes.tga 1 1 1 1 1 0 0 1
+@coal assets\image\quad2d\diffuse_map\coal.tga 1 1 1 1 1 0 0 1
 @convert assets\image\quad2d\diffuse_map\convert.tga 1 1 1 1 1 0 0 0.1
 @cow assets\image\quad2d\diffuse_map\cow.tga 1 1 1 1 1 0 0 1
 @eggs assets\image\quad2d\diffuse_map\eggs.tga 1 1 1 1 1 0 0 1
@@ -31,6 +32,7 @@
 @planks assets\image\quad2d\diffuse_map\planks.tga 1 1 1 1 1 0 0 1.25
 @rawfish assets\image\quad2d\diffuse_map\rawfish.tga 1 1 1 1 1 0 0 1
 @rawmeat assets\image\quad2d\diffuse_map\rawmeat.tga 1 1 1 1 1 0 0 1
+@bricks assets\image\quad2d\diffuse_map\bricks.tga 1 1 1 1 1 0 0 1
 @scroll1 assets\image\quad2d\diffuse_map\scroll1.tga 1 1 1 1 1 0 0 1
 @scroll2 assets\image\quad2d\diffuse_map\scroll2.tga 1 1 1 1 1 0 0 1
 @seeds assets\image\quad2d\diffuse_map\seeds.tga 1 1 1 1 1 0 0 1

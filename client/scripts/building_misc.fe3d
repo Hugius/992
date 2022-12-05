@@ -1,4 +1,4 @@
-20 0
+75 55
 META script_type_update
 META script_state_waiting
 
@@ -47,12 +47,12 @@ ELSE
 /// Update GUI
 fe3d:quad2d_set_visible("building_price_type", _buildMode)
 fe3d:quad2d_set_visible("building_price_planks", _buildMode)
-fe3d:quad2d_set_visible("building_price_stone", _buildMode)
+fe3d:quad2d_set_visible("building_price_bricks", _buildMode)
 fe3d:quad2d_set_visible("building_price_clay", _buildMode)
 fe3d:quad2d_set_visible("building_price_straw", _buildMode)
 fe3d:text2d_set_visible("building_price_type", _buildMode)
 fe3d:text2d_set_visible("building_price_planks", _buildMode)
-fe3d:text2d_set_visible("building_price_stone", _buildMode)
+fe3d:text2d_set_visible("building_price_bricks", _buildMode)
 fe3d:text2d_set_visible("building_price_clay", _buildMode)
 fe3d:text2d_set_visible("building_price_straw", _buildMode)
 
@@ -70,11 +70,11 @@ fe3d:text2d_set_size("building_price_type", textWidth, 0.15)
 
 /// Update GUI
 DEF STR planksPriceText = misc:string_zeroed_integer(_buildingPricesPlanks[_buildingIndex], 4)
-DEF STR stonePriceText = misc:string_zeroed_integer(_buildingPricesStone[_buildingIndex], 4)
+DEF STR bricksPriceText = misc:string_zeroed_integer(_buildingPricesBricks[_buildingIndex], 4)
 DEF STR clayPriceText = misc:string_zeroed_integer(_buildingPricesClay[_buildingIndex], 4)
 DEF STR strawPriceText = misc:string_zeroed_integer(_buildingPricesStraw[_buildingIndex], 4)
 fe3d:text2d_set_content("building_price_planks", planksPriceText)
-fe3d:text2d_set_content("building_price_stone", stonePriceText)
+fe3d:text2d_set_content("building_price_bricks", bricksPriceText)
 fe3d:text2d_set_content("building_price_clay", clayPriceText)
 fe3d:text2d_set_content("building_price_straw", strawPriceText)
 

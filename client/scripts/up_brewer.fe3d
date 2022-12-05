@@ -1,4 +1,4 @@
-50 19
+40 24
 META script_type_update
 META script_state_waiting
 
@@ -10,11 +10,13 @@ IF _lastSelectedBuildingType IS "brewer" OR _firstUpdate IS <true>
     fe3d:quad2d_set_visible("brewer_worker", <false>)
     fe3d:quad2d_set_visible("brewer_grain", <false>)
     fe3d:quad2d_set_visible("brewer_firewood", <false>)
+    fe3d:quad2d_set_visible("brewer_coal", <false>)
     fe3d:quad2d_set_visible("brewer_convert", <false>)
     fe3d:quad2d_set_visible("brewer_ale", <false>)
     fe3d:text2d_set_visible("brewer_worker", <false>)
     fe3d:text2d_set_visible("brewer_grain", <false>)
     fe3d:text2d_set_visible("brewer_firewood", <false>)
+    fe3d:text2d_set_visible("brewer_coal", <false>)
     fe3d:text2d_set_visible("brewer_ale", <false>)
 
 /// Show GUI
@@ -23,10 +25,12 @@ IF _selectedBuildingType IS "brewer"
     IF hasWorker IS <true>
         fe3d:quad2d_set_visible("brewer_grain", <true>)
         fe3d:quad2d_set_visible("brewer_firewood", <true>)
+        fe3d:quad2d_set_visible("brewer_coal", <true>)
         fe3d:quad2d_set_visible("brewer_convert", <true>)
         fe3d:quad2d_set_visible("brewer_ale", <true>)
         fe3d:text2d_set_visible("brewer_grain", <true>)
         fe3d:text2d_set_visible("brewer_firewood", <true>)
+        fe3d:text2d_set_visible("brewer_coal", <true>)
         fe3d:text2d_set_visible("brewer_ale", <true>)
     ELSE
         fe3d:quad2d_set_visible("brewer_worker", <true>)
@@ -35,16 +39,23 @@ IF _selectedBuildingType IS "brewer"
 /// Update brewers
 DEF INT maxIndex = misc:list_size("_brewerIds")
 DEF INT index = 0
+DEF INT randomNumber = 0
 LOOP
     IF index IS maxIndex
         BREAK
     ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _brewerIds[index])
     IF hasWorker IS <true>
         IF _brewerTimers[index] IS 0
-            IF _totalGrain MORE 0 AND _totalFirewood MORE 0
-                SUB _totalGrain 1
-                SUB _totalFirewood 1
-                ADD _brewerTimers[index] 1
+            IF _totalGrain MORE 0
+                ALT randomNumber = math:random_integer(1, 2)
+                IF randomNumber IS 1 AND _totalFirewood MORE 0
+                    SUB _totalGrain 1
+                    SUB _totalFirewood 1
+                    ADD _brewerTimers[index] 1
+                ELIF randomNumber IS 2 AND _totalCoal MORE 0
+                    SUB _totalGrain 1
+                    SUB _totalCoal 1
+                    ADD _brewerTimers[index] 1
         ELIF _brewerTimers[index] IS _brewerInterval
             ALT _brewerTimers[index] = 0
             ADD _totalAle 10

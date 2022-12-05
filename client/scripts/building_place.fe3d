@@ -1,4 +1,4 @@
-64 20
+116 20
 META script_type_update
 META script_state_waiting
 
@@ -30,12 +30,12 @@ fe3d:model_set_base_rotation(buildingType, 0.0, rotation, 0.0)
 /// Update price color
 DEF LST color = {0.0, 0.4, 0.0}
 DEF INT planksPrice = _buildingPricesPlanks[_buildingIndex]
-DEF INT stonePrice = _buildingPricesStone[_buildingIndex]
+DEF INT bricksPrice = _buildingPricesBricks[_buildingIndex]
 DEF INT clayPrice = _buildingPricesClay[_buildingIndex]
 DEF INT strawPrice = _buildingPricesStraw[_buildingIndex]
 IF _totalPlanks LESS planksPrice
     ALT color = {0.5, 0.0, 0.0}
-IF _totalStone LESS stonePrice
+IF _totalBricks LESS bricksPrice
     ALT color = {0.5, 0.0, 0.0}
 IF _totalClay LESS clayPrice
     ALT color = {0.5, 0.0, 0.0}
@@ -44,7 +44,7 @@ IF _totalStraw LESS strawPrice
 
 /// Update price GUI
 fe3d:text2d_set_color("building_price_planks", color[0], color[1], color[2])
-fe3d:text2d_set_color("building_price_stone", color[0], color[1], color[2])
+fe3d:text2d_set_color("building_price_bricks", color[0], color[1], color[2])
 fe3d:text2d_set_color("building_price_clay", color[0], color[1], color[2])
 fe3d:text2d_set_color("building_price_straw", color[0], color[1], color[2])
 
@@ -115,7 +115,7 @@ IF isLmbClicked IS <true> AND color[1] NOT 0.0
     fe3d:model_set_base_position(buildingId, x, y, z)
     fe3d:model_set_base_rotation(buildingId, 0.0, rotation, 0.0)
     SUB _totalPlanks planksPrice
-    SUB _totalStone stonePrice
+    SUB _totalBricks bricksPrice
     SUB _totalClay clayPrice
     SUB _totalStraw strawPrice
     ADD _buildingCounter 1

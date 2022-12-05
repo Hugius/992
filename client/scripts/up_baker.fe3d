@@ -1,4 +1,4 @@
-50 19
+40 24
 META script_type_update
 META script_state_waiting
 
@@ -10,11 +10,13 @@ IF _lastSelectedBuildingType IS "baker" OR _firstUpdate IS <true>
     fe3d:quad2d_set_visible("baker_worker", <false>)
     fe3d:quad2d_set_visible("baker_flour", <false>)
     fe3d:quad2d_set_visible("baker_firewood", <false>)
+    fe3d:quad2d_set_visible("baker_coal", <false>)
     fe3d:quad2d_set_visible("baker_convert", <false>)
     fe3d:quad2d_set_visible("baker_bread", <false>)
     fe3d:text2d_set_visible("baker_worker", <false>)
     fe3d:text2d_set_visible("baker_flour", <false>)
     fe3d:text2d_set_visible("baker_firewood", <false>)
+    fe3d:text2d_set_visible("baker_coal", <false>)
     fe3d:text2d_set_visible("baker_bread", <false>)
 
 /// Show GUI
@@ -23,10 +25,12 @@ IF _selectedBuildingType IS "baker"
     IF hasWorker IS <true>
         fe3d:quad2d_set_visible("baker_flour", <true>)
         fe3d:quad2d_set_visible("baker_firewood", <true>)
+        fe3d:quad2d_set_visible("baker_coal", <true>)
         fe3d:quad2d_set_visible("baker_convert", <true>)
         fe3d:quad2d_set_visible("baker_bread", <true>)
         fe3d:text2d_set_visible("baker_flour", <true>)
         fe3d:text2d_set_visible("baker_firewood", <true>)
+        fe3d:text2d_set_visible("baker_coal", <true>)
         fe3d:text2d_set_visible("baker_bread", <true>)
     ELSE
         fe3d:quad2d_set_visible("baker_worker", <true>)
@@ -35,16 +39,23 @@ IF _selectedBuildingType IS "baker"
 /// Update bakers
 DEF INT maxIndex = misc:list_size("_bakerIds")
 DEF INT index = 0
+DEF INT randomNumber = 0
 LOOP
     IF index IS maxIndex
         BREAK
     ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _bakerIds[index])
     IF hasWorker IS <true>
         IF _bakerTimers[index] IS 0
-            IF _totalFlour MORE 0 AND _totalFirewood MORE 0
-                SUB _totalFlour 1
-                SUB _totalFirewood 1
-                ADD _bakerTimers[index] 1
+            IF _totalFlour MORE 0
+                ALT randomNumber = math:random_integer(1, 2)
+                IF randomNumber IS 1 AND _totalFirewood MORE 0
+                    SUB _totalFlour 1
+                    SUB _totalFirewood 1
+                    ADD _bakerTimers[index] 1
+                ELIF randomNumber IS 2 AND _totalCoal MORE 0
+                    SUB _totalFlour 1
+                    SUB _totalCoal 1
+                    ADD _bakerTimers[index] 1
         ELIF _bakerTimers[index] IS _bakerInterval
             ALT _bakerTimers[index] = 0
             ADD _totalBread 10

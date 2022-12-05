@@ -1,4 +1,4 @@
-38 28
+40 28
 META script_type_initialize
 META script_state_waiting
 
@@ -7,68 +7,72 @@ DEF FIN STR infoText = "Stores food and resources"
 
 /// Non-finals
 DEF GLB LST _storageIds = {"storage_0"}
-DEF GLB INT _totalAle = 0
+DEF GLB INT _totalAle = 50
 DEF GLB INT _totalMilk = 0
 DEF GLB INT _totalSmokedMeat = 0
 DEF GLB INT _totalSmokedFish = 0
-DEF GLB INT _totalBread = 0
+DEF GLB INT _totalBread = 50
 DEF GLB INT _totalEggs = 0
-DEF GLB INT _totalRawFish = 0
-DEF GLB INT _totalRawMeat = 0
 DEF GLB INT _totalHoney = 0
 DEF GLB INT _totalFruit = 0
+DEF GLB INT _totalRawMeat = 0
+DEF GLB INT _totalRawFish = 0
 DEF GLB INT _totalLumber = 0
-DEF GLB INT _totalStone = 0
-DEF GLB INT _totalGrain = 0
-DEF GLB INT _totalFlour = 0
-DEF GLB INT _totalPlanks = 0
+DEF GLB INT _totalPlanks = 15
 DEF GLB INT _totalFirewood = 0
+DEF GLB INT _totalStone = 0
+DEF GLB INT _totalBricks = 10
+DEF GLB INT _totalClay = 10
+DEF GLB INT _totalStraw = 9
+DEF GLB INT _totalCoal = 0
 DEF GLB INT _totalOre = 0
 DEF GLB INT _totalIron = 0
-DEF GLB INT _totalHides = 0
-DEF GLB INT _totalClothes = 0
-DEF GLB INT _totalWool = 0
-DEF GLB INT _totalLeather = 0
-DEF GLB INT _totalClay = 0
-DEF GLB INT _totalStraw = 0
-DEF GLB INT _totalMedicine = 0
-DEF GLB INT _totalFeathers = 0
-DEF GLB INT _totalMushrooms = 0
 DEF GLB INT _totalSeeds = 0
-DEF GLB INT _totalTools = 3
+DEF GLB INT _totalGrain = 0
+DEF GLB INT _totalFlour = 0
+DEF GLB INT _totalFeathers = 0
+DEF GLB INT _totalHides = 0
+DEF GLB INT _totalLeather = 0
+DEF GLB INT _totalWool = 0
+DEF GLB INT _totalClothes = 10
+DEF GLB INT _totalMushrooms = 0
+DEF GLB INT _totalMedicine = 0
+DEF GLB INT _totalTools = 7
 DEF GLB INT _totalBows = 0
-DEF GLB INT _totalArrows = 0
+DEF GLB INT _totalArrows = 10
 DEF GLB INT _maxAle = 100
 DEF GLB INT _maxMilk = 100
 DEF GLB INT _maxSmokedMeat = 100
 DEF GLB INT _maxSmokedFish = 100
 DEF GLB INT _maxBread = 100
 DEF GLB INT _maxEggs = 100
-DEF GLB INT _maxRawFish = 100
-DEF GLB INT _maxRawMeat = 100
 DEF GLB INT _maxHoney = 100
 DEF GLB INT _maxFruit = 100
+DEF GLB INT _maxRawMeat = 100
+DEF GLB INT _maxRawFish = 100
 DEF GLB INT _maxLumber = 100
-DEF GLB INT _maxStone = 100
-DEF GLB INT _maxGrain = 100
-DEF GLB INT _maxFlour = 100
 DEF GLB INT _maxPlanks = 100
 DEF GLB INT _maxFirewood = 100
-DEF GLB INT _maxOre = 100
-DEF GLB INT _maxIron = 100
-DEF GLB INT _maxHides = 100
-DEF GLB INT _maxClothes = 100
-DEF GLB INT _maxWool = 100
-DEF GLB INT _maxLeather = 100
+DEF GLB INT _maxStone = 100
+DEF GLB INT _maxBricks = 100
 DEF GLB INT _maxClay = 100
 DEF GLB INT _maxStraw = 100
-DEF GLB INT _maxMedicine = 100
-DEF GLB INT _maxFeathers = 100
-DEF GLB INT _maxMushrooms = 100
+DEF GLB INT _maxCoal = 100
+DEF GLB INT _maxOre = 100
+DEF GLB INT _maxIron = 100
 DEF GLB INT _maxSeeds = 100
-DEF GLB INT _maxTools = 5
-DEF GLB INT _maxBows = 5
-DEF GLB INT _maxArrows = 25
+DEF GLB INT _maxGrain = 100
+DEF GLB INT _maxFlour = 100
+DEF GLB INT _maxFeathers = 100
+DEF GLB INT _maxHides = 100
+DEF GLB INT _maxLeather = 100
+DEF GLB INT _maxWool = 100
+DEF GLB INT _maxClothes = 100
+DEF GLB INT _maxMushrooms = 100
+DEF GLB INT _maxMedicine = 100
+DEF GLB INT _maxTools = 10
+DEF GLB INT _maxBows = 10
+DEF GLB INT _maxArrows = 50
 
 /// GUI
 fe3d:quad2d_place("storage_info", "info", 0.0, -0.6, 0.1, 0.175)

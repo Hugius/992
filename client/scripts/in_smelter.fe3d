@@ -1,4 +1,4 @@
-4 24
+24 31
 META script_type_initialize
 META script_state_waiting
 
@@ -15,11 +15,13 @@ DEF GLB LST _smelterTimers = {}
 fe3d:quad2d_place("smelter_worker", "worker", 0.0, -0.6, 0.1, 0.175)
 fe3d:quad2d_place("smelter_tool", "tools", 0.0, -0.6, 0.1, 0.175)
 fe3d:quad2d_place("smelter_ore", "ore", -0.3, -0.7, 0.1, 0.175)
-fe3d:quad2d_place("smelter_firewood", "firewood", -0.2, -0.7, 0.1, 0.175)
+fe3d:quad2d_place("smelter_firewood", "firewood", -0.2, -0.55, 0.1, 0.175)
+fe3d:quad2d_place("smelter_coal", "coal", -0.2, -0.7, 0.1, 0.175)
 fe3d:quad2d_place("smelter_convert", "convert", 0.0, -0.7, 0.2, 0.4)
 fe3d:quad2d_place("smelter_iron", "iron", 0.25, -0.7, 0.1, 0.175)
 fe3d:text2d_place("smelter_worker", "text", workerText, 0.0, -0.8, 0.285, 0.1)
 fe3d:text2d_place("smelter_tool", "text", toolText, 0.0, -0.8, 0.195, 0.1)
 fe3d:text2d_place("smelter_ore", "text", "1", -0.3, -0.875, 0.02, 0.1)
 fe3d:text2d_place("smelter_firewood", "text", "1", -0.2, -0.875, 0.02, 0.1)
+fe3d:text2d_place("smelter_coal", "text", "1", -0.2, -0.875, 0.02, 0.1)
 fe3d:text2d_place("smelter_iron", "text", "1", 0.25, -0.875, 0.02, 0.1)

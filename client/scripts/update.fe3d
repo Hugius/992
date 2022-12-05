@@ -1,4 +1,4 @@
-52 17
+46 22
 META script_type_update
 META script_state_entry
 
@@ -34,7 +34,6 @@ EXECUTE up_herbalist
 EXECUTE up_hewer
 EXECUTE up_house
 EXECUTE up_hunter
-EXECUTE up_lumberer
 EXECUTE up_mason
 EXECUTE up_miller
 EXECUTE up_miner
@@ -46,11 +45,13 @@ EXECUTE up_scavenger
 EXECUTE up_shepherd
 EXECUTE up_smelter
 EXECUTE up_smoker
+EXECUTE up_stonecutter
 EXECUTE up_storage
 EXECUTE up_swineherd
 EXECUTE up_tanner
 EXECUTE up_tavern
 EXECUTE up_waterer
 EXECUTE up_weaver
+EXECUTE up_woodcutter
 EXECUTE hud_update
 EXECUTE misc_update

@@ -1,4 +1,4 @@
-50 27
+37 22
 META script_type_initialize
 META script_state_entry
 
@@ -25,7 +25,6 @@ EXECUTE in_herbalist
 EXECUTE in_hewer
 EXECUTE in_house
 EXECUTE in_hunter
-EXECUTE in_lumberer
 EXECUTE in_mason
 EXECUTE in_miller
 EXECUTE in_miner
@@ -37,12 +36,14 @@ EXECUTE in_scavenger
 EXECUTE in_shepherd
 EXECUTE in_smelter
 EXECUTE in_smoker
+EXECUTE in_stonecutter
 EXECUTE in_storage
 EXECUTE in_swineherd
 EXECUTE in_tanner
 EXECUTE in_tavern
 EXECUTE in_waterer
 EXECUTE in_weaver
+EXECUTE in_woodcutter
 EXECUTE hud_initialize
 EXECUTE misc_initialize
 

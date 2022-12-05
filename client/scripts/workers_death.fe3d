@@ -1,4 +1,4 @@
-6 4
+110 0
 META script_type_update
 META script_state_waiting
 
@@ -36,16 +36,17 @@ IF isWorkerDead IS <false> AND priestCount IS 0 AND tavernCount IS 0
 /// Update dying from childbirth
 IF isWorkerDead IS <false> AND priestCount IS 0
     DEF STR houseId = _workerHouseBuildingIds[_workerDeathIndex]
-    DEF INT houseIndex = misc:list_index(_houseIds, houseId)
-    DEF BOL houseBirth = _houseBirths[houseIndex]
-    IF houseBirth IS <true>
-        ALT _houseBirths[houseIndex] = <false>
-        DEF INT birthDeathChance = 100
-        SUB birthDeathChance _birthDeathChance
-        IF randomPercentage MORE birthDeathChance
-            ALT isWorkerDead = <true>
-            ALT eventMessage = misc:string_concat(workerName, " died of childbirth")
-            PUSH _eventMessageContents eventMessage
+    DEF INT houseIndex = misc:list_index("_houseIds", houseId)
+    IF houseIndex NOT -1
+        DEF BOL houseBirth = _houseBirths[houseIndex]
+        IF houseBirth IS <true>
+            ALT _houseBirths[houseIndex] = <false>
+            DEF INT birthDeathChance = 100
+            SUB birthDeathChance _birthDeathChance
+            IF randomPercentage MORE birthDeathChance
+                ALT isWorkerDead = <true>
+                ALT eventMessage = misc:string_concat(workerName, " died of childbirth")
+                PUSH _eventMessageContents eventMessage
 
 /// Update dying from dehydration
 IF isWorkerDead IS <false>
@@ -68,10 +69,6 @@ IF isWorkerDead IS <false>
         SUB _totalBread 1
     ELIF _totalEggs MORE 0
         SUB _totalEggs 1
-    ELIF _totalRawMeat MORE 0
-        SUB _totalRawMeat 1
-    ELIF _totalRawFish MORE 0
-        SUB _totalRawFish 1
     ELIF _totalHoney MORE 0
         SUB _totalHoney 1
     ELIF _totalFruit MORE 0

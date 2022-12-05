@@ -1,5 +1,8 @@
-2 0
+4 0
 META script_type_terminate
 META script_state_entry
 
-EXECUTE game_save
+DEF INT totalWorkers = misc:list_size("_workerNames")
+
+IF totalWorkers MORE 0
+    EXECUTE game_save
