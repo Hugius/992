@@ -1,0 +1,49 @@
+44 19
+META script_type_update
+META script_state_waiting
+
+/// Define reusable values
+DEF BOL hasWorker = <false>
+
+/// Hide GUI
+IF _lastSelectedBuildingType IS "roper" OR _firstUpdate IS <true>
+    fe3d:quad2d_set_visible("roper_worker", <false>)
+    fe3d:quad2d_set_visible("roper_straw", <false>)
+    fe3d:quad2d_set_visible("roper_convert", <false>)
+    fe3d:quad2d_set_visible("roper_fishingnet", <false>)
+    fe3d:text2d_set_visible("roper_worker", <false>)
+    fe3d:text2d_set_visible("roper_straw", <false>)
+    fe3d:text2d_set_visible("roper_fishingnet", <false>)
+
+/// Show GUI
+IF _selectedBuildingType IS "roper"
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
+    IF hasWorker IS <true>
+        fe3d:quad2d_set_visible("roper_straw", <true>)
+        fe3d:quad2d_set_visible("roper_convert", <true>)
+        fe3d:quad2d_set_visible("roper_fishingnet", <true>)
+        fe3d:text2d_set_visible("roper_straw", <true>)
+        fe3d:text2d_set_visible("roper_fishingnet", <true>)
+    ELSE
+        fe3d:quad2d_set_visible("roper_worker", <true>)
+        fe3d:text2d_set_visible("roper_worker", <true>)
+
+/// Update ropers
+DEF INT maxIndex = misc:list_size("_roperIds")
+DEF INT index = 0
+LOOP
+    IF index IS maxIndex
+        BREAK
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _roperIds[index])
+    IF hasWorker IS <true>
+        IF _roperTimers[index] IS 0
+            IF _totalStraw MORE 0
+                SUB _totalStraw 1
+                ADD _roperTimers[index] 1
+        ELIF _roperTimers[index] IS _roperInterval
+            ALT _roperTimers[index] = 0
+            IF _totalFishingNets LESS _maxFishingNets
+                ADD _totalFishingNets 1
+        ELSE
+            ADD _roperTimers[index] 1
+    ADD index 1
