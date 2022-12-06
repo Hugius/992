@@ -1,4 +1,4 @@
-126 24
+247 20
 META script_type_update
 META script_state_waiting
 
@@ -102,9 +102,9 @@ ELIF _placedBuildingType IS "farmer"
 ELIF _placedBuildingType IS "feller"
     PUSH _fellerIds _placedBuildingId
     PUSH _fellerTimers 0
-ELIF _placedBuildingType IS "fisher"
-    PUSH _fisherIds _placedBuildingId
-    PUSH _fisherTimers 0
+ELIF _placedBuildingType IS "fisherman"
+    PUSH _fishermanIds _placedBuildingId
+    PUSH _fishermanTimers 0
 ELIF _placedBuildingType IS "fletcher"
     PUSH _fletcherIds _placedBuildingId
     PUSH _fletcherTimers 0
@@ -246,6 +246,7 @@ ELIF _placedBuildingType IS "storage"
     ADD _maxTools 5
     ADD _maxBows 5
     ADD _maxArrows 50
+    ADD _maxFishingNets 10
 ELIF _placedBuildingType IS "swineherd"
     PUSH _swineherdIds _placedBuildingId
     PUSH _swineherdGrowths 0.0

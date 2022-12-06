@@ -1,4 +1,4 @@
-289 40
+145 39
 META script_type_terminate
 META script_state_waiting
 
@@ -110,6 +110,7 @@ fe3d:file_write("save", _totalMedicine)
 fe3d:file_write("save", _totalTools)
 fe3d:file_write("save", _totalBows)
 fe3d:file_write("save", _totalArrows)
+fe3d:file_write("save", _totalFishingNets)
 fe3d:file_write("save", _maxAle)
 fe3d:file_write("save", _maxMilk)
 fe3d:file_write("save", _maxSmokedMeat)
@@ -143,6 +144,7 @@ fe3d:file_write("save", _maxMedicine)
 fe3d:file_write("save", _maxTools)
 fe3d:file_write("save", _maxBows)
 fe3d:file_write("save", _maxArrows)
+fe3d:file_write("save", _maxFishingNets)
 
 /// Save jobs
 DEF STR apiaristIds = misc:list_to_string("_apiaristIds")
@@ -168,8 +170,8 @@ DEF STR farmerIds = misc:list_to_string("_farmerIds")
 DEF STR farmerGrowths = misc:list_to_string("_farmerGrowths")
 DEF STR fellerIds = misc:list_to_string("_fellerIds")
 DEF STR fellerTimers = misc:list_to_string("_fellerTimers")
-DEF STR fisherIds = misc:list_to_string("_fisherIds")
-DEF STR fisherTimers = misc:list_to_string("_fisherTimers")
+DEF STR fishermanIds = misc:list_to_string("_fishermanIds")
+DEF STR fishermanTimers = misc:list_to_string("_fishermanTimers")
 DEF STR fletcherIds = misc:list_to_string("_fletcherIds")
 DEF STR fletcherTimers = misc:list_to_string("_fletcherTimers")
 DEF STR gathererIds = misc:list_to_string("_gathererIds")
@@ -240,8 +242,8 @@ fe3d:file_write("save", farmerIds)
 fe3d:file_write("save", farmerGrowths)
 fe3d:file_write("save", fellerIds)
 fe3d:file_write("save", fellerTimers)
-fe3d:file_write("save", fisherIds)
-fe3d:file_write("save", fisherTimers)
+fe3d:file_write("save", fishermanIds)
+fe3d:file_write("save", fishermanTimers)
 fe3d:file_write("save", fletcherIds)
 fe3d:file_write("save", fletcherTimers)
 fe3d:file_write("save", gathererIds)

@@ -1,20 +1,20 @@
-30.000000
+-30.334057
 17.500000
-5.000000
+-9.205406
 220.000000
 -70.000000
+-0.000000
+0.000042
 0.000000
-0.000000
-0.000000
-{"Uhtric", "Godgifu", "Godwine", "Aelfwynn", "Ceolmund", "Aethelswith", "Ecgberht", "Hild", "Dunstan", "Eanflaed"}
+{"Earconwald", "Tibba", "Cuthberht", "Mildthryth", "Godric", "Eadgyth", "Beorhtric", "Wynnflaed", "Godric", "Eanflaed"}
 {"MALE", "FEMALE", "MALE", "FEMALE", "MALE", "FEMALE", "MALE", "FEMALE", "MALE", "FEMALE"}
 {<true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>}
 {<true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>}
-{"carpenter_1", "mason_2", "roofer_3", "", "", "", "", "", "", ""}
+{"carpenter_1", "mason_2", "roofer_3", "fisherman_4", "", "", "", "", "", ""}
 {"", "", "", "", "", "", "", "", "", ""}
 0
-1
-70
+0
+603
 750
 0
 1
@@ -22,50 +22,51 @@
 5
 15
 <false>
-{"storage_0", "carpenter_1", "mason_2", "roofer_3"}
-{"storage", "carpenter", "mason", "roofer"}
+{"storage_0", "carpenter_1", "mason_2", "roofer_3", "fisherman_4"}
+{"storage", "carpenter", "mason", "roofer", "fisherman"}
 
 
 
 
 
 
-0
-4
+12
+5
 <false>
 <false>
-49
+50
 0
 0
 0
-49
+50
 0
 0
 0
 0
 0
 0
-15
+12
 0
 0
 10
 10
-9
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
 7
 0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+4
+0
+10
 10
 100
 100
@@ -100,6 +101,7 @@
 10
 10
 50
+100
 {}
 {}
 {}
@@ -123,8 +125,8 @@
 {}
 {}
 {}
-{}
-{}
+{"fisherman_4"}
+{271}
 {}
 {}
 {}
@@ -172,10 +174,10 @@
 {}
 {}
 {}
-{}
-{}
+{"Tibba became mason", "Cuthberht was born", "Cuthberht became roofer", "Mildthryth was born", "Godric was born", "Eadgyth was born", "Beorhtric was born", "Wynnflaed was born", "Godric was born", "Eanflaed was born", "Mildthryth became fisherman"}
+{"roofer_3", "carpenter_1", "mason_2"}
 {}
 {}
 ARROW
 0.000000
-821
+603

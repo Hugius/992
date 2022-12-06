@@ -1,4 +1,4 @@
-44 0
+210 41
 META script_type_update
 META script_state_waiting
 
@@ -43,6 +43,7 @@ DEF STR totalMedicineText = misc:string_zeroed_integer(_totalMedicine, 4)
 DEF STR totalToolsText = misc:string_zeroed_integer(_totalTools, 4)
 DEF STR totalBowsText = misc:string_zeroed_integer(_totalBows, 4)
 DEF STR totalArrowsText = misc:string_zeroed_integer(_totalArrows, 4)
+DEF STR totalFishnetsText = misc:string_zeroed_integer(_totalFishingNets, 4)
 
 /// Create miscellaneous content
 DEF INT totalSeconds = _totalUpdates
@@ -92,6 +93,7 @@ fe3d:text2d_set_content("total_medicine", totalMedicineText)
 fe3d:text2d_set_content("total_tools", totalToolsText)
 fe3d:text2d_set_content("total_bows", totalBowsText)
 fe3d:text2d_set_content("total_arrows", totalArrowsText)
+fe3d:text2d_set_content("total_fishingnets", totalArrowsText)
 
 /// Update miscellaneous content
 fe3d:text2d_set_content("total_seconds", totalSecondsText)
@@ -135,6 +137,7 @@ fe3d:text2d_set_color("total_medicine", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_tools", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_bows", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_arrows", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_fishingnets", 0.0, 0.0, 0.0)
 
 /// Set food custom color
 IF _totalAle IS _maxAle
@@ -205,3 +208,5 @@ IF _totalBows IS _maxBows
     fe3d:text2d_set_color("total_bows", 0.5, 0.0, 0.0)
 IF _totalArrows IS _maxArrows
     fe3d:text2d_set_color("total_arrows", 0.5, 0.0, 0.0)
+IF _totalFishingNets IS _maxFishingNets
+    fe3d:text2d_set_color("total_fishingnets", 0.5, 0.0, 0.0)

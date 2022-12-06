@@ -1,4 +1,4 @@
-40 28
+41 26
 META script_type_initialize
 META script_state_waiting
 
@@ -40,6 +40,7 @@ DEF GLB INT _totalMedicine = 0
 DEF GLB INT _totalTools = 7
 DEF GLB INT _totalBows = 0
 DEF GLB INT _totalArrows = 10
+DEF GLB INT _totalFishingNets = 10
 DEF GLB INT _maxAle = 100
 DEF GLB INT _maxMilk = 100
 DEF GLB INT _maxSmokedMeat = 100
@@ -73,6 +74,7 @@ DEF GLB INT _maxMedicine = 100
 DEF GLB INT _maxTools = 10
 DEF GLB INT _maxBows = 10
 DEF GLB INT _maxArrows = 50
+DEF GLB INT _maxFishingNets = 100
 
 /// GUI
 fe3d:quad2d_place("storage_info", "info", 0.0, -0.6, 0.1, 0.175)

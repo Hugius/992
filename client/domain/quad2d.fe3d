@@ -4,6 +4,7 @@
 @book assets\image\quad2d\diffuse_map\book.tga 1 1 1 1 1 0 0 0.85
 @bows assets\image\quad2d\diffuse_map\bows.tga 1 1 1 1 1 0 0 1
 @bread assets\image\quad2d\diffuse_map\bread.tga 1 1 1 1 1 0 0 1
+@bricks assets\image\quad2d\diffuse_map\bricks.tga 1 1 1 1 1 0 0 1
 @build assets\image\quad2d\diffuse_map\build.tga 1 1 1 1 1 0 0 1
 @chicken assets\image\quad2d\diffuse_map\chicken.tga 1 1 1 1 1 0 0 1
 @clay assets\image\quad2d\diffuse_map\clay.tga 1 1 1 1 1 0 0 1
@@ -14,6 +15,7 @@
 @eggs assets\image\quad2d\diffuse_map\eggs.tga 1 1 1 1 1 0 0 1
 @feathers assets\image\quad2d\diffuse_map\feathers.tga 1 1 1 1 1 0 0 1
 @firewood assets\image\quad2d\diffuse_map\firewood.tga 1 1 1 1 1 0 0 1
+@fishingnets assets\image\quad2d\diffuse_map\fishingnets.tga 1 1 1 1 1 0 0 0.75
 @flour assets\image\quad2d\diffuse_map\flour.tga 1 1 1 1 1 0 0 1
 @fruit assets\image\quad2d\diffuse_map\fruit.tga 1 1 1 1 1 0 0 1
 @grain assets\image\quad2d\diffuse_map\grain.tga 1 1 1 1 1 0 0 1
@@ -32,7 +34,6 @@
 @planks assets\image\quad2d\diffuse_map\planks.tga 1 1 1 1 1 0 0 1.25
 @rawfish assets\image\quad2d\diffuse_map\rawfish.tga 1 1 1 1 1 0 0 1
 @rawmeat assets\image\quad2d\diffuse_map\rawmeat.tga 1 1 1 1 1 0 0 1
-@bricks assets\image\quad2d\diffuse_map\bricks.tga 1 1 1 1 1 0 0 1
 @scroll1 assets\image\quad2d\diffuse_map\scroll1.tga 1 1 1 1 1 0 0 1
 @scroll2 assets\image\quad2d\diffuse_map\scroll2.tga 1 1 1 1 1 0 0 1
 @seeds assets\image\quad2d\diffuse_map\seeds.tga 1 1 1 1 1 0 0 1

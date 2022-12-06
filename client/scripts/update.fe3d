@@ -26,7 +26,7 @@ EXECUTE up_cattleman
 EXECUTE up_ditcher
 EXECUTE up_farmer
 EXECUTE up_feller
-EXECUTE up_fisher
+EXECUTE up_fisherman
 EXECUTE up_fletcher
 EXECUTE up_gatherer
 EXECUTE up_grave
