@@ -1,4 +1,4 @@
-313 13
+0 0
 META script_type_initialize
 META script_state_waiting
 
@@ -365,26 +365,28 @@ DEF LST poultrymanGrowths = misc:string_to_list(lines[152])
 DEF LST poultrymanTimers = misc:string_to_list(lines[153])
 DEF LST priestIds = misc:string_to_list(lines[154])
 DEF LST rooferIds = misc:string_to_list(lines[155])
-DEF LST scavengerIds = misc:string_to_list(lines[156])
-DEF LST shepherdIds = misc:string_to_list(lines[157])
-DEF LST shepherdGrowths = misc:string_to_list(lines[158])
-DEF LST shepherdTimers = misc:string_to_list(lines[159])
-DEF LST smelterIds = misc:string_to_list(lines[160])
-DEF LST smelterTimers = misc:string_to_list(lines[161])
-DEF LST smokerIds = misc:string_to_list(lines[162])
-DEF LST smokerTimers = misc:string_to_list(lines[163])
-DEF LST smokerTurns = misc:string_to_list(lines[164])
-DEF LST storageIds = misc:string_to_list(lines[165])
-DEF LST swineherdIds = misc:string_to_list(lines[166])
-DEF LST swineherdGrowths = misc:string_to_list(lines[167])
-DEF LST tannerIds = misc:string_to_list(lines[168])
-DEF LST tannerTimers = misc:string_to_list(lines[169])
-DEF LST tavernIds = misc:string_to_list(lines[170])
-DEF LST watererIds = misc:string_to_list(lines[171])
-DEF LST weaverIds = misc:string_to_list(lines[172])
-DEF LST weaverTimers = misc:string_to_list(lines[173])
-DEF LST woodcutterIds = misc:string_to_list(lines[174])
-DEF LST woodcutterTimers = misc:string_to_list(lines[175])
+DEF LST roperIds = misc:string_to_list(lines[156])
+DEF LST roperTimers = misc:string_to_list(lines[157])
+DEF LST scavengerIds = misc:string_to_list(lines[158])
+DEF LST shepherdIds = misc:string_to_list(lines[159])
+DEF LST shepherdGrowths = misc:string_to_list(lines[160])
+DEF LST shepherdTimers = misc:string_to_list(lines[161])
+DEF LST smelterIds = misc:string_to_list(lines[162])
+DEF LST smelterTimers = misc:string_to_list(lines[163])
+DEF LST smokerIds = misc:string_to_list(lines[164])
+DEF LST smokerTimers = misc:string_to_list(lines[165])
+DEF LST smokerTurns = misc:string_to_list(lines[166])
+DEF LST storageIds = misc:string_to_list(lines[167])
+DEF LST swineherdIds = misc:string_to_list(lines[168])
+DEF LST swineherdGrowths = misc:string_to_list(lines[169])
+DEF LST tannerIds = misc:string_to_list(lines[170])
+DEF LST tannerTimers = misc:string_to_list(lines[171])
+DEF LST tavernIds = misc:string_to_list(lines[172])
+DEF LST watererIds = misc:string_to_list(lines[173])
+DEF LST weaverIds = misc:string_to_list(lines[174])
+DEF LST weaverTimers = misc:string_to_list(lines[175])
+DEF LST woodcutterIds = misc:string_to_list(lines[176])
+DEF LST woodcutterTimers = misc:string_to_list(lines[177])
 ALT _apiaristIds = apiaristIds
 ALT _apiaristTimers = apiaristTimers
 ALT _bakerIds = bakerIds
@@ -437,6 +439,8 @@ ALT _poultrymanGrowths = poultrymanGrowths
 ALT _poultrymanTimers = poultrymanTimers
 ALT _priestIds = priestIds
 ALT _rooferIds = rooferIds
+ALT _roperIds = roperIds
+ALT _roperTimers = roperTimers
 ALT _scavengerIds = scavengerIds
 ALT _shepherdIds = shepherdIds
 ALT _shepherdGrowths = shepherdGrowths
@@ -459,19 +463,21 @@ ALT _woodcutterIds = woodcutterIds
 ALT _woodcutterTimers = woodcutterTimers
 
 /// Load miscellaneous
-DEF LST eventMessageContents = misc:string_to_list(lines[176])
-DEF LST toolBuildingIds = misc:string_to_list(lines[177])
-DEF LST bowBuildingIds = misc:string_to_list(lines[178])
-DEF LST arrowBuildingIds = misc:string_to_list(lines[179])
-DEF STR cursorType = lines[180]
-DEF STR eventMessageOpacity = lines[181]
-DEF STR totalUpdates = lines[182]
+DEF LST eventMessageContents = misc:string_to_list(lines[178])
+DEF LST toolBuildingIds = misc:string_to_list(lines[179])
+DEF LST bowBuildingIds = misc:string_to_list(lines[180])
+DEF LST arrowBuildingIds = misc:string_to_list(lines[181])
+DEF LST fishingNetBuildingIds = misc:string_to_list(lines[182])
+DEF STR cursorType = lines[183]
+DEF STR eventMessageOpacity = lines[184]
+DEF STR totalUpdates = lines[185]
 CAST eventMessageOpacity DEC
 CAST totalUpdates INT
 ALT _eventMessageContents = _eventMessageContents
 ALT _toolBuildingIds = toolBuildingIds
 ALT _bowBuildingIds = bowBuildingIds
 ALT _arrowBuildingIds = arrowBuildingIds
+ALT _fishingNetBuildingIds = fishingNetBuildingIds
 ALT _cursorType = cursorType
 ALT _eventMessageOpacity = eventMessageOpacity
 ALT _totalUpdates = totalUpdates

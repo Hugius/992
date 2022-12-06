@@ -1,4 +1,4 @@
-247 20
+184 22
 META script_type_update
 META script_state_waiting
 
@@ -181,6 +181,9 @@ ELIF _placedBuildingType IS "priest"
     PUSH _priestIds _placedBuildingId
 ELIF _placedBuildingType IS "roofer"
     PUSH _rooferIds _placedBuildingId
+ELIF _placedBuildingType IS "roper"
+    PUSH _roperIds _placedBuildingId
+    PUSH _roperTimers 0
 ELIF _placedBuildingType IS "scavenger"
     PUSH _scavengerIds _placedBuildingId
 ELIF _placedBuildingType IS "shepherd"
