@@ -1,4 +1,4 @@
-42 16
+38 19
 META script_type_update
 META script_state_entry
 
@@ -37,12 +37,12 @@ EXECUTE up_hunter
 EXECUTE up_mason
 EXECUTE up_miller
 EXECUTE up_miner
+EXECUTE up_nightman
 EXECUTE up_orchardist
 EXECUTE up_poultryman
 EXECUTE up_priest
 EXECUTE up_roofer
 EXECUTE up_roper
-EXECUTE up_scavenger
 EXECUTE up_shepherd
 EXECUTE up_smelter
 EXECUTE up_smoker

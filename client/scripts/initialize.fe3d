@@ -1,4 +1,4 @@
-33 16
+29 19
 META script_type_initialize
 META script_state_entry
 
@@ -28,12 +28,12 @@ EXECUTE in_hunter
 EXECUTE in_mason
 EXECUTE in_miller
 EXECUTE in_miner
+EXECUTE in_nightman
 EXECUTE in_orchardist
 EXECUTE in_poultryman
 EXECUTE in_priest
 EXECUTE in_roofer
 EXECUTE in_roper
-EXECUTE in_scavenger
 EXECUTE in_shepherd
 EXECUTE in_smelter
 EXECUTE in_smoker

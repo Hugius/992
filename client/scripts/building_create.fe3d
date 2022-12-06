@@ -1,4 +1,4 @@
-184 22
+136 18
 META script_type_update
 META script_state_waiting
 
@@ -134,6 +134,8 @@ ELIF _placedBuildingType IS "miller"
 ELIF _placedBuildingType IS "miner"
     PUSH _minerIds _placedBuildingId
     PUSH _minerTimers 0
+ELIF _placedBuildingType IS "nightman"
+    PUSH _nightmanIds _placedBuildingId
 ELIF _placedBuildingType IS "orchardist"
     PUSH _orchardistIds _placedBuildingId
     PUSH _orchardistGrowths 0.0
@@ -184,8 +186,6 @@ ELIF _placedBuildingType IS "roofer"
 ELIF _placedBuildingType IS "roper"
     PUSH _roperIds _placedBuildingId
     PUSH _roperTimers 0
-ELIF _placedBuildingType IS "scavenger"
-    PUSH _scavengerIds _placedBuildingId
 ELIF _placedBuildingType IS "shepherd"
     PUSH _shepherdIds _placedBuildingId
     PUSH _shepherdGrowths 0.0
