@@ -1,4 +1,4 @@
-32 29
+17 81
 META script_type_initialize
 META script_state_waiting
 
@@ -16,7 +16,7 @@ DEF FIN DEC minDistance = 5.0
 DEF FIN INT maxModels = 90
 
 /// Non-finals
-DEF LST modelIds = {"tree1","stone1","tree1","tree2","stone2","tree2","tree3","stone3","tree3"}
+DEF LST modelIds = {"tree1","rock1","tree1","tree2","rock2","tree2","tree3","rock3","tree3"}
 DEF LST xPositions = {}
 DEF LST yPositions = {}
 DEF LST zPositions = {}

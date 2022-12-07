@@ -1,4 +1,4 @@
-210 41
+44 21
 META script_type_update
 META script_state_waiting
 
@@ -43,7 +43,7 @@ DEF STR totalMedicineText = misc:string_zeroed_integer(_totalMedicine, 4)
 DEF STR totalToolsText = misc:string_zeroed_integer(_totalTools, 4)
 DEF STR totalBowsText = misc:string_zeroed_integer(_totalBows, 4)
 DEF STR totalArrowsText = misc:string_zeroed_integer(_totalArrows, 4)
-DEF STR totalFishnetsText = misc:string_zeroed_integer(_totalFishingNets, 4)
+DEF STR totalFishingNetsText = misc:string_zeroed_integer(_totalFishingNets, 4)
 
 /// Create miscellaneous content
 DEF INT totalSeconds = _totalUpdates
@@ -74,10 +74,10 @@ fe3d:text2d_set_content("total_lumber", totalLumberText)
 fe3d:text2d_set_content("total_planks", totalPlanksText)
 fe3d:text2d_set_content("total_firewood", totalFirewoodText)
 fe3d:text2d_set_content("total_stone", totalStoneText)
-fe3d:text2d_set_content("total_bricks", totalStoneText)
+fe3d:text2d_set_content("total_bricks", totalBricksText)
 fe3d:text2d_set_content("total_clay", totalClayText)
 fe3d:text2d_set_content("total_straw", totalStrawText)
-fe3d:text2d_set_content("total_coal", totalOreText)
+fe3d:text2d_set_content("total_coal", totalCoalText)
 fe3d:text2d_set_content("total_ore", totalOreText)
 fe3d:text2d_set_content("total_iron", totalIronText)
 fe3d:text2d_set_content("total_seeds", totalSeedsText)
@@ -93,7 +93,7 @@ fe3d:text2d_set_content("total_medicine", totalMedicineText)
 fe3d:text2d_set_content("total_tools", totalToolsText)
 fe3d:text2d_set_content("total_bows", totalBowsText)
 fe3d:text2d_set_content("total_arrows", totalArrowsText)
-fe3d:text2d_set_content("total_fishingnets", totalArrowsText)
+fe3d:text2d_set_content("total_fishingnets", totalFishingNetsText)
 
 /// Update miscellaneous content
 fe3d:text2d_set_content("total_seconds", totalSecondsText)

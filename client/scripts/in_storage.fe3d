@@ -1,4 +1,4 @@
-41 26
+56 28
 META script_type_initialize
 META script_state_waiting
 
@@ -18,12 +18,12 @@ DEF GLB INT _totalFruit = 0
 DEF GLB INT _totalRawMeat = 0
 DEF GLB INT _totalRawFish = 0
 DEF GLB INT _totalLumber = 0
-DEF GLB INT _totalPlanks = 15
+DEF GLB INT _totalPlanks = 18
 DEF GLB INT _totalFirewood = 0
 DEF GLB INT _totalStone = 0
 DEF GLB INT _totalBricks = 10
-DEF GLB INT _totalClay = 10
-DEF GLB INT _totalStraw = 9
+DEF GLB INT _totalClay = 8
+DEF GLB INT _totalStraw = 14
 DEF GLB INT _totalCoal = 0
 DEF GLB INT _totalOre = 0
 DEF GLB INT _totalIron = 0
@@ -37,10 +37,10 @@ DEF GLB INT _totalWool = 0
 DEF GLB INT _totalClothes = 10
 DEF GLB INT _totalMushrooms = 0
 DEF GLB INT _totalMedicine = 0
-DEF GLB INT _totalTools = 7
+DEF GLB INT _totalTools = 9
 DEF GLB INT _totalBows = 0
-DEF GLB INT _totalArrows = 10
-DEF GLB INT _totalFishingNets = 10
+DEF GLB INT _totalArrows = 0
+DEF GLB INT _totalFishingNets = 0
 DEF GLB INT _maxAle = 100
 DEF GLB INT _maxMilk = 100
 DEF GLB INT _maxSmokedMeat = 100
@@ -74,7 +74,7 @@ DEF GLB INT _maxMedicine = 100
 DEF GLB INT _maxTools = 10
 DEF GLB INT _maxBows = 10
 DEF GLB INT _maxArrows = 50
-DEF GLB INT _maxFishingNets = 100
+DEF GLB INT _maxFishingNets = 10
 
 /// GUI
 fe3d:quad2d_place("storage_info", "info", 0.0, -0.6, 0.1, 0.175)

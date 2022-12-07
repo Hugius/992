@@ -81,15 +81,15 @@ PART @sheep ? assets\image\model\diffuse_map\sheep.tga ? ? ? ? ? 0 0 1 0 0 2 10 
 MODEL @smokery assets\mesh\smokery.obj 0.8 0.8 0.8 ? 0 2 1 1 1
 PART @smokery ? assets\image\model\diffuse_map\smokery.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.4 1 1 1 1 0 0 1 1 1
 AABB @smokery model@@smokery@aabb 0 0 0 4.25 3.4 4.25
-MODEL @stone1 assets\mesh\stone1.obj 1.5 1.75 1.5 @lod 70 2 1 1 1
-PART @stone1 ? assets\image\model\diffuse_map\stone1.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
-AABB @stone1 model@@stone1@aabb -0.1 0 0.05 2.6 1.4 2.6
-MODEL @stone2 assets\mesh\stone2.obj 0.4 0.4 0.4 @lod 70 2 1 1 1
-PART @stone2 ? assets\image\model\diffuse_map\stone2.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
-AABB @stone2 model@@stone2@aabb -0.3 0 0.05 6.25 5.2 7
-MODEL @stone3 assets\mesh\stone3.obj 1.75 1.5 1.75 @lod 70 2 1 1 1
-PART @stone3 ? assets\image\model\diffuse_map\stone3.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
-AABB @stone3 model@@stone3@aabb -0.02 0 -0.08 1.25 0.95 1.4
+MODEL @rock1 assets\mesh\rock1.obj 1.5 1.75 1.5 @lod 70 2 1 1 1
+PART @rock1 ? assets\image\model\diffuse_map\rock1.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
+AABB @rock1 model@@rock1@aabb -0.1 0 0.05 2.6 1.4 2.6
+MODEL @rock2 assets\mesh\rock2.obj 0.4 0.4 0.4 @lod 70 2 1 1 1
+PART @rock2 ? assets\image\model\diffuse_map\rock2.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
+AABB @rock2 model@@rock2@aabb -0.3 0 0.05 6.25 5.2 7
+MODEL @rock3 assets\mesh\rock3.obj 1.75 1.5 1.75 @lod 70 2 1 1 1
+PART @rock3 ? assets\image\model\diffuse_map\rock3.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
+AABB @rock3 model@@rock3@aabb -0.02 0 -0.08 1.25 0.95 1.4
 MODEL @storage assets\mesh\storage.obj 0.8 0.8 0.8 ? 0 2 1 1 1
 PART @storage walls assets\image\model\diffuse_map\storage_walls.tga ? ? ? ? assets\image\model\normal_map\storage_walls.tga 0 0 1 0 0 2 10 0.5 0.5 1 1 1 1 4 0 0 1 1 1
 PART @storage roof assets\image\model\diffuse_map\storage_roof.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.75 1 1 1 1 0 0 1 1 1

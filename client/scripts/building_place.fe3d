@@ -1,4 +1,4 @@
-116 20
+27 0
 META script_type_update
 META script_state_waiting
 
@@ -33,20 +33,22 @@ DEF INT planksPrice = _buildingPricesPlanks[_buildingIndex]
 DEF INT bricksPrice = _buildingPricesBricks[_buildingIndex]
 DEF INT clayPrice = _buildingPricesClay[_buildingIndex]
 DEF INT strawPrice = _buildingPricesStraw[_buildingIndex]
+fe3d:text2d_set_color("building_price_planks", 0.0, 0.4, 0.0)
+fe3d:text2d_set_color("building_price_bricks", 0.0, 0.4, 0.0)
+fe3d:text2d_set_color("building_price_clay", 0.0, 0.4, 0.0)
+fe3d:text2d_set_color("building_price_straw", 0.0, 0.4, 0.0)
 IF _totalPlanks LESS planksPrice
+    fe3d:text2d_set_color("building_price_planks", 0.5, 0.0, 0.0)
     ALT color = {0.5, 0.0, 0.0}
 IF _totalBricks LESS bricksPrice
+    fe3d:text2d_set_color("building_price_bricks", 0.5, 0.0, 0.0)
     ALT color = {0.5, 0.0, 0.0}
 IF _totalClay LESS clayPrice
+    fe3d:text2d_set_color("building_price_clay", 0.5, 0.0, 0.0)
     ALT color = {0.5, 0.0, 0.0}
 IF _totalStraw LESS strawPrice
+    fe3d:text2d_set_color("building_price_straw", 0.5, 0.0, 0.0)
     ALT color = {0.5, 0.0, 0.0}
-
-/// Update price GUI
-fe3d:text2d_set_color("building_price_planks", color[0], color[1], color[2])
-fe3d:text2d_set_color("building_price_bricks", color[0], color[1], color[2])
-fe3d:text2d_set_color("building_price_clay", color[0], color[1], color[2])
-fe3d:text2d_set_color("building_price_straw", color[0], color[1], color[2])
 
 /// Update AABBs collision color
 fe3d:collision_calculate_model_aabbs(buildingType)
