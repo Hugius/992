@@ -12,11 +12,11 @@ IF _lastSelectedBuildingType IS "feller" OR _firstUpdate IS <true>
     fe3d:quad2d_set_visible("feller_tool", <false>)
     fe3d:quad2d_set_visible("feller_time", <false>)
     fe3d:quad2d_set_visible("feller_convert", <false>)
-    fe3d:quad2d_set_visible("feller_lumber", <false>)
+    fe3d:quad2d_set_visible("feller_wood", <false>)
     fe3d:text2d_set_visible("feller_worker", <false>)
     fe3d:text2d_set_visible("feller_tool", <false>)
     fe3d:text2d_set_visible("feller_time", <false>)
-    fe3d:text2d_set_visible("feller_lumber", <false>)
+    fe3d:text2d_set_visible("feller_wood", <false>)
 
 /// Show GUI
 IF _selectedBuildingType IS "feller"
@@ -26,9 +26,9 @@ IF _selectedBuildingType IS "feller"
         IF hasTool IS <true>
             fe3d:quad2d_set_visible("feller_time", <true>)
             fe3d:quad2d_set_visible("feller_convert", <true>)
-            fe3d:quad2d_set_visible("feller_lumber", <true>)
+            fe3d:quad2d_set_visible("feller_wood", <true>)
             fe3d:text2d_set_visible("feller_time", <true>)
-            fe3d:text2d_set_visible("feller_lumber", <true>)
+            fe3d:text2d_set_visible("feller_wood", <true>)
         ELSE
             fe3d:quad2d_set_visible("feller_tool", <true>)
             fe3d:text2d_set_visible("feller_tool", <true>)
@@ -56,13 +56,13 @@ LOOP
     IF hasWorker IS <true> AND hasTool IS <true>
         IF _fellerTimers[index] IS _fellerInterval
             ALT _fellerTimers[index] = 0
-            IF _totalLumber LESS _maxLumber
+            IF _totalWood LESS _maxWood
                 ALT treeIds = fe3d:model_find_ids("tree")
                 ALT treeCount = misc:list_size("treeIds")
                 ALT treeIndex = math:random_integer(1, treeCount)
                 SUB treeIndex 1
                 fe3d:model_delete(treeIds[treeIndex])
-                ADD _totalLumber 1
+                ADD _totalWood 1
         ELSE
             ADD _fellerTimers[index] 1
     ADD index 1

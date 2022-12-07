@@ -24,7 +24,7 @@
 @info assets\image\quad2d\diffuse_map\info.tga 1 1 1 1 1 0 0 0.75
 @iron assets\image\quad2d\diffuse_map\iron.tga 1 1 1 1 1 0 0 1
 @leather assets\image\quad2d\diffuse_map\leather.tga 1 1 1 1 1 0 0 1
-@lumber assets\image\quad2d\diffuse_map\lumber.tga 1 1 1 1 1 0 0 1.25
+@wood assets\image\quad2d\diffuse_map\wood.tga 1 1 1 1 1 0 0 1.25
 @medicine assets\image\quad2d\diffuse_map\medicine.tga 1 1 1 1 1 0 0 0.75
 @milk assets\image\quad2d\diffuse_map\milk.tga 1 1 1 1 1 0 0 1
 @mushrooms assets\image\quad2d\diffuse_map\mushrooms.tga 1 1 1 1 1 0 0 1

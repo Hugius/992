@@ -10,13 +10,13 @@ DEF BOL hasTool = <false>
 IF _lastSelectedBuildingType IS "woodcutter" OR _firstUpdate IS <true>
     fe3d:quad2d_set_visible("woodcutter_worker", <false>)
     fe3d:quad2d_set_visible("woodcutter_tool", <false>)
-    fe3d:quad2d_set_visible("woodcutter_lumber", <false>)
+    fe3d:quad2d_set_visible("woodcutter_wood", <false>)
     fe3d:quad2d_set_visible("woodcutter_convert", <false>)
     fe3d:quad2d_set_visible("woodcutter_planks", <false>)
     fe3d:quad2d_set_visible("woodcutter_firewood", <false>)
     fe3d:text2d_set_visible("woodcutter_worker", <false>)
     fe3d:text2d_set_visible("woodcutter_tool", <false>)
-    fe3d:text2d_set_visible("woodcutter_lumber", <false>)
+    fe3d:text2d_set_visible("woodcutter_wood", <false>)
     fe3d:text2d_set_visible("woodcutter_planks", <false>)
     fe3d:text2d_set_visible("woodcutter_firewood", <false>)
 
@@ -26,11 +26,11 @@ IF _selectedBuildingType IS "woodcutter"
     ALT hasTool = misc:list_contains("_toolBuildingIds", _selectedBuildingId)
     IF hasWorker IS <true>
         IF hasTool IS <true>
-            fe3d:quad2d_set_visible("woodcutter_lumber", <true>)
+            fe3d:quad2d_set_visible("woodcutter_wood", <true>)
             fe3d:quad2d_set_visible("woodcutter_convert", <true>)
             fe3d:quad2d_set_visible("woodcutter_planks", <true>)
             fe3d:quad2d_set_visible("woodcutter_firewood", <true>)
-            fe3d:text2d_set_visible("woodcutter_lumber", <true>)
+            fe3d:text2d_set_visible("woodcutter_wood", <true>)
             fe3d:text2d_set_visible("woodcutter_planks", <true>)
             fe3d:text2d_set_visible("woodcutter_firewood", <true>)
         ELSE
@@ -56,8 +56,8 @@ LOOP
     ALT hasTool = misc:list_contains("_toolBuildingIds", _woodcutterIds[index])
     IF hasWorker IS <true> AND hasTool IS <true>
         IF _woodcutterTimers[index] IS 0
-            IF _totalLumber MORE 0
-                SUB _totalLumber 1
+            IF _totalWood MORE 0
+                SUB _totalWood 1
                 ADD _woodcutterTimers[index] 1
         ELIF _woodcutterTimers[index] IS _woodcutterInterval
             ALT _woodcutterTimers[index] = 0

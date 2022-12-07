@@ -1,4 +1,4 @@
-11 0
+15 49
 META script_type_initialize
 META script_state_waiting
 
@@ -14,7 +14,7 @@ DEF GLB LST _fishingNetBuildingIds = {}
 /// GUI
 fe3d:quad2d_place("roper_worker", "worker", 0.0, -0.6, 0.1, 0.175)
 fe3d:quad2d_place("roper_straw", "straw", -0.25, -0.7, 0.1, 0.175)
-fe3d:quad2d_place("roper_convert", "convert", 0.075, -0.7, 0.2, 0.4)
+fe3d:quad2d_place("roper_convert", "convert", 0.0, -0.7, 0.2, 0.4)
 fe3d:quad2d_place("roper_fishingnet", "fishingnets", 0.25, -0.7, 0.1, 0.175)
 fe3d:text2d_place("roper_worker", "text", workerText, 0.0, -0.8, 0.285, 0.1)
 fe3d:text2d_place("roper_straw", "text", "1", -0.1, -0.875, 0.02, 0.1)

@@ -1,4 +1,4 @@
-53 48
+17 40
 META script_type_update
 META script_state_waiting
 
@@ -13,10 +13,12 @@ IF _lastSelectedBuildingType IS "farmer" OR _firstUpdate IS <true>
     fe3d:quad2d_set_visible("farmer_seeds", <false>)
     fe3d:quad2d_set_visible("farmer_convert", <false>)
     fe3d:quad2d_set_visible("farmer_grain", <false>)
+    fe3d:quad2d_set_visible("farmer_straw", <false>)
     fe3d:text2d_set_visible("farmer_worker", <false>)
     fe3d:text2d_set_visible("farmer_tool", <false>)
     fe3d:text2d_set_visible("farmer_seeds", <false>)
     fe3d:text2d_set_visible("farmer_grain", <false>)
+    fe3d:text2d_set_visible("farmer_straw", <false>)
 
 /// Show GUI
 IF _selectedBuildingType IS "farmer"
@@ -27,8 +29,10 @@ IF _selectedBuildingType IS "farmer"
             fe3d:quad2d_set_visible("farmer_seeds", <true>)
             fe3d:quad2d_set_visible("farmer_convert", <true>)
             fe3d:quad2d_set_visible("farmer_grain", <true>)
+            fe3d:quad2d_set_visible("farmer_straw", <true>)
             fe3d:text2d_set_visible("farmer_seeds", <true>)
             fe3d:text2d_set_visible("farmer_grain", <true>)
+            fe3d:text2d_set_visible("farmer_straw", <true>)
         ELSE
             fe3d:quad2d_set_visible("farmer_tool", <true>)
             fe3d:text2d_set_visible("farmer_tool", <true>)
@@ -61,13 +65,10 @@ LOOP
             ALT _farmerGrowths[index] = 0.0
             ADD _totalGrain 16
             ADD _totalStraw 16
-            ADD _totalSeeds 16
             IF _totalGrain MORE _maxGrain
                 ALT _totalGrain = _maxGrain
             IF _totalStraw MORE _maxStraw
                 ALT _totalStraw = _maxStraw
-            IF _totalSeeds MORE _maxSeeds
-                ALT _totalSeeds = _maxSeeds
     IF _farmerGrowths[index] MORE 0.0 AND _farmerGrowths[index] LESS 0.75
         ADD _farmerGrowths[index] _farmerSpeed
     ALT growth = _farmerGrowths[index]

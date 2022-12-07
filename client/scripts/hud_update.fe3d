@@ -20,7 +20,7 @@ DEF STR totalRawMeatText = misc:string_zeroed_integer(_totalRawMeat, 4)
 DEF STR totalRawFishText = misc:string_zeroed_integer(_totalRawFish, 4)
 
 /// Create resources content
-DEF STR totalLumberText = misc:string_zeroed_integer(_totalLumber, 4)
+DEF STR totalWoodText = misc:string_zeroed_integer(_totalWood, 4)
 DEF STR totalPlanksText = misc:string_zeroed_integer(_totalPlanks, 4)
 DEF STR totalFirewoodText = misc:string_zeroed_integer(_totalFirewood, 4)
 DEF STR totalStoneText = misc:string_zeroed_integer(_totalStone, 4)
@@ -70,7 +70,7 @@ fe3d:text2d_set_content("total_rawmeat", totalRawMeatText)
 fe3d:text2d_set_content("total_rawfish", totalRawFishText)
 
 /// Update resources content
-fe3d:text2d_set_content("total_lumber", totalLumberText)
+fe3d:text2d_set_content("total_wood", totalWoodText)
 fe3d:text2d_set_content("total_planks", totalPlanksText)
 fe3d:text2d_set_content("total_firewood", totalFirewoodText)
 fe3d:text2d_set_content("total_stone", totalStoneText)
@@ -114,7 +114,7 @@ fe3d:text2d_set_color("total_rawmeat", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_rawfish", 0.0, 0.0, 0.0)
 
 /// Set resources default color
-fe3d:text2d_set_color("total_lumber", 0.0, 0.0, 0.0)
+fe3d:text2d_set_color("total_wood", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_planks", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_firewood", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_stone", 0.0, 0.0, 0.0)
@@ -162,8 +162,8 @@ IF _totalRawFish IS _maxRawFish
     fe3d:text2d_set_color("total_rawfish", 0.5, 0.0, 0.0)
 
 /// Set resources custom color
-IF _totalLumber IS _maxLumber
-    fe3d:text2d_set_color("total_lumber", 0.5, 0.0, 0.0)
+IF _totalWood IS _maxWood
+    fe3d:text2d_set_color("total_wood", 0.5, 0.0, 0.0)
 IF _totalPlanks IS _maxPlanks
     fe3d:text2d_set_color("total_planks", 0.5, 0.0, 0.0)
 IF _totalFirewood IS _maxFirewood

@@ -1,4 +1,4 @@
-56 28
+23 26
 META script_type_initialize
 META script_state_waiting
 
@@ -17,12 +17,12 @@ DEF GLB INT _totalHoney = 0
 DEF GLB INT _totalFruit = 0
 DEF GLB INT _totalRawMeat = 0
 DEF GLB INT _totalRawFish = 0
-DEF GLB INT _totalLumber = 0
+DEF GLB INT _totalWood = 0
 DEF GLB INT _totalPlanks = 18
 DEF GLB INT _totalFirewood = 0
 DEF GLB INT _totalStone = 0
 DEF GLB INT _totalBricks = 10
-DEF GLB INT _totalClay = 8
+DEF GLB INT _totalClay = 9
 DEF GLB INT _totalStraw = 14
 DEF GLB INT _totalCoal = 0
 DEF GLB INT _totalOre = 0
@@ -51,7 +51,7 @@ DEF GLB INT _maxHoney = 100
 DEF GLB INT _maxFruit = 100
 DEF GLB INT _maxRawMeat = 100
 DEF GLB INT _maxRawFish = 100
-DEF GLB INT _maxLumber = 100
+DEF GLB INT _maxWood = 100
 DEF GLB INT _maxPlanks = 100
 DEF GLB INT _maxFirewood = 100
 DEF GLB INT _maxStone = 100

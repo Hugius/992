@@ -1,13 +1,13 @@
 SKY sky @sky assets\image\sky\cube_map\right.tga assets\image\sky\cube_map\left.tga assets\image\sky\cube_map\top.tga assets\image\sky\cube_map\bottom.tga assets\image\sky\cube_map\back.tga assets\image\sky\cube_map\front.tga 0 0 0 1 1 1 1 2 0 1 1 1 1
 TERRAIN terrain @terrain assets\image\terrain\diffuse_map\sand.tga assets\image\terrain\blend_map\terrain.tga assets\image\terrain\diffuse_map\ground1.tga assets\image\terrain\diffuse_map\ground2.tga assets\image\terrain\diffuse_map\ground3.tga assets\image\terrain\normal_map\sand.tga assets\image\terrain\normal_map\ground1.tga assets\image\terrain\normal_map\ground2.tga assets\image\terrain\normal_map\ground3.tga 3 32 15 1 1 1 32 32 32 0 1 1 0 1 1 1 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38 0 1
 WATER water @water assets\image\water\dudv_map\water.tga assets\image\water\normal_map\water.tga ? 1 1 1 0.247059 0.247059 0.376471 1024 96 0 0.001 -0.001 0 0 1 128 0.5 1 1.5 0 1 1 1 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38 3 0.1 0.1 0 1 0 0 0 0 0 1
-MODEL tree1_47 @tree1 @lod 70 2 1 1 1 1 46.7971 3 -71.3456 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree1_47 @tree1 @lod 70 2 1 1 1 1 -112.67 3 -60.0916 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree1_47 ? assets\image\model\diffuse_map\tree1.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 0.75 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree1_47 model@tree1_47@aabb 0
-MODEL brewer @workshop2 ? 0 2 1 1 1 0 0 0 0 0 0 0 0 0 0 0.5 0.5 0.5 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
-MODEL_PART brewer ? assets\image\model\diffuse_map\workshop2.tga ? ? ? ? assets\image\model\normal_map\workshop2.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL brewer @workshop2 ? 0 2 1 1 1 0 16.8544 2.98404 -7.06366 0 0 0 0 0 0 0.5 0.5 0.5 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL_PART brewer ? assets\image\model\diffuse_map\workshop2.tga ? ? ? ? assets\image\model\normal_map\workshop2.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB brewer model@brewer@aabb 0
-MODEL tree2_84 @tree2 @lod 70 2 1 1 1 1 -71.1722 3 71.0156 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree2_84 @tree2 @lod 70 2 1 1 1 1 -63.114 3 26.6164 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree2_84 leaves assets\image\model\diffuse_map\tree2_leaves.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1.25 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree2_84 trunk assets\image\model\diffuse_map\tree2_trunk.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree2_84 model@tree2_84@aabb 0
@@ -22,168 +22,168 @@ MODEL_PART mason frame assets\image\model\diffuse_map\workshop3_frame.tga ? ? ? 
 MODEL_PART mason wall3 assets\image\model\diffuse_map\workshop3_wall3.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall3.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB mason model@mason@aabb1 0
 MODEL_AABB mason model@mason@aabb2 0
-MODEL tree1_45 @tree1 @lod 70 2 1 1 1 1 -113.36 3 -53.8556 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree1_45 @tree1 @lod 70 2 1 1 1 1 77.993 3 -58.4661 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree1_45 ? assets\image\model\diffuse_map\tree1.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 0.75 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree1_45 model@tree1_45@aabb 0
-MODEL tree1_0 @tree1 @lod 70 2 1 1 1 1 105.601 3 -33.1961 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree1_0 @tree1 @lod 70 2 1 1 1 1 52.4514 3 -117.511 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree1_0 ? assets\image\model\diffuse_map\tree1.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 0.75 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree1_0 model@tree1_0@aabb 0
 MODEL nightman @lavatory ? 0 2 1 1 1 0 0 0 0 0 0 0 0 0 0 0.55 0.55 0.55 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART nightman ? assets\image\model\diffuse_map\lavatory.tga ? ? ? ? assets\image\model\normal_map\lavatory.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB nightman model@nightman@aabb 0
-MODEL rock1_1 @rock1 @lod 70 2 1 1 1 1 -66.0949 3 105.644 0 0 0 0 0 0 1.5 1.75 1.5 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL rock1_1 @rock1 @lod 70 2 1 1 1 1 -9.13729 3 17.8585 0 0 0 0 0 0 1.5 1.75 1.5 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART rock1_1 ? assets\image\model\diffuse_map\rock1.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB rock1_1 model@rock1_1@aabb 0
-MODEL tree1_2 @tree1 @lod 70 2 1 1 1 1 105.478 3 48.655 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree1_2 @tree1 @lod 70 2 1 1 1 1 -37.328 3 24.612 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree1_2 ? assets\image\model\diffuse_map\tree1.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 0.75 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree1_2 model@tree1_2@aabb 0
-MODEL tree2_3 @tree2 @lod 70 2 1 1 1 1 105.633 3 5.14372 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree2_3 @tree2 @lod 70 2 1 1 1 1 88.7452 3 93.1886 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree2_3 leaves assets\image\model\diffuse_map\tree2_leaves.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1.25 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree2_3 trunk assets\image\model\diffuse_map\tree2_trunk.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree2_3 model@tree2_3@aabb 0
-MODEL rock2_4 @rock2 @lod 70 2 1 1 1 1 -26.2098 3 58.3922 0 0 0 0 0 0 0.4 0.4 0.4 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL rock2_4 @rock2 @lod 70 2 1 1 1 1 -48.7041 3 28.2198 0 0 0 0 0 0 0.4 0.4 0.4 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART rock2_4 ? assets\image\model\diffuse_map\rock2.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB rock2_4 model@rock2_4@aabb 0
-MODEL tree2_5 @tree2 @lod 70 2 1 1 1 1 18.9406 3 -31.5193 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree2_5 @tree2 @lod 70 2 1 1 1 1 -27.9069 3 -104.627 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree2_5 leaves assets\image\model\diffuse_map\tree2_leaves.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1.25 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree2_5 trunk assets\image\model\diffuse_map\tree2_trunk.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree2_5 model@tree2_5@aabb 0
-MODEL rock3_25 @rock3 @lod 70 2 1 1 1 1 -40.5484 3 -62.6838 0 0 0 0 0 0 1.75 1.5 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL rock3_25 @rock3 @lod 70 2 1 1 1 1 -25.1097 3 -4.82144 0 0 0 0 0 0 1.75 1.5 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART rock3_25 ? assets\image\model\diffuse_map\rock3.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB rock3_25 model@rock3_25@aabb 0
-MODEL tree3_6 @tree3 @lod 70 2 1 1 1 1 35.1968 3 106.394 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree3_6 @tree3 @lod 70 2 1 1 1 1 8.57178 3 44.769 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree3_6 trunk assets\image\model\diffuse_map\tree3_trunk.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.1 1 1 1 2 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree3_6 leaves assets\image\model\diffuse_map\tree3_leaves.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1.5 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree3_6 model@tree3_6@aabb 0
-MODEL rock3_7 @rock3 @lod 70 2 1 1 1 1 52.3351 3 68.5942 0 0 0 0 0 0 1.75 1.5 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL rock3_7 @rock3 @lod 70 2 1 1 1 1 17.3513 3 83.7251 0 0 0 0 0 0 1.75 1.5 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART rock3_7 ? assets\image\model\diffuse_map\rock3.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB rock3_7 model@rock3_7@aabb 0
-MODEL tree3_8 @tree3 @lod 70 2 1 1 1 1 6.5833 3 84.2424 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree3_8 @tree3 @lod 70 2 1 1 1 1 17.7493 3 -120.38 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree3_8 trunk assets\image\model\diffuse_map\tree3_trunk.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.1 1 1 1 2 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree3_8 leaves assets\image\model\diffuse_map\tree3_leaves.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1.5 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree3_8 model@tree3_8@aabb 0
-MODEL hewer @workshop1 ? 0 2 1 1 1 0 0 0 0 0 0 0 0 0 0 1 1 1 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
-MODEL_PART hewer doorframe assets\image\model\diffuse_map\workshop1_doorframe.tga ? ? ? ? assets\image\model\normal_map\workshop1_doorframe.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART hewer walls assets\image\model\diffuse_map\workshop1_walls.tga ? ? ? ? assets\image\model\normal_map\workshop1_walls.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART hewer floor assets\image\model\diffuse_map\workshop1_floor.tga ? ? ? ? assets\image\model\normal_map\workshop1_floor.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART hewer window assets\image\model\diffuse_map\workshop1_window.tga ? ? ? ? assets\image\model\normal_map\workshop1_window.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART hewer lid assets\image\model\diffuse_map\workshop1_lid.tga ? ? ? ? assets\image\model\normal_map\workshop1_lid.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART hewer roof assets\image\model\diffuse_map\workshop1_roof.tga ? ? ? ? assets\image\model\normal_map\workshop1_roof.tga 0 0 1 0 0 2 10 0.5 0.5 0.4 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL hewer @workshop1 ? 0 2 1 1 1 0 -31.1435 3.02663 -5.03066 0 0 0 0 0 0 1 1 1 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL_PART hewer doorframe assets\image\model\diffuse_map\workshop1_doorframe.tga ? ? ? ? assets\image\model\normal_map\workshop1_doorframe.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART hewer walls assets\image\model\diffuse_map\workshop1_walls.tga ? ? ? ? assets\image\model\normal_map\workshop1_walls.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART hewer floor assets\image\model\diffuse_map\workshop1_floor.tga ? ? ? ? assets\image\model\normal_map\workshop1_floor.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART hewer window assets\image\model\diffuse_map\workshop1_window.tga ? ? ? ? assets\image\model\normal_map\workshop1_window.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART hewer lid assets\image\model\diffuse_map\workshop1_lid.tga ? ? ? ? assets\image\model\normal_map\workshop1_lid.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART hewer roof assets\image\model\diffuse_map\workshop1_roof.tga ? ? ? ? assets\image\model\normal_map\workshop1_roof.tga 0 0 1 0 0 2 10 0.5 0.5 0.4 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB hewer model@hewer@aabb 0
-MODEL tree1_9 @tree1 @lod 70 2 1 1 1 1 -19.0914 3 -64.7115 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree1_9 @tree1 @lod 70 2 1 1 1 1 31.2793 3 109.627 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree1_9 ? assets\image\model\diffuse_map\tree1.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 0.75 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree1_9 model@tree1_9@aabb 0
-MODEL rock1_10 @rock1 @lod 70 2 1 1 1 1 61.5266 3 60.5185 0 0 0 0 0 0 1.5 1.75 1.5 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL rock1_10 @rock1 @lod 70 2 1 1 1 1 -79.3567 3 -9.62163 0 0 0 0 0 0 1.5 1.75 1.5 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART rock1_10 ? assets\image\model\diffuse_map\rock1.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB rock1_10 model@rock1_10@aabb 0
-MODEL tree1_11 @tree1 @lod 70 2 1 1 1 1 73.4042 3 16.6113 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree1_11 @tree1 @lod 70 2 1 1 1 1 119.287 3 2.1398 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree1_11 ? assets\image\model\diffuse_map\tree1.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 0.75 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree1_11 model@tree1_11@aabb 0
-MODEL tree2_12 @tree2 @lod 70 2 1 1 1 1 32.172 3 39.0835 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree2_12 @tree2 @lod 70 2 1 1 1 1 71.3804 3 -26.839 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree2_12 leaves assets\image\model\diffuse_map\tree2_leaves.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1.25 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree2_12 trunk assets\image\model\diffuse_map\tree2_trunk.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree2_12 model@tree2_12@aabb 0
-MODEL rock2_13 @rock2 @lod 70 2 1 1 1 1 -69.8405 3 30.6539 0 0 0 0 0 0 0.4 0.4 0.4 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL rock2_13 @rock2 @lod 70 2 1 1 1 1 -17.9556 3 -54.0797 0 0 0 0 0 0 0.4 0.4 0.4 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART rock2_13 ? assets\image\model\diffuse_map\rock2.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB rock2_13 model@rock2_13@aabb 0
-MODEL tree2_14 @tree2 @lod 70 2 1 1 1 1 6.93756 3 -112.493 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree2_14 @tree2 @lod 70 2 1 1 1 1 19.3468 3 -38.6915 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree2_14 leaves assets\image\model\diffuse_map\tree2_leaves.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1.25 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree2_14 trunk assets\image\model\diffuse_map\tree2_trunk.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree2_14 model@tree2_14@aabb 0
-MODEL tree3_15 @tree3 @lod 70 2 1 1 1 1 -99.7554 3 -43.0575 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree3_15 @tree3 @lod 70 2 1 1 1 1 19.1941 3 35.8414 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree3_15 trunk assets\image\model\diffuse_map\tree3_trunk.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.1 1 1 1 2 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree3_15 leaves assets\image\model\diffuse_map\tree3_leaves.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1.5 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree3_15 model@tree3_15@aabb 0
-MODEL rock3_16 @rock3 @lod 70 2 1 1 1 1 -22.3524 3 -15.8569 0 0 0 0 0 0 1.75 1.5 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL rock3_16 @rock3 @lod 70 2 1 1 1 1 49.4594 3 -69.4795 0 0 0 0 0 0 1.75 1.5 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART rock3_16 ? assets\image\model\diffuse_map\rock3.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB rock3_16 model@rock3_16@aabb 0
-MODEL tree3_17 @tree3 @lod 70 2 1 1 1 1 14.2628 3 38.76 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree3_17 @tree3 @lod 70 2 1 1 1 1 -21.1187 3 -38.8556 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree3_17 trunk assets\image\model\diffuse_map\tree3_trunk.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.1 1 1 1 2 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree3_17 leaves assets\image\model\diffuse_map\tree3_leaves.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1.5 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree3_17 model@tree3_17@aabb 0
-MODEL tree1_18 @tree1 @lod 70 2 1 1 1 1 92.9893 3 -2.73416 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree1_18 @tree1 @lod 70 2 1 1 1 1 77.7229 3 -90.6702 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree1_18 ? assets\image\model\diffuse_map\tree1.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 0.75 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree1_18 model@tree1_18@aabb 0
-MODEL fletcher @workshop3 ? 0 2 1 1 1 0 0 0 0 0 0 0 0 0 0 0.4 0.4 0.4 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
-MODEL_PART fletcher wall1 assets\image\model\diffuse_map\workshop3_wall1.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall1.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART fletcher wall4 assets\image\model\diffuse_map\workshop3_wall4.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall4.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART fletcher floor assets\image\model\diffuse_map\workshop3_floor.tga ? ? ? ? assets\image\model\normal_map\workshop3_floor.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART fletcher wall2 assets\image\model\diffuse_map\workshop3_wall2.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall2.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART fletcher wall5 assets\image\model\diffuse_map\workshop3_wall5.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall5.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART fletcher roof assets\image\model\diffuse_map\workshop3_roof.tga ? ? ? ? assets\image\model\normal_map\workshop3_roof.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART fletcher frame assets\image\model\diffuse_map\workshop3_frame.tga ? ? ? ? assets\image\model\normal_map\workshop3_frame.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART fletcher wall3 assets\image\model\diffuse_map\workshop3_wall3.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall3.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL fletcher @workshop3 ? 0 2 1 1 1 0 -31.1362 3.02663 -5.02912 0 0 0 0 0 0 0.4 0.4 0.4 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL_PART fletcher wall1 assets\image\model\diffuse_map\workshop3_wall1.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall1.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART fletcher wall4 assets\image\model\diffuse_map\workshop3_wall4.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall4.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART fletcher floor assets\image\model\diffuse_map\workshop3_floor.tga ? ? ? ? assets\image\model\normal_map\workshop3_floor.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART fletcher wall2 assets\image\model\diffuse_map\workshop3_wall2.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall2.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART fletcher wall5 assets\image\model\diffuse_map\workshop3_wall5.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall5.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART fletcher roof assets\image\model\diffuse_map\workshop3_roof.tga ? ? ? ? assets\image\model\normal_map\workshop3_roof.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART fletcher frame assets\image\model\diffuse_map\workshop3_frame.tga ? ? ? ? assets\image\model\normal_map\workshop3_frame.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART fletcher wall3 assets\image\model\diffuse_map\workshop3_wall3.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall3.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB fletcher model@fletcher@aabb1 0
 MODEL_AABB fletcher model@fletcher@aabb2 0
-MODEL rock1_19 @rock1 @lod 70 2 1 1 1 1 -10.4264 3 104.829 0 0 0 0 0 0 1.5 1.75 1.5 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL rock1_19 @rock1 @lod 70 2 1 1 1 1 72.2465 3 -19.6089 0 0 0 0 0 0 1.5 1.75 1.5 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART rock1_19 ? assets\image\model\diffuse_map\rock1.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB rock1_19 model@rock1_19@aabb 0
-MODEL tree1_20 @tree1 @lod 70 2 1 1 1 1 -85.452 3 -77.3849 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree1_20 @tree1 @lod 70 2 1 1 1 1 24.9019 3 51.5913 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree1_20 ? assets\image\model\diffuse_map\tree1.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 0.75 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree1_20 model@tree1_20@aabb 0
-MODEL tree2_21 @tree2 @lod 70 2 1 1 1 1 49.9298 3 -28.8225 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree2_21 @tree2 @lod 70 2 1 1 1 1 -0.723335 3 78.1886 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree2_21 leaves assets\image\model\diffuse_map\tree2_leaves.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1.25 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree2_21 trunk assets\image\model\diffuse_map\tree2_trunk.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree2_21 model@tree2_21@aabb 0
-MODEL rock2_22 @rock2 @lod 70 2 1 1 1 1 37.2644 3 -70.7893 0 0 0 0 0 0 0.4 0.4 0.4 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL rock2_22 @rock2 @lod 70 2 1 1 1 1 114.421 3 64.8399 0 0 0 0 0 0 0.4 0.4 0.4 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART rock2_22 ? assets\image\model\diffuse_map\rock2.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB rock2_22 model@rock2_22@aabb 0
-MODEL tree2_23 @tree2 @lod 70 2 1 1 1 1 83.0253 3 -66.9271 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree2_23 @tree2 @lod 70 2 1 1 1 1 77.4011 3 -64.3966 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree2_23 leaves assets\image\model\diffuse_map\tree2_leaves.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1.25 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree2_23 trunk assets\image\model\diffuse_map\tree2_trunk.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree2_23 model@tree2_23@aabb 0
-MODEL tree3_24 @tree3 @lod 70 2 1 1 1 1 109.612 3 -36.8018 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree3_24 @tree3 @lod 70 2 1 1 1 1 44.3669 3 -117.222 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree3_24 trunk assets\image\model\diffuse_map\tree3_trunk.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.1 1 1 1 2 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree3_24 leaves assets\image\model\diffuse_map\tree3_leaves.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1.5 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree3_24 model@tree3_24@aabb 0
-MODEL tree3_26 @tree3 @lod 70 2 1 1 1 1 -62.4928 3 29.1009 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree3_26 @tree3 @lod 70 2 1 1 1 1 -96.7046 3 -41.4384 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree3_26 trunk assets\image\model\diffuse_map\tree3_trunk.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.1 1 1 1 2 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree3_26 leaves assets\image\model\diffuse_map\tree3_leaves.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1.5 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree3_26 model@tree3_26@aabb 0
-MODEL tree1_27 @tree1 @lod 70 2 1 1 1 1 -17.2669 3 15.3635 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree1_27 @tree1 @lod 70 2 1 1 1 1 100.032 3 -70.6061 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree1_27 ? assets\image\model\diffuse_map\tree1.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 0.75 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree1_27 model@tree1_27@aabb 0
-MODEL rock1_28 @rock1 @lod 70 2 1 1 1 1 88.5754 3 96.8976 0 0 0 0 0 0 1.5 1.75 1.5 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL rock1_28 @rock1 @lod 70 2 1 1 1 1 -60.3652 3 62.5119 0 0 0 0 0 0 1.5 1.75 1.5 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART rock1_28 ? assets\image\model\diffuse_map\rock1.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB rock1_28 model@rock1_28@aabb 0
-MODEL tree1_29 @tree1 @lod 70 2 1 1 1 1 72.5665 3 -22.2083 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree1_29 @tree1 @lod 70 2 1 1 1 1 103.504 3 -32.0025 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree1_29 ? assets\image\model\diffuse_map\tree1.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 0.75 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree1_29 model@tree1_29@aabb 0
-MODEL tree2_30 @tree2 @lod 70 2 1 1 1 1 -55.19 3 -37.034 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree2_30 @tree2 @lod 70 2 1 1 1 1 56.8817 3 -69.2459 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree2_30 leaves assets\image\model\diffuse_map\tree2_leaves.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1.25 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree2_30 trunk assets\image\model\diffuse_map\tree2_trunk.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree2_30 model@tree2_30@aabb 0
-MODEL rock2_31 @rock2 @lod 70 2 1 1 1 1 106.965 3 63.0308 0 0 0 0 0 0 0.4 0.4 0.4 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL rock2_31 @rock2 @lod 70 2 1 1 1 1 46.4888 3 -107.636 0 0 0 0 0 0 0.4 0.4 0.4 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART rock2_31 ? assets\image\model\diffuse_map\rock2.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB rock2_31 model@rock2_31@aabb 0
-MODEL tree2_32 @tree2 @lod 70 2 1 1 1 1 51.5032 3 -22.4982 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree2_32 @tree2 @lod 70 2 1 1 1 1 68.8531 3 11.3915 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree2_32 leaves assets\image\model\diffuse_map\tree2_leaves.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1.25 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree2_32 trunk assets\image\model\diffuse_map\tree2_trunk.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree2_32 model@tree2_32@aabb 0
-MODEL tree3_33 @tree3 @lod 70 2 1 1 1 1 -30.4702 3 -56.2578 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree3_33 @tree3 @lod 70 2 1 1 1 1 5.48206 3 86.192 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree3_33 trunk assets\image\model\diffuse_map\tree3_trunk.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.1 1 1 1 2 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree3_33 leaves assets\image\model\diffuse_map\tree3_leaves.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1.5 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree3_33 model@tree3_33@aabb 0
-MODEL rock3_34 @rock3 @lod 70 2 1 1 1 1 -75.3011 3 -78.8429 0 0 0 0 0 0 1.75 1.5 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL rock3_34 @rock3 @lod 70 2 1 1 1 1 -59.9846 3 -35.588 0 0 0 0 0 0 1.75 1.5 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART rock3_34 ? assets\image\model\diffuse_map\rock3.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB rock3_34 model@rock3_34@aabb 0
-MODEL tree3_35 @tree3 @lod 70 2 1 1 1 1 14.9239 3 -109.044 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree3_35 @tree3 @lod 70 2 1 1 1 1 11.4333 3 -109.202 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree3_35 trunk assets\image\model\diffuse_map\tree3_trunk.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.1 1 1 1 2 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree3_35 leaves assets\image\model\diffuse_map\tree3_leaves.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1.5 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree3_35 model@tree3_35@aabb 0
-MODEL tree1_36 @tree1 @lod 70 2 1 1 1 1 -55.2578 3 61.3815 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree1_36 @tree1 @lod 70 2 1 1 1 1 -100.253 3 -45.8953 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree1_36 ? assets\image\model\diffuse_map\tree1.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 0.75 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree1_36 model@tree1_36@aabb 0
-MODEL rock1_37 @rock1 @lod 70 2 1 1 1 1 -43.7723 3 21.5328 0 0 0 0 0 0 1.5 1.75 1.5 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL rock1_37 @rock1 @lod 70 2 1 1 1 1 63.1728 3 67.8031 0 0 0 0 0 0 1.5 1.75 1.5 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART rock1_37 ? assets\image\model\diffuse_map\rock1.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB rock1_37 model@rock1_37@aabb 0
-MODEL tree1_38 @tree1 @lod 70 2 1 1 1 1 -36.3897 3 -120.4 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree1_38 @tree1 @lod 70 2 1 1 1 1 61.3117 3 60.7924 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree1_38 ? assets\image\model\diffuse_map\tree1.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 0.75 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree1_38 model@tree1_38@aabb 0
-MODEL rock2_58 @rock2 @lod 70 2 1 1 1 1 73.19 3 98.8112 0 0 0 0 0 0 0.4 0.4 0.4 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL rock2_58 @rock2 @lod 70 2 1 1 1 1 45.1712 3 68.2552 0 0 0 0 0 0 0.4 0.4 0.4 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART rock2_58 ? assets\image\model\diffuse_map\rock2.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB rock2_58 model@rock2_58@aabb 0
-MODEL tree2_39 @tree2 @lod 70 2 1 1 1 1 110.012 3 9.73412 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree2_39 @tree2 @lod 70 2 1 1 1 1 51.7413 3 -76.5137 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree2_39 leaves assets\image\model\diffuse_map\tree2_leaves.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1.25 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree2_39 trunk assets\image\model\diffuse_map\tree2_trunk.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree2_39 model@tree2_39@aabb 0
@@ -198,274 +198,274 @@ MODEL_PART carpenter_1 frame assets\image\model\diffuse_map\workshop3_frame.tga 
 MODEL_PART carpenter_1 wall3 assets\image\model\diffuse_map\workshop3_wall3.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall3.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB carpenter_1 model@carpenter_1@aabb1 0
 MODEL_AABB carpenter_1 model@carpenter_1@aabb2 0
-MODEL rock2_40 @rock2 @lod 70 2 1 1 1 1 26.6803 3 43.1607 0 0 0 0 0 0 0.4 0.4 0.4 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL rock2_40 @rock2 @lod 70 2 1 1 1 1 -46.0671 3 19.8524 0 0 0 0 0 0 0.4 0.4 0.4 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART rock2_40 ? assets\image\model\diffuse_map\rock2.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB rock2_40 model@rock2_40@aabb 0
-MODEL tree2_41 @tree2 @lod 70 2 1 1 1 1 7.00308 3 78.0007 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree2_41 @tree2 @lod 70 2 1 1 1 1 9.80135 3 -44.0064 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree2_41 leaves assets\image\model\diffuse_map\tree2_leaves.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1.25 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree2_41 trunk assets\image\model\diffuse_map\tree2_trunk.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree2_41 model@tree2_41@aabb 0
-MODEL rock3_70 @rock3 @lod 70 2 1 1 1 1 70.1606 3 58.6281 0 0 0 0 0 0 1.75 1.5 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL rock3_70 @rock3 @lod 70 2 1 1 1 1 -100.809 3 52.815 0 0 0 0 0 0 1.75 1.5 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART rock3_70 ? assets\image\model\diffuse_map\rock3.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB rock3_70 model@rock3_70@aabb 0
-MODEL tree3_42 @tree3 @lod 70 2 1 1 1 1 56.0571 3 -25.2862 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree3_42 @tree3 @lod 70 2 1 1 1 1 -28.5309 3 48.0912 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree3_42 trunk assets\image\model\diffuse_map\tree3_trunk.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.1 1 1 1 2 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree3_42 leaves assets\image\model\diffuse_map\tree3_leaves.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1.5 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree3_42 model@tree3_42@aabb 0
-MODEL rock3_43 @rock3 @lod 70 2 1 1 1 1 15.3614 3 -51.3321 0 0 0 0 0 0 1.75 1.5 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL rock3_43 @rock3 @lod 70 2 1 1 1 1 -92.5243 3 -13.2966 0 0 0 0 0 0 1.75 1.5 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART rock3_43 ? assets\image\model\diffuse_map\rock3.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB rock3_43 model@rock3_43@aabb 0
-MODEL tree3_44 @tree3 @lod 70 2 1 1 1 1 54.5946 3 -75.8326 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree3_44 @tree3 @lod 70 2 1 1 1 1 13.0919 3 36.8082 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree3_44 trunk assets\image\model\diffuse_map\tree3_trunk.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.1 1 1 1 2 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree3_44 leaves assets\image\model\diffuse_map\tree3_leaves.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1.5 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree3_44 model@tree3_44@aabb 0
-MODEL tree3_87 @tree3 @lod 70 2 1 1 1 1 -52.1364 3 -88.3735 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree3_87 @tree3 @lod 70 2 1 1 1 1 -71.3631 3 28.1543 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree3_87 trunk assets\image\model\diffuse_map\tree3_trunk.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.1 1 1 1 2 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree3_87 leaves assets\image\model\diffuse_map\tree3_leaves.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1.5 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree3_87 model@tree3_87@aabb 0
-MODEL rock1_46 @rock1 @lod 70 2 1 1 1 1 17.6006 3 -117.141 0 0 0 0 0 0 1.5 1.75 1.5 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL rock1_46 @rock1 @lod 70 2 1 1 1 1 -34.2433 3 -13.796 0 0 0 0 0 0 1.5 1.75 1.5 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART rock1_46 ? assets\image\model\diffuse_map\rock1.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB rock1_46 model@rock1_46@aabb 0
-MODEL tree2_48 @tree2 @lod 70 2 1 1 1 1 6.30109 3 -51.6018 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree2_48 @tree2 @lod 70 2 1 1 1 1 94.8198 3 -2.70693 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree2_48 leaves assets\image\model\diffuse_map\tree2_leaves.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1.25 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree2_48 trunk assets\image\model\diffuse_map\tree2_trunk.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree2_48 model@tree2_48@aabb 0
-MODEL rock2_49 @rock2 @lod 70 2 1 1 1 1 -34.9424 3 88.1005 0 0 0 0 0 0 0.4 0.4 0.4 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL rock2_49 @rock2 @lod 70 2 1 1 1 1 -106.321 3 15.1645 0 0 0 0 0 0 0.4 0.4 0.4 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART rock2_49 ? assets\image\model\diffuse_map\rock2.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB rock2_49 model@rock2_49@aabb 0
-MODEL tree2_50 @tree2 @lod 70 2 1 1 1 1 64.5765 3 6.80978 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree2_50 @tree2 @lod 70 2 1 1 1 1 -17.1362 3 -65.0335 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree2_50 leaves assets\image\model\diffuse_map\tree2_leaves.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1.25 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree2_50 trunk assets\image\model\diffuse_map\tree2_trunk.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree2_50 model@tree2_50@aabb 0
 MODEL tanner @workshop2 ? 0 2 1 1 1 0 0 0 0 0 0 0 0 0 0 0.5 0.5 0.5 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tanner ? assets\image\model\diffuse_map\workshop2.tga ? ? ? ? assets\image\model\normal_map\workshop2.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tanner model@tanner@aabb 0
-MODEL tree3_51 @tree3 @lod 70 2 1 1 1 1 -16.0565 3 -53.1306 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree3_51 @tree3 @lod 70 2 1 1 1 1 -102.987 3 -39.6314 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree3_51 trunk assets\image\model\diffuse_map\tree3_trunk.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.1 1 1 1 2 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree3_51 leaves assets\image\model\diffuse_map\tree3_leaves.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1.5 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree3_51 model@tree3_51@aabb 0
-MODEL rock3_52 @rock3 @lod 70 2 1 1 1 1 -117.022 3 28.8577 0 0 0 0 0 0 1.75 1.5 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL rock3_52 @rock3 @lod 70 2 1 1 1 1 85.7702 3 -70.6733 0 0 0 0 0 0 1.75 1.5 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART rock3_52 ? assets\image\model\diffuse_map\rock3.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB rock3_52 model@rock3_52@aabb 0
-MODEL tree3_53 @tree3 @lod 70 2 1 1 1 1 -77.2514 3 33.6821 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree3_53 @tree3 @lod 70 2 1 1 1 1 111.411 3 10.0629 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree3_53 trunk assets\image\model\diffuse_map\tree3_trunk.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.1 1 1 1 2 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree3_53 leaves assets\image\model\diffuse_map\tree3_leaves.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1.5 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree3_53 model@tree3_53@aabb 0
-MODEL tree1_54 @tree1 @lod 70 2 1 1 1 1 58.5602 3 -32.8638 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree1_54 @tree1 @lod 70 2 1 1 1 1 -35.7305 3 -114.586 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree1_54 ? assets\image\model\diffuse_map\tree1.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 0.75 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree1_54 model@tree1_54@aabb 0
-MODEL rock1_55 @rock1 @lod 70 2 1 1 1 1 -3.79917 3 81.2351 0 0 0 0 0 0 1.5 1.75 1.5 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL rock1_55 @rock1 @lod 70 2 1 1 1 1 65.9122 3 -27.7822 0 0 0 0 0 0 1.5 1.75 1.5 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART rock1_55 ? assets\image\model\diffuse_map\rock1.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB rock1_55 model@rock1_55@aabb 0
-MODEL tree1_56 @tree1 @lod 70 2 1 1 1 1 60.9284 3 67.8158 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree1_56 @tree1 @lod 70 2 1 1 1 1 27.4027 3 34.3699 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree1_56 ? assets\image\model\diffuse_map\tree1.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 0.75 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree1_56 model@tree1_56@aabb 0
-MODEL rock2_76 @rock2 @lod 70 2 1 1 1 1 -44.3847 3 -116.632 0 0 0 0 0 0 0.4 0.4 0.4 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL rock2_76 @rock2 @lod 70 2 1 1 1 1 -22.2759 3 55.4773 0 0 0 0 0 0 0.4 0.4 0.4 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART rock2_76 ? assets\image\model\diffuse_map\rock2.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB rock2_76 model@rock2_76@aabb 0
-MODEL tree2_57 @tree2 @lod 70 2 1 1 1 1 -27.6733 3 -14.5054 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree2_57 @tree2 @lod 70 2 1 1 1 1 -6.62075 3 107.442 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree2_57 leaves assets\image\model\diffuse_map\tree2_leaves.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1.25 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree2_57 trunk assets\image\model\diffuse_map\tree2_trunk.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree2_57 model@tree2_57@aabb 0
-MODEL tree2_59 @tree2 @lod 70 2 1 1 1 1 95.4456 3 2.33199 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree2_59 @tree2 @lod 70 2 1 1 1 1 114.436 3 46.1701 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree2_59 leaves assets\image\model\diffuse_map\tree2_leaves.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1.25 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree2_59 trunk assets\image\model\diffuse_map\tree2_trunk.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree2_59 model@tree2_59@aabb 0
-MODEL tree3_60 @tree3 @lod 70 2 1 1 1 1 -108.693 3 11.0891 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree3_60 @tree3 @lod 70 2 1 1 1 1 106.518 3 63.1722 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree3_60 trunk assets\image\model\diffuse_map\tree3_trunk.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.1 1 1 1 2 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree3_60 leaves assets\image\model\diffuse_map\tree3_leaves.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1.5 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree3_60 model@tree3_60@aabb 0
-MODEL rock3_61 @rock3 @lod 70 2 1 1 1 1 -8.78284 3 15.5762 0 0 0 0 0 0 1.75 1.5 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL rock3_61 @rock3 @lod 70 2 1 1 1 1 55.1913 3 -62.928 0 0 0 0 0 0 1.75 1.5 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART rock3_61 ? assets\image\model\diffuse_map\rock3.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB rock3_61 model@rock3_61@aabb 0
-MODEL tree3_62 @tree3 @lod 70 2 1 1 1 1 -53.6985 3 19.2094 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree3_62 @tree3 @lod 70 2 1 1 1 1 77.1588 3 99.7196 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree3_62 trunk assets\image\model\diffuse_map\tree3_trunk.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.1 1 1 1 2 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree3_62 leaves assets\image\model\diffuse_map\tree3_leaves.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1.5 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree3_62 model@tree3_62@aabb 0
-MODEL tree1_63 @tree1 @lod 70 2 1 1 1 1 -1.42345 3 114.705 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree1_63 @tree1 @lod 70 2 1 1 1 1 10.7057 3 74.8546 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree1_63 ? assets\image\model\diffuse_map\tree1.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 0.75 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree1_63 model@tree1_63@aabb 0
-MODEL rock1_64 @rock1 @lod 70 2 1 1 1 1 -64.8582 3 71.8105 0 0 0 0 0 0 1.5 1.75 1.5 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL rock1_64 @rock1 @lod 70 2 1 1 1 1 11.7088 3 81.8581 0 0 0 0 0 0 1.5 1.75 1.5 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART rock1_64 ? assets\image\model\diffuse_map\rock1.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB rock1_64 model@rock1_64@aabb 0
-MODEL tree1_65 @tree1 @lod 70 2 1 1 1 1 8.28632 3 -75.8072 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree1_65 @tree1 @lod 70 2 1 1 1 1 103.189 3 4.47946 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree1_65 ? assets\image\model\diffuse_map\tree1.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 0.75 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree1_65 model@tree1_65@aabb 0
-MODEL tree2_66 @tree2 @lod 70 2 1 1 1 1 -39.0662 3 31.582 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree2_66 @tree2 @lod 70 2 1 1 1 1 -108.575 3 -54.1992 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree2_66 leaves assets\image\model\diffuse_map\tree2_leaves.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1.25 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree2_66 trunk assets\image\model\diffuse_map\tree2_trunk.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree2_66 model@tree2_66@aabb 0
-MODEL rock2_67 @rock2 @lod 70 2 1 1 1 1 50.8393 3 -112.873 0 0 0 0 0 0 0.4 0.4 0.4 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL rock2_67 @rock2 @lod 70 2 1 1 1 1 74.7223 3 -94.6804 0 0 0 0 0 0 0.4 0.4 0.4 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART rock2_67 ? assets\image\model\diffuse_map\rock2.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB rock2_67 model@rock2_67@aabb 0
-MODEL tree2_68 @tree2 @lod 70 2 1 1 1 1 -22.9964 3 -37.658 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree2_68 @tree2 @lod 70 2 1 1 1 1 58.6853 3 -33.6413 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree2_68 leaves assets\image\model\diffuse_map\tree2_leaves.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1.25 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree2_68 trunk assets\image\model\diffuse_map\tree2_trunk.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree2_68 model@tree2_68@aabb 0
-MODEL tree3_69 @tree3 @lod 70 2 1 1 1 1 8.55321 3 42.6428 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree3_69 @tree3 @lod 70 2 1 1 1 1 49.5888 3 50.7518 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree3_69 trunk assets\image\model\diffuse_map\tree3_trunk.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.1 1 1 1 2 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree3_69 leaves assets\image\model\diffuse_map\tree3_leaves.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1.5 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree3_69 model@tree3_69@aabb 0
-MODEL tree3_71 @tree3 @lod 70 2 1 1 1 1 78.5715 3 -62.5537 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree3_71 @tree3 @lod 70 2 1 1 1 1 -57.4888 3 21.9837 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree3_71 trunk assets\image\model\diffuse_map\tree3_trunk.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.1 1 1 1 2 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree3_71 leaves assets\image\model\diffuse_map\tree3_leaves.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1.5 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree3_71 model@tree3_71@aabb 0
-MODEL tree1_72 @tree1 @lod 70 2 1 1 1 1 -104.928 3 -55.328 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree1_72 @tree1 @lod 70 2 1 1 1 1 110.492 3 4.86578 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree1_72 ? assets\image\model\diffuse_map\tree1.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 0.75 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree1_72 model@tree1_72@aabb 0
-MODEL rock1_73 @rock1 @lod 70 2 1 1 1 1 58.2617 3 -71.8817 0 0 0 0 0 0 1.5 1.75 1.5 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL rock1_73 @rock1 @lod 70 2 1 1 1 1 -17.127 3 47.6584 0 0 0 0 0 0 1.5 1.75 1.5 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART rock1_73 ? assets\image\model\diffuse_map\rock1.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB rock1_73 model@rock1_73@aabb 0
-MODEL tree1_74 @tree1 @lod 70 2 1 1 1 1 -11.0105 3 11.0098 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree1_74 @tree1 @lod 70 2 1 1 1 1 39.3022 3 108.366 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree1_74 ? assets\image\model\diffuse_map\tree1.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 0.75 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree1_74 model@tree1_74@aabb 0
-MODEL tree2_75 @tree2 @lod 70 2 1 1 1 1 108.43 3 -74.1597 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree2_75 @tree2 @lod 70 2 1 1 1 1 -25.7972 3 -61.5837 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree2_75 leaves assets\image\model\diffuse_map\tree2_leaves.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1.25 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree2_75 trunk assets\image\model\diffuse_map\tree2_trunk.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree2_75 model@tree2_75@aabb 0
-MODEL tree2_77 @tree2 @lod 70 2 1 1 1 1 -29.686 3 -36.3342 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree2_77 @tree2 @lod 70 2 1 1 1 1 10.6051 3 -49.2965 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree2_77 leaves assets\image\model\diffuse_map\tree2_leaves.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1.25 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree2_77 trunk assets\image\model\diffuse_map\tree2_trunk.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree2_77 model@tree2_77@aabb 0
-MODEL tree3_78 @tree3 @lod 70 2 1 1 1 1 -29.0622 3 -5.59602 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree3_78 @tree3 @lod 70 2 1 1 1 1 -96.0713 3 59.8856 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree3_78 trunk assets\image\model\diffuse_map\tree3_trunk.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.1 1 1 1 2 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree3_78 leaves assets\image\model\diffuse_map\tree3_leaves.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1.5 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree3_78 model@tree3_78@aabb 0
-MODEL rock3_79 @rock3 @lod 70 2 1 1 1 1 -61.7804 3 21.539 0 0 0 0 0 0 1.75 1.5 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL rock3_79 @rock3 @lod 70 2 1 1 1 1 13.9399 3 -27.2042 0 0 0 0 0 0 1.75 1.5 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART rock3_79 ? assets\image\model\diffuse_map\rock3.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB rock3_79 model@rock3_79@aabb 0
-MODEL tree3_80 @tree3 @lod 70 2 1 1 1 1 -59.3135 3 -41.3716 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree3_80 @tree3 @lod 70 2 1 1 1 1 12.4069 3 -121.517 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree3_80 trunk assets\image\model\diffuse_map\tree3_trunk.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.1 1 1 1 2 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree3_80 leaves assets\image\model\diffuse_map\tree3_leaves.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1.5 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree3_80 model@tree3_80@aabb 0
-MODEL tree1_81 @tree1 @lod 70 2 1 1 1 1 -116.875 3 -59.5174 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree1_81 @tree1 @lod 70 2 1 1 1 1 -12.1044 3 -62.8837 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree1_81 ? assets\image\model\diffuse_map\tree1.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 0.75 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree1_81 model@tree1_81@aabb 0
-MODEL rock1_82 @rock1 @lod 70 2 1 1 1 1 -99.1423 3 21.1278 0 0 0 0 0 0 1.5 1.75 1.5 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL rock1_82 @rock1 @lod 70 2 1 1 1 1 55.9545 3 -29.3615 0 0 0 0 0 0 1.5 1.75 1.5 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART rock1_82 ? assets\image\model\diffuse_map\rock1.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB rock1_82 model@rock1_82@aabb 0
-MODEL tree1_83 @tree1 @lod 70 2 1 1 1 1 -50.058 3 24.1632 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree1_83 @tree1 @lod 70 2 1 1 1 1 44.9741 3 -73.9002 0 0 0 0 0 0 0.7 0.7 0.7 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree1_83 ? assets\image\model\diffuse_map\tree1.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 0.75 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree1_83 model@tree1_83@aabb 0
-MODEL rock2_85 @rock2 @lod 70 2 1 1 1 1 47.5083 3 63.1995 0 0 0 0 0 0 0.4 0.4 0.4 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL rock2_85 @rock2 @lod 70 2 1 1 1 1 61.8953 3 21.4068 0 0 0 0 0 0 0.4 0.4 0.4 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART rock2_85 ? assets\image\model\diffuse_map\rock2.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB rock2_85 model@rock2_85@aabb 0
-MODEL tree2_86 @tree2 @lod 70 2 1 1 1 1 63.623 3 18.5693 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree2_86 @tree2 @lod 70 2 1 1 1 1 -24.007 3 -14.2971 0 0 0 0 0 0 1.75 1.75 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree2_86 leaves assets\image\model\diffuse_map\tree2_leaves.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1.25 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree2_86 trunk assets\image\model\diffuse_map\tree2_trunk.tga ? ? ? ? ? 0 0 1 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree2_86 model@tree2_86@aabb 0
-MODEL rock3_88 @rock3 @lod 70 2 1 1 1 1 -25.8405 3 52.8458 0 0 0 0 0 0 1.75 1.5 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL rock3_88 @rock3 @lod 70 2 1 1 1 1 -33.45 3 86.0044 0 0 0 0 0 0 1.75 1.5 1.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART rock3_88 ? assets\image\model\diffuse_map\rock3.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB rock3_88 model@rock3_88@aabb 0
-MODEL tree3_89 @tree3 @lod 70 2 1 1 1 1 30.3165 3 109.075 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL tree3_89 @tree3 @lod 70 2 1 1 1 1 -79.9852 3 -16.8367 0 0 0 0 0 0 3 4 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART tree3_89 trunk assets\image\model\diffuse_map\tree3_trunk.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.1 1 1 1 2 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_PART tree3_89 leaves assets\image\model\diffuse_map\tree3_leaves.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1.5 1 1 1 1 0 0 1 1 0.1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB tree3_89 model@tree3_89@aabb 0
-MODEL apiarist @apiary ? 0 2 1 1 1 0 0 0 0 0 0 0 0 0 0 3 3 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
-MODEL_PART apiarist ? assets\image\model\diffuse_map\apiary.tga ? ? ? ? assets\image\model\normal_map\apiary.tga 0 0 1 0 0 2 10 0.5 0.5 0.2 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL apiarist @apiary ? 0 2 1 1 1 0 25.1636 1.58449 -9.79685 0 0 0 0 0 0 3 3 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL_PART apiarist ? assets\image\model\diffuse_map\apiary.tga ? ? ? ? assets\image\model\normal_map\apiary.tga 0 0 1 0 0 2 10 0.5 0.5 0.2 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB apiarist model@apiarist@aabb 0
-MODEL baker @bakery ? 0 2 1 1 1 0 0 0 0 0 0 0 0 0 0 0.4 0.4 0.4 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
-MODEL_PART baker foundation assets\image\model\diffuse_map\bakery_foundation.tga ? ? ? ? assets\image\model\normal_map\bakery_foundation.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART baker roof assets\image\model\diffuse_map\bakery_roof.tga ? ? ? ? assets\image\model\normal_map\bakery_roof.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART baker frame assets\image\model\diffuse_map\bakery_frame.tga ? ? ? ? assets\image\model\normal_map\bakery_frame.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART baker base assets\image\model\diffuse_map\bakery_base.tga ? ? ? ? assets\image\model\normal_map\bakery_base.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL baker @bakery ? 0 2 1 1 1 0 23.5045 2.68023 -8.78896 0 0 0 0 0 0 0.4 0.4 0.4 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL_PART baker foundation assets\image\model\diffuse_map\bakery_foundation.tga ? ? ? ? assets\image\model\normal_map\bakery_foundation.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART baker roof assets\image\model\diffuse_map\bakery_roof.tga ? ? ? ? assets\image\model\normal_map\bakery_roof.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART baker frame assets\image\model\diffuse_map\bakery_frame.tga ? ? ? ? assets\image\model\normal_map\bakery_frame.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART baker base assets\image\model\diffuse_map\bakery_base.tga ? ? ? ? assets\image\model\normal_map\bakery_base.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB baker model@baker@aabb 0
-MODEL barber @workshop2 ? 0 2 1 1 1 0 0 0 0 0 0 0 0 0 0 0.5 0.5 0.5 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
-MODEL_PART barber ? assets\image\model\diffuse_map\workshop2.tga ? ? ? ? assets\image\model\normal_map\workshop2.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL barber @workshop2 ? 0 2 1 1 1 0 22.2384 2.81587 -8.28655 0 0 0 0 0 0 0.5 0.5 0.5 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL_PART barber ? assets\image\model\diffuse_map\workshop2.tga ? ? ? ? assets\image\model\normal_map\workshop2.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB barber model@barber@aabb 0
-MODEL blacksmith @workshop3 ? 0 2 1 1 1 0 0 0 0 0 0 0 0 0 0 0.4 0.4 0.4 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
-MODEL_PART blacksmith wall1 assets\image\model\diffuse_map\workshop3_wall1.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall1.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART blacksmith wall4 assets\image\model\diffuse_map\workshop3_wall4.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall4.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART blacksmith floor assets\image\model\diffuse_map\workshop3_floor.tga ? ? ? ? assets\image\model\normal_map\workshop3_floor.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART blacksmith wall2 assets\image\model\diffuse_map\workshop3_wall2.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall2.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART blacksmith wall5 assets\image\model\diffuse_map\workshop3_wall5.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall5.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART blacksmith roof assets\image\model\diffuse_map\workshop3_roof.tga ? ? ? ? assets\image\model\normal_map\workshop3_roof.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART blacksmith frame assets\image\model\diffuse_map\workshop3_frame.tga ? ? ? ? assets\image\model\normal_map\workshop3_frame.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART blacksmith wall3 assets\image\model\diffuse_map\workshop3_wall3.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall3.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL blacksmith @workshop3 ? 0 2 1 1 1 0 20.9993 3.02047 -7.81151 0 0 0 0 0 0 0.4 0.4 0.4 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL_PART blacksmith wall1 assets\image\model\diffuse_map\workshop3_wall1.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall1.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART blacksmith wall4 assets\image\model\diffuse_map\workshop3_wall4.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall4.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART blacksmith floor assets\image\model\diffuse_map\workshop3_floor.tga ? ? ? ? assets\image\model\normal_map\workshop3_floor.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART blacksmith wall2 assets\image\model\diffuse_map\workshop3_wall2.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall2.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART blacksmith wall5 assets\image\model\diffuse_map\workshop3_wall5.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall5.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART blacksmith roof assets\image\model\diffuse_map\workshop3_roof.tga ? ? ? ? assets\image\model\normal_map\workshop3_roof.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART blacksmith frame assets\image\model\diffuse_map\workshop3_frame.tga ? ? ? ? assets\image\model\normal_map\workshop3_frame.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART blacksmith wall3 assets\image\model\diffuse_map\workshop3_wall3.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall3.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB blacksmith model@blacksmith@aabb1 0
 MODEL_AABB blacksmith model@blacksmith@aabb2 0
-MODEL bowyer @workshop3 ? 0 2 1 1 1 0 0 0 0 0 0 0 0 0 0 0.4 0.4 0.4 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
-MODEL_PART bowyer wall1 assets\image\model\diffuse_map\workshop3_wall1.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall1.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART bowyer wall4 assets\image\model\diffuse_map\workshop3_wall4.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall4.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART bowyer floor assets\image\model\diffuse_map\workshop3_floor.tga ? ? ? ? assets\image\model\normal_map\workshop3_floor.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART bowyer wall2 assets\image\model\diffuse_map\workshop3_wall2.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall2.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART bowyer wall5 assets\image\model\diffuse_map\workshop3_wall5.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall5.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART bowyer roof assets\image\model\diffuse_map\workshop3_roof.tga ? ? ? ? assets\image\model\normal_map\workshop3_roof.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART bowyer frame assets\image\model\diffuse_map\workshop3_frame.tga ? ? ? ? assets\image\model\normal_map\workshop3_frame.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART bowyer wall3 assets\image\model\diffuse_map\workshop3_wall3.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall3.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL bowyer @workshop3 ? 0 2 1 1 1 0 19.7954 3.00636 -7.4756 0 0 0 0 0 0 0.4 0.4 0.4 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL_PART bowyer wall1 assets\image\model\diffuse_map\workshop3_wall1.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall1.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART bowyer wall4 assets\image\model\diffuse_map\workshop3_wall4.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall4.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART bowyer floor assets\image\model\diffuse_map\workshop3_floor.tga ? ? ? ? assets\image\model\normal_map\workshop3_floor.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART bowyer wall2 assets\image\model\diffuse_map\workshop3_wall2.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall2.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART bowyer wall5 assets\image\model\diffuse_map\workshop3_wall5.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall5.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART bowyer roof assets\image\model\diffuse_map\workshop3_roof.tga ? ? ? ? assets\image\model\normal_map\workshop3_roof.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART bowyer frame assets\image\model\diffuse_map\workshop3_frame.tga ? ? ? ? assets\image\model\normal_map\workshop3_frame.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART bowyer wall3 assets\image\model\diffuse_map\workshop3_wall3.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall3.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB bowyer model@bowyer@aabb1 0
 MODEL_AABB bowyer model@bowyer@aabb2 0
-MODEL butcher @workshop2 ? 0 2 1 1 1 0 0 0 0 0 0 0 0 0 0 0.5 0.5 0.5 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
-MODEL_PART butcher ? assets\image\model\diffuse_map\workshop2.tga ? ? ? ? assets\image\model\normal_map\workshop2.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL butcher @workshop2 ? 0 2 1 1 1 0 0.835253 -0.036562 -4.80887 0 0 0 0 0 0 0.5 0.5 0.5 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL_PART butcher ? assets\image\model\diffuse_map\workshop2.tga ? ? ? ? assets\image\model\normal_map\workshop2.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB butcher model@butcher@aabb 0
-MODEL carpenter @workshop3 ? 0 2 1 1 1 0 0 0 0 0 0 0 0 0 0 0.4 0.4 0.4 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
-MODEL_PART carpenter wall1 assets\image\model\diffuse_map\workshop3_wall1.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall1.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART carpenter wall4 assets\image\model\diffuse_map\workshop3_wall4.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall4.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART carpenter floor assets\image\model\diffuse_map\workshop3_floor.tga ? ? ? ? assets\image\model\normal_map\workshop3_floor.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART carpenter wall2 assets\image\model\diffuse_map\workshop3_wall2.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall2.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART carpenter wall5 assets\image\model\diffuse_map\workshop3_wall5.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall5.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART carpenter roof assets\image\model\diffuse_map\workshop3_roof.tga ? ? ? ? assets\image\model\normal_map\workshop3_roof.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART carpenter frame assets\image\model\diffuse_map\workshop3_frame.tga ? ? ? ? assets\image\model\normal_map\workshop3_frame.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART carpenter wall3 assets\image\model\diffuse_map\workshop3_wall3.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall3.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL carpenter @workshop3 ? 0 2 1 1 1 0 -7.29451 -0.0365601 -4.14435 0 0 0 0 0 0 0.4 0.4 0.4 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL_PART carpenter wall1 assets\image\model\diffuse_map\workshop3_wall1.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall1.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART carpenter wall4 assets\image\model\diffuse_map\workshop3_wall4.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall4.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART carpenter floor assets\image\model\diffuse_map\workshop3_floor.tga ? ? ? ? assets\image\model\normal_map\workshop3_floor.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART carpenter wall2 assets\image\model\diffuse_map\workshop3_wall2.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall2.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART carpenter wall5 assets\image\model\diffuse_map\workshop3_wall5.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall5.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART carpenter roof assets\image\model\diffuse_map\workshop3_roof.tga ? ? ? ? assets\image\model\normal_map\workshop3_roof.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART carpenter frame assets\image\model\diffuse_map\workshop3_frame.tga ? ? ? ? assets\image\model\normal_map\workshop3_frame.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART carpenter wall3 assets\image\model\diffuse_map\workshop3_wall3.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall3.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB carpenter model@carpenter@aabb1 0
 MODEL_AABB carpenter model@carpenter@aabb2 0
-MODEL cattleman @pen ? 0 2 1 1 1 0 0 0 0 0 0 0 0 0 0 0.25 0.5 0.25 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
-MODEL_PART cattleman ? assets\image\model\diffuse_map\pen.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL cattleman @pen ? 0 2 1 1 1 0 -16.6508 1.3183 -3.33161 0 0 0 0 0 0 0.25 0.5 0.25 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL_PART cattleman ? assets\image\model\diffuse_map\pen.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB cattleman model@cattleman@aabb 0
-MODEL ditcher @workshop1 ? 0 2 1 1 1 0 0 0 0 0 0 0 0 0 0 1 1 1 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
-MODEL_PART ditcher doorframe assets\image\model\diffuse_map\workshop1_doorframe.tga ? ? ? ? assets\image\model\normal_map\workshop1_doorframe.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART ditcher walls assets\image\model\diffuse_map\workshop1_walls.tga ? ? ? ? assets\image\model\normal_map\workshop1_walls.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART ditcher floor assets\image\model\diffuse_map\workshop1_floor.tga ? ? ? ? assets\image\model\normal_map\workshop1_floor.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART ditcher window assets\image\model\diffuse_map\workshop1_window.tga ? ? ? ? assets\image\model\normal_map\workshop1_window.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART ditcher lid assets\image\model\diffuse_map\workshop1_lid.tga ? ? ? ? assets\image\model\normal_map\workshop1_lid.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART ditcher roof assets\image\model\diffuse_map\workshop1_roof.tga ? ? ? ? assets\image\model\normal_map\workshop1_roof.tga 0 0 1 0 0 2 10 0.5 0.5 0.4 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL ditcher @workshop1 ? 0 2 1 1 1 0 -21.438 2.96337 -2.94011 0 0 0 0 0 0 1 1 1 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL_PART ditcher doorframe assets\image\model\diffuse_map\workshop1_doorframe.tga ? ? ? ? assets\image\model\normal_map\workshop1_doorframe.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART ditcher walls assets\image\model\diffuse_map\workshop1_walls.tga ? ? ? ? assets\image\model\normal_map\workshop1_walls.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART ditcher floor assets\image\model\diffuse_map\workshop1_floor.tga ? ? ? ? assets\image\model\normal_map\workshop1_floor.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART ditcher window assets\image\model\diffuse_map\workshop1_window.tga ? ? ? ? assets\image\model\normal_map\workshop1_window.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART ditcher lid assets\image\model\diffuse_map\workshop1_lid.tga ? ? ? ? assets\image\model\normal_map\workshop1_lid.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART ditcher roof assets\image\model\diffuse_map\workshop1_roof.tga ? ? ? ? assets\image\model\normal_map\workshop1_roof.tga 0 0 1 0 0 2 10 0.5 0.5 0.4 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB ditcher model@ditcher@aabb 0
-MODEL farmer @farmland ? 0 2 1 1 1 0 0 0 0 0 0 0 0 0 0 0.5 0.5 0.5 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
-MODEL_PART farmer soil assets\image\model\diffuse_map\storage_doorhandle.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 4 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART farmer logs assets\image\model\diffuse_map\farmland_logs.tga ? ? ? ? assets\image\model\normal_map\farmland_logs.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL farmer @farmland ? 0 2 1 1 1 0 -28.4852 2.98509 -3.5051 0 0 0 0 0 0 0.5 0.5 0.5 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL_PART farmer soil assets\image\model\diffuse_map\storage_doorhandle.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 0.5 0 0 4 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART farmer logs assets\image\model\diffuse_map\farmland_logs.tga ? ? ? ? assets\image\model\normal_map\farmland_logs.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB farmer model@farmer@aabb 0
-MODEL house @house ? 0 2 1 1 1 0 0 0 0 0 0 0 0 0 0 3 3 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
-MODEL_PART house windows assets\image\model\diffuse_map\house_windows.tga ? ? ? ? ? 0 0 1 0 0 16 10 0.5 0.5 1 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART house planes assets\image\model\diffuse_map\house_planes.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART house walls assets\image\model\diffuse_map\house_walls.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.3 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART house frame assets\image\model\diffuse_map\house_frame.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART house door assets\image\model\diffuse_map\house_door.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART house chimney assets\image\model\diffuse_map\house_chimney.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.2 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART house roof assets\image\model\diffuse_map\house_roof.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 2 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL house @house ? 0 2 1 1 1 0 -31.1435 3.02663 -5.03066 0 0 0 0 0 0 3 3 3 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL_PART house windows assets\image\model\diffuse_map\house_windows.tga ? ? ? ? ? 0 0 1 0 0 16 10 0.5 0.5 1 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART house planes assets\image\model\diffuse_map\house_planes.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART house walls assets\image\model\diffuse_map\house_walls.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.3 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART house frame assets\image\model\diffuse_map\house_frame.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART house door assets\image\model\diffuse_map\house_door.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART house chimney assets\image\model\diffuse_map\house_chimney.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.2 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART house roof assets\image\model\diffuse_map\house_roof.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.5 0 0.4 0 2 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB house model@house@aabb1 0
 MODEL_AABB house model@house@aabb2 0
-MODEL feller @workshop1 ? 0 2 1 1 1 0 0 0 0 0 0 0 0 0 0 1 1 1 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
-MODEL_PART feller doorframe assets\image\model\diffuse_map\workshop1_doorframe.tga ? ? ? ? assets\image\model\normal_map\workshop1_doorframe.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART feller walls assets\image\model\diffuse_map\workshop1_walls.tga ? ? ? ? assets\image\model\normal_map\workshop1_walls.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART feller floor assets\image\model\diffuse_map\workshop1_floor.tga ? ? ? ? assets\image\model\normal_map\workshop1_floor.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART feller window assets\image\model\diffuse_map\workshop1_window.tga ? ? ? ? assets\image\model\normal_map\workshop1_window.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART feller lid assets\image\model\diffuse_map\workshop1_lid.tga ? ? ? ? assets\image\model\normal_map\workshop1_lid.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART feller roof assets\image\model\diffuse_map\workshop1_roof.tga ? ? ? ? assets\image\model\normal_map\workshop1_roof.tga 0 0 1 0 0 2 10 0.5 0.5 0.4 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL feller @workshop1 ? 0 2 1 1 1 0 -30.8743 3.02151 -4.58476 0 0 0 0 0 0 1 1 1 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL_PART feller doorframe assets\image\model\diffuse_map\workshop1_doorframe.tga ? ? ? ? assets\image\model\normal_map\workshop1_doorframe.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART feller walls assets\image\model\diffuse_map\workshop1_walls.tga ? ? ? ? assets\image\model\normal_map\workshop1_walls.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART feller floor assets\image\model\diffuse_map\workshop1_floor.tga ? ? ? ? assets\image\model\normal_map\workshop1_floor.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART feller window assets\image\model\diffuse_map\workshop1_window.tga ? ? ? ? assets\image\model\normal_map\workshop1_window.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART feller lid assets\image\model\diffuse_map\workshop1_lid.tga ? ? ? ? assets\image\model\normal_map\workshop1_lid.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART feller roof assets\image\model\diffuse_map\workshop1_roof.tga ? ? ? ? assets\image\model\normal_map\workshop1_roof.tga 0 0 1 0 0 2 10 0.5 0.5 0.4 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB feller model@feller@aabb 0
-MODEL fisherman @workshop1 ? 0 2 1 1 1 0 0 0 0 0 0 0 0 0 0 1 1 1 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
-MODEL_PART fisherman doorframe assets\image\model\diffuse_map\workshop1_doorframe.tga ? ? ? ? assets\image\model\normal_map\workshop1_doorframe.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART fisherman walls assets\image\model\diffuse_map\workshop1_walls.tga ? ? ? ? assets\image\model\normal_map\workshop1_walls.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART fisherman floor assets\image\model\diffuse_map\workshop1_floor.tga ? ? ? ? assets\image\model\normal_map\workshop1_floor.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART fisherman window assets\image\model\diffuse_map\workshop1_window.tga ? ? ? ? assets\image\model\normal_map\workshop1_window.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART fisherman lid assets\image\model\diffuse_map\workshop1_lid.tga ? ? ? ? assets\image\model\normal_map\workshop1_lid.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART fisherman roof assets\image\model\diffuse_map\workshop1_roof.tga ? ? ? ? assets\image\model\normal_map\workshop1_roof.tga 0 0 1 0 0 2 10 0.5 0.5 0.4 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL fisherman @workshop1 ? 0 2 1 1 1 0 -30.9811 3.02151 -4.60751 0 0 0 0 0 0 1 1 1 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL_PART fisherman doorframe assets\image\model\diffuse_map\workshop1_doorframe.tga ? ? ? ? assets\image\model\normal_map\workshop1_doorframe.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART fisherman walls assets\image\model\diffuse_map\workshop1_walls.tga ? ? ? ? assets\image\model\normal_map\workshop1_walls.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART fisherman floor assets\image\model\diffuse_map\workshop1_floor.tga ? ? ? ? assets\image\model\normal_map\workshop1_floor.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART fisherman window assets\image\model\diffuse_map\workshop1_window.tga ? ? ? ? assets\image\model\normal_map\workshop1_window.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART fisherman lid assets\image\model\diffuse_map\workshop1_lid.tga ? ? ? ? assets\image\model\normal_map\workshop1_lid.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART fisherman roof assets\image\model\diffuse_map\workshop1_roof.tga ? ? ? ? assets\image\model\normal_map\workshop1_roof.tga 0 0 1 0 0 2 10 0.5 0.5 0.4 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB fisherman model@fisherman@aabb 0
-MODEL gatherer @workshop1 ? 0 2 1 1 1 0 0 0 0 0 0 0 0 0 0 1 1 1 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
-MODEL_PART gatherer doorframe assets\image\model\diffuse_map\workshop1_doorframe.tga ? ? ? ? assets\image\model\normal_map\workshop1_doorframe.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART gatherer walls assets\image\model\diffuse_map\workshop1_walls.tga ? ? ? ? assets\image\model\normal_map\workshop1_walls.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART gatherer floor assets\image\model\diffuse_map\workshop1_floor.tga ? ? ? ? assets\image\model\normal_map\workshop1_floor.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART gatherer window assets\image\model\diffuse_map\workshop1_window.tga ? ? ? ? assets\image\model\normal_map\workshop1_window.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART gatherer lid assets\image\model\diffuse_map\workshop1_lid.tga ? ? ? ? assets\image\model\normal_map\workshop1_lid.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
-MODEL_PART gatherer roof assets\image\model\diffuse_map\workshop1_roof.tga ? ? ? ? assets\image\model\normal_map\workshop1_roof.tga 0 0 1 0 0 2 10 0.5 0.5 0.4 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL gatherer @workshop1 ? 0 2 1 1 1 0 -31.1407 3.02663 -5.03006 0 0 0 0 0 0 1 1 1 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL_PART gatherer doorframe assets\image\model\diffuse_map\workshop1_doorframe.tga ? ? ? ? assets\image\model\normal_map\workshop1_doorframe.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART gatherer walls assets\image\model\diffuse_map\workshop1_walls.tga ? ? ? ? assets\image\model\normal_map\workshop1_walls.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART gatherer floor assets\image\model\diffuse_map\workshop1_floor.tga ? ? ? ? assets\image\model\normal_map\workshop1_floor.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART gatherer window assets\image\model\diffuse_map\workshop1_window.tga ? ? ? ? assets\image\model\normal_map\workshop1_window.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART gatherer lid assets\image\model\diffuse_map\workshop1_lid.tga ? ? ? ? assets\image\model\normal_map\workshop1_lid.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_PART gatherer roof assets\image\model\diffuse_map\workshop1_roof.tga ? ? ? ? assets\image\model\normal_map\workshop1_roof.tga 0 0 1 0 0 2 10 0.5 0.5 0.4 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB gatherer model@gatherer@aabb 0
-MODEL grave @grave ? 0 2 1 1 1 0 0 0 0 0 0 0 0 0 0 0.75 0.75 0.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
-MODEL_PART grave ? assets\image\model\diffuse_map\grave.tga ? ? ? ? assets\image\model\normal_map\grave.tga 0 0 1 0 0 2 10 0.5 0.5 0.3 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL grave @grave ? 0 2 1 1 1 0 -31.1433 3.02663 -5.03062 0 0 0 0 0 0 0.75 0.75 0.75 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL_PART grave ? assets\image\model\diffuse_map\grave.tga ? ? ? ? assets\image\model\normal_map\grave.tga 0 0 1 0 0 2 10 0.5 0.5 0.3 0 0.4 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB grave model@grave@aabb 0
 MODEL weaver @workshop2 ? 0 2 1 1 1 0 0 0 0 0 0 0 0 0 0 0.5 0.5 0.5 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART weaver ? assets\image\model\diffuse_map\workshop2.tga ? ? ? ? assets\image\model\normal_map\workshop2.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB weaver model@weaver@aabb 0
-MODEL herbalist @workshop2 ? 0 2 1 1 1 0 0 0 0 0 0 0 0 0 0 0.5 0.5 0.5 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
-MODEL_PART herbalist ? assets\image\model\diffuse_map\workshop2.tga ? ? ? ? assets\image\model\normal_map\workshop2.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL herbalist @workshop2 ? 0 2 1 1 1 0 -5.34072 -0.00461006 -14.5176 0 0 0 0 0 0 0.5 0.5 0.5 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL_PART herbalist ? assets\image\model\diffuse_map\workshop2.tga ? ? ? ? assets\image\model\normal_map\workshop2.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 0.5 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB herbalist model@herbalist@aabb 0
 MODEL hunter @workshop1 ? 0 2 1 1 1 0 0 0 0 0 0 0 0 0 0 1 1 1 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
 MODEL_PART hunter doorframe assets\image\model\diffuse_map\workshop1_doorframe.tga ? ? ? ? assets\image\model\normal_map\workshop1_doorframe.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
@@ -603,6 +603,9 @@ MODEL_PART roofer_3 frame assets\image\model\diffuse_map\workshop3_frame.tga ? ?
 MODEL_PART roofer_3 wall3 assets\image\model\diffuse_map\workshop3_wall3.tga ? ? ? ? assets\image\model\normal_map\workshop3_wall3.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
 MODEL_AABB roofer_3 model@roofer_3@aabb1 0
 MODEL_AABB roofer_3 model@roofer_3@aabb2 0
+MODEL herbalist_4 @workshop2 ? 0 2 1 1 1 1 -31.4366 2.99922 -6.26089 0 0 0 0 0 0 0.5 0.5 0.5 -3.40282e+38 -3.40282e+38 -3.40282e+38 3.40282e+38 3.40282e+38 3.40282e+38
+MODEL_PART herbalist_4 ? assets\image\model\diffuse_map\workshop2.tga ? ? ? ? assets\image\model\normal_map\workshop2.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1
+MODEL_AABB herbalist_4 model@herbalist_4@aabb 0
 GRAPHICS_AMBIENT_LIGHTING 1 1 1 0.1
 GRAPHICS_DIRECTIONAL_LIGHTING 1024 1024 1024 1 1 1 1
 GRAPHICS_SHADOWS 120 0.25 60 60 60 0 0 0 1 0 1 25 1 4096 0.0002

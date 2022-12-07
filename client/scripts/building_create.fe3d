@@ -226,7 +226,7 @@ ELIF _placedBuildingType IS "storage"
     ADD _maxFruit 10
     ADD _maxRawMeat 10
     ADD _maxRawFish 10
-    ADD _maxLumber 10
+    ADD _maxWood 10
     ADD _maxPlanks 10
     ADD _maxFirewood 10
     ADD _maxStone 10

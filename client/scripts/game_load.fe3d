@@ -117,7 +117,7 @@ DEF STR totalHoney = lines[42]
 DEF STR totalFruit = lines[43]
 DEF STR totalRawFish = lines[44]
 DEF STR totalRawMeat = lines[45]
-DEF STR totalLumber = lines[46]
+DEF STR totalWood = lines[46]
 DEF STR totalPlanks = lines[47]
 DEF STR totalFirewood = lines[48]
 DEF STR totalStone = lines[49]
@@ -151,7 +151,7 @@ DEF STR maxHoney = lines[76]
 DEF STR maxFruit = lines[77]
 DEF STR maxRawMeat = lines[78]
 DEF STR maxRawFish = lines[79]
-DEF STR maxLumber = lines[80]
+DEF STR maxWood = lines[80]
 DEF STR maxPlanks = lines[81]
 DEF STR maxFirewood = lines[82]
 DEF STR maxStone = lines[83]
@@ -185,7 +185,7 @@ CAST totalHoney INT
 CAST totalFruit INT
 CAST totalRawMeat INT
 CAST totalRawFish INT
-CAST totalLumber INT
+CAST totalWood INT
 CAST totalPlanks INT
 CAST totalFirewood INT
 CAST totalStone INT
@@ -219,7 +219,7 @@ CAST maxHoney INT
 CAST maxFruit INT
 CAST maxRawMeat INT
 CAST maxRawFish INT
-CAST maxLumber INT
+CAST maxWood INT
 CAST maxPlanks INT
 CAST maxFirewood INT
 CAST maxStone INT
@@ -253,7 +253,7 @@ ALT _totalHoney = totalHoney
 ALT _totalFruit = totalFruit
 ALT _totalRawFish = totalRawFish
 ALT _totalRawMeat = totalRawMeat
-ALT _totalLumber = totalLumber
+ALT _totalWood = totalWood
 ALT _totalPlanks = totalPlanks
 ALT _totalFirewood = totalFirewood
 ALT _totalStone = totalStone
@@ -287,7 +287,7 @@ ALT _maxHoney = maxHoney
 ALT _maxFruit = maxFruit
 ALT _maxRawFish = maxRawFish
 ALT _maxRawMeat = maxRawMeat
-ALT _maxLumber = maxLumber
+ALT _maxWood = maxWood
 ALT _maxPlanks = maxPlanks
 ALT _maxFirewood = maxFirewood
 ALT _maxStone = maxStone
