@@ -1,9 +1,9 @@
-14 52
+4 38
 META script_type_initialize
 META script_state_waiting
 
 /// Finals
-DEF GLB FIN INT _gathererInterval = 750
+DEF GLB FIN INT _gathererInterval = 75
 DEF FIN STR workerText = "No worker available"
 
 /// Non-finals

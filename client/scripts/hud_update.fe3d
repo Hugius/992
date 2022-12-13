@@ -1,4 +1,4 @@
-44 21
+0 0
 META script_type_update
 META script_state_waiting
 
@@ -138,75 +138,3 @@ fe3d:text2d_set_color("total_tools", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_bows", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_arrows", 0.0, 0.0, 0.0)
 fe3d:text2d_set_color("total_fishingnets", 0.0, 0.0, 0.0)
-
-/// Set food custom color
-IF _totalAle IS _maxAle
-    fe3d:text2d_set_color("total_ale", 0.5, 0.0, 0.0)
-IF _totalMilk IS _maxMilk
-    fe3d:text2d_set_color("total_milk", 0.5, 0.0, 0.0)
-IF _totalSmokedMeat IS _maxSmokedMeat
-    fe3d:text2d_set_color("total_smokedmeat", 0.5, 0.0, 0.0)
-IF _totalSmokedFish IS _maxSmokedFish
-    fe3d:text2d_set_color("total_smokedfish", 0.5, 0.0, 0.0)
-IF _totalBread IS _maxBread
-    fe3d:text2d_set_color("total_bread", 0.5, 0.0, 0.0)
-IF _totalEggs IS _maxEggs
-    fe3d:text2d_set_color("total_eggs", 0.5, 0.0, 0.0)
-IF _totalHoney IS _maxHoney
-    fe3d:text2d_set_color("total_honey", 0.5, 0.0, 0.0)
-IF _totalFruit IS _maxFruit
-    fe3d:text2d_set_color("total_fruit", 0.5, 0.0, 0.0)
-IF _totalRawMeat IS _maxRawMeat
-    fe3d:text2d_set_color("total_rawmeat", 0.5, 0.0, 0.0)
-IF _totalRawFish IS _maxRawFish
-    fe3d:text2d_set_color("total_rawfish", 0.5, 0.0, 0.0)
-
-/// Set resources custom color
-IF _totalWood IS _maxWood
-    fe3d:text2d_set_color("total_wood", 0.5, 0.0, 0.0)
-IF _totalPlanks IS _maxPlanks
-    fe3d:text2d_set_color("total_planks", 0.5, 0.0, 0.0)
-IF _totalFirewood IS _maxFirewood
-    fe3d:text2d_set_color("total_firewood", 0.5, 0.0, 0.0)
-IF _totalStone IS _maxStone
-    fe3d:text2d_set_color("total_stone", 0.5, 0.0, 0.0)
-IF _totalBricks IS _maxBricks
-    fe3d:text2d_set_color("total_bricks", 0.5, 0.0, 0.0)
-IF _totalClay IS _maxClay
-    fe3d:text2d_set_color("total_clay", 0.5, 0.0, 0.0)
-IF _totalStraw IS _maxStraw
-    fe3d:text2d_set_color("total_straw", 0.5, 0.0, 0.0)
-IF _totalCoal IS _maxCoal
-    fe3d:text2d_set_color("total_coal", 0.5, 0.0, 0.0)
-IF _totalOre IS _maxOre
-    fe3d:text2d_set_color("total_ore", 0.5, 0.0, 0.0)
-IF _totalIron IS _maxIron
-    fe3d:text2d_set_color("total_iron", 0.5, 0.0, 0.0)
-IF _totalSeeds IS _maxSeeds
-    fe3d:text2d_set_color("total_seeds", 0.5, 0.0, 0.0)
-IF _totalGrain IS _maxGrain
-    fe3d:text2d_set_color("total_grain", 0.5, 0.0, 0.0)
-IF _totalFlour IS _maxFlour
-    fe3d:text2d_set_color("total_flour", 0.5, 0.0, 0.0)
-IF _totalFeathers IS _maxFeathers
-    fe3d:text2d_set_color("total_feathers", 0.5, 0.0, 0.0)
-IF _totalHides IS _maxHides
-    fe3d:text2d_set_color("total_hides", 0.5, 0.0, 0.0)
-IF _totalLeather IS _maxLeather
-    fe3d:text2d_set_color("total_leather", 0.5, 0.0, 0.0)
-IF _totalWool IS _maxWool
-    fe3d:text2d_set_color("total_wool", 0.5, 0.0, 0.0)
-IF _totalClothes IS _maxClothes
-    fe3d:text2d_set_color("total_clothes", 0.5, 0.0, 0.0)
-IF _totalMushrooms IS _maxMushrooms
-    fe3d:text2d_set_color("total_mushrooms", 0.5, 0.0, 0.0)
-IF _totalMedicine IS _maxMedicine
-    fe3d:text2d_set_color("total_medicine", 0.5, 0.0, 0.0)
-IF _totalTools IS _maxTools
-    fe3d:text2d_set_color("total_tools", 0.5, 0.0, 0.0)
-IF _totalBows IS _maxBows
-    fe3d:text2d_set_color("total_bows", 0.5, 0.0, 0.0)
-IF _totalArrows IS _maxArrows
-    fe3d:text2d_set_color("total_arrows", 0.5, 0.0, 0.0)
-IF _totalFishingNets IS _maxFishingNets
-    fe3d:text2d_set_color("total_fishingnets", 0.5, 0.0, 0.0)

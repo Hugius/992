@@ -1,4 +1,4 @@
-45 50
+17 25
 META script_type_update
 META script_state_waiting
 
@@ -17,6 +17,14 @@ IF buildingId NOT "" AND _buildMode IS <false>
     DEF STR buildingType = splitPlacedId[0]
     DEF BOL contains = misc:list_contains("_buildingTypes", buildingType)
     IF contains IS <true>
+        ALT hovered = <true>
+    ELIF buildingType IS "carpenter"
+        ALT hovered = <true>
+    ELIF buildingType IS "mason"
+        ALT hovered = <true>
+    ELIF buildingType IS "roofer"
+        ALT hovered = <true>
+    ELIF buildingType IS "storage"
         ALT hovered = <true>
 
 /// Update GUI

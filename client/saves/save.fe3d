@@ -1,66 +1,40 @@
--25.753971
+51.236950
 17.500000
--0.662801
-220.000000
+23.442820
+220.000046
 -70.000000
+0.009090
+0.000430
 -0.000000
-0.000000
-0.000000
-{"Leofric", "Aelfflaed", "Eadwine", "Aelfwynn", "Leofric", "Aethelflaed", "Osferth", "Eanflaed", "Beocca", "Ecgwynn"}
+{"Aethelstan", "Aebbe", "Leofric", "Aethelswith", "Aethelstan", "Eadburh", "Wihtgar", "Mildburh", "Aethelstan", "Aelfwynn"}
 {"MALE", "FEMALE", "MALE", "FEMALE", "MALE", "FEMALE", "MALE", "FEMALE", "MALE", "FEMALE"}
+{<true>, <true>, <false>, <true>, <true>, <true>, <true>, <true>, <true>, <true>}
 {<true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>}
-{<true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>}
-{"carpenter_1", "mason_2", "roofer_3", "herbalist_4", "", "", "", "", "", ""}
+{"", "", "", "", "", "", "", "", "", ""}
 {"", "", "", "", "", "", "", "", "", ""}
 0
-1
-45
-750
+4
+1047
+1500
 0
 1
 5
 5
 15
 <false>
-{"storage_0", "carpenter_1", "mason_2", "roofer_3", "herbalist_4"}
-{"storage", "carpenter", "mason", "roofer", "herbalist"}
+{}
+{}
 
 
-herbalist_4
-herbalist
-herbalist_4
-herbalist
-16
-5
+
+
+
+
+0
+4
 <false>
 <false>
-49
-0
-0
-0
-49
-0
-0
-0
-0
-0
-0
-17
-0
-0
-10
-3
-10
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
+6
 0
 0
 0
@@ -68,40 +42,32 @@ herbalist
 0
 0
 0
-100
-100
-100
-100
-100
-100
-100
-100
-100
-100
-100
-100
-100
-100
-100
-100
-100
-100
-100
-100
-100
-100
-100
-100
-100
-100
-100
-100
-100
-100
+0
+0
+0
+10
+0
+0
 10
 10
-50
 10
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+7
+0
+0
+0
 {}
 {}
 {}
@@ -115,7 +81,6 @@ herbalist
 {}
 {}
 {}
-{"carpenter_1"}
 {}
 {}
 {}
@@ -132,8 +97,6 @@ herbalist
 {}
 {}
 {}
-{"herbalist_4"}
-{0}
 {}
 {}
 {}
@@ -141,7 +104,6 @@ herbalist
 {}
 {}
 {}
-{"mason_2"}
 {}
 {}
 {}
@@ -154,7 +116,6 @@ herbalist
 {}
 {}
 {}
-{"roofer_3"}
 {}
 {}
 {}
@@ -165,7 +126,6 @@ herbalist
 {}
 {}
 {}
-{"storage_0"}
 {}
 {}
 {}
@@ -176,11 +136,15 @@ herbalist
 {}
 {}
 {}
-{"Aelfflaed became mason", "Eadwine was born", "Eadwine became roofer", "Aelfwynn was born", "Leofric was born", "Aethelflaed was born", "Osferth was born", "Eanflaed was born", "Beocca was born", "Ecgwynn was born", "Aelfwynn became herbalist"}
-{"roofer_3", "carpenter_1", "mason_2"}
+{}
+{}
+{}
+{}
+{}
+{}
 {}
 {}
 {}
 ARROW
-0.040001
-796
+0.000000
+7051

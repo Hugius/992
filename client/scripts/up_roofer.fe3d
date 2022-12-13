@@ -4,30 +4,10 @@ META script_state_waiting
 
 /// Hide GUI
 IF _lastSelectedBuildingType IS "roofer" OR _firstUpdate IS <true>
-    fe3d:quad2d_set_visible("roofer_worker", <false>)
-    fe3d:quad2d_set_visible("roofer_tool", <false>)
     fe3d:quad2d_set_visible("roofer_info", <false>)
-    fe3d:text2d_set_visible("roofer_worker", <false>)
-    fe3d:text2d_set_visible("roofer_tool", <false>)
     fe3d:text2d_set_visible("roofer_info", <false>)
 
 /// Show GUI
 IF _selectedBuildingType IS "roofer"
-    DEF BOL hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
-    DEF BOL hasTool = misc:list_contains("_toolBuildingIds", _selectedBuildingId)
-    IF hasWorker IS <true>
-        IF hasTool IS <true>
-            fe3d:quad2d_set_visible("roofer_info", <true>)
-            fe3d:text2d_set_visible("roofer_info", <true>)
-        ELSE
-            fe3d:quad2d_set_visible("roofer_tool", <true>)
-            fe3d:text2d_set_visible("roofer_tool", <true>)
-            IF _totalTools MORE 0
-                ALT _cursorType = "HAND"
-                DEF BOL isLmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
-                IF isLmbClicked IS <true>
-                    SUB _totalTools 1
-                    PUSH _toolBuildingIds _selectedBuildingId
-    ELSE
-        fe3d:quad2d_set_visible("roofer_worker", <true>)
-        fe3d:text2d_set_visible("roofer_worker", <true>)
+    fe3d:quad2d_set_visible("roofer_info", <true>)
+    fe3d:text2d_set_visible("roofer_info", <true>)

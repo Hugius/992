@@ -141,40 +141,6 @@ DEF STR totalTools = lines[66]
 DEF STR totalBows = lines[67]
 DEF STR totalArrows = lines[68]
 DEF STR totalFishingNets = lines[69]
-DEF STR maxAle = lines[70]
-DEF STR maxMilk = lines[71]
-DEF STR maxSmokedMeat = lines[72]
-DEF STR maxSmokedFish = lines[73]
-DEF STR maxBread = lines[74]
-DEF STR maxEggs = lines[75]
-DEF STR maxHoney = lines[76]
-DEF STR maxFruit = lines[77]
-DEF STR maxRawMeat = lines[78]
-DEF STR maxRawFish = lines[79]
-DEF STR maxWood = lines[80]
-DEF STR maxPlanks = lines[81]
-DEF STR maxFirewood = lines[82]
-DEF STR maxStone = lines[83]
-DEF STR maxBricks = lines[84]
-DEF STR maxClay = lines[85]
-DEF STR maxStraw = lines[86]
-DEF STR maxCoal = lines[87]
-DEF STR maxOre = lines[88]
-DEF STR maxIron = lines[89]
-DEF STR maxSeeds = lines[90]
-DEF STR maxGrain = lines[91]
-DEF STR maxFlour = lines[92]
-DEF STR maxFeathers = lines[93]
-DEF STR maxHides = lines[94]
-DEF STR maxLeather = lines[95]
-DEF STR maxWool = lines[96]
-DEF STR maxClothes = lines[97]
-DEF STR maxMushrooms = lines[98]
-DEF STR maxMedicine = lines[99]
-DEF STR maxTools = lines[100]
-DEF STR maxBows = lines[101]
-DEF STR maxArrows = lines[102]
-DEF STR maxFishingNets = lines[103]
 CAST totalAle INT
 CAST totalMilk INT
 CAST totalSmokedMeat INT
@@ -209,40 +175,6 @@ CAST totalTools INT
 CAST totalBows INT
 CAST totalArrows INT
 CAST totalFishingNets INT
-CAST maxAle INT
-CAST maxMilk INT
-CAST maxSmokedMeat INT
-CAST maxSmokedFish INT
-CAST maxBread INT
-CAST maxEggs INT
-CAST maxHoney INT
-CAST maxFruit INT
-CAST maxRawMeat INT
-CAST maxRawFish INT
-CAST maxWood INT
-CAST maxPlanks INT
-CAST maxFirewood INT
-CAST maxStone INT
-CAST maxBricks INT
-CAST maxClay INT
-CAST maxStraw INT
-CAST maxCoal INT
-CAST maxOre INT
-CAST maxIron INT
-CAST maxSeeds INT
-CAST maxGrain INT
-CAST maxFlour INT
-CAST maxFeathers INT
-CAST maxHides INT
-CAST maxLeather INT
-CAST maxWool INT
-CAST maxClothes INT
-CAST maxMushrooms INT
-CAST maxMedicine INT
-CAST maxTools INT
-CAST maxBows INT
-CAST maxArrows INT
-CAST maxFishingNets INT
 ALT _totalAle = totalAle
 ALT _totalMilk = totalMilk
 ALT _totalSmokedMeat = totalSmokedMeat
@@ -277,116 +209,80 @@ ALT _totalTools = totalTools
 ALT _totalBows = totalBows
 ALT _totalArrows = totalArrows
 ALT _totalFishingNets = totalFishingNets
-ALT _maxAle = maxAle
-ALT _maxMilk = maxMilk
-ALT _maxSmokedMeat = maxSmokedMeat
-ALT _maxSmokedFish = maxSmokedFish
-ALT _maxBread = maxBread
-ALT _maxEggs = maxEggs
-ALT _maxHoney = maxHoney
-ALT _maxFruit = maxFruit
-ALT _maxRawFish = maxRawFish
-ALT _maxRawMeat = maxRawMeat
-ALT _maxWood = maxWood
-ALT _maxPlanks = maxPlanks
-ALT _maxFirewood = maxFirewood
-ALT _maxStone = maxStone
-ALT _maxBricks = maxBricks
-ALT _maxClay = maxClay
-ALT _maxStraw = maxStraw
-ALT _maxCoal = maxCoal
-ALT _maxOre = maxOre
-ALT _maxIron = maxIron
-ALT _maxSeeds = maxSeeds
-ALT _maxGrain = maxGrain
-ALT _maxFlour = maxFlour
-ALT _maxFeathers = maxFeathers
-ALT _maxHides = maxHides
-ALT _maxLeather = maxLeather
-ALT _maxWool = maxWool
-ALT _maxClothes = maxClothes
-ALT _maxMushrooms = maxMushrooms
-ALT _maxMedicine = maxMedicine
-ALT _maxTools = maxTools
-ALT _maxBows = maxBows
-ALT _maxArrows = maxArrows
-ALT _maxFishingNets = maxFishingNets
 
 /// Load jobs
-DEF LST apiaristIds = misc:string_to_list(lines[104])
-DEF LST apiaristTimers = misc:string_to_list(lines[105])
-DEF LST bakerIds = misc:string_to_list(lines[106])
-DEF LST bakerTimers = misc:string_to_list(lines[107])
-DEF LST barberIds = misc:string_to_list(lines[108])
-DEF LST blacksmithIds = misc:string_to_list(lines[109])
-DEF LST blacksmithTimers = misc:string_to_list(lines[110])
-DEF LST bowyerIds = misc:string_to_list(lines[111])
-DEF LST bowyerTimers = misc:string_to_list(lines[112])
-DEF LST brewerIds = misc:string_to_list(lines[113])
-DEF LST brewerTimers = misc:string_to_list(lines[114])
-DEF LST butcherIds = misc:string_to_list(lines[115])
-DEF LST butcherTimers = misc:string_to_list(lines[116])
-DEF LST carpenterIds = misc:string_to_list(lines[117])
-DEF LST cattlemanIds = misc:string_to_list(lines[118])
-DEF LST cattlemanGrowths = misc:string_to_list(lines[119])
-DEF LST cattlemanTimers = misc:string_to_list(lines[120])
-DEF LST ditcherIds = misc:string_to_list(lines[121])
-DEF LST ditcherTimers = misc:string_to_list(lines[122])
-DEF LST farmerIds = misc:string_to_list(lines[123])
-DEF LST farmerGrowths = misc:string_to_list(lines[124])
-DEF LST fellerIds = misc:string_to_list(lines[125])
-DEF LST fellerTimers = misc:string_to_list(lines[126])
-DEF LST fishermanIds = misc:string_to_list(lines[127])
-DEF LST fishermanTimers = misc:string_to_list(lines[128])
-DEF LST fletcherIds = misc:string_to_list(lines[129])
-DEF LST fletcherTimers = misc:string_to_list(lines[130])
-DEF LST gathererIds = misc:string_to_list(lines[131])
-DEF LST gathererTimers = misc:string_to_list(lines[132])
-DEF LST graveIds = misc:string_to_list(lines[133])
-DEF LST herbalistIds = misc:string_to_list(lines[134])
-DEF LST herbalistTimers = misc:string_to_list(lines[135])
-DEF LST hewerIds = misc:string_to_list(lines[136])
-DEF LST hewerTimers = misc:string_to_list(lines[137])
-DEF LST houseIds = misc:string_to_list(lines[138])
-DEF LST houseTimers = misc:string_to_list(lines[139])
-DEF LST houseBirths = misc:string_to_list(lines[140])
-DEF LST hunterIds = misc:string_to_list(lines[141])
-DEF LST hunterTimers = misc:string_to_list(lines[142])
-DEF LST masonIds = misc:string_to_list(lines[143])
-DEF LST millerIds = misc:string_to_list(lines[144])
-DEF LST millerTimers = misc:string_to_list(lines[145])
-DEF LST minerIds = misc:string_to_list(lines[146])
-DEF LST minerTimers = misc:string_to_list(lines[147])
-DEF LST nightmanIds = misc:string_to_list(lines[148])
-DEF LST orchardistIds = misc:string_to_list(lines[149])
-DEF LST orchardistGrowths = misc:string_to_list(lines[150])
-DEF LST orchardistTimers = misc:string_to_list(lines[151])
-DEF LST poultrymanIds = misc:string_to_list(lines[152])
-DEF LST poultrymanGrowths = misc:string_to_list(lines[153])
-DEF LST poultrymanTimers = misc:string_to_list(lines[154])
-DEF LST priestIds = misc:string_to_list(lines[155])
-DEF LST rooferIds = misc:string_to_list(lines[156])
-DEF LST roperIds = misc:string_to_list(lines[157])
-DEF LST roperTimers = misc:string_to_list(lines[158])
-DEF LST shepherdIds = misc:string_to_list(lines[159])
-DEF LST shepherdGrowths = misc:string_to_list(lines[160])
-DEF LST shepherdTimers = misc:string_to_list(lines[161])
-DEF LST smelterIds = misc:string_to_list(lines[162])
-DEF LST smelterTimers = misc:string_to_list(lines[163])
-DEF LST smokerIds = misc:string_to_list(lines[164])
-DEF LST smokerTimers = misc:string_to_list(lines[165])
-DEF LST smokerTurns = misc:string_to_list(lines[166])
-DEF LST storageIds = misc:string_to_list(lines[167])
-DEF LST swineherdIds = misc:string_to_list(lines[168])
-DEF LST swineherdGrowths = misc:string_to_list(lines[169])
-DEF LST tannerIds = misc:string_to_list(lines[170])
-DEF LST tannerTimers = misc:string_to_list(lines[171])
-DEF LST tavernIds = misc:string_to_list(lines[172])
-DEF LST watererIds = misc:string_to_list(lines[173])
-DEF LST weaverIds = misc:string_to_list(lines[174])
-DEF LST weaverTimers = misc:string_to_list(lines[175])
-DEF LST woodcutterIds = misc:string_to_list(lines[176])
-DEF LST woodcutterTimers = misc:string_to_list(lines[177])
+DEF LST apiaristIds = misc:string_to_list(lines[70])
+DEF LST apiaristTimers = misc:string_to_list(lines[71])
+DEF LST bakerIds = misc:string_to_list(lines[72])
+DEF LST bakerTimers = misc:string_to_list(lines[73])
+DEF LST barberIds = misc:string_to_list(lines[74])
+DEF LST blacksmithIds = misc:string_to_list(lines[75])
+DEF LST blacksmithTimers = misc:string_to_list(lines[76])
+DEF LST bowyerIds = misc:string_to_list(lines[77])
+DEF LST bowyerTimers = misc:string_to_list(lines[78])
+DEF LST brewerIds = misc:string_to_list(lines[79])
+DEF LST brewerTimers = misc:string_to_list(lines[80])
+DEF LST butcherIds = misc:string_to_list(lines[81])
+DEF LST butcherTimers = misc:string_to_list(lines[82])
+DEF LST cattlemanIds = misc:string_to_list(lines[83])
+DEF LST cattlemanGrowths = misc:string_to_list(lines[84])
+DEF LST cattlemanTimers = misc:string_to_list(lines[85])
+DEF LST ditcherIds = misc:string_to_list(lines[86])
+DEF LST ditcherTimers = misc:string_to_list(lines[87])
+DEF LST farmerIds = misc:string_to_list(lines[88])
+DEF LST farmerGrowths = misc:string_to_list(lines[89])
+DEF LST fellerIds = misc:string_to_list(lines[90])
+DEF LST fellerTimers = misc:string_to_list(lines[91])
+DEF LST fishermanIds = misc:string_to_list(lines[92])
+DEF LST fishermanTimers = misc:string_to_list(lines[93])
+DEF LST fletcherIds = misc:string_to_list(lines[94])
+DEF LST fletcherTimers = misc:string_to_list(lines[95])
+DEF LST gathererIds = misc:string_to_list(lines[96])
+DEF LST gathererTimers = misc:string_to_list(lines[97])
+DEF LST graveIds = misc:string_to_list(lines[98])
+DEF LST herbalistIds = misc:string_to_list(lines[99])
+DEF LST herbalistTimers = misc:string_to_list(lines[100])
+DEF LST hewerIds = misc:string_to_list(lines[101])
+DEF LST hewerTimers = misc:string_to_list(lines[102])
+DEF LST houseIds = misc:string_to_list(lines[103])
+DEF LST houseTimers = misc:string_to_list(lines[104])
+DEF LST houseBirths = misc:string_to_list(lines[105])
+DEF LST hunterIds = misc:string_to_list(lines[106])
+DEF LST hunterTimers = misc:string_to_list(lines[107])
+DEF LST millerIds = misc:string_to_list(lines[108])
+DEF LST millerTimers = misc:string_to_list(lines[109])
+DEF LST minerIds = misc:string_to_list(lines[110])
+DEF LST minerTimers = misc:string_to_list(lines[111])
+DEF LST nightmanIds = misc:string_to_list(lines[112])
+DEF LST orchardistIds = misc:string_to_list(lines[113])
+DEF LST orchardistGrowths = misc:string_to_list(lines[114])
+DEF LST orchardistTimers = misc:string_to_list(lines[115])
+DEF LST poultrymanIds = misc:string_to_list(lines[116])
+DEF LST poultrymanGrowths = misc:string_to_list(lines[117])
+DEF LST poultrymanTimers = misc:string_to_list(lines[118])
+DEF LST priestIds = misc:string_to_list(lines[119])
+DEF LST roperIds = misc:string_to_list(lines[120])
+DEF LST roperTimers = misc:string_to_list(lines[121])
+DEF LST shepherdIds = misc:string_to_list(lines[122])
+DEF LST shepherdGrowths = misc:string_to_list(lines[123])
+DEF LST shepherdTimers = misc:string_to_list(lines[124])
+DEF LST smelterIds = misc:string_to_list(lines[125])
+DEF LST smelterTimers = misc:string_to_list(lines[126])
+DEF LST smokerIds = misc:string_to_list(lines[127])
+DEF LST smokerTimers = misc:string_to_list(lines[128])
+DEF LST smokerTurns = misc:string_to_list(lines[129])
+DEF LST stonecutterIds = misc:string_to_list(lines[130])
+DEF LST stonecutterTimers = misc:string_to_list(lines[131])
+DEF LST swineherdIds = misc:string_to_list(lines[132])
+DEF LST swineherdGrowths = misc:string_to_list(lines[133])
+DEF LST tannerIds = misc:string_to_list(lines[134])
+DEF LST tannerTimers = misc:string_to_list(lines[135])
+DEF LST tavernIds = misc:string_to_list(lines[136])
+DEF LST watererIds = misc:string_to_list(lines[137])
+DEF LST weaverIds = misc:string_to_list(lines[138])
+DEF LST weaverTimers = misc:string_to_list(lines[139])
+DEF LST woodcutterIds = misc:string_to_list(lines[140])
+DEF LST woodcutterTimers = misc:string_to_list(lines[141])
 ALT _apiaristIds = apiaristIds
 ALT _apiaristTimers = apiaristTimers
 ALT _bakerIds = bakerIds
@@ -400,7 +296,6 @@ ALT _brewerIds = brewerIds
 ALT _brewerTimers = brewerTimers
 ALT _butcherIds = butcherIds
 ALT _butcherTimers = butcherTimers
-ALT _carpenterIds = carpenterIds
 ALT _cattlemanIds = cattlemanIds
 ALT _cattlemanGrowths = cattlemanGrowths
 ALT _cattlemanTimers = cattlemanTimers
@@ -426,7 +321,6 @@ ALT _houseTimers = houseTimers
 ALT _houseBirths = houseBirths
 ALT _hunterIds = hunterIds
 ALT _hunterTimers = hunterTimers
-ALT _masonIds = masonIds
 ALT _millerIds = millerIds
 ALT _millerTimers = millerTimers
 ALT _minerIds = minerIds
@@ -439,7 +333,6 @@ ALT _poultrymanIds = poultrymanIds
 ALT _poultrymanGrowths = poultrymanGrowths
 ALT _poultrymanTimers = poultrymanTimers
 ALT _priestIds = priestIds
-ALT _rooferIds = rooferIds
 ALT _roperIds = roperIds
 ALT _roperTimers = roperTimers
 ALT _shepherdIds = shepherdIds
@@ -450,7 +343,6 @@ ALT _smelterTimers = smelterTimers
 ALT _smokerIds = smokerIds
 ALT _smokerTimers = smokerTimers
 ALT _smokerTurns = smokerTurns
-ALT _storageIds = storageIds
 ALT _swineherdIds = swineherdIds
 ALT _swineherdGrowths = swineherdGrowths
 ALT _tannerIds = tannerIds
@@ -463,14 +355,14 @@ ALT _woodcutterIds = woodcutterIds
 ALT _woodcutterTimers = woodcutterTimers
 
 /// Load miscellaneous
-DEF LST eventMessageContents = misc:string_to_list(lines[178])
-DEF LST toolBuildingIds = misc:string_to_list(lines[179])
-DEF LST bowBuildingIds = misc:string_to_list(lines[180])
-DEF LST arrowBuildingIds = misc:string_to_list(lines[181])
-DEF LST fishingNetBuildingIds = misc:string_to_list(lines[182])
-DEF STR cursorType = lines[183]
-DEF STR eventMessageOpacity = lines[184]
-DEF STR totalUpdates = lines[185]
+DEF LST eventMessageContents = misc:string_to_list(lines[142])
+DEF LST toolBuildingIds = misc:string_to_list(lines[143])
+DEF LST bowBuildingIds = misc:string_to_list(lines[144])
+DEF LST arrowBuildingIds = misc:string_to_list(lines[145])
+DEF LST fishingNetBuildingIds = misc:string_to_list(lines[146])
+DEF STR cursorType = lines[147]
+DEF STR eventMessageOpacity = lines[148]
+DEF STR totalUpdates = lines[149]
 CAST eventMessageOpacity DEC
 CAST totalUpdates INT
 ALT _eventMessageContents = _eventMessageContents

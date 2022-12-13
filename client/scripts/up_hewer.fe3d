@@ -1,4 +1,4 @@
-29 58
+64 20
 META script_type_update
 META script_state_waiting
 
@@ -59,10 +59,11 @@ LOOP
             IF _totalStone LESS _maxStone
                 ALT rockIds = fe3d:model_find_ids("rock")
                 ALT rockCount = misc:list_size("rockIds")
-                ALT rockIndex = math:random_integer(1, rockCount)
-                SUB rockIndex 1
-                fe3d:model_delete(rockIds[rockIndex])
-                ADD _totalStone 1
+                IF rockCount MORE 0
+                    ALT rockIndex = math:random_integer(1, rockCount)
+                    SUB rockIndex 1
+                    fe3d:model_delete(rockIds[rockIndex])
+                    ADD _totalStone 1
         ELSE
             ADD _hewerTimers[index] 1
     ADD index 1

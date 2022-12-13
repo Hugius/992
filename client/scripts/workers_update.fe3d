@@ -1,6 +1,9 @@
-4 31
+33 17
 META script_type_update
 META script_state_waiting
+
+/// Reset
+ALT _sicknessCatchChance = 15
 
 /// Validate
 IF _mustUpdateWorkers IS <false>
@@ -54,7 +57,7 @@ LOOP
         ADD buildingIndex 1
     ADD workerIndex 1
 
-/// Assign worker to house building
+/// Assign workers to house building
 DEF STR workerName = ""
 DEF STR workerGender = ""
 DEF STR otherWorkerName = ""
