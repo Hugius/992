@@ -1,4 +1,4 @@
-37 15
+53 10
 META script_type_update
 META script_state_waiting
 
@@ -52,8 +52,7 @@ LOOP
                 ADD _weaverTimers[index] 1
         ELIF _weaverTimers[index] IS _weaverInterval
             ALT _weaverTimers[index] = 0
-            IF _totalClothes LESS _maxClothes
-                ADD _totalClothes 1
+            ADD _totalClothes 1
         ELSE
             ADD _weaverTimers[index] 1
     ADD index 1

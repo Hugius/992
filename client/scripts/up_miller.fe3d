@@ -1,4 +1,4 @@
-44 19
+43 12
 META script_type_update
 META script_state_waiting
 
@@ -42,8 +42,7 @@ LOOP
                 ADD _millerTimers[index] 1
         ELIF _millerTimers[index] IS _millerInterval
             ALT _millerTimers[index] = 0
-            IF _totalFlour LESS _maxFlour
-                ADD _totalFlour 1
+            ADD _totalFlour 1
         ELSE
             ADD _millerTimers[index] 1
     ADD index 1

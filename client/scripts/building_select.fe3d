@@ -1,8 +1,8 @@
-17 25
+3 8
 META script_type_update
 META script_state_waiting
 
-/// Save last selection
+/// Save selection
 ALT _lastSelectedBuildingId = _selectedBuildingId
 ALT _lastSelectedBuildingType = _selectedBuildingType
 
@@ -29,8 +29,6 @@ IF buildingId NOT "" AND _buildMode IS <false>
 
 /// Update GUI
 IF hovered IS <true>
-    fe3d:quad2d_set_visible("building_type", <true>)
-    fe3d:text2d_set_visible("building_type", <true>)
     DEF STR textContent = misc:string_capitalize(buildingType)
     fe3d:text2d_set_content("building_type", textContent)
     DEF INT quadWidth = misc:string_size(textContent)
@@ -43,13 +41,14 @@ IF hovered IS <true>
     fe3d:text2d_set_size("building_type", textWidth, 0.1)
     ALT _selectedBuildingId = buildingId
     ALT _selectedBuildingType = buildingType
+    fe3d:quad2d_set_visible("building_type", <true>)
+    fe3d:text2d_set_visible("building_type", <true>)
+    fe3d:quad2d_set_visible("building_menu", <true>)
+    fe3d:text2d_set_visible("building_menu", <true>)
 ELSE
-    fe3d:quad2d_set_visible("building_type", <false>)
-    fe3d:text2d_set_visible("building_type", <false>)
     ALT _selectedBuildingId = ""
     ALT _selectedBuildingType = ""
-
-/// Update GUI
-DEF BOL selected = (_selectedBuildingType NOT "")
-fe3d:quad2d_set_visible("building_menu", selected)
-fe3d:text2d_set_visible("building_menu", selected)
+    fe3d:quad2d_set_visible("building_type", <false>)
+    fe3d:text2d_set_visible("building_type", <false>)
+    fe3d:quad2d_set_visible("building_menu", <false>)
+    fe3d:text2d_set_visible("building_menu", <false>)

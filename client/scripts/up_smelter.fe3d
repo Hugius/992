@@ -1,4 +1,4 @@
-54 24
+74 12
 META script_type_update
 META script_state_waiting
 
@@ -73,8 +73,7 @@ LOOP
                     ADD _smelterTimers[index] 1
         ELIF _smelterTimers[index] IS _smelterInterval
             ALT _smelterTimers[index] = 0
-            IF _totalIron LESS _maxIron
-                ADD _totalIron 1
+            ADD _totalIron 1
         ELSE
             ADD _smelterTimers[index] 1
     ADD index 1

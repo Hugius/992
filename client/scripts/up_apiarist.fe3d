@@ -1,4 +1,4 @@
-38 42
+39 29
 META script_type_update
 META script_state_waiting
 
@@ -38,8 +38,7 @@ LOOP
     IF hasWorker IS <true>
         IF _apiaristTimers[index] IS _apiaristInterval
             ALT _apiaristTimers[index] = 0
-            IF _totalHoney LESS _maxHoney
-                ADD _totalHoney 1
+            ADD _totalHoney 1
         ELSE
             ADD _apiaristTimers[index] 1
     ADD index 1

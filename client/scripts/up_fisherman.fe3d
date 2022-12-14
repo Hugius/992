@@ -1,4 +1,4 @@
-32 46
+54 12
 META script_type_update
 META script_state_waiting
 
@@ -53,8 +53,7 @@ LOOP
     IF hasWorker IS <true> AND hasFishingNet IS <true>
         IF _fishermanTimers[index] IS _fishermanInterval
             ALT _fishermanTimers[index] = 0
-            IF _totalRawFish LESS _maxRawFish
-                ADD _totalRawFish 1
+            ADD _totalRawFish 1
         ELSE
             ADD _fishermanTimers[index] 1
     ADD index 1

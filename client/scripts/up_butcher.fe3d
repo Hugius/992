@@ -1,4 +1,4 @@
-73 25
+133 29
 META script_type_update
 META script_state_waiting
 
@@ -133,10 +133,6 @@ LOOP
             ALT _butcherTimers[index] = 0
             ADD _totalRawMeat 15
             ADD _totalHides 5
-            IF _totalRawMeat MORE _maxRawMeat
-                ALT _totalRawMeat = _maxRawMeat
-            IF _totalHides MORE _maxHides
-                ALT _totalHides = _maxHides
         ELSE
             ADD _butcherTimers[index] 1
     ADD index 1

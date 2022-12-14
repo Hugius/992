@@ -1,8 +1,8 @@
-33 17
+3 22
 META script_type_update
 META script_state_waiting
 
-/// Reset
+/// Set default chance
 ALT _sicknessCatchChance = 15
 
 /// Validate

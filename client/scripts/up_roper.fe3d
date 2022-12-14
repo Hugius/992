@@ -1,4 +1,4 @@
-44 19
+43 12
 META script_type_update
 META script_state_waiting
 
@@ -42,8 +42,7 @@ LOOP
                 ADD _roperTimers[index] 1
         ELIF _roperTimers[index] IS _roperInterval
             ALT _roperTimers[index] = 0
-            IF _totalFishingNets LESS _maxFishingNets
-                ADD _totalFishingNets 1
+            ADD _totalFishingNets 1
         ELSE
             ADD _roperTimers[index] 1
     ADD index 1

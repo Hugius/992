@@ -1,4 +1,4 @@
-40 24
+59 28
 META script_type_update
 META script_state_waiting
 
@@ -59,8 +59,6 @@ LOOP
         ELIF _brewerTimers[index] IS _brewerInterval
             ALT _brewerTimers[index] = 0
             ADD _totalAle 10
-            IF _totalAle MORE _maxAle
-                ALT _totalAle = _maxAle
         ELSE
             ADD _brewerTimers[index] 1
     ADD index 1

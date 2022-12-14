@@ -63,10 +63,6 @@ LOOP
             ALT _woodcutterTimers[index] = 0
             ADD _totalPlanks 10
             ADD _totalFirewood 5
-            IF _totalPlanks MORE _maxPlanks
-                ALT _totalPlanks = _maxPlanks
-            IF _totalFirewood MORE _maxFirewood
-                ALT _totalFirewood = _maxFirewood
         ELSE
             ADD _woodcutterTimers[index] 1
     ADD index 1

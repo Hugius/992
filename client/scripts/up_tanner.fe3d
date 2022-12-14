@@ -1,4 +1,4 @@
-53 33
+58 7
 META script_type_update
 META script_state_waiting
 
@@ -57,8 +57,7 @@ LOOP
                 ADD _tannerTimers[index] 1
         ELIF _tannerTimers[index] IS _tannerInterval
             ALT _tannerTimers[index] = 0
-            IF _totalLeather LESS _maxLeather
-                ADD _totalLeather 1
+            ADD _totalLeather 1
         ELSE
             ADD _tannerTimers[index] 1
     ADD index 1

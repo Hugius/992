@@ -1,4 +1,4 @@
-43 16
+44 16
 META script_type_update
 META script_state_waiting
 
@@ -43,8 +43,7 @@ LOOP
         ELIF _cattlemanGrowths[index] MORE 0.25
             IF _cattlemanTimers[index] IS _cattlemanInterval
                 ALT _cattlemanTimers[index] = 0
-                IF _totalMilk LESS _maxMilk
-                    ADD _totalMilk 1
+                ADD _totalMilk 1
             ELSE
                 ADD _cattlemanTimers[index] 1
     IF _cattlemanGrowths[index] MORE 0.0 AND _cattlemanGrowths[index] LESS 0.25

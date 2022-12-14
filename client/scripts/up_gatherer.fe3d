@@ -1,4 +1,4 @@
-46 37
+44 12
 META script_type_update
 META script_state_waiting
 
@@ -42,10 +42,8 @@ LOOP
     IF hasWorker IS <true>
         IF _gathererTimers[index] IS _gathererInterval
             ALT _gathererTimers[index] = 0
-            IF _totalSeeds LESS _maxSeeds
-                ADD _totalSeeds 1
-            IF _totalMushrooms LESS _maxMushrooms
-                ADD _totalMushrooms 1
+            ADD _totalSeeds 1
+            ADD _totalMushrooms 1
         ELSE
             ADD _gathererTimers[index] 1
     ADD index 1

@@ -1,4 +1,4 @@
-53 33
+58 31
 META script_type_update
 META script_state_waiting
 
@@ -58,8 +58,6 @@ LOOP
         ELIF _stonecutterTimers[index] IS _stonecutterInterval
             ALT _stonecutterTimers[index] = 0
             ADD _totalBricks 15
-            IF _totalBricks MORE _maxBricks
-                ALT _totalBricks = _maxBricks
         ELSE
             ADD _stonecutterTimers[index] 1
     ADD index 1

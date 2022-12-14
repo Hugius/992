@@ -1,4 +1,4 @@
-38 31
+76 12
 META script_type_update
 META script_state_waiting
 
@@ -75,8 +75,7 @@ LOOP
             ALT _hunterTimers[index] = 0
             ALT arrowIndex = misc:list_index("_arrowBuildingIds", _hunterIds[index])
             PULL _arrowBuildingIds arrowIndex
-            IF _totalRawMeat LESS _maxRawMeat
-                ADD _totalRawMeat 1
+            ADD _totalRawMeat 1
         ELSE
             ADD _hunterTimers[index] 1
     ADD index 1

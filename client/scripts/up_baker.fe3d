@@ -1,4 +1,4 @@
-40 24
+59 30
 META script_type_update
 META script_state_waiting
 
@@ -59,8 +59,6 @@ LOOP
         ELIF _bakerTimers[index] IS _bakerInterval
             ALT _bakerTimers[index] = 0
             ADD _totalBread 10
-            IF _totalBread MORE _maxBread
-                ALT _totalBread = _maxBread
         ELSE
             ADD _bakerTimers[index] 1
     ADD index 1

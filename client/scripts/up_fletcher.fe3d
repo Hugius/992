@@ -68,8 +68,6 @@ LOOP
         ELIF _fletcherTimers[index] IS _fletcherInterval
             ALT _fletcherTimers[index] = 0
             ADD _totalArrows 10
-            IF _totalArrows MORE _maxArrows
-                ALT _totalArrows = _maxArrows
         ELSE
             ADD _fletcherTimers[index] 1
     ADD index 1

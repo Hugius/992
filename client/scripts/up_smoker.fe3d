@@ -1,4 +1,4 @@
-54 42
+60 41
 META script_type_update
 META script_state_waiting
 
@@ -57,9 +57,9 @@ LOOP
                 ALT _smokerTurns[index] = 2
         ELIF _smokerTimers[index] IS _smokerInterval
             ALT _smokerTimers[index] = 0
-            IF _smokerTurns[index] IS 1 AND _totalSmokedMeat LESS _maxSmokedMeat
+            IF _smokerTurns[index] IS 1
                 ADD _totalSmokedMeat 1
-            ELIF _smokerTurns[index] IS 2 AND _totalSmokedFish LESS _maxSmokedFish
+            ELIF _smokerTurns[index] IS 2
                 ADD _totalSmokedFish 1
         ELSE
             ADD _smokerTimers[index] 1

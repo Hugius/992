@@ -1,4 +1,4 @@
-64 20
+63 10
 META script_type_update
 META script_state_waiting
 
@@ -56,14 +56,13 @@ LOOP
     IF hasWorker IS <true> AND hasTool IS <true>
         IF _hewerTimers[index] IS _hewerInterval
             ALT _hewerTimers[index] = 0
-            IF _totalStone LESS _maxStone
-                ALT rockIds = fe3d:model_find_ids("rock")
-                ALT rockCount = misc:list_size("rockIds")
-                IF rockCount MORE 0
-                    ALT rockIndex = math:random_integer(1, rockCount)
-                    SUB rockIndex 1
-                    fe3d:model_delete(rockIds[rockIndex])
-                    ADD _totalStone 1
+            ALT rockIds = fe3d:model_find_ids("rock")
+            ALT rockCount = misc:list_size("rockIds")
+            IF rockCount MORE 0
+                ALT rockIndex = math:random_integer(1, rockCount)
+                SUB rockIndex 1
+                fe3d:model_delete(rockIds[rockIndex])
+                ADD _totalStone 1
         ELSE
             ADD _hewerTimers[index] 1
     ADD index 1

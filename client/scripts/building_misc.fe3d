@@ -1,8 +1,8 @@
-12 29
+34 12
 META script_type_update
 META script_state_waiting
 
-/// Save last build mode
+/// Save build mode
 ALT _lastBuildMode = _buildMode
 
 /// Update build button
@@ -33,23 +33,21 @@ fe3d:text2d_set_visible("building_price_bricks", _buildMode)
 fe3d:text2d_set_visible("building_price_clay", _buildMode)
 fe3d:text2d_set_visible("building_price_straw", _buildMode)
 
-/// Check if build mode enabled
+/// Validate
 IF _buildMode IS <false>
     EXIT
-
-/// Update GUI
-DEF STR textContent = misc:string_capitalize(_buildingTypes[_buildingIndex])
-DEF INT textWidth = misc:string_size(textContent)
-CAST textWidth DEC
-MUL textWidth 0.03
-fe3d:text2d_set_content("building_price_type", textContent)
-fe3d:text2d_set_size("building_price_type", textWidth, 0.15)
 
 /// Update GUI
 DEF STR planksPriceText = misc:string_zeroed_integer(_buildingPricesPlanks[_buildingIndex], 4)
 DEF STR bricksPriceText = misc:string_zeroed_integer(_buildingPricesBricks[_buildingIndex], 4)
 DEF STR clayPriceText = misc:string_zeroed_integer(_buildingPricesClay[_buildingIndex], 4)
 DEF STR strawPriceText = misc:string_zeroed_integer(_buildingPricesStraw[_buildingIndex], 4)
+DEF STR textContent = misc:string_capitalize(_buildingTypes[_buildingIndex])
+DEF INT textWidth = misc:string_size(textContent)
+CAST textWidth DEC
+MUL textWidth 0.03
+fe3d:text2d_set_content("building_price_type", textContent)
+fe3d:text2d_set_size("building_price_type", textWidth, 0.15)
 fe3d:text2d_set_content("building_price_planks", planksPriceText)
 fe3d:text2d_set_content("building_price_bricks", bricksPriceText)
 fe3d:text2d_set_content("building_price_clay", clayPriceText)
@@ -58,7 +56,7 @@ fe3d:text2d_set_content("building_price_straw", strawPriceText)
 /// Hide last building
 fe3d:model_set_visible(_buildingTypes[_buildingIndex], <false>)
 
-/// Update scroll wheel
+/// Update building index
 DEF INT buildingCount = misc:list_size("_buildingTypes")
 DEF BOL scrolledUp = fe3d:input_is_mouse_scrolled("WHEEL_FORWARD")
 DEF BOL scrollDown = fe3d:input_is_mouse_scrolled("WHEEL_BACKWARD")

@@ -1,4 +1,4 @@
-56 48
+59 12
 META script_type_update
 META script_state_waiting
 
@@ -57,10 +57,8 @@ LOOP
     IF hasWorker IS <true> AND hasTool IS <true>
         IF _minerTimers[index] IS _minerInterval
             ALT _minerTimers[index] = 0
-            IF _totalCoal LESS _maxCoal
-                ADD _totalCoal 1
-            IF _totalOre LESS _maxOre
-                ADD _totalOre 1
+            ADD _totalCoal 1
+            ADD _totalOre 1
         ELSE
             ADD _minerTimers[index] 1
     ADD index 1

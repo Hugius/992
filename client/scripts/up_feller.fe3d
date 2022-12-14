@@ -1,4 +1,4 @@
-62 35
+63 16
 META script_type_update
 META script_state_waiting
 
@@ -56,14 +56,13 @@ LOOP
     IF hasWorker IS <true> AND hasTool IS <true>
         IF _fellerTimers[index] IS _fellerInterval
             ALT _fellerTimers[index] = 0
-            IF _totalWood LESS _maxWood
-                ALT treeIds = fe3d:model_find_ids("tree")
-                ALT treeCount = misc:list_size("treeIds")
-                IF treeCount MORE 0
-                    ALT treeIndex = math:random_integer(1, treeCount)
-                    SUB treeIndex 1
-                    fe3d:model_delete(treeIds[treeIndex])
-                    ADD _totalWood 1
+            ALT treeIds = fe3d:model_find_ids("tree")
+            ALT treeCount = misc:list_size("treeIds")
+            IF treeCount MORE 0
+                ALT treeIndex = math:random_integer(1, treeCount)
+                SUB treeIndex 1
+                fe3d:model_delete(treeIds[treeIndex])
+                ADD _totalWood 1
         ELSE
             ADD _fellerTimers[index] 1
     ADD index 1

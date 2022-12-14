@@ -1,4 +1,4 @@
-17 40
+65 30
 META script_type_update
 META script_state_waiting
 
@@ -65,10 +65,6 @@ LOOP
             ALT _farmerGrowths[index] = 0.0
             ADD _totalGrain 16
             ADD _totalStraw 16
-            IF _totalGrain MORE _maxGrain
-                ALT _totalGrain = _maxGrain
-            IF _totalStraw MORE _maxStraw
-                ALT _totalStraw = _maxStraw
     IF _farmerGrowths[index] MORE 0.0 AND _farmerGrowths[index] LESS 0.75
         ADD _farmerGrowths[index] _farmerSpeed
     ALT growth = _farmerGrowths[index]

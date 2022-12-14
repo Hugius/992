@@ -1,4 +1,4 @@
-63 30
+63 11
 META script_type_update
 META script_state_waiting
 
@@ -62,8 +62,7 @@ LOOP
                 ADD _bowyerTimers[index] 1
         ELIF _bowyerTimers[index] IS _bowyerInterval
             ALT _bowyerTimers[index] = 0
-            IF _totalBows LESS _maxBows
-                ADD _totalBows 1
+            ADD _totalBows 1
         ELSE
             ADD _bowyerTimers[index] 1
     ADD index 1

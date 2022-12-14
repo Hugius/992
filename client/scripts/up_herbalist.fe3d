@@ -1,4 +1,4 @@
-40 15
+43 12
 META script_type_update
 META script_state_waiting
 
@@ -42,8 +42,7 @@ LOOP
                 ADD _herbalistTimers[index] 1
         ELIF _herbalistTimers[index] IS _herbalistInterval
             ALT _herbalistTimers[index] = 0
-            IF _totalMedicine LESS _maxMedicine
-                ADD _totalMedicine 1
+            ADD _totalMedicine 1
         ELSE
             ADD _herbalistTimers[index] 1
     ADD index 1

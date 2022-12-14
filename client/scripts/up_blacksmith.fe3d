@@ -1,4 +1,4 @@
-47 44
+48 12
 META script_type_update
 META script_state_waiting
 
@@ -47,8 +47,7 @@ LOOP
                 ADD _blacksmithTimers[index] 1
         ELIF _blacksmithTimers[index] IS _blacksmithInterval
             ALT _blacksmithTimers[index] = 0
-            IF _totalTools LESS _maxTools
-                ADD _totalTools 1
+            ADD _totalTools 1
         ELSE
             ADD _blacksmithTimers[index] 1
     ADD index 1
