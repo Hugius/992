@@ -1,4 +1,4 @@
-5 0
+0 0
 META script_type_update
 META script_state_waiting
 
@@ -33,9 +33,13 @@ LOOP
     ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _swineherdIds[index])
     IF hasWorker IS <true>
         IF _swineherdGrowths[index] IS 0.0
-            ADD _swineherdGrowths[index] _swineherdSpeed
-    IF _swineherdGrowths[index] MORE 0.0 AND _swineherdGrowths[index] LESS 0.4
-        ADD _swineherdGrowths[index] _swineherdSpeed
+            ADD _swineherdGrowths[index] 0.1
+    IF _swineherdGrowths[index] MORE 0.0 AND _swineherdGrowths[index] LESS _maxSwineherdGrowth
+        DEF DEC speed = _maxSwineherdGrowth
+        CAST _swineherdInterval DEC
+        DIV speed _swineherdInterval
+        CAST _swineherdInterval INT
+        ADD _swineherdGrowths[index] speed
     ALT growth = _swineherdGrowths[index]
     ALT pigId = misc:string_concat(_swineherdIds[index], "_1")
     fe3d:model_set_base_size(pigId, growth, growth, growth)

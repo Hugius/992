@@ -1,4 +1,4 @@
-80 0
+14 27
 META script_type_initialize
 META script_state_waiting
 
@@ -13,7 +13,7 @@ DEF FIN DEC minZoneZ = -15.0
 DEF FIN DEC maxZoneX = 35.0
 DEF FIN DEC maxZoneZ = 10.0
 DEF FIN DEC minDistance = 5.0
-DEF FIN INT maxModels = 180
+DEF FIN INT maxModels = 270
 
 /// Non-finals
 DEF LST modelIds = {"tree1","rock1","tree1","tree2","rock2","tree2","tree3","rock3","tree3"}

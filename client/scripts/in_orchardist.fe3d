@@ -1,10 +1,10 @@
-5 42
+0 0
 META script_type_initialize
 META script_state_waiting
 
 /// Finals
-DEF GLB FIN INT _orchardistInterval = 750
-DEF GLB FIN DEC _orchardistSpeed = 0.00025
+DEF GLB FIN DEC _maxOrchardistGrowth = 0.25
+DEF GLB FIN INT _orchardistInterval = 2250
 DEF FIN STR workerText = "No worker available"
 
 /// Non-finals

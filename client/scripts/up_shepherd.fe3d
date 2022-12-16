@@ -1,4 +1,4 @@
-59 15
+0 0
 META script_type_update
 META script_state_waiting
 
@@ -54,15 +54,19 @@ LOOP
     ALT hasTool = misc:list_contains("_toolBuildingIds", _shepherdIds[index])
     IF hasWorker IS <true> AND hasTool IS <true>
         IF _shepherdGrowths[index] IS 0.0
-            ADD _shepherdGrowths[index] _shepherdSpeed
-        ELIF _shepherdGrowths[index] MORE 0.45
+            ADD _shepherdGrowths[index] 0.1
+        ELIF _shepherdGrowths[index] MORE _maxShepherdGrowth
             IF _shepherdTimers[index] IS _shepherdInterval
                 ALT _shepherdTimers[index] = 0
                 ADD _totalWool 1
             ELSE
                 ADD _shepherdTimers[index] 1
-    IF _shepherdGrowths[index] MORE 0.0 AND _shepherdGrowths[index] LESS 0.45
-        ADD _shepherdGrowths[index] _shepherdSpeed
+    IF _shepherdGrowths[index] MORE 0.0 AND _shepherdGrowths[index] LESS _maxShepherdGrowth
+        DEF DEC speed = _maxShepherdGrowth
+        CAST _shepherdInterval DEC
+        DIV speed _shepherdInterval
+        CAST _shepherdInterval INT
+        ADD _shepherdGrowths[index] speed
     ALT growth = _shepherdGrowths[index]
     ALT sheepId = misc:string_concat(_shepherdIds[index], "_1")
     fe3d:model_set_base_size(sheepId, growth, growth, growth)

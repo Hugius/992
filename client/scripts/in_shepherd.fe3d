@@ -1,10 +1,10 @@
-5 40
+0 0
 META script_type_initialize
 META script_state_waiting
 
 /// Finals
-DEF GLB FIN INT _shepherdInterval = 750
-DEF GLB FIN DEC _shepherdSpeed = 0.00045
+DEF GLB FIN DEC _maxShepherdGrowth = 0.45
+DEF GLB FIN INT _shepherdInterval = 2250
 DEF FIN STR workerText = "No worker available"
 DEF FIN STR toolText = "Equip 1 tool?"
 

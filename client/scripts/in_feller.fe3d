@@ -1,9 +1,9 @@
-4 36
+4 38
 META script_type_initialize
 META script_state_waiting
 
 /// Finals
-DEF GLB FIN INT _fellerInterval = 750
+DEF GLB FIN INT _fellerInterval = 2250
 DEF FIN STR workerText = "No worker available"
 DEF FIN STR toolText = "Equip 1 tool?"
 

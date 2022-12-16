@@ -1,56 +1,56 @@
-48.663609
+-55.789612
 17.500000
-15.302396
-220.000046
+-20.938055
+28.411451
 -70.000000
--0.000000
-0.000000
--0.000000
-{"Aethelstan", "Aebbe", "Leofric", "Aethelswith", "Aethelstan", "Eadburh", "Wihtgar", "Mildburh", "Aethelstan", "Aelfwynn"}
+-0.001447
+0.001631
+-0.005688
+{"Aelfweard", "Aelfthryth", "Aethelred", "Aelfthryth", "Aethelred", "Eahlswith", "Cuthberht", "Eadgyth", "Leofric", "Aethelswith"}
 {"MALE", "FEMALE", "MALE", "FEMALE", "MALE", "FEMALE", "MALE", "FEMALE", "MALE", "FEMALE"}
-{<true>, <true>, <false>, <true>, <true>, <true>, <true>, <true>, <true>, <true>}
 {<true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>}
-{"apiarist_4", "baker_5", "", "", "", "", "", "", "", ""}
+{<true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>}
+{"", "", "", "", "", "", "", "", "", ""}
 {"", "", "", "", "", "", "", "", "", ""}
 0
-5
-1374
-1500
+8
+2081
+2250
 0
 1
 5
 5
 15
 <false>
-{"apiarist_4", "baker_5"}
-{"apiarist", "baker"}
+{}
+{}
 
 
 
 
 
 
-1
-6
+0
+4
 <false>
 <false>
-5
+2
 0
 0
-0
-5
 0
 2
 0
 0
 0
 0
-1
 0
 0
-7
 10
-8
+0
+0
+10
+10
+10
 0
 0
 0
@@ -68,10 +68,10 @@
 0
 0
 0
-{"apiarist_4"}
-{50}
-{"baker_5"}
-{0}
+{}
+{}
+{}
+{}
 {}
 {}
 {}
@@ -147,4 +147,4 @@
 {}
 ARROW
 0.000000
-8879
+20089

@@ -1,4 +1,4 @@
-35 24
+30 0
 META script_type_update
 META script_state_waiting
 
@@ -25,15 +25,15 @@ IF a IS <true>
     SUB _xPositionAcceleration _positionSpeed
 
 /// Update movement
-MUL _xPositionAcceleration 0.9
-MUL _zPositionAcceleration 0.9
+MUL _xPositionAcceleration 0.925
+MUL _zPositionAcceleration 0.925
 fe3d:camera_follow_right_xz(_xPositionAcceleration)
 fe3d:camera_follow_front_xz(_zPositionAcceleration)
 
 /// Update yaw
 DEF DEC yaw = fe3d:camera_get_yaw()
 ADD yaw _yawAcceleration
-MUL _yawAcceleration 0.85
+MUL _yawAcceleration 0.9
 fe3d:camera_set_yaw(yaw)
 
 /// Update raycasting

@@ -1,4 +1,4 @@
-49 16
+0 0
 META script_type_update
 META script_state_waiting
 
@@ -43,16 +43,20 @@ LOOP
     ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _poultrymanIds[index])
     IF hasWorker IS <true>
         IF _poultrymanGrowths[index] IS 0.0
-            ADD _poultrymanGrowths[index] _poultrymanSpeed
-        ELIF _poultrymanGrowths[index] MORE 0.25
+            ADD _poultrymanGrowths[index] 0.1
+        ELIF _poultrymanGrowths[index] MORE _maxPoultrymanGrowth
             IF _poultrymanTimers[index] IS _poultrymanInterval
                 ALT _poultrymanTimers[index] = 0
                 ADD _totalEggs 1
                 ADD _totalFeathers 1
             ELSE
                 ADD _poultrymanTimers[index] 1
-    IF _poultrymanGrowths[index] MORE 0.0 AND _poultrymanGrowths[index] LESS 0.25
-        ADD _poultrymanGrowths[index] _poultrymanSpeed
+    IF _poultrymanGrowths[index] MORE 0.0 AND _poultrymanGrowths[index] LESS _maxPoultrymanGrowth
+        DEF DEC speed = _maxPoultrymanGrowth
+        CAST _poultrymanInterval DEC
+        DIV speed _poultrymanInterval
+        CAST _poultrymanInterval INT
+        ADD _poultrymanGrowths[index] speed
     ALT growth = _poultrymanGrowths[index]
     ALT chickenId = misc:string_concat(_poultrymanIds[index], "_1")
     fe3d:model_set_base_size(chickenId, growth, growth, growth)
