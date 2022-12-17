@@ -1,4 +1,4 @@
-0 0
+21 61
 META script_type_update
 META script_state_waiting
 
@@ -39,7 +39,7 @@ LOOP
     ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _orchardistIds[index])
     IF hasWorker IS <true>
         IF _orchardistGrowths[index] IS 0.0
-            ADD _orchardistGrowths[index] 0.1
+            ADD _orchardistGrowths[index] _minOrchardistGrowth
         ELIF _orchardistGrowths[index] MORE _maxOrchardistGrowth
             IF _orchardistTimers[index] IS _orchardistInterval
                 ALT _orchardistTimers[index] = 0
@@ -47,10 +47,10 @@ LOOP
             ELSE
                 ADD _orchardistTimers[index] 1
     IF _orchardistGrowths[index] MORE 0.0 AND _orchardistGrowths[index] LESS _maxOrchardistGrowth
+        DEF INT interval = _orchardistInterval
         DEF DEC speed = _maxOrchardistGrowth
-        CAST _orchardistInterval DEC
-        DIV speed _orchardistInterval
-        CAST _orchardistInterval INT
+        CAST interval DEC
+        DIV speed interval
         ADD _orchardistGrowths[index] speed
     ALT growth = _orchardistGrowths[index]
     ALT treeId = misc:string_concat(_orchardistIds[index], "_1")

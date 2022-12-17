@@ -1,4 +1,4 @@
-63 16
+52 16
 META script_type_update
 META script_state_waiting
 
@@ -44,25 +44,47 @@ IF _selectedBuildingType IS "feller"
 
 /// Update fellers
 DEF LST treeIds = {}
-DEF INT treeCount = 0
+DEF STR closestTreeId = ""
+DEF DEC closestTreeDistance = 0.0
+DEF DEC treeDistance = 0.0
+DEF DEC fX = 0.0
+DEF DEC fY = 0.0
+DEF DEC fZ = 0.0
+DEF DEC tX = 0.0
+DEF DEC tY = 0.0
+DEF DEC tZ = 0.0
+DEF INT maxFellerIndex = misc:list_size("_fellerIds")
+DEF INT maxTreeIndex = 0
+DEF INT fellerIndex = 0
 DEF INT treeIndex = 0
-DEF INT maxIndex = misc:list_size("_fellerIds")
-DEF INT index = 0
 LOOP
-    IF index IS maxIndex
+    IF fellerIndex IS maxFellerIndex
         BREAK
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _fellerIds[index])
-    ALT hasTool = misc:list_contains("_toolBuildingIds", _fellerIds[index])
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _fellerIds[fellerIndex])
+    ALT hasTool = misc:list_contains("_toolBuildingIds", _fellerIds[fellerIndex])
     IF hasWorker IS <true> AND hasTool IS <true>
-        IF _fellerTimers[index] IS _fellerInterval
-            ALT _fellerTimers[index] = 0
+        IF _fellerTimers[fellerIndex] IS _fellerInterval
+            ALT _fellerTimers[fellerIndex] = 0
+            ALT fX = fe3d:model_get_base_position_x(_fellerIds[fellerIndex])
+            ALT fY = fe3d:model_get_base_position_y(_fellerIds[fellerIndex])
+            ALT fZ = fe3d:model_get_base_position_z(_fellerIds[fellerIndex])
             ALT treeIds = fe3d:model_find_ids("tree")
-            ALT treeCount = misc:list_size("treeIds")
-            IF treeCount MORE 0
-                ALT treeIndex = math:random_integer(1, treeCount)
-                SUB treeIndex 1
-                fe3d:model_delete(treeIds[treeIndex])
+            ALT maxTreeIndex = misc:list_size("treeIds")
+            ALT treeIndex = 0
+            LOOP
+                IF treeIndex IS maxTreeIndex
+                    BREAK
+                ALT tX = fe3d:model_get_base_position_x(treeIds[treeIndex])
+                ALT tY = fe3d:model_get_base_position_y(treeIds[treeIndex])
+                ALT tZ = fe3d:model_get_base_position_z(treeIds[treeIndex])
+                ALT treeDistance = math:vector_distance(fX, fY, fZ, tX, tY, tZ)
+                IF closestTreeId IS "" OR treeDistance LESS closestTreeDistance
+                    ALT closestTreeId = treeIds[treeIndex]
+                    ALT closestTreeDistance = treeDistance
+                ADD treeIndex 1
+            IF closestTreeId NOT ""
+                fe3d:model_delete(closestTreeId)
                 ADD _totalWood 1
         ELSE
-            ADD _fellerTimers[index] 1
-    ADD index 1
+            ADD _fellerTimers[fellerIndex] 1
+    ADD fellerIndex 1

@@ -1,4 +1,4 @@
-0 0
+32 26
 META script_type_update
 META script_state_waiting
 
@@ -33,12 +33,12 @@ LOOP
     ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _swineherdIds[index])
     IF hasWorker IS <true>
         IF _swineherdGrowths[index] IS 0.0
-            ADD _swineherdGrowths[index] 0.1
+            ADD _swineherdGrowths[index] _minSwineherdGrowth
     IF _swineherdGrowths[index] MORE 0.0 AND _swineherdGrowths[index] LESS _maxSwineherdGrowth
+        DEF INT interval = _swineherdInterval
         DEF DEC speed = _maxSwineherdGrowth
-        CAST _swineherdInterval DEC
-        DIV speed _swineherdInterval
-        CAST _swineherdInterval INT
+        CAST interval DEC
+        DIV speed interval
         ADD _swineherdGrowths[index] speed
     ALT growth = _swineherdGrowths[index]
     ALT pigId = misc:string_concat(_swineherdIds[index], "_1")

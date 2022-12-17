@@ -1,4 +1,4 @@
-63 10
+0 0
 META script_type_update
 META script_state_waiting
 
@@ -44,25 +44,47 @@ IF _selectedBuildingType IS "hewer"
 
 /// Update hewers
 DEF LST rockIds = {}
-DEF INT rockCount = 0
+DEF STR closestRockId = ""
+DEF DEC closestRockDistance = 0.0
+DEF DEC rockDistance = 0.0
+DEF DEC hX = 0.0
+DEF DEC hY = 0.0
+DEF DEC hZ = 0.0
+DEF DEC rX = 0.0
+DEF DEC rY = 0.0
+DEF DEC rZ = 0.0
+DEF INT maxHewerIndex = misc:list_size("_hewerIds")
+DEF INT maxRockIndex = 0
+DEF INT hewerIndex = 0
 DEF INT rockIndex = 0
-DEF INT maxIndex = misc:list_size("_hewerIds")
-DEF INT index = 0
 LOOP
-    IF index IS maxIndex
+    IF hewerIndex IS maxHewerIndex
         BREAK
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _hewerIds[index])
-    ALT hasTool = misc:list_contains("_toolBuildingIds", _hewerIds[index])
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _hewerIds[hewerIndex])
+    ALT hasTool = misc:list_contains("_toolBuildingIds", _hewerIds[hewerIndex])
     IF hasWorker IS <true> AND hasTool IS <true>
-        IF _hewerTimers[index] IS _hewerInterval
-            ALT _hewerTimers[index] = 0
+        IF _hewerTimers[hewerIndex] IS _hewerInterval
+            ALT _hewerTimers[hewerIndex] = 0
+            ALT hX = fe3d:model_get_base_position_x(_hewerIds[hewerIndex])
+            ALT hY = fe3d:model_get_base_position_y(_hewerIds[hewerIndex])
+            ALT hZ = fe3d:model_get_base_position_z(_hewerIds[hewerIndex])
             ALT rockIds = fe3d:model_find_ids("rock")
-            ALT rockCount = misc:list_size("rockIds")
-            IF rockCount MORE 0
-                ALT rockIndex = math:random_integer(1, rockCount)
-                SUB rockIndex 1
-                fe3d:model_delete(rockIds[rockIndex])
-                ADD _totalStone 1
+            ALT maxRockIndex = misc:list_size("rockIds")
+            ALT rockIndex = 0
+            LOOP
+                IF rockIndex IS maxRockIndex
+                    BREAK
+                ALT rX = fe3d:model_get_base_position_x(rockIds[rockIndex])
+                ALT rY = fe3d:model_get_base_position_y(rockIds[rockIndex])
+                ALT rZ = fe3d:model_get_base_position_z(rockIds[rockIndex])
+                ALT rockDistance = math:vector_distance(hX, hY, hZ, rX, rY, rZ)
+                IF closestRockId IS "" OR rockDistance LESS closestRockDistance
+                    ALT closestRockId = rockIds[rockIndex]
+                    ALT closestRockDistance = rockDistance
+                ADD rockIndex 1
+            IF closestRockId NOT ""
+                fe3d:model_delete(closestRockId)
+                ADD _totalWood 1
         ELSE
-            ADD _hewerTimers[index] 1
-    ADD index 1
+            ADD _hewerTimers[hewerIndex] 1
+    ADD hewerIndex 1

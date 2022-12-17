@@ -1,10 +1,11 @@
-0 0
+7 46
 META script_type_initialize
 META script_state_waiting
 
 /// Finals
 DEF GLB FIN DEC _maxPoultrymanGrowth = 0.25
-DEF GLB FIN INT _poultrymanInterval = 2250
+DEF GLB FIN DEC _minPoultrymanGrowth = 0.025
+DEF GLB FIN INT _poultrymanInterval = 4500
 DEF FIN STR workerText = "No worker available"
 
 /// Non-finals

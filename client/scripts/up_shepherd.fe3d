@@ -1,4 +1,4 @@
-0 0
+55 44
 META script_type_update
 META script_state_waiting
 
@@ -54,7 +54,7 @@ LOOP
     ALT hasTool = misc:list_contains("_toolBuildingIds", _shepherdIds[index])
     IF hasWorker IS <true> AND hasTool IS <true>
         IF _shepherdGrowths[index] IS 0.0
-            ADD _shepherdGrowths[index] 0.1
+            ADD _shepherdGrowths[index] _minShepherdGrowth
         ELIF _shepherdGrowths[index] MORE _maxShepherdGrowth
             IF _shepherdTimers[index] IS _shepherdInterval
                 ALT _shepherdTimers[index] = 0
@@ -62,10 +62,10 @@ LOOP
             ELSE
                 ADD _shepherdTimers[index] 1
     IF _shepherdGrowths[index] MORE 0.0 AND _shepherdGrowths[index] LESS _maxShepherdGrowth
+        DEF INT interval = _shepherdInterval
         DEF DEC speed = _maxShepherdGrowth
-        CAST _shepherdInterval DEC
-        DIV speed _shepherdInterval
-        CAST _shepherdInterval INT
+        CAST interval DEC
+        DIV speed interval
         ADD _shepherdGrowths[index] speed
     ALT growth = _shepherdGrowths[index]
     ALT sheepId = misc:string_concat(_shepherdIds[index], "_1")

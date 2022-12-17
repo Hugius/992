@@ -1,4 +1,4 @@
-0 0
+44 46
 META script_type_update
 META script_state_waiting
 
@@ -43,7 +43,7 @@ LOOP
     ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _poultrymanIds[index])
     IF hasWorker IS <true>
         IF _poultrymanGrowths[index] IS 0.0
-            ADD _poultrymanGrowths[index] 0.1
+            ADD _poultrymanGrowths[index] _minPoultrymanGrowth
         ELIF _poultrymanGrowths[index] MORE _maxPoultrymanGrowth
             IF _poultrymanTimers[index] IS _poultrymanInterval
                 ALT _poultrymanTimers[index] = 0
@@ -52,10 +52,10 @@ LOOP
             ELSE
                 ADD _poultrymanTimers[index] 1
     IF _poultrymanGrowths[index] MORE 0.0 AND _poultrymanGrowths[index] LESS _maxPoultrymanGrowth
+        DEF INT interval = _poultrymanInterval
         DEF DEC speed = _maxPoultrymanGrowth
-        CAST _poultrymanInterval DEC
-        DIV speed _poultrymanInterval
-        CAST _poultrymanInterval INT
+        CAST interval DEC
+        DIV speed interval
         ADD _poultrymanGrowths[index] speed
     ALT growth = _poultrymanGrowths[index]
     ALT chickenId = misc:string_concat(_poultrymanIds[index], "_1")
