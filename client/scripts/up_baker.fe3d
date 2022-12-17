@@ -1,4 +1,4 @@
-59 30
+0 0
 META script_type_update
 META script_state_waiting
 
@@ -37,28 +37,28 @@ IF _selectedBuildingType IS "baker"
         fe3d:text2d_set_visible("baker_worker", <true>)
 
 /// Update bakers
-DEF INT maxIndex = misc:list_size("_bakerIds")
-DEF INT index = 0
+DEF INT maxBakerIndex = misc:list_size("_bakerIds")
+DEF INT bakerIndex = 0
 DEF INT randomNumber = 0
 LOOP
-    IF index IS maxIndex
+    IF bakerIndex IS maxBakerIndex
         BREAK
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _bakerIds[index])
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _bakerIds[bakerIndex])
     IF hasWorker IS <true>
-        IF _bakerTimers[index] IS 0
+        IF _bakerTimers[bakerIndex] IS 0
             IF _totalFlour MORE 0
                 ALT randomNumber = math:random_integer(1, 2)
                 IF randomNumber IS 1 AND _totalFirewood MORE 0
                     SUB _totalFlour 1
                     SUB _totalFirewood 1
-                    ADD _bakerTimers[index] 1
+                    ADD _bakerTimers[bakerIndex] 1
                 ELIF randomNumber IS 2 AND _totalCoal MORE 0
                     SUB _totalFlour 1
                     SUB _totalCoal 1
-                    ADD _bakerTimers[index] 1
-        ELIF _bakerTimers[index] IS _bakerInterval
-            ALT _bakerTimers[index] = 0
+                    ADD _bakerTimers[bakerIndex] 1
+        ELIF _bakerTimers[bakerIndex] IS _bakerInterval
+            ALT _bakerTimers[bakerIndex] = 0
             ADD _totalBread 10
         ELSE
-            ADD _bakerTimers[index] 1
-    ADD index 1
+            ADD _bakerTimers[bakerIndex] 1
+    ADD bakerIndex 1

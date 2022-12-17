@@ -1,4 +1,4 @@
-60 41
+0 0
 META script_type_update
 META script_state_waiting
 
@@ -37,30 +37,30 @@ IF _selectedBuildingType IS "smoker"
         fe3d:text2d_set_visible("smoker_worker", <true>)
 
 /// Update smokers
-DEF INT maxIndex = misc:list_size("_smokerIds")
-DEF INT index = 0
+DEF INT maxSmokerIndex = misc:list_size("_smokerIds")
+DEF INT smokerIndex = 0
 DEF INT randomNumber = 0
 LOOP
-    IF index IS maxIndex
+    IF smokerIndex IS maxSmokerIndex
         BREAK
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _smokerIds[index])
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _smokerIds[smokerIndex])
     IF hasWorker IS <true>
-        IF _smokerTimers[index] IS 0
+        IF _smokerTimers[smokerIndex] IS 0
             ALT randomNumber = math:random_integer(1, 2)
             IF randomNumber IS 1 AND _totalRawMeat MORE 0
                 SUB _totalRawMeat 1
-                ADD _smokerTimers[index] 1
-                ALT _smokerTurns[index] = 1
+                ADD _smokerTimers[smokerIndex] 1
+                ALT _smokerTurns[smokerIndex] = 1
             ELIF randomNumber IS 2 AND _totalRawFish MORE 0
                 SUB _totalRawFish 1
-                ADD _smokerTimers[index] 1
-                ALT _smokerTurns[index] = 2
-        ELIF _smokerTimers[index] IS _smokerInterval
-            ALT _smokerTimers[index] = 0
-            IF _smokerTurns[index] IS 1
+                ADD _smokerTimers[smokerIndex] 1
+                ALT _smokerTurns[smokerIndex] = 2
+        ELIF _smokerTimers[smokerIndex] IS _smokerInterval
+            ALT _smokerTimers[smokerIndex] = 0
+            IF _smokerTurns[smokerIndex] IS 1
                 ADD _totalSmokedMeat 1
-            ELIF _smokerTurns[index] IS 2
+            ELIF _smokerTurns[smokerIndex] IS 2
                 ADD _totalSmokedFish 1
         ELSE
-            ADD _smokerTimers[index] 1
-    ADD index 1
+            ADD _smokerTimers[smokerIndex] 1
+    ADD smokerIndex 1

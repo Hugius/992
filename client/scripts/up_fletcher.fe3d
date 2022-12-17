@@ -1,4 +1,4 @@
-68 31
+0 0
 META script_type_update
 META script_state_waiting
 
@@ -51,23 +51,23 @@ IF _selectedBuildingType IS "fletcher"
         fe3d:text2d_set_visible("fletcher_worker", <true>)
 
 /// Update fletchers
-DEF INT maxIndex = misc:list_size("_fletcherIds")
-DEF INT index = 0
+DEF INT maxFletcherIndex = misc:list_size("_fletcherIds")
+DEF INT fletcherIndex = 0
 LOOP
-    IF index IS maxIndex
+    IF fletcherIndex IS maxFletcherIndex
         BREAK
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _fletcherIds[index])
-    ALT hasTool = misc:list_contains("_toolBuildingIds", _fletcherIds[index])
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _fletcherIds[fletcherIndex])
+    ALT hasTool = misc:list_contains("_toolBuildingIds", _fletcherIds[fletcherIndex])
     IF hasWorker IS <true> AND hasTool IS <true>
-        IF _fletcherTimers[index] IS 0
+        IF _fletcherTimers[fletcherIndex] IS 0
             IF _totalIron MORE 0 AND _totalPlanks MORE 0 AND _totalFeathers MORE 0
                 SUB _totalIron 1
                 SUB _totalPlanks 1
                 SUB _totalFeathers 1
-                ADD _fletcherTimers[index] 1
-        ELIF _fletcherTimers[index] IS _fletcherInterval
-            ALT _fletcherTimers[index] = 0
+                ADD _fletcherTimers[fletcherIndex] 1
+        ELIF _fletcherTimers[fletcherIndex] IS _fletcherInterval
+            ALT _fletcherTimers[fletcherIndex] = 0
             ADD _totalArrows 10
         ELSE
-            ADD _fletcherTimers[index] 1
-    ADD index 1
+            ADD _fletcherTimers[fletcherIndex] 1
+    ADD fletcherIndex 1

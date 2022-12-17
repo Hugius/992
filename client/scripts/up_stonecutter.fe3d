@@ -1,4 +1,4 @@
-58 31
+0 0
 META script_type_update
 META script_state_waiting
 
@@ -43,21 +43,21 @@ IF _selectedBuildingType IS "stonecutter"
         fe3d:text2d_set_visible("stonecutter_worker", <true>)
 
 /// Update stonecutters
-DEF INT maxIndex = misc:list_size("_stonecutterIds")
-DEF INT index = 0
+DEF INT maxStonecutterIndex = misc:list_size("_stonecutterIds")
+DEF INT stonecutterIndex = 0
 LOOP
-    IF index IS maxIndex
+    IF stonecutterIndex IS maxStonecutterIndex
         BREAK
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _stonecutterIds[index])
-    ALT hasTool = misc:list_contains("_toolBuildingIds", _stonecutterIds[index])
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _stonecutterIds[stonecutterIndex])
+    ALT hasTool = misc:list_contains("_toolBuildingIds", _stonecutterIds[stonecutterIndex])
     IF hasWorker IS <true> AND hasTool IS <true>
-        IF _stonecutterTimers[index] IS 0
+        IF _stonecutterTimers[stonecutterIndex] IS 0
             IF _totalStone MORE 0
                 SUB _totalStone 1
-                ADD _stonecutterTimers[index] 1
-        ELIF _stonecutterTimers[index] IS _stonecutterInterval
-            ALT _stonecutterTimers[index] = 0
+                ADD _stonecutterTimers[stonecutterIndex] 1
+        ELIF _stonecutterTimers[stonecutterIndex] IS _stonecutterInterval
+            ALT _stonecutterTimers[stonecutterIndex] = 0
             ADD _totalBricks 15
         ELSE
-            ADD _stonecutterTimers[index] 1
-    ADD index 1
+            ADD _stonecutterTimers[stonecutterIndex] 1
+    ADD stonecutterIndex 1

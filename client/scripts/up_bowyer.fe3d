@@ -1,4 +1,4 @@
-63 11
+0 0
 META script_type_update
 META script_state_waiting
 
@@ -47,22 +47,22 @@ IF _selectedBuildingType IS "bowyer"
         fe3d:text2d_set_visible("bowyer_worker", <true>)
 
 /// Update bowyers
-DEF INT maxIndex = misc:list_size("_bowyerIds")
-DEF INT index = 0
+DEF INT maxBowyerIndex = misc:list_size("_bowyerIds")
+DEF INT bowyerIndex = 0
 LOOP
-    IF index IS maxIndex
+    IF bowyerIndex IS maxBowyerIndex
         BREAK
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _bowyerIds[index])
-    ALT hasTool = misc:list_contains("_toolBuildingIds", _bowyerIds[index])
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _bowyerIds[bowyerIndex])
+    ALT hasTool = misc:list_contains("_toolBuildingIds", _bowyerIds[bowyerIndex])
     IF hasWorker IS <true> AND hasTool IS <true>
-        IF _bowyerTimers[index] IS 0
+        IF _bowyerTimers[bowyerIndex] IS 0
             IF _totalPlanks MORE 0 AND _totalWool MORE 0
                 SUB _totalPlanks 1
                 SUB _totalWool 1
-                ADD _bowyerTimers[index] 1
-        ELIF _bowyerTimers[index] IS _bowyerInterval
-            ALT _bowyerTimers[index] = 0
+                ADD _bowyerTimers[bowyerIndex] 1
+        ELIF _bowyerTimers[bowyerIndex] IS _bowyerInterval
+            ALT _bowyerTimers[bowyerIndex] = 0
             ADD _totalBows 1
         ELSE
-            ADD _bowyerTimers[index] 1
-    ADD index 1
+            ADD _bowyerTimers[bowyerIndex] 1
+    ADD bowyerIndex 1

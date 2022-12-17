@@ -1,4 +1,4 @@
-133 29
+0 0
 META script_type_update
 META script_state_waiting
 
@@ -60,18 +60,18 @@ IF _selectedBuildingType IS "butcher"
 
 /// Update butchers
 DEF STR animalId = ""
-DEF INT maxIndex = misc:list_size("_butcherIds")
-DEF INT index = 0
+DEF INT maxButcherIndex = misc:list_size("_butcherIds")
+DEF INT butcherIndex = 0
 DEF INT jobIndex = 0
 DEF INT jobCount = 0
 DEF INT randomNumber = 0
 LOOP
-    IF index IS maxIndex
+    IF butcherIndex IS maxButcherIndex
         BREAK
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _butcherIds[index])
-    ALT hasTool = misc:list_contains("_toolBuildingIds", _butcherIds[index])
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _butcherIds[butcherIndex])
+    ALT hasTool = misc:list_contains("_toolBuildingIds", _butcherIds[butcherIndex])
     IF hasWorker IS <true> AND hasTool IS <true>
-        IF _butcherTimers[index] IS 0
+        IF _butcherTimers[butcherIndex] IS 0
             ALT randomNumber = math:random_integer(1, 4)
             IF randomNumber IS 1
                 ALT jobCount = misc:list_size("_cattlemanIds")
@@ -79,7 +79,7 @@ LOOP
                     ALT jobIndex = math:random_integer(1, jobCount)
                     SUB jobIndex 1
                     IF _cattlemanGrowths[jobIndex] MORE 0.25
-                        ADD _butcherTimers[index] 1
+                        ADD _butcherTimers[butcherIndex] 1
                         ALT _cattlemanGrowths[jobIndex] = 0.0
                         ALT animalId = misc:string_concat(_cattlemanIds[jobIndex], "_1")
                         fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
@@ -89,7 +89,7 @@ LOOP
                     ALT jobIndex = math:random_integer(1, jobCount)
                     SUB jobIndex 1
                     IF _swineherdGrowths[jobIndex] MORE 0.4
-                        ADD _butcherTimers[index] 1
+                        ADD _butcherTimers[butcherIndex] 1
                         ALT _swineherdGrowths[jobIndex] = 0.0
                         ALT animalId = misc:string_concat(_swineherdIds[jobIndex], "_1")
                         fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
@@ -103,7 +103,7 @@ LOOP
                     ALT jobIndex = math:random_integer(1, jobCount)
                     SUB jobIndex 1
                     IF _shepherdGrowths[jobIndex] MORE 0.45
-                        ADD _butcherTimers[index] 1
+                        ADD _butcherTimers[butcherIndex] 1
                         ALT _shepherdGrowths[jobIndex] = 0.0
                         ALT animalId = misc:string_concat(_shepherdIds[jobIndex], "_1")
                         fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
@@ -117,7 +117,7 @@ LOOP
                     ALT jobIndex = math:random_integer(1, jobCount)
                     SUB jobIndex 1
                     IF _poultrymanGrowths[jobIndex] MORE 0.25
-                        ADD _butcherTimers[index] 1
+                        ADD _butcherTimers[butcherIndex] 1
                         ALT _poultrymanGrowths[jobIndex] = 0.0
                         ALT animalId = misc:string_concat(_poultrymanIds[jobIndex], "_1")
                         fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
@@ -129,10 +129,10 @@ LOOP
                         fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
                         ALT animalId = misc:string_concat(_poultrymanIds[jobIndex], "_5")
                         fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
-        ELIF _butcherTimers[index] IS _butcherInterval
-            ALT _butcherTimers[index] = 0
+        ELIF _butcherTimers[butcherIndex] IS _butcherInterval
+            ALT _butcherTimers[butcherIndex] = 0
             ADD _totalRawMeat 15
             ADD _totalHides 5
         ELSE
-            ADD _butcherTimers[index] 1
-    ADD index 1
+            ADD _butcherTimers[butcherIndex] 1
+    ADD butcherIndex 1

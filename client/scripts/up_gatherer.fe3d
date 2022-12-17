@@ -1,4 +1,4 @@
-44 12
+0 0
 META script_type_update
 META script_state_waiting
 
@@ -33,17 +33,17 @@ IF _selectedBuildingType IS "gatherer"
         fe3d:text2d_set_visible("gatherer_worker", <true>)
 
 /// Update gatherers
-DEF INT maxIndex = misc:list_size("_gathererIds")
-DEF INT index = 0
+DEF INT maxGathererIndex = misc:list_size("_gathererIds")
+DEF INT gathererIndex = 0
 LOOP
-    IF index IS maxIndex
+    IF gathererIndex IS maxGathererIndex
         BREAK
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _gathererIds[index])
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _gathererIds[gathererIndex])
     IF hasWorker IS <true>
-        IF _gathererTimers[index] IS _gathererInterval
-            ALT _gathererTimers[index] = 0
+        IF _gathererTimers[gathererIndex] IS _gathererInterval
+            ALT _gathererTimers[gathererIndex] = 0
             ADD _totalSeeds 1
             ADD _totalMushrooms 1
         ELSE
-            ADD _gathererTimers[index] 1
-    ADD index 1
+            ADD _gathererTimers[gathererIndex] 1
+    ADD gathererIndex 1

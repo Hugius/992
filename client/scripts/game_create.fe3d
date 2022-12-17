@@ -1,4 +1,4 @@
-14 27
+79 17
 META script_type_initialize
 META script_state_waiting
 
@@ -71,14 +71,14 @@ LOOP
         ADD modelIndex 1
 
 /// Place preview buildings
-DEF INT maxIndex = misc:list_size("_buildingTypes")
-DEF INT index = 0
+DEF INT maxBuildingIndex = misc:list_size("_buildingTypes")
+DEF INT buildingIndex = 0
 LOOP
-    IF index IS maxIndex
+    IF buildingIndex IS maxBuildingIndex
         BREAK
-    fe3d:model_place(_buildingTypes[index], _buildingModels[index], 0.0, 0.0, 0.0)
-    fe3d:model_set_visible(_buildingTypes[index], <false>)
-    ADD index 1
+    fe3d:model_place(_buildingTypes[buildingIndex], _buildingModels[buildingIndex], 0.0, 0.0, 0.0)
+    fe3d:model_set_visible(_buildingTypes[buildingIndex], <false>)
+    ADD buildingIndex 1
 
 /// Place default buildings
 fe3d:model_place("storage_0", "storage", 21.0, 3.0, -1.5)

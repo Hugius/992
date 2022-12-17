@@ -1,4 +1,4 @@
-40 40
+0 0
 META script_type_update
 META script_state_waiting
 
@@ -37,18 +37,18 @@ IF _selectedBuildingType IS "nightman"
         fe3d:text2d_set_visible("nightman_worker", <true>)
 
 /// Update nightmen
-DEF INT maxIndex = misc:list_size("_nightmanIds")
-DEF INT index = 0
+DEF INT maxNightmanIndex = misc:list_size("_nightmanIds")
+DEF INT nightmanIndex = 0
 DEF BOL decreaseSicknessChance = <false>
 LOOP
-    IF index IS maxIndex
+    IF nightmanIndex IS maxNightmanIndex
         BREAK
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _nightmanIds[index])
-    ALT hasTool = misc:list_contains("_toolBuildingIds", _nightmanIds[index])
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _nightmanIds[nightmanIndex])
+    ALT hasTool = misc:list_contains("_toolBuildingIds", _nightmanIds[nightmanIndex])
     IF hasWorker IS <true> AND hasTool IS <true>
         ALT decreaseSicknessChance = <true>
         BREAK
-    ADD index 1
+    ADD nightmanIndex 1
 
 IF decreaseSicknessChance IS <true>
     SUB _sicknessCatchChance 5

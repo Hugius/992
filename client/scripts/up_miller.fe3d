@@ -1,4 +1,4 @@
-43 12
+0 0
 META script_type_update
 META script_state_waiting
 
@@ -29,20 +29,20 @@ IF _selectedBuildingType IS "miller"
         fe3d:text2d_set_visible("miller_worker", <true>)
 
 /// Update millers
-DEF INT maxIndex = misc:list_size("_millerIds")
-DEF INT index = 0
+DEF INT maxMillerIndex = misc:list_size("_millerIds")
+DEF INT millerIndex = 0
 LOOP
-    IF index IS maxIndex
+    IF millerIndex IS maxMillerIndex
         BREAK
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _millerIds[index])
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _millerIds[millerIndex])
     IF hasWorker IS <true>
-        IF _millerTimers[index] IS 0
+        IF _millerTimers[millerIndex] IS 0
             IF _totalGrain MORE 0
                 SUB _totalGrain 1
-                ADD _millerTimers[index] 1
-        ELIF _millerTimers[index] IS _millerInterval
-            ALT _millerTimers[index] = 0
+                ADD _millerTimers[millerIndex] 1
+        ELIF _millerTimers[millerIndex] IS _millerInterval
+            ALT _millerTimers[millerIndex] = 0
             ADD _totalFlour 1
         ELSE
-            ADD _millerTimers[index] 1
-    ADD index 1
+            ADD _millerTimers[millerIndex] 1
+    ADD millerIndex 1

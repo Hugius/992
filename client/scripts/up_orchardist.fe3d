@@ -1,4 +1,4 @@
-21 61
+0 0
 META script_type_update
 META script_state_waiting
 
@@ -31,34 +31,34 @@ IF _selectedBuildingType IS "orchardist"
 /// Update orchardists
 DEF STR treeId = ""
 DEF DEC growth = 0.0
-DEF INT maxIndex = misc:list_size("_orchardistIds")
-DEF INT index = 0
+DEF INT maxOrchardistIndex = misc:list_size("_orchardistIds")
+DEF INT orchardistIndex = 0
 LOOP
-    IF index IS maxIndex
+    IF orchardistIndex IS maxOrchardistIndex
         BREAK
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _orchardistIds[index])
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _orchardistIds[orchardistIndex])
     IF hasWorker IS <true>
-        IF _orchardistGrowths[index] IS 0.0
-            ADD _orchardistGrowths[index] _minOrchardistGrowth
-        ELIF _orchardistGrowths[index] MORE _maxOrchardistGrowth
-            IF _orchardistTimers[index] IS _orchardistInterval
-                ALT _orchardistTimers[index] = 0
+        IF _orchardistGrowths[orchardistIndex] IS 0.0
+            ADD _orchardistGrowths[orchardistIndex] _minOrchardistGrowth
+        ELIF _orchardistGrowths[orchardistIndex] MORE _maxOrchardistGrowth
+            IF _orchardistTimers[orchardistIndex] IS _orchardistInterval
+                ALT _orchardistTimers[orchardistIndex] = 0
                 ADD _totalFruit 1
             ELSE
-                ADD _orchardistTimers[index] 1
-    IF _orchardistGrowths[index] MORE 0.0 AND _orchardistGrowths[index] LESS _maxOrchardistGrowth
+                ADD _orchardistTimers[orchardistIndex] 1
+    IF _orchardistGrowths[orchardistIndex] MORE 0.0 AND _orchardistGrowths[orchardistIndex] LESS _maxOrchardistGrowth
         DEF INT interval = _orchardistInterval
         DEF DEC speed = _maxOrchardistGrowth
         CAST interval DEC
         DIV speed interval
-        ADD _orchardistGrowths[index] speed
-    ALT growth = _orchardistGrowths[index]
-    ALT treeId = misc:string_concat(_orchardistIds[index], "_1")
+        ADD _orchardistGrowths[orchardistIndex] speed
+    ALT growth = _orchardistGrowths[orchardistIndex]
+    ALT treeId = misc:string_concat(_orchardistIds[orchardistIndex], "_1")
     fe3d:model_set_base_size(treeId, growth, growth, growth)
-    ALT treeId = misc:string_concat(_orchardistIds[index], "_2")
+    ALT treeId = misc:string_concat(_orchardistIds[orchardistIndex], "_2")
     fe3d:model_set_base_size(treeId, growth, growth, growth)
-    ALT treeId = misc:string_concat(_orchardistIds[index], "_3")
+    ALT treeId = misc:string_concat(_orchardistIds[orchardistIndex], "_3")
     fe3d:model_set_base_size(treeId, growth, growth, growth)
-    ALT treeId = misc:string_concat(_orchardistIds[index], "_4")
+    ALT treeId = misc:string_concat(_orchardistIds[orchardistIndex], "_4")
     fe3d:model_set_base_size(treeId, growth, growth, growth)
-    ADD index 1
+    ADD orchardistIndex 1

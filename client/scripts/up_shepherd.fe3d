@@ -1,4 +1,4 @@
-55 44
+0 0
 META script_type_update
 META script_state_waiting
 
@@ -45,33 +45,33 @@ IF _selectedBuildingType IS "shepherd"
 /// Update shepherds
 DEF STR sheepId = ""
 DEF DEC growth = 0.0
-DEF INT maxIndex = misc:list_size("_shepherdIds")
-DEF INT index = 0
+DEF INT maxShepherdIndex = misc:list_size("_shepherdIds")
+DEF INT shepherdIndex = 0
 LOOP
-    IF index IS maxIndex
+    IF shepherdIndex IS maxShepherdIndex
         BREAK
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _shepherdIds[index])
-    ALT hasTool = misc:list_contains("_toolBuildingIds", _shepherdIds[index])
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _shepherdIds[shepherdIndex])
+    ALT hasTool = misc:list_contains("_toolBuildingIds", _shepherdIds[shepherdIndex])
     IF hasWorker IS <true> AND hasTool IS <true>
-        IF _shepherdGrowths[index] IS 0.0
-            ADD _shepherdGrowths[index] _minShepherdGrowth
-        ELIF _shepherdGrowths[index] MORE _maxShepherdGrowth
-            IF _shepherdTimers[index] IS _shepherdInterval
-                ALT _shepherdTimers[index] = 0
+        IF _shepherdGrowths[shepherdIndex] IS 0.0
+            ADD _shepherdGrowths[shepherdIndex] _minShepherdGrowth
+        ELIF _shepherdGrowths[shepherdIndex] MORE _maxShepherdGrowth
+            IF _shepherdTimers[shepherdIndex] IS _shepherdInterval
+                ALT _shepherdTimers[shepherdIndex] = 0
                 ADD _totalWool 1
             ELSE
-                ADD _shepherdTimers[index] 1
-    IF _shepherdGrowths[index] MORE 0.0 AND _shepherdGrowths[index] LESS _maxShepherdGrowth
+                ADD _shepherdTimers[shepherdIndex] 1
+    IF _shepherdGrowths[shepherdIndex] MORE 0.0 AND _shepherdGrowths[shepherdIndex] LESS _maxShepherdGrowth
         DEF INT interval = _shepherdInterval
         DEF DEC speed = _maxShepherdGrowth
         CAST interval DEC
         DIV speed interval
-        ADD _shepherdGrowths[index] speed
-    ALT growth = _shepherdGrowths[index]
-    ALT sheepId = misc:string_concat(_shepherdIds[index], "_1")
+        ADD _shepherdGrowths[shepherdIndex] speed
+    ALT growth = _shepherdGrowths[shepherdIndex]
+    ALT sheepId = misc:string_concat(_shepherdIds[shepherdIndex], "_1")
     fe3d:model_set_base_size(sheepId, growth, growth, growth)
-    ALT sheepId = misc:string_concat(_shepherdIds[index], "_2")
+    ALT sheepId = misc:string_concat(_shepherdIds[shepherdIndex], "_2")
     fe3d:model_set_base_size(sheepId, growth, growth, growth)
-    ALT sheepId = misc:string_concat(_shepherdIds[index], "_3")
+    ALT sheepId = misc:string_concat(_shepherdIds[shepherdIndex], "_3")
     fe3d:model_set_base_size(sheepId, growth, growth, growth)
-    ADD index 1
+    ADD shepherdIndex 1

@@ -1,4 +1,4 @@
-44 46
+0 0
 META script_type_update
 META script_state_waiting
 
@@ -35,37 +35,37 @@ IF _selectedBuildingType IS "poultryman"
 /// Update poultrymen
 DEF STR chickenId = ""
 DEF DEC growth = 0.0
-DEF INT maxIndex = misc:list_size("_poultrymanIds")
-DEF INT index = 0
+DEF INT maxPoultrymanIndex = misc:list_size("_poultrymanIds")
+DEF INT poultrymanIndex = 0
 LOOP
-    IF index IS maxIndex
+    IF poultrymanIndex IS maxPoultrymanIndex
         BREAK
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _poultrymanIds[index])
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _poultrymanIds[poultrymanIndex])
     IF hasWorker IS <true>
-        IF _poultrymanGrowths[index] IS 0.0
-            ADD _poultrymanGrowths[index] _minPoultrymanGrowth
-        ELIF _poultrymanGrowths[index] MORE _maxPoultrymanGrowth
-            IF _poultrymanTimers[index] IS _poultrymanInterval
-                ALT _poultrymanTimers[index] = 0
+        IF _poultrymanGrowths[poultrymanIndex] IS 0.0
+            ADD _poultrymanGrowths[poultrymanIndex] _minPoultrymanGrowth
+        ELIF _poultrymanGrowths[poultrymanIndex] MORE _maxPoultrymanGrowth
+            IF _poultrymanTimers[poultrymanIndex] IS _poultrymanInterval
+                ALT _poultrymanTimers[poultrymanIndex] = 0
                 ADD _totalEggs 1
                 ADD _totalFeathers 1
             ELSE
-                ADD _poultrymanTimers[index] 1
-    IF _poultrymanGrowths[index] MORE 0.0 AND _poultrymanGrowths[index] LESS _maxPoultrymanGrowth
+                ADD _poultrymanTimers[poultrymanIndex] 1
+    IF _poultrymanGrowths[poultrymanIndex] MORE 0.0 AND _poultrymanGrowths[poultrymanIndex] LESS _maxPoultrymanGrowth
         DEF INT interval = _poultrymanInterval
         DEF DEC speed = _maxPoultrymanGrowth
         CAST interval DEC
         DIV speed interval
-        ADD _poultrymanGrowths[index] speed
-    ALT growth = _poultrymanGrowths[index]
-    ALT chickenId = misc:string_concat(_poultrymanIds[index], "_1")
+        ADD _poultrymanGrowths[poultrymanIndex] speed
+    ALT growth = _poultrymanGrowths[poultrymanIndex]
+    ALT chickenId = misc:string_concat(_poultrymanIds[poultrymanIndex], "_1")
     fe3d:model_set_base_size(chickenId, growth, growth, growth)
-    ALT chickenId = misc:string_concat(_poultrymanIds[index], "_2")
+    ALT chickenId = misc:string_concat(_poultrymanIds[poultrymanIndex], "_2")
     fe3d:model_set_base_size(chickenId, growth, growth, growth)
-    ALT chickenId = misc:string_concat(_poultrymanIds[index], "_3")
+    ALT chickenId = misc:string_concat(_poultrymanIds[poultrymanIndex], "_3")
     fe3d:model_set_base_size(chickenId, growth, growth, growth)
-    ALT chickenId = misc:string_concat(_poultrymanIds[index], "_4")
+    ALT chickenId = misc:string_concat(_poultrymanIds[poultrymanIndex], "_4")
     fe3d:model_set_base_size(chickenId, growth, growth, growth)
-    ALT chickenId = misc:string_concat(_poultrymanIds[index], "_5")
+    ALT chickenId = misc:string_concat(_poultrymanIds[poultrymanIndex], "_5")
     fe3d:model_set_base_size(chickenId, growth, growth, growth)
-    ADD index 1
+    ADD poultrymanIndex 1

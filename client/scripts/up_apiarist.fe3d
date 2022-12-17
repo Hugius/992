@@ -1,4 +1,4 @@
-39 29
+0 0
 META script_type_update
 META script_state_waiting
 
@@ -29,16 +29,16 @@ IF _selectedBuildingType IS "apiarist"
         fe3d:text2d_set_visible("apiarist_worker", <true>)
 
 /// Update apiarists
-DEF INT maxIndex = misc:list_size("_apiaristIds")
-DEF INT index = 0
+DEF INT maxApiaristIndex = misc:list_size("_apiaristIds")
+DEF INT apiaristIndex = 0
 LOOP
-    IF index IS maxIndex
+    IF apiaristIndex IS maxApiaristIndex
         BREAK
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _apiaristIds[index])
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _apiaristIds[apiaristIndex])
     IF hasWorker IS <true>
-        IF _apiaristTimers[index] IS _apiaristInterval
-            ALT _apiaristTimers[index] = 0
+        IF _apiaristTimers[apiaristIndex] IS _apiaristInterval
+            ALT _apiaristTimers[apiaristIndex] = 0
             ADD _totalHoney 1
         ELSE
-            ADD _apiaristTimers[index] 1
-    ADD index 1
+            ADD _apiaristTimers[apiaristIndex] 1
+    ADD apiaristIndex 1

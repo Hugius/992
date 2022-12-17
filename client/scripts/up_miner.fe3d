@@ -1,4 +1,4 @@
-59 12
+0 0
 META script_type_update
 META script_state_waiting
 
@@ -47,18 +47,18 @@ IF _selectedBuildingType IS "miner"
         fe3d:text2d_set_visible("miner_worker", <true>)
 
 /// Update miners
-DEF INT maxIndex = misc:list_size("_minerIds")
-DEF INT index = 0
+DEF INT maxMinerIndex = misc:list_size("_minerIds")
+DEF INT minerIndex = 0
 LOOP
-    IF index IS maxIndex
+    IF minerIndex IS maxMinerIndex
         BREAK
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _minerIds[index])
-    ALT hasTool = misc:list_contains("_toolBuildingIds", _minerIds[index])
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _minerIds[minerIndex])
+    ALT hasTool = misc:list_contains("_toolBuildingIds", _minerIds[minerIndex])
     IF hasWorker IS <true> AND hasTool IS <true>
-        IF _minerTimers[index] IS _minerInterval
-            ALT _minerTimers[index] = 0
+        IF _minerTimers[minerIndex] IS _minerInterval
+            ALT _minerTimers[minerIndex] = 0
             ADD _totalCoal 1
             ADD _totalOre 1
         ELSE
-            ADD _minerTimers[index] 1
-    ADD index 1
+            ADD _minerTimers[minerIndex] 1
+    ADD minerIndex 1

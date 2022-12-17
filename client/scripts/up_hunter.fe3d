@@ -1,4 +1,4 @@
-76 12
+0 0
 META script_type_update
 META script_state_waiting
 
@@ -61,21 +61,21 @@ IF _selectedBuildingType IS "hunter"
         fe3d:text2d_set_visible("hunter_worker", <true>)
 
 /// Update hunters
-DEF INT maxIndex = misc:list_size("_hunterIds")
-DEF INT index = 0
+DEF INT maxHunterIndex = misc:list_size("_hunterIds")
+DEF INT hunterIndex = 0
 DEF INT arrowIndex = 0
 LOOP
-    IF index IS maxIndex
+    IF hunterIndex IS maxHunterIndex
         BREAK
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _hunterIds[index])
-    ALT hasBow = misc:list_contains("_bowBuildingIds", _hunterIds[index])
-    ALT hasArrow = misc:list_contains("_arrowBuildingIds", _hunterIds[index])
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _hunterIds[hunterIndex])
+    ALT hasBow = misc:list_contains("_bowBuildingIds", _hunterIds[hunterIndex])
+    ALT hasArrow = misc:list_contains("_arrowBuildingIds", _hunterIds[hunterIndex])
     IF hasWorker IS <true> AND hasBow IS <true> AND hasArrow IS <true>
-        IF _hunterTimers[index] IS _hunterInterval
-            ALT _hunterTimers[index] = 0
-            ALT arrowIndex = misc:list_index("_arrowBuildingIds", _hunterIds[index])
+        IF _hunterTimers[hunterIndex] IS _hunterInterval
+            ALT _hunterTimers[hunterIndex] = 0
+            ALT arrowIndex = misc:list_hunterIndex("_arrowBuildingIds", _hunterIds[hunterIndex])
             PULL _arrowBuildingIds arrowIndex
             ADD _totalRawMeat 1
         ELSE
-            ADD _hunterTimers[index] 1
-    ADD index 1
+            ADD _hunterTimers[hunterIndex] 1
+    ADD hunterIndex 1

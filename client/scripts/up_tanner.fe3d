@@ -1,4 +1,4 @@
-58 7
+0 0
 META script_type_update
 META script_state_waiting
 
@@ -43,21 +43,21 @@ IF _selectedBuildingType IS "tanner"
         fe3d:text2d_set_visible("tanner_worker", <true>)
 
 /// Update tanners
-DEF INT maxIndex = misc:list_size("_tannerIds")
-DEF INT index = 0
+DEF INT maxTannerIndex = misc:list_size("_tannerIds")
+DEF INT tannerIndex = 0
 LOOP
-    IF index IS maxIndex
+    IF tannerIndex IS maxTannerIndex
         BREAK
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _tannerIds[index])
-    ALT hasTool = misc:list_contains("_toolBuildingIds", _tannerIds[index])
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _tannerIds[tannerIndex])
+    ALT hasTool = misc:list_contains("_toolBuildingIds", _tannerIds[tannerIndex])
     IF hasWorker IS <true> AND hasTool IS <true>
-        IF _tannerTimers[index] IS 0
+        IF _tannerTimers[tannerIndex] IS 0
             IF _totalHides MORE 0
                 SUB _totalHides 1
-                ADD _tannerTimers[index] 1
-        ELIF _tannerTimers[index] IS _tannerInterval
-            ALT _tannerTimers[index] = 0
+                ADD _tannerTimers[tannerIndex] 1
+        ELIF _tannerTimers[tannerIndex] IS _tannerInterval
+            ALT _tannerTimers[tannerIndex] = 0
             ADD _totalLeather 1
         ELSE
-            ADD _tannerTimers[index] 1
-    ADD index 1
+            ADD _tannerTimers[tannerIndex] 1
+    ADD tannerIndex 1

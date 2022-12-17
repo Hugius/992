@@ -1,4 +1,4 @@
-43 12
+0 0
 META script_type_update
 META script_state_waiting
 
@@ -29,20 +29,20 @@ IF _selectedBuildingType IS "herbalist"
         fe3d:text2d_set_visible("herbalist_worker", <true>)
 
 /// Update herbalists
-DEF INT maxIndex = misc:list_size("_herbalistIds")
-DEF INT index = 0
+DEF INT maxHerbalistIndex = misc:list_size("_herbalistIds")
+DEF INT herbalistIndex = 0
 LOOP
-    IF index IS maxIndex
+    IF herbalistIndex IS maxHerbalistIndex
         BREAK
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _herbalistIds[index])
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _herbalistIds[herbalistIndex])
     IF hasWorker IS <true>
-        IF _herbalistTimers[index] IS 0
+        IF _herbalistTimers[herbalistIndex] IS 0
             IF _totalMushrooms MORE 0
                 SUB _totalMushrooms 1
-                ADD _herbalistTimers[index] 1
-        ELIF _herbalistTimers[index] IS _herbalistInterval
-            ALT _herbalistTimers[index] = 0
+                ADD _herbalistTimers[herbalistIndex] 1
+        ELIF _herbalistTimers[herbalistIndex] IS _herbalistInterval
+            ALT _herbalistTimers[herbalistIndex] = 0
             ADD _totalMedicine 1
         ELSE
-            ADD _herbalistTimers[index] 1
-    ADD index 1
+            ADD _herbalistTimers[herbalistIndex] 1
+    ADD herbalistIndex 1

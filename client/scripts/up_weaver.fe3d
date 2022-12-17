@@ -1,4 +1,4 @@
-53 10
+0 0
 META script_type_update
 META script_state_waiting
 
@@ -34,25 +34,25 @@ IF _selectedBuildingType IS "weaver"
         fe3d:text2d_set_visible("weaver_worker", <true>)
 
 /// Update weavers
-DEF INT maxIndex = misc:list_size("_weaverIds")
-DEF INT index = 0
+DEF INT maxWeaverIndex = misc:list_size("_weaverIds")
+DEF INT waeverIndex = 0
 DEF INT randomNumber = 0
 LOOP
-    IF index IS maxIndex
+    IF waeverIndex IS maxWeaverIndex
         BREAK
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _weaverIds[index])
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _weaverIds[waeverIndex])
     IF hasWorker IS <true>
-        IF _weaverTimers[index] IS 0
+        IF _weaverTimers[waeverIndex] IS 0
             ALT randomNumber = math:random_integer(1, 2)
             IF randomNumber IS 1 AND _totalWool MORE 0
                 SUB _totalWool 1
-                ADD _weaverTimers[index] 1
+                ADD _weaverTimers[waeverIndex] 1
             ELIF randomNumber IS 2 AND _totalLeather MORE 0
                 SUB _totalLeather 1
-                ADD _weaverTimers[index] 1
-        ELIF _weaverTimers[index] IS _weaverInterval
-            ALT _weaverTimers[index] = 0
+                ADD _weaverTimers[waeverIndex] 1
+        ELIF _weaverTimers[waeverIndex] IS _weaverInterval
+            ALT _weaverTimers[waeverIndex] = 0
             ADD _totalClothes 1
         ELSE
-            ADD _weaverTimers[index] 1
-    ADD index 1
+            ADD _weaverTimers[waeverIndex] 1
+    ADD waeverIndex 1

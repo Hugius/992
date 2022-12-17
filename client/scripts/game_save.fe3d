@@ -1,4 +1,4 @@
-15 36
+23 14
 META script_type_terminate
 META script_state_waiting
 
@@ -16,13 +16,13 @@ fe3d:world_add_custom_aabb("border_1")
 fe3d:world_add_custom_aabb("border_2")
 fe3d:world_add_custom_aabb("border_3")
 DEF LST modelIds = fe3d:model_get_ids()
-DEF INT maxIndex = misc:list_size("modelIds")
-DEF INT index = 0
+DEF INT maxModelIndex = misc:list_size("modelIds")
+DEF INT modelIndex = 0
 LOOP
-    IF index IS maxIndex
+    IF modelIndex IS maxModelIndex
         BREAK
-    fe3d:world_add_custom_model(modelIds[index])
-    ADD index 1
+    fe3d:world_add_custom_model(modelIds[modelIndex])
+    ADD modelIndex 1
 fe3d:world_save_custom("save")
 
 /// Save camera

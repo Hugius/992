@@ -1,4 +1,4 @@
-74 12
+0 0
 META script_type_update
 META script_state_waiting
 
@@ -51,29 +51,29 @@ IF _selectedBuildingType IS "smelter"
         fe3d:text2d_set_visible("smelter_worker", <true>)
 
 /// Update smelters
-DEF INT maxIndex = misc:list_size("_smelterIds")
-DEF INT index = 0
+DEF INT maxSmelterIndex = misc:list_size("_smelterIds")
+DEF INT smelterIndex = 0
 DEF INT randomNumber = 0
 LOOP
-    IF index IS maxIndex
+    IF smelterIndex IS maxSmelterIndex
         BREAK
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _smelterIds[index])
-    ALT hasTool = misc:list_contains("_toolBuildingIds", _smelterIds[index])
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _smelterIds[smelterIndex])
+    ALT hasTool = misc:list_contains("_toolBuildingIds", _smelterIds[smelterIndex])
     IF hasWorker IS <true> AND hasTool IS <true>
-        IF _smelterTimers[index] IS 0
+        IF _smelterTimers[smelterIndex] IS 0
             IF _totalOre MORE 0
                 ALT randomNumber = math:random_integer(1, 2)
                 IF randomNumber IS 1 AND _totalFirewood MORE 0
                     SUB _totalOre 1
                     SUB _totalFirewood 1
-                    ADD _smelterTimers[index] 1
+                    ADD _smelterTimers[smelterIndex] 1
                 ELIF randomNumber IS 2 AND _totalCoal MORE 0
                     SUB _totalOre 1
                     SUB _totalCoal 1
-                    ADD _smelterTimers[index] 1
-        ELIF _smelterTimers[index] IS _smelterInterval
-            ALT _smelterTimers[index] = 0
+                    ADD _smelterTimers[smelterIndex] 1
+        ELIF _smelterTimers[smelterIndex] IS _smelterInterval
+            ALT _smelterTimers[smelterIndex] = 0
             ADD _totalIron 1
         ELSE
-            ADD _smelterTimers[index] 1
-    ADD index 1
+            ADD _smelterTimers[smelterIndex] 1
+    ADD smelterIndex 1

@@ -1,4 +1,4 @@
-3 12
+0 0
 META script_type_update
 META script_state_waiting
 
@@ -8,8 +8,6 @@ IF _buildMode IS <false> OR _lastBuildMode IS <false>
 
 /// Define reusable values
 DEF STR buildingType = _buildingTypes[_buildingIndex]
-DEF INT maxIndex = 0
-DEF INT index = 0
 
 /// Update raycasting
 fe3d:raycast_calculate_terrain_intersection(100.0, 0.1)
@@ -67,15 +65,15 @@ DEF DEC aabbBL = 0.0
 DEF DEC aabbBR = 0.0
 DEF DEC aabbTR = 0.0
 DEF DEC aabbTL = 0.0
-ALT maxIndex = misc:list_size("aabbIds")
-ALT index = 0
+DEF INT maxAabbIndex = misc:list_size("aabbIds")
+DEF INT aabbIndex = 0
 LOOP
-    IF index IS maxIndex
+    IF aabbIndex IS maxAabbIndex
         BREAK
-    ALT aabbPosX = fe3d:model_get_aabb_position_x(buildingType, aabbIds[index])
-    ALT aabbPosZ = fe3d:model_get_aabb_position_z(buildingType, aabbIds[index])
-    ALT aabbSizeX = fe3d:model_get_aabb_size_x(buildingType, aabbIds[index])
-    ALT aabbSizeZ = fe3d:model_get_aabb_size_z(buildingType, aabbIds[index])
+    ALT aabbPosX = fe3d:model_get_aabb_position_x(buildingType, aabbIds[aabbIndex])
+    ALT aabbPosZ = fe3d:model_get_aabb_position_z(buildingType, aabbIds[aabbIndex])
+    ALT aabbSizeX = fe3d:model_get_aabb_size_x(buildingType, aabbIds[aabbIndex])
+    ALT aabbSizeZ = fe3d:model_get_aabb_size_z(buildingType, aabbIds[aabbIndex])
     DIV aabbSizeX 2.0
     DIV aabbSizeZ 2.0
     SUB aabbPosX aabbSizeX
@@ -92,17 +90,17 @@ LOOP
     ALT aabbTL = fe3d:terrain_get_pixel_height("terrain", aabbPosX, aabbPosZ)
     IF aabbBL LESS _buildingHeight OR aabbBR LESS _buildingHeight OR aabbTR LESS _buildingHeight OR aabbTL LESS _buildingHeight
         ALT color = {0.5, 0.0, 0.0}
-    ADD index 1
+    ADD aabbIndex 1
 
 /// Update building color
 DEF LST partIds = fe3d:model_get_part_ids(buildingType)
-ALT maxIndex = misc:list_size("partIds")
-ALT index = 0
+DEF INT maxPartIndex = misc:list_size("partIds")
+DEF INT partIndex = 0
 LOOP
-    IF index IS maxIndex
+    IF partIndex IS maxPartIndex
         BREAK
-    fe3d:model_set_color(buildingType, partIds[index], color[0], color[1], color[2])
-    ADD index 1
+    fe3d:model_set_color(buildingType, partIds[partIndex], color[0], color[1], color[2])
+    ADD partIndex 1
 
 /// Compose new building ID
 CAST _buildingCounter STR

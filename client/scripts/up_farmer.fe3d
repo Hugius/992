@@ -1,4 +1,4 @@
-70 19
+0 0
 META script_type_update
 META script_state_waiting
 
@@ -49,59 +49,59 @@ IF _selectedBuildingType IS "farmer"
 /// Update farmers
 DEF STR grainId = ""
 DEF DEC growth = 0.0
-DEF INT maxIndex = misc:list_size("_farmerIds")
-DEF INT index = 0
+DEF INT maxFarmerIndex = misc:list_size("_farmerIds")
+DEF INT farmerIndex = 0
 LOOP
-    IF index IS maxIndex
+    IF farmerIndex IS maxFarmerIndex
         BREAK
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _farmerIds[index])
-    ALT hasTool = misc:list_contains("_toolBuildingIds", _farmerIds[index])
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _farmerIds[farmerIndex])
+    ALT hasTool = misc:list_contains("_toolBuildingIds", _farmerIds[farmerIndex])
     IF hasWorker IS <true> AND hasTool IS <true>
-        IF _farmerGrowths[index] IS 0.0
+        IF _farmerGrowths[farmerIndex] IS 0.0
             IF _totalSeeds MORE 15
                 SUB _totalSeeds 16
-                ADD _farmerGrowths[index] 0.1
-        ELIF _farmerGrowths[index] MORE _maxFarmerGrowth
-            ALT _farmerGrowths[index] = 0.0
+                ADD _farmerGrowths[farmerIndex] 0.1
+        ELIF _farmerGrowths[farmerIndex] MORE _maxFarmerGrowth
+            ALT _farmerGrowths[farmerIndex] = 0.0
             ADD _totalGrain 16
             ADD _totalStraw 16
-    IF _farmerGrowths[index] MORE 0.0 AND _farmerGrowths[index] LESS _maxFarmerGrowth
+    IF _farmerGrowths[farmerIndex] MORE 0.0 AND _farmerGrowths[farmerIndex] LESS _maxFarmerGrowth
         DEF INT interval = _farmerInterval
         DEF DEC speed = _maxFarmerGrowth
         CAST interval DEC
         DIV speed interval
-        ADD _farmerGrowths[index] speed
-    ALT growth = _farmerGrowths[index]
-    ALT grainId = misc:string_concat(_farmerIds[index], "_1")
+        ADD _farmerGrowths[farmerIndex] speed
+    ALT growth = _farmerGrowths[farmerIndex]
+    ALT grainId = misc:string_concat(_farmerIds[farmerIndex], "_1")
     fe3d:model_set_base_size(grainId, growth, growth, growth)
-    ALT grainId = misc:string_concat(_farmerIds[index], "_2")
+    ALT grainId = misc:string_concat(_farmerIds[farmerIndex], "_2")
     fe3d:model_set_base_size(grainId, growth, growth, growth)
-    ALT grainId = misc:string_concat(_farmerIds[index], "_3")
+    ALT grainId = misc:string_concat(_farmerIds[farmerIndex], "_3")
     fe3d:model_set_base_size(grainId, growth, growth, growth)
-    ALT grainId = misc:string_concat(_farmerIds[index], "_4")
+    ALT grainId = misc:string_concat(_farmerIds[farmerIndex], "_4")
     fe3d:model_set_base_size(grainId, growth, growth, growth)
-    ALT grainId = misc:string_concat(_farmerIds[index], "_5")
+    ALT grainId = misc:string_concat(_farmerIds[farmerIndex], "_5")
     fe3d:model_set_base_size(grainId, growth, growth, growth)
-    ALT grainId = misc:string_concat(_farmerIds[index], "_6")
+    ALT grainId = misc:string_concat(_farmerIds[farmerIndex], "_6")
     fe3d:model_set_base_size(grainId, growth, growth, growth)
-    ALT grainId = misc:string_concat(_farmerIds[index], "_7")
+    ALT grainId = misc:string_concat(_farmerIds[farmerIndex], "_7")
     fe3d:model_set_base_size(grainId, growth, growth, growth)
-    ALT grainId = misc:string_concat(_farmerIds[index], "_8")
+    ALT grainId = misc:string_concat(_farmerIds[farmerIndex], "_8")
     fe3d:model_set_base_size(grainId, growth, growth, growth)
-    ALT grainId = misc:string_concat(_farmerIds[index], "_9")
+    ALT grainId = misc:string_concat(_farmerIds[farmerIndex], "_9")
     fe3d:model_set_base_size(grainId, growth, growth, growth)
-    ALT grainId = misc:string_concat(_farmerIds[index], "_10")
+    ALT grainId = misc:string_concat(_farmerIds[farmerIndex], "_10")
     fe3d:model_set_base_size(grainId, growth, growth, growth)
-    ALT grainId = misc:string_concat(_farmerIds[index], "_11")
+    ALT grainId = misc:string_concat(_farmerIds[farmerIndex], "_11")
     fe3d:model_set_base_size(grainId, growth, growth, growth)
-    ALT grainId = misc:string_concat(_farmerIds[index], "_12")
+    ALT grainId = misc:string_concat(_farmerIds[farmerIndex], "_12")
     fe3d:model_set_base_size(grainId, growth, growth, growth)
-    ALT grainId = misc:string_concat(_farmerIds[index], "_13")
+    ALT grainId = misc:string_concat(_farmerIds[farmerIndex], "_13")
     fe3d:model_set_base_size(grainId, growth, growth, growth)
-    ALT grainId = misc:string_concat(_farmerIds[index], "_14")
+    ALT grainId = misc:string_concat(_farmerIds[farmerIndex], "_14")
     fe3d:model_set_base_size(grainId, growth, growth, growth)
-    ALT grainId = misc:string_concat(_farmerIds[index], "_15")
+    ALT grainId = misc:string_concat(_farmerIds[farmerIndex], "_15")
     fe3d:model_set_base_size(grainId, growth, growth, growth)
-    ALT grainId = misc:string_concat(_farmerIds[index], "_16")
+    ALT grainId = misc:string_concat(_farmerIds[farmerIndex], "_16")
     fe3d:model_set_base_size(grainId, growth, growth, growth)
-    ADD index 1
+    ADD farmerIndex 1

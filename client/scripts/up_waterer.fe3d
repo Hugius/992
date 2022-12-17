@@ -1,4 +1,4 @@
-34 0
+0 0
 META script_type_update
 META script_state_waiting
 
@@ -23,16 +23,16 @@ IF _selectedBuildingType IS "waterer"
         fe3d:text2d_set_visible("waterer_worker", <true>)
 
 /// Update waterers
-DEF INT maxIndex = misc:list_size("_watererIds")
-DEF INT index = 0
+DEF INT maxWatererIndex = misc:list_size("_watererIds")
+DEF INT watererIndex = 0
 DEF BOL decreaseSicknessChance = <false>
 LOOP
-    IF index IS maxIndex
+    IF watererIndex IS maxWatererIndex
         BREAK
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _watererIds[index])
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _watererIds[watererIndex])
     IF hasWorker IS <true>
         ALT decreaseSicknessChance = <true>
-    ADD index 1
+    ADD watererIndex 1
 
 IF decreaseSicknessChance IS <true>
     SUB _sicknessCatchChance 5

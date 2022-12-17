@@ -1,4 +1,4 @@
-32 26
+0 0
 META script_type_update
 META script_state_waiting
 
@@ -25,26 +25,26 @@ IF _selectedBuildingType IS "swineherd"
 /// Update swineherds
 DEF STR pigId = ""
 DEF DEC growth = 0.0
-DEF INT maxIndex = misc:list_size("_swineherdIds")
-DEF INT index = 0
+DEF INT maxSwineherdIndex = misc:list_size("_swineherdIds")
+DEF INT swineherdIndex = 0
 LOOP
-    IF index IS maxIndex
+    IF swineherdIndex IS maxSwineherdIndex
         BREAK
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _swineherdIds[index])
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _swineherdIds[swineherdIndex])
     IF hasWorker IS <true>
-        IF _swineherdGrowths[index] IS 0.0
-            ADD _swineherdGrowths[index] _minSwineherdGrowth
-    IF _swineherdGrowths[index] MORE 0.0 AND _swineherdGrowths[index] LESS _maxSwineherdGrowth
+        IF _swineherdGrowths[swineherdIndex] IS 0.0
+            ADD _swineherdGrowths[swineherdIndex] _minSwineherdGrowth
+    IF _swineherdGrowths[swineherdIndex] MORE 0.0 AND _swineherdGrowths[swineherdIndex] LESS _maxSwineherdGrowth
         DEF INT interval = _swineherdInterval
         DEF DEC speed = _maxSwineherdGrowth
         CAST interval DEC
         DIV speed interval
-        ADD _swineherdGrowths[index] speed
-    ALT growth = _swineherdGrowths[index]
-    ALT pigId = misc:string_concat(_swineherdIds[index], "_1")
+        ADD _swineherdGrowths[swineherdIndex] speed
+    ALT growth = _swineherdGrowths[swineherdIndex]
+    ALT pigId = misc:string_concat(_swineherdIds[swineherdIndex], "_1")
     fe3d:model_set_base_size(pigId, growth, growth, growth)
-    ALT pigId = misc:string_concat(_swineherdIds[index], "_2")
+    ALT pigId = misc:string_concat(_swineherdIds[swineherdIndex], "_2")
     fe3d:model_set_base_size(pigId, growth, growth, growth)
-    ALT pigId = misc:string_concat(_swineherdIds[index], "_3")
+    ALT pigId = misc:string_concat(_swineherdIds[swineherdIndex], "_3")
     fe3d:model_set_base_size(pigId, growth, growth, growth)
-    ADD index 1
+    ADD swineherdIndex 1

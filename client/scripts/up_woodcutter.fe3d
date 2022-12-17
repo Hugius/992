@@ -1,4 +1,4 @@
-63 32
+0 0
 META script_type_update
 META script_state_waiting
 
@@ -47,22 +47,22 @@ IF _selectedBuildingType IS "woodcutter"
         fe3d:text2d_set_visible("woodcutter_worker", <true>)
 
 /// Update woodcutters
-DEF INT maxIndex = misc:list_size("_woodcutterIds")
-DEF INT index = 0
+DEF INT maxWoodcutterIndex = misc:list_size("_woodcutterIds")
+DEF INT woodcutterIndex = 0
 LOOP
-    IF index IS maxIndex
+    IF woodcutterIndex IS maxWoodcutterIndex
         BREAK
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _woodcutterIds[index])
-    ALT hasTool = misc:list_contains("_toolBuildingIds", _woodcutterIds[index])
+    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _woodcutterIds[woodcutterIndex])
+    ALT hasTool = misc:list_contains("_toolBuildingIds", _woodcutterIds[woodcutterIndex])
     IF hasWorker IS <true> AND hasTool IS <true>
-        IF _woodcutterTimers[index] IS 0
+        IF _woodcutterTimers[woodcutterIndex] IS 0
             IF _totalWood MORE 0
                 SUB _totalWood 1
-                ADD _woodcutterTimers[index] 1
-        ELIF _woodcutterTimers[index] IS _woodcutterInterval
-            ALT _woodcutterTimers[index] = 0
+                ADD _woodcutterTimers[woodcutterIndex] 1
+        ELIF _woodcutterTimers[woodcutterIndex] IS _woodcutterInterval
+            ALT _woodcutterTimers[woodcutterIndex] = 0
             ADD _totalPlanks 10
             ADD _totalFirewood 5
         ELSE
-            ADD _woodcutterTimers[index] 1
-    ADD index 1
+            ADD _woodcutterTimers[woodcutterIndex] 1
+    ADD woodcutterIndex 1
