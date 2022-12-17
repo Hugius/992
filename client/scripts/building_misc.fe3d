@@ -8,18 +8,18 @@ ALT _lastBuildMode = _buildMode
 /// Update build button
 DEF BOL buttonHovered = fe3d:quad2d_is_hovered("build")
 IF buttonHovered IS <true>
-    fe3d:quad2d_set_lightness("build", 1.25)
-    ALT _cursorType = "HAND"
-    DEF BOL isLmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
-    IF isLmbClicked IS <true>
-        IF _buildMode IS <true>
-            fe3d:model_set_visible(_buildingTypes[_buildingIndex], <false>)
-            ALT _buildMode = <false>
-        ELSE
-            fe3d:model_set_visible(_buildingTypes[_buildingIndex], <true>)
-            ALT _buildMode = <true>
+  fe3d:quad2d_set_lightness("build", 1.25)
+  ALT _cursorType = "HAND"
+  DEF BOL isLmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
+  IF isLmbClicked IS <true>
+    IF _buildMode IS <true>
+      fe3d:model_set_visible(_buildingTypes[_buildingIndex], <false>)
+      ALT _buildMode = <false>
+    ELSE
+      fe3d:model_set_visible(_buildingTypes[_buildingIndex], <true>)
+      ALT _buildMode = <true>
 ELSE
-    fe3d:quad2d_set_lightness("build", 1.0)
+  fe3d:quad2d_set_lightness("build", 1.0)
 
 /// Update GUI
 fe3d:quad2d_set_visible("building_price_type", _buildMode)
@@ -35,7 +35,7 @@ fe3d:text2d_set_visible("building_price_straw", _buildMode)
 
 /// Validate
 IF _buildMode IS <false>
-    EXIT
+  EXIT
 
 /// Update GUI
 DEF STR planksPriceText = misc:string_zeroed_integer(_buildingPricesPlanks[_buildingIndex], 4)
@@ -61,13 +61,13 @@ DEF INT buildingCount = misc:list_size("_buildingTypes")
 DEF BOL scrolledUp = fe3d:input_is_mouse_scrolled("WHEEL_FORWARD")
 DEF BOL scrollDown = fe3d:input_is_mouse_scrolled("WHEEL_BACKWARD")
 IF scrolledUp IS <true>
-    ADD _buildingIndex 1
-    IF _buildingIndex IS buildingCount
-        ALT _buildingIndex = 0
+  ADD _buildingIndex 1
+  IF _buildingIndex IS buildingCount
+    ALT _buildingIndex = 0
 IF scrollDown IS <true>
-    IF _buildingIndex IS 0
-        ALT _buildingIndex = buildingCount
-    SUB _buildingIndex 1
+  IF _buildingIndex IS 0
+    ALT _buildingIndex = buildingCount
+  SUB _buildingIndex 1
 
 /// Show current building
 fe3d:model_set_visible(_buildingTypes[_buildingIndex], <true>)

@@ -5,7 +5,7 @@ META script_state_waiting
 /// Validate
 DEF BOL update = fe3d:time_is_passed(10)
 IF update IS <false>
-    EXIT
+  EXIT
 
 /// Create food content
 DEF STR totalAleText = misc:string_zeroed_integer(_totalAle, 4)

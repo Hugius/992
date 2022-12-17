@@ -12,17 +12,17 @@ DEF BOL d = fe3d:input_is_keyboard_held("KEY_D")
 
 /// Update speeds
 IF q IS <true>
-    SUB _yawAcceleration _yawSpeed
+  SUB _yawAcceleration _yawSpeed
 IF e IS <true>
-    ADD _yawAcceleration _yawSpeed
+  ADD _yawAcceleration _yawSpeed
 IF w IS <true>
-    ADD _zPositionAcceleration _positionSpeed
+  ADD _zPositionAcceleration _positionSpeed
 IF s IS <true>
-    SUB _zPositionAcceleration _positionSpeed
+  SUB _zPositionAcceleration _positionSpeed
 IF d IS <true>
-    ADD _xPositionAcceleration _positionSpeed
+  ADD _xPositionAcceleration _positionSpeed
 IF a IS <true>
-    SUB _xPositionAcceleration _positionSpeed
+  SUB _xPositionAcceleration _positionSpeed
 
 /// Update movement
 MUL _xPositionAcceleration 0.925

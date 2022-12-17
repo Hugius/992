@@ -4,21 +4,21 @@ META script_state_waiting
 
 /// Hide GUI
 IF _lastSelectedBuildingType IS "priest" OR _firstUpdate IS <true>
-    fe3d:quad2d_set_visible("priest_worker", <false>)
-    fe3d:quad2d_set_visible("priest_info", <false>)
-    fe3d:text2d_set_visible("priest_worker", <false>)
-    fe3d:text2d_set_visible("priest_info1", <false>)
-    fe3d:text2d_set_visible("priest_info2", <false>)
-    fe3d:text2d_set_visible("priest_info3", <false>)
+  fe3d:quad2d_set_visible("priest_worker", <false>)
+  fe3d:quad2d_set_visible("priest_info", <false>)
+  fe3d:text2d_set_visible("priest_worker", <false>)
+  fe3d:text2d_set_visible("priest_info1", <false>)
+  fe3d:text2d_set_visible("priest_info2", <false>)
+  fe3d:text2d_set_visible("priest_info3", <false>)
 
 /// Show GUI
 IF _selectedBuildingType IS "priest"
-    DEF BOL hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
-    IF hasWorker IS <true>
-        fe3d:quad2d_set_visible("priest_info", <true>)
-        fe3d:text2d_set_visible("priest_info1", <true>)
-        fe3d:text2d_set_visible("priest_info2", <true>)
-        fe3d:text2d_set_visible("priest_info3", <true>)
-    ELSE
-        fe3d:quad2d_set_visible("priest_worker", <true>)
-        fe3d:text2d_set_visible("priest_worker", <true>)
+  DEF BOL hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
+  IF hasWorker IS <true>
+    fe3d:quad2d_set_visible("priest_info", <true>)
+    fe3d:text2d_set_visible("priest_info1", <true>)
+    fe3d:text2d_set_visible("priest_info2", <true>)
+    fe3d:text2d_set_visible("priest_info3", <true>)
+  ELSE
+    fe3d:quad2d_set_visible("priest_worker", <true>)
+    fe3d:text2d_set_visible("priest_worker", <true>)

@@ -7,30 +7,30 @@ DEF BOL hasWorker = <false>
 
 /// Hide GUI
 IF _lastSelectedBuildingType IS "poultryman" OR _firstUpdate IS <true>
-    fe3d:quad2d_set_visible("poultryman_worker", <false>)
-    fe3d:quad2d_set_visible("poultryman_time", <false>)
-    fe3d:quad2d_set_visible("poultryman_convert", <false>)
-    fe3d:quad2d_set_visible("poultryman_eggs", <false>)
-    fe3d:quad2d_set_visible("poultryman_feathers", <false>)
-    fe3d:text2d_set_visible("poultryman_worker", <false>)
-    fe3d:text2d_set_visible("poultryman_time", <false>)
-    fe3d:text2d_set_visible("poultryman_eggs", <false>)
-    fe3d:text2d_set_visible("poultryman_feathers", <false>)
+  fe3d:quad2d_set_visible("poultryman_worker", <false>)
+  fe3d:quad2d_set_visible("poultryman_time", <false>)
+  fe3d:quad2d_set_visible("poultryman_convert", <false>)
+  fe3d:quad2d_set_visible("poultryman_eggs", <false>)
+  fe3d:quad2d_set_visible("poultryman_feathers", <false>)
+  fe3d:text2d_set_visible("poultryman_worker", <false>)
+  fe3d:text2d_set_visible("poultryman_time", <false>)
+  fe3d:text2d_set_visible("poultryman_eggs", <false>)
+  fe3d:text2d_set_visible("poultryman_feathers", <false>)
 
 /// Show GUI
 IF _selectedBuildingType IS "poultryman"
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
-    IF hasWorker IS <true>
-        fe3d:quad2d_set_visible("poultryman_time", <true>)
-        fe3d:quad2d_set_visible("poultryman_convert", <true>)
-        fe3d:quad2d_set_visible("poultryman_eggs", <true>)
-        fe3d:quad2d_set_visible("poultryman_feathers", <true>)
-        fe3d:text2d_set_visible("poultryman_time", <true>)
-        fe3d:text2d_set_visible("poultryman_eggs", <true>)
-        fe3d:text2d_set_visible("poultryman_feathers", <true>)
-    ELSE
-        fe3d:quad2d_set_visible("poultryman_worker", <true>)
-        fe3d:text2d_set_visible("poultryman_worker", <true>)
+  ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
+  IF hasWorker IS <true>
+    fe3d:quad2d_set_visible("poultryman_time", <true>)
+    fe3d:quad2d_set_visible("poultryman_convert", <true>)
+    fe3d:quad2d_set_visible("poultryman_eggs", <true>)
+    fe3d:quad2d_set_visible("poultryman_feathers", <true>)
+    fe3d:text2d_set_visible("poultryman_time", <true>)
+    fe3d:text2d_set_visible("poultryman_eggs", <true>)
+    fe3d:text2d_set_visible("poultryman_feathers", <true>)
+  ELSE
+    fe3d:quad2d_set_visible("poultryman_worker", <true>)
+    fe3d:text2d_set_visible("poultryman_worker", <true>)
 
 /// Update poultrymen
 DEF STR chickenId = ""
@@ -38,34 +38,34 @@ DEF DEC growth = 0.0
 DEF INT maxPoultrymanIndex = misc:list_size("_poultrymanIds")
 DEF INT poultrymanIndex = 0
 LOOP
-    IF poultrymanIndex IS maxPoultrymanIndex
-        BREAK
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _poultrymanIds[poultrymanIndex])
-    IF hasWorker IS <true>
-        IF _poultrymanGrowths[poultrymanIndex] IS 0.0
-            ADD _poultrymanGrowths[poultrymanIndex] _minPoultrymanGrowth
-        ELIF _poultrymanGrowths[poultrymanIndex] MORE _maxPoultrymanGrowth
-            IF _poultrymanTimers[poultrymanIndex] IS _poultrymanInterval
-                ALT _poultrymanTimers[poultrymanIndex] = 0
-                ADD _totalEggs 1
-                ADD _totalFeathers 1
-            ELSE
-                ADD _poultrymanTimers[poultrymanIndex] 1
-    IF _poultrymanGrowths[poultrymanIndex] MORE 0.0 AND _poultrymanGrowths[poultrymanIndex] LESS _maxPoultrymanGrowth
-        DEF INT interval = _poultrymanInterval
-        DEF DEC speed = _maxPoultrymanGrowth
-        CAST interval DEC
-        DIV speed interval
-        ADD _poultrymanGrowths[poultrymanIndex] speed
-    ALT growth = _poultrymanGrowths[poultrymanIndex]
-    ALT chickenId = misc:string_concat(_poultrymanIds[poultrymanIndex], "_1")
-    fe3d:model_set_base_size(chickenId, growth, growth, growth)
-    ALT chickenId = misc:string_concat(_poultrymanIds[poultrymanIndex], "_2")
-    fe3d:model_set_base_size(chickenId, growth, growth, growth)
-    ALT chickenId = misc:string_concat(_poultrymanIds[poultrymanIndex], "_3")
-    fe3d:model_set_base_size(chickenId, growth, growth, growth)
-    ALT chickenId = misc:string_concat(_poultrymanIds[poultrymanIndex], "_4")
-    fe3d:model_set_base_size(chickenId, growth, growth, growth)
-    ALT chickenId = misc:string_concat(_poultrymanIds[poultrymanIndex], "_5")
-    fe3d:model_set_base_size(chickenId, growth, growth, growth)
-    ADD poultrymanIndex 1
+  IF poultrymanIndex IS maxPoultrymanIndex
+    BREAK
+  ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _poultrymanIds[poultrymanIndex])
+  IF hasWorker IS <true>
+    IF _poultrymanGrowths[poultrymanIndex] IS 0.0
+      ADD _poultrymanGrowths[poultrymanIndex] _minPoultrymanGrowth
+    ELIF _poultrymanGrowths[poultrymanIndex] MORE _maxPoultrymanGrowth
+      IF _poultrymanTimers[poultrymanIndex] IS _poultrymanInterval
+        ALT _poultrymanTimers[poultrymanIndex] = 0
+        ADD _totalEggs 1
+        ADD _totalFeathers 1
+      ELSE
+        ADD _poultrymanTimers[poultrymanIndex] 1
+  IF _poultrymanGrowths[poultrymanIndex] MORE 0.0 AND _poultrymanGrowths[poultrymanIndex] LESS _maxPoultrymanGrowth
+    DEF INT interval = _poultrymanInterval
+    DEF DEC speed = _maxPoultrymanGrowth
+    CAST interval DEC
+    DIV speed interval
+    ADD _poultrymanGrowths[poultrymanIndex] speed
+  ALT growth = _poultrymanGrowths[poultrymanIndex]
+  ALT chickenId = misc:string_concat(_poultrymanIds[poultrymanIndex], "_1")
+  fe3d:model_set_base_size(chickenId, growth, growth, growth)
+  ALT chickenId = misc:string_concat(_poultrymanIds[poultrymanIndex], "_2")
+  fe3d:model_set_base_size(chickenId, growth, growth, growth)
+  ALT chickenId = misc:string_concat(_poultrymanIds[poultrymanIndex], "_3")
+  fe3d:model_set_base_size(chickenId, growth, growth, growth)
+  ALT chickenId = misc:string_concat(_poultrymanIds[poultrymanIndex], "_4")
+  fe3d:model_set_base_size(chickenId, growth, growth, growth)
+  ALT chickenId = misc:string_concat(_poultrymanIds[poultrymanIndex], "_5")
+  fe3d:model_set_base_size(chickenId, growth, growth, growth)
+  ADD poultrymanIndex 1

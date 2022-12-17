@@ -7,29 +7,29 @@ fe3d:quad2d_set_opacity("event_message", _eventMessageOpacity)
 fe3d:text2d_set_opacity("event_message", _eventMessageOpacity)
 DEF INT messageCount = misc:list_size("_eventMessageContents")
 IF messageCount IS 0
-    ALT _eventMessageOpacity = 0.0
+  ALT _eventMessageOpacity = 0.0
 ELSE
-    IF _eventMessageOpacity IS 0.0
-        fe3d:text2d_set_content("event_message", _eventMessageContents[0])
-        DEF INT quadWidth = misc:string_size(_eventMessageContents[0])
-        DEF INT textWidth = quadWidth
-        CAST quadWidth DEC
-        CAST textWidth DEC
-        MUL quadWidth 0.0175
-        MUL textWidth 0.015
-        fe3d:quad2d_set_size("event_message", quadWidth, 0.1)
-        fe3d:text2d_set_size("event_message", textWidth, 0.1)
-        DEF DEC xPosition = 1.0
-        DIV quadWidth 2.0
-        SUB xPosition quadWidth
-        fe3d:quad2d_set_position("event_message", xPosition, 0.95)
-        fe3d:text2d_set_position("event_message", xPosition, 0.95)
-        ALT _eventMessageOpacity = 1.0
-    ELIF _eventMessageOpacity LESS 0.01
-        PULL _eventMessageContents 0
-        ALT _eventMessageOpacity = 0.0
-    ELSE
-        SUB _eventMessageOpacity 0.005
+  IF _eventMessageOpacity IS 0.0
+    fe3d:text2d_set_content("event_message", _eventMessageContents[0])
+    DEF INT quadWidth = misc:string_size(_eventMessageContents[0])
+    DEF INT textWidth = quadWidth
+    CAST quadWidth DEC
+    CAST textWidth DEC
+    MUL quadWidth 0.0175
+    MUL textWidth 0.015
+    fe3d:quad2d_set_size("event_message", quadWidth, 0.1)
+    fe3d:text2d_set_size("event_message", textWidth, 0.1)
+    DEF DEC xPosition = 1.0
+    DIV quadWidth 2.0
+    SUB xPosition quadWidth
+    fe3d:quad2d_set_position("event_message", xPosition, 0.95)
+    fe3d:text2d_set_position("event_message", xPosition, 0.95)
+    ALT _eventMessageOpacity = 1.0
+  ELIF _eventMessageOpacity LESS 0.01
+    PULL _eventMessageContents 0
+    ALT _eventMessageOpacity = 0.0
+  ELSE
+    SUB _eventMessageOpacity 0.005
 
 /// Update fading
 DEF DEC blackOpacity = fe3d:quad2d_get_opacity("black")

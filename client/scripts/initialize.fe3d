@@ -52,6 +52,6 @@ DEF BOL world = fe3d:world_is_custom_existing("save")
 DEF BOL file = fe3d:file_is_existing("save")
 
 IF world IS <true> AND file IS <true>
-    EXECUTE game_load
+  EXECUTE game_load
 ELSE
-    EXECUTE game_create
+  EXECUTE game_create

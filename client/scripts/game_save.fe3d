@@ -5,7 +5,7 @@ META script_state_waiting
 /// Delete file
 DEF BOL file = fe3d:file_is_existing("save")
 IF file IS <true>
-    fe3d:file_delete("save")
+  fe3d:file_delete("save")
 
 /// Save world
 fe3d:world_add_custom_sky("sky")
@@ -19,10 +19,10 @@ DEF LST modelIds = fe3d:model_get_ids()
 DEF INT maxModelIndex = misc:list_size("modelIds")
 DEF INT modelIndex = 0
 LOOP
-    IF modelIndex IS maxModelIndex
-        BREAK
-    fe3d:world_add_custom_model(modelIds[modelIndex])
-    ADD modelIndex 1
+  IF modelIndex IS maxModelIndex
+    BREAK
+  fe3d:world_add_custom_model(modelIds[modelIndex])
+  ADD modelIndex 1
 fe3d:world_save_custom("save")
 
 /// Save camera

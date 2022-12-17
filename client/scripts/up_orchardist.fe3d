@@ -7,26 +7,26 @@ DEF BOL hasWorker = <false>
 
 /// Hide GUI
 IF _lastSelectedBuildingType IS "orchardist" OR _firstUpdate IS <true>
-    fe3d:quad2d_set_visible("orchardist_worker", <false>)
-    fe3d:quad2d_set_visible("orchardist_time", <false>)
-    fe3d:quad2d_set_visible("orchardist_convert", <false>)
-    fe3d:quad2d_set_visible("orchardist_fruit", <false>)
-    fe3d:text2d_set_visible("orchardist_worker", <false>)
-    fe3d:text2d_set_visible("orchardist_time", <false>)
-    fe3d:text2d_set_visible("orchardist_fruit", <false>)
+  fe3d:quad2d_set_visible("orchardist_worker", <false>)
+  fe3d:quad2d_set_visible("orchardist_time", <false>)
+  fe3d:quad2d_set_visible("orchardist_convert", <false>)
+  fe3d:quad2d_set_visible("orchardist_fruit", <false>)
+  fe3d:text2d_set_visible("orchardist_worker", <false>)
+  fe3d:text2d_set_visible("orchardist_time", <false>)
+  fe3d:text2d_set_visible("orchardist_fruit", <false>)
 
 /// Show GUI
 IF _selectedBuildingType IS "orchardist"
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
-    IF hasWorker IS <true>
-        fe3d:quad2d_set_visible("orchardist_time", <true>)
-        fe3d:quad2d_set_visible("orchardist_convert", <true>)
-        fe3d:quad2d_set_visible("orchardist_fruit", <true>)
-        fe3d:text2d_set_visible("orchardist_time", <true>)
-        fe3d:text2d_set_visible("orchardist_fruit", <true>)
-    ELSE
-        fe3d:quad2d_set_visible("orchardist_worker", <true>)
-        fe3d:text2d_set_visible("orchardist_worker", <true>)
+  ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
+  IF hasWorker IS <true>
+    fe3d:quad2d_set_visible("orchardist_time", <true>)
+    fe3d:quad2d_set_visible("orchardist_convert", <true>)
+    fe3d:quad2d_set_visible("orchardist_fruit", <true>)
+    fe3d:text2d_set_visible("orchardist_time", <true>)
+    fe3d:text2d_set_visible("orchardist_fruit", <true>)
+  ELSE
+    fe3d:quad2d_set_visible("orchardist_worker", <true>)
+    fe3d:text2d_set_visible("orchardist_worker", <true>)
 
 /// Update orchardists
 DEF STR treeId = ""
@@ -34,31 +34,31 @@ DEF DEC growth = 0.0
 DEF INT maxOrchardistIndex = misc:list_size("_orchardistIds")
 DEF INT orchardistIndex = 0
 LOOP
-    IF orchardistIndex IS maxOrchardistIndex
-        BREAK
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _orchardistIds[orchardistIndex])
-    IF hasWorker IS <true>
-        IF _orchardistGrowths[orchardistIndex] IS 0.0
-            ADD _orchardistGrowths[orchardistIndex] _minOrchardistGrowth
-        ELIF _orchardistGrowths[orchardistIndex] MORE _maxOrchardistGrowth
-            IF _orchardistTimers[orchardistIndex] IS _orchardistInterval
-                ALT _orchardistTimers[orchardistIndex] = 0
-                ADD _totalFruit 1
-            ELSE
-                ADD _orchardistTimers[orchardistIndex] 1
-    IF _orchardistGrowths[orchardistIndex] MORE 0.0 AND _orchardistGrowths[orchardistIndex] LESS _maxOrchardistGrowth
-        DEF INT interval = _orchardistInterval
-        DEF DEC speed = _maxOrchardistGrowth
-        CAST interval DEC
-        DIV speed interval
-        ADD _orchardistGrowths[orchardistIndex] speed
-    ALT growth = _orchardistGrowths[orchardistIndex]
-    ALT treeId = misc:string_concat(_orchardistIds[orchardistIndex], "_1")
-    fe3d:model_set_base_size(treeId, growth, growth, growth)
-    ALT treeId = misc:string_concat(_orchardistIds[orchardistIndex], "_2")
-    fe3d:model_set_base_size(treeId, growth, growth, growth)
-    ALT treeId = misc:string_concat(_orchardistIds[orchardistIndex], "_3")
-    fe3d:model_set_base_size(treeId, growth, growth, growth)
-    ALT treeId = misc:string_concat(_orchardistIds[orchardistIndex], "_4")
-    fe3d:model_set_base_size(treeId, growth, growth, growth)
-    ADD orchardistIndex 1
+  IF orchardistIndex IS maxOrchardistIndex
+    BREAK
+  ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _orchardistIds[orchardistIndex])
+  IF hasWorker IS <true>
+    IF _orchardistGrowths[orchardistIndex] IS 0.0
+      ADD _orchardistGrowths[orchardistIndex] _minOrchardistGrowth
+    ELIF _orchardistGrowths[orchardistIndex] MORE _maxOrchardistGrowth
+      IF _orchardistTimers[orchardistIndex] IS _orchardistInterval
+        ALT _orchardistTimers[orchardistIndex] = 0
+        ADD _totalFruit 1
+      ELSE
+        ADD _orchardistTimers[orchardistIndex] 1
+  IF _orchardistGrowths[orchardistIndex] MORE 0.0 AND _orchardistGrowths[orchardistIndex] LESS _maxOrchardistGrowth
+    DEF INT interval = _orchardistInterval
+    DEF DEC speed = _maxOrchardistGrowth
+    CAST interval DEC
+    DIV speed interval
+    ADD _orchardistGrowths[orchardistIndex] speed
+  ALT growth = _orchardistGrowths[orchardistIndex]
+  ALT treeId = misc:string_concat(_orchardistIds[orchardistIndex], "_1")
+  fe3d:model_set_base_size(treeId, growth, growth, growth)
+  ALT treeId = misc:string_concat(_orchardistIds[orchardistIndex], "_2")
+  fe3d:model_set_base_size(treeId, growth, growth, growth)
+  ALT treeId = misc:string_concat(_orchardistIds[orchardistIndex], "_3")
+  fe3d:model_set_base_size(treeId, growth, growth, growth)
+  ALT treeId = misc:string_concat(_orchardistIds[orchardistIndex], "_4")
+  fe3d:model_set_base_size(treeId, growth, growth, growth)
+  ADD orchardistIndex 1

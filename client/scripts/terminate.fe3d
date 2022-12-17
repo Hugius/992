@@ -5,4 +5,4 @@ META script_state_entry
 DEF INT totalWorkers = misc:list_size("_workerNames")
 
 IF totalWorkers MORE 0
-    EXECUTE game_save
+  EXECUTE game_save

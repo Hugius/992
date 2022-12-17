@@ -4,33 +4,33 @@ META script_state_waiting
 
 /// Validate
 IF _workersToCreate IS 0
-    EXIT
+  EXIT
 ELSE
-    SUB _workersToCreate 1
+  SUB _workersToCreate 1
 
 /// Determine name and gender
 IF _nextWorkerGender IS 1
-    DEF INT nameCount = misc:list_size("_maleWorkerNames")
-    DEF INT nameIndex = math:random_integer(1, nameCount)
-    SUB nameIndex 1
-    DEF STR name = _maleWorkerNames[nameIndex]
-    DEF STR gender = "MALE"
+  DEF INT nameCount = misc:list_size("_maleWorkerNames")
+  DEF INT nameIndex = math:random_integer(1, nameCount)
+  SUB nameIndex 1
+  DEF STR name = _maleWorkerNames[nameIndex]
+  DEF STR gender = "MALE"
 ELSE
-    DEF INT nameCount = misc:list_size("_femaleWorkerNames")
-    DEF INT nameIndex = math:random_integer(1, nameCount)
-    SUB nameIndex 1
-    DEF STR name = _femaleWorkerNames[nameIndex]
-    DEF STR gender = "FEMALE"
+  DEF INT nameCount = misc:list_size("_femaleWorkerNames")
+  DEF INT nameIndex = math:random_integer(1, nameCount)
+  SUB nameIndex 1
+  DEF STR name = _femaleWorkerNames[nameIndex]
+  DEF STR gender = "FEMALE"
 
 /// Switch gender
 NEG _nextWorkerGender
 
 /// Determine clothes
 IF _totalClothes MORE 0
-    SUB _totalClothes 1
-    DEF BOL hasClothes = <true>
+  SUB _totalClothes 1
+  DEF BOL hasClothes = <true>
 ELSE
-    DEF BOL hasClothes = <false>
+  DEF BOL hasClothes = <false>
 
 /// Create worker
 PUSH _workerNames name

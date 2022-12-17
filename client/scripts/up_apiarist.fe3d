@@ -7,38 +7,38 @@ DEF BOL hasWorker = <false>
 
 /// Hide GUI
 IF _lastSelectedBuildingType IS "apiarist" OR _firstUpdate IS <true>
-    fe3d:quad2d_set_visible("apiarist_worker", <false>)
-    fe3d:quad2d_set_visible("apiarist_time", <false>)
-    fe3d:quad2d_set_visible("apiarist_convert", <false>)
-    fe3d:quad2d_set_visible("apiarist_honey", <false>)
-    fe3d:text2d_set_visible("apiarist_worker", <false>)
-    fe3d:text2d_set_visible("apiarist_time", <false>)
-    fe3d:text2d_set_visible("apiarist_honey", <false>)
+  fe3d:quad2d_set_visible("apiarist_worker", <false>)
+  fe3d:quad2d_set_visible("apiarist_time", <false>)
+  fe3d:quad2d_set_visible("apiarist_convert", <false>)
+  fe3d:quad2d_set_visible("apiarist_honey", <false>)
+  fe3d:text2d_set_visible("apiarist_worker", <false>)
+  fe3d:text2d_set_visible("apiarist_time", <false>)
+  fe3d:text2d_set_visible("apiarist_honey", <false>)
 
 /// Show GUI
 IF _selectedBuildingType IS "apiarist"
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
-    IF hasWorker IS <true>
-        fe3d:quad2d_set_visible("apiarist_time", <true>)
-        fe3d:quad2d_set_visible("apiarist_convert", <true>)
-        fe3d:quad2d_set_visible("apiarist_honey", <true>)
-        fe3d:text2d_set_visible("apiarist_time", <true>)
-        fe3d:text2d_set_visible("apiarist_honey", <true>)
-    ELSE
-        fe3d:quad2d_set_visible("apiarist_worker", <true>)
-        fe3d:text2d_set_visible("apiarist_worker", <true>)
+  ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
+  IF hasWorker IS <true>
+    fe3d:quad2d_set_visible("apiarist_time", <true>)
+    fe3d:quad2d_set_visible("apiarist_convert", <true>)
+    fe3d:quad2d_set_visible("apiarist_honey", <true>)
+    fe3d:text2d_set_visible("apiarist_time", <true>)
+    fe3d:text2d_set_visible("apiarist_honey", <true>)
+  ELSE
+    fe3d:quad2d_set_visible("apiarist_worker", <true>)
+    fe3d:text2d_set_visible("apiarist_worker", <true>)
 
 /// Update apiarists
 DEF INT maxApiaristIndex = misc:list_size("_apiaristIds")
 DEF INT apiaristIndex = 0
 LOOP
-    IF apiaristIndex IS maxApiaristIndex
-        BREAK
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _apiaristIds[apiaristIndex])
-    IF hasWorker IS <true>
-        IF _apiaristTimers[apiaristIndex] IS _apiaristInterval
-            ALT _apiaristTimers[apiaristIndex] = 0
-            ADD _totalHoney 1
-        ELSE
-            ADD _apiaristTimers[apiaristIndex] 1
-    ADD apiaristIndex 1
+  IF apiaristIndex IS maxApiaristIndex
+    BREAK
+  ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _apiaristIds[apiaristIndex])
+  IF hasWorker IS <true>
+    IF _apiaristTimers[apiaristIndex] IS _apiaristInterval
+      ALT _apiaristTimers[apiaristIndex] = 0
+      ADD _totalHoney 1
+    ELSE
+      ADD _apiaristTimers[apiaristIndex] 1
+  ADD apiaristIndex 1

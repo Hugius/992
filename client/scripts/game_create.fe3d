@@ -35,50 +35,50 @@ fe3d:world_load_editor("world")
 
 /// Place vegetation
 LOOP
-    IF totalModels IS maxModels
-        BREAK
-    ALT x = math:random_decimal(minX, maxX)
-    ALT z = math:random_decimal(minZ, maxZ)
-    ALT y = fe3d:terrain_get_pixel_height("terrain", x, z)
-    IF y LESS minY
-        CONTINUE
-    IF x MORE minZoneX AND x LESS maxZoneX AND z MORE minZoneZ AND z LESS maxZoneZ
-        CONTINUE
-    ALT positionIndex = 0
-    LOOP
-        IF positionIndex IS totalModels
-            BREAK
-        ALT distance = math:vector_distance(x, y, z, xPositions[positionIndex], yPositions[positionIndex], zPositions[positionIndex])
-        IF distance LESS minDistance
-            ALT mustSkip = <true>
-            BREAK
-        ADD positionIndex 1
-    IF mustSkip IS <true>
-        ALT mustSkip = <false>
-        CONTINUE
-    CAST totalModels STR
-    ALT modelId = misc:string_concat(modelIds[modelIndex], "_")
-    ALT modelId = misc:string_concat(modelId, totalModels)
-    CAST totalModels INT
-    fe3d:model_place(modelId, modelIds[modelIndex], x, y, z)
-    ADD totalModels 1
-    PUSH xPositions x
-    PUSH yPositions y
-    PUSH zPositions z
-    IF modelIndex IS 8
-        ALT modelIndex = 0
-    ELSE
-        ADD modelIndex 1
+  IF totalModels IS maxModels
+    BREAK
+  ALT x = math:random_decimal(minX, maxX)
+  ALT z = math:random_decimal(minZ, maxZ)
+  ALT y = fe3d:terrain_get_pixel_height("terrain", x, z)
+  IF y LESS minY
+    CONTINUE
+  IF x MORE minZoneX AND x LESS maxZoneX AND z MORE minZoneZ AND z LESS maxZoneZ
+    CONTINUE
+  ALT positionIndex = 0
+  LOOP
+    IF positionIndex IS totalModels
+      BREAK
+    ALT distance = math:vector_distance(x, y, z, xPositions[positionIndex], yPositions[positionIndex], zPositions[positionIndex])
+    IF distance LESS minDistance
+      ALT mustSkip = <true>
+      BREAK
+    ADD positionIndex 1
+  IF mustSkip IS <true>
+    ALT mustSkip = <false>
+    CONTINUE
+  CAST totalModels STR
+  ALT modelId = misc:string_concat(modelIds[modelIndex], "_")
+  ALT modelId = misc:string_concat(modelId, totalModels)
+  CAST totalModels INT
+  fe3d:model_place(modelId, modelIds[modelIndex], x, y, z)
+  ADD totalModels 1
+  PUSH xPositions x
+  PUSH yPositions y
+  PUSH zPositions z
+  IF modelIndex IS 8
+    ALT modelIndex = 0
+  ELSE
+    ADD modelIndex 1
 
 /// Place preview buildings
 DEF INT maxBuildingIndex = misc:list_size("_buildingTypes")
 DEF INT buildingIndex = 0
 LOOP
-    IF buildingIndex IS maxBuildingIndex
-        BREAK
-    fe3d:model_place(_buildingTypes[buildingIndex], _buildingModels[buildingIndex], 0.0, 0.0, 0.0)
-    fe3d:model_set_visible(_buildingTypes[buildingIndex], <false>)
-    ADD buildingIndex 1
+  IF buildingIndex IS maxBuildingIndex
+    BREAK
+  fe3d:model_place(_buildingTypes[buildingIndex], _buildingModels[buildingIndex], 0.0, 0.0, 0.0)
+  fe3d:model_set_visible(_buildingTypes[buildingIndex], <false>)
+  ADD buildingIndex 1
 
 /// Place default buildings
 fe3d:model_place("storage_0", "storage", 21.0, 3.0, -1.5)

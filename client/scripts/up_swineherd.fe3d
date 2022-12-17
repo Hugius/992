@@ -7,20 +7,20 @@ DEF BOL hasWorker = <false>
 
 /// Hide GUI
 IF _lastSelectedBuildingType IS "swineherd" OR _firstUpdate IS <true>
-    fe3d:quad2d_set_visible("swineherd_worker", <false>)
-    fe3d:quad2d_set_visible("swineherd_info", <false>)
-    fe3d:text2d_set_visible("swineherd_worker", <false>)
-    fe3d:text2d_set_visible("swineherd_info", <false>)
+  fe3d:quad2d_set_visible("swineherd_worker", <false>)
+  fe3d:quad2d_set_visible("swineherd_info", <false>)
+  fe3d:text2d_set_visible("swineherd_worker", <false>)
+  fe3d:text2d_set_visible("swineherd_info", <false>)
 
 /// Show GUI
 IF _selectedBuildingType IS "swineherd"
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
-    IF hasWorker IS <true>
-        fe3d:quad2d_set_visible("swineherd_info", <true>)
-        fe3d:text2d_set_visible("swineherd_info", <true>)
-    ELSE
-        fe3d:quad2d_set_visible("swineherd_worker", <true>)
-        fe3d:text2d_set_visible("swineherd_worker", <true>)
+  ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
+  IF hasWorker IS <true>
+    fe3d:quad2d_set_visible("swineherd_info", <true>)
+    fe3d:text2d_set_visible("swineherd_info", <true>)
+  ELSE
+    fe3d:quad2d_set_visible("swineherd_worker", <true>)
+    fe3d:text2d_set_visible("swineherd_worker", <true>)
 
 /// Update swineherds
 DEF STR pigId = ""
@@ -28,23 +28,23 @@ DEF DEC growth = 0.0
 DEF INT maxSwineherdIndex = misc:list_size("_swineherdIds")
 DEF INT swineherdIndex = 0
 LOOP
-    IF swineherdIndex IS maxSwineherdIndex
-        BREAK
-    ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _swineherdIds[swineherdIndex])
-    IF hasWorker IS <true>
-        IF _swineherdGrowths[swineherdIndex] IS 0.0
-            ADD _swineherdGrowths[swineherdIndex] _minSwineherdGrowth
-    IF _swineherdGrowths[swineherdIndex] MORE 0.0 AND _swineherdGrowths[swineherdIndex] LESS _maxSwineherdGrowth
-        DEF INT interval = _swineherdInterval
-        DEF DEC speed = _maxSwineherdGrowth
-        CAST interval DEC
-        DIV speed interval
-        ADD _swineherdGrowths[swineherdIndex] speed
-    ALT growth = _swineherdGrowths[swineherdIndex]
-    ALT pigId = misc:string_concat(_swineherdIds[swineherdIndex], "_1")
-    fe3d:model_set_base_size(pigId, growth, growth, growth)
-    ALT pigId = misc:string_concat(_swineherdIds[swineherdIndex], "_2")
-    fe3d:model_set_base_size(pigId, growth, growth, growth)
-    ALT pigId = misc:string_concat(_swineherdIds[swineherdIndex], "_3")
-    fe3d:model_set_base_size(pigId, growth, growth, growth)
-    ADD swineherdIndex 1
+  IF swineherdIndex IS maxSwineherdIndex
+    BREAK
+  ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _swineherdIds[swineherdIndex])
+  IF hasWorker IS <true>
+    IF _swineherdGrowths[swineherdIndex] IS 0.0
+      ADD _swineherdGrowths[swineherdIndex] _minSwineherdGrowth
+  IF _swineherdGrowths[swineherdIndex] MORE 0.0 AND _swineherdGrowths[swineherdIndex] LESS _maxSwineherdGrowth
+    DEF INT interval = _swineherdInterval
+    DEF DEC speed = _maxSwineherdGrowth
+    CAST interval DEC
+    DIV speed interval
+    ADD _swineherdGrowths[swineherdIndex] speed
+  ALT growth = _swineherdGrowths[swineherdIndex]
+  ALT pigId = misc:string_concat(_swineherdIds[swineherdIndex], "_1")
+  fe3d:model_set_base_size(pigId, growth, growth, growth)
+  ALT pigId = misc:string_concat(_swineherdIds[swineherdIndex], "_2")
+  fe3d:model_set_base_size(pigId, growth, growth, growth)
+  ALT pigId = misc:string_concat(_swineherdIds[swineherdIndex], "_3")
+  fe3d:model_set_base_size(pigId, growth, growth, growth)
+  ADD swineherdIndex 1

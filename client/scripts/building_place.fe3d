@@ -4,7 +4,7 @@ META script_state_waiting
 
 /// Validate
 IF _buildMode IS <false> OR _lastBuildMode IS <false>
-    EXIT
+  EXIT
 
 /// Define reusable values
 DEF STR buildingType = _buildingTypes[_buildingIndex]
@@ -16,7 +16,7 @@ fe3d:raycast_calculate_terrain_intersection(100.0, 0.1)
 DEF DEC rotation = fe3d:model_get_base_rotation_y(buildingType)
 DEF BOL isRmbClicked = fe3d:input_is_mouse_pressed("BUTTON_RIGHT")
 IF isRmbClicked IS <true>
-    ADD rotation 90.0
+  ADD rotation 90.0
 
 /// Update building transformation
 DEF DEC x = fe3d:raycast_get_point_on_terrain_x()
@@ -36,24 +36,24 @@ fe3d:text2d_set_color("building_price_bricks", 0.0, 0.4, 0.0)
 fe3d:text2d_set_color("building_price_clay", 0.0, 0.4, 0.0)
 fe3d:text2d_set_color("building_price_straw", 0.0, 0.4, 0.0)
 IF _totalPlanks LESS planksPrice
-    fe3d:text2d_set_color("building_price_planks", 0.5, 0.0, 0.0)
-    ALT color = {0.5, 0.0, 0.0}
+  fe3d:text2d_set_color("building_price_planks", 0.5, 0.0, 0.0)
+  ALT color = {0.5, 0.0, 0.0}
 IF _totalBricks LESS bricksPrice
-    fe3d:text2d_set_color("building_price_bricks", 0.5, 0.0, 0.0)
-    ALT color = {0.5, 0.0, 0.0}
+  fe3d:text2d_set_color("building_price_bricks", 0.5, 0.0, 0.0)
+  ALT color = {0.5, 0.0, 0.0}
 IF _totalClay LESS clayPrice
-    fe3d:text2d_set_color("building_price_clay", 0.5, 0.0, 0.0)
-    ALT color = {0.5, 0.0, 0.0}
+  fe3d:text2d_set_color("building_price_clay", 0.5, 0.0, 0.0)
+  ALT color = {0.5, 0.0, 0.0}
 IF _totalStraw LESS strawPrice
-    fe3d:text2d_set_color("building_price_straw", 0.5, 0.0, 0.0)
-    ALT color = {0.5, 0.0, 0.0}
+  fe3d:text2d_set_color("building_price_straw", 0.5, 0.0, 0.0)
+  ALT color = {0.5, 0.0, 0.0}
 
 /// Update AABBs collision color
 fe3d:collision_calculate_model_aabbs(buildingType)
 DEF LST collisions = fe3d:collision_check_model_models(buildingType, "")
 DEF INT collisionCount = misc:list_size("collisions")
 IF collisionCount MORE 0
-    ALT color = {0.5, 0.0, 0.0}
+  ALT color = {0.5, 0.0, 0.0}
 
 /// Update AABBs position color
 DEF LST aabbIds = fe3d:model_get_aabb_ids(buildingType)
@@ -68,39 +68,39 @@ DEF DEC aabbTL = 0.0
 DEF INT maxAabbIndex = misc:list_size("aabbIds")
 DEF INT aabbIndex = 0
 LOOP
-    IF aabbIndex IS maxAabbIndex
-        BREAK
-    ALT aabbPosX = fe3d:model_get_aabb_position_x(buildingType, aabbIds[aabbIndex])
-    ALT aabbPosZ = fe3d:model_get_aabb_position_z(buildingType, aabbIds[aabbIndex])
-    ALT aabbSizeX = fe3d:model_get_aabb_size_x(buildingType, aabbIds[aabbIndex])
-    ALT aabbSizeZ = fe3d:model_get_aabb_size_z(buildingType, aabbIds[aabbIndex])
-    DIV aabbSizeX 2.0
-    DIV aabbSizeZ 2.0
-    SUB aabbPosX aabbSizeX
-    SUB aabbPosZ aabbSizeZ
-    ALT aabbBL = fe3d:terrain_get_pixel_height("terrain", aabbPosX, aabbPosZ)
-    ADD aabbPosX aabbSizeX
-    ADD aabbPosX aabbSizeX
-    ALT aabbBR = fe3d:terrain_get_pixel_height("terrain", aabbPosX, aabbPosZ)
-    ADD aabbPosZ aabbSizeZ
-    ADD aabbPosZ aabbSizeZ
-    ALT aabbTR = fe3d:terrain_get_pixel_height("terrain", aabbPosX, aabbPosZ)
-    SUB aabbPosX aabbSizeX
-    SUB aabbPosX aabbSizeX
-    ALT aabbTL = fe3d:terrain_get_pixel_height("terrain", aabbPosX, aabbPosZ)
-    IF aabbBL LESS _buildingHeight OR aabbBR LESS _buildingHeight OR aabbTR LESS _buildingHeight OR aabbTL LESS _buildingHeight
-        ALT color = {0.5, 0.0, 0.0}
-    ADD aabbIndex 1
+  IF aabbIndex IS maxAabbIndex
+    BREAK
+  ALT aabbPosX = fe3d:model_get_aabb_position_x(buildingType, aabbIds[aabbIndex])
+  ALT aabbPosZ = fe3d:model_get_aabb_position_z(buildingType, aabbIds[aabbIndex])
+  ALT aabbSizeX = fe3d:model_get_aabb_size_x(buildingType, aabbIds[aabbIndex])
+  ALT aabbSizeZ = fe3d:model_get_aabb_size_z(buildingType, aabbIds[aabbIndex])
+  DIV aabbSizeX 2.0
+  DIV aabbSizeZ 2.0
+  SUB aabbPosX aabbSizeX
+  SUB aabbPosZ aabbSizeZ
+  ALT aabbBL = fe3d:terrain_get_pixel_height("terrain", aabbPosX, aabbPosZ)
+  ADD aabbPosX aabbSizeX
+  ADD aabbPosX aabbSizeX
+  ALT aabbBR = fe3d:terrain_get_pixel_height("terrain", aabbPosX, aabbPosZ)
+  ADD aabbPosZ aabbSizeZ
+  ADD aabbPosZ aabbSizeZ
+  ALT aabbTR = fe3d:terrain_get_pixel_height("terrain", aabbPosX, aabbPosZ)
+  SUB aabbPosX aabbSizeX
+  SUB aabbPosX aabbSizeX
+  ALT aabbTL = fe3d:terrain_get_pixel_height("terrain", aabbPosX, aabbPosZ)
+  IF aabbBL LESS _buildingHeight OR aabbBR LESS _buildingHeight OR aabbTR LESS _buildingHeight OR aabbTL LESS _buildingHeight
+    ALT color = {0.5, 0.0, 0.0}
+  ADD aabbIndex 1
 
 /// Update building color
 DEF LST partIds = fe3d:model_get_part_ids(buildingType)
 DEF INT maxPartIndex = misc:list_size("partIds")
 DEF INT partIndex = 0
 LOOP
-    IF partIndex IS maxPartIndex
-        BREAK
-    fe3d:model_set_color(buildingType, partIds[partIndex], color[0], color[1], color[2])
-    ADD partIndex 1
+  IF partIndex IS maxPartIndex
+    BREAK
+  fe3d:model_set_color(buildingType, partIds[partIndex], color[0], color[1], color[2])
+  ADD partIndex 1
 
 /// Compose new building ID
 CAST _buildingCounter STR
@@ -111,15 +111,15 @@ CAST _buildingCounter INT
 /// Place new building
 DEF BOL isLmbClicked = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
 IF isLmbClicked IS <true> AND color[1] NOT 0.0
-    fe3d:model_place(buildingId, _buildingModels[_buildingIndex], 0.0, 0.0, 0.0)
-    fe3d:model_set_base_position(buildingId, x, y, z)
-    fe3d:model_set_base_rotation(buildingId, 0.0, rotation, 0.0)
-    SUB _totalPlanks planksPrice
-    SUB _totalBricks bricksPrice
-    SUB _totalClay clayPrice
-    SUB _totalStraw strawPrice
-    ADD _buildingCounter 1
-    PUSH _placedBuildingIds buildingId
-    PUSH _placedBuildingTypes buildingType
-    ALT _placedBuildingId = buildingId
-    ALT _placedBuildingType = buildingType
+  fe3d:model_place(buildingId, _buildingModels[_buildingIndex], 0.0, 0.0, 0.0)
+  fe3d:model_set_base_position(buildingId, x, y, z)
+  fe3d:model_set_base_rotation(buildingId, 0.0, rotation, 0.0)
+  SUB _totalPlanks planksPrice
+  SUB _totalBricks bricksPrice
+  SUB _totalClay clayPrice
+  SUB _totalStraw strawPrice
+  ADD _buildingCounter 1
+  PUSH _placedBuildingIds buildingId
+  PUSH _placedBuildingTypes buildingType
+  ALT _placedBuildingId = buildingId
+  ALT _placedBuildingType = buildingType
