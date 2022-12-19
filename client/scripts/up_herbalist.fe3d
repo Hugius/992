@@ -40,7 +40,7 @@ LOOP
       IF _totalMushrooms MORE 0
         SUB _totalMushrooms 1
         ADD _herbalistTimers[herbalistIndex] 1
-    ELIF _herbalistTimers[herbalistIndex] IS _herbalistInterval
+    ELIF _herbalistTimers[herbalistIndex] IS _productionTime
       ALT _herbalistTimers[herbalistIndex] = 0
       ADD _totalMedicine 1
     ELSE

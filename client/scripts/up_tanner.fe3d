@@ -55,7 +55,7 @@ LOOP
       IF _totalHides MORE 0
         SUB _totalHides 1
         ADD _tannerTimers[tannerIndex] 1
-    ELIF _tannerTimers[tannerIndex] IS _tannerInterval
+    ELIF _tannerTimers[tannerIndex] IS _productionTime
       ALT _tannerTimers[tannerIndex] = 0
       ADD _totalLeather 1
     ELSE

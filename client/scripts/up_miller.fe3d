@@ -40,7 +40,7 @@ LOOP
       IF _totalGrain MORE 0
         SUB _totalGrain 1
         ADD _millerTimers[millerIndex] 1
-    ELIF _millerTimers[millerIndex] IS _millerInterval
+    ELIF _millerTimers[millerIndex] IS _productionTime
       ALT _millerTimers[millerIndex] = 0
       ADD _totalFlour 1
     ELSE

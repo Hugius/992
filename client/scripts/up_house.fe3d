@@ -21,7 +21,7 @@ LOOP
     BREAK
   ALT count = misc:list_count("_workerHouseBuildingIds", _houseIds[houseIndex])
   IF count IS 2
-    IF _houseTimers[houseIndex] IS _houseInterval
+    IF _houseTimers[houseIndex] IS _growthTime
       ALT _houseTimers[houseIndex] = 0
       ALT _houseBirths[houseIndex] = <true>
       ADD _workersToCreate 1

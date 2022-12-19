@@ -56,7 +56,7 @@ LOOP
           SUB _totalFlour 1
           SUB _totalCoal 1
           ADD _bakerTimers[bakerIndex] 1
-    ELIF _bakerTimers[bakerIndex] IS _bakerInterval
+    ELIF _bakerTimers[bakerIndex] IS _productionTime
       ALT _bakerTimers[bakerIndex] = 0
       ADD _totalBread 10
     ELSE

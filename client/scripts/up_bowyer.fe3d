@@ -60,7 +60,7 @@ LOOP
         SUB _totalPlanks 1
         SUB _totalWool 1
         ADD _bowyerTimers[bowyerIndex] 1
-    ELIF _bowyerTimers[bowyerIndex] IS _bowyerInterval
+    ELIF _bowyerTimers[bowyerIndex] IS _productionTime
       ALT _bowyerTimers[bowyerIndex] = 0
       ADD _totalBows 1
     ELSE

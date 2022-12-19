@@ -65,7 +65,7 @@ LOOP
         SUB _totalPlanks 1
         SUB _totalFeathers 1
         ADD _fletcherTimers[fletcherIndex] 1
-    ELIF _fletcherTimers[fletcherIndex] IS _fletcherInterval
+    ELIF _fletcherTimers[fletcherIndex] IS _productionTime
       ALT _fletcherTimers[fletcherIndex] = 0
       ADD _totalArrows 10
     ELSE

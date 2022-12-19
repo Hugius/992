@@ -1,4 +1,4 @@
-0 0
+23 24
 META script_type_update
 META script_state_waiting
 
@@ -15,7 +15,6 @@ IF _lastSelectedBuildingType IS "shepherd" OR _firstUpdate IS <true>
   fe3d:quad2d_set_visible("shepherd_wool", <false>)
   fe3d:text2d_set_visible("shepherd_worker", <false>)
   fe3d:text2d_set_visible("shepherd_tool", <false>)
-  fe3d:text2d_set_visible("shepherd_time", <false>)
   fe3d:text2d_set_visible("shepherd_wool", <false>)
 
 /// Show GUI
@@ -27,7 +26,6 @@ IF _selectedBuildingType IS "shepherd"
       fe3d:quad2d_set_visible("shepherd_time", <true>)
       fe3d:quad2d_set_visible("shepherd_convert", <true>)
       fe3d:quad2d_set_visible("shepherd_wool", <true>)
-      fe3d:text2d_set_visible("shepherd_time", <true>)
       fe3d:text2d_set_visible("shepherd_wool", <true>)
     ELSE
       fe3d:quad2d_set_visible("shepherd_tool", <true>)
@@ -56,16 +54,16 @@ LOOP
     IF _shepherdGrowths[shepherdIndex] IS 0.0
       ADD _shepherdGrowths[shepherdIndex] _minShepherdGrowth
     ELIF _shepherdGrowths[shepherdIndex] MORE _maxShepherdGrowth
-      IF _shepherdTimers[shepherdIndex] IS _shepherdInterval
+      IF _shepherdTimers[shepherdIndex] IS _productionTime
         ALT _shepherdTimers[shepherdIndex] = 0
         ADD _totalWool 1
       ELSE
         ADD _shepherdTimers[shepherdIndex] 1
   IF _shepherdGrowths[shepherdIndex] MORE 0.0 AND _shepherdGrowths[shepherdIndex] LESS _maxShepherdGrowth
-    DEF INT interval = _shepherdInterval
+    DEF INT time = _growthTime
     DEF DEC speed = _maxShepherdGrowth
-    CAST interval DEC
-    DIV speed interval
+    CAST time DEC
+    DIV speed time
     ADD _shepherdGrowths[shepherdIndex] speed
   ALT growth = _shepherdGrowths[shepherdIndex]
   ALT sheepId = misc:string_concat(_shepherdIds[shepherdIndex], "_1")

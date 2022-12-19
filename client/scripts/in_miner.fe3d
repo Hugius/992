@@ -1,9 +1,8 @@
-23 47
+19 72
 META script_type_initialize
 META script_state_waiting
 
 /// Finals
-DEF GLB FIN INT _minerInterval = 750
 DEF FIN STR workerText = "No worker available"
 DEF FIN STR toolText = "Equip 1 tool?"
 
@@ -20,6 +19,5 @@ fe3d:quad2d_place("miner_coal", "coal", 0.2, -0.7, 0.1, 0.175)
 fe3d:quad2d_place("miner_ore", "ore", 0.3, -0.7, 0.1, 0.175)
 fe3d:text2d_place("miner_worker", "text", workerText, 0.0, -0.8, 0.285, 0.1)
 fe3d:text2d_place("miner_tool", "text", toolText, 0.0, -0.8, 0.195, 0.1)
-fe3d:text2d_place("miner_time", "text", "1", -0.25, -0.875, 0.02, 0.1)
 fe3d:text2d_place("miner_coal", "text", "1", 0.2, -0.875, 0.02, 0.1)
 fe3d:text2d_place("miner_ore", "text", "1", 0.3, -0.875, 0.02, 0.1)

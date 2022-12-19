@@ -129,7 +129,7 @@ LOOP
             fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
             ALT animalId = misc:string_concat(_poultrymanIds[jobIndex], "_5")
             fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
-    ELIF _butcherTimers[butcherIndex] IS _butcherInterval
+    ELIF _butcherTimers[butcherIndex] IS _productionTime
       ALT _butcherTimers[butcherIndex] = 0
       ADD _totalRawMeat 15
       ADD _totalHides 5

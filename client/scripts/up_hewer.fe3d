@@ -1,4 +1,4 @@
-0 0
+26 52
 META script_type_update
 META script_state_waiting
 
@@ -15,7 +15,6 @@ IF _lastSelectedBuildingType IS "hewer" OR _firstUpdate IS <true>
   fe3d:quad2d_set_visible("hewer_stone", <false>)
   fe3d:text2d_set_visible("hewer_worker", <false>)
   fe3d:text2d_set_visible("hewer_tool", <false>)
-  fe3d:text2d_set_visible("hewer_time", <false>)
   fe3d:text2d_set_visible("hewer_stone", <false>)
 
 /// Show GUI
@@ -27,7 +26,6 @@ IF _selectedBuildingType IS "hewer"
       fe3d:quad2d_set_visible("hewer_time", <true>)
       fe3d:quad2d_set_visible("hewer_convert", <true>)
       fe3d:quad2d_set_visible("hewer_stone", <true>)
-      fe3d:text2d_set_visible("hewer_time", <true>)
       fe3d:text2d_set_visible("hewer_stone", <true>)
     ELSE
       fe3d:quad2d_set_visible("hewer_tool", <true>)
@@ -63,7 +61,7 @@ LOOP
   ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _hewerIds[hewerIndex])
   ALT hasTool = misc:list_contains("_toolBuildingIds", _hewerIds[hewerIndex])
   IF hasWorker IS <true> AND hasTool IS <true>
-    IF _hewerTimers[hewerIndex] IS _hewerInterval
+    IF _hewerTimers[hewerIndex] IS _productionTime
       ALT _hewerTimers[hewerIndex] = 0
       ALT hX = fe3d:model_get_base_position_x(_hewerIds[hewerIndex])
       ALT hY = fe3d:model_get_base_position_y(_hewerIds[hewerIndex])

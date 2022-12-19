@@ -35,10 +35,10 @@ LOOP
     IF _swineherdGrowths[swineherdIndex] IS 0.0
       ADD _swineherdGrowths[swineherdIndex] _minSwineherdGrowth
   IF _swineherdGrowths[swineherdIndex] MORE 0.0 AND _swineherdGrowths[swineherdIndex] LESS _maxSwineherdGrowth
-    DEF INT interval = _swineherdInterval
+    DEF INT time = _growthTime
     DEF DEC speed = _maxSwineherdGrowth
-    CAST interval DEC
-    DIV speed interval
+    CAST time DEC
+    DIV speed time
     ADD _swineherdGrowths[swineherdIndex] speed
   ALT growth = _swineherdGrowths[swineherdIndex]
   ALT pigId = misc:string_concat(_swineherdIds[swineherdIndex], "_1")

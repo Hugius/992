@@ -66,10 +66,10 @@ LOOP
       ADD _totalGrain 16
       ADD _totalStraw 16
   IF _farmerGrowths[farmerIndex] MORE 0.0 AND _farmerGrowths[farmerIndex] LESS _maxFarmerGrowth
-    DEF INT interval = _farmerInterval
+    DEF INT time = _growthTime
     DEF DEC speed = _maxFarmerGrowth
-    CAST interval DEC
-    DIV speed interval
+    CAST time DEC
+    DIV speed time
     ADD _farmerGrowths[farmerIndex] speed
   ALT growth = _farmerGrowths[farmerIndex]
   ALT grainId = misc:string_concat(_farmerIds[farmerIndex], "_1")

@@ -1,9 +1,8 @@
-4 37
+18 72
 META script_type_initialize
 META script_state_waiting
 
 /// Finals
-DEF GLB FIN INT _hewerInterval = 2250
 DEF FIN STR workerText = "No worker available"
 DEF FIN STR toolText = "Equip 1 tool?"
 
@@ -19,5 +18,4 @@ fe3d:quad2d_place("hewer_convert", "convert", 0.0, -0.7, 0.2, 0.4)
 fe3d:quad2d_place("hewer_stone", "stone", 0.25, -0.7, 0.1, 0.175)
 fe3d:text2d_place("hewer_worker", "text", workerText, 0.0, -0.8, 0.285, 0.1)
 fe3d:text2d_place("hewer_tool", "text", toolText, 0.0, -0.8, 0.195, 0.1)
-fe3d:text2d_place("hewer_time", "text", "1", -0.25, -0.875, 0.02, 0.1)
 fe3d:text2d_place("hewer_stone", "text", "1", 0.25, -0.875, 0.02, 0.1)

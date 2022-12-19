@@ -1,11 +1,10 @@
-5 42
+18 81
 META script_type_initialize
 META script_state_waiting
 
 /// Finals
 DEF GLB FIN DEC _maxOrchardistGrowth = 0.25
 DEF GLB FIN DEC _minOrchardistGrowth = 0.025
-DEF GLB FIN INT _orchardistInterval = 4500
 DEF FIN STR workerText = "No worker available"
 
 /// Non-finals
@@ -19,5 +18,4 @@ fe3d:quad2d_place("orchardist_time", "time", -0.25, -0.7, 0.1, 0.175)
 fe3d:quad2d_place("orchardist_convert", "convert", 0.0, -0.7, 0.2, 0.4)
 fe3d:quad2d_place("orchardist_fruit", "fruit", 0.25, -0.7, 0.1, 0.175)
 fe3d:text2d_place("orchardist_worker", "text", workerText, 0.0, -0.8, 0.285, 0.1)
-fe3d:text2d_place("orchardist_time", "text", "1", -0.25, -0.875, 0.02, 0.1)
 fe3d:text2d_place("orchardist_fruit", "text", "1", 0.25, -0.875, 0.02, 0.1)

@@ -1,4 +1,4 @@
-52 16
+26 52
 META script_type_update
 META script_state_waiting
 
@@ -15,7 +15,6 @@ IF _lastSelectedBuildingType IS "feller" OR _firstUpdate IS <true>
   fe3d:quad2d_set_visible("feller_wood", <false>)
   fe3d:text2d_set_visible("feller_worker", <false>)
   fe3d:text2d_set_visible("feller_tool", <false>)
-  fe3d:text2d_set_visible("feller_time", <false>)
   fe3d:text2d_set_visible("feller_wood", <false>)
 
 /// Show GUI
@@ -27,7 +26,6 @@ IF _selectedBuildingType IS "feller"
       fe3d:quad2d_set_visible("feller_time", <true>)
       fe3d:quad2d_set_visible("feller_convert", <true>)
       fe3d:quad2d_set_visible("feller_wood", <true>)
-      fe3d:text2d_set_visible("feller_time", <true>)
       fe3d:text2d_set_visible("feller_wood", <true>)
     ELSE
       fe3d:quad2d_set_visible("feller_tool", <true>)
@@ -63,7 +61,7 @@ LOOP
   ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _fellerIds[fellerIndex])
   ALT hasTool = misc:list_contains("_toolBuildingIds", _fellerIds[fellerIndex])
   IF hasWorker IS <true> AND hasTool IS <true>
-    IF _fellerTimers[fellerIndex] IS _fellerInterval
+    IF _fellerTimers[fellerIndex] IS _productionTime
       ALT _fellerTimers[fellerIndex] = 0
       ALT fX = fe3d:model_get_base_position_x(_fellerIds[fellerIndex])
       ALT fY = fe3d:model_get_base_position_y(_fellerIds[fellerIndex])

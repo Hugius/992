@@ -1,6 +1,10 @@
-14 17
+5 34
 META script_type_initialize
 META script_state_waiting
+
+/// Finals
+DEF GLB FIN INT _productionTime = 2250
+DEF GLB FIN INT _growthTime = 4500
 
 /// Non-finals
 DEF GLB LST _eventMessageContents = {}

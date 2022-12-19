@@ -45,7 +45,7 @@ LOOP
         SUB _totalPlanks 1
         SUB _totalIron 1
         ADD _blacksmithTimers[blacksmithIndex] 1
-    ELIF _blacksmithTimers[blacksmithIndex] IS _blacksmithInterval
+    ELIF _blacksmithTimers[blacksmithIndex] IS _productionTime
       ALT _blacksmithTimers[blacksmithIndex] = 0
       ADD _totalTools 1
     ELSE

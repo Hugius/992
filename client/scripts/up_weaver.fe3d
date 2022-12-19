@@ -50,7 +50,7 @@ LOOP
       ELIF randomNumber IS 2 AND _totalLeather MORE 0
         SUB _totalLeather 1
         ADD _weaverTimers[waeverIndex] 1
-    ELIF _weaverTimers[waeverIndex] IS _weaverInterval
+    ELIF _weaverTimers[waeverIndex] IS _productionTime
       ALT _weaverTimers[waeverIndex] = 0
       ADD _totalClothes 1
     ELSE

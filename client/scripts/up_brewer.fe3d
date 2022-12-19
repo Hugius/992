@@ -56,7 +56,7 @@ LOOP
           SUB _totalGrain 1
           SUB _totalCoal 1
           ADD _brewerTimers[brewerIndex] 1
-    ELIF _brewerTimers[brewerIndex] IS _brewerInterval
+    ELIF _brewerTimers[brewerIndex] IS _productionTime
       ALT _brewerTimers[brewerIndex] = 0
       ADD _totalAle 10
     ELSE

@@ -55,7 +55,7 @@ LOOP
         SUB _totalRawFish 1
         ADD _smokerTimers[smokerIndex] 1
         ALT _smokerTurns[smokerIndex] = 2
-    ELIF _smokerTimers[smokerIndex] IS _smokerInterval
+    ELIF _smokerTimers[smokerIndex] IS _productionTime
       ALT _smokerTimers[smokerIndex] = 0
       IF _smokerTurns[smokerIndex] IS 1
         ADD _totalSmokedMeat 1

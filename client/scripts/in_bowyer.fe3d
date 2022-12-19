@@ -1,9 +1,8 @@
-4 23
+0 0
 META script_type_initialize
 META script_state_waiting
 
 /// Finals
-DEF GLB FIN INT _bowyerInterval = 750
 DEF FIN STR workerText = "No worker available"
 DEF FIN STR toolText = "Equip 1 tool?"
 

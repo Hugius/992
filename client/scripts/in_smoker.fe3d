@@ -1,9 +1,8 @@
-10 24
+0 0
 META script_type_initialize
 META script_state_waiting
 
 /// Finals
-DEF GLB FIN INT _smokerInterval = 750
 DEF FIN STR workerText = "No worker available"
 
 /// Non-finals

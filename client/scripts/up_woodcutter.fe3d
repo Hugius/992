@@ -59,7 +59,7 @@ LOOP
       IF _totalWood MORE 0
         SUB _totalWood 1
         ADD _woodcutterTimers[woodcutterIndex] 1
-    ELIF _woodcutterTimers[woodcutterIndex] IS _woodcutterInterval
+    ELIF _woodcutterTimers[woodcutterIndex] IS _productionTime
       ALT _woodcutterTimers[woodcutterIndex] = 0
       ADD _totalPlanks 10
       ADD _totalFirewood 5

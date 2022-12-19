@@ -1,4 +1,4 @@
-0 0
+26 53
 META script_type_update
 META script_state_waiting
 
@@ -15,7 +15,6 @@ IF _lastSelectedBuildingType IS "ditcher" OR _firstUpdate IS <true>
   fe3d:quad2d_set_visible("ditcher_clay", <false>)
   fe3d:text2d_set_visible("ditcher_worker", <false>)
   fe3d:text2d_set_visible("ditcher_tool", <false>)
-  fe3d:text2d_set_visible("ditcher_time", <false>)
   fe3d:text2d_set_visible("ditcher_clay", <false>)
 
 /// Show GUI
@@ -27,7 +26,6 @@ IF _selectedBuildingType IS "ditcher"
       fe3d:quad2d_set_visible("ditcher_time", <true>)
       fe3d:quad2d_set_visible("ditcher_convert", <true>)
       fe3d:quad2d_set_visible("ditcher_clay", <true>)
-      fe3d:text2d_set_visible("ditcher_time", <true>)
       fe3d:text2d_set_visible("ditcher_clay", <true>)
     ELSE
       fe3d:quad2d_set_visible("ditcher_tool", <true>)
@@ -51,7 +49,7 @@ LOOP
   ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _ditcherIds[ditcherIndex])
   ALT hasTool = misc:list_contains("_toolBuildingIds", _ditcherIds[ditcherIndex])
   IF hasWorker IS <true> AND hasTool IS <true>
-    IF _ditcherTimers[ditcherIndex] IS _ditcherInterval
+    IF _ditcherTimers[ditcherIndex] IS _productionTime
       ALT _ditcherTimers[ditcherIndex] = 0
       ADD _totalClay 1
     ELSE

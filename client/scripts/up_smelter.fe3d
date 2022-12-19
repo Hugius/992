@@ -71,7 +71,7 @@ LOOP
           SUB _totalOre 1
           SUB _totalCoal 1
           ADD _smelterTimers[smelterIndex] 1
-    ELIF _smelterTimers[smelterIndex] IS _smelterInterval
+    ELIF _smelterTimers[smelterIndex] IS _productionTime
       ALT _smelterTimers[smelterIndex] = 0
       ADD _totalIron 1
     ELSE

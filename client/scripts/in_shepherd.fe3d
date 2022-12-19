@@ -1,11 +1,10 @@
-5 40
+21 75
 META script_type_initialize
 META script_state_waiting
 
 /// Finals
 DEF GLB FIN DEC _maxShepherdGrowth = 0.45
 DEF GLB FIN DEC _minShepherdGrowth = 0.045
-DEF GLB FIN INT _shepherdInterval = 4500
 DEF FIN STR workerText = "No worker available"
 DEF FIN STR toolText = "Equip 1 tool?"
 
@@ -22,5 +21,4 @@ fe3d:quad2d_place("shepherd_convert", "convert", 0.0, -0.7, 0.2, 0.4)
 fe3d:quad2d_place("shepherd_wool", "wool", 0.25, -0.7, 0.1, 0.175)
 fe3d:text2d_place("shepherd_worker", "text", workerText, 0.0, -0.8, 0.285, 0.1)
 fe3d:text2d_place("shepherd_tool", "text", toolText, 0.0, -0.8, 0.195, 0.1)
-fe3d:text2d_place("shepherd_time", "text", "1", -0.25, -0.875, 0.02, 0.1)
 fe3d:text2d_place("shepherd_wool", "text", "1", 0.25, -0.875, 0.02, 0.1)

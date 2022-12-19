@@ -1,4 +1,4 @@
-0 0
+31 57
 META script_type_update
 META script_state_waiting
 
@@ -18,7 +18,6 @@ IF _lastSelectedBuildingType IS "hunter" OR _firstUpdate IS <true>
   fe3d:text2d_set_visible("hunter_worker", <false>)
   fe3d:text2d_set_visible("hunter_bow", <false>)
   fe3d:text2d_set_visible("hunter_arrow", <false>)
-  fe3d:text2d_set_visible("hunter_time", <false>)
   fe3d:text2d_set_visible("hunter_rawmeat", <false>)
 
 /// Show GUI
@@ -32,7 +31,6 @@ IF _selectedBuildingType IS "hunter"
         fe3d:quad2d_set_visible("hunter_time", <true>)
         fe3d:quad2d_set_visible("hunter_convert", <true>)
         fe3d:quad2d_set_visible("hunter_rawmeat", <true>)
-        fe3d:text2d_set_visible("hunter_time", <true>)
         fe3d:text2d_set_visible("hunter_rawmeat", <true>)
       ELSE
         fe3d:quad2d_set_visible("hunter_arrow", <true>)
@@ -71,7 +69,7 @@ LOOP
   ALT hasBow = misc:list_contains("_bowBuildingIds", _hunterIds[hunterIndex])
   ALT hasArrow = misc:list_contains("_arrowBuildingIds", _hunterIds[hunterIndex])
   IF hasWorker IS <true> AND hasBow IS <true> AND hasArrow IS <true>
-    IF _hunterTimers[hunterIndex] IS _hunterInterval
+    IF _hunterTimers[hunterIndex] IS _productionTime
       ALT _hunterTimers[hunterIndex] = 0
       ALT arrowIndex = misc:list_hunterIndex("_arrowBuildingIds", _hunterIds[hunterIndex])
       PULL _arrowBuildingIds arrowIndex

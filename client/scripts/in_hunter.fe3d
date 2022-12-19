@@ -1,9 +1,8 @@
-22 47
+21 75
 META script_type_initialize
 META script_state_waiting
 
 /// Finals
-DEF GLB FIN INT _hunterInterval = 750
 DEF FIN STR workerText = "No worker available"
 DEF FIN STR bowText = "Equip 1 bow?"
 DEF FIN STR arrowText = "Equip 5 arrows?"
@@ -22,5 +21,4 @@ fe3d:quad2d_place("hunter_rawmeat", "rawmeat", 0.25, -0.7, 0.1, 0.175)
 fe3d:text2d_place("hunter_worker", "text", workerText, 0.0, -0.8, 0.285, 0.1)
 fe3d:text2d_place("hunter_bow", "text", bowText, 0.0, -0.8, 0.18, 0.1)
 fe3d:text2d_place("hunter_arrow", "text", arrowText, 0.0, -0.8, 0.225, 0.1)
-fe3d:text2d_place("hunter_time", "text", "1", -0.25, -0.875, 0.02, 0.1)
 fe3d:text2d_place("hunter_rawmeat", "text", "1", 0.25, -0.875, 0.02, 0.1)

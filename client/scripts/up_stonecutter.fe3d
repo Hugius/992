@@ -55,7 +55,7 @@ LOOP
       IF _totalStone MORE 0
         SUB _totalStone 1
         ADD _stonecutterTimers[stonecutterIndex] 1
-    ELIF _stonecutterTimers[stonecutterIndex] IS _stonecutterInterval
+    ELIF _stonecutterTimers[stonecutterIndex] IS _productionTime
       ALT _stonecutterTimers[stonecutterIndex] = 0
       ADD _totalBricks 15
     ELSE

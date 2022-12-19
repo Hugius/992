@@ -1,4 +1,4 @@
-0 0
+16 48
 META script_type_update
 META script_state_waiting
 
@@ -16,7 +16,6 @@ IF _lastSelectedBuildingType IS "miner" OR _firstUpdate IS <true>
   fe3d:quad2d_set_visible("miner_ore", <false>)
   fe3d:text2d_set_visible("miner_worker", <false>)
   fe3d:text2d_set_visible("miner_tool", <false>)
-  fe3d:text2d_set_visible("miner_time", <false>)
   fe3d:text2d_set_visible("miner_coal", <false>)
   fe3d:text2d_set_visible("miner_ore", <false>)
 
@@ -30,7 +29,6 @@ IF _selectedBuildingType IS "miner"
       fe3d:quad2d_set_visible("miner_convert", <true>)
       fe3d:quad2d_set_visible("miner_coal", <true>)
       fe3d:quad2d_set_visible("miner_ore", <true>)
-      fe3d:text2d_set_visible("miner_time", <true>)
       fe3d:text2d_set_visible("miner_coal", <true>)
       fe3d:text2d_set_visible("miner_ore", <true>)
     ELSE
@@ -55,7 +53,7 @@ LOOP
   ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _minerIds[minerIndex])
   ALT hasTool = misc:list_contains("_toolBuildingIds", _minerIds[minerIndex])
   IF hasWorker IS <true> AND hasTool IS <true>
-    IF _minerTimers[minerIndex] IS _minerInterval
+    IF _minerTimers[minerIndex] IS _productionTime
       ALT _minerTimers[minerIndex] = 0
       ADD _totalCoal 1
       ADD _totalOre 1
