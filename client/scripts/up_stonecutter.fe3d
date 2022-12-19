@@ -1,4 +1,4 @@
-0 0
+45 28
 META script_type_update
 META script_state_waiting
 
@@ -57,7 +57,7 @@ LOOP
         ADD _stonecutterTimers[stonecutterIndex] 1
     ELIF _stonecutterTimers[stonecutterIndex] IS _productionTime
       ALT _stonecutterTimers[stonecutterIndex] = 0
-      ADD _totalBricks 15
+      ADD _totalBricks 10
     ELSE
       ADD _stonecutterTimers[stonecutterIndex] 1
   ADD stonecutterIndex 1

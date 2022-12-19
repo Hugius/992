@@ -1,4 +1,4 @@
-0 0
+68 24
 META script_type_update
 META script_state_waiting
 
@@ -67,7 +67,7 @@ LOOP
         ADD _fletcherTimers[fletcherIndex] 1
     ELIF _fletcherTimers[fletcherIndex] IS _productionTime
       ALT _fletcherTimers[fletcherIndex] = 0
-      ADD _totalArrows 10
+      ADD _totalArrows 5
     ELSE
       ADD _fletcherTimers[fletcherIndex] 1
   ADD fletcherIndex 1

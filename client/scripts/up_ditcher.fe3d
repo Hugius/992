@@ -1,4 +1,4 @@
-26 53
+52 22
 META script_type_update
 META script_state_waiting
 
@@ -51,7 +51,7 @@ LOOP
   IF hasWorker IS <true> AND hasTool IS <true>
     IF _ditcherTimers[ditcherIndex] IS _productionTime
       ALT _ditcherTimers[ditcherIndex] = 0
-      ADD _totalClay 1
+      ADD _totalClay 5
     ELSE
       ADD _ditcherTimers[ditcherIndex] 1
   ADD ditcherIndex 1

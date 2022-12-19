@@ -1,4 +1,4 @@
-0 0
+21 69
 META script_type_initialize
 META script_state_waiting
 
@@ -20,5 +20,5 @@ fe3d:quad2d_place("woodcutter_firewood", "firewood", 0.3, -0.7, 0.1, 0.175)
 fe3d:text2d_place("woodcutter_worker", "text", workerText, 0.0, -0.8, 0.285, 0.1)
 fe3d:text2d_place("woodcutter_tool", "text", toolText, 0.0, -0.8, 0.195, 0.1)
 fe3d:text2d_place("woodcutter_wood", "text", "1", -0.25, -0.875, 0.02, 0.1)
-fe3d:text2d_place("woodcutter_planks", "text", "10", 0.2, -0.875, 0.04, 0.1)
+fe3d:text2d_place("woodcutter_planks", "text", "5", 0.2, -0.875, 0.02, 0.1)
 fe3d:text2d_place("woodcutter_firewood", "text", "5", 0.3, -0.875, 0.02, 0.1)

@@ -1,4 +1,4 @@
-0 0
+45 57
 META script_type_update
 META script_state_waiting
 
@@ -44,7 +44,5 @@ LOOP
   ALT pigId = misc:string_concat(_swineherdIds[swineherdIndex], "_1")
   fe3d:model_set_base_size(pigId, growth, growth, growth)
   ALT pigId = misc:string_concat(_swineherdIds[swineherdIndex], "_2")
-  fe3d:model_set_base_size(pigId, growth, growth, growth)
-  ALT pigId = misc:string_concat(_swineherdIds[swineherdIndex], "_3")
   fe3d:model_set_base_size(pigId, growth, growth, growth)
   ADD swineherdIndex 1

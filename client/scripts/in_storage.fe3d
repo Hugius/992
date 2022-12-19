@@ -1,4 +1,4 @@
-37 27
+37 28
 META script_type_initialize
 META script_state_waiting
 
@@ -6,23 +6,23 @@ META script_state_waiting
 DEF FIN STR infoText = "Stores food and resources"
 
 /// Non-finals
-DEF GLB INT _totalAle = 10
+DEF GLB INT _totalAle = 15
 DEF GLB INT _totalMilk = 0
 DEF GLB INT _totalSmokedMeat = 0
 DEF GLB INT _totalSmokedFish = 0
-DEF GLB INT _totalBread = 10
+DEF GLB INT _totalBread = 15
 DEF GLB INT _totalEggs = 0
 DEF GLB INT _totalHoney = 0
 DEF GLB INT _totalFruit = 0
 DEF GLB INT _totalRawMeat = 0
 DEF GLB INT _totalRawFish = 0
 DEF GLB INT _totalWood = 0
-DEF GLB INT _totalPlanks = 10
+DEF GLB INT _totalPlanks = 15
 DEF GLB INT _totalFirewood = 0
 DEF GLB INT _totalStone = 0
-DEF GLB INT _totalBricks = 10
-DEF GLB INT _totalClay = 10
-DEF GLB INT _totalStraw = 10
+DEF GLB INT _totalBricks = 15
+DEF GLB INT _totalClay = 15
+DEF GLB INT _totalStraw = 15
 DEF GLB INT _totalCoal = 0
 DEF GLB INT _totalOre = 0
 DEF GLB INT _totalIron = 0
@@ -36,7 +36,7 @@ DEF GLB INT _totalWool = 0
 DEF GLB INT _totalClothes = 10
 DEF GLB INT _totalMushrooms = 0
 DEF GLB INT _totalMedicine = 0
-DEF GLB INT _totalTools = 7
+DEF GLB INT _totalTools = 15
 DEF GLB INT _totalBows = 0
 DEF GLB INT _totalArrows = 0
 DEF GLB INT _totalFishingNets = 0

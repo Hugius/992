@@ -1,4 +1,4 @@
-23 24
+70 59
 META script_type_update
 META script_state_waiting
 
@@ -69,7 +69,5 @@ LOOP
   ALT sheepId = misc:string_concat(_shepherdIds[shepherdIndex], "_1")
   fe3d:model_set_base_size(sheepId, growth, growth, growth)
   ALT sheepId = misc:string_concat(_shepherdIds[shepherdIndex], "_2")
-  fe3d:model_set_base_size(sheepId, growth, growth, growth)
-  ALT sheepId = misc:string_concat(_shepherdIds[shepherdIndex], "_3")
   fe3d:model_set_base_size(sheepId, growth, growth, growth)
   ADD shepherdIndex 1

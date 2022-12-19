@@ -343,6 +343,8 @@ ALT _smelterTimers = smelterTimers
 ALT _smokerIds = smokerIds
 ALT _smokerTimers = smokerTimers
 ALT _smokerTurns = smokerTurns
+ALT _stonecutterIds = stonecutterIds
+ALT _stonecutterTimers = stonecutterTimers
 ALT _swineherdIds = swineherdIds
 ALT _swineherdGrowths = swineherdGrowths
 ALT _tannerIds = tannerIds
@@ -365,7 +367,7 @@ DEF STR eventMessageOpacity = lines[148]
 DEF STR totalUpdates = lines[149]
 CAST eventMessageOpacity DEC
 CAST totalUpdates INT
-ALT _eventMessageContents = _eventMessageContents
+ALT _eventMessageContents = eventMessageContents
 ALT _toolBuildingIds = toolBuildingIds
 ALT _bowBuildingIds = bowBuildingIds
 ALT _arrowBuildingIds = arrowBuildingIds

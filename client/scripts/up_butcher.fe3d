@@ -1,4 +1,4 @@
-0 0
+95 61
 META script_type_update
 META script_state_waiting
 
@@ -95,8 +95,6 @@ LOOP
             fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
             ALT animalId = misc:string_concat(_swineherdIds[jobIndex], "_2")
             fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
-            ALT animalId = misc:string_concat(_swineherdIds[jobIndex], "_3")
-            fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
       ELIF randomNumber IS 3
         ALT jobCount = misc:list_size("_shepherdIds")
         IF jobCount MORE 0
@@ -108,8 +106,6 @@ LOOP
             ALT animalId = misc:string_concat(_shepherdIds[jobIndex], "_1")
             fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
             ALT animalId = misc:string_concat(_shepherdIds[jobIndex], "_2")
-            fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
-            ALT animalId = misc:string_concat(_shepherdIds[jobIndex], "_3")
             fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
       ELIF randomNumber IS 4
         ALT jobCount = misc:list_size("_poultrymanIds")
@@ -131,7 +127,7 @@ LOOP
             fe3d:model_set_base_size(animalId, 0.0, 0.0, 0.0)
     ELIF _butcherTimers[butcherIndex] IS _productionTime
       ALT _butcherTimers[butcherIndex] = 0
-      ADD _totalRawMeat 15
+      ADD _totalRawMeat 5
       ADD _totalHides 5
     ELSE
       ADD _butcherTimers[butcherIndex] 1

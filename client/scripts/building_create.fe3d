@@ -1,4 +1,4 @@
-3 12
+208 62
 META script_type_update
 META script_state_waiting
 
@@ -186,18 +186,13 @@ ELIF _placedBuildingType IS "shepherd"
   PUSH _shepherdTimers 0
   DEF STR sheepId1 = misc:string_concat(_placedBuildingId, "_1")
   DEF STR sheepId2 = misc:string_concat(_placedBuildingId, "_2")
-  DEF STR sheepId3 = misc:string_concat(_placedBuildingId, "_3")
   DEF DEC x = fe3d:model_get_base_position_x(_placedBuildingId)
   DEF DEC y = fe3d:model_get_base_position_y(_placedBuildingId)
   DEF DEC z = fe3d:model_get_base_position_z(_placedBuildingId)
   SUB x 1.0
-  SUB z 1.0
   fe3d:model_place(sheepId1, "sheep", x, y, z)
   ADD x 2.0
   fe3d:model_place(sheepId2, "sheep", x, y, z)
-  SUB x 1.0
-  ADD z 2.0
-  fe3d:model_place(sheepId3, "sheep", x, y, z)
 ELIF _placedBuildingType IS "smelter"
   PUSH _smelterIds _placedBuildingId
   PUSH _smelterTimers 0
@@ -213,18 +208,13 @@ ELIF _placedBuildingType IS "swineherd"
   PUSH _swineherdGrowths 0.0
   DEF STR pigId1 = misc:string_concat(_placedBuildingId, "_1")
   DEF STR pigId2 = misc:string_concat(_placedBuildingId, "_2")
-  DEF STR pigId3 = misc:string_concat(_placedBuildingId, "_3")
   DEF DEC x = fe3d:model_get_base_position_x(_placedBuildingId)
   DEF DEC y = fe3d:model_get_base_position_y(_placedBuildingId)
   DEF DEC z = fe3d:model_get_base_position_z(_placedBuildingId)
   SUB x 1.0
-  SUB z 1.0
   fe3d:model_place(pigId1, "pig", x, y, z)
   ADD x 2.0
   fe3d:model_place(pigId2, "pig", x, y, z)
-  SUB x 1.0
-  ADD z 2.0
-  fe3d:model_place(pigId3, "pig", x, y, z)
 ELIF _placedBuildingType IS "tanner"
   PUSH _tannerIds _placedBuildingId
   PUSH _tannerTimers 0

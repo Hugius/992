@@ -1,4 +1,4 @@
-0 0
+59 21
 META script_type_update
 META script_state_waiting
 
@@ -58,7 +58,7 @@ LOOP
           ADD _brewerTimers[brewerIndex] 1
     ELIF _brewerTimers[brewerIndex] IS _productionTime
       ALT _brewerTimers[brewerIndex] = 0
-      ADD _totalAle 10
+      ADD _totalAle 5
     ELSE
       ADD _brewerTimers[brewerIndex] 1
   ADD brewerIndex 1

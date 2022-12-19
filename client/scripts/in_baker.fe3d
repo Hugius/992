@@ -1,4 +1,4 @@
-0 0
+21 64
 META script_type_initialize
 META script_state_waiting
 
@@ -20,4 +20,4 @@ fe3d:text2d_place("baker_worker", "text", workerText, 0.0, -0.8, 0.285, 0.1)
 fe3d:text2d_place("baker_flour", "text", "1", -0.3, -0.875, 0.02, 0.1)
 fe3d:text2d_place("baker_firewood", "text", "1", -0.2, -0.875, 0.02, 0.1)
 fe3d:text2d_place("baker_coal", "text", "1", -0.2, -0.875, 0.02, 0.1)
-fe3d:text2d_place("baker_bread", "text", "10", 0.25, -0.875, 0.04, 0.1)
+fe3d:text2d_place("baker_bread", "text", "5", 0.25, -0.875, 0.02, 0.1)

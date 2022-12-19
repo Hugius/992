@@ -1,4 +1,4 @@
-0 0
+62 24
 META script_type_update
 META script_state_waiting
 
@@ -61,7 +61,7 @@ LOOP
         ADD _woodcutterTimers[woodcutterIndex] 1
     ELIF _woodcutterTimers[woodcutterIndex] IS _productionTime
       ALT _woodcutterTimers[woodcutterIndex] = 0
-      ADD _totalPlanks 10
+      ADD _totalPlanks 5
       ADD _totalFirewood 5
     ELSE
       ADD _woodcutterTimers[woodcutterIndex] 1

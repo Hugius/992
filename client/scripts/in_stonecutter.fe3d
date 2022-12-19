@@ -1,4 +1,4 @@
-0 0
+20 51
 META script_type_initialize
 META script_state_waiting
 
@@ -19,4 +19,4 @@ fe3d:quad2d_place("stonecutter_bricks", "bricks", 0.25, -0.7, 0.1, 0.175)
 fe3d:text2d_place("stonecutter_worker", "text", workerText, 0.0, -0.8, 0.285, 0.1)
 fe3d:text2d_place("stonecutter_tool", "text", toolText, 0.0, -0.8, 0.195, 0.1)
 fe3d:text2d_place("stonecutter_stone", "text", "1", -0.25, -0.875, 0.02, 0.1)
-fe3d:text2d_place("stonecutter_bricks", "text", "15", 0.25, -0.875, 0.04, 0.1)
+fe3d:text2d_place("stonecutter_bricks", "text", "10", 0.25, -0.875, 0.04, 0.1)
