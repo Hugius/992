@@ -1,0 +1,16 @@
+14 67
+META script_type_initialize
+META script_state_waiting
+
+/// Non-finals
+DEF GLB BOL _isInMenu = <true>
+
+/// GUI
+fe3d:quad2d_place("menu_background", "background", 0.0, 0.0, 3.0, 3.0)
+fe3d:quad2d_place("menu_title", "title", 0.0, 0.6, 0.75, 0.75)
+fe3d:quad2d_place("menu_new", "scroll2", 0.0, 0.0, 0.0, 0.0)
+fe3d:quad2d_place("menu_load", "scroll2", 0.0, -0.4, 0.0, 0.0)
+fe3d:quad2d_place("menu_quit", "scroll2", 0.0, -0.8, 0.0, 0.0)
+fe3d:text2d_place("menu_new", "text", "New", 0.0, 0.0, 0.0, 0.0)
+fe3d:text2d_place("menu_load", "text", "Load", 0.0, -0.4, 0.0, 0.0)
+fe3d:text2d_place("menu_quit", "text", "Quit", 0.0, -0.8, 0.0, 0.0)

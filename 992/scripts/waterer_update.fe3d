@@ -1,0 +1,38 @@
+0 0
+META script_type_update
+META script_state_waiting
+
+/// Define reusable values
+DEF BOL hasWorker = <false>
+
+/// Hide GUI
+IF _lastSelectedBuildingType IS "waterer" OR _isFirstUpdate IS <true>
+  fe3d:quad2d_set_visible("waterer_worker", <false>)
+  fe3d:quad2d_set_visible("waterer_info", <false>)
+  fe3d:text2d_set_visible("waterer_worker", <false>)
+  fe3d:text2d_set_visible("waterer_info", <false>)
+
+/// Show GUI
+IF _selectedBuildingType IS "waterer"
+  ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
+  IF hasWorker IS <true>
+    fe3d:quad2d_set_visible("waterer_info", <true>)
+    fe3d:text2d_set_visible("waterer_info", <true>)
+  ELSE
+    fe3d:quad2d_set_visible("waterer_worker", <true>)
+    fe3d:text2d_set_visible("waterer_worker", <true>)
+
+/// Update waterers
+DEF INT maxWatererIndex = misc:list_size("_watererIds")
+DEF INT watererIndex = 0
+DEF BOL mustLowerSicknessChance = <false>
+LOOP
+  IF watererIndex IS maxWatererIndex
+    BREAK
+  ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _watererIds[watererIndex])
+  IF hasWorker IS <true>
+    ALT mustLowerSicknessChance = <true>
+  ADD watererIndex 1
+
+IF mustLowerSicknessChance IS <true>
+  SUB _sicknessCatchChance 5

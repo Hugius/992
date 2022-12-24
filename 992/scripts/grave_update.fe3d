@@ -1,0 +1,21 @@
+17 28
+META script_type_update
+META script_state_waiting
+
+/// Hide GUI
+IF _lastSelectedBuildingType IS "grave" OR _isFirstUpdate IS <true>
+  fe3d:quad2d_set_visible("grave_info", <false>)
+  fe3d:text2d_set_visible("grave_info", <false>)
+
+/// Show GUI
+IF _selectedBuildingType IS "grave"
+  fe3d:quad2d_set_visible("grave_info", <true>)
+  fe3d:text2d_set_visible("grave_info", <true>)
+
+/// Update graves
+DEF INT totalGraves = misc:list_size("_graveIds")
+IF totalGraves LESS _totalDeadWorkers
+  DEF INT difference = _totalDeadWorkers
+  SUB difference totalGraves
+  MUL difference 10
+  ADD _sicknessCatchChance difference

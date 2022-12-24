@@ -1,0 +1,70 @@
+25 43
+META script_type_update
+META script_state_waiting
+
+/// Finals
+DEF FIN BOL isLmbPressed = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
+DEF FIN BOL isWorldExisting = fe3d:world_is_custom_existing("save")
+DEF FIN BOL isFileExisting = fe3d:file_is_existing("save")
+DEF FIN BOL isNewButtonHovered = fe3d:quad2d_is_hovered("menu_new")
+DEF FIN BOL isLoadButtonHovered = fe3d:quad2d_is_hovered("menu_load")
+DEF FIN BOL isQuitButtonHovered = fe3d:quad2d_is_hovered("menu_quit")
+
+/// Non-finals
+DEF DEC cursorX = fe3d:cursor_get_position_x()
+DEF DEC cursorY = fe3d:cursor_get_position_y()
+
+/// Update background
+DIV cursorX 5.0
+DIV cursorY 5.0
+NEG cursorX
+NEG cursorY
+fe3d:quad2d_set_position("menu_background", cursorX, cursorY)
+
+/// Set default sizes
+fe3d:quad2d_set_size("menu_new", 0.5, 0.2)
+fe3d:quad2d_set_size("menu_load", 0.5, 0.2)
+fe3d:quad2d_set_size("menu_quit", 0.5, 0.2)
+fe3d:text2d_set_size("menu_new", 0.15, 0.15)
+fe3d:text2d_set_size("menu_load", 0.2, 0.15)
+fe3d:text2d_set_size("menu_quit", 0.2, 0.15)
+
+/// Update new button
+IF isNewButtonHovered IS <true>
+  fe3d:quad2d_set_size("menu_new", 0.55, 0.22)
+  fe3d:text2d_set_size("menu_new", 0.165, 0.165)
+  IF isLmbPressed IS <true>
+    EXECUTE game_create
+    fe3d:quad2d_delete("menu_background")
+    fe3d:quad2d_delete("menu_title")
+    fe3d:quad2d_delete("menu_new")
+    fe3d:quad2d_delete("menu_load")
+    fe3d:quad2d_delete("menu_quit")
+    fe3d:text2d_delete("menu_new")
+    fe3d:text2d_delete("menu_load")
+    fe3d:text2d_delete("menu_quit")
+    ALT _isInMenu = <false>
+
+/// Update load button
+IF isLoadButtonHovered IS <true>
+  IF isWorldExisting IS <true> AND isFileExisting IS <true>
+    fe3d:quad2d_set_size("menu_load", 0.55, 0.22)
+    fe3d:text2d_set_size("menu_load", 0.22, 0.165)
+    IF isLmbPressed IS <true>
+      EXECUTE game_load
+      fe3d:quad2d_delete("menu_background")
+      fe3d:quad2d_delete("menu_title")
+      fe3d:quad2d_delete("menu_new")
+      fe3d:quad2d_delete("menu_load")
+      fe3d:quad2d_delete("menu_quit")
+      fe3d:text2d_delete("menu_new")
+      fe3d:text2d_delete("menu_load")
+      fe3d:text2d_delete("menu_quit")
+      ALT _isInMenu = <false>
+
+/// Update quit button
+IF isQuitButtonHovered IS <true>
+  fe3d:quad2d_set_size("menu_quit", 0.55, 0.22)
+  fe3d:text2d_set_size("menu_quit", 0.22, 0.165)
+  IF isLmbPressed IS <true>
+    fe3d:application_stop()

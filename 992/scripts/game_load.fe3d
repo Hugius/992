@@ -1,0 +1,377 @@
+0 23
+META script_type_update
+META script_state_waiting
+
+/// Load world
+fe3d:world_load_custom("save")
+
+/// Load save file
+DEF LST lines = fe3d:file_read("save")
+
+/// Load camera
+DEF STR x = lines[0]
+DEF STR y = lines[1]
+DEF STR z = lines[2]
+DEF STR yaw = lines[3]
+DEF STR pitch = lines[4]
+DEF STR xPositionAcceleration = lines[5]
+DEF STR zPositionAcceleration = lines[6]
+DEF STR yawAcceleration = lines[7]
+CAST x DEC
+CAST y DEC
+CAST z DEC
+CAST yaw DEC
+CAST pitch DEC
+CAST xPositionAcceleration DEC
+CAST zPositionAcceleration DEC
+CAST yawAcceleration DEC
+fe3d:camera_set_position(x, y, z)
+fe3d:camera_set_yaw(yaw)
+fe3d:camera_set_pitch(pitch)
+ALT _xPositionAcceleration = xPositionAcceleration
+ALT _zPositionAcceleration = zPositionAcceleration
+ALT _yawAcceleration = yawAcceleration
+
+/// Load workers
+DEF LST workerNames = misc:string_to_list(lines[8])
+DEF LST workerGenders = misc:string_to_list(lines[9])
+DEF LST workerHealths = misc:string_to_list(lines[10])
+DEF LST workerClothes = misc:string_to_list(lines[11])
+DEF LST workerJobBuildingIds = misc:string_to_list(lines[12])
+DEF LST workerHouseBuildingIds = misc:string_to_list(lines[13])
+DEF STR workersToCreate = lines[14]
+DEF STR workerDeathIndex = lines[15]
+DEF STR workerDeathTimer = lines[16]
+DEF STR workerDeathTimespan = lines[17]
+DEF STR totalDeadWorkers = lines[18]
+DEF STR nextWorkerGender = lines[19]
+DEF STR birthDeathChance = lines[20]
+DEF STR suicideDeathChance = lines[21]
+DEF STR sicknessCatchChance = lines[22]
+DEF STR mustUpdateWorkers = lines[23]
+CAST workersToCreate INT
+CAST workerDeathIndex INT
+CAST workerDeathTimer INT
+CAST workerDeathTimespan INT
+CAST totalDeadWorkers INT
+CAST nextWorkerGender INT
+CAST birthDeathChance INT
+CAST suicideDeathChance INT
+CAST sicknessCatchChance INT
+CAST mustUpdateWorkers BOL
+ALT _workerNames = workerNames
+ALT _workerGenders = workerGenders
+ALT _workerHealths = workerHealths
+ALT _workerClothes = workerClothes
+ALT _workerJobBuildingIds = workerJobBuildingIds
+ALT _workerHouseBuildingIds = workerHouseBuildingIds
+ALT _workersToCreate = workersToCreate
+ALT _workerDeathIndex = workerDeathIndex
+ALT _workerDeathTimer = workerDeathTimer
+ALT _workerDeathTimespan = workerDeathTimespan
+ALT _totalDeadWorkers = totalDeadWorkers
+ALT _nextWorkerGender = nextWorkerGender
+ALT _birthDeathChance = birthDeathChance
+ALT _suicideDeathChance = suicideDeathChance
+ALT _sicknessCatchChance = sicknessCatchChance
+ALT _mustUpdateWorkers = mustUpdateWorkers
+
+/// Load buildings
+DEF LST placedBuildingIds = misc:string_to_list(lines[24])
+DEF LST placedBuildingTypes = misc:string_to_list(lines[25])
+DEF STR placedBuildingId = lines[26]
+DEF STR placedBuildingType = lines[27]
+DEF STR selectedBuildingId = lines[28]
+DEF STR selectedBuildingType = lines[29]
+DEF STR lastSelectedBuildingId = lines[30]
+DEF STR lastSelectedBuildingType = lines[31]
+DEF STR buildingIndex = lines[32]
+DEF STR buildingCounter = lines[33]
+DEF STR buildMode = lines[34]
+DEF STR lastBuildMode = lines[35]
+CAST buildingIndex INT
+CAST buildingCounter INT
+CAST buildMode BOL
+CAST lastBuildMode BOL
+ALT _placedBuildingIds = placedBuildingIds
+ALT _placedBuildingTypes = placedBuildingTypes
+ALT _placedBuildingId = placedBuildingId
+ALT _placedBuildingType = placedBuildingType
+ALT _selectedBuildingId = selectedBuildingId
+ALT _selectedBuildingType = selectedBuildingType
+ALT _lastSelectedBuildingId = lastSelectedBuildingId
+ALT _lastSelectedBuildingType = lastSelectedBuildingType
+ALT _buildingIndex = buildingIndex
+ALT _buildingCounter = buildingCounter
+ALT _isBuildModeEnabled = buildMode
+ALT _wasBuildModeEnabled = lastBuildMode
+
+/// Load storage
+DEF STR totalAle = lines[36]
+DEF STR totalMilk = lines[37]
+DEF STR totalSmokedMeat = lines[38]
+DEF STR totalSmokedFish = lines[39]
+DEF STR totalBread = lines[40]
+DEF STR totalEggs = lines[41]
+DEF STR totalHoney = lines[42]
+DEF STR totalFruit = lines[43]
+DEF STR totalRawFish = lines[44]
+DEF STR totalRawMeat = lines[45]
+DEF STR totalWood = lines[46]
+DEF STR totalPlanks = lines[47]
+DEF STR totalFirewood = lines[48]
+DEF STR totalStone = lines[49]
+DEF STR totalBricks = lines[50]
+DEF STR totalClay = lines[51]
+DEF STR totalStraw = lines[52]
+DEF STR totalCoal = lines[53]
+DEF STR totalOre = lines[54]
+DEF STR totalIron = lines[55]
+DEF STR totalSeeds = lines[56]
+DEF STR totalGrain = lines[57]
+DEF STR totalFlour = lines[58]
+DEF STR totalFeathers = lines[59]
+DEF STR totalHides = lines[60]
+DEF STR totalLeather = lines[61]
+DEF STR totalWool = lines[62]
+DEF STR totalClothes = lines[63]
+DEF STR totalMushrooms = lines[64]
+DEF STR totalMedicine = lines[65]
+DEF STR totalTools = lines[66]
+DEF STR totalBows = lines[67]
+DEF STR totalArrows = lines[68]
+DEF STR totalFishingNets = lines[69]
+CAST totalAle INT
+CAST totalMilk INT
+CAST totalSmokedMeat INT
+CAST totalSmokedFish INT
+CAST totalBread INT
+CAST totalEggs INT
+CAST totalHoney INT
+CAST totalFruit INT
+CAST totalRawMeat INT
+CAST totalRawFish INT
+CAST totalWood INT
+CAST totalPlanks INT
+CAST totalFirewood INT
+CAST totalStone INT
+CAST totalBricks INT
+CAST totalClay INT
+CAST totalStraw INT
+CAST totalCoal INT
+CAST totalOre INT
+CAST totalIron INT
+CAST totalSeeds INT
+CAST totalGrain INT
+CAST totalFlour INT
+CAST totalFeathers INT
+CAST totalHides INT
+CAST totalLeather INT
+CAST totalWool INT
+CAST totalClothes INT
+CAST totalMushrooms INT
+CAST totalMedicine INT
+CAST totalTools INT
+CAST totalBows INT
+CAST totalArrows INT
+CAST totalFishingNets INT
+ALT _totalAle = totalAle
+ALT _totalMilk = totalMilk
+ALT _totalSmokedMeat = totalSmokedMeat
+ALT _totalSmokedFish = totalSmokedFish
+ALT _totalBread = totalBread
+ALT _totalEggs = totalEggs
+ALT _totalHoney = totalHoney
+ALT _totalFruit = totalFruit
+ALT _totalRawFish = totalRawFish
+ALT _totalRawMeat = totalRawMeat
+ALT _totalWood = totalWood
+ALT _totalPlanks = totalPlanks
+ALT _totalFirewood = totalFirewood
+ALT _totalStone = totalStone
+ALT _totalBricks = totalBricks
+ALT _totalClay = totalClay
+ALT _totalStraw = totalStraw
+ALT _totalCoal = totalCoal
+ALT _totalOre = totalOre
+ALT _totalIron = totalIron
+ALT _totalSeeds = totalSeeds
+ALT _totalGrain = totalGrain
+ALT _totalFlour = totalFlour
+ALT _totalFeathers = totalFeathers
+ALT _totalHides = totalHides
+ALT _totalLeather = totalLeather
+ALT _totalWool = totalWool
+ALT _totalClothes = totalClothes
+ALT _totalMushrooms = totalMushrooms
+ALT _totalMedicine = totalMedicine
+ALT _totalTools = totalTools
+ALT _totalBows = totalBows
+ALT _totalArrows = totalArrows
+ALT _totalFishingNets = totalFishingNets
+
+/// Load jobs
+DEF LST apiaristIds = misc:string_to_list(lines[70])
+DEF LST apiaristTimers = misc:string_to_list(lines[71])
+DEF LST bakerIds = misc:string_to_list(lines[72])
+DEF LST bakerTimers = misc:string_to_list(lines[73])
+DEF LST barberIds = misc:string_to_list(lines[74])
+DEF LST blacksmithIds = misc:string_to_list(lines[75])
+DEF LST blacksmithTimers = misc:string_to_list(lines[76])
+DEF LST bowyerIds = misc:string_to_list(lines[77])
+DEF LST bowyerTimers = misc:string_to_list(lines[78])
+DEF LST brewerIds = misc:string_to_list(lines[79])
+DEF LST brewerTimers = misc:string_to_list(lines[80])
+DEF LST butcherIds = misc:string_to_list(lines[81])
+DEF LST butcherTimers = misc:string_to_list(lines[82])
+DEF LST cattlemanIds = misc:string_to_list(lines[83])
+DEF LST cattlemanGrowths = misc:string_to_list(lines[84])
+DEF LST cattlemanTimers = misc:string_to_list(lines[85])
+DEF LST ditcherIds = misc:string_to_list(lines[86])
+DEF LST ditcherTimers = misc:string_to_list(lines[87])
+DEF LST farmerIds = misc:string_to_list(lines[88])
+DEF LST farmerGrowths = misc:string_to_list(lines[89])
+DEF LST fellerIds = misc:string_to_list(lines[90])
+DEF LST fellerTimers = misc:string_to_list(lines[91])
+DEF LST fishermanIds = misc:string_to_list(lines[92])
+DEF LST fishermanTimers = misc:string_to_list(lines[93])
+DEF LST fletcherIds = misc:string_to_list(lines[94])
+DEF LST fletcherTimers = misc:string_to_list(lines[95])
+DEF LST gathererIds = misc:string_to_list(lines[96])
+DEF LST gathererTimers = misc:string_to_list(lines[97])
+DEF LST graveIds = misc:string_to_list(lines[98])
+DEF LST herbalistIds = misc:string_to_list(lines[99])
+DEF LST herbalistTimers = misc:string_to_list(lines[100])
+DEF LST hewerIds = misc:string_to_list(lines[101])
+DEF LST hewerTimers = misc:string_to_list(lines[102])
+DEF LST houseIds = misc:string_to_list(lines[103])
+DEF LST houseTimers = misc:string_to_list(lines[104])
+DEF LST houseBirths = misc:string_to_list(lines[105])
+DEF LST hunterIds = misc:string_to_list(lines[106])
+DEF LST hunterTimers = misc:string_to_list(lines[107])
+DEF LST millerIds = misc:string_to_list(lines[108])
+DEF LST millerTimers = misc:string_to_list(lines[109])
+DEF LST minerIds = misc:string_to_list(lines[110])
+DEF LST minerTimers = misc:string_to_list(lines[111])
+DEF LST nightmanIds = misc:string_to_list(lines[112])
+DEF LST orchardistIds = misc:string_to_list(lines[113])
+DEF LST orchardistGrowths = misc:string_to_list(lines[114])
+DEF LST orchardistTimers = misc:string_to_list(lines[115])
+DEF LST poultrymanIds = misc:string_to_list(lines[116])
+DEF LST poultrymanGrowths = misc:string_to_list(lines[117])
+DEF LST poultrymanTimers = misc:string_to_list(lines[118])
+DEF LST priestIds = misc:string_to_list(lines[119])
+DEF LST roperIds = misc:string_to_list(lines[120])
+DEF LST roperTimers = misc:string_to_list(lines[121])
+DEF LST shepherdIds = misc:string_to_list(lines[122])
+DEF LST shepherdGrowths = misc:string_to_list(lines[123])
+DEF LST shepherdTimers = misc:string_to_list(lines[124])
+DEF LST smelterIds = misc:string_to_list(lines[125])
+DEF LST smelterTimers = misc:string_to_list(lines[126])
+DEF LST smokerIds = misc:string_to_list(lines[127])
+DEF LST smokerTimers = misc:string_to_list(lines[128])
+DEF LST smokerTurns = misc:string_to_list(lines[129])
+DEF LST stonecutterIds = misc:string_to_list(lines[130])
+DEF LST stonecutterTimers = misc:string_to_list(lines[131])
+DEF LST swineherdIds = misc:string_to_list(lines[132])
+DEF LST swineherdGrowths = misc:string_to_list(lines[133])
+DEF LST tannerIds = misc:string_to_list(lines[134])
+DEF LST tannerTimers = misc:string_to_list(lines[135])
+DEF LST tavernIds = misc:string_to_list(lines[136])
+DEF LST watererIds = misc:string_to_list(lines[137])
+DEF LST weaverIds = misc:string_to_list(lines[138])
+DEF LST weaverTimers = misc:string_to_list(lines[139])
+DEF LST woodcutterIds = misc:string_to_list(lines[140])
+DEF LST woodcutterTimers = misc:string_to_list(lines[141])
+ALT _apiaristIds = apiaristIds
+ALT _apiaristTimers = apiaristTimers
+ALT _bakerIds = bakerIds
+ALT _bakerTimers = bakerTimers
+ALT _barberIds = barberIds
+ALT _blacksmithIds = blacksmithIds
+ALT _blacksmithTimers = blacksmithTimers
+ALT _bowyerIds = bowyerIds
+ALT _bowyerTimers = bowyerTimers
+ALT _brewerIds = brewerIds
+ALT _brewerTimers = brewerTimers
+ALT _butcherIds = butcherIds
+ALT _butcherTimers = butcherTimers
+ALT _cattlemanIds = cattlemanIds
+ALT _cattlemanGrowths = cattlemanGrowths
+ALT _cattlemanTimers = cattlemanTimers
+ALT _ditcherIds = ditcherIds
+ALT _ditcherTimers = ditcherTimers
+ALT _farmerIds = farmerIds
+ALT _farmerGrowths = farmerGrowths
+ALT _fellerIds = fellerIds
+ALT _fellerTimers = fellerTimers
+ALT _fishermanIds = fishermanIds
+ALT _fishermanTimers = fishermanTimers
+ALT _fletcherIds = fletcherIds
+ALT _fletcherTimers = fletcherTimers
+ALT _gathererIds = gathererIds
+ALT _gathererTimers = gathererTimers
+ALT _graveIds = graveIds
+ALT _herbalistIds = herbalistIds
+ALT _herbalistTimers = herbalistTimers
+ALT _hewerIds = hewerIds
+ALT _hewerTimers = hewerTimers
+ALT _houseIds = houseIds
+ALT _houseTimers = houseTimers
+ALT _houseBirths = houseBirths
+ALT _hunterIds = hunterIds
+ALT _hunterTimers = hunterTimers
+ALT _millerIds = millerIds
+ALT _millerTimers = millerTimers
+ALT _minerIds = minerIds
+ALT _minerTimers = minerTimers
+ALT _nightmanIds = nightmanIds
+ALT _orchardistIds = orchardistIds
+ALT _orchardistGrowths = orchardistGrowths
+ALT _orchardistTimers = orchardistTimers
+ALT _poultrymanIds = poultrymanIds
+ALT _poultrymanGrowths = poultrymanGrowths
+ALT _poultrymanTimers = poultrymanTimers
+ALT _priestIds = priestIds
+ALT _roperIds = roperIds
+ALT _roperTimers = roperTimers
+ALT _shepherdIds = shepherdIds
+ALT _shepherdGrowths = shepherdGrowths
+ALT _shepherdTimers = shepherdTimers
+ALT _smelterIds = smelterIds
+ALT _smelterTimers = smelterTimers
+ALT _smokerIds = smokerIds
+ALT _smokerTimers = smokerTimers
+ALT _smokerTurns = smokerTurns
+ALT _stonecutterIds = stonecutterIds
+ALT _stonecutterTimers = stonecutterTimers
+ALT _swineherdIds = swineherdIds
+ALT _swineherdGrowths = swineherdGrowths
+ALT _tannerIds = tannerIds
+ALT _tannerTimers = tannerTimers
+ALT _tavernIds = tavernIds
+ALT _watererIds = watererIds
+ALT _weaverIds = weaverIds
+ALT _weaverTimers = weaverTimers
+ALT _woodcutterIds = woodcutterIds
+ALT _woodcutterTimers = woodcutterTimers
+
+/// Load miscellaneous
+DEF LST eventMessageContents = misc:string_to_list(lines[142])
+DEF LST toolBuildingIds = misc:string_to_list(lines[143])
+DEF LST bowBuildingIds = misc:string_to_list(lines[144])
+DEF LST arrowBuildingIds = misc:string_to_list(lines[145])
+DEF LST fishingNetBuildingIds = misc:string_to_list(lines[146])
+DEF STR cursorType = lines[147]
+DEF STR eventMessageOpacity = lines[148]
+DEF STR totalUpdates = lines[149]
+CAST eventMessageOpacity DEC
+CAST totalUpdates INT
+ALT _eventMessageContents = eventMessageContents
+ALT _toolBuildingIds = toolBuildingIds
+ALT _bowBuildingIds = bowBuildingIds
+ALT _arrowBuildingIds = arrowBuildingIds
+ALT _fishingNetBuildingIds = fishingNetBuildingIds
+ALT _cursorType = cursorType
+ALT _eventMessageOpacity = eventMessageOpacity
+ALT _totalUpdates = totalUpdates

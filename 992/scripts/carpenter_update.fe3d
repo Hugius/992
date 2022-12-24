@@ -1,0 +1,13 @@
+0 0
+META script_type_update
+META script_state_waiting
+
+/// Hide GUI
+IF _lastSelectedBuildingType IS "carpenter" OR _isFirstUpdate IS <true>
+  fe3d:quad2d_set_visible("carpenter_info", <false>)
+  fe3d:text2d_set_visible("carpenter_info", <false>)
+
+/// Show GUI
+IF _selectedBuildingType IS "carpenter"
+  fe3d:quad2d_set_visible("carpenter_info", <true>)
+  fe3d:text2d_set_visible("carpenter_info", <true>)

@@ -1,0 +1,57 @@
+5 4
+META script_type_update
+META script_state_entry
+
+IF _isInMenu IS <true>
+  EXECUTE menu_update
+ELSE
+  EXECUTE camera_update
+  EXECUTE workers_birth
+  EXECUTE workers_death
+  EXECUTE workers_update
+  EXECUTE building_misc
+  EXECUTE building_place
+  EXECUTE building_create
+  EXECUTE building_select
+  EXECUTE apiarist_update
+  EXECUTE baker_update
+  EXECUTE barber_update
+  EXECUTE blacksmith_update
+  EXECUTE bowyer_update
+  EXECUTE brewer_update
+  EXECUTE butcher_update
+  EXECUTE carpenter_update
+  EXECUTE cattleman_update
+  EXECUTE ditcher_update
+  EXECUTE farmer_update
+  EXECUTE feller_update
+  EXECUTE fisherman_update
+  EXECUTE fletcher_update
+  EXECUTE gatherer_update
+  EXECUTE grave_update
+  EXECUTE herbalist_update
+  EXECUTE hewer_update
+  EXECUTE house_update
+  EXECUTE hunter_update
+  EXECUTE mason_update
+  EXECUTE miller_update
+  EXECUTE miner_update
+  EXECUTE nightman_update
+  EXECUTE orchardist_update
+  EXECUTE poultryman_update
+  EXECUTE priest_update
+  EXECUTE roofer_update
+  EXECUTE roper_update
+  EXECUTE shepherd_update
+  EXECUTE smelter_update
+  EXECUTE smoker_update
+  EXECUTE stonecutter_update
+  EXECUTE storage_update
+  EXECUTE swineherd_update
+  EXECUTE tanner_update
+  EXECUTE tavern_update
+  EXECUTE waterer_update
+  EXECUTE weaver_update
+  EXECUTE woodcutter_update
+  EXECUTE hud_update
+  EXECUTE misc_update

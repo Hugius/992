@@ -1,0 +1,43 @@
+34 66
+META script_type_initialize
+META script_state_waiting
+
+/// Finals
+DEF GLB FIN LST _buildingModels = {"apiary","bakery","workshop2","workshop3","workshop3","workshop2","workshop2","pen","workshop1","farmland","workshop1","workshop1","workshop3","workshop1","grave","workshop2","workshop1","house","workshop1","windmill","mine","lavatory","orchard","pen","church","workshop3","pen","foundry","smokery","sawmill","pen","workshop2","tavern","well","workshop2","sawmill"}
+DEF GLB FIN LST _buildingTypes = {"apiarist","baker","barber","blacksmith","bowyer","brewer","butcher","cattleman","ditcher","farmer","feller","fisherman","fletcher","gatherer","grave","herbalist","hewer","house","hunter","miller","miner","nightman","orchardist","poultryman","priest","roper","shepherd","smelter","smoker","stonecutter","swineherd","tanner","tavern","waterer","weaver","woodcutter"}
+DEF GLB FIN LST _buildingPricesPlanks = {0,9,1,2,1,1,1,2,3,4,3,3,1,3,0,1,3,1,3,15,1,1,4,2,12,6,2,0,1,6,2,1,12,1,1,6}
+DEF GLB FIN LST _buildingPricesBricks = {0,3,0,0,6,0,0,0,0,0,0,0,6,0,1,0,0,5,0,4,3,0,0,0,12,0,0,2,0,0,0,0,0,1,0,0}
+DEF GLB FIN LST _buildingPricesClay = {0,0,6,0,9,6,6,0,0,0,0,0,9,0,0,6,0,1,0,0,0,0,0,0,12,0,0,0,2,0,0,6,0,0,6,0}
+DEF GLB FIN LST _buildingPricesStraw = {2,0,4,2,0,4,4,0,2,0,2,2,0,2,0,4,2,4,2,0,0,0,0,0,0,3,0,0,2,3,0,4,0,0,4,3}
+DEF GLB FIN DEC _buildingHeight = 2.75
+
+/// Non-finals
+DEF GLB LST _placedBuildingIds = {}
+DEF GLB LST _placedBuildingTypes = {}
+DEF GLB STR _placedBuildingId = ""
+DEF GLB STR _placedBuildingType = ""
+DEF GLB STR _selectedBuildingId = ""
+DEF GLB STR _selectedBuildingType = ""
+DEF GLB STR _lastSelectedBuildingId = ""
+DEF GLB STR _lastSelectedBuildingType = ""
+DEF GLB INT _buildingIndex = 0
+DEF GLB INT _buildingCounter = 0
+DEF GLB BOL _isBuildModeEnabled = <false>
+DEF GLB BOL _wasBuildModeEnabled = <false>
+
+/// GUI
+fe3d:quad2d_place("build", "build", 0.95, -0.9125, 0.1, 0.175)
+fe3d:quad2d_place("building_price_type", "scroll2", 0.0, -0.7, 1.0, 0.6)
+fe3d:quad2d_place("building_price_planks", "planks", -0.3, -0.7, 0.1, 0.175)
+fe3d:quad2d_place("building_price_bricks", "bricks", -0.1, -0.7, 0.1, 0.175)
+fe3d:quad2d_place("building_price_clay", "clay", 0.1, -0.7, 0.1, 0.175)
+fe3d:quad2d_place("building_price_straw", "straw", 0.3, -0.7, 0.1, 0.175)
+fe3d:quad2d_place("building_type", "scroll2", 0.0, 0.925, 0.3, 0.1)
+fe3d:quad2d_place("building_menu", "scroll2", 0.0, -0.7, 1.0, 0.6)
+fe3d:text2d_place("building_price_type", "text", "", 0.0, -0.55, 0.0, 0.0)
+fe3d:text2d_place("building_price_planks", "text", "", -0.3, -0.85, 0.08, 0.15)
+fe3d:text2d_place("building_price_bricks", "text", "", -0.1, -0.85, 0.08, 0.15)
+fe3d:text2d_place("building_price_clay", "text", "", 0.1, -0.85, 0.08, 0.15)
+fe3d:text2d_place("building_price_straw", "text", "", 0.3, -0.85, 0.08, 0.15)
+fe3d:text2d_place("building_type", "text", "", 0.0, 0.925, 0.0, 0.0)
+fe3d:text2d_place("building_menu", "text", "", 0.0, -0.55, 0.0, 0.0)

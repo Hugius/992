@@ -1,0 +1,54 @@
+3 8
+META script_type_update
+META script_state_waiting
+
+/// Save selection
+ALT _lastSelectedBuildingId = _selectedBuildingId
+ALT _lastSelectedBuildingType = _selectedBuildingType
+
+/// Update raycasting
+fe3d:raycast_calculate_aabbs_intersection()
+
+/// Update hovering
+DEF STR buildingId = fe3d:raycast_get_closest_model("")
+DEF BOL isHovered = <false>
+IF buildingId NOT "" AND _isBuildModeEnabled IS <false>
+  DEF LST splitPlacedId = misc:string_split(buildingId, "_")
+  DEF STR buildingType = splitPlacedId[0]
+  DEF BOL contains = misc:list_contains("_buildingTypes", buildingType)
+  IF contains IS <true>
+    ALT isHovered = <true>
+  ELIF buildingType IS "carpenter"
+    ALT isHovered = <true>
+  ELIF buildingType IS "mason"
+    ALT isHovered = <true>
+  ELIF buildingType IS "roofer"
+    ALT isHovered = <true>
+  ELIF buildingType IS "storage"
+    ALT isHovered = <true>
+
+/// Update GUI
+IF isHovered IS <true>
+  DEF STR textContent = misc:string_capitalize(buildingType)
+  fe3d:text2d_set_content("building_type", textContent)
+  DEF INT quadWidth = misc:string_size(textContent)
+  DEF INT textWidth = quadWidth
+  CAST quadWidth DEC
+  CAST textWidth DEC
+  MUL quadWidth 0.03
+  MUL textWidth 0.02
+  fe3d:quad2d_set_size("building_type", quadWidth, 0.125)
+  fe3d:text2d_set_size("building_type", textWidth, 0.1)
+  ALT _selectedBuildingId = buildingId
+  ALT _selectedBuildingType = buildingType
+  fe3d:quad2d_set_visible("building_type", <true>)
+  fe3d:text2d_set_visible("building_type", <true>)
+  fe3d:quad2d_set_visible("building_menu", <true>)
+  fe3d:text2d_set_visible("building_menu", <true>)
+ELSE
+  ALT _selectedBuildingId = ""
+  ALT _selectedBuildingType = ""
+  fe3d:quad2d_set_visible("building_type", <false>)
+  fe3d:text2d_set_visible("building_type", <false>)
+  fe3d:quad2d_set_visible("building_menu", <false>)
+  fe3d:text2d_set_visible("building_menu", <false>)

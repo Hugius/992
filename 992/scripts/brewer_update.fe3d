@@ -1,0 +1,64 @@
+59 21
+META script_type_update
+META script_state_waiting
+
+/// Define reusable values
+DEF BOL hasWorker = <false>
+
+/// Hide GUI
+IF _lastSelectedBuildingType IS "brewer" OR _isFirstUpdate IS <true>
+  fe3d:quad2d_set_visible("brewer_worker", <false>)
+  fe3d:quad2d_set_visible("brewer_grain", <false>)
+  fe3d:quad2d_set_visible("brewer_firewood", <false>)
+  fe3d:quad2d_set_visible("brewer_coal", <false>)
+  fe3d:quad2d_set_visible("brewer_convert", <false>)
+  fe3d:quad2d_set_visible("brewer_ale", <false>)
+  fe3d:text2d_set_visible("brewer_worker", <false>)
+  fe3d:text2d_set_visible("brewer_grain", <false>)
+  fe3d:text2d_set_visible("brewer_firewood", <false>)
+  fe3d:text2d_set_visible("brewer_coal", <false>)
+  fe3d:text2d_set_visible("brewer_ale", <false>)
+
+/// Show GUI
+IF _selectedBuildingType IS "brewer"
+  ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
+  IF hasWorker IS <true>
+    fe3d:quad2d_set_visible("brewer_grain", <true>)
+    fe3d:quad2d_set_visible("brewer_firewood", <true>)
+    fe3d:quad2d_set_visible("brewer_coal", <true>)
+    fe3d:quad2d_set_visible("brewer_convert", <true>)
+    fe3d:quad2d_set_visible("brewer_ale", <true>)
+    fe3d:text2d_set_visible("brewer_grain", <true>)
+    fe3d:text2d_set_visible("brewer_firewood", <true>)
+    fe3d:text2d_set_visible("brewer_coal", <true>)
+    fe3d:text2d_set_visible("brewer_ale", <true>)
+  ELSE
+    fe3d:quad2d_set_visible("brewer_worker", <true>)
+    fe3d:text2d_set_visible("brewer_worker", <true>)
+
+/// Update brewers
+DEF INT maxBrewerIndex = misc:list_size("_brewerIds")
+DEF INT brewerIndex = 0
+DEF INT randomNumber = 0
+LOOP
+  IF brewerIndex IS maxBrewerIndex
+    BREAK
+  ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _brewerIds[brewerIndex])
+  IF hasWorker IS <true>
+    IF _brewerTimers[brewerIndex] IS 0
+      IF _totalGrain MORE 0
+        ALT randomNumber = math:random_integer(1, 2)
+        IF randomNumber IS 1 AND _totalFirewood MORE 0
+          SUB _totalGrain 1
+          SUB _totalFirewood 1
+          ADD _brewerTimers[brewerIndex] 1
+        ELIF randomNumber IS 2 AND _totalCoal MORE 0
+          SUB _totalGrain 1
+          SUB _totalCoal 1
+          ADD _brewerTimers[brewerIndex] 1
+    ELIF _brewerTimers[brewerIndex] IS _productionTime
+      ALT _brewerTimers[brewerIndex] = 0
+      ADD _totalAle 5
+    ELSE
+      ADD _brewerTimers[brewerIndex] 1
+  ADD brewerIndex 1
