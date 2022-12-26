@@ -1,4 +1,4 @@
-26 52
+83 11
 META script_type_update
 META script_state_waiting
 
@@ -81,7 +81,8 @@ LOOP
           ALT closestRockDistance = rockDistance
         ADD rockIndex 1
       IF closestRockId NOT ""
-        fe3d:model_delete(closestRockId)
+        fe3d:model_start_animation3d(closestRockId, "rock", 1)
+        ///fe3d:model_delete(closestRockId)
         ADD _totalWood 1
     ELSE
       ADD _hewerTimers[hewerIndex] 1

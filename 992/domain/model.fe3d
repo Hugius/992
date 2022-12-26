@@ -1,12 +1,12 @@
 MODEL @apiary assets\mesh\apiary.obj 3 3 3 ? 0 2 1 1 1
 PART @apiary ? assets\image\model\diffuse_map\apiary.tga ? ? ? ? assets\image\model\normal_map\apiary.tga 0 0 1 0 0 2 10 0.5 0.5 0.2 1 1 1 1 0 0 1 1 1
 AABB @apiary model@@apiary@aabb 0 0 0 0.56 0.41 0.56
-MODEL @bakery assets\mesh\bakery.obj 0.4 0.4 0.4 ? 0 2 1 1 1
-PART @bakery foundation assets\image\model\diffuse_map\bakery_foundation.tga ? ? ? ? assets\image\model\normal_map\bakery_foundation.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
-PART @bakery roof assets\image\model\diffuse_map\bakery_roof.tga ? ? ? ? assets\image\model\normal_map\bakery_roof.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1
-PART @bakery frame assets\image\model\diffuse_map\bakery_frame.tga ? ? ? ? assets\image\model\normal_map\bakery_frame.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1
-PART @bakery base assets\image\model\diffuse_map\bakery_base.tga ? ? ? ? assets\image\model\normal_map\bakery_base.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1
-AABB @bakery model@@bakery@aabb -0.25 0 0.75 11.75 11.75 14
+MODEL @workshop4 assets\mesh\workshop4.obj 0.4 0.4 0.4 ? 0 2 1 1 1
+PART @workshop4 foundation assets\image\model\diffuse_map\workshop4_foundation.tga ? ? ? ? assets\image\model\normal_map\workshop4_foundation.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
+PART @workshop4 roof assets\image\model\diffuse_map\workshop4_roof.tga ? ? ? ? assets\image\model\normal_map\workshop4_roof.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1
+PART @workshop4 frame assets\image\model\diffuse_map\workshop4_frame.tga ? ? ? ? assets\image\model\normal_map\workshop4_frame.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1
+PART @workshop4 base assets\image\model\diffuse_map\workshop4_base.tga ? ? ? ? assets\image\model\normal_map\workshop4_base.tga 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1
+AABB @workshop4 model@@workshop4@aabb -0.25 0 0.75 11.75 11.75 14
 MODEL @chicken assets\mesh\chicken.obj 0.25 0.25 0.25 ? 0 2 1 1 1
 PART @chicken ? assets\image\model\diffuse_map\chicken.tga ? ? ? ? ? 0 0 1 0 0 2 10 0.5 0.5 0.25 1 1 1 1 0 0 1 1 1
 MODEL @church assets\mesh\church.obj 0.95 0.95 0.95 @lod 60 2 1 1 1
@@ -64,7 +64,7 @@ PART @mine rocks assets\image\model\diffuse_map\mine_rocks.tga ? ? ? ? assets\im
 PART @mine entrance assets\image\model\diffuse_map\mine_entrance.tga ? ? ? ? assets\image\model\normal_map\mine_entrance.tga 0 0 1 0 0 2 10 0.5 0.5 0.5 1 1 1 1 0 0 1 1 1
 AABB @mine model@@mine@aabb -0.07 0 -0.5 4.9 2.85 3.15
 MODEL @orchard assets\mesh\orchard.obj 2 1.25 2 ? 0 2 1 1 1
-PART @orchard ? assets\image\model\diffuse_map\bakery_base.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
+PART @orchard ? assets\image\model\diffuse_map\workshop4_base.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1
 AABB @orchard model@@orchard@aabb 0.03 0 -0.03 4.2 0.6 4.2
 MODEL @pen assets\mesh\pen.obj 0.25 0.5 0.25 ? 0 2 1 1 1
 PART @pen ? assets\image\model\diffuse_map\pen.tga ? ? ? ? ? 0 0 0 0 0 1 1 0.5 0.5 1 1 1 1 1 0 0 1 1 1

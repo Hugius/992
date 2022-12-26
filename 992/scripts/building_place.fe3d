@@ -1,4 +1,4 @@
-15 21
+116 13
 META script_type_update
 META script_state_waiting
 
@@ -114,6 +114,21 @@ IF isLmbPressed IS <true> AND color[1] NOT 0.0
   fe3d:model_place(buildingId, _buildingModels[_buildingIndex], 0.0, 0.0, 0.0)
   fe3d:model_set_base_position(buildingId, x, y, z)
   fe3d:model_set_base_rotation(buildingId, 0.0, rotation, 0.0)
+  IF buildingType IS "baker" OR buildingType IS "brewer"
+    SUB x 2.5
+    ADD y 4.0
+    fe3d:quad3d_place(buildingId, "smoke", x, y, z)
+    fe3d:quad3d_start_animation2d(buildingId, "smoke", -1)
+  ELIF buildingType IS "miller"
+    fe3d:model_start_animation3d(buildingId, "windmill", -1)
+  ELIF buildingType IS "smelter"
+    ADD y 1.0
+    fe3d:quad3d_place(buildingId, "smoke", x, y, z)
+    fe3d:quad3d_start_animation2d(buildingId, "smoke", -1)
+  ELIF buildingType IS "stonecutter" OR buildingType IS "woodcutter"
+    fe3d:model_start_animation3d(buildingId, "sawmill", -1)
+  ELIF buildingType IS "waterer"
+    fe3d:model_start_animation3d(buildingId, "well", -1)
   SUB _totalPlanks planksPrice
   SUB _totalBricks bricksPrice
   SUB _totalClay clayPrice
