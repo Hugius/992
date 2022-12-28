@@ -1,4 +1,4 @@
-116 13
+144 9
 META script_type_update
 META script_state_waiting
 
@@ -114,9 +114,41 @@ IF isLmbPressed IS <true> AND color[1] NOT 0.0
   fe3d:model_place(buildingId, _buildingModels[_buildingIndex], 0.0, 0.0, 0.0)
   fe3d:model_set_base_position(buildingId, x, y, z)
   fe3d:model_set_base_rotation(buildingId, 0.0, rotation, 0.0)
+  SUB _totalPlanks planksPrice
+  SUB _totalBricks bricksPrice
+  SUB _totalClay clayPrice
+  SUB _totalStraw strawPrice
+  ADD _buildingCounter 1
+  PUSH _placedBuildingIds buildingId
+  PUSH _placedBuildingTypes buildingType
+  ALT _placedBuildingId = buildingId
+  ALT _placedBuildingType = buildingType
   IF buildingType IS "baker" OR buildingType IS "brewer"
-    SUB x 2.5
-    ADD y 4.0
+    IF rotation IS 90.0
+      ADD z 2.0
+    ELIF rotation IS 180.0
+      ADD x 2.0
+    ELIF rotation IS 270.0
+      SUB z 2.0
+    ELSE
+      SUB x 2.0
+    ADD y 2.5
+    fe3d:quad3d_place(buildingId, "smoke", x, y, z)
+    fe3d:quad3d_start_animation2d(buildingId, "smoke", -1)
+  ELIF buildingType IS "house"
+    IF rotation IS 90.0
+      SUB x 0.75
+      SUB z 2.0
+    ELIF rotation IS 180.0
+      SUB x 2.0
+      ADD z 0.75
+    ELIF rotation IS 270.0
+      ADD x 0.75
+      ADD z 2.0
+    ELSE
+      ADD x 2.0
+      SUB z 0.75
+    ADD y 2.5
     fe3d:quad3d_place(buildingId, "smoke", x, y, z)
     fe3d:quad3d_start_animation2d(buildingId, "smoke", -1)
   ELIF buildingType IS "miller"
@@ -129,12 +161,3 @@ IF isLmbPressed IS <true> AND color[1] NOT 0.0
     fe3d:model_start_animation3d(buildingId, "sawmill", -1)
   ELIF buildingType IS "waterer"
     fe3d:model_start_animation3d(buildingId, "well", -1)
-  SUB _totalPlanks planksPrice
-  SUB _totalBricks bricksPrice
-  SUB _totalClay clayPrice
-  SUB _totalStraw strawPrice
-  ADD _buildingCounter 1
-  PUSH _placedBuildingIds buildingId
-  PUSH _placedBuildingTypes buildingType
-  ALT _placedBuildingId = buildingId
-  ALT _placedBuildingType = buildingType

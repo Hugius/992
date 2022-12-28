@@ -1,4 +1,4 @@
-208 62
+101 21
 META script_type_update
 META script_state_waiting
 
@@ -100,6 +100,7 @@ ELIF _placedBuildingType IS "farmer"
 ELIF _placedBuildingType IS "feller"
   PUSH _fellerIds _placedBuildingId
   PUSH _fellerTimers 0
+  PUSH _fellerTreeIds ""
 ELIF _placedBuildingType IS "fisherman"
   PUSH _fishermanIds _placedBuildingId
   PUSH _fishermanTimers 0
@@ -117,6 +118,7 @@ ELIF _placedBuildingType IS "herbalist"
 ELIF _placedBuildingType IS "hewer"
   PUSH _hewerIds _placedBuildingId
   PUSH _hewerTimers 0
+  PUSH _hewerRockIds ""
 ELIF _placedBuildingType IS "house"
   PUSH _houseIds _placedBuildingId
   PUSH _houseTimers 0

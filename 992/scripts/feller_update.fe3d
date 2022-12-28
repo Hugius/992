@@ -1,4 +1,4 @@
-26 52
+69 40
 META script_type_update
 META script_state_waiting
 
@@ -55,13 +55,20 @@ DEF INT maxFellerIndex = misc:list_size("_fellerIds")
 DEF INT maxTreeIndex = 0
 DEF INT fellerIndex = 0
 DEF INT treeIndex = 0
+DEF BOL isFalling = <false>
 LOOP
   IF fellerIndex IS maxFellerIndex
     BREAK
+  IF _fellerTreeIds[fellerIndex] NOT ""
+    ALT isFalling = fe3d:model_is_animation3d_started(_fellerTreeIds[fellerIndex], "tree")
+    IF isFalling IS <false>
+      fe3d:model_delete(_fellerTreeIds[fellerIndex])
+      ALT _fellerTreeIds[fellerIndex] = ""
+      ADD _totalWood 1
   ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _fellerIds[fellerIndex])
   ALT hasTool = misc:list_contains("_toolBuildingIds", _fellerIds[fellerIndex])
   IF hasWorker IS <true> AND hasTool IS <true>
-    IF _fellerTimers[fellerIndex] IS _productionTime
+    IF _fellerTimers[fellerIndex] IS 500
       ALT _fellerTimers[fellerIndex] = 0
       ALT fX = fe3d:model_get_base_position_x(_fellerIds[fellerIndex])
       ALT fY = fe3d:model_get_base_position_y(_fellerIds[fellerIndex])
@@ -81,8 +88,8 @@ LOOP
           ALT closestTreeDistance = treeDistance
         ADD treeIndex 1
       IF closestTreeId NOT ""
-        fe3d:model_delete(closestTreeId)
-        ADD _totalWood 1
+        fe3d:model_start_animation3d(closestTreeId, "tree", 1)
+        ALT _fellerTreeIds[fellerIndex] = closestTreeId
     ELSE
       ADD _fellerTimers[fellerIndex] 1
   ADD fellerIndex 1

@@ -1,4 +1,4 @@
-18 73
+0 0
 META script_type_initialize
 META script_state_waiting
 
@@ -9,6 +9,7 @@ DEF FIN STR toolText = "Equip 1 tool?"
 /// Non-finals
 DEF GLB LST _fellerIds = {}
 DEF GLB LST _fellerTimers = {}
+DEF GLB LST _fellerTreeIds = {}
 
 /// GUI
 fe3d:quad2d_place("feller_worker", "worker", 0.0, -0.6, 0.1, 0.175)

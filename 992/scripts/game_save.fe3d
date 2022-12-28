@@ -1,4 +1,4 @@
-5 6
+0 0
 META script_type_terminate
 META script_state_waiting
 
@@ -7,14 +7,12 @@ DEF BOL isFileExisting = fe3d:file_is_existing("save")
 IF isFileExisting IS <true>
   fe3d:file_delete("save")
 
-/// Save world
+/// Save environment
 fe3d:world_add_custom_sky("sky")
 fe3d:world_add_custom_terrain("terrain")
 fe3d:world_add_custom_water("water")
-fe3d:world_add_custom_aabb("border_0")
-fe3d:world_add_custom_aabb("border_1")
-fe3d:world_add_custom_aabb("border_2")
-fe3d:world_add_custom_aabb("border_3")
+
+/// Save models
 DEF LST modelIds = fe3d:model_get_ids()
 DEF INT maxModelIndex = misc:list_size("modelIds")
 DEF INT modelIndex = 0
@@ -24,6 +22,23 @@ LOOP
   fe3d:world_add_custom_model(modelIds[modelIndex])
   ADD modelIndex 1
 fe3d:world_save_custom("save")
+
+/// Save quads
+DEF LST quadIds = fe3d:quad3d_get_ids()
+DEF INT maxQuad3dIndex = misc:list_size("quadIds")
+DEF INT quad3dIndex = 0
+LOOP
+  IF quad3dIndex IS maxQuad3dIndex
+    BREAK
+  fe3d:world_add_custom_quad3d(quadIds[quad3dIndex])
+  ADD quad3dIndex 1
+fe3d:world_save_custom("save")
+
+/// Save AABBs
+fe3d:world_add_custom_aabb("border_0")
+fe3d:world_add_custom_aabb("border_1")
+fe3d:world_add_custom_aabb("border_2")
+fe3d:world_add_custom_aabb("border_3")
 
 /// Save camera
 DEF DEC x = fe3d:camera_get_position_x()
@@ -139,6 +154,7 @@ DEF STR farmerIds = misc:list_to_string("_farmerIds")
 DEF STR farmerGrowths = misc:list_to_string("_farmerGrowths")
 DEF STR fellerIds = misc:list_to_string("_fellerIds")
 DEF STR fellerTimers = misc:list_to_string("_fellerTimers")
+DEF STR fellerTreeIds = misc:list_to_string("_fellerTreeIds")
 DEF STR fishermanIds = misc:list_to_string("_fishermanIds")
 DEF STR fishermanTimers = misc:list_to_string("_fishermanTimers")
 DEF STR fletcherIds = misc:list_to_string("_fletcherIds")
@@ -150,6 +166,7 @@ DEF STR herbalistIds = misc:list_to_string("_herbalistIds")
 DEF STR herbalistTimers = misc:list_to_string("_herbalistTimers")
 DEF STR hewerIds = misc:list_to_string("_hewerIds")
 DEF STR hewerTimers = misc:list_to_string("_hewerTimers")
+DEF STR hewerRockIds = misc:list_to_string("_hewerRockIds")
 DEF STR houseIds = misc:list_to_string("_houseIds")
 DEF STR houseTimers = misc:list_to_string("_houseTimers")
 DEF STR houseBirths = misc:list_to_string("_houseBirths")
@@ -211,6 +228,7 @@ fe3d:file_write("save", farmerIds)
 fe3d:file_write("save", farmerGrowths)
 fe3d:file_write("save", fellerIds)
 fe3d:file_write("save", fellerTimers)
+fe3d:file_write("save", fellerTreeIds)
 fe3d:file_write("save", fishermanIds)
 fe3d:file_write("save", fishermanTimers)
 fe3d:file_write("save", fletcherIds)
@@ -222,6 +240,7 @@ fe3d:file_write("save", herbalistIds)
 fe3d:file_write("save", herbalistTimers)
 fe3d:file_write("save", hewerIds)
 fe3d:file_write("save", hewerTimers)
+fe3d:file_write("save", hewerRockIds)
 fe3d:file_write("save", houseIds)
 fe3d:file_write("save", houseTimers)
 fe3d:file_write("save", houseBirths)

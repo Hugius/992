@@ -1,4 +1,4 @@
-83 11
+69 38
 META script_type_update
 META script_state_waiting
 
@@ -55,13 +55,20 @@ DEF INT maxHewerIndex = misc:list_size("_hewerIds")
 DEF INT maxRockIndex = 0
 DEF INT hewerIndex = 0
 DEF INT rockIndex = 0
+DEF BOL isFalling = <false>
 LOOP
   IF hewerIndex IS maxHewerIndex
     BREAK
+  IF _hewerRockIds[hewerIndex] NOT ""
+    ALT isFalling = fe3d:model_is_animation3d_started(_hewerRockIds[hewerIndex], "rock")
+    IF isFalling IS <false>
+      fe3d:model_delete(_hewerRockIds[hewerIndex])
+      ALT _hewerRockIds[hewerIndex] = ""
+      ADD _totalStone 1
   ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _hewerIds[hewerIndex])
   ALT hasTool = misc:list_contains("_toolBuildingIds", _hewerIds[hewerIndex])
   IF hasWorker IS <true> AND hasTool IS <true>
-    IF _hewerTimers[hewerIndex] IS _productionTime
+    IF _hewerTimers[hewerIndex] IS 500
       ALT _hewerTimers[hewerIndex] = 0
       ALT hX = fe3d:model_get_base_position_x(_hewerIds[hewerIndex])
       ALT hY = fe3d:model_get_base_position_y(_hewerIds[hewerIndex])
@@ -82,8 +89,7 @@ LOOP
         ADD rockIndex 1
       IF closestRockId NOT ""
         fe3d:model_start_animation3d(closestRockId, "rock", 1)
-        ///fe3d:model_delete(closestRockId)
-        ADD _totalWood 1
+        ALT _hewerRockIds[hewerIndex] = closestRockId
     ELSE
       ADD _hewerTimers[hewerIndex] 1
   ADD hewerIndex 1
