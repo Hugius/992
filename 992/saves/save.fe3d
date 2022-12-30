@@ -1,20 +1,20 @@
--8.427383
+47.244949
 17.500000
-21.055695
-220.000000
+-2.764813
+225.000305
 -70.000000
-0.000000
+0.000003
+-0.000451
 -0.000000
-0.000000
-{"Aelfweard", "Eoforhild", "Eardwulf", "Ecgwynn", "Beocca", "Aelfflaed", "Aethelweald", "Tibba", "Wiglaf", "Wulfflaed", "Aethelstan", "Wulfgifu", "Osferth", "Aelfgifu", "Ecgberht"}
+{"Wiglaf", "Wulfgifu", "Aethelred", "Eahlswith", "Oswald", "Wulfflaed", "Wiglaf", "Aebbe", "Earconwald", "Wynnflaed", "Cuthberht", "Wulfflaed", "Oswald", "Eanflaed", "Godric"}
 {"MALE", "FEMALE", "MALE", "FEMALE", "MALE", "FEMALE", "MALE", "FEMALE", "MALE", "FEMALE", "MALE", "FEMALE", "MALE", "FEMALE", "MALE"}
 {<true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>}
 {<true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <false>, <false>, <false>, <false>, <false>}
-{"feller_4", "", "", "", "", "", "", "", "", "", "", "", "", "", ""}
+{"", "", "", "", "", "", "", "", "", "", "", "", "", "", ""}
 {"", "", "", "", "", "", "", "", "", "", "", "", "", "", ""}
 0
-0
-1712
+1
+1174
 2250
 0
 -1
@@ -22,45 +22,19 @@
 5
 15
 <false>
-{"feller_4"}
-{"feller"}
+{}
+{}
 
 
 
 
 
 
-10
-5
+0
+4
 <false>
 <false>
-15
-0
-0
-0
-15
-0
-0
-0
-0
-0
-2
-147
-0
-0
-150
-150
-148
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
+14
 0
 0
 0
@@ -68,6 +42,32 @@
 0
 0
 0
+0
+0
+0
+150
+0
+0
+150
+150
+150
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+15
+0
+0
+0
 {}
 {}
 {}
@@ -88,9 +88,6 @@
 {}
 {}
 {}
-{"feller_4"}
-{363}
-{""}
 {}
 {}
 {}
@@ -142,11 +139,14 @@
 {}
 {}
 {}
-{"Wiglaf was born", "Wulfflaed was born", "Aethelstan was born", "Wulfgifu was born", "Osferth was born", "Aelfgifu was born", "Ecgberht was born", "Aelfweard became feller"}
-{"feller_4"}
+{}
+{}
+{}
+{}
+{}
 {}
 {}
 {}
 ARROW
-0.495000
-1710
+0.000000
+3422

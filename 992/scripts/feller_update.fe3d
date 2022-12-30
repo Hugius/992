@@ -1,4 +1,4 @@
-69 40
+69 52
 META script_type_update
 META script_state_waiting
 
@@ -68,7 +68,7 @@ LOOP
   ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _fellerIds[fellerIndex])
   ALT hasTool = misc:list_contains("_toolBuildingIds", _fellerIds[fellerIndex])
   IF hasWorker IS <true> AND hasTool IS <true>
-    IF _fellerTimers[fellerIndex] IS 500
+    IF _fellerTimers[fellerIndex] IS _productionTime
       ALT _fellerTimers[fellerIndex] = 0
       ALT fX = fe3d:model_get_base_position_x(_fellerIds[fellerIndex])
       ALT fY = fe3d:model_get_base_position_y(_fellerIds[fellerIndex])

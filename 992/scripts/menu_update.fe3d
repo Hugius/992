@@ -1,4 +1,4 @@
-25 43
+34 27
 META script_type_update
 META script_state_waiting
 
@@ -34,6 +34,7 @@ IF isNewButtonHovered IS <true>
   fe3d:quad2d_set_size("menu_new", 0.55, 0.22)
   fe3d:text2d_set_size("menu_new", 0.165, 0.165)
   IF isLmbPressed IS <true>
+    fe3d:sound2d_start("button", 1, 0.0)
     EXECUTE game_create
     fe3d:quad2d_delete("menu_background")
     fe3d:quad2d_delete("menu_title")
@@ -51,6 +52,7 @@ IF isLoadButtonHovered IS <true>
     fe3d:quad2d_set_size("menu_load", 0.55, 0.22)
     fe3d:text2d_set_size("menu_load", 0.22, 0.165)
     IF isLmbPressed IS <true>
+      fe3d:sound2d_start("button", 1, 0.0)
       EXECUTE game_load
       fe3d:quad2d_delete("menu_background")
       fe3d:quad2d_delete("menu_title")

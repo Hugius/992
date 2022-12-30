@@ -1,4 +1,4 @@
-0 0
+29 9
 META script_type_terminate
 META script_state_waiting
 
@@ -7,12 +7,12 @@ DEF BOL isFileExisting = fe3d:file_is_existing("save")
 IF isFileExisting IS <true>
   fe3d:file_delete("save")
 
-/// Save environment
+/// Add environment
 fe3d:world_add_custom_sky("sky")
 fe3d:world_add_custom_terrain("terrain")
 fe3d:world_add_custom_water("water")
 
-/// Save models
+/// Add models
 DEF LST modelIds = fe3d:model_get_ids()
 DEF INT maxModelIndex = misc:list_size("modelIds")
 DEF INT modelIndex = 0
@@ -21,24 +21,25 @@ LOOP
     BREAK
   fe3d:world_add_custom_model(modelIds[modelIndex])
   ADD modelIndex 1
-fe3d:world_save_custom("save")
 
-/// Save quads
-DEF LST quadIds = fe3d:quad3d_get_ids()
-DEF INT maxQuad3dIndex = misc:list_size("quadIds")
+/// Add quad3Ds
+DEF LST quad3dIds = fe3d:quad3d_get_ids()
+DEF INT maxQuad3dIndex = misc:list_size("quad3dIds")
 DEF INT quad3dIndex = 0
 LOOP
   IF quad3dIndex IS maxQuad3dIndex
     BREAK
-  fe3d:world_add_custom_quad3d(quadIds[quad3dIndex])
+  fe3d:world_add_custom_quad3d(quad3dIds[quad3dIndex])
   ADD quad3dIndex 1
-fe3d:world_save_custom("save")
 
-/// Save AABBs
+/// Add AABBs
 fe3d:world_add_custom_aabb("border_0")
 fe3d:world_add_custom_aabb("border_1")
 fe3d:world_add_custom_aabb("border_2")
 fe3d:world_add_custom_aabb("border_3")
+
+/// Save world
+fe3d:world_save_custom("save")
 
 /// Save camera
 DEF DEC x = fe3d:camera_get_position_x()

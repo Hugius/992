@@ -1,4 +1,4 @@
-15 33
+21 33
 META script_type_initialize
 META script_state_waiting
 
@@ -24,3 +24,4 @@ DEF GLB INT _birthDeathChance = 5
 DEF GLB INT _suicideDeathChance = 5
 DEF GLB INT _sicknessCatchChance = 15
 DEF GLB BOL _mustUpdateWorkers = <false>
+DEF GLB BOL _isCreatingDefaultWorkers = <true>

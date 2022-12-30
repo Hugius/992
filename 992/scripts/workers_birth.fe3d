@@ -1,9 +1,11 @@
-3 12
+6 4
 META script_type_update
 META script_state_waiting
 
 /// Validate
 IF _workersToCreate IS 0
+  IF _isCreatingDefaultWorkers IS <true>
+    ALT _isCreatingDefaultWorkers = <false>
   EXIT
 ELSE
   SUB _workersToCreate 1
@@ -44,5 +46,7 @@ PUSH _workerHouseBuildingIds ""
 ALT _mustUpdateWorkers = <true>
 
 /// Log birth event
-DEF STR eventMessage = misc:string_concat(name, " was born")
-PUSH _eventMessageContents eventMessage
+IF _isCreatingDefaultWorkers IS <false>
+  DEF STR eventMessage = misc:string_concat(name, " was born")
+  PUSH _eventMessageContents eventMessage
+  PUSH _eventMessageTypes "birth"

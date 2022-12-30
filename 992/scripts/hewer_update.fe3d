@@ -1,4 +1,4 @@
-69 38
+69 50
 META script_type_update
 META script_state_waiting
 
@@ -68,7 +68,7 @@ LOOP
   ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _hewerIds[hewerIndex])
   ALT hasTool = misc:list_contains("_toolBuildingIds", _hewerIds[hewerIndex])
   IF hasWorker IS <true> AND hasTool IS <true>
-    IF _hewerTimers[hewerIndex] IS 500
+    IF _hewerTimers[hewerIndex] IS _productionTime
       ALT _hewerTimers[hewerIndex] = 0
       ALT hX = fe3d:model_get_base_position_x(_hewerIds[hewerIndex])
       ALT hY = fe3d:model_get_base_position_y(_hewerIds[hewerIndex])
@@ -89,6 +89,8 @@ LOOP
         ADD rockIndex 1
       IF closestRockId NOT ""
         fe3d:model_start_animation3d(closestRockId, "rock", 1)
+        fe3d:sound3d_place(closestRockId, "tree", rX, rY, rZ)
+        fe3d:sound3d_start(closestRockId, 1, 0.0)
         ALT _hewerRockIds[hewerIndex] = closestRockId
     ELSE
       ADD _hewerTimers[hewerIndex] 1

@@ -1,4 +1,4 @@
-0 0
+65 39
 META script_type_update
 META script_state_waiting
 
@@ -30,6 +30,16 @@ ELSE
     fe3d:quad2d_set_position("event_message", xPosition, 0.95)
     fe3d:text2d_set_position("event_message", xPosition, 0.95)
     ALT _eventMessageOpacity = 1.0
+    IF _eventMessageTypes[0] IS "birth"
+      fe3d:sound2d_start("birth", 1, 0.0)
+    ELIF _eventMessageTypes[0] IS "death"
+      fe3d:sound2d_start("death", 1, 0.0)
+    ELIF _eventMessageTypes[0] IS "employment"
+      fe3d:sound2d_start("employment", 1, 0.0)
+    ELIF _eventMessageTypes[0] IS "marriage"
+      fe3d:sound2d_start("marriage", 1, 0.0)
+    ELIF _eventMessageTypes[0] IS "sickness"
+      fe3d:sound2d_start("sickness", 1, 0.0)
   ELIF _eventMessageOpacity LESS 0.01
     PULL _eventMessageContents 0
     ALT _eventMessageOpacity = 0.0
@@ -49,4 +59,9 @@ ALT _cursorType = "ARROW"
 ADD _totalUpdates 1
 
 /// First update
-ALT _isFirstUpdate = <false>
+IF _isFirstUpdate IS <true>
+  ALT _isFirstUpdate = <false>
+  fe3d:sound2d_start("water", -1, 0.0)
+  fe3d:sound2d_start("wind", -1, 0.0)
+  fe3d:sound2d_set_volume("water", 0, 0.75)
+  fe3d:sound2d_set_volume("wind", 0, 0.5)

@@ -1,4 +1,4 @@
-3 22
+54 42
 META script_type_update
 META script_state_waiting
 
@@ -53,6 +53,7 @@ LOOP
       ALT eventMessage = misc:string_concat(_workerNames[workerIndex], " became ")
       ALT eventMessage = misc:string_concat(eventMessage, buildingType)
       PUSH _eventMessageContents eventMessage
+      PUSH _eventMessageTypes "employment"
       BREAK
     ADD buildingIndex 1
   ADD workerIndex 1
@@ -95,11 +96,13 @@ LOOP
         ALT eventMessage = misc:string_concat(workerName, " married ")
         ALT eventMessage = misc:string_concat(eventMessage, otherWorkerName)
         PUSH _eventMessageContents eventMessage
+        PUSH _eventMessageTypes "marriage"
         BREAK
       IF workerGender IS "FEMALE" AND otherWorkerGender IS "MALE"
         ALT eventMessage = misc:string_concat(otherWorkerName, " married ")
         ALT eventMessage = misc:string_concat(eventMessage, workerName)
         PUSH _eventMessageContents eventMessage
+        PUSH _eventMessageTypes "marriage"
         BREAK
     ELIF workerCount IS 2
       PASS

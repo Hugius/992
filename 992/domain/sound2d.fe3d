@@ -1,0 +1,12 @@
+@birth assets\audio\birth.wav
+@button assets\audio\button.wav
+@cattleman assets\audio\cattleman.wav
+@death assets\audio\death.wav
+@employment assets\audio\employment.wav
+@marriage assets\audio\marriage.wav
+@poultryman assets\audio\poultryman.wav
+@shepherd assets\audio\shepherd.wav
+@sickness assets\audio\sickness.wav
+@swineherd assets\audio\swineherd.wav
+@water assets\audio\water.wav
+@wind assets\audio\wind.wav

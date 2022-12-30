@@ -1,4 +1,4 @@
-14 67
+12 58
 META script_type_initialize
 META script_state_waiting
 
@@ -14,3 +14,6 @@ fe3d:quad2d_place("menu_quit", "scroll2", 0.0, -0.8, 0.0, 0.0)
 fe3d:text2d_place("menu_new", "text", "New", 0.0, 0.0, 0.0, 0.0)
 fe3d:text2d_place("menu_load", "text", "Load", 0.0, -0.4, 0.0, 0.0)
 fe3d:text2d_place("menu_quit", "text", "Quit", 0.0, -0.8, 0.0, 0.0)
+
+/// Audio
+fe3d:sound2d_place("button", "button")
