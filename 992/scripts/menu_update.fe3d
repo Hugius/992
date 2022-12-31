@@ -1,4 +1,4 @@
-35 30
+56 5
 META script_type_update
 META script_state_waiting
 
@@ -36,6 +36,7 @@ IF isNewButtonHovered IS <true>
   IF isLmbPressed IS <true>
     fe3d:sound2d_start("button", 1, 0.0)
     EXECUTE game_create
+    fe3d:sound2d_stop("theme", 0)
     fe3d:quad2d_delete("menu_background")
     fe3d:quad2d_delete("menu_title")
     fe3d:quad2d_delete("menu_new")
@@ -54,6 +55,7 @@ IF isLoadButtonHovered IS <true>
     IF isLmbPressed IS <true>
       fe3d:sound2d_start("button", 1, 0.0)
       EXECUTE game_load
+      fe3d:sound2d_stop("theme", 0)
       fe3d:quad2d_delete("menu_background")
       fe3d:quad2d_delete("menu_title")
       fe3d:quad2d_delete("menu_new")

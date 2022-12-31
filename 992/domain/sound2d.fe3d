@@ -16,5 +16,6 @@
 @placement assets\audio\placement.wav
 @scroll assets\audio\scroll.wav
 @sickness assets\audio\sickness.wav
+@theme assets\audio\theme.wav
 @water assets\audio\water.wav
 @wind assets\audio\wind.wav

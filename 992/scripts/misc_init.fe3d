@@ -1,4 +1,4 @@
-11 33
+39 25
 META script_type_initialize
 META script_state_waiting
 
@@ -38,6 +38,7 @@ fe3d:sound2d_place("music9", "music9")
 fe3d:sound2d_place("placement", "placement")
 fe3d:sound2d_place("scroll", "scroll")
 fe3d:sound2d_place("sickness", "sickness")
+fe3d:sound2d_place("theme", "theme")
 fe3d:sound2d_place("water", "water")
 fe3d:sound2d_place("wind", "wind")
 
