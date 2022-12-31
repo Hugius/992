@@ -1,4 +1,4 @@
-21 53
+49 8
 META script_type_update
 META script_state_waiting
 
@@ -29,6 +29,8 @@ IF _selectedBuildingType IS "cattleman"
 /// Update cattlemen
 DEF STR cowId = ""
 DEF DEC growth = 0.0
+DEF DEC speed = 0.0
+DEF INT time = 0
 DEF INT maxCattlemanIndex = misc:list_size("_cattlemanIds")
 DEF INT cattlemanIndex = 0
 LOOP
@@ -45,10 +47,11 @@ LOOP
       ELSE
         ADD _cattlemanTimers[cattlemanIndex] 1
   IF _cattlemanGrowths[cattlemanIndex] MORE 0.0 AND _cattlemanGrowths[cattlemanIndex] LESS _maxCattlemanGrowth
-    DEF INT time = _growthTime
-    DEF DEC speed = _maxCattlemanGrowth
+    ALT time = _growthTime
+    ALT speed = _maxCattlemanGrowth
     CAST time DEC
     DIV speed time
+    CAST time INT
     ADD _cattlemanGrowths[cattlemanIndex] speed
   ALT growth = _cattlemanGrowths[cattlemanIndex]
   ALT cowId = misc:string_concat(_cattlemanIds[cattlemanIndex], "_1")

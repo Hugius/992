@@ -1,4 +1,4 @@
-7 42
+68 38
 META script_type_update
 META script_state_waiting
 
@@ -12,6 +12,7 @@ IF isButtonHovered IS <true>
   ALT _cursorType = "HAND"
   DEF BOL isLmbPressed = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
   IF isLmbPressed IS <true>
+    fe3d:sound2d_start("button", 1, 0.0)
     IF _isBuildModeEnabled IS <true>
       fe3d:model_set_visible(_buildingTypes[_buildingIndex], <false>)
       ALT _isBuildModeEnabled = <false>
@@ -61,10 +62,12 @@ DEF INT buildingCount = misc:list_size("_buildingTypes")
 DEF BOL hasScrolledUp = fe3d:input_is_mouse_scrolled("WHEEL_UP")
 DEF BOL hasScrolledDown = fe3d:input_is_mouse_scrolled("WHEEL_DOWN")
 IF hasScrolledUp IS <true>
+  fe3d:sound2d_start("scroll", 1, 0.0)
   ADD _buildingIndex 1
   IF _buildingIndex IS buildingCount
     ALT _buildingIndex = 0
 IF hasScrolledDown IS <true>
+  fe3d:sound2d_start("scroll", 1, 0.0)
   IF _buildingIndex IS 0
     ALT _buildingIndex = buildingCount
   SUB _buildingIndex 1

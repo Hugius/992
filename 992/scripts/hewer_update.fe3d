@@ -1,4 +1,4 @@
-69 50
+89 62
 META script_type_update
 META script_state_waiting
 
@@ -89,8 +89,6 @@ LOOP
         ADD rockIndex 1
       IF closestRockId NOT ""
         fe3d:model_start_animation3d(closestRockId, "rock", 1)
-        fe3d:sound3d_place(closestRockId, "tree", rX, rY, rZ)
-        fe3d:sound3d_start(closestRockId, 1, 0.0)
         ALT _hewerRockIds[hewerIndex] = closestRockId
     ELSE
       ADD _hewerTimers[hewerIndex] 1

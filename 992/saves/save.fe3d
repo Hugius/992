@@ -1,20 +1,20 @@
-47.244949
+-12.728837
 17.500000
--2.764813
-225.000305
+-31.269604
+215.000092
 -70.000000
-0.000003
--0.000451
+0.000000
 -0.000000
-{"Wiglaf", "Wulfgifu", "Aethelred", "Eahlswith", "Oswald", "Wulfflaed", "Wiglaf", "Aebbe", "Earconwald", "Wynnflaed", "Cuthberht", "Wulfflaed", "Oswald", "Eanflaed", "Godric"}
-{"MALE", "FEMALE", "MALE", "FEMALE", "MALE", "FEMALE", "MALE", "FEMALE", "MALE", "FEMALE", "MALE", "FEMALE", "MALE", "FEMALE", "MALE"}
-{<true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>}
-{<true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <false>, <false>, <false>, <false>, <false>}
-{"", "", "", "", "", "", "", "", "", "", "", "", "", "", ""}
-{"", "", "", "", "", "", "", "", "", "", "", "", "", "", ""}
+0.000000
+{"Wiglaf", "Mildthryth", "Uhtric", "Hild", "Aethelred", "Cynethryth", "Ealdhelm", "Eoforhild", "Eardwulf", "Ecgwynn", "Dunstan", "Aethelswith", "Uhtric", "Hild", "Ecgberht", "Mildburh", "Aethelred", "Wulfflaed", "Godwine"}
+{"MALE", "FEMALE", "MALE", "FEMALE", "MALE", "FEMALE", "MALE", "FEMALE", "MALE", "FEMALE", "MALE", "FEMALE", "MALE", "FEMALE", "MALE", "FEMALE", "MALE", "FEMALE", "MALE"}
+{<true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>}
+{<true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <true>, <false>, <false>, <false>, <false>, <false>, <false>, <false>, <false>, <false>}
+{"apiarist_4", "apiarist_5", "apiarist_6", "fisherman_9", "fisherman_10", "fisherman_11", "smoker_12", "apiarist_13", "apiarist_14", "", "", "", "", "", "", "", "", "", ""}
+{"house_7", "house_7", "house_8", "house_8", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""}
 0
-1
-1174
+5
+1340
 2250
 0
 -1
@@ -22,35 +22,35 @@
 5
 15
 <false>
-{}
-{}
+{"apiarist_4", "apiarist_5", "apiarist_6", "house_7", "house_8", "fisherman_9", "fisherman_10", "fisherman_11", "smoker_12", "apiarist_13", "apiarist_14"}
+{"apiarist", "apiarist", "apiarist", "house", "house", "fisherman", "fisherman", "fisherman", "smoker", "apiarist", "apiarist"}
 
 
 
 
 
 
-0
-4
-<false>
-<false>
-14
-0
-0
-0
-14
+1
+15
+<true>
+<true>
+10
 0
 0
 0
+10
+0
+15
 0
 0
 0
-150
+0
+138
 0
 0
-150
-150
-150
+140
+146
+124
 0
 0
 0
@@ -68,6 +68,8 @@
 0
 0
 0
+{"apiarist_4", "apiarist_5", "apiarist_6", "apiarist_13", "apiarist_14"}
+{704, 599, 526, 490, 431}
 {}
 {}
 {}
@@ -89,6 +91,21 @@
 {}
 {}
 {}
+{"fisherman_9", "fisherman_10", "fisherman_11"}
+{0, 0, 0}
+{}
+{}
+{}
+{}
+{}
+{}
+{}
+{}
+{}
+{}
+{"house_7", "house_8"}
+{1914, 1611}
+{<true>, <true>}
 {}
 {}
 {}
@@ -110,25 +127,9 @@
 {}
 {}
 {}
-{}
-{}
-{}
-{}
-{}
-{}
-{}
-{}
-{}
-{}
-{}
-{}
-{}
-{}
-{}
-{}
-{}
-{}
-{}
+{"smoker_12"}
+{0}
+{0}
 {}
 {}
 {}
@@ -149,4 +150,4 @@
 {}
 ARROW
 0.000000
-3422
+12593

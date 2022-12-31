@@ -1,4 +1,4 @@
-65 39
+74 40
 META script_type_update
 META script_state_waiting
 
@@ -42,9 +42,22 @@ ELSE
       fe3d:sound2d_start("sickness", 1, 0.0)
   ELIF _eventMessageOpacity LESS 0.01
     PULL _eventMessageContents 0
+    PULL _eventMessageTypes 0
     ALT _eventMessageOpacity = 0.0
   ELSE
     SUB _eventMessageOpacity 0.005
+
+/// Update music
+IF _currentMusicId IS ""
+  DEF BOL isMusicStarted = <false>
+ELSE
+  DEF BOL isMusicStarted = fe3d:sound2d_is_started(_currentMusicId, 0)
+IF isMusicStarted IS <false>
+  DEF INT randomNumber = math:random_integer(0, 9)
+  CAST randomNumber STR
+  ALT _currentMusicId = misc:string_concat("music", randomNumber)
+  fe3d:sound2d_start(_currentMusicId, 1, 0.0)
+  fe3d:sound2d_set_volume(_currentMusicId, 0, 0.5)
 
 /// Update fading
 DEF DEC blackOpacity = fe3d:quad2d_get_opacity("black")
@@ -55,13 +68,13 @@ fe3d:quad2d_set_opacity("black", blackOpacity)
 fe3d:cursor_set_type(_cursorType)
 ALT _cursorType = "ARROW"
 
-/// Increase updates
-ADD _totalUpdates 1
-
 /// First update
 IF _isFirstUpdate IS <true>
   ALT _isFirstUpdate = <false>
   fe3d:sound2d_start("water", -1, 0.0)
   fe3d:sound2d_start("wind", -1, 0.0)
-  fe3d:sound2d_set_volume("water", 0, 0.75)
+  fe3d:sound2d_set_volume("water", 0, 0.5)
   fe3d:sound2d_set_volume("wind", 0, 0.5)
+
+/// Increase updates
+ADD _totalUpdates 1

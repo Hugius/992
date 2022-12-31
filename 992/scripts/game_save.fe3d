@@ -1,4 +1,4 @@
-29 9
+291 41
 META script_type_terminate
 META script_state_waiting
 
@@ -284,11 +284,13 @@ fe3d:file_write("save", woodcutterTimers)
 
 /// Save miscellaneous
 DEF STR eventMessageContents = misc:list_to_string("_eventMessageContents")
+DEF STR eventMessageTypes = misc:list_to_string("_eventMessageTypes")
 DEF STR toolBuildingIds = misc:list_to_string("_toolBuildingIds")
 DEF STR bowBuildingIds = misc:list_to_string("_bowBuildingIds")
 DEF STR arrowBuildingIds = misc:list_to_string("_arrowBuildingIds")
 DEF STR fishingNetBuildingIds = misc:list_to_string("_fishingNetBuildingIds")
 fe3d:file_write("save", eventMessageContents)
+fe3d:file_write("save", eventMessageTypes)
 fe3d:file_write("save", toolBuildingIds)
 fe3d:file_write("save", bowBuildingIds)
 fe3d:file_write("save", arrowBuildingIds)

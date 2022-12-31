@@ -1,4 +1,4 @@
-144 9
+112 41
 META script_type_update
 META script_state_waiting
 
@@ -111,6 +111,7 @@ CAST _buildingCounter INT
 /// Place new building
 DEF BOL isLmbPressed = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
 IF isLmbPressed IS <true> AND color[1] NOT 0.0
+  fe3d:sound2d_start("placement", 1, 0.0)
   fe3d:model_place(buildingId, _buildingModels[_buildingIndex], 0.0, 0.0, 0.0)
   fe3d:model_set_base_position(buildingId, x, y, z)
   fe3d:model_set_base_rotation(buildingId, 0.0, rotation, 0.0)

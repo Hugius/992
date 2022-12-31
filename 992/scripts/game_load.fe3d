@@ -1,4 +1,4 @@
-379 32
+370 32
 META script_type_update
 META script_state_waiting
 
@@ -362,16 +362,18 @@ ALT _woodcutterTimers = woodcutterTimers
 
 /// Load miscellaneous
 DEF LST eventMessageContents = misc:string_to_list(lines[144])
-DEF LST toolBuildingIds = misc:string_to_list(lines[145])
-DEF LST bowBuildingIds = misc:string_to_list(lines[146])
-DEF LST arrowBuildingIds = misc:string_to_list(lines[147])
-DEF LST fishingNetBuildingIds = misc:string_to_list(lines[148])
-DEF STR cursorType = lines[149]
-DEF STR eventMessageOpacity = lines[150]
-DEF STR totalUpdates = lines[151]
+DEF LST eventMessageTypes = misc:string_to_list(lines[145])
+DEF LST toolBuildingIds = misc:string_to_list(lines[146])
+DEF LST bowBuildingIds = misc:string_to_list(lines[147])
+DEF LST arrowBuildingIds = misc:string_to_list(lines[148])
+DEF LST fishingNetBuildingIds = misc:string_to_list(lines[149])
+DEF STR cursorType = lines[150]
+DEF STR eventMessageOpacity = lines[151]
+DEF STR totalUpdates = lines[152]
 CAST eventMessageOpacity DEC
 CAST totalUpdates INT
 ALT _eventMessageContents = eventMessageContents
+ALT _eventMessageTypes = eventMessageTypes
 ALT _toolBuildingIds = toolBuildingIds
 ALT _bowBuildingIds = bowBuildingIds
 ALT _arrowBuildingIds = arrowBuildingIds
