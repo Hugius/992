@@ -1,0 +1,80 @@
+45 45
+META script_type_update
+META script_state_waiting
+
+/// Define reusable values
+DEF BOL hasWorker = <false>
+DEF BOL hasTool = <false>
+
+/// Hide GUI
+IF _lastSelectedBuildingType IS "smelter" OR _isFirstUpdate IS <true>
+  fe3d:quad2d_set_visible("smelter_worker", <false>)
+  fe3d:quad2d_set_visible("smelter_tool", <false>)
+  fe3d:quad2d_set_visible("smelter_ore", <false>)
+  fe3d:quad2d_set_visible("smelter_firewood", <false>)
+  fe3d:quad2d_set_visible("smelter_coal", <false>)
+  fe3d:quad2d_set_visible("smelter_convert", <false>)
+  fe3d:quad2d_set_visible("smelter_iron", <false>)
+  fe3d:text2d_set_visible("smelter_worker", <false>)
+  fe3d:text2d_set_visible("smelter_tool", <false>)
+  fe3d:text2d_set_visible("smelter_ore", <false>)
+  fe3d:text2d_set_visible("smelter_firewood", <false>)
+  fe3d:text2d_set_visible("smelter_coal", <false>)
+  fe3d:text2d_set_visible("smelter_iron", <false>)
+
+/// Show GUI
+IF _selectedBuildingType IS "smelter"
+  ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _selectedBuildingId)
+  ALT hasTool = misc:list_contains("_toolBuildingIds", _selectedBuildingId)
+  IF hasWorker IS <true>
+    IF hasTool IS <true>
+      fe3d:quad2d_set_visible("smelter_ore", <true>)
+      fe3d:quad2d_set_visible("smelter_firewood", <true>)
+      fe3d:quad2d_set_visible("smelter_coal", <true>)
+      fe3d:quad2d_set_visible("smelter_convert", <true>)
+      fe3d:quad2d_set_visible("smelter_iron", <true>)
+      fe3d:text2d_set_visible("smelter_ore", <true>)
+      fe3d:text2d_set_visible("smelter_firewood", <true>)
+      fe3d:text2d_set_visible("smelter_coal", <true>)
+      fe3d:text2d_set_visible("smelter_iron", <true>)
+    ELSE
+      fe3d:quad2d_set_visible("smelter_tool", <true>)
+      fe3d:text2d_set_visible("smelter_tool", <true>)
+      IF _totalTools MORE 0
+        ALT _cursorType = "HAND"
+        DEF BOL isLmbPressed = fe3d:input_is_mouse_pressed("BUTTON_LEFT")
+        IF isLmbPressed IS <true>
+          fe3d:sound2d_start("equip", 1, 0.0)
+          SUB _totalTools 1
+          PUSH _toolBuildingIds _selectedBuildingId
+  ELSE
+    fe3d:quad2d_set_visible("smelter_worker", <true>)
+    fe3d:text2d_set_visible("smelter_worker", <true>)
+
+/// Update smelters
+DEF INT maxSmelterIndex = misc:list_size("_smelterIds")
+DEF INT smelterIndex = 0
+DEF INT randomNumber = 0
+LOOP
+  IF smelterIndex IS maxSmelterIndex
+    BREAK
+  ALT hasWorker = misc:list_contains("_workerJobBuildingIds", _smelterIds[smelterIndex])
+  ALT hasTool = misc:list_contains("_toolBuildingIds", _smelterIds[smelterIndex])
+  IF hasWorker IS <true> AND hasTool IS <true>
+    IF _smelterTimers[smelterIndex] IS 0
+      IF _totalOre MORE 0
+        ALT randomNumber = math:random_integer(1, 2)
+        IF randomNumber IS 1 AND _totalFirewood MORE 0
+          SUB _totalOre 1
+          SUB _totalFirewood 1
+          ADD _smelterTimers[smelterIndex] 1
+        ELIF randomNumber IS 2 AND _totalCoal MORE 0
+          SUB _totalOre 1
+          SUB _totalCoal 1
+          ADD _smelterTimers[smelterIndex] 1
+    ELIF _smelterTimers[smelterIndex] IS _productionTime
+      ALT _smelterTimers[smelterIndex] = 0
+      ADD _totalIron 1
+    ELSE
+      ADD _smelterTimers[smelterIndex] 1
+  ADD smelterIndex 1

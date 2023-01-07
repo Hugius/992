@@ -1,0 +1,51 @@
+22 34
+META script_type_initialize
+META script_state_waiting
+
+/// Finals
+DEF GLB FIN INT _productionTime = 2250
+DEF GLB FIN INT _growthTime = 4500
+
+/// Non-finals
+DEF GLB LST _eventMessageContents = {}
+DEF GLB LST _eventMessageTypes = {}
+DEF GLB STR _currentMusicId = ""
+DEF GLB STR _cursorType = "ARROW"
+DEF GLB DEC _eventMessageOpacity = 0.0
+DEF GLB INT _totalUpdates = 0
+DEF GLB BOL _isFirstUpdate = <true>
+
+/// GUI
+fe3d:quad2d_place("event_message", "paper", 0.0, 0.0, 0.0, 0.0)
+fe3d:text2d_place("event_message", "text", "", 0.0, 0.0, 0.0, 0.0)
+
+/// Audio
+fe3d:sound2d_place("birth", "birth")
+fe3d:sound2d_place("click", "click")
+fe3d:sound2d_place("death", "death")
+fe3d:sound2d_place("employment", "employment")
+fe3d:sound2d_place("equip", "equip")
+fe3d:sound2d_place("marriage", "marriage")
+fe3d:sound2d_place("music0", "music0")
+fe3d:sound2d_place("music1", "music1")
+fe3d:sound2d_place("music2", "music2")
+fe3d:sound2d_place("music3", "music3")
+fe3d:sound2d_place("music4", "music4")
+fe3d:sound2d_place("music5", "music5")
+fe3d:sound2d_place("music6", "music6")
+fe3d:sound2d_place("music7", "music7")
+fe3d:sound2d_place("music8", "music8")
+fe3d:sound2d_place("music9", "music9")
+fe3d:sound2d_place("placement", "placement")
+fe3d:sound2d_place("scroll", "scroll")
+fe3d:sound2d_place("sickness", "sickness")
+fe3d:sound2d_place("theme", "theme")
+fe3d:sound2d_place("water", "water")
+fe3d:sound2d_place("wind", "wind")
+
+/// Miscellaneous
+fe3d:quad2d_place("black", "black", 0.0, 0.0, 2.0, 2.0)
+fe3d:graphics_set_anti_aliasing_enabled(<true>)
+fe3d:graphics_set_anisotropic_filtering_quality(16)
+fe3d:cursor_set_visible(<true>)
+fe3d:vsync_set_enabled(<true>)
