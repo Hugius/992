@@ -1,4 +1,4 @@
-6 4
+27 0
 META script_type_update
 META script_state_waiting
 
@@ -27,18 +27,11 @@ ELSE
 /// Switch gender
 NEG _nextWorkerGender
 
-/// Determine clothes
-IF _totalClothes MORE 0
-  SUB _totalClothes 1
-  DEF BOL hasClothes = <true>
-ELSE
-  DEF BOL hasClothes = <false>
-
 /// Create worker
 PUSH _workerNames name
 PUSH _workerGenders gender
 PUSH _workerHealths <true>
-PUSH _workerClothes hasClothes
+PUSH _workerClothes <false>
 PUSH _workerJobBuildingIds ""
 PUSH _workerHouseBuildingIds ""
 
